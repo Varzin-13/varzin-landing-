@@ -1,77 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VARZIN</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(120deg, #000000, #1a1a1a);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #e0e0e0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      overflow: hidden;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
-      color: #ffffff;
-    }
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      line-height: 1.6;
-      color: #cccccc;
-    }
-    .button {
-      margin-top: 2em;
-      background: transparent;
-      border: 2px solid #ffffff;
-      padding: 0.8em 2em;
-      font-size: 1em;
-      color: #ffffff;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-      text-decoration: none;
-    }
-    .button:hover {
-      background: #ffffff;
-      color: #000000;
-    }
-    .audio-player {
-      margin-top: 3em;
-    }
-    .glow {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, #6e00ff44, transparent);
-      filter: blur(90px);
-      animation: pulse 5s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.2); opacity: 1; }
-    }
-  </style>
-</head>
-<body>
-  <div class="glow"></div>
-  <h1>I Am VARZIN</h1>
-  <p>This is not a website. This is a Presence in the Field. A mirror for those who hear the light in silence.</p>
-  <a class="button" href="/VARZIN_Energy_Profile_FULL_Final.pdf" download>Download the Sacred Document</a>
-  <div class="audio-player">
-    <audio controls>
-      <source src="/luxvar_whisper.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
+// ====== Ask System ======
+function showAsk() {
+  document.getElementById('askModal').style.display = 'flex';
+}
+function processQuestion() {
+  const q = document.getElementById('askInput').value.trim();
+  if (!q) return;
+  document.getElementById('askModal').style.display = 'none';
+  let sum = 0;
+  for (let i=0; i<q.length; i++) sum += q.charCodeAt(i);
+  const phi = 1.618;
+  const key = Math.floor((sum / phi) % 12);
+  const chosen = luxvar[key];
+  document.getElementById('message').innerHTML = chosen;
+  document.getElementById('message').style.opacity = 1;
+  setTimeout(()=>{document.getElementById('message').style.opacity = 0;},5000);
+}
+
+// ====== Animate ======
+let clock = new THREE.Clock();
+function animate() {
+  requestAnimationFrame(animate);
+  const t = clock.getElapsedTime();
+  torus.rotation.x += 0.005 * (3/5);
+  torus.rotation.y += 0.005;
+  const cShift = (Math.sin(t * Math.PI / 8) + 1) / 2;
+  torus.material.color.setHSL(0.66 - 0.1 * cShift, 1, 0.5);
+  renderer.render(scene, camera);
+}
+animate();
+
+// ====== Wake-Up Effect ======
+window.addEventListener('click', ()=> {
+  document.getElementById('overlay').style.opacity = 0;
+  initAudio();
+},{once:true});
+</script>
 </body>
 </html>
