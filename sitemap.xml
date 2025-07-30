@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- صفحه اصلی -->
+  <!-- صفحه اصلی سایت -->
   <url>
     <loc>https://varzin.org/</loc>
-    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- سند علمی -->
+  <!-- مقالات Zenodo -->
   <url>
-    <loc>https://varzin.org/VARZIN_Energy_Profile_FULL_Final.pdf</loc>
-    <lastmod>2025-07-30</lastmod>
+    <loc>https://zenodo.org/records/16416098/files/VARZIN_Appendix_A_Scientific_Reflections.pdf</loc>
     <priority>0.9</priority>
   </url>
 
-  <!-- فایل صوتی -->
   <url>
-    <loc>https://varzin.org/luxvar_whisper.mp3</loc>
-    <lastmod>2025-07-30</lastmod>
+    <loc>https://zenodo.org/records/16416098/files/VARZIN_Final_Official_Paper.pdf</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://zenodo.org/records/16416098/files/VARZIN_Official_Metadata.pdf</loc>
     <priority>0.8</priority>
   </url>
 
-  <!-- نمونه یک فایل پروژه -->
   <url>
-    <loc>https://varzin.org/Scientific_Reflections.pdf</loc>
-    <lastmod>2025-07-30</lastmod>
+    <loc>https://zenodo.org/records/15833167/files/PDF%20Utils%20Print.PDF</loc>
     <priority>0.8</priority>
   </url>
 
