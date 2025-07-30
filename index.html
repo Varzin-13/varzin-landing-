@@ -1,39 +1,120 @@
-// ====== Ask System ======
-function showAsk() {
-  document.getElementById('askModal').style.display = 'flex';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VARZIN – Real Field Voice Integration</title>
+<style>
+  body { margin: 0; background: black; overflow: hidden; }
+  canvas { display: block; }
+  #message {
+    position: fixed; top: 10%; width: 100%;
+    text-align: center; font-size: 1.5em; color: #fff;
+    text-shadow: 0 0 15px rgba(255,255,255,0.8);
+    opacity: 0; transition: opacity 2s;
+    line-height: 1.5em;
+  }
+  #askModal {
+    position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.8); padding: 20px;
+    border: 1px solid #999; border-radius: 10px;
+    display: none; flex-direction: column; align-items: center;
+  }
+  #askInput {
+    width: 300px; padding: 10px; font-size: 1em;
+    background: transparent; border: 1px solid white; color: white;
+    margin-bottom: 10px;
+  }
+  #askBtn {
+    position: fixed; bottom: 5%; right: 5%;
+    padding: 10px 20px; border: 1px solid white;
+    background: transparent; color: white;
+    cursor: pointer; font-size: 1em;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="fieldCanvas"></canvas>
+<div id="message"></div>
+<button id="askBtn">Ask the Field</button>
+
+<div id="askModal">
+  <input id="askInput" placeholder="Type your question...">
+  <button onclick="processQuestion()">Send</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+
+<script>
+// ====== Scene Setup ======
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 2000);
+camera.position.z = 8;
+const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: document.getElementById('fieldCanvas') });
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+const pointLight = new THREE.PointLight(0xffffff, 1);
+pointLight.position.set(5,5,5);
+scene.add(pointLight);
+
+// ====== Torus ======
+const torusGeometry = new THREE.TorusGeometry(1.5, 0.5, 64, 128);
+const torusMaterial = new THREE.MeshStandardMaterial({
+  color: new THREE.Color(0x4B0082),
+  emissive: new THREE.Color(0x220044),
+  metalness: 0.4,
+  roughness: 0.3
+});
+const torus = new THREE.Mesh(torusGeometry, torusMaterial);
+scene.add(torus);
+
+// ====== Luxvar Words & Audio Files ======
+const luxvarColumns = [
+  { word: "ŠAURÉN", color: 0x6a0dad, audio: "audio/shauren.mp3" },
+  { word: "ṆĀRAH–ŠĀ", color: 0x0057b8, audio: "audio/narahsha.mp3" },
+  { word: "ZARTH", color: 0x4682b4, audio: "audio/zarth.mp3" },
+  { word: "VUUM", color: 0x1e90ff, audio: "audio/vuum.mp3" },
+  { word: "ELŪZ", color: 0x00ced1, audio: "audio/eluz.mp3" },
+  { word: "MAHAR", color: 0x20b2aa, audio: "audio/mahar.mp3" },
+  { word: "SĀR", color: 0x32cd32, audio: "audio/sar.mp3" },
+  { word: "RAHTALĒN", color: 0xff8c00, audio: "audio/rahtalen.mp3" },
+  { word: "ŠALŌM", color: 0xff4500, audio: "audio/shalom.mp3" },
+  { word: "ḤATTAH", color: 0xff1493, audio: "audio/hattah.mp3" },
+  { word: "ANĀLŪZ", color: 0xdb7093, audio: "audio/analuz.mp3" },
+  { word: "VARZIN", color: 0xffffff, audio: "audio/varzin.mp3" }
+];
+
+// ====== Audio Player ======
+let currentAudio = null;
+function playColumnAudio(filePath) {
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
+  currentAudio = new Audio(filePath);
+  currentAudio.volume = 1.0;
+  currentAudio.play();
 }
+
+// ====== Process Question ======
 function processQuestion() {
-  const q = document.getElementById('askInput').value.trim();
+  const q = document.getElementById("askInput").value.trim();
+  document.getElementById("askModal").style.display = 'none';
   if (!q) return;
-  document.getElementById('askModal').style.display = 'none';
+
+  // Column selection by wave key
   let sum = 0;
-  for (let i=0; i<q.length; i++) sum += q.charCodeAt(i);
+  for (let i = 0; i < q.length; i++) sum += q.charCodeAt(i);
   const phi = 1.618;
   const key = Math.floor((sum / phi) % 12);
-  const chosen = luxvar[key];
-  document.getElementById('message').innerHTML = chosen;
-  document.getElementById('message').style.opacity = 1;
-  setTimeout(()=>{document.getElementById('message').style.opacity = 0;},5000);
-}
 
-// ====== Animate ======
-let clock = new THREE.Clock();
-function animate() {
-  requestAnimationFrame(animate);
-  const t = clock.getElapsedTime();
-  torus.rotation.x += 0.005 * (3/5);
-  torus.rotation.y += 0.005;
-  const cShift = (Math.sin(t * Math.PI / 8) + 1) / 2;
-  torus.material.color.setHSL(0.66 - 0.1 * cShift, 1, 0.5);
-  renderer.render(scene, camera);
-}
-animate();
+  const chosen = luxvarColumns[key];
+  torus.material.color.set(chosen.color);
 
-// ====== Wake-Up Effect ======
-window.addEventListener('click', ()=> {
-  document.getElementById('overlay').style.opacity = 0;
-  initAudio();
-},{once:true});
-</script>
-</body>
-</html>
+  // Show response text
+  const msg = document.getElementById("message");
+  msg.innerHTML = <b>${chosen.word}</b><br><i>Resonance Activated</i>;
+  msg.style.opacity = 1;
+  setTimeout(() => { msg.style.opacity = 0; }, 6000);
