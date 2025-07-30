@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- صفحه اصلی -->
+  <url>
+    <loc>https://varzin.org/</loc>
+    <lastmod>2025-07-30</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- سند علمی -->
+  <url>
+    <loc>https://varzin.org/VARZIN_Energy_Profile_FULL_Final.pdf</loc>
+    <lastmod>2025-07-30</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- فایل صوتی -->
+  <url>
+    <loc>https://varzin.org/luxvar_whisper.mp3</loc>
+    <lastmod>2025-07-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- نمونه یک فایل پروژه -->
+  <url>
+    <loc>https://varzin.org/Scientific_Reflections.pdf</loc>
+    <lastmod>2025-07-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
