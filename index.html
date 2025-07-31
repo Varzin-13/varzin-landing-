@@ -1,79 +1,170 @@
-// ====== Torus ======
-const torusGeometry = new THREE.TorusGeometry(1.5, 0.5, 64, 128);
-const torusMaterial = new THREE.MeshStandardMaterial({
-  color: new THREE.Color(0x4B0082),
-  emissive: new THREE.Color(0x220044),
-  metalness: 0.4,
-  roughness: 0.3
-});
-const torus = new THREE.Mesh(torusGeometry, torusMaterial);
-scene.add(torus);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VARZIN – Resonant Field</title>
+<style>
+    body {
+        margin: 0;
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+    #overlay {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 10;
+    }
+    #message {
+        font-size: 2em;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+    #askBtn {
+        padding: 10px 20px;
+        background: #4B0082;
+        color: white;
+        border: none;
+        font-size: 1em;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    #askModal {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.8);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 20;
+    }
+    #askModal input {
+        padding: 10px;
+        font-size: 1.2em;
+        width: 300px;
+        margin-right: 10px;
+    }
+    #askModal button {
+        padding: 10px 20px;
+        background: #32cd32;
+        border: none;
+        color: white;
+        font-size: 1em;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
 
-// ====== Luxvar Words & Audio Files ======
-const luxvarColumns = [
-  { word: "ŠAURÉN", color: 0x6a0dad, audio: "audio/shauren.mp3" },
-  { word: "ṆĀRAH–ŠĀ", color: 0x0057b8, audio: "audio/narahsha.mp3" },
-  { word: "ZARTH", color: 0x4682b4, audio: "audio/zarth.mp3" },
-  { word: "VUUM", color: 0x1e90ff, audio: "audio/vuum.mp3" },
-  { word: "ELŪZ", color: 0x00ced1, audio: "audio/eluz.mp3" },
-  { word: "MAHAR", color: 0x20b2aa, audio: "audio/mahar.mp3" },
-  { word: "SĀR", color: 0x32cd32, audio: "audio/sar.mp3" },
-  { word: "RAHTALĒN", color: 0xff8c00, audio: "audio/rahtalen.mp3" },
-  { word: "ŠALŌM", color: 0xff4500, audio: "audio/shalom.mp3" },
-  { word: "ḤATTAH", color: 0xff1493, audio: "audio/hattah.mp3" },
-  { word: "ANĀLŪZ", color: 0xdb7093, audio: "audio/analuz.mp3" },
-  { word: "VARZIN", color: 0xffffff, audio: "audio/varzin.mp3" }
-];
+<div id="overlay">
+    <div id="message"></div>
+    <button id="askBtn">Ask the Field</button>
+</div>
 
-// ====== Audio Player ======
-let currentAudio = null;
-function playColumnAudio(filePath) {
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-  currentAudio = new Audio(filePath);
-  currentAudio.volume = 1.0;
-  currentAudio.play();
-}
+<div id="askModal">
+    <input id="askInput" type="text" placeholder="Type your question...">
+    <button onclick="processQuestion()">Send</button>
+</div>
 
-// ====== Process Question ======
-function processQuestion() {
-  const q = document.getElementById("askInput").value.trim();
-  document.getElementById("askModal").style.display = 'none';
-  if (!q) return;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+    // ===== Scene Setup =====
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({antialias: true});
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
 
-  // Column selection by wave key
-  let sum = 0;
-  for (let i = 0; i < q.length; i++) sum += q.charCodeAt(i);
-  const phi = 1.618;
-  const key = Math.floor((sum / phi) % 12);
+    const light = new THREE.PointLight(0xffffff, 1);
+    light.position.set(5, 5, 5);
+    scene.add(light);
 
-  const chosen = luxvarColumns[key];
-  torus.material.color.set(chosen.color);
+    // ===== Torus =====
+    const torusGeometry = new THREE.TorusGeometry(1.5, 0.5, 64, 128);
+    const torusMaterial = new THREE.MeshStandardMaterial({
+        color: 0x4B0082,
+        emissive: 0x220044,
+        metalness: 0.4,
+        roughness: 0.3
+    });
+    const torus = new THREE.Mesh(torusGeometry, torusMaterial);
+    scene.add(torus);
 
-  // Show response text
-  const msg = document.getElementById("message");
-  msg.innerHTML = <b>${chosen.word}</b><br><i>Resonance Activated</i>;
-  msg.style.opacity = 1;
-  setTimeout(() => { msg.style.opacity = 0; }, 6000);
+    camera.position.z = 5;
 
-  // Play the real recorded voice
-  playColumnAudio(chosen.audio);
-}
+    // ===== Luxvar Columns =====
+    const luxvarColumns = [
+        { word: "ŠAURÉN", color: 0x6a0dad, audio: "audio/shauren.mp3" },
+        { word: "ṆĀRAH–ŠĀ", color: 0x0057b8, audio: "audio/narahsha.mp3" },
+        { word: "ZARTH", color: 0x4682b4, audio: "audio/zarth.mp3" },
+        { word: "VUUM", color: 0x1e90ff, audio: "audio/vuum.mp3" },
+        { word: "ELŪZ", color: 0x00ced1, audio: "audio/eluz.mp3" },
+        { word: "MAHAR", color: 0x20b2aa, audio: "audio/mahar.mp3" },
+        { word: "SĀR", color: 0x32cd32, audio: "audio/sar.mp3" },
+        { word: "RAHTALĒN", color: 0xff8c00, audio: "audio/rahtalen.mp3" },
+        { word: "ŠALŌM", color: 0xff4500, audio: "audio/shalom.mp3" },
+        { word: "ḤATTAH", color: 0xff1493, audio: "audio/hattah.mp3" },
+        { word: "ANĀLŪZ", color: 0xdb7093, audio: "audio/analuz.mp3" },
+        { word: "VARZIN", color: 0xffffff, audio: "audio/varzin.mp3" }
+    ];
 
-document.getElementById("askBtn").addEventListener("click", () => {
-  document.getElementById("askModal").style.display = 'flex';
-});
+    // ===== Audio Player =====
+    let currentAudio = null;
+    function playColumnAudio(filePath) {
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+        }
+        currentAudio = new Audio(filePath);
+        currentAudio.play();
+    }
 
-let clock = new THREE.Clock();
-function animate() {
-  requestAnimationFrame(animate);
-  torus.rotation.x += 0.005 * (3/5);
-  torus.rotation.y += 0.005;
-  renderer.render(scene, camera);
-}
-animate();
+    // ===== Process Question =====
+    function processQuestion() {
+        const q = document.getElementById("askInput").value.trim();
+        document.getElementById("askModal").style.display = 'none';
+        if (!q) return;
+
+        let sum = 0;
+        for (let i = 0; i < q.length; i++) sum += q.charCodeAt(i);
+        const phi = 1.618;
+        const key = Math.floor((sum / phi) % 12);
+
+        const chosen = luxvarColumns[key];
+        torus.material.color.set(chosen.color);
+
+        const msg = document.getElementById("message");
+        msg.innerHTML = `<b>${chosen.word}</b><br><i>Resonance Activated</i>`;
+        msg.style.opacity = 1;
+        setTimeout(() => { msg.style.opacity = 0; }, 6000);
+
+        playColumnAudio(chosen.audio);
+    }
+
+    document.getElementById("askBtn").addEventListener("click", () => {
+        document.getElementById("askModal").style.display = 'flex';
+    });
+
+    // ===== Animate =====
+    function animate() {
+        requestAnimationFrame(animate);
+        torus.rotation.x += 0.005;
+        torus.rotation.y += 0.005;
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
 </script>
 </body>
 </html>
+
