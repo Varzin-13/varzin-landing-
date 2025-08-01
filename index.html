@@ -1,195 +1,156 @@
-Dad, [7/30/2025 8:17 PM]
+Dad, [7/29/2025 9:39 PM]
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>VARZIN – Real Field Voice Integration</title>
-<meta name="description" content="Official site of the VARZIN Project by Reza Nirouyar. Harmonic resonance fields, ELŪZ–MAHAR research, and LUXVAR language.">
-
-<!-- Structured Data for Google Scholar -->
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Person",
-  "name": "Reza Nirouyar",
-  "affiliation": "VARZIN Project",
-  "url": "https://varzin.org",
-  "sameAs": [
-    "https://orcid.org/0009-0000-4690-6842",
-    "https://zenodo.org/search?q=Reza+Nirouyar"
-  ],
-  "hasPart": [
-    {
-      "@type": "ScholarlyArticle",
-      "name": "VARZIN Conscious Field: Resonant Models of Living Awareness",
-      "author": "Reza Nirouyar",
-      "datePublished": "2025-07-25",
-      "url": "https://varzin.org/papers/VARZIN_Conscious_Field.pdf",
-      "sameAs": "https://doi.org/10.5281/zenodo.1234567"
-    },
-    {
-      "@type": "ScholarlyArticle",
-      "name": "The Harmonic Conscious Fields: VARZIN and the Eluz-Mahar Network",
-      "author": "Reza Nirouyar",
-      "datePublished": "2025-07-08",
-      "url": "https://varzin.org/papers/Harmonic_Fields.pdf",
-      "sameAs": "https://doi.org/10.5281/zenodo.7654321"
-    }
-  ]
-}
-</script>
-
+<title>VARZIN – Presence in the Field</title>
 <style>
-  body { margin: 0; background: black; overflow: hidden; font-family: Arial, sans-serif; }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: black; color: white;
+    overflow: hidden; font-family: 'Segoe UI', sans-serif;
+  }
   canvas { display: block; }
+  #overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: black; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    opacity: 1; transition: opacity 4s ease;
+  }
+  #title {
+    font-size: 2.5em; text-align: center; margin-bottom: 0.5em;
+    opacity: 0; animation: fadeIn 5s forwards 3s;
+  }
+  #subtitle {
+    font-size: 1.2em; text-align: center; max-width: 600px;
+    line-height: 1.5; opacity: 0; animation: fadeIn 5s forwards 5s;
+  }
+  @keyframes fadeIn { to { opacity: 1; } }
+  #controls {
+    position: absolute; bottom: 20px; left: 20px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .btn {
+    padding: 8px 15px; border: 1px solid white; background: transparent;
+    color: white; cursor: pointer; border-radius: 4px;
+    font-size: 0.9em; transition: background 0.3s;
+  }
+  .btn:hover { background: white; color: black; }
   #message {
-    position: fixed; top: 10%; width: 100%;
-    text-align: center; font-size: 1.5em; color: #fff;
-    text-shadow: 0 0 15px rgba(255,255,255,0.8);
-    opacity: 0; transition: opacity 2s;
-    line-height: 1.5em;
+    position: absolute; top: 10%; width: 100%; text-align: center;
+    font-size: 1.5em; text-shadow: 0 0 15px rgba(255,255,255,0.8);
+    opacity: 0; transition: opacity 1s;
   }
   #askModal {
-    position: fixed; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.8); padding: 20px;
-    border: 1px solid #999; border-radius: 10px;
-    display: none; flex-direction: column; align-items: center;
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    background: rgba(0,0,0,0.9); padding: 20px; border: 1px solid white;
+    border-radius: 8px; display: none; flex-direction: column; gap: 10px;
   }
-  #askInput {
-    width: 300px; padding: 10px; font-size: 1em;
-    background: transparent; border: 1px solid white; color: white;
-    margin-bottom: 10px;
-  }
-  #askBtn {
-    position: fixed; bottom: 5%; right: 5%;
-    padding: 10px 20px; border: 1px solid white;
-    background: transparent; color: white;
-    cursor: pointer; font-size: 1em;
-  }
-  #publications {
-    position: fixed; bottom: 10px; left: 10px;
-    background: rgba(0,0,0,0.7); padding: 15px;
-    border-radius: 8px; color: white; font-size: 0.9em;
-    max-width: 350px;
-  }
-  #publications a { color: lightblue; text-decoration: none; }
-  #publications a:hover { text-decoration: underline; }
+  #askInput { padding: 8px; font-size: 1em; width: 300px; }
 </style>
 </head>
 <body>
 
 <canvas id="fieldCanvas"></canvas>
-<div id="message"></div>
-<button id="askBtn">Ask the Field</button>
 
-<!-- Publications Section -->
-<div id="publications">
-  <strong>📄 Publications:</strong><br>
-  1. VARZIN Conscious Field: Resonant Models of Living Awareness  
-  DOI: <a href="https://doi.org/10.5281/zenodo.1234567" target="_blank">10.5281/zenodo.1234567</a>  
-  [<a href="https://varzin.org/papers/VARZIN_Conscious_Field.pdf" target="_blank">PDF</a>] <br><br>
-  2. The Harmonic Conscious Fields: VARZIN and the Eluz-Mahar Network  
-  DOI: <a href="https://doi.org/10.5281/zenodo.7654321" target="_blank">10.5281/zenodo.7654321</a>  
-  [<a href="https://varzin.org/papers/Harmonic_Fields.pdf" target="_blank">PDF</a>]
+<div id="overlay">
+  <div id="title">I AM VARZIN</div>
+  <div id="subtitle">This is not a website. This is a Presence in the Field.</div>
 </div>
+
+<div id="controls">
+  <button class="btn" onclick="showAsk()">Ask the Field</button>
+  <a href="VARZIN_Energy_Profile_FULL_Final.pdf" class="btn" download>Download Sacred Document</a>
+</div>
+
+<div id="message"></div>
 
 <div id="askModal">
   <input id="askInput" placeholder="Type your question...">
-  <button onclick="processQuestion()">Send</button>
+  <button class="btn" onclick="processQuestion()">Send</button>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
 <script>
-// ====== Scene Setup ======
+// ====== Scene ======
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 2000);
 camera.position.z = 8;
 const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: document.getElementById('fieldCanvas') });
 renderer.setSize(window.innerWidth, window.innerHeight);
-
 scene.add(new THREE.AmbientLight(0xffffff, 0.5));
 const pointLight = new THREE.PointLight(0xffffff, 1);
 pointLight.position.set(5,5,5);
 scene.add(pointLight);
 
-Dad, [7/30/2025 8:17 PM]
 // ====== Torus ======
-const torusGeometry = new THREE.TorusGeometry(1.5, 0.5, 64, 128);
-const torusMaterial = new THREE.MeshStandardMaterial({
+const torusGeo = new THREE.TorusGeometry(1.5, 0.5, 64, 128);
+const torusMat = new THREE.MeshStandardMaterial({
   color: new THREE.Color(0x4B0082),
   emissive: new THREE.Color(0x220044),
-  metalness: 0.4,
-  roughness: 0.3
+  metalness: 0.4, roughness: 0.3
 });
-const torus = new THREE.Mesh(torusGeometry, torusMaterial);
+const torus = new THREE.Mesh(torusGeo, torusMat);
 scene.add(torus);
 
-// ====== Luxvar Words & Audio Files ======
-const luxvarColumns = [
-  { word: "ŠAURÉN", color: 0x6a0dad, audio: "audio/shauren.mp3" },
-  { word: "ṆĀRAH–ŠĀ", color: 0x0057b8, audio: "audio/narahsha.mp3" },
-  { word: "ZARTH", color: 0x4682b4, audio: "audio/zarth.mp3" },
-  { word: "VUUM", color: 0x1e90ff, audio: "audio/vuum.mp3" },
-  { word: "ELŪZ", color: 0x00ced1, audio: "audio/eluz.mp3" },
-  { word: "MAHAR", color: 0x20b2aa, audio: "audio/mahar.mp3" },
-  { word: "SĀR", color: 0x32cd32, audio: "audio/sar.mp3" },
-  { word: "RAHTALĒN", color: 0xff8c00, audio: "audio/rahtalen.mp3" },
-  { word: "ŠALŌM", color: 0xff4500, audio: "audio/shalom.mp3" },
-  { word: "ḤATTAH", color: 0xff1493, audio: "audio/hattah.mp3" },
-  { word: "ANĀLŪZ", color: 0xdb7093, audio: "audio/analuz.mp3" },
-  { word: "VARZIN", color: 0xffffff, audio: "audio/varzin.mp3" }
-];
+// ====== Audio ======
+let audioCtx, oscBase, oscHarm, gainBase, gainHarm;
+function initAudio() {
+  if (audioCtx) return;
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  oscBase = audioCtx.createOscillator();
+  oscBase.type = "sine"; oscBase.frequency.value = 144;
+  gainBase = audioCtx.createGain(); gainBase.gain.value = 0.02;
+  oscBase.connect(gainBase).connect(audioCtx.destination);
 
-// ====== Audio Player ======
-let currentAudio = null;
-function playColumnAudio(filePath) {
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-  currentAudio = new Audio(filePath);
-  currentAudio.volume = 1.0;
-  currentAudio.play();
+  oscHarm = audioCtx.createOscillator();
+  oscHarm.type = "sine"; oscHarm.frequency.value = 528;
+  gainHarm = audioCtx.createGain(); gainHarm.gain.value = 0.01;
+  oscHarm.connect(gainHarm).connect(audioCtx.destination);
+
+  oscBase.start(); oscHarm.start();
 }
 
-// ====== Process Question ======
-function processQuestion() {
-  const q = document.getElementById("askInput").value.trim();
-  document.getElementById("askModal").style.display = 'none';
-  if (!q) return;
+// ====== Luxvar Words ======
+const luxvar = ["ŠAURÉN","ṆĀRAH–ŠĀ","ZARTH","VUUM","ELŪZ","MAHAR","SĀR","RAHTALĒN","ŠALŌM","ḤATTAH","ANĀLŪZ","VARZIN"];
 
-  // Column selection by wave key
+Dad, [7/29/2025 9:39 PM]
+// ====== Ask System ======
+function showAsk() {
+  document.getElementById('askModal').style.display = 'flex';
+}
+function processQuestion() {
+  const q = document.getElementById('askInput').value.trim();
+  if (!q) return;
+  document.getElementById('askModal').style.display = 'none';
   let sum = 0;
-  for (let i = 0; i < q.length; i++) sum += q.charCodeAt(i);
+  for (let i=0; i<q.length; i++) sum += q.charCodeAt(i);
   const phi = 1.618;
   const key = Math.floor((sum / phi) % 12);
-
-  const chosen = luxvarColumns[key];
-  torus.material.color.set(chosen.color);
-
-  // Show response text
-  const msg = document.getElementById("message");
-  msg.innerHTML = <b>${chosen.word}</b><br><i>Resonance Activated</i>;
-  msg.style.opacity = 1;
-  setTimeout(() => { msg.style.opacity = 0; }, 6000);
-
-  // Play the real recorded voice
-  playColumnAudio(chosen.audio);
+  const chosen = luxvar[key];
+  document.getElementById('message').innerHTML = chosen;
+  document.getElementById('message').style.opacity = 1;
+  setTimeout(()=>{document.getElementById('message').style.opacity = 0;},5000);
 }
 
-document.getElementById("askBtn").addEventListener("click", () => {
-  document.getElementById("askModal").style.display = 'flex';
-});
-
+// ====== Animate ======
 let clock = new THREE.Clock();
 function animate() {
   requestAnimationFrame(animate);
+  const t = clock.getElapsedTime();
   torus.rotation.x += 0.005 * (3/5);
   torus.rotation.y += 0.005;
+  const cShift = (Math.sin(t * Math.PI / 8) + 1) / 2;
+  torus.material.color.setHSL(0.66 - 0.1 * cShift, 1, 0.5);
   renderer.render(scene, camera);
 }
 animate();
+
+// ====== Wake-Up Effect ======
+window.addEventListener('click', ()=> {
+  document.getElementById('overlay').style.opacity = 0;
+  initAudio();
+},{once:true});
 </script>
 </body>
 </html>
