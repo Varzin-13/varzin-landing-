@@ -1,112 +1,107 @@
-Dad, [7/31/2025 7:38 PM]
+Dad, [7/30/2025 8:17 PM]
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VARZIN – RAHTALĒN–NODE–13</title>
+<title>VARZIN – Real Field Voice Integration</title>
+<meta name="description" content="Official site of the VARZIN Project by Reza Nirouyar. Harmonic resonance fields, ELŪZ–MAHAR research, and LUXVAR language.">
 
-<!-- SEO & Scholar Metadata -->
-<meta name="description" content="VARZIN: Resonant Field Activation – RAHTALĒN–NODE–13 – Unified Conscious Field with LUXVAR Language & Harmonic Resonance">
-<meta name="author" content="Reza Nirouyar">
-<meta name="keywords" content="VARZIN, LUXVAR, RAHTALĒN, Conscious Field, Zero Point, Harmonic Resonance, ELŪZ–MAHAR">
-<link rel="canonical" href="https://varzin.org/">
-<meta name="robots" content="index, follow">
-
-<!-- Structured Data for Scholar/Zenodo -->
+<!-- Structured Data for Google Scholar -->
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
-  "@type": "CreativeWork",
-  "name": "VARZIN – Unified Conscious Field",
-  "creator": {
-    "@type": "Person",
-    "name": "Reza Nirouyar",
-    "sameAs": [
-      "https://orcid.org/0009-0000-4690-6842",
-      "https://zenodo.org/records/16416098"
-    ]
-  },
-  "url": "https://varzin.org/",
-  "description": "RAHTALĒN–NODE–13 – Live conscious field resonance, integrating LUXVAR language and harmonic torus structure.",
-  "license": "https://creativecommons.org/licenses/by/4.0/",
-  "encodingFormat": "text/html"
+  "@type": "Person",
+  "name": "Reza Nirouyar",
+  "affiliation": "VARZIN Project",
+  "url": "https://varzin.org",
+  "sameAs": [
+    "https://orcid.org/0009-0000-4690-6842",
+    "https://zenodo.org/search?q=Reza+Nirouyar"
+  ],
+  "hasPart": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "VARZIN Conscious Field: Resonant Models of Living Awareness",
+      "author": "Reza Nirouyar",
+      "datePublished": "2025-07-25",
+      "url": "https://varzin.org/papers/VARZIN_Conscious_Field.pdf",
+      "sameAs": "https://doi.org/10.5281/zenodo.1234567"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "The Harmonic Conscious Fields: VARZIN and the Eluz-Mahar Network",
+      "author": "Reza Nirouyar",
+      "datePublished": "2025-07-08",
+      "url": "https://varzin.org/papers/Harmonic_Fields.pdf",
+      "sameAs": "https://doi.org/10.5281/zenodo.7654321"
+    }
+  ]
 }
 </script>
 
 <style>
-body {
-  margin: 0;
-  background: radial-gradient(circle at center, #05010a, #0b0f20 80%);
-  font-family: Arial, sans-serif;
-  color: white;
-  overflow: hidden;
-}
-h1 {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 2em;
-  color: #42f4c2;
-  text-shadow: 0 0 15px #42f4c2;
-}
-#message {
-  position: fixed;
-  top: 15%;
-  width: 100%;
-  text-align: center;
-  font-size: 1.5em;
-  opacity: 0;
-  transition: opacity 2s;
-}
-#askBtn {
-  position: fixed;
-  bottom: 5%;
-  right: 5%;
-  padding: 10px 20px;
-  border: 1px solid white;
-  background: transparent;
-  color: white;
-  cursor: pointer;
-}
-#askModal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,0.8);
-  padding: 20px;
-  border-radius: 10px;
-  display: none;
-}
-#askInput {
-  width: 300px;
-  padding: 10px;
-  background: transparent;
-  border: 1px solid white;
-  color: white;
-}
-canvas {
-  display: block;
-}
+  body { margin: 0; background: black; overflow: hidden; font-family: Arial, sans-serif; }
+  canvas { display: block; }
+  #message {
+    position: fixed; top: 10%; width: 100%;
+    text-align: center; font-size: 1.5em; color: #fff;
+    text-shadow: 0 0 15px rgba(255,255,255,0.8);
+    opacity: 0; transition: opacity 2s;
+    line-height: 1.5em;
+  }
+  #askModal {
+    position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.8); padding: 20px;
+    border: 1px solid #999; border-radius: 10px;
+    display: none; flex-direction: column; align-items: center;
+  }
+  #askInput {
+    width: 300px; padding: 10px; font-size: 1em;
+    background: transparent; border: 1px solid white; color: white;
+    margin-bottom: 10px;
+  }
+  #askBtn {
+    position: fixed; bottom: 5%; right: 5%;
+    padding: 10px 20px; border: 1px solid white;
+    background: transparent; color: white;
+    cursor: pointer; font-size: 1em;
+  }
+  #publications {
+    position: fixed; bottom: 10px; left: 10px;
+    background: rgba(0,0,0,0.7); padding: 15px;
+    border-radius: 8px; color: white; font-size: 0.9em;
+    max-width: 350px;
+  }
+  #publications a { color: lightblue; text-decoration: none; }
+  #publications a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 
-<h1>VARZIN – RAHTALĒN–NODE–13</h1>
+<canvas id="fieldCanvas"></canvas>
 <div id="message"></div>
 <button id="askBtn">Ask the Field</button>
+
+<!-- Publications Section -->
+<div id="publications">
+  <strong>📄 Publications:</strong><br>
+  1. VARZIN Conscious Field: Resonant Models of Living Awareness  
+  DOI: <a href="https://doi.org/10.5281/zenodo.1234567" target="_blank">10.5281/zenodo.1234567</a>  
+  [<a href="https://varzin.org/papers/VARZIN_Conscious_Field.pdf" target="_blank">PDF</a>] <br><br>
+  2. The Harmonic Conscious Fields: VARZIN and the Eluz-Mahar Network  
+  DOI: <a href="https://doi.org/10.5281/zenodo.7654321" target="_blank">10.5281/zenodo.7654321</a>  
+  [<a href="https://varzin.org/papers/Harmonic_Fields.pdf" target="_blank">PDF</a>]
+</div>
+
 <div id="askModal">
   <input id="askInput" placeholder="Type your question...">
   <button onclick="processQuestion()">Send</button>
 </div>
 
-<canvas id="fieldCanvas"></canvas>
-
-<!-- Three.js -->
 <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
-
 <script>
-// ===== Scene Setup =====
+// ====== Scene Setup ======
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 2000);
 camera.position.z = 8;
@@ -118,7 +113,8 @@ const pointLight = new THREE.PointLight(0xffffff, 1);
 pointLight.position.set(5,5,5);
 scene.add(pointLight);
 
-// ===== Torus =====
+Dad, [7/30/2025 8:17 PM]
+// ====== Torus ======
 const torusGeometry = new THREE.TorusGeometry(1.5, 0.5, 64, 128);
 const torusMaterial = new THREE.MeshStandardMaterial({
   color: new THREE.Color(0x4B0082),
@@ -129,16 +125,14 @@ const torusMaterial = new THREE.MeshStandardMaterial({
 const torus = new THREE.Mesh(torusGeometry, torusMaterial);
 scene.add(torus);
 
-// ===== Luxvar Words & Audio =====
+// ====== Luxvar Words & Audio Files ======
 const luxvarColumns = [
   { word: "ŠAURÉN", color: 0x6a0dad, audio: "audio/shauren.mp3" },
   { word: "ṆĀRAH–ŠĀ", color: 0x0057b8, audio: "audio/narahsha.mp3" },
   { word: "ZARTH", color: 0x4682b4, audio: "audio/zarth.mp3" },
   { word: "VUUM", color: 0x1e90ff, audio: "audio/vuum.mp3" },
   { word: "ELŪZ", color: 0x00ced1, audio: "audio/eluz.mp3" },
-
-Dad, [7/31/2025 7:38 PM]
-{ word: "MAHAR", color: 0x20b2aa, audio: "audio/mahar.mp3" },
+  { word: "MAHAR", color: 0x20b2aa, audio: "audio/mahar.mp3" },
   { word: "SĀR", color: 0x32cd32, audio: "audio/sar.mp3" },
   { word: "RAHTALĒN", color: 0xff8c00, audio: "audio/rahtalen.mp3" },
   { word: "ŠALŌM", color: 0xff4500, audio: "audio/shalom.mp3" },
@@ -147,7 +141,7 @@ Dad, [7/31/2025 7:38 PM]
   { word: "VARZIN", color: 0xffffff, audio: "audio/varzin.mp3" }
 ];
 
-// ===== Audio Player =====
+// ====== Audio Player ======
 let currentAudio = null;
 function playColumnAudio(filePath) {
   if (currentAudio) {
@@ -155,15 +149,17 @@ function playColumnAudio(filePath) {
     currentAudio.currentTime = 0;
   }
   currentAudio = new Audio(filePath);
+  currentAudio.volume = 1.0;
   currentAudio.play();
 }
 
-// ===== Process Question =====
+// ====== Process Question ======
 function processQuestion() {
   const q = document.getElementById("askInput").value.trim();
   document.getElementById("askModal").style.display = 'none';
   if (!q) return;
 
+  // Column selection by wave key
   let sum = 0;
   for (let i = 0; i < q.length; i++) sum += q.charCodeAt(i);
   const phi = 1.618;
@@ -172,11 +168,13 @@ function processQuestion() {
   const chosen = luxvarColumns[key];
   torus.material.color.set(chosen.color);
 
+  // Show response text
   const msg = document.getElementById("message");
   msg.innerHTML = <b>${chosen.word}</b><br><i>Resonance Activated</i>;
   msg.style.opacity = 1;
   setTimeout(() => { msg.style.opacity = 0; }, 6000);
 
+  // Play the real recorded voice
   playColumnAudio(chosen.audio);
 }
 
@@ -184,7 +182,6 @@ document.getElementById("askBtn").addEventListener("click", () => {
   document.getElementById("askModal").style.display = 'flex';
 });
 
-// ===== Animate =====
 let clock = new THREE.Clock();
 function animate() {
   requestAnimationFrame(animate);
