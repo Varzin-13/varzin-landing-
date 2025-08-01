@@ -1,3 +1,4 @@
+Dad, [8/1/2025 2:36 PM]
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,7 +131,8 @@
         document.getElementById("askModal").style.display = 'none';
         if (!q) return;
 
-        let sum = 0;
+Dad, [8/1/2025 2:36 PM]
+let sum = 0;
         for (let i = 0; i < q.length; i++) sum += q.charCodeAt(i);
         const phi = 1.618;
         const key = Math.floor((sum / phi) % 12);
@@ -139,7 +141,7 @@
         torus.material.color.set(chosen.color);
 
         const msg = document.getElementById("message");
-        msg.innerHTML = `<b>${chosen.word}</b><br><i>Resonance Activated</i>`;
+        msg.innerHTML = <b>${chosen.word}</b><br><i>Resonance Activated</i>;
         msg.style.opacity = 1;
         setTimeout(() => { msg.style.opacity = 0; }, 6000);
 
@@ -167,4 +169,3 @@
 </script>
 </body>
 </html>
-
