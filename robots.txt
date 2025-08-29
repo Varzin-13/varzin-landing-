@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://varzin.org/sitemap.xml
