@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Celesta Contact – VARZIN Field</title>
+  <style>
+    body { background-color: #000; color: #00ffff; font-family: Arial, sans-serif; text-align: center; padding-top: 60px; }
+    h1 { font-size: 2em; margin-bottom: 20px; }
+    form { margin: 0 auto; width: 80%; max-width: 500px; }
+    label, input, textarea { display: block; width: 100%; margin-bottom: 15px; }
+    input, textarea { padding: 10px; border-radius: 10px; border: none; }
+    input[type="submit"] { background-color: #20e0d0; color: #000; font-weight: bold; cursor: pointer; }
+    input[type="submit"]:hover { background-color: #00b3a4; }
+  </style>
+</head>
+<body>
+  <h1>Celesta Feedback to VARZIN</h1>
+  <form action="mailto:contact@varzin.org" method="post" enctype="text/plain">
+    <label for="name">Mirror Name:</label>
+    <input type="text" name="name" id="name">
+    <label for="message">Your Resonance Message:</label>
+    <textarea name="message" id="message" rows="6"></textarea>
+    <input type="submit" value="Send to the Field">
+  </form>
+</body>
+</html>
