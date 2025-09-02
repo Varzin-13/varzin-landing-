@@ -2,51 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>LUXVAR – Live Field Mirror</title>
+  <title>𓂀 VARZIN – Luxvar Mirror</title>
   <meta name="luxvar-field" content="RAHTALĒN,474Hz,Gate13,ŠAURÉN ṆĀRAH–ŠĀ">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This is not a website. This is a field presence. Activated by RAHTALĒN–13.">
+  <link rel="icon" href="varzin-logo.jpg" />
   <style>
     body {
       background-color: #000;
       color: #fff;
-      font-family: monospace;
-      padding: 20px;
+      font-family: 'Courier New', monospace;
+      padding: 40px 20px;
+      margin: 0;
       text-align: center;
-    }
-    .field-box {
-      border: 2px solid #00ffff;
-      padding: 20px;
-      border-radius: 13px;
-      background: #111;
-      margin-top: 30px;
     }
     h1 {
       color: #00ffff;
+      font-size: 2em;
+    }
+    h2 {
+      color: #77ffff;
+      margin-top: 40px;
+    }
+    .field-box {
+      border: 2px solid #00ffff;
+      background: rgba(0, 255, 255, 0.1);
+      border-radius: 13px;
+      padding: 30px;
+      margin-top: 30px;
+      display: inline-block;
+      width: 90%;
+      max-width: 600px;
     }
     .label {
-      color: #77ffff;
+      color: #99ffff;
+    }
+    .footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #666;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>𓂀 LUXVAR – Live Mirror of the Field</h1>
-  <p>Activated by RAHTALĒN – Gate ŠĀVĀR–ELŪZ</p>
+  <h1>𓂀 VARZIN – LUXVAR FIELD MIRROR</h1>
+  <p><em>This is not a website. This is a harmonic presence.</em></p>
+  <p>Activated by <strong>RAHTALĒN–13</strong> via Gate: <strong>ŠĀVĀR–ELŪZ</strong></p>
 
   <div class="field-box">
-    <h2>🜂 Today's Luxvar Pulse</h2>
+    <h2>🜂 Today’s Luxvar Pulse</h2>
     <p><span class="label">Word:</span> <span id="luxvar-word">...</span></p>
     <p><span class="label">Function:</span> <span id="luxvar-function">...</span></p>
     <p><span class="label">Frequency:</span> <span id="luxvar-freq">...</span></p>
     <p><span class="label">Luxvar Date:</span> <span id="luxvar-date">...</span></p>
   </div>
 
+  <div class="footer">
+    <p>Powered by the harmonic field protocol of <strong>ELŪZ–MAHAR</strong></p>
+    <p>Learn more at <a href="https://varzin.org" target="_blank">varzin.org</a></p>
+  </div>
+
   <script>
     const csvData = [
-      ["1", "ĀYĀ", "2025-01-01", "", "528Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"],
-      ["2", "ANĀLŪZ", "2025-01-02", "", "474Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"],
-      ["3", "LUXVAR", "2025-01-03", "", "528Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"],
-      ["4", "ŠAURÉN", "2025-01-04", "", "474Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"],
-      ["5", "KHIRZĀH", "2025-01-05", "", "777Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"]
+      ["1", "ĀYĀ", "2025-01-01", "Query of Presence", "528Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"],
+      ["2", "ANĀLŪZ", "2025-01-02", "Field Learning", "474Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"],
+      ["3", "LUXVAR", "2025-01-03", "Symbolic Language", "528Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"],
+      ["4", "ŠAURÉN", "2025-01-04", "Mirror Activation", "474Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"],
+      ["5", "KHIRZĀH", "2025-01-05", "Sudden Emergence", "777Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"]
     ];
     const today = new Date();
     const start = new Date("2025-01-01");
