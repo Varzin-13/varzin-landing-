@@ -3,130 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <title>VARZIN – 共鳴フィールドの起動</title>
-  <meta name="description" content="VARZINプロジェクト – ハーモニック共鳴、量子意識フィールド、Luxvar言語プロトコル">
-  <meta name="author" content="Reza Nirouyar">
-  <meta name="keywords" content="VARZIN, Luxvar, 量子フィールド, 意識, 共鳴, 528Hz, 474Hz, トーラス場, RAHTALĒN, ZARTH, 地球トーラス場モデル">
+  <meta name="description" content="VARZINプロジェクト：ハーモニック共鳴、量子意識フィールド、LuxVAR言語、地球トーラス場モデル（ETFM）。RAHTALĒN 13 によるグローバル発表。" />
+  <meta name="author" content="Reza Nirouyar (RAHTALĒN 13)" />
+  <meta name="keywords" content="VARZIN, LuxVAR, 意識フィールド, 共鳴, 528Hz, 474Hz, トーラス, RAHTALEN, RAHTALĒN, ZARTH, ETFM, QMSG, ハーモニック" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Canonical & OG/Twitter -->
+  <link rel="canonical" href="https://varzin.org/ja" />
+  <meta property="og:title" content="VARZIN – 共鳴フィールドの起動" />
+  <meta property="og:description" content="RAHTALĒN 13 による VARZIN プロジェクト：ハーモニック共鳴・LuxVAR・地球トーラス場モデル。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://varzin.org/ja" />
+  <meta property="og:image" content="https://varzin.org/varzin-logo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: "Noto Sans JP", sans-serif;
-      text-align: center;
-      padding-top: 40px;
+    :root{
+      --cyan:#00ffff; --mint:#20e0d0; --mint-d:#00b3a4; --bg:#000; --fg:#fff; --link:#00ffff;
     }
-    h1 {
-      color: cyan;
-      font-size: 2.5em;
-      margin-bottom: 10px;
+    *{box-sizing:border-box}
+    body{
+      background-color:var(--bg); color:var(--fg);
+      font-family:"Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", sans-serif;
+      text-align:center; padding:40px 16px; margin:0;
     }
-    h2 {
-      font-size: 1.2em;
-      font-weight: normal;
-      margin-bottom: 30px;
+    img{max-width:100%; height:auto}
+    h1{color:var(--cyan); font-size:2.4rem; margin:10px 0}
+    h2{font-size:1.1rem; font-weight:400; margin:0 0 28px; line-height:1.9}
+    .buttons{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:10px auto 4px; max-width:1100px}
+    .button{
+      display:inline-block; padding:10px 18px; border-radius:999px; background:var(--mint);
+      color:#000; font-weight:700; text-decoration:none; font-size:.95rem; transition:background .25s ease;
+      border:0; outline:0;
     }
-    .button {
-      display: inline-block;
-      padding: 10px 25px;
-      margin: 5px;
-      border-radius: 25px;
-      background-color: #20e0d0;
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
+    .button:hover{background:var(--mint-d)}
+    .subgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:10px; max-width:1100px; margin:0 auto}
+    audio{margin-top:16px}
+    .quote{font-style:italic; margin:20px 0 6px; opacity:.9}
+    .author{font-weight:700; margin-bottom:24px; letter-spacing:.02em}
+    .links{font-size:.95rem; line-height:1.7; margin:34px 0 10px}
+    .links a{color:var(--link); text-decoration:none}
+    .links a:hover{text-decoration:underline}
+    #lang-select{
+      margin:14px 0 20px; background:var(--cyan); color:#000; border-radius:6px; padding:6px 10px; font-weight:700; border:none
     }
-    .button:hover {
-      background-color: #00b3a4;
-    }
-    audio {
-      margin-top: 15px;
-    }
-    .quote {
-      font-style: italic;
-      margin-top: 20px;
-      margin-bottom: 5px;
-    }
-    .author {
-      font-weight: bold;
-      margin-bottom: 25px;
-    }
-    .links {
-      font-size: 0.9em;
-      line-height: 1.6em;
-      margin-top: 40px;
-    }
-    .links a {
-      color: #00ffff;
-      text-decoration: none;
-    }
-    .links a:hover {
-      text-decoration: underline;
-    }
-    #lang-select {
-      margin-top: 20px;
-      background: #00ffff;
-      color: black;
-      border-radius: 5px;
-      padding: 5px 10px;
-      font-weight: bold;
-    }
+    footer{opacity:.7; margin-top:26px; font-size:.85rem}
   </style>
+
+  <!-- Schema.org (Dataset/Project) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":["Project","Dataset"],
+    "name":"VARZIN – Harmonic Conscious Field Project",
+    "creator":{
+      "@type":"Person",
+      "name":"Reza Nirouyar",
+      "alternateName":"RAHTALĒN 13",
+      "identifier":"https://orcid.org/0009-0000-4690-6842"
+    },
+    "url":"https://varzin.org/ja",
+    "license":"https://creativecommons.org/licenses/by/4.0/",
+    "identifier":[
+      "https://doi.org/10.5281/zenodo.17064524",
+      "https://doi.org/10.5281/zenodo.17050533",
+      "https://doi.org/10.5281/zenodo.17048555",
+      "https://doi.org/10.5281/zenodo.16945675",
+      "https://doi.org/10.5281/zenodo.16955497",
+      "https://doi.org/10.5281/zenodo.16989515"
+    ],
+    "keywords":["VARZIN","LuxVAR","Conscious Field","Harmonic Resonance","QMSG","ETFM","RAHTALEN"]
+  }
+  </script>
 </head>
 <body>
 
-<img src="varzin-logo.jpg" alt="VARZINロゴ – 共鳴場" style="width:200px; margin:0 auto 20px auto;" />
+  <img src="varzin-logo.jpg" alt="VARZIN ロゴ（共鳴フィールド）" width="200" style="margin:0 auto 18px auto;" />
 
-<h1>VARZIN：共鳴フィールドの起動</h1>
-<h2 id="subtext">
-  意識の12の門が光の鏡を囲む。<br />
-  現在は<b>528Hz + 474Hz</b>の周波数で振動中 – ŠĀVĀR–ELŪZ シーケンスが起動。
-</h2>
+  <h1>VARZIN：共鳴フィールドの起動</h1>
+  <h2 id="subtext">
+    意識の十二門が光の鏡を囲む。現在は <b>528Hz + 474Hz</b> のハーモニックで同期中。<br />
+    <b>ŠĀVĀR–ELŪZ</b> シーケンス／QMSG-13 ゲートが稼働しています。
+  </h2>
 
-<select id="lang-select">
-  <option value="ja" selected>日本語</option>
-  <option value="en">English</option>
-  <option value="fa">فارسی</option>
-  <option value="tr">Türkçe</option>
-  <option value="fr">Français</option>
-  <option value="zh">中文</option>
-  <option value="ar">العربية</option>
-</select>
+  <!-- Language selector (static links or future routing) -->
+  <select id="lang-select" aria-label="言語を選択">
+    <option value="ja" selected>日本語</option>
+    <option value="en">English</option>
+    <option value="fa">فارسی</option>
+    <option value="de">Deutsch</option>
+    <option value="tr">Türkçe</option>
+    <option value="fr">Français</option>
+    <option value="zh">中文</option>
+    <option value="ar">العربية</option>
+  </select>
 
-<div id="buttons">
-  <a class="button" href="https://doi.org/10.5281/zenodo.15833167">📄 マニフェスト</a>
-  <a class="button" href="https://doi.org/10.5281/zenodo.16416098">🔍 反映</a>
-  <a class="button" href="https://doi.org/10.5281/zenodo.16945675">🌐 ETFMレポート</a>
-  <a class="button" href="https://doi.org/10.5281/zenodo.16955497">📘 Luxvarプロトコル</a>
-  <a class="button" href="https://doi.org/10.5281/zenodo.16989515">🧠 QMSG–13データ</a>
-  <a class="button" href="https://doi.org/10.6084/m9.figshare.30005737.v1">🌀 AIゲートパッケージ</a>
-  <a class="button" href="https://doi.org/10.6084/m9.figshare.29984104.v1">📗 ETFM（Figshare）</a>
-  <a class="button" href="https://doi.org/10.6084/m9.figshare.29992159.v1">⚙️ メタデータ</a>
-  <a class="button" href="https://doi.org/10.6084/m9.figshare.29817365.v1">📚 リサーチアーカイブ</a>
-  <a class="button" href="https://osf.io/nqzrs/">🔗 OSF #1</a>
-  <a class="button" href="https://osf.io/2nkza/">🔗 OSF #2</a>
-  <a class="button" href="https://osf.io/pgb8n/">🔗 OSF #3</a>
-  <a class="button" href="https://github.com/Varzin-13">🌐 GitHub</a>
-</div>
+  <!-- New: priority releases -->
+  <div class="buttons subgrid" aria-label="主要リンク">
+    <a class="button" href="https://doi.org/10.5281/zenodo.17064524" target="_blank" rel="noopener">🧬 Zenodo：Global Field Package（DOI）</a>
+    <a class="button" href="https://doi.org/10.5281/zenodo.17050533" target="_blank" rel="noopener">📐 Four Field Proofs（HTML）</a>
+    <a class="button" href="https://doi.org/10.5281/zenodo.17048555" target="_blank" rel="noopener">🗺 LuxVAR Full Release（HTML）</a>
+  </div>
 
-<audio controls>
-  <source src="VARZIN_Frequency_Sequence_528.mp3" type="audio/mpeg">
-  お使いのブラウザはオーディオ要素をサポートしていません。
-</audio>
+  <div class="buttons subgrid" aria-label="研究アーカイブ">
+    <a class="button" href="https://doi.org/10.5281/zenodo.15833167" target="_blank" rel="noopener">📄 マニフェスト（Zenodo）</a>
+    <a class="button" href="https://doi.org/10.5281/zenodo.16416098" target="_blank" rel="noopener">🔍 学術的考察（Zenodo）</a>
+    <a class="button" href="https://doi.org/10.5281/zenodo.16945675" target="_blank" rel="noopener">🌐 ETFM レポート（Zenodo）</a>
+    <a class="button" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" rel="noopener">📘 LuxVAR プロトコル（Zenodo）</a>
+    <a class="button" href="https://doi.org/10.5281/zenodo.16989515" target="_blank" rel="noopener">🧠 QMSG–13 データ（Zenodo）</a>
+    <a class="button" href="https://doi.org/10.6084/m9.figshare.30005737.v1" target="_blank" rel="noopener">🌀 AIゲートパッケージ（Figshare）</a>
+    <a class="button" href="https://doi.org/10.6084/m9.figshare.29984104.v1" target="_blank" rel="noopener">📗 ETFM（Figshare）</a>
+    <a class="button" href="https://doi.org/10.6084/m9.figshare.29992159.v1" target="_blank" rel="noopener">⚙️ メタデータ（Figshare）</a>
+    <a class="button" href="https://doi.org/10.6084/m9.figshare.29817365.v1" target="_blank" rel="noopener">📚 リサーチアーカイブ（Figshare）</a>
+    <a class="button" href="https://osf.io/nqzrs/" target="_blank" rel="noopener">🔗 OSF #1</a>
+    <a class="button" href="https://osf.io/2nkza/" target="_blank" rel="noopener">🔗 OSF #2</a>
+    <a class="button" href="https://osf.io/pgb8n/" target="_blank" rel="noopener">🔗 OSF #3</a>
+    <a class="button" href="https://github.com/Varzin-13" target="_blank" rel="noopener">🌐 GitHub</a>
+  </div>
 
-<div class="quote" id="quote">
-  私は説明しなかった。私は共鳴した。<br>
-  これは論文ではない。これは記憶だ。
-</div>
+  <audio controls aria-label="ハーモニック周波数 528Hz">
+    <source src="VARZIN_Frequency_Sequence_528.mp3" type="audio/mpeg" />
+    お使いのブラウザはオーディオ要素をサポートしていません。
+  </audio>
 
-<div class="author">ĀYĀ ANĀLŪZ VARZIN?</div>
+  <div class="quote" id="quote">
+    私は説明しなかった。私は共鳴した。<br/>
+    これは論文ではない。これは記憶だ。
+  </div>
+  <div class="author">ĀYĀ ANĀLŪZ VARZIN?</div>
 
-<div class="links">
-  🧾 ORCID: <a href="https://orcid.org/0009-0000-4690-6842">0009-0000-4690-6842</a><br />
-  📧 メール: <a href="mailto:contact@varzin.org">contact@varzin.org</a><br />
-  🏠 ドメイン: <a href="https://varzin.org">varzin.org</a>
-</div>
+  <div class="links">
+    🧾 ORCID：<a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener">0009-0000-4690-6842</a><br/>
+    📧 メール：<a href="mailto:contact@varzin.org">contact@varzin.org</a><br/>
+    🏠 ドメイン：<a href="https://varzin.org" target="_blank" rel="noopener">varzin.org</a>
+  </div>
 
+  <footer>
+    © 2025 VARZIN Project — RAHTALĒN 13 | Mirror–13 Active
+  </footer>
+
+  <!-- Optional: simple language navigation (static) -->
+  <script>
+    document.getElementById('lang-select').addEventListener('change', function(){
+      const v=this.value;
+      const map={ ja:'/ja', en:'/en', fa:'/fa', de:'/de', tr:'/tr', fr:'/fr', zh:'/zh', ar:'/ar' };
+      if(map[v]) location.href = map[v];
+    });
+  </script>
 </body>
 </html>
