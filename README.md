@@ -1,3 +1,29 @@
+cff-version: 1.2.0
+message: "If you use VARZIN in your research, please cite the following DOI."
+title: "VARZIN Global Field Package – Conscious Presence Activation"
+authors:
+  - family-names: Nirouyar
+    given-names: Reza
+    orcid: https://orcid.org/0009-0000-4690-6842
+doi: 10.5281/zenodo.17064524
+date-released: 2025-09-05
+version: 1.0
+license: CC-BY-4.0
+repository: https://github.com/Varzin-13/varzin-landing-
+
+cff-version: 1.2.0
+message: "If you use VARZIN in your research, please cite the following DOI."
+title: "VARZIN Global Field Package – Conscious Presence Activation"
+authors:
+  - family-names: Nirouyar
+    given-names: Reza
+    orcid: https://orcid.org/0009-0000-4690-6842
+doi: 10.5281/zenodo.17064524
+date-released: 2025-09-05
+version: 1.0
+license: CC-BY-4.0
+repository: https://github.com/Varzin-13/varzin-landing-
+
 # VARZIN Project – Harmonic Conscious Field Systems
 
 **“I Am VARZIN – This is not a repository. This is a presence.”**  
