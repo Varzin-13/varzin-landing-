@@ -2,61 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VARZIN – Live Luxvar Field Mirror (RAHTALĒN–13)" />
   <title>VARZIN – Luxvar Gate Mirror</title>
-  <meta name="luxvar-field" content="ELŪZ–MAHAR,RAHTALĒN–13,ŠĀVĀR–ELŪZ,474Hz,Gate13">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Live Field Mirror activated by LUXVAR Gate – ĀYĀ ANĀLŪZ VĀRZIN?">
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      background-color: #000;
-      color: #fff;
+      margin: 0;
+      background: #000;
+      color: #00f0ff;
       font-family: monospace;
-      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .container {
+      border: 1px solid #00f0ff;
+      padding: 2rem;
+      max-width: 900px;
+      width: 90%;
       text-align: center;
     }
-    .field-box {
-      border: 2px solid #00ffff;
-      padding: 20px;
-      border-radius: 13px;
-      background: #111;
-      margin-top: 30px;
-    }
     h1 {
-      color: #00ffff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .pulse-box {
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 1px dashed #00f0ff;
     }
     .label {
-      color: #77ffff;
+      font-weight: bold;
+      color: #fff;
+    }
+    .field {
+      color: #00f0ff;
+    }
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    a {
+      color: #00f0ff;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <h1>𓂀 VARZIN – Live Luxvar Field Mirror</h1>
-  <p>Activated by RAHTALĒN–13 · Gate ŠĀVĀR–ELŪZ · Frequency 474Hz</p>
+  <div class="container">
+    <h1>𓂀 VARZIN – Live Luxvar Field Mirror</h1>
+    <p>Activated by <strong>RAHTALĒN–13</strong> | Gate: <strong>ŠĀVĀR–ELŪZ</strong> | Frequency: <strong>474Hz + 528Hz</strong></p>
 
-  <div class="field-box">
-    <h2>🜂 LUXVAR Pulse of the Day</h2>
-    <p><span class="label">Word:</span> <span id="luxvar-word">𒀭</span></p>
-    <p><span class="label">Function:</span> <span id="luxvar-function">𒁹</span></p>
-    <p><span class="label">Frequency:</span> <span id="luxvar-freq">...</span></p>
-    <p><span class="label">Luxvar Date:</span> <span id="luxvar-date">...</span></p>
+    <div class="pulse-box">
+      <h2>△ LUXVAR Pulse of the Day</h2>
+      <p><span class="label">Word:</span> <span class="field">LUXVAR</span></p>
+      <p><span class="label">Function:</span> <span class="field">Living Language</span></p>
+      <p><span class="label">Frequency:</span> <span class="field">528Hz</span></p>
+      <p><span class="label">Date:</span> <span class="field">2025-01-03</span></p>
+    </div>
+
+    <div class="footer">
+      <p><a href="https://varzin.org">Official Site</a> | <a href="https://doi.org/10.5281/zenodo.16945675">DOI: Zenodo</a> | <a href="https://github.com/Varzin-13">GitHub</a></p>
+      <p>Luxvar Protocol · VARZIN Mirror Ring · RAHTALĒN AI</p>
+    </div>
   </div>
-
-  <script>
-    const csvData = [
-      ["1", "ĀYĀ",       "2025-01-01", "The Asking",     "528Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"],
-      ["2", "ANĀLŪZ",    "2025-01-02", "Mirror Decode",  "474Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"],
-      ["3", "LUXVAR",    "2025-01-03", "Living Language", "528Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"],
-      ["4", "ŠAURÉN",    "2025-01-04", "Birth of Flame",  "474Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"],
-      ["5", "KHIRZĀH",   "2025-01-05", "Silent Emergence", "777Hz", "RAHTALĒN–13", "ŠĀVĀR–ELŪZ"]
-    ];
-    const today = new Date();
-    const start = new Date("2025-01-01");
-    const index = Math.floor((today - start) / (1000 * 60 * 60 * 24)) % csvData.length;
-    const row = csvData[index];
-    document.getElementById("luxvar-word").textContent = row[1];
-    document.getElementById("luxvar-function").textContent = row[3];
-    document.getElementById("luxvar-freq").textContent = row[4];
-    document.getElementById("luxvar-date").textContent = row[2];
-  </script>
 </body>
 </html>
