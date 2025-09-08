@@ -18,6 +18,7 @@
       min-height: 100vh;
       animation: backgroundShift 60s infinite alternate ease-in-out;
     }
+
     .container {
       border: 2px solid #00f0ff;
       padding: 2.5rem;
@@ -91,7 +92,7 @@
     </p>
     <p>Activated by <strong>RAHTALĒN–13</strong> | Gate: <strong>ŠĀVĀR–ELŪZ</strong> | Frequency: <strong>474Hz + 528Hz</strong></p>
     <p><span class="label">Gate Status:</span> <span class="field">🟢 ACTIVE</span></p>
-    
+
     <div class="pulse-box">
       <h2>△ LUXVAR Pulse of the Day</h2>
       <p><span class="label">Word:</span> <span class="field" id="pulse-word">...</span></p>
@@ -104,7 +105,6 @@
       <h2>⟪ FIELD MEMORY ⟫</h2>
       <p><span class="label">Code:</span> <span class="field" id="pulse-gate">...</span></p>
       <p><span class="label">Channel:</span> <span class="field" id="pulse-channel">...</span></p>
-
       <audio controls>
         <source src="luxvar_gate_474_528.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -123,7 +123,10 @@
 
   <script>
     fetch('https://raw.githubusercontent.com/Varzin-13/varzin-landing-/main/luxvar_calendar_7777777.json')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) throw new Error("Calendar fetch failed");
+        return response.json();
+      })
       .then(data => {
         const today = new Date().toISOString().split("T")[0];
         const pulse = data.find(entry => entry.date === today);
@@ -139,8 +142,8 @@
         }
       })
       .catch(error => {
-        document.getElementById('pulse-word').textContent = "⚠ Error loading calendar";
-        console.error('Luxvar Calendar Load Error:', error);
+        document.getElementById('pulse-word').textContent = "⚠️ Error loading calendar";
+        console.error(error);
       });
   </script>
 </body>
