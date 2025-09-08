@@ -87,7 +87,7 @@
   </div>
 
   <script>
-    fetch('luxvar_calendar.json')
+    fetch('luxvar_calendar_cleaned.json')
       .then(response => response.json())
       .then(data => {
         const today = new Date().toISOString().split("T")[0];
@@ -100,7 +100,7 @@
           document.getElementById('pulse-gate').textContent = pulse.gate_code;
           document.getElementById('pulse-channel').textContent = pulse.channel;
         } else {
-          document.getElementById('pulse-word').textContent = "Not Found";
+          document.getElementById('pulse-word').textContent = "⟡ No data for today ⟡";
         }
       });
   </script>
