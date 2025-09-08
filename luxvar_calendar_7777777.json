@@ -1,0 +1,2082 @@
+[
+  {
+    "date": "2025-09-08",
+    "word": "ELKHUMEL_0",
+    "function": "ELKHUMEL · Pulse",
+    "frequency": "144Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-09",
+    "word": "TARMEL_1",
+    "function": "TARMEL · Whisper",
+    "frequency": "474Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-10",
+    "word": "DARVAR_2",
+    "function": "DARVAR · Humming",
+    "frequency": "528Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-11",
+    "word": "ZARQĀNUR_3",
+    "function": "ZARQĀNUR · Void",
+    "frequency": "777Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-12",
+    "word": "NURRANUR_4",
+    "function": "NURRANUR · Echo",
+    "frequency": "0Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-13",
+    "word": "MELZAR_5",
+    "function": "MELZAR · Pulse",
+    "frequency": "144Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-14",
+    "word": "LUXRAXA_6",
+    "function": "LUXRAXA · Whisper",
+    "frequency": "474Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-15",
+    "word": "QĀLUXXA_7",
+    "function": "QĀLUXXA · Humming",
+    "frequency": "528Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-16",
+    "word": "KHUDAR_8",
+    "function": "KHUDAR · Void",
+    "frequency": "777Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-17",
+    "word": "DARMEL_9",
+    "function": "DARMEL · Echo",
+    "frequency": "0Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-18",
+    "word": "TĀNLUXEL_10",
+    "function": "TĀNLUXEL · Pulse",
+    "frequency": "144Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-19",
+    "word": "XAXAVAR_11",
+    "function": "XAXAVAR · Whisper",
+    "frequency": "474Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-20",
+    "word": "DARMEL_12",
+    "function": "DARMEL · Humming",
+    "frequency": "528Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-21",
+    "word": "TARNUR_13",
+    "function": "TARNUR · Void",
+    "frequency": "777Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-22",
+    "word": "VUNTAR_14",
+    "function": "VUNTAR · Echo",
+    "frequency": "0Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-23",
+    "word": "TĀNTĀN_15",
+    "function": "TĀNTĀN · Pulse",
+    "frequency": "144Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-24",
+    "word": "NURQĀLUX_16",
+    "function": "NURQĀLUX · Whisper",
+    "frequency": "474Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-25",
+    "word": "QĀTARXA_17",
+    "function": "QĀTARXA · Humming",
+    "frequency": "528Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-26",
+    "word": "MARMELXA_18",
+    "function": "MARMELXA · Void",
+    "frequency": "777Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-27",
+    "word": "RAKHUMEL_19",
+    "function": "RAKHUMEL · Echo",
+    "frequency": "0Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-28",
+    "word": "VARMAR_20",
+    "function": "VARMAR · Pulse",
+    "frequency": "144Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-29",
+    "word": "RAKHUKHU_21",
+    "function": "RAKHUKHU · Whisper",
+    "frequency": "474Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-09-30",
+    "word": "NURVUN_22",
+    "function": "NURVUN · Humming",
+    "frequency": "528Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-01",
+    "word": "XAQĀVAR_23",
+    "function": "XAQĀVAR · Void",
+    "frequency": "777Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-02",
+    "word": "TARTAR_24",
+    "function": "TARTAR · Echo",
+    "frequency": "0Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-03",
+    "word": "LUXMAR_25",
+    "function": "LUXMAR · Pulse",
+    "frequency": "144Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-04",
+    "word": "NURQĀVUN_26",
+    "function": "NURQĀVUN · Whisper",
+    "frequency": "474Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-05",
+    "word": "TARXAVAR_27",
+    "function": "TARXAVAR · Humming",
+    "frequency": "528Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-06",
+    "word": "ZARELQĀ_28",
+    "function": "ZARELQĀ · Void",
+    "frequency": "777Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-07",
+    "word": "NURTĀNRA_29",
+    "function": "NURTĀNRA · Echo",
+    "frequency": "0Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-08",
+    "word": "NURLUXZAR_30",
+    "function": "NURLUXZAR · Pulse",
+    "frequency": "144Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-09",
+    "word": "QĀTARLUX_31",
+    "function": "QĀTARLUX · Whisper",
+    "frequency": "474Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-10",
+    "word": "KHUVARRA_32",
+    "function": "KHUVARRA · Humming",
+    "frequency": "528Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-11",
+    "word": "ELMELTAR_33",
+    "function": "ELMELTAR · Void",
+    "frequency": "777Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-12",
+    "word": "ZARTĀNKHU_34",
+    "function": "ZARTĀNKHU · Echo",
+    "frequency": "0Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-13",
+    "word": "TĀNDARRA_35",
+    "function": "TĀNDARRA · Pulse",
+    "frequency": "144Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-14",
+    "word": "QĀLUXDAR_36",
+    "function": "QĀLUXDAR · Whisper",
+    "frequency": "474Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-15",
+    "word": "TĀNQĀKHU_37",
+    "function": "TĀNQĀKHU · Humming",
+    "frequency": "528Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-16",
+    "word": "MELZARMEL_38",
+    "function": "MELZARMEL · Void",
+    "frequency": "777Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-17",
+    "word": "VUNVAR_39",
+    "function": "VUNVAR · Echo",
+    "frequency": "0Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-18",
+    "word": "VARTARDAR_40",
+    "function": "VARTARDAR · Pulse",
+    "frequency": "144Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-19",
+    "word": "ZARRAVUN_41",
+    "function": "ZARRAVUN · Whisper",
+    "frequency": "474Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-20",
+    "word": "ELXAMAR_42",
+    "function": "ELXAMAR · Humming",
+    "frequency": "528Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-21",
+    "word": "VARVAR_43",
+    "function": "VARVAR · Void",
+    "frequency": "777Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-22",
+    "word": "DARQĀNUR_44",
+    "function": "DARQĀNUR · Echo",
+    "frequency": "0Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-23",
+    "word": "MARNUR_45",
+    "function": "MARNUR · Pulse",
+    "frequency": "144Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-24",
+    "word": "TARKHU_46",
+    "function": "TARKHU · Whisper",
+    "frequency": "474Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-25",
+    "word": "VUNMELKHU_47",
+    "function": "VUNMELKHU · Humming",
+    "frequency": "528Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-26",
+    "word": "KHUELKHU_48",
+    "function": "KHUELKHU · Void",
+    "frequency": "777Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-27",
+    "word": "VUNLUXTĀN_49",
+    "function": "VUNLUXTĀN · Echo",
+    "frequency": "0Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-28",
+    "word": "MARKHUMAR_50",
+    "function": "MARKHUMAR · Pulse",
+    "frequency": "144Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-29",
+    "word": "TĀNDARLUX_51",
+    "function": "TĀNDARLUX · Whisper",
+    "frequency": "474Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-30",
+    "word": "RAMARLUX_52",
+    "function": "RAMARLUX · Humming",
+    "frequency": "528Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-10-31",
+    "word": "VUNDARNUR_53",
+    "function": "VUNDARNUR · Void",
+    "frequency": "777Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-01",
+    "word": "ELVARLUX_54",
+    "function": "ELVARLUX · Echo",
+    "frequency": "0Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-02",
+    "word": "DARELDAR_55",
+    "function": "DARELDAR · Pulse",
+    "frequency": "144Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-03",
+    "word": "TĀNELKHU_56",
+    "function": "TĀNELKHU · Whisper",
+    "frequency": "474Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-04",
+    "word": "TARTĀNDAR_57",
+    "function": "TARTĀNDAR · Humming",
+    "frequency": "528Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-05",
+    "word": "DARDAR_58",
+    "function": "DARDAR · Void",
+    "frequency": "777Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-06",
+    "word": "QĀMARTĀN_59",
+    "function": "QĀMARTĀN · Echo",
+    "frequency": "0Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-07",
+    "word": "XAVARQĀ_60",
+    "function": "XAVARQĀ · Pulse",
+    "frequency": "144Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-08",
+    "word": "NURMEL_61",
+    "function": "NURMEL · Whisper",
+    "frequency": "474Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-09",
+    "word": "XATĀNLUX_62",
+    "function": "XATĀNLUX · Humming",
+    "frequency": "528Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-10",
+    "word": "KHUVUN_63",
+    "function": "KHUVUN · Void",
+    "frequency": "777Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-11",
+    "word": "NURRAMAR_64",
+    "function": "NURRAMAR · Echo",
+    "frequency": "0Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-12",
+    "word": "ELRATAR_65",
+    "function": "ELRATAR · Pulse",
+    "frequency": "144Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-13",
+    "word": "TĀNVUNRA_66",
+    "function": "TĀNVUNRA · Whisper",
+    "frequency": "474Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-14",
+    "word": "MARMAR_67",
+    "function": "MARMAR · Humming",
+    "frequency": "528Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-15",
+    "word": "MELTĀNNUR_68",
+    "function": "MELTĀNNUR · Void",
+    "frequency": "777Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-16",
+    "word": "ZARDAR_69",
+    "function": "ZARDAR · Echo",
+    "frequency": "0Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-17",
+    "word": "MARZAR_70",
+    "function": "MARZAR · Pulse",
+    "frequency": "144Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-18",
+    "word": "MARRAQĀ_71",
+    "function": "MARRAQĀ · Whisper",
+    "frequency": "474Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-19",
+    "word": "TARZARTĀN_72",
+    "function": "TARZARTĀN · Humming",
+    "frequency": "528Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-20",
+    "word": "LUXKHUKHU_73",
+    "function": "LUXKHUKHU · Void",
+    "frequency": "777Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-21",
+    "word": "VARQĀEL_74",
+    "function": "VARQĀEL · Echo",
+    "frequency": "0Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-22",
+    "word": "MELLUXLUX_75",
+    "function": "MELLUXLUX · Pulse",
+    "frequency": "144Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-23",
+    "word": "TARVARVAR_76",
+    "function": "TARVARVAR · Whisper",
+    "frequency": "474Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-24",
+    "word": "LUXVARZAR_77",
+    "function": "LUXVARZAR · Humming",
+    "frequency": "528Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-25",
+    "word": "XAVUNTĀN_78",
+    "function": "XAVUNTĀN · Void",
+    "frequency": "777Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-26",
+    "word": "MARDAR_79",
+    "function": "MARDAR · Echo",
+    "frequency": "0Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-27",
+    "word": "VUNKHU_80",
+    "function": "VUNKHU · Pulse",
+    "frequency": "144Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-28",
+    "word": "MELDARLUX_81",
+    "function": "MELDARLUX · Whisper",
+    "frequency": "474Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-29",
+    "word": "LUXVUNTĀN_82",
+    "function": "LUXVUNTĀN · Humming",
+    "frequency": "528Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-11-30",
+    "word": "KHUMAR_83",
+    "function": "KHUMAR · Void",
+    "frequency": "777Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-01",
+    "word": "VUNLUX_84",
+    "function": "VUNLUX · Echo",
+    "frequency": "0Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-02",
+    "word": "TARNUR_85",
+    "function": "TARNUR · Pulse",
+    "frequency": "144Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-03",
+    "word": "DARZAR_86",
+    "function": "DARZAR · Whisper",
+    "frequency": "474Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-04",
+    "word": "VUNQĀNUR_87",
+    "function": "VUNQĀNUR · Humming",
+    "frequency": "528Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-05",
+    "word": "LUXMAR_88",
+    "function": "LUXMAR · Void",
+    "frequency": "777Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-06",
+    "word": "ELELDAR_89",
+    "function": "ELELDAR · Echo",
+    "frequency": "0Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-07",
+    "word": "TARDAR_90",
+    "function": "TARDAR · Pulse",
+    "frequency": "144Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-08",
+    "word": "TĀNTĀN_91",
+    "function": "TĀNTĀN · Whisper",
+    "frequency": "474Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-09",
+    "word": "MARVAR_92",
+    "function": "MARVAR · Humming",
+    "frequency": "528Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-10",
+    "word": "NURVUNMAR_93",
+    "function": "NURVUNMAR · Void",
+    "frequency": "777Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-11",
+    "word": "MELTAR_94",
+    "function": "MELTAR · Echo",
+    "frequency": "0Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-12",
+    "word": "MELNURKHU_95",
+    "function": "MELNURKHU · Pulse",
+    "frequency": "144Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-13",
+    "word": "VARZARVAR_96",
+    "function": "VARZARVAR · Whisper",
+    "frequency": "474Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-14",
+    "word": "QĀZARKHU_97",
+    "function": "QĀZARKHU · Humming",
+    "frequency": "528Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-15",
+    "word": "XAVARMAR_98",
+    "function": "XAVARMAR · Void",
+    "frequency": "777Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-16",
+    "word": "NURKHUEL_99",
+    "function": "NURKHUEL · Echo",
+    "frequency": "0Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-17",
+    "word": "QĀNURMAR_100",
+    "function": "QĀNURMAR · Pulse",
+    "frequency": "144Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-18",
+    "word": "NURQĀZAR_101",
+    "function": "NURQĀZAR · Whisper",
+    "frequency": "474Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-19",
+    "word": "VARZAR_102",
+    "function": "VARZAR · Humming",
+    "frequency": "528Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-20",
+    "word": "ZARVARXA_103",
+    "function": "ZARVARXA · Void",
+    "frequency": "777Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-21",
+    "word": "QĀELRA_104",
+    "function": "QĀELRA · Echo",
+    "frequency": "0Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-22",
+    "word": "VUNLUX_105",
+    "function": "VUNLUX · Pulse",
+    "frequency": "144Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-23",
+    "word": "LUXVUN_106",
+    "function": "LUXVUN · Whisper",
+    "frequency": "474Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-24",
+    "word": "NURKHUZAR_107",
+    "function": "NURKHUZAR · Humming",
+    "frequency": "528Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-25",
+    "word": "TARRATĀN_108",
+    "function": "TARRATĀN · Void",
+    "frequency": "777Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-26",
+    "word": "MELLUXNUR_109",
+    "function": "MELLUXNUR · Echo",
+    "frequency": "0Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-27",
+    "word": "TĀNMAR_110",
+    "function": "TĀNMAR · Pulse",
+    "frequency": "144Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-28",
+    "word": "XATĀNVUN_111",
+    "function": "XATĀNVUN · Whisper",
+    "frequency": "474Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-29",
+    "word": "ELZARRA_112",
+    "function": "ELZARRA · Humming",
+    "frequency": "528Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-30",
+    "word": "TARLUXQĀ_113",
+    "function": "TARLUXQĀ · Void",
+    "frequency": "777Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2025-12-31",
+    "word": "KHUVUN_114",
+    "function": "KHUVUN · Echo",
+    "frequency": "0Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-01",
+    "word": "LUXMELRA_115",
+    "function": "LUXMELRA · Pulse",
+    "frequency": "144Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-02",
+    "word": "KHUDAR_116",
+    "function": "KHUDAR · Whisper",
+    "frequency": "474Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-03",
+    "word": "LUXTĀN_117",
+    "function": "LUXTĀN · Humming",
+    "frequency": "528Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-04",
+    "word": "MARZAR_118",
+    "function": "MARZAR · Void",
+    "frequency": "777Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-05",
+    "word": "ZARZAR_119",
+    "function": "ZARZAR · Echo",
+    "frequency": "0Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-06",
+    "word": "MARKHU_120",
+    "function": "MARKHU · Pulse",
+    "frequency": "144Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-07",
+    "word": "ELELQĀ_121",
+    "function": "ELELQĀ · Whisper",
+    "frequency": "474Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-08",
+    "word": "MARMEL_122",
+    "function": "MARMEL · Humming",
+    "frequency": "528Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-09",
+    "word": "TARQĀDAR_123",
+    "function": "TARQĀDAR · Void",
+    "frequency": "777Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-10",
+    "word": "TARVUN_124",
+    "function": "TARVUN · Echo",
+    "frequency": "0Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-11",
+    "word": "QĀNURQĀ_125",
+    "function": "QĀNURQĀ · Pulse",
+    "frequency": "144Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-12",
+    "word": "RAMAREL_126",
+    "function": "RAMAREL · Whisper",
+    "frequency": "474Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-13",
+    "word": "MARVARTAR_127",
+    "function": "MARVARTAR · Humming",
+    "frequency": "528Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-14",
+    "word": "LUXDARTĀN_128",
+    "function": "LUXDARTĀN · Void",
+    "frequency": "777Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-15",
+    "word": "MARRAVAR_129",
+    "function": "MARRAVAR · Echo",
+    "frequency": "0Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-16",
+    "word": "VUNTARNUR_130",
+    "function": "VUNTARNUR · Pulse",
+    "frequency": "144Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-17",
+    "word": "TĀNVAR_131",
+    "function": "TĀNVAR · Whisper",
+    "frequency": "474Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-18",
+    "word": "MELVUNVUN_132",
+    "function": "MELVUNVUN · Humming",
+    "frequency": "528Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-19",
+    "word": "RAMAREL_133",
+    "function": "RAMAREL · Void",
+    "frequency": "777Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-20",
+    "word": "RAZARKHU_134",
+    "function": "RAZARKHU · Echo",
+    "frequency": "0Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-21",
+    "word": "LUXMELVUN_135",
+    "function": "LUXMELVUN · Pulse",
+    "frequency": "144Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-22",
+    "word": "MARMELTAR_136",
+    "function": "MARMELTAR · Whisper",
+    "frequency": "474Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-23",
+    "word": "XAZARRA_137",
+    "function": "XAZARRA · Humming",
+    "frequency": "528Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-24",
+    "word": "MELMARVUN_138",
+    "function": "MELMARVUN · Void",
+    "frequency": "777Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-25",
+    "word": "LUXZARRA_139",
+    "function": "LUXZARRA · Echo",
+    "frequency": "0Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-26",
+    "word": "VARLUX_140",
+    "function": "VARLUX · Pulse",
+    "frequency": "144Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-27",
+    "word": "VARKHUMAR_141",
+    "function": "VARKHUMAR · Whisper",
+    "frequency": "474Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-28",
+    "word": "KHUELXA_142",
+    "function": "KHUELXA · Humming",
+    "frequency": "528Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-29",
+    "word": "VARTARTĀN_143",
+    "function": "VARTARTĀN · Void",
+    "frequency": "777Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-30",
+    "word": "RADARQĀ_144",
+    "function": "RADARQĀ · Echo",
+    "frequency": "0Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-01-31",
+    "word": "LUXZAR_145",
+    "function": "LUXZAR · Pulse",
+    "frequency": "144Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-01",
+    "word": "QĀELQĀ_146",
+    "function": "QĀELQĀ · Whisper",
+    "frequency": "474Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-02",
+    "word": "MELVARVUN_147",
+    "function": "MELVARVUN · Humming",
+    "frequency": "528Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-03",
+    "word": "VARZAR_148",
+    "function": "VARZAR · Void",
+    "frequency": "777Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-04",
+    "word": "ELTARMAR_149",
+    "function": "ELTARMAR · Echo",
+    "frequency": "0Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-05",
+    "word": "ELVUNTĀN_150",
+    "function": "ELVUNTĀN · Pulse",
+    "frequency": "144Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-06",
+    "word": "NURMAR_151",
+    "function": "NURMAR · Whisper",
+    "frequency": "474Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-07",
+    "word": "LUXVARLUX_152",
+    "function": "LUXVARLUX · Humming",
+    "frequency": "528Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-08",
+    "word": "TĀNZAR_153",
+    "function": "TĀNZAR · Void",
+    "frequency": "777Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-09",
+    "word": "VARMAR_154",
+    "function": "VARMAR · Echo",
+    "frequency": "0Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-10",
+    "word": "TĀNVARXA_155",
+    "function": "TĀNVARXA · Pulse",
+    "frequency": "144Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-11",
+    "word": "ZARXAQĀ_156",
+    "function": "ZARXAQĀ · Whisper",
+    "frequency": "474Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-12",
+    "word": "QĀRAZAR_157",
+    "function": "QĀRAZAR · Humming",
+    "frequency": "528Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-13",
+    "word": "DARTARDAR_158",
+    "function": "DARTARDAR · Void",
+    "frequency": "777Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-14",
+    "word": "TARTARNUR_159",
+    "function": "TARTARNUR · Echo",
+    "frequency": "0Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-15",
+    "word": "NURLUX_160",
+    "function": "NURLUX · Pulse",
+    "frequency": "144Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-16",
+    "word": "LUXELTAR_161",
+    "function": "LUXELTAR · Whisper",
+    "frequency": "474Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-17",
+    "word": "DARVUNNUR_162",
+    "function": "DARVUNNUR · Humming",
+    "frequency": "528Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-18",
+    "word": "TĀNMAR_163",
+    "function": "TĀNMAR · Void",
+    "frequency": "777Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-19",
+    "word": "ZARNUR_164",
+    "function": "ZARNUR · Echo",
+    "frequency": "0Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-20",
+    "word": "XANURLUX_165",
+    "function": "XANURLUX · Pulse",
+    "frequency": "144Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-21",
+    "word": "NURMAR_166",
+    "function": "NURMAR · Whisper",
+    "frequency": "474Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-22",
+    "word": "VARQĀVAR_167",
+    "function": "VARQĀVAR · Humming",
+    "frequency": "528Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-23",
+    "word": "NURMAR_168",
+    "function": "NURMAR · Void",
+    "frequency": "777Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-24",
+    "word": "LUXDARKHU_169",
+    "function": "LUXDARKHU · Echo",
+    "frequency": "0Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-25",
+    "word": "VUNTĀNLUX_170",
+    "function": "VUNTĀNLUX · Pulse",
+    "frequency": "144Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-26",
+    "word": "DARVUNZAR_171",
+    "function": "DARVUNZAR · Whisper",
+    "frequency": "474Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-27",
+    "word": "LUXTARKHU_172",
+    "function": "LUXTARKHU · Humming",
+    "frequency": "528Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-02-28",
+    "word": "MARZARNUR_173",
+    "function": "MARZARNUR · Void",
+    "frequency": "777Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-01",
+    "word": "DARTĀN_174",
+    "function": "DARTĀN · Echo",
+    "frequency": "0Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-02",
+    "word": "MARVUN_175",
+    "function": "MARVUN · Pulse",
+    "frequency": "144Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-03",
+    "word": "VARVUN_176",
+    "function": "VARVUN · Whisper",
+    "frequency": "474Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-04",
+    "word": "QĀLUXMEL_177",
+    "function": "QĀLUXMEL · Humming",
+    "frequency": "528Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-05",
+    "word": "ELELXA_178",
+    "function": "ELELXA · Void",
+    "frequency": "777Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-06",
+    "word": "VUNNUR_179",
+    "function": "VUNNUR · Echo",
+    "frequency": "0Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-07",
+    "word": "ZARMELLUX_180",
+    "function": "ZARMELLUX · Pulse",
+    "frequency": "144Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-08",
+    "word": "KHUELQĀ_181",
+    "function": "KHUELQĀ · Whisper",
+    "frequency": "474Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-09",
+    "word": "TĀNVUNVUN_182",
+    "function": "TĀNVUNVUN · Humming",
+    "frequency": "528Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-10",
+    "word": "VARTARVUN_183",
+    "function": "VARTARVUN · Void",
+    "frequency": "777Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-11",
+    "word": "KHUNUREL_184",
+    "function": "KHUNUREL · Echo",
+    "frequency": "0Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-12",
+    "word": "VARKHUKHU_185",
+    "function": "VARKHUKHU · Pulse",
+    "frequency": "144Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-13",
+    "word": "NURVUNDAR_186",
+    "function": "NURVUNDAR · Whisper",
+    "frequency": "474Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-14",
+    "word": "MELKHU_187",
+    "function": "MELKHU · Humming",
+    "frequency": "528Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-15",
+    "word": "QĀQĀLUX_188",
+    "function": "QĀQĀLUX · Void",
+    "frequency": "777Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-16",
+    "word": "RARAMAR_189",
+    "function": "RARAMAR · Echo",
+    "frequency": "0Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-17",
+    "word": "TĀNDAR_190",
+    "function": "TĀNDAR · Pulse",
+    "frequency": "144Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-18",
+    "word": "TARZAR_191",
+    "function": "TARZAR · Whisper",
+    "frequency": "474Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-19",
+    "word": "QĀVUNTĀN_192",
+    "function": "QĀVUNTĀN · Humming",
+    "frequency": "528Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-20",
+    "word": "DARZARDAR_193",
+    "function": "DARZARDAR · Void",
+    "frequency": "777Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-21",
+    "word": "VARLUXZAR_194",
+    "function": "VARLUXZAR · Echo",
+    "frequency": "0Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-22",
+    "word": "MARRAQĀ_195",
+    "function": "MARRAQĀ · Pulse",
+    "frequency": "144Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-23",
+    "word": "MARZAR_196",
+    "function": "MARZAR · Whisper",
+    "frequency": "474Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-24",
+    "word": "MARNURZAR_197",
+    "function": "MARNURZAR · Humming",
+    "frequency": "528Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-25",
+    "word": "TĀNVAR_198",
+    "function": "TĀNVAR · Void",
+    "frequency": "777Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-26",
+    "word": "KHUMARTĀN_199",
+    "function": "KHUMARTĀN · Echo",
+    "frequency": "0Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-27",
+    "word": "XATĀNRA_200",
+    "function": "XATĀNRA · Pulse",
+    "frequency": "144Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-28",
+    "word": "VARXATĀN_201",
+    "function": "VARXATĀN · Whisper",
+    "frequency": "474Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-29",
+    "word": "NURMAR_202",
+    "function": "NURMAR · Humming",
+    "frequency": "528Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-30",
+    "word": "NURLUXVAR_203",
+    "function": "NURLUXVAR · Void",
+    "frequency": "777Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-03-31",
+    "word": "VARMELEL_204",
+    "function": "VARMELEL · Echo",
+    "frequency": "0Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-01",
+    "word": "VARDARVUN_205",
+    "function": "VARDARVUN · Pulse",
+    "frequency": "144Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-02",
+    "word": "DARRAXA_206",
+    "function": "DARRAXA · Whisper",
+    "frequency": "474Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-03",
+    "word": "MELNURKHU_207",
+    "function": "MELNURKHU · Humming",
+    "frequency": "528Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-04",
+    "word": "LUXELTAR_208",
+    "function": "LUXELTAR · Void",
+    "frequency": "777Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-05",
+    "word": "XAMELKHU_209",
+    "function": "XAMELKHU · Echo",
+    "frequency": "0Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-06",
+    "word": "NURVUN_210",
+    "function": "NURVUN · Pulse",
+    "frequency": "144Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-07",
+    "word": "TARLUX_211",
+    "function": "TARLUX · Whisper",
+    "frequency": "474Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-08",
+    "word": "RAXAEL_212",
+    "function": "RAXAEL · Humming",
+    "frequency": "528Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-09",
+    "word": "ZARXAXA_213",
+    "function": "ZARXAXA · Void",
+    "frequency": "777Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-10",
+    "word": "NURTĀN_214",
+    "function": "NURTĀN · Echo",
+    "frequency": "0Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-11",
+    "word": "NURNURKHU_215",
+    "function": "NURNURKHU · Pulse",
+    "frequency": "144Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-12",
+    "word": "VUNNURZAR_216",
+    "function": "VUNNURZAR · Whisper",
+    "frequency": "474Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-13",
+    "word": "DARZARVAR_217",
+    "function": "DARZARVAR · Humming",
+    "frequency": "528Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-14",
+    "word": "KHUDAR_218",
+    "function": "KHUDAR · Void",
+    "frequency": "777Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-15",
+    "word": "DARLUXVAR_219",
+    "function": "DARLUXVAR · Echo",
+    "frequency": "0Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-16",
+    "word": "MELELZAR_220",
+    "function": "MELELZAR · Pulse",
+    "frequency": "144Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-17",
+    "word": "KHUKHU_221",
+    "function": "KHUKHU · Whisper",
+    "frequency": "474Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-18",
+    "word": "RANURXA_222",
+    "function": "RANURXA · Humming",
+    "frequency": "528Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-19",
+    "word": "VUNTĀN_223",
+    "function": "VUNTĀN · Void",
+    "frequency": "777Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-20",
+    "word": "DARTĀN_224",
+    "function": "DARTĀN · Echo",
+    "frequency": "0Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-21",
+    "word": "ZARDAR_225",
+    "function": "ZARDAR · Pulse",
+    "frequency": "144Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-22",
+    "word": "KHUQĀDAR_226",
+    "function": "KHUQĀDAR · Whisper",
+    "frequency": "474Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-23",
+    "word": "MARELDAR_227",
+    "function": "MARELDAR · Humming",
+    "frequency": "528Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-24",
+    "word": "TĀNDARLUX_228",
+    "function": "TĀNDARLUX · Void",
+    "frequency": "777Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-25",
+    "word": "ZARMELTĀN_229",
+    "function": "ZARMELTĀN · Echo",
+    "frequency": "0Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-26",
+    "word": "NURVAR_230",
+    "function": "NURVAR · Pulse",
+    "frequency": "144Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-27",
+    "word": "LUXVUN_231",
+    "function": "LUXVUN · Whisper",
+    "frequency": "474Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-28",
+    "word": "TARZAR_232",
+    "function": "TARZAR · Humming",
+    "frequency": "528Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-29",
+    "word": "TĀNDAR_233",
+    "function": "TĀNDAR · Void",
+    "frequency": "777Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-04-30",
+    "word": "TARTĀNDAR_234",
+    "function": "TARTĀNDAR · Echo",
+    "frequency": "0Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-01",
+    "word": "KHUZAR_235",
+    "function": "KHUZAR · Pulse",
+    "frequency": "144Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-02",
+    "word": "MELZARNUR_236",
+    "function": "MELZARNUR · Whisper",
+    "frequency": "474Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-03",
+    "word": "ZARMAR_237",
+    "function": "ZARMAR · Humming",
+    "frequency": "528Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-04",
+    "word": "NURXADAR_238",
+    "function": "NURXADAR · Void",
+    "frequency": "777Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-05",
+    "word": "VARTAREL_239",
+    "function": "VARTAREL · Echo",
+    "frequency": "0Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-06",
+    "word": "VARDAR_240",
+    "function": "VARDAR · Pulse",
+    "frequency": "144Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-07",
+    "word": "TARMARXA_241",
+    "function": "TARMARXA · Whisper",
+    "frequency": "474Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-08",
+    "word": "ZARZAR_242",
+    "function": "ZARZAR · Humming",
+    "frequency": "528Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-09",
+    "word": "XANURVAR_243",
+    "function": "XANURVAR · Void",
+    "frequency": "777Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-10",
+    "word": "VARKHUEL_244",
+    "function": "VARKHUEL · Echo",
+    "frequency": "0Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-11",
+    "word": "VUNVUNEL_245",
+    "function": "VUNVUNEL · Pulse",
+    "frequency": "144Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-12",
+    "word": "NURKHURA_246",
+    "function": "NURKHURA · Whisper",
+    "frequency": "474Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-13",
+    "word": "DARDARZAR_247",
+    "function": "DARDARZAR · Humming",
+    "frequency": "528Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-14",
+    "word": "LUXDAR_248",
+    "function": "LUXDAR · Void",
+    "frequency": "777Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-15",
+    "word": "ELTĀNXA_249",
+    "function": "ELTĀNXA · Echo",
+    "frequency": "0Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-16",
+    "word": "QĀELMEL_250",
+    "function": "QĀELMEL · Pulse",
+    "frequency": "144Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-17",
+    "word": "DARRAQĀ_251",
+    "function": "DARRAQĀ · Whisper",
+    "frequency": "474Hz | BW: 20Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-18",
+    "word": "ZARKHUTAR_252",
+    "function": "ZARKHUTAR · Humming",
+    "frequency": "528Hz | BW: 12Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-19",
+    "word": "VUNKHU_253",
+    "function": "VUNKHU · Void",
+    "frequency": "777Hz | BW: 13Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-20",
+    "word": "KHURATAR_254",
+    "function": "KHURATAR · Echo",
+    "frequency": "0Hz | BW: 14Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-21",
+    "word": "NURRAVUN_255",
+    "function": "NURRAVUN · Pulse",
+    "frequency": "144Hz | BW: 15Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-22",
+    "word": "TARELVUN_256",
+    "function": "TARELVUN · Whisper",
+    "frequency": "474Hz | BW: 16Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-23",
+    "word": "LUXMEL_257",
+    "function": "LUXMEL · Humming",
+    "frequency": "528Hz | BW: 17Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-24",
+    "word": "TĀNLUX_258",
+    "function": "TĀNLUX · Void",
+    "frequency": "777Hz | BW: 18Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  },
+  {
+    "date": "2026-05-25",
+    "word": "ZARMELDAR_259",
+    "function": "ZARMELDAR · Echo",
+    "frequency": "0Hz | BW: 19Hz",
+    "gate_code": "474Hz",
+    "channel": "RAHTALĒN QMSG–13"
+  }
+]
