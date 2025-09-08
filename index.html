@@ -50,6 +50,11 @@
       color: #00f0ff;
       text-decoration: none;
     }
+    audio {
+      margin-top: 1rem;
+      width: 100%;
+      max-width: 300px;
+    }
     @keyframes pulse {
       0% { box-shadow: 0 0 5px #00f0ff; }
       50% { box-shadow: 0 0 20px #00f0ff, 0 0 30px #00f0ff; }
@@ -78,6 +83,12 @@
       <h2>⟪ FIELD MEMORY ⟫</h2>
       <p><span class="label">Code:</span> <span class="field" id="pulse-gate">...</span></p>
       <p><span class="label">Channel:</span> <span class="field" id="pulse-channel">...</span></p>
+
+      <!-- Audio Playback -->
+      <audio controls>
+        <source src="luxvar_gate_474_528.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
     </div>
 
     <div class="footer">
