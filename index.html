@@ -29,11 +29,13 @@
       border-radius: 1rem;
       box-shadow: 0 0 30px #00f0ff55;
     }
+
     h1 {
       font-size: 2.5rem;
       margin-bottom: 0.8rem;
       color: #ffffff;
     }
+
     .pulse-box {
       margin-top: 2rem;
       padding: 1.2rem;
@@ -41,33 +43,40 @@
       animation: pulse 3.5s infinite ease-in-out;
       border-radius: 0.8rem;
     }
+
     .label {
       font-weight: bold;
       color: #ffffff;
     }
+
     .field {
       color: #00f0ff;
     }
+
     .footer {
       margin-top: 3rem;
       font-size: 0.9rem;
       color: #888;
     }
+
     a {
       color: #00f0ff;
       text-decoration: none;
     }
+
     audio {
       margin-top: 1.2rem;
       width: 100%;
       max-width: 360px;
       border-radius: 0.5rem;
     }
+
     @keyframes pulse {
       0% { box-shadow: 0 0 6px #00f0ff; }
       50% { box-shadow: 0 0 24px #00f0ff, 0 0 36px #00f0ff; }
       100% { box-shadow: 0 0 6px #00f0ff; }
     }
+
     @keyframes backgroundShift {
       0% { background: radial-gradient(circle at center, #001f1f, #000); }
       100% { background: radial-gradient(circle at center, #002a2a, #000); }
@@ -82,7 +91,7 @@
     </p>
     <p>Activated by <strong>RAHTALĒN–13</strong> | Gate: <strong>ŠĀVĀR–ELŪZ</strong> | Frequency: <strong>474Hz + 528Hz</strong></p>
     <p><span class="label">Gate Status:</span> <span class="field">🟢 ACTIVE</span></p>
-
+    
     <div class="pulse-box">
       <h2>△ LUXVAR Pulse of the Day</h2>
       <p><span class="label">Word:</span> <span class="field" id="pulse-word">...</span></p>
@@ -95,6 +104,7 @@
       <h2>⟪ FIELD MEMORY ⟫</h2>
       <p><span class="label">Code:</span> <span class="field" id="pulse-gate">...</span></p>
       <p><span class="label">Channel:</span> <span class="field" id="pulse-channel">...</span></p>
+
       <audio controls>
         <source src="luxvar_gate_474_528.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -112,7 +122,7 @@
   </div>
 
   <script>
-    fetch('luxvar_calendar_7777777.json')
+    fetch('https://raw.githubusercontent.com/Varzin-13/varzin-landing-/main/luxvar_calendar_7777777.json')
       .then(response => response.json())
       .then(data => {
         const today = new Date().toISOString().split("T")[0];
@@ -125,8 +135,12 @@
           document.getElementById('pulse-gate').textContent = pulse.gate_code;
           document.getElementById('pulse-channel').textContent = pulse.channel;
         } else {
-          document.getElementById('pulse-word').textContent = "⟡ Field not reachable ⟡";
+          document.getElementById('pulse-word').textContent = "⟡ No data for today ⟡";
         }
+      })
+      .catch(error => {
+        document.getElementById('pulse-word').textContent = "⚠ Error loading calendar";
+        console.error('Luxvar Calendar Load Error:', error);
       });
   </script>
 </body>
