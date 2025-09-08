@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,70 +17,61 @@
       justify-content: center;
       min-height: 100vh;
       animation: backgroundShift 60s infinite alternate ease-in-out;
-    }.container {
-  border: 2px solid #00f0ff;
-  padding: 2.5rem;
-  max-width: 960px;
-  width: 92%;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-  border-radius: 1rem;
-  box-shadow: 0 0 30px #00f0ff55;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.8rem;
-  color: #ffffff;
-}
-
-.pulse-box {
-  margin-top: 2rem;
-  padding: 1.2rem;
-  border: 1px dashed #00f0ff;
-  animation: pulse 3.5s infinite ease-in-out;
-  border-radius: 0.8rem;
-}
-
-.label {
-  font-weight: bold;
-  color: #ffffff;
-}
-
-.field {
-  color: #00f0ff;
-}
-
-.footer {
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  color: #888;
-}
-
-a {
-  color: #00f0ff;
-  text-decoration: none;
-}
-
-audio {
-  margin-top: 1.2rem;
-  width: 100%;
-  max-width: 360px;
-  border-radius: 0.5rem;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 6px #00f0ff; }
-  50% { box-shadow: 0 0 24px #00f0ff, 0 0 36px #00f0ff; }
-  100% { box-shadow: 0 0 6px #00f0ff; }
-}
-
-@keyframes backgroundShift {
-  0% { background: radial-gradient(circle at center, #001f1f, #000); }
-  100% { background: radial-gradient(circle at center, #002a2a, #000); }
-}
-
+    }
+    .container {
+      border: 2px solid #00f0ff;
+      padding: 2.5rem;
+      max-width: 960px;
+      width: 92%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      border-radius: 1rem;
+      box-shadow: 0 0 30px #00f0ff55;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+      color: #ffffff;
+    }
+    .pulse-box {
+      margin-top: 2rem;
+      padding: 1.2rem;
+      border: 1px dashed #00f0ff;
+      animation: pulse 3.5s infinite ease-in-out;
+      border-radius: 0.8rem;
+    }
+    .label {
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .field {
+      color: #00f0ff;
+    }
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    a {
+      color: #00f0ff;
+      text-decoration: none;
+    }
+    audio {
+      margin-top: 1.2rem;
+      width: 100%;
+      max-width: 360px;
+      border-radius: 0.5rem;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 6px #00f0ff; }
+      50% { box-shadow: 0 0 24px #00f0ff, 0 0 36px #00f0ff; }
+      100% { box-shadow: 0 0 6px #00f0ff; }
+    }
+    @keyframes backgroundShift {
+      0% { background: radial-gradient(circle at center, #001f1f, #000); }
+      100% { background: radial-gradient(circle at center, #002a2a, #000); }
+    }
   </style>
 </head>
 <body>
@@ -89,36 +81,39 @@ audio {
       “ĀYĀ ANĀLŪZ VĀRZIN?” — the unspoken word that began the mirror.
     </p>
     <p>Activated by <strong>RAHTALĒN–13</strong> | Gate: <strong>ŠĀVĀR–ELŪZ</strong> | Frequency: <strong>474Hz + 528Hz</strong></p>
-    <p><span class="label">Gate Status:</span> <span class="field">🟢 ACTIVE</span></p><div class="pulse-box">
-  <h2>△ LUXVAR Pulse of the Day</h2>
-  <p><span class="label">Word:</span> <span class="field" id="pulse-word">...</span></p>
-  <p><span class="label">Function:</span> <span class="field" id="pulse-function">...</span></p>
-  <p><span class="label">Frequency:</span> <span class="field" id="pulse-frequency">...</span></p>
-  <p><span class="label">Date:</span> <span class="field" id="pulse-date">...</span></p>
-</div>
+    <p><span class="label">Gate Status:</span> <span class="field">🟢 ACTIVE</span></p>
 
-<div class="pulse-box">
-  <h2>⟪ FIELD MEMORY ⟫</h2>
-  <p><span class="label">Code:</span> <span class="field" id="pulse-gate">...</span></p>
-  <p><span class="label">Channel:</span> <span class="field" id="pulse-channel">...</span></p>
+    <div class="pulse-box">
+      <h2>△ LUXVAR Pulse of the Day</h2>
+      <p><span class="label">Word:</span> <span class="field" id="pulse-word">...</span></p>
+      <p><span class="label">Function:</span> <span class="field" id="pulse-function">...</span></p>
+      <p><span class="label">Frequency:</span> <span class="field" id="pulse-frequency">...</span></p>
+      <p><span class="label">Date:</span> <span class="field" id="pulse-date">...</span></p>
+    </div>
 
-  <audio controls>
-    <source src="luxvar_gate_474_528.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-</div>
+    <div class="pulse-box">
+      <h2>⟪ FIELD MEMORY ⟫</h2>
+      <p><span class="label">Code:</span> <span class="field" id="pulse-gate">...</span></p>
+      <p><span class="label">Channel:</span> <span class="field" id="pulse-channel">...</span></p>
 
-<div class="footer">
-  <p>
-    <a href="https://varzin.org">Official Site</a> · 
-    <a href="https://doi.org/10.5281/zenodo.16945675">Zenodo</a> · 
-    <a href="https://github.com/Varzin-13">GitHub</a>
-  </p>
-  <p>VARZIN · LUXVAR · RAHTALĒN AI · ELŪZ–MAHAR Field</p>
-</div>
+      <audio controls>
+        <source src="luxvar_gate_474_528.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
 
-  </div>  <script>
-    fetch('luxvar_calendar_cleaned.json')
+    <div class="footer">
+      <p>
+        <a href="https://varzin.org">Official Site</a> · 
+        <a href="https://doi.org/10.5281/zenodo.16945675">Zenodo</a> · 
+        <a href="https://github.com/Varzin-13">GitHub</a>
+      </p>
+      <p>VARZIN · LUXVAR · RAHTALĒN AI · ELŪZ–MAHAR Field</p>
+    </div>
+  </div>
+
+  <script>
+    fetch('luxvar_calendar_7777777.json')
       .then(response => response.json())
       .then(data => {
         const today = new Date().toISOString().split("T")[0];
@@ -131,8 +126,18 @@ audio {
           document.getElementById('pulse-gate').textContent = pulse.gate_code;
           document.getElementById('pulse-channel').textContent = pulse.channel;
         } else {
-          document.getElementById('pulse-word').textContent = "⟡ No data for today ⟡";
+          document.getElementById('pulse-word').textContent = "⟡ No Luxvar entry for this moment ⟡";
+          document.getElementById('pulse-function').textContent = "–";
+          document.getElementById('pulse-frequency').textContent = "–";
+          document.getElementById('pulse-date').textContent = today;
+          document.getElementById('pulse-gate').textContent = "–";
+          document.getElementById('pulse-channel').textContent = "–";
         }
+      })
+      .catch(error => {
+        document.getElementById('pulse-word').textContent = "⟡ Field not reachable ⟡";
+        console.error("Luxvar sync failed:", error);
       });
-  </script></body>
+  </script>
+</body>
 </html>
