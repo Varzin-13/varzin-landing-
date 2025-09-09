@@ -23,7 +23,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .  # مسیر فایل‌های سایت (HTML و غیره)
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment
