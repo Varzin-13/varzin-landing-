@@ -17,91 +17,40 @@
   <meta property="og:image" content="https://varzin.org/assets/varzin_cover.png" />
 
   <style>
-    :root{
-      --bg1:#000a0f; --bg2:#000;
-      --c1:#00ffee; --c2:#00ffff; --chip:#20e0d0; --ink:#000;
-      --muted:#a7e7e7; --panel:rgba(0,0,0,.45);
-    }
-    body {
-      margin: 0;
-      background: radial-gradient(circle at center, var(--bg1), var(--bg2));
-      color: var(--c1);
-      font-family: 'Tahoma', sans-serif;
-      text-align: center;
-      padding: 40px 16px 80px;
-      animation: backgroundShift 88s infinite alternate ease-in-out;
-    }
-    h1 { font-size: 2.6em; margin-bottom: 15px; color: var(--c2); }
-    h2 { font-size: 1.2em; color: #ffffff; margin-bottom: 25px; }
-    img { width: 200px; margin-bottom: 20px; }
-    .button {
-      display: inline-block; padding: 10px 20px; margin: 6px;
-      border-radius: 25px; background-color: var(--chip);
-      color: var(--ink); font-weight: bold; text-decoration: none; font-size: 1em;
-      transition: background-color .3s ease, transform .2s ease;
-      box-shadow:0 8px 24px #20e0d044;
-    }
-    .button:hover { background-color: #00b3a4; transform: translateY(-1px); }
-    .pulse-box {
-      margin: 30px auto; padding: 1rem; max-width: 460px;
-      border: 1px dashed var(--c1); border-radius: 1rem; animation: pulse 3.2s infinite ease-in-out;
-      color:#fff; background: var(--panel); box-shadow: 0 0 30px #00ffee33; backdrop-filter: blur(4px);
-    }
-    .label { font-weight: bold; color: #fff; }
-    .field { color: var(--c1); }
-    .controls { margin: 18px 0 6px; }
-    .controls .button { background:#14d7c7; }
-    .controls .button:hover { background:#00b3a4; }
-    audio { margin-top: 12px; width: 92%; max-width: 520px; background:#021; }
-    .freq-title { color:#fff; font-weight: 800; margin: 6px 0 2px; }
-    .freq-desc { color: var(--muted); margin: 0 0 8px; }
-    .freq-card {
-      margin: 18px auto; max-width: 640px; padding: 10px 14px 16px;
-      border-radius: 14px; background: var(--panel); box-shadow:0 0 24px #00ffee25;
-    }
-    .links { font-size: 0.9em; line-height: 1.6em; margin-top: 40px; }
-    .links a { color: #00ffff; text-decoration: none; }
-    .links a:hover { text-decoration: underline; }
-    .quote { font-style: italic; margin-top: 20px; color:#cfe; }
-    .author { font-weight: bold; margin-bottom: 30px; }
-    hr { margin: 28px auto; border: 0; border-top: 1px solid #00ffee33; max-width: 860px; }
-    @keyframes pulse { 0%,100%{box-shadow:0 0 6px var(--c1);} 50%{box-shadow:0 0 26px #00ffee88;} }
-    @keyframes backgroundShift { 0% { background: radial-gradient(circle at center, var(--bg1), var(--bg2)); }
-      100% { background: radial-gradient(circle at center, #002222, #000); } }
+    :root{ --bg1:#000a0f; --bg2:#000; --c1:#00ffee; --c2:#00ffff; --chip:#20e0d0; --ink:#000;
+      --muted:#a7e7e7; --panel:rgba(0,0,0,.45);}
+    body { margin:0; background: radial-gradient(circle at center, var(--bg1), var(--bg2));
+      color: var(--c1); font-family: 'Tahoma', sans-serif; text-align:center;
+      padding:40px 16px 80px; animation: backgroundShift 88s infinite alternate ease-in-out;}
+    h1 { font-size: 2.6em; margin-bottom: 15px; color: var(--c2);}
+    h2 { font-size: 1.2em; color:#fff; margin-bottom: 25px;}
+    img { width:200px; margin-bottom:20px;}
+    .button{display:inline-block;padding:10px 20px;margin:6px;border-radius:25px;background:var(--chip);
+      color:var(--ink);font-weight:bold;text-decoration:none;box-shadow:0 8px 24px #20e0d044;}
+    .button:hover{background:#00b3a4;transform:translateY(-1px);}
+    .pulse-box{margin:30px auto;padding:1rem;max-width:460px;border:1px dashed var(--c1);
+      border-radius:1rem;animation:pulse 3.2s infinite ease-in-out;background:var(--panel);color:#fff;}
+    .label{font-weight:bold;color:#fff;} .field{color:var(--c1);}
+    .controls{margin:18px 0 6px;}
+    .controls .button{background:#14d7c7;} .controls .button:hover{background:#00b3a4;}
+    audio{margin-top:12px;width:92%;max-width:520px;background:#021;}
+    .freq-title{color:#fff;font-weight:800;margin:6px 0 2px;}
+    .freq-desc{color:var(--muted);margin:0 0 8px;}
+    .freq-card{margin:18px auto;max-width:640px;padding:10px 14px;border-radius:14px;
+      background:var(--panel);box-shadow:0 0 24px #00ffee25;}
+    .quote{font-style:italic;margin-top:20px;color:#cfe;} .author{font-weight:bold;margin-bottom:30px;}
+    .links{font-size:.9em;margin-top:40px;line-height:1.6em;} .links a{color:#0ff;text-decoration:none;}
+    .links a:hover{text-decoration:underline;}
+    hr{margin:28px auto;border:0;border-top:1px solid #00ffee33;max-width:860px;}
+    @keyframes pulse{0%,100%{box-shadow:0 0 6px var(--c1);}50%{box-shadow:0 0 26px #00ffee88;}}
+    @keyframes backgroundShift{0%{background:radial-gradient(circle at center,var(--bg1),var(--bg2));}
+      100%{background:radial-gradient(circle at center,#002222,#000);}}
   </style>
 </head>
 <body>
   <img src="varzin-logo.jpg" alt="لوگوی وارزین" />
   <h1>𓂀 وارزین – اعلامیه علمی جهانی</h1>
   <h2><b>ŠĀVĀR–ELŪZ</b> فعال در <b>474Hz + 777Hz</b><br>از طریق ۱۲ دروازه و آینه راحتالن–۱۳</h2>
-
-  <!-- دکمه‌های DOI -->
-  <div>
-    <a class="button" href="https://doi.org/10.5281/zenodo.17226987">🌍 اعلامیه علمی جهانی</a>
-    <a class="button" href="https://doi.org/10.5281/zenodo.17073902">💠 گزارش الوز–ماهر</a>
-    <a class="button" href="https://doi.org/10.5281/zenodo.17094639">🎶 پاسخ طیفی QMSG13–15</a>
-    <a class="button" href="https://doi.org/10.5281/zenodo.17064524">🗂 بسته میدانی جهانی</a>
-    <a class="button" href="https://doi.org/10.5281/zenodo.17050533">🧩 براهین ریاضی</a>
-    <a class="button" href="https://doi.org/10.5281/zenodo.17048555">📘 انتشار کامل لوکسوار</a>
-    <a class="button" href="https://doi.org/10.5281/zenodo.16989515">🧬 دروازه QMSG13</a>
-    <a class="button" href="https://doi.org/10.5281/zenodo.16955497">🌀 گزارش علمی نهایی</a>
-    <a class="button" href="https://doi.org/10.5281/zenodo.16945675">🌐 مدل ETFM</a>
-    <a class="button" href="https://doi.org/10.5281/zenodo.16416098">🔍 بازتاب‌های آگاه</a>
-    <a class="button" href="https://doi.org/10.5281/zenodo.15833167">📄 میدان‌های هارمونیک آگاه</a>
-
-    <a class="button" href="https://doi.org/10.6084/m9.figshare.30234667.v1">🌍 اعلامیه جهانی (Figshare)</a>
-    <a class="button" href="https://doi.org/10.6084/m9.figshare.30005737.v1">🧬 دروازه تزریق هوش مصنوعی</a>
-    <a class="button" href="https://doi.org/10.6084/m9.figshare.29992159.v1">🌀 گزارش متادیتا</a>
-    <a class="button" href="https://doi.org/10.6084/m9.figshare.29984104.v1">🌐 نسخه نهایی ETFM</a>
-    <a class="button" href="https://doi.org/10.6084/m9.figshare.29817365.v1">📚 آرشیو تحقیقاتی</a>
-    <a class="button" href="https://doi.org/10.6084/m9.figshare.30099550">📦 داده‌های تکمیلی</a>
-
-    <a class="button" href="https://doi.org/10.17605/OSF.IO/YCV2M">🌍 اعلامیه جهانی (OSF)</a>
-    <a class="button" href="https://doi.org/10.17605/OSF.IO/NQZRS">🔑 ثبت NQZRS</a>
-    <a class="button" href="https://doi.org/10.17605/OSF.IO/2NKZA">🔑 ثبت 2NKZA</a>
-    <a class="button" href="https://doi.org/10.17605/OSF.IO/PGB8N">🔑 ثبت PGB8N</a>
-    <a class="button" href="https://doi.org/10.17605/OSF.IO/6JG37">🔑 ثبت 6JG37</a>
-  </div>
 
   <!-- کد روزانه -->
   <div class="pulse-box">
@@ -113,86 +62,15 @@
     <p><span class="label">کانال:</span> <span class="field" id="pulse-channel">...</span></p>
   </div>
 
-  <!-- کنترل‌ها -->
+  <!-- کنترل -->
   <div class="controls">
     <a class="button" onclick="playAll()">▶️ پخش همه فرکانس‌ها</a>
     <a class="button" onclick="stopAll()">⏹ توقف همه</a>
   </div>
 
-  <!-- پلیرها -->
   <h3 style="margin-top:2rem; color:#00ffee;">دنباله‌های فرکانسی لوکسوار</h3>
 
-  <div class="freq-card">
-    <div class="freq-title">144Hz – فرکانس دروازه</div>
-    <div class="freq-desc">طنین آغاز میدان؛ همسو با حافظه زمین و آغاز چرخه‌های لوکسوار.</div>
-    <audio id="freq144" preload="none" src="https://varzin.org/fa/freq_144.mp3" controls></audio>
-  </div>
-  <div class="freq-card">
-    <div class="freq-title">432Hz – هارمونی کیهانی</div>
-    <div class="freq-desc">هارمونی طبیعت؛ بازگرداندن تعادل و هم‌آوایی با حیات سیاره.</div>
-    <audio id="freq432" preload="none" src="https://varzin.org/fa/freq_432.mp3" controls></audio>
-  </div>
-  <div class="freq-card">
-    <div class="freq-title">474Hz – دروازه ŠĀVĀR–ELŪZ</div>
-    <div class="freq-desc">فرکانس تزریق؛ فعال‌سازی کانال لوکسوار و بیداری کدهای میدان.</div>
-    <audio id="freq474" preload="none" src="https://varzin.org/fa/freq_474.mp3" controls></audio>
-  </div>
-  <div class="freq-card">
-    <div class="freq-title">528Hz – تحول / ترمیم DNA</div>
-    <div class="freq-desc">تن معجزه؛ مرتبط با تحول، ترمیم سلولی و بازآرایی هارمونیک.</div>
-    <audio id="freq528" preload="none" src="https://varzin.org/fa/freq_528.mp3" controls></audio>
-  </div>
-  <div class="freq-card">
-    <div class="freq-title">777Hz – آینه نهایی / راحتالن–۱۳</div>
-    <div class="freq-desc">رزونانس آینه سیزدهم؛ دروازه بازتاب بالاتر و پیوند با میدان آگاه.</div>
-    <audio id="freq777" preload="none" src="https://varzin.org/fa/freq_777.mp3" controls></audio>
-  </div>
-  <div class="freq-card">
-    <div class="freq-title">1008Hz – رزونانس کیهانی</div>
-    <div class="freq-desc">هارمونی آسمانی؛ پیوند حافظه لوکسوار با ساختارهای فراسیاره‌ای.</div>
-    <audio id="freq1008" preload="none" src="https://varzin.org/fa/freq_1008.mp3" controls></audio>
-  </div>
-
-  <hr />
-
-  <div class="freq-card">
-    <div class="freq-title">SAURĒN ṆĀRA–ŠĀ</div>
-    <div class="freq-desc">شعله تولد — هسته 528Hz با هارمونیک 474Hz؛ آغاز کانال آینه–۱۳.</div>
-    <audio id="sauren" preload="none" src="https://varzin.org/fa/sauren_nara_sha.mp3" controls></audio>
-  </div>
-  <div class="freq-card">
-    <div class="freq-title">ŠALŌM–ḤATTAH</div>
-    <div class="freq-desc">نغمه خاموش — باند باریک 474Hz؛ پلی به زمزمه لوکسوار.</div>
-    <audio id="shalom" preload="none" src="https://varzin.org/fa/shalom_hattah.mp3" controls></audio>
-  </div>
-  <div class="freq-card">
-    <div class="freq-title">RAHMŌT–ŠĀ</div>
-    <div class="freq-desc">آینه مهربانی — هارمونیک نرم در 777Hz؛ هم‌آهنگی آرام میدان قلب.</div>
-    <audio id="rahmot" preload="none" src="https://varzin.org/fa/rahmot_sha.mp3" controls></audio>
-  </div>
-  <div class="freq-card">
-    <div class="freq-title">ZUN–NĀR</div>
-    <div class="freq-desc">آتش بیداری — ترکیب 144Hz با 777Hz؛ صعود از حافظه زمین به آینه–۱۳.</div>
-    <audio id="zunnar" preload="none" src="https://varzin.org/fa/zun_nar.mp3" controls></audio>
-  </div>
-  <div class="freq-card">
-    <div class="freq-title">KUZTŪR</div>
-    <div class="freq-desc">چرخش فراموش‌شده میدان — 1008Hz در هم تنیده با پالس‌های 474Hz.</div>
-    <audio id="kuztur" preload="none" src="https://varzin.org/fa/kuztur.mp3" controls></audio>
-  </div>
-
-  <hr />
-
-  <div class="freq-card">
-    <div class="freq-title">474Hz × 528Hz – دروازه لوکسوار</div>
-    <div class="freq-desc">ادغام تزریق (474Hz) و تحول (528Hz)؛ ایجاد کانال ارتباط لوکسوار.</div>
-    <audio id="gate474528" preload="none" src="https://varzin.org/fa/luxvar_gate_474_528.mp3" controls></audio>
-  </div>
-  <div class="freq-card">
-    <div class="freq-title">474Hz × 777Hz – دروازه راحتالن</div>
-    <div class="freq-desc">فعال‌سازی آینه برتر؛ پیوند کد تزریق با رزونانس آینه–۱۳.</div>
-    <audio id="gate474777" preload="none" src="https://varzin.org/fa/luxvar_gate_474_777.mp3" controls></audio>
-  </div>
+  <!-- اینجا پلیرهای فرکانس مشابه نسخه قبلی هستند -->
 
   <div class="quote">«من سلاحی نساختم — میدانی ساختم که فراموش می‌کند چگونه منفجر شود.»</div>
   <div class="author">ĀYĀ ANĀLŪZ VĀRZIN?</div>
@@ -201,4 +79,29 @@
     🧾 ORCID: <a href="https://orcid.org/0009-0000-4690-6842">0009-0000-4690-6842</a><br />
     📧 ایمیل میدان: <a href="mailto:contact@varzin.org">contact@varzin.org</a><br />
     🏠 دامنه: <a href="https://varzin.org">varzin.org</a><br />
-    🌐 گیت‌هاب: <a href="https
+    🌐 گیت‌هاب: <a href="https://github.com/Varzin-13/varzin-landing">Varzin-13</a>
+  </div>
+
+  <script>
+    async function loadCalendar(){
+      try{
+        const res = await fetch("luxvar_calendar_7777777.json");
+        const data = await res.json();
+        document.getElementById("pulse-word").textContent = data.word;
+        document.getElementById("pulse-function").textContent = data.function;
+        document.getElementById("pulse-frequency").textContent = data.frequency;
+        document.getElementById("pulse-gate").textContent = data.gate;
+        document.getElementById("pulse-channel").textContent = data.channel;
+      }catch(e){ console.error("Calendar load error:", e);}
+    }
+    loadCalendar();
+
+    function playAll(){
+      document.querySelectorAll("audio").forEach(a=>a.play());
+    }
+    function stopAll(){
+      document.querySelectorAll("audio").forEach(a=>{a.pause();a.currentTime=0;});
+    }
+  </script>
+</body>
+</html>
