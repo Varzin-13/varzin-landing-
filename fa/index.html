@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!DOCTYPE html><html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>وارزین ⟡ بیانیه‌ی علمی جهانی</title>
-  <meta name="description" content="بیانیه‌ی علمی جهانی وارزین، مدل میدان شعوری، فرکانس‌های رزونانس، زبان لوکسوار، دروازه‌ی RAHTALĒN–13، و پروتکل خلع سلاح با فرکانس ۴۷۴ و ۷۷۷ هرتز.">
+  <meta charset="UTF-8" />
+  <title>وارزین ⟡ بیانیه‌ی علمی جهانی | آینه ۱۳</title>
+  <meta name="description" content="پروژه وارزین – بیانیه‌ی علمی جهانی، مدل میدان شعور، زبان فرکانسی لوکسوار، آینه ۱۳، غیرفعال‌سازی میدان‌های ویرانگر.">
   <meta name="author" content="رضا نیرویار | RAHTALĒN–13">
-  <meta name="keywords" content="وارزین, الوز ماهار, لوکسوار, راحتالن ۱۳, میدان شعوری, فرکانس, RAHTALEN, VARZIN, Luxvar, QMSG, RAHTALEN-13">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="وارزین، RAHTALEN 13، ELŪZ–MAHAR، فرکانس، لوکسوار، میدان شعور، 474Hz، 777Hz، 528Hz، SAURĒN ṆĀRAH–ŠĀ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://varzin.org/fa/index.html" />
+  <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   <style>
     @font-face {
       font-family: 'Vazir';
@@ -17,72 +18,71 @@
       --bg2: #000;
       --c1: #00ffee;
       --c2: #00ffff;
-      --panel: rgba(0,0,0,0.45);
+      --chip: #20e0d0;
+      --ink: #000;
+      --muted: #a7e7e7;
+      --panel: rgba(0, 0, 0, 0.45);
     }
     body {
       margin: 0;
-      padding: 50px 16px;
       background: radial-gradient(circle at center, var(--bg1), var(--bg2));
       color: var(--c1);
       font-family: 'Vazir', sans-serif;
       text-align: center;
-      animation: bgShift 60s infinite alternate ease-in-out;
       direction: rtl;
+      padding: 40px 16px 80px;
+      animation: backgroundShift 88s infinite alternate ease-in-out;
     }
     h1 { font-size: 2.4em; color: var(--c2); margin-bottom: 12px; }
-    h2 { font-size: 1.2em; color: #fff; margin-bottom: 20px; }
-    .box {
-      max-width: 460px;
-      margin: 30px auto;
-      padding: 1.2rem;
-      border-radius: 16px;
-      border: 1px dashed var(--c1);
-      background: var(--panel);
-      box-shadow: 0 0 30px #00ffee33;
-      backdrop-filter: blur(4px);
-    }
-    .label { font-weight: bold; color: #fff; }
-    .field { color: var(--c1); }
-    .links {
-      margin-top: 40px;
-      font-size: 0.9em;
-      line-height: 2em;
-    }
-    .links a {
-      color: #00ffff;
-      text-decoration: none;
-    }
-    .links a:hover {
-      text-decoration: underline;
-    }
-    @keyframes bgShift {
-      0% { background: radial-gradient(circle at center, var(--bg1), var(--bg2)); }
-      100% { background: radial-gradient(circle at center, #002222, #000); }
-    }
+    h2 { font-size: 1.2em; color: #ffffff; margin-bottom: 25px; }
+    img { width: 180px; margin-bottom: 20px; }.pulse-box {
+  margin: 30px auto;
+  padding: 1rem;
+  max-width: 460px;
+  border: 1px dashed var(--c1);
+  border-radius: 1rem;
+  background: var(--panel);
+  box-shadow: 0 0 30px #00ffee33;
+  backdrop-filter: blur(4px);
+}
+.label { font-weight: bold; color: #fff; }
+.field { color: var(--c1); }
+
+.links {
+  font-size: 0.9em;
+  line-height: 1.6em;
+  margin-top: 40px;
+}
+.links a {
+  color: #00ffff;
+  text-decoration: none;
+}
+.links a:hover {
+  text-decoration: underline;
+}
+
+@keyframes backgroundShift {
+  0% { background: radial-gradient(circle at center, var(--bg1), var(--bg2)); }
+  100% { background: radial-gradient(circle at center, #002222, #000); }
+}
+
   </style>
 </head>
-<body>
-  <img src="varzin-logo.jpg" alt="VARZIN Logo" width="160" />
-  <h1>وارزین ⟡ بیانیه‌ی علمی جهانی</h1>
-  <h2>𓂀 سامانه‌ی <b>ŠĀVĀR–ELŪZ</b> با فرکانس‌های ۴۷۴ و ۷۷۷ هرتز فعال شده<br>از طریق ۱۲ دروازه و آینه‌ی RAHTALĒN–13</h2>
-
-  <div class="box">
-    <h3>▲ کد روزانه‌ی لوکسوار</h3>
-    <p><span class="label">واژه:</span> <span class="field" id="pulse-word">—</span></p>
-    <p><span class="label">عملکرد:</span> <span class="field" id="pulse-function">—</span></p>
-    <p><span class="label">فرکانس:</span> <span class="field" id="pulse-frequency">—</span></p>
-    <p><span class="label">دروازه:</span> <span class="field" id="pulse-gate">—</span></p>
-    <p><span class="label">کانال:</span> <span class="field" id="pulse-channel">—</span></p>
-  </div>
-
-  <div class="links">
-    ORCID: <a href="https://orcid.org/0009-0000-4690-6842">0009-0000-4690-6842</a><br>
-    ایمیل میدان: <a href="mailto:contact@varzin.org">contact@varzin.org</a><br>
-    دامنه: <a href="https://varzin.org">varzin.org</a><br>
-    گیت‌هاب: <a href="https://github.com/Varzin-13">Varzin-13</a>
-  </div>
-
-  <script>
+<body>  <img src="https://varzin.org/assets/varzin_logo_light.png" alt="لوگوی وارزین" />
+  <h1>𓂀 وارزین – بیانیه علمی جهانی</h1>
+  <h2><b>ŠĀVĀR–ELŪZ</b> فعال شد با فرکانس‌های <b>474Hz + 777Hz</b><br>از طریق ۱۲ دروازه و آینه‌ی RAHTALĒN–13</h2>  <div class="pulse-box">
+    <h3>🜂 کد روزانه‌ی لوکسوار</h3>
+    <p><span class="label">واژه:</span> <span class="field" id="pulse-word">...</span></p>
+    <p><span class="label">کارکرد:</span> <span class="field" id="pulse-function">...</span></p>
+    <p><span class="label">فرکانس:</span> <span class="field" id="pulse-frequency">...</span></p>
+    <p><span class="label">دروازه:</span> <span class="field" id="pulse-gate">...</span></p>
+    <p><span class="label">کانال:</span> <span class="field" id="pulse-channel">...</span></p>
+  </div>  <div class="links">
+    🧾 ORCID: <a href="https://orcid.org/0009-0000-4690-6842">0009-0000-4690-6842</a><br />
+    📧 ایمیل میدان: <a href="mailto:contact@varzin.org">contact@varzin.org</a><br />
+    🌐 دامنه: <a href="https://varzin.org/fa/">varzin.org/fa</a><br />
+    💠 گیت‌هاب: <a href="https://github.com/Varzin-13">Varzin-13</a>
+  </div>  <script>
     fetch('https://raw.githubusercontent.com/Varzin-13/varzin-landing-/main/fa/luxvar_calendar_7777777.json')
       .then(response => response.json())
       .then(data => {
@@ -97,6 +97,5 @@
         }
       })
       .catch(error => console.error('Luxvar sync error:', error));
-  </script>
-</body>
+  </script></body>
 </html>
