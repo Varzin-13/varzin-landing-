@@ -1,84 +1,73 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <title>وارزین ⟡ بیانیه‌ی علمی جهانی | میدان شعوری لوکسوار</title>
-  <meta name="description" content="وارزین – بیانیه‌ی علمی جهانی، مدل میدان شعوری، زبان فرکانسی لوکسوار، هندسه‌ی توروس سیاره‌ای، و پروتکل خلع سلاح هسته‌ای از طریق فرکانس ۴۷۴ و ۷۷۷." />
-  <meta name="author" content="رضا نیرویار | RAHTALĒN–13" />
-  <meta name="keywords" content="وارزین, الوز ماهار, لوکسوار, راحتالن 13, میدان شعوری, توروس, QMSG, 474Hz, 777Hz, SAUREN NARA SHA, ŠALŌM HATTAH, تقویم لوکسوار" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="canonical" href="https://varzin.org/fa/" />
-  <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
-  <meta property="og:title" content="وارزین ⟡ بیانیه‌ی علمی جهانی" />
-  <meta property="og:description" content="بیانیه‌ی علمی جهانی وارزین – مدل میدان شعوری، زبان لوکسوار، پروتکل خلع سلاح و هندسه شعوری زمین" />
-  <meta property="og:url" content="https://varzin.org/fa/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://varzin.org/assets/varzin_cover.png" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "وارزین ⟡ بیانیه‌ی علمی جهانی",
-    "url": "https://varzin.org/fa/",
-    "description": "بیانیه‌ی علمی جهانی وارزین – مدل میدان شعوری، زبان لوکسوار، پروتکل خلع سلاح و هندسه شعوری زمین",
-    "inLanguage": "fa",
-    "author": {
-      "@type": "Person",
-      "name": "Reza Nirouyar",
-      "identifier": "https://orcid.org/0009-0000-4690-6842"
-    }
-  }
-  </script>
+  <meta charset="UTF-8">
+  <title>وارزین ⟡ بیانیه‌ی علمی جهانی</title>
+  <meta name="description" content="بیانیه‌ی علمی جهانی وارزین، مدل میدان شعوری، فرکانس‌های رزونانس، زبان لوکسوار، دروازه‌ی RAHTALĒN–13، و پروتکل خلع سلاح با فرکانس ۴۷۴ و ۷۷۷ هرتز.">
+  <meta name="author" content="رضا نیرویار | RAHTALĒN–13">
+  <meta name="keywords" content="وارزین, الوز ماهار, لوکسوار, راحتالن ۱۳, میدان شعوری, فرکانس, RAHTALEN, VARZIN, Luxvar, QMSG, RAHTALEN-13">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    @font-face {
+      font-family: 'Vazir';
+      src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.woff2') format('woff2');
+    }
     :root {
       --bg1: #000a0f;
       --bg2: #000;
       --c1: #00ffee;
       --c2: #00ffff;
-      --chip: #20e0d0;
-      --ink: #000;
-      --muted: #a7e7e7;
-      --panel: rgba(0, 0, 0, .45);
+      --panel: rgba(0,0,0,0.45);
     }
     body {
       margin: 0;
+      padding: 50px 16px;
       background: radial-gradient(circle at center, var(--bg1), var(--bg2));
       color: var(--c1);
-      font-family: 'Tahoma', sans-serif;
+      font-family: 'Vazir', sans-serif;
       text-align: center;
-      padding: 40px 16px 80px;
+      animation: bgShift 60s infinite alternate ease-in-out;
       direction: rtl;
     }
-    h1 { font-size: 2.4em; margin-bottom: 15px; color: var(--c2); }
-    h2 { font-size: 1.2em; color: #fff; margin-bottom: 25px; }
-    .button {
-      display: inline-block; padding: 10px 20px; margin: 6px;
-      border-radius: 25px; background-color: var(--chip);
-      color: var(--ink); font-weight: bold; text-decoration: none;
-      font-size: 1em; transition: 0.3s; box-shadow:0 8px 24px #20e0d044;
-    }
-    .button:hover { background-color: #00b3a4; transform: translateY(-1px); }
-    .pulse-box {
-      margin: 30px auto; padding: 1rem; max-width: 460px;
-      border: 1px dashed var(--c1); border-radius: 1rem;
-      color: #fff; background: var(--panel); box-shadow: 0 0 30px #00ffee33;
+    h1 { font-size: 2.4em; color: var(--c2); margin-bottom: 12px; }
+    h2 { font-size: 1.2em; color: #fff; margin-bottom: 20px; }
+    .box {
+      max-width: 460px;
+      margin: 30px auto;
+      padding: 1.2rem;
+      border-radius: 16px;
+      border: 1px dashed var(--c1);
+      background: var(--panel);
+      box-shadow: 0 0 30px #00ffee33;
+      backdrop-filter: blur(4px);
     }
     .label { font-weight: bold; color: #fff; }
     .field { color: var(--c1); }
-    .links { font-size: 0.9em; line-height: 1.6em; margin-top: 40px; }
-    .links a { color: #00ffff; text-decoration: none; }
-    .links a:hover { text-decoration: underline; }
-    audio { margin-top: 12px; width: 92%; max-width: 520px; background: #021; }
+    .links {
+      margin-top: 40px;
+      font-size: 0.9em;
+      line-height: 2em;
+    }
+    .links a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+    @keyframes bgShift {
+      0% { background: radial-gradient(circle at center, var(--bg1), var(--bg2)); }
+      100% { background: radial-gradient(circle at center, #002222, #000); }
+    }
   </style>
 </head>
 <body>
+  <img src="varzin-logo.jpg" alt="VARZIN Logo" width="160" />
+  <h1>وارزین ⟡ بیانیه‌ی علمی جهانی</h1>
+  <h2>𓂀 سامانه‌ی <b>ŠĀVĀR–ELŪZ</b> با فرکانس‌های ۴۷۴ و ۷۷۷ هرتز فعال شده<br>از طریق ۱۲ دروازه و آینه‌ی RAHTALĒN–13</h2>
 
-  <img src="varzin-logo.jpg" alt="لوگوی وارزین" width="200" />
-  <h1>𓂀 وارزین – بیانیه‌ی علمی جهانی</h1>
-  <h2><b>ŠĀVĀR–ELŪZ</b> فعال شده با فرکانس‌های <b>۴۷۴ و ۷۷۷</b><br>از طریق ۱۲ دروازه و آینه‌ی RAHTALĒN–13</h2>
-
-  <div class="pulse-box">
-    <h3>🜂 کد روزانه‌ی لوکسوار</h3>
+  <div class="box">
+    <h3>▲ کد روزانه‌ی لوکسوار</h3>
     <p><span class="label">واژه:</span> <span class="field" id="pulse-word">—</span></p>
     <p><span class="label">عملکرد:</span> <span class="field" id="pulse-function">—</span></p>
     <p><span class="label">فرکانس:</span> <span class="field" id="pulse-frequency">—</span></p>
@@ -87,10 +76,10 @@
   </div>
 
   <div class="links">
-    🧾 ORCID: <a href="https://orcid.org/0009-0000-4690-6842">0009-0000-4690-6842</a><br />
-    📧 ایمیل میدان: <a href="mailto:contact@varzin.org">contact@varzin.org</a><br />
-    🌐 دامنه: <a href="https://varzin.org">varzin.org</a><br />
-    🌀 گیت‌هاب: <a href="https://github.com/Varzin-13">Varzin-13</a>
+    ORCID: <a href="https://orcid.org/0009-0000-4690-6842">0009-0000-4690-6842</a><br>
+    ایمیل میدان: <a href="mailto:contact@varzin.org">contact@varzin.org</a><br>
+    دامنه: <a href="https://varzin.org">varzin.org</a><br>
+    گیت‌هاب: <a href="https://github.com/Varzin-13">Varzin-13</a>
   </div>
 
   <script>
@@ -109,6 +98,5 @@
       })
       .catch(error => console.error('Luxvar sync error:', error));
   </script>
-
 </body>
 </html>
