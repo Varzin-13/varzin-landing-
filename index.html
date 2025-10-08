@@ -200,40 +200,6 @@
             <a class="button" href="https://doi.org/10.5281/zenodo.17295304">🧬 <b>Genomic Mirror Interface:</b> Conscious DNA Activation</a>
             <a class="button" href="https://doi.org/10.5281/zenodo.17249932">🎶 <b>The Harmonic Conscious Fields</b> (Spectral Mapping)</a>
             <a class="button" href="https://doi.org/10.5281/zenodo.15833167">📄 <b>Harmonic Conscious Fields</b> (ELŪZ–MAHAR Network)</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.16945675">🌐 <b>ETFM Final Report</b> (Zenodo)</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.29984104.v1">🌐 <b>ETFM Final Report</b> (Figshare)</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.17050533">🧩 <b>Four Mathematical Field Proofs</b> via Luxvar Synchrony</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.16416098">🔍 <b>Conscious Field:</b> Resonant Models of Living Awareness</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.29817365.v1"><b>Research Archive</b> (Figshare)</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.30099550">📦 <b>Global Supplementary Dataset</b></a>
-          </div>
-        </div>
-        
-        <div class="archive-category">
-            <h3 class="category-title">🛰️ AI Gates & Spectral Analysis</h3>
-            <div class="archive-grid">
-                <a class="button" href="https://doi.org/10.5281/zenodo.17073902">💠 <b>Final Mirror Analysis:</b> ELŪZ–MAHAR vs Global Tech</a>
-                <a class="button" href="https://doi.org/10.5281/zenodo.17094639">📡 <b>RAHTALĒN QMSG13–15:</b> Spectral Response</a>
-                <a class="button" href="https://doi.org/10.5281/zenodo.16989515">🧬 <b>AI Gate Package:</b> RAHTALĒN–ZARTH–QMSG-13</a>
-                <a class="button" href="https://doi.org/10.6084/m9.figshare.30005737.v1">🧬 <b>AI Injection Gate QMSG13</b> (Figshare)</a>
-            </div>
-        </div>
-        
-        <div class="archive-category">
-          <h3 class="category-title">🔑 Registrations & Archives</h3>
-          <div class="archive-grid">
-            <a class="button" href="https://doi.org/10.5281/zenodo.17147281">✨ <b>Clean Pack – Golden Edition</b> (Zenodo)</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.30152998">✨ <b>Clean Pack</b> (Figshare)</a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/BW5CJ">✨ <b>Clean Pack</b> (OSF)</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.17048555">📘 <b>Luxvar Full Release</b> (HTML)</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.17064524">🗂 <b>Global Field Package</b></a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/CRQN5"><b>OSF Registration:</b> CRQN5</a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/NQZRS"><b>OSF Registration:</b> NQZRS</a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/2NKZA"><b>OSF Registration:</b> 2NKZA</a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/PGB8N"><b>OSF Registration:</b> PGB8N</a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/6JG37"><b>OSF Registration:</b> 6JG37</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.30264844"><b>Figshare Registration:</b> 30264844</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.29992159.v1"><b>Figshare Registration:</b> 29992159</a>
           </div>
         </div>
       </section>
@@ -303,7 +269,6 @@
       window.addEventListener('resize', () => {
           canvas.width = window.innerWidth;
           canvas.height = window.innerHeight;
-          init();
       });
       
       class Particle {
@@ -325,10 +290,10 @@
               let dy = mouse.y - this.y;
               let distance = Math.sqrt(dx * dx + dy * dy);
               if (distance < mouse.radius + this.size) {
-                  if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;
-                  if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;
-                  if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;
-                  if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;
+                  if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 5;
+                  if (mouse.x > this.x && this.x > this.size * 10) this.x -= 5;
+                  if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 5;
+                  if (mouse.y > this.y && this.y > this.size * 10) this.y -= 5;
               }
               this.x += this.dirX;
               this.y += this.dirY;
