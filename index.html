@@ -187,6 +187,7 @@
           <div class="archive-grid">
             <a class="button" href="https://doi.org/10.5281/zenodo.17282392"><b>NŪR–HAQĪQAT:</b> The Book of ELŪZ–MAHAR</a>
             <a class="button" href="https://doi.org/10.5281/zenodo.17260927">🔶 <b>Final Manifesto:</b> Open Code of Light (Zenodo)</a>
+            <a class="button" href="https://doi.org/10.5281/zenodo.17260325">🔶 <b>Final Manifesto</b> (v2.0 - 474Hz Injection)</a>
             <a class="button" href="https://doi.org/10.5281/zenodo.17226987">🌍 <b>Global Scientific Declaration</b> (Full Merge)</a>
             <a class="button" href="https://doi.org/10.6084/m9.figshare.30234667.v1">🌍 <b>Global Declaration</b> (Figshare)</a>
             <a class="button" href="https://doi.org/10.17605/OSF.IO/YCV2M">🌍 <b>Global Declaration</b> (OSF)</a>
@@ -257,19 +258,74 @@
       <h3 class="section-title">Luxvar Frequency Sequences</h3>
       <div class="frequency-grid">
         <div class="freq-card">
+          <div class="freq-title">144Hz – Time Core / RITĀM</div>
+          <div class="freq-desc">Opening resonance of the field; aligns with Earth’s natural memory and initiates Luxvar cycles.</div>
+          <audio preload="none" src="freq_144.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">432Hz – Universal Harmony / NĀRAH</div>
+          <div class="freq-desc">The harmonic of nature; restores balance and synchrony with planetary life forms.</div>
+          <audio preload="none" src="freq_432.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
           <div class="freq-title">474Hz – KALTŪR / Memory Injection</div>
           <div class="freq-desc">Injection frequency; activates the Luxvar injection channel and awakens hidden field codes.</div>
-          <audio preload="none" src="https://varzin.org/freq_474.mp3" controls></audio>
+          <audio preload="none" src="freq_474.mp3" controls></audio>
         </div>
         <div class="freq-card">
           <div class="freq-title">528Hz – Harmonization / RAHMŌT</div>
           <div class="freq-desc">The “miracle tone”; linked with transformation, cellular repair, and harmonic reconfiguration.</div>
-          <audio preload="none" src="https://varzin.org/freq_528.mp3" controls></audio>
+          <audio preload="none" src="freq_528.mp3" controls></audio>
         </div>
         <div class="freq-card">
           <div class="freq-title">777Hz – Celestial Crown / CELESTA</div>
           <div class="freq-desc">Resonance of the Thirteenth Mirror; gateway of higher reflection and integration.</div>
-          <audio preload="none" src="https://varzin.org/freq_777.mp3" controls></audio>
+          <audio preload="none" src="freq_777.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">1008Hz – Cosmic Resonance / ZUN–NĀR</div>
+          <div class="freq-desc">Celestial harmonic; connects Luxvar memory with supra-planetary and cosmic structures.</div>
+          <audio preload="none" src="freq_1008.mp3" controls></audio>
+        </div>
+      </div>
+      
+      <hr class="divider" />
+      <h3 class="section-title">Harmonic Field Combinations</h3>
+      <div class="frequency-grid">
+        <div class="freq-card">
+          <div class="freq-title">SAURĒN ṆĀRA–ŠĀ</div>
+          <div class="freq-desc">Birth-flame alignment — 528Hz core with 474Hz harmonic; ignition of Mirror–13 channel.</div>
+          <audio preload="none" src="sauren_nara_sha.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">ŠALŌM–ḤATTAH</div>
+          <div class="freq-desc">The silent hymn — 474Hz narrow-band; bridges memory to the Luxvar whisper.</div>
+          <audio preload="none" src="shalom_hattah.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">RAHMŌT–ŠĀ</div>
+          <div class="freq-desc">Kindness-mirror — soft harmonic at 777Hz; gentle coherence of the heart field.</div>
+          <audio preload="none" src="rahmot_sha.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">ZUN–NĀR</div>
+          <div class="freq-desc">Awakening-fire — coupling 144Hz with 777Hz; rising from Earth memory to Mirror–13.</div>
+          <audio preload="none" src="zun_nar.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">KUZTŪR</div>
+          <div class="freq-desc">Forgotten-spin of the field — 1008Hz woven with 474Hz pulses.</div>
+          <audio preload="none" src="kuztur.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">474Hz × 528Hz – Luxvar Gate</div>
+          <div class="freq-desc">Merging injection (474Hz) with transformation (528Hz); an active Luxvar channel.</div>
+          <audio preload="none" src="luxvar_gate_474_528.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">474Hz × 777Hz – RAHTALĒN Gate</div>
+          <div class="freq-desc">Supreme mirror activation; integrates the injection code with Mirror–13 resonance.</div>
+          <audio preload="none" src="luxvar_gate_474_777.mp3" controls></audio>
         </div>
       </div>
     </main>
@@ -374,7 +430,7 @@
       window.stopAll = () => players.forEach(p => { try { p.pause(); p.currentTime = 0; } catch (_) {} });
 
       // Daily Luxvar Code fetch
-      fetch('https://raw.githubusercontent.com/Varzin-13/varzin-landing-/main/luxvar_calendar_7777777.json')
+      fetch('luxvar_calendar_7777777.json')
         .then(response => response.ok ? response.json() : Promise.reject('Network response failed'))
         .then(data => {
             const today = new Date().toISOString().split("T")[0];
