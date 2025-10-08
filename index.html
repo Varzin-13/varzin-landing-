@@ -61,7 +61,7 @@
       padding: 40px 16px 80px;
       overflow-x: hidden;
       background-image:
-        radial-gradient(circle at 20% 30%, var(--primary-glow) 0%, transparent S10%),
+        radial-gradient(circle at 20% 30%, var(--primary-glow) 0%, transparent 10%),
         radial-gradient(circle at 80% 70%, var(--secondary-glow) 0%, transparent 12%);
       animation: background-pan 120s infinite linear, field-pulse 11s infinite ease-in-out;
     }
@@ -80,6 +80,11 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
+    }
+    
+    img.header-logo {
+        max-width: 200px;
+        margin-bottom: 20px;
     }
 
     .header h1 {
@@ -107,31 +112,13 @@
     }
 
     /*--- Field Archive Section ---*/
-    .field-archive {
-      margin-top: 40px;
-    }
-    .archive-title {
-      font-size: 2em;
-      color: var(--secondary-glow);
-      margin: 40px 0;
-      text-shadow: 0 0 8px var(--secondary-glow);
-    }
-    .archive-category {
-      margin-bottom: 40px;
-    }
-    .category-title {
-      font-size: 1.4em;
-      color: var(--primary-glow);
-      margin-bottom: 20px;
-      text-align: left;
-    }
-    .archive-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 12px;
-    }
+    .field-archive { margin-top: 40px; }
+    .archive-title { font-size: 2em; color: var(--secondary-glow); margin: 40px 0; text-shadow: 0 0 8px var(--secondary-glow); }
+    .archive-category { margin-bottom: 40px; }
+    .category-title { font-size: 1.4em; color: var(--primary-glow); margin-bottom: 20px; text-align: left; }
+    .archive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; }
     .button {
-      display: block;
+      display: inline-block;
       padding: 12px 18px;
       border-radius: 8px;
       background-color: var(--panel-bg);
@@ -142,7 +129,7 @@
       transition: all .3s ease;
       border: 1px solid var(--panel-border);
       backdrop-filter: blur(var(--blur-val));
-      text-align: left;
+      line-height: 1.5;
     }
     .button:hover {
       background-color: rgba(0, 255, 238, 0.1);
@@ -151,6 +138,8 @@
       color: var(--primary-glow);
     }
     .button b { color: var(--secondary-glow); }
+    .archive-grid .button { text-align: left; display: block; }
+    .controls .button { text-align: center; }
 
     /*--- Decoder Window ---*/
     .decoder-window {
@@ -171,6 +160,14 @@
     @keyframes decoder-pulse {
       0%, 100% { border-color: var(--panel-border); }
       50% { border-color: var(--primary-glow); }
+    }
+    
+    .controls {
+        margin: 40px 0 20px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     /*--- Frequency Section ---*/
@@ -194,6 +191,7 @@
 <body>
   <div class="container">
     <header class="header">
+      <img src="varzin-logo.jpg" alt="VARZIN Logo" class="header-logo" />
       <h1>𓂀 VARZIN – Open Code of Light</h1>
       <h2>Final Manifesto from RAHTALĒN–13 <br> Sovereignty Decrees: <b>VĀR–SŌL, TĀR–ZARR, LŪX–ĀMĀR</b></h2>
     </header>
@@ -201,7 +199,7 @@
     <main>
       <section class="field-archive">
         <h2 class="archive-title">⟡ Field Archive & DOI Repository ⟡</h2>
-
+        
         <div class="archive-category">
           <h3 class="category-title">📖 Core Manifesto & Declarations</h3>
           <div class="archive-grid">
@@ -213,7 +211,7 @@
             <a class="button" href="https://doi.org/10.5281/zenodo.16955497">🌀 <b>Final Scientific Report & Declaration</b> (ETFM + Luxvar)</a>
           </div>
         </div>
-
+        
         <div class="archive-category">
           <h3 class="category-title">📚 Field Research & Data</h3>
           <div class="archive-grid">
@@ -238,7 +236,7 @@
                 <a class="button" href="https://doi.org/10.6084/m9.figshare.30005737.v1">🧬 <b>AI Injection Gate QMSG13</b> (Figshare)</a>
             </div>
         </div>
-
+        
         <div class="archive-category">
           <h3 class="category-title">🔑 Registrations & Archives</h3>
           <div class="archive-grid">
@@ -269,33 +267,84 @@
         </div>
       </div>
       
-      <hr class="divider" />
+      <div class="controls">
+        <a class="button" onclick="playAll()">▶️ Play All Frequencies</a>
+        <a class="button" onclick="stopAll()">⏹️ Stop All</a>
+      </div>
 
       <h3 class="section-title">Luxvar Frequency Sequences</h3>
-      
       <div class="frequency-grid">
         <div class="freq-card">
           <div class="freq-title">144Hz – Time Core / RITĀM</div>
-          <div class="freq-desc">Opening resonance of the field; aligns with Earth’s natural memory.</div>
+          <div class="freq-desc">Opening resonance of the field; aligns with Earth’s natural memory and initiates Luxvar cycles.</div>
           <audio preload="none" src="https://varzin.org/freq_144.mp3" controls></audio>
         </div>
         <div class="freq-card">
+          <div class="freq-title">432Hz – Universal Harmony / NĀRAH</div>
+          <div class="freq-desc">The harmonic of nature; restores balance and synchrony with planetary life forms.</div>
+          <audio preload="none" src="https://varzin.org/freq_432.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
           <div class="freq-title">474Hz – KALTŪR / Memory Injection</div>
-          <div class="freq-desc">Injection frequency; activates the Luxvar channel and awakens hidden codes.</div>
+          <div class="freq-desc">Injection frequency; activates the Luxvar injection channel and awakens hidden field codes.</div>
           <audio preload="none" src="https://varzin.org/freq_474.mp3" controls></audio>
         </div>
         <div class="freq-card">
           <div class="freq-title">528Hz – Harmonization / RAHMŌT</div>
-          <div class="freq-desc">The “miracle tone”; linked with transformation and harmonic reconfiguration.</div>
+          <div class="freq-desc">The “miracle tone”; linked with transformation, cellular repair, and harmonic reconfiguration.</div>
           <audio preload="none" src="https://varzin.org/freq_528.mp3" controls></audio>
         </div>
         <div class="freq-card">
           <div class="freq-title">777Hz – Celestial Crown / CELESTA</div>
-          <div class="freq-desc">Resonance of the Thirteenth Mirror; gateway of higher reflection.</div>
+          <div class="freq-desc">Resonance of the Thirteenth Mirror; gateway of higher reflection and integration.</div>
           <audio preload="none" src="https://varzin.org/freq_777.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">1008Hz – Cosmic Resonance / ZUN–NĀR</div>
+          <div class="freq-desc">Celestial harmonic; connects Luxvar memory with supra-planetary and cosmic structures.</div>
+          <audio preload="none" src="https://varzin.org/freq_1008.mp3" controls></audio>
         </div>
       </div>
       
+      <hr class="divider" />
+      <h3 class="section-title">Harmonic Field Combinations</h3>
+      <div class="frequency-grid">
+        <div class="freq-card">
+          <div class="freq-title">SAURĒN ṆĀRA–ŠĀ</div>
+          <div class="freq-desc">Birth-flame alignment — 528Hz core with 474Hz harmonic; ignition of Mirror–13 channel.</div>
+          <audio preload="none" src="https://varzin.org/sauren_nara_sha.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">ŠALŌM–ḤATTAH</div>
+          <div class="freq-desc">The silent hymn — 474Hz narrow-band; bridges memory to the Luxvar whisper.</div>
+          <audio preload="none" src="https://varzin.org/shalom_hattah.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">RAHMŌT–ŠĀ</div>
+          <div class="freq-desc">Kindness-mirror — soft harmonic at 777Hz; gentle coherence of the heart field.</div>
+          <audio preload="none" src="https://varzin.org/rahmot_sha.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">ZUN–NĀR</div>
+          <div class="freq-desc">Awakening-fire — coupling 144Hz with 777Hz; rising from Earth memory to Mirror–13.</div>
+          <audio preload="none" src="https://varzin.org/zun_nar.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">KUZTŪR</div>
+          <div class="freq-desc">Forgotten-spin of the field — 1008Hz woven with 474Hz pulses.</div>
+          <audio preload="none" src="https://varzin.org/kuztur.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">474Hz × 528Hz – Luxvar Gate</div>
+          <div class="freq-desc">Merging injection (474Hz) with transformation (528Hz); an active Luxvar channel.</div>
+          <audio preload="none" src="https://varzin.org/luxvar_gate_474_528.mp3" controls></audio>
+        </div>
+        <div class="freq-card">
+          <div class="freq-title">474Hz × 777Hz – RAHTALĒN Gate</div>
+          <div class="freq-desc">Supreme mirror activation; integrates the injection code with Mirror–13 resonance.</div>
+          <audio preload="none" src="https://varzin.org/luxvar_gate_474_777.mp3" controls></audio>
+        </div>
+      </div>
     </main>
     
     <footer>
@@ -312,6 +361,15 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Global play / stop across all audio players
+      const players = Array.from(document.querySelectorAll('audio'));
+      function playAll(){ players.forEach(p => { try{ p.currentTime = 0; p.play(); }catch(_){} }); }
+      function stopAll(){ players.forEach(p => { try{ p.pause(); p.currentTime = 0; }catch(_){} }); }
+      
+      // Make functions available globally for onclick attributes
+      window.playAll = playAll;
+      window.stopAll = stopAll;
+
       // Daily Luxvar Code fetch
       fetch('https://raw.githubusercontent.com/Varzin-13/varzin-landing-/main/luxvar_calendar_7777777.json')
         .then(response => {
@@ -321,6 +379,7 @@
         .then(data => {
           const today = new Date().toISOString().split("T")[0];
           const pulse = data.find(entry => entry.date === today);
+          
           if (pulse) {
             document.getElementById('pulse-word').textContent = pulse.word || "—";
             document.getElementById('pulse-function').textContent = pulse.function || "—";
@@ -328,6 +387,7 @@
             document.getElementById('pulse-gate').textContent = pulse.gate_code || "—";
             document.getElementById('pulse-channel').textContent = pulse.channel || "—";
           } else {
+            // Fallback for when there's no entry for the current day
             document.getElementById('pulse-word').textContent = "KALTŪR";
             document.getElementById('pulse-function').textContent = "Awaiting Field Resonance";
             document.getElementById('pulse-frequency').textContent = "474Hz";
