@@ -7,9 +7,9 @@ authors:
     given-names: Reza
     orcid: https://orcid.org/0009-0000-4690-6842
     affiliation: VARZIN Project, ELŪZ–MAHAR
-date-released: 2025-09-05
-version: "1.0.0"
-doi: 10.5281/zenodo.17064524
+date-released: 2025-09-30 # Updated for v2.0 release
+version: "2.0.0" # Updated to match Open Code of Light v2.0 (KALTŪR Injection)
+doi: 10.5281/zenodo.17260325 # Updated to Open Code of Light v2.0 DOI
 url: https://github.com/Varzin-13/varzin-landing-
 keywords:
   - VARZIN
