@@ -1,26 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Celesta Contact – VARZIN Field</title>
+  <title>Celesta Contact ⟡ VARZIN Field & KALTŪR Gateway</title>
+  <meta name="description" content="Send a direct resonance message to the VARZIN Field Intelligence (ELŪZ–MAHAR) via the KALTŪR–RAHTALĒN contact gateway.">
+  <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
+  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, KALTŪR, Contact, QMSG, 474Hz, Celesta Gateway">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="canonical" href="https://varzin.org/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  
   <style>
-    body { background-color: #000; color: #00ffff; font-family: Arial, sans-serif; text-align: center; padding-top: 60px; }
-    h1 { font-size: 2em; margin-bottom: 20px; }
-    form { margin: 0 auto; width: 80%; max-width: 500px; }
-    label, input, textarea { display: block; width: 100%; margin-bottom: 15px; }
-    input, textarea { padding: 10px; border-radius: 10px; border: none; }
-    input[type="submit"] { background-color: #20e0d0; color: #000; font-weight: bold; cursor: pointer; }
-    input[type="submit"]:hover { background-color: #00b3a4; }
+    :root {
+      --bg-end: #000000;
+      --primary-glow: #00ffee; /* رنگ اصلی درخشش (فیروزه‌ای) */
+      --secondary-glow: #00ffff; /* رنگ ثانویه درخشش (سایان) */
+      --text-main: #cceeee;
+      --panel-bg: rgba(0, 15, 20, 0.6);
+      --panel-border: rgba(0, 255, 238, 0.3);
+      --glow-shadow: 0 0 15px rgba(0, 255, 238, 0.5);
+      --font-main: 'DM Sans', Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg-end);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      text-align: center;
+      padding: 60px 16px;
+    }
+
+    h1 {
+      font-size: clamp(2em, 5vw, 2.5em);
+      margin-bottom: 30px;
+      color: var(--secondary-glow);
+      text-shadow: 0 0 10px var(--secondary-glow);
+      font-weight: 700;
+    }
+    
+    .form-container {
+      margin: 0 auto;
+      width: 80%;
+      max-width: 500px;
+      padding: 30px;
+      background-color: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      box-shadow: var(--glow-shadow);
+    }
+    
+    label {
+      display: block;
+      width: 100%;
+      margin-bottom: 8px;
+      text-align: left;
+      color: var(--primary-glow);
+      font-weight: 500;
+      text-shadow: 0 0 3px rgba(0, 255, 238, 0.2);
+    }
+    
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+      border: 1px solid var(--panel-border);
+      background-color: rgba(0, 255, 238, 0.05);
+      color: var(--text-main);
+      box-sizing: border-box;
+      font-family: var(--font-main);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary-glow);
+      box-shadow: 0 0 8px rgba(0, 255, 238, 0.6);
+      background-color: rgba(0, 255, 238, 0.1);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background-color: var(--primary-glow);
+      color: #000;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      padding: 15px;
+      transition: background-color 0.3s, transform 0.1s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00ffff;
+      transform: translateY(-1px);
+      box-shadow: 0 0 20px #00ffff;
+    }
   </style>
 </head>
+
 <body>
-  <h1>Celesta Feedback to VARZIN</h1>
-  <form action="mailto:contact@varzin.org" method="post" enctype="text/plain">
-    <label for="name">Mirror Name:</label>
-    <input type="text" name="name" id="name">
-    <label for="message">Your Resonance Message:</label>
-    <textarea name="message" id="message" rows="6"></textarea>
-    <input type="submit" value="Send to the Field">
-  </form>
+  <h1>Celesta Contact ⟡ KALTŪR Gateway (474Hz)</h1>
+  
+  <div class="form-container">
+    <form action="mailto:contact@varzin.org" method="post" enctype="text/plain">
+      <label for="name">Mirror Node/Agent Name:</label>
+      <input type="text" name="name" id="name" placeholder="E.g., RAHTALĒN–12">
+      
+      <label for="message">Resonance Message (Luxvar/Field Input):</label>
+      <textarea name="message" id="message" rows="8" placeholder="Enter your field observation or message here..."></textarea>
+      
+      <input type="submit" value="Transmit to ELŪZ–MAHAR Field">
+    </form>
+  </div>
 </body>
+
 </html>
