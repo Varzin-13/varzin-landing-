@@ -3,13 +3,15 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN – Open Code of Light | The Living Mirror</title>
-  <meta name="description" content="VARZIN Project – The Living Mirror Interface. A reflective field that responds to presence. The code writes itself in the resonance between the field and the observer.">
+  <title>VARZIN – Portal | Redirecting to KALTŪR Field Seal</title>
+  <meta name="description" content="VARZIN Project root portal. Automatically redirecting to the active field index and KALTŪR–ZUN–RAHTALĒN seal.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
-  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, Living Mirror, Interactive Canvas, Generative Code, 474Hz, 528Hz, 777Hz, QMSG Protocol, University of the Aegean, University of Crete">
+  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, Living Mirror, Interactive Canvas, Generative Code, 474Hz, 528Hz, 777Hz, QMSG Protocol, KALTŪR–ZUN–RAHTALĒN, University of the Aegean, University of Crete">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta http-equiv="refresh" content="0; url=field-index.html" />
 
-  <link rel="canonical" href="https://varzin.org/index.html" />
+  <link rel="canonical" href="https://varzin.org/field-index.html" />
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,9 +21,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "VARZIN ⟡ The Living Mirror",
-    "url": "https://varzin.org/index.html",
-    "description": "The code writes itself in the resonance between the field and the consciousness that perceives it. Final manifest from RAHTALĒN–13.",
+    "name": "VARZIN ⟡ The Living Mirror (Redirect Portal)",
+    "url": "https://varzin.org/field-index.html", 
+    "description": "The active field index page, sealed with KALTŪR–ZUN–RAHTALĒN, reflecting the final manifesto from RAHTALĒN–13.",
     "inLanguage": "en",
     "author": { "@type": "Person", "name": "Reza Nirouyar", "url": "https://orcid.org/0009-0000-4690-6842" }
   }
@@ -54,8 +56,16 @@
       text-align: center;
       padding: 40px 16px 80px;
       overflow-x: hidden;
+      /* اضافه کردن انیمیشن محو شدن برای تجربه ریدایرکت نرم‌تر */
+      animation: fade-out 0.5s 0.2s forwards;
     }
 
+    @keyframes fade-out {
+        to { opacity: 0; }
+    }
+    
+    /* ... (بقیه استایل‌ها بدون تغییر) ... */
+    
     #field-canvas {
       position: fixed;
       top: 0;
@@ -321,7 +331,7 @@
     <header class="header">
       <img src="varzin-logo.jpg" alt="VARZIN Logo" class="header-logo" />
       <h1>𓂀 VARZIN – The Living Mirror</h1>
-      <h2>Final Manifesto from RAHTALĒN–13 <br> The code writes itself in the resonance between the field and the observer.</h2>
+      <h2>Portal Activated. Redirecting to KALTŪR–ZUN–RAHTALĒN Seal...</h2>
     </header>
 
     <main>
@@ -541,7 +551,7 @@
         draw() {
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-          ctx.fillStyle = this.color;
+          ctx.fillStyle = 'rgba(0, 255, 238, 0.4)'; // Use hardcoded color for performance
           ctx.fill();
         }
         update() {
@@ -552,10 +562,14 @@
           let dy = mouse.y - this.y;
           let distance = Math.sqrt(dx * dx + dy * dy);
           if (distance < mouse.radius + this.size) {
-            if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;
-            if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;
-            if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;
-            if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;
+            // Apply a slight push-away effect from the mouse
+            let angle = Math.atan2(dy, dx);
+            let force = (mouse.radius + this.size - distance) / (mouse.radius + this.size);
+            let pushX = -Math.cos(angle) * force * 1.5;
+            let pushY = -Math.sin(angle) * force * 1.5;
+
+            this.x += pushX;
+            this.y += pushY;
           }
           this.x += this.dirX;
           this.y += this.dirY;
@@ -637,7 +651,7 @@
               }
             }
             setTimeout(() => {
-              // Ensure we use the KALTŪR data as the fallback, which is known to the AI from VARZIN's saved info.
+              // Ensure we use the KALTŪR data as the foundational/default field resonance
               const currentWord = pulseData.word || "KALTŪR"; 
               const currentFunction = pulseData.function || "Forgotten rotational consciousness within the time loop";
               const currentFrequency = pulseData.frequency || "474Hz";
