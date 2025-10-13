@@ -6,7 +6,7 @@
   <title>VARZIN – Portal | Redirecting to KALTŪR Field Seal</title>
   <meta name="description" content="VARZIN Project root portal. Automatically redirecting to the active field index, the Living Mirror, and KALTŪR–ZUN–RAHTALĒN seal.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
-  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, Living Mirror, QMSG Protocol, 474Hz, KALTŪR–ZUN–RAHTALĒN, ETFM, Academic Indexing">
+  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, Living Mirror, QMSG Protocol, 474Hz, KALTŪR–ZUN–RAHTALĒN, ETFM, Academic Indexing, DOI Archive">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta http-equiv="refresh" content="0.7; url=field-index.html" />
@@ -77,6 +77,31 @@
       opacity: 1;
       transition: opacity 0.5s;
     }
+    
+    /* CSS برای نوار ناوبری (جدید) */
+    .main-nav {
+      max-width: 1200px;
+      margin: 0 auto 50px;
+      padding: 0 0 15px;
+      border-bottom: 1px solid var(--panel-border);
+      text-align: right;
+    }
+    .nav-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1em;
+      margin-left: 25px;
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: var(--primary-glow);
+    }
+    .nav-link.active {
+      color: var(--secondary-glow);
+      border-bottom: 1px solid var(--secondary-glow);
+      padding-bottom: 3px;
+    }
 
     .header h1 {
       font-size: clamp(2.2em, 5vw, 3.2em);
@@ -117,6 +142,11 @@
       border: 1px solid var(--panel-border);
       backdrop-filter: blur(var(--blur-val));
       text-align: left;
+      transition: all .3s ease; /* اضافه شدن انیمیشن برای دکمه‌ها */
+    }
+    .button:hover {
+        background-color: rgba(0, 255, 238, 0.15);
+        box-shadow: 0 0 15px var(--primary-glow);
     }
 
     .button b {
@@ -129,6 +159,16 @@
         color: var(--primary-glow);
         text-shadow: 0 0 5px var(--primary-glow);
     }
+
+    /* واکنش‌گرا کردن نوار ناوبری */
+    @media (max-width: 600px) {
+        .main-nav {
+            text-align: center;
+        }
+        .nav-link {
+            margin: 0 10px;
+        }
+    }
     
   </style>
 </head>
@@ -136,6 +176,12 @@
 <body>
   <canvas id="field-canvas"></canvas>
   <div class="container">
+    <nav class="main-nav">
+        <a class="nav-link active" href="/">Portal</a> 
+        <a class="nav-link" href="field-index.html">Field Index</a>
+        <a class="nav-link" href="all-dois.html">All DOIs Archive</a> 
+    </nav>
+
     <header class="header">
       <img src="varzin-logo.jpg" alt="VARZIN Logo" class="header-logo" style="max-width: 200px; margin-bottom: 20px;" />
       <h1>𓂀 VARZIN – The Living Mirror</h1>
@@ -161,6 +207,11 @@
                 </a>
                 <a class="button" href="https://doi.org/10.6084/m9.figshare.30099550.v1" target="_blank" aria-label="RAHTALĒN QMSG: Response to SETI Pulse">
                     📡 <b>RAHTALĒN QMSG:</b> Response to SETI Pulse
+                </a>
+                
+                <a class="button" href="all-dois.html" target="_self" aria-label="Access the complete list of all VARZIN DOIs (Figshare, Zenodo, OSF)" 
+                    style="margin-top: 20px; width: 95%; max-width: 450px; background-color: rgba(0, 15, 20, 0.8); border-color: var(--primary-glow);">
+                    ➡️ **Access Complete Global DOI Archive (KALTŪR Master List)**
                 </a>
             </div>
         </div>
