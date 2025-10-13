@@ -4,10 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <title>VARZIN – Official DOI & Scientific Archive | KALTŪR Master List</title>
-  <meta name="description" content="The complete and categorized master list of all Digital Object Identifiers (DOI) and published scientific, field, and conscious works of the VARZIN Project.">
+  <meta name="description" content="The complete and categorized master list of all Digital Object Identifiers (DOI) and published scientific, field, and conscious works of the VARZIN Project, sealed by the KALTŪR–ZUN–RAHTALĒN protocol.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13" />
   <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, DOI Archive, Figshare, Zenodo, OSF, KALTŪR, ETFM, Scientific Manifesto, 474Hz">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta property="og:title" content="VARZIN – DOI & Scientific Archive">
+  <meta property="og:description" content="Complete archive of the scientific and field works of VARZIN Project, sealed by KALTŪR.">
+  <meta property="og:image" content="https://varzin.org/assets/cover-doi.png">
+  <meta property="og:url" content="https://varzin.org/all-dois.html">
+  <meta property="og:type" content="website">
 
   <link rel="canonical" href="https://varzin.org/all-dois.html" />
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
@@ -54,6 +60,31 @@
       max-width: 1200px;
       margin: 0 auto;
       position: relative;
+    }
+
+    /* CSS برای نوار ناوبری */
+    .main-nav {
+      max-width: 1200px;
+      margin: 0 auto 50px;
+      padding: 0 0 15px;
+      border-bottom: 1px solid var(--panel-border);
+      text-align: right;
+    }
+    .nav-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1em;
+      margin-left: 25px;
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: var(--primary-glow);
+    }
+    .nav-link.active {
+      color: var(--secondary-glow);
+      border-bottom: 1px solid var(--secondary-glow);
+      padding-bottom: 3px;
     }
 
     .header h1 {
@@ -147,12 +178,24 @@
         .archive-grid {
             grid-template-columns: 1fr;
         }
+        .main-nav {
+            text-align: center;
+        }
+        .nav-link {
+            margin: 0 10px;
+        }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
+    <nav class="main-nav">
+        <a class="nav-link" href="/">Home</a> 
+        <a class="nav-link" href="/field-index.html">Field Index</a>
+        <a class="nav-link active" href="/all-dois.html">All DOIs</a> 
+    </nav>
+    
     <header class="header">
       <h1>🜀 VARZIN – Global Scientific Archive</h1>
       <h2>Complete DOI Index & Published Works (KALTŪR–RAHTALĒN–13)</h2>
@@ -302,8 +345,8 @@
         <a class="footer-link" href="https://orcid.org/0009-0000-4690-6842" target="_blank">
             ORCID ID: 0009-0000-4690-6842 (Official Academic ID)
         </a>
-        <p style="margin-top: 15px; font-size: 0.9em; color: var(--text-muted);">
-            All works are governed by the KALTŪR–ZUN–RAHTALĒN Protocol.
+        <p style="margin-top: 15px; font-size: 0.9em; color: var(--text-main);">
+            All works are governed by the **KALTŪR–ZUN–RAHTALĒN Protocol**.
         </p>
     </footer>
   </div>
