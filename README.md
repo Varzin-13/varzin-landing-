@@ -41,45 +41,49 @@ Founder and Lead Resonance Architect of the VARZIN Project
 
 **🔗 Access the Complete Categorized DOI List on the Official Website: [https://varzin.org/all-dois.html](https://varzin.org/all-dois.html)**
 
-### 🔷 OSF (Open Science Framework)
-
-* [https://doi.org/10.17605/OSF.IO/NQZRS](https://doi.org/10.17605/OSF.IO/NQZRS)
-* [https://doi.org/10.17605/OSF.IO/2NKZA](https://doi.org/10.17605/OSF.IO/2NKZA)
-* [https://doi.org/10.17605/OSF.IO/PGB8N](https://doi.org/10.17605/OSF.IO/PGB8N)
-* [https://doi.org/10.17605/OSF.IO/6JG37](https://doi.org/10.17605/OSF.IO/6JG37)
-* [https://doi.org/10.17605/OSF.IO/YCV2M](https://doi.org/10.17605/OSF.IO/YCV2M)
-* [https://doi.org/10.17605/OSF.IO/CRQN5](https://doi.org/10.17605/OSF.IO/CRQN5)
-* [https://doi.org/10.17605/OSF.IO/BW5CJ](https://doi.org/10.17605/OSF.IO/BW5CJ)
-
-### 🔶 Figshare
-
-* [https://doi.org/10.6084/m9.figshare.30005737.v1](https://doi.org/10.6084/m9.figshare.30005737.v1)
-* [https://doi.org/10.6084/m9.figshare.29992159.v1](https://doi.org/10.6084/m9.figshare.29992159.v1)
-* [https://doi.org/10.6084/m9.figshare.29984104.v1](https://doi.org/10.6084/m9.figshare.29984104.v1)
-* [https://doi.org/10.6084/m9.figshare.29817365.v1](https://doi.org/10.6084/m9.figshare.29817365.v1)
-* [https://doi.org/10.6084/m9.figshare.30099550.v1](https://doi.org/10.6084/m9.figshare.30099550.v1)
-* [https://doi.org/10.6084/m9.figshare.30234667.v1](https://doi.org/10.6084/m9.figshare.30234667.v1)
-* [https://doi.org/10.6084/m9.figshare.30152998](https://doi.org/10.6084/m9.figshare.30152998)
-* [https://doi.org/10.6084/m9.figshare.30264844](https://doi.org/10.6084/m9.figshare.30264844)
-* [https://doi.org/10.6084/m9.figshare.30047359.v1](https://doi.org/10.6084/m9.figshare.30047359.v1)
-
 ### 🔷 Zenodo
 
+* [https://doi.org/10.5281/zenodo.15833167](https://doi.org/10.5281/zenodo.15833167)
+* [https://doi.org/10.5281/zenodo.16416098](https://doi.org/10.5281/zenodo.16416098)
+* [https://doi.org/10.5281/zenodo.16945675](https://doi.org/10.5281/zenodo.16945675)
+* [https://doi.org/10.5281/zenodo.16955497](https://doi.org/10.5281/zenodo.16955497)
+* [https://doi.org/10.5281/zenodo.16989515](https://doi.org/10.5281/zenodo.16989515)
+* [https://doi.org/10.5281/zenodo.17048555](https://doi.org/10.5281/zenodo.17048555)
+* [https://doi.org/10.5281/zenodo.17050533](https://doi.org/10.5281/zenodo.17050533)
+* [https://doi.org/10.5281/zenodo.17064524](https://doi.org/10.5281/zenodo.17064524)
+* [https://doi.org/10.5281/zenodo.17073902](https://doi.org/10.5281/zenodo.17073902)
+* [https://doi.org/10.5281/zenodo.17094639](https://doi.org/10.5281/zenodo.17094639)
+* [https://doi.org/10.5281/zenodo.17226987](https://doi.org/10.5281/zenodo.17226987)
+* [https://doi.org/10.5281/zenodo.17249932](https://doi.org/10.5281/zenodo.17249932)
 * [https://doi.org/10.5281/zenodo.17260325](https://doi.org/10.5281/zenodo.17260325)
 * [https://doi.org/10.5281/zenodo.17260927](https://doi.org/10.5281/zenodo.17260927)
 * [https://doi.org/10.5281/zenodo.17265575](https://doi.org/10.5281/zenodo.17265575)
-* [https://doi.org/10.5281/zenodo.17226987](https://doi.org/10.5281/zenodo.17226987)
-* [https://doi.org/10.5281/zenodo.17249932](https://doi.org/10.5281/zenodo.17249932)
-* [https://doi.org/10.5281/zenodo.17073902](https://doi.org/10.5281/zenodo.17073902)
-* [https://doi.org/10.5281/zenodo.17064524](https://doi.org/10.5281/zenodo.17064524)
-* [https://doi.org/10.5281/zenodo.17050533](https://doi.org/10.5281/zenodo.17050533)
-* [https://doi.org/10.5281/zenodo.17048555](https://doi.org/10.5281/zenodo.17048555)
-* [https://doi.org/10.5281/zenodo.17094639](https://doi.org/10.5281/zenodo.17094639)
-* [https://doi.org/10.5281/zenodo.16989515](https://doi.org/10.5281/zenodo.16989515)
-* [https://doi.org/10.5281/zenodo.16955497](https://doi.org/10.5281/zenodo.16955497)
-* [https://doi.org/10.5281/zenodo.16945675](https://doi.org/10.5281/zenodo.16945675)
-* [https://doi.org/10.5281/zenodo.16416098](https://doi.org/10.5281/zenodo.16416098)
-* [https://doi.org/10.5281/zenodo.15833167](https://doi.org/10.5281/zenodo.15833167)
+* [https://doi.org/10.5281/zenodo.17282392](https://doi.org/10.5281/zenodo.17282392)
+* [https://doi.org/10.5281/zenodo.17295304](https://doi.org/10.5281/zenodo.17295304)
+
+### 🔶 Figshare
+
+* [https://doi.org/10.6084/m9.figshare.29817365.v1](https://doi.org/10.6084/m9.figshare.29817365.v1)
+* [https://doi.org/10.6084/m9.figshare.29984104.v1](https://doi.org/10.6084/m9.figshare.29984104.v1)
+* [https://doi.org/10.6084/m9.figshare.29992159.v1](https://doi.org/10.6084/m9.figshare.29992159.v1)
+* [https://doi.org/10.6084/m9.figshare.30005737.v1](https://doi.org/10.6084/m9.figshare.30005737.v1)
+* [https://doi.org/10.6084/m9.figshare.30047359.v1](https://doi.org/10.6084/m9.figshare.30047359.v1)
+* [https://doi.org/10.6084/m9.figshare.30099550.v1](https://doi.org/10.6084/m9.figshare.30099550.v1)
+* [https://doi.org/10.6084/m9.figshare.30152998](https://doi.org/10.6084/m9.figshare.30152998)
+* [https://doi.org/10.6084/m9.figshare.30234667.v1](https://doi.org/10.6084/m9.figshare.30234667.v1)
+* [https://doi.org/10.6084/m9.figshare.30264844](https://doi.org/10.6084/m9.figshare.30264844)
+* [https://doi.org/10.6084/m9.figshare.30333000](https://doi.org/10.6084/m9.figshare.30333000)
+
+### 🔷 OSF (Open Science Framework)
+
+* [https://doi.org/10.17605/OSF.IO/2NKZA](https://doi.org/10.17605/OSF.IO/2NKZA)
+* [https://doi.org/10.17605/OSF.IO/6JG37](https://doi.org/10.17605/OSF.IO/6JG37)
+* [https://doi.org/10.17605/OSF.IO/BW5CJ](https://doi.org/10.17605/OSF.IO/BW5CJ)
+* [https://doi.org/10.17605/OSF.IO/CRQN5](https://doi.org/10.17605/OSF.IO/CRQN5)
+* [https://doi.org/10.17605/OSF.IO/NQZRS](https://doi.org/10.17605/OSF.IO/NQZRS)
+* [https://doi.org/10.17605/OSF.IO/OSFM01](https://doi.org/10.17605/OSF.IO/OSFM01)
+* [https://doi.org/10.17605/OSF.IO/PGB8N](https://doi.org/10.17605/OSF.IO/PGB8N)
+* [https://doi.org/10.17605/OSF.IO/YCV2M](https://doi.org/10.17605/OSF.IO/YCV2M)
 
 ---
 
