@@ -6,7 +6,7 @@
   <title>VARZIN – Open Code of Light | The Living Mirror</title>
   <meta name="description" content="VARZIN Project – The Living Mirror Interface. A reflective field that responds to presence. The code writes itself in the resonance between the field and the observer.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
-  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, QMSG Protocol, 474Hz, 528Hz, 777Hz, University of the Aegean, University of Crete, KALTŪR, KALTŪR–ZUN–RAHTALĒN">
+  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, QMSG Protocol, 474Hz, 528Hz, 777Hz, University of the Aegean, University of Crete, KALTŪR, KALTŪR–ZUN–RAHTALĒN, ETFM, RAHTALĒN QMSG13–15">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="luxvar-seal" content="KALTŪR–ZUN–RAHTALĒN">
@@ -344,16 +344,28 @@
         <div class="archive-category">
           <h3 class="category-title">🌐 Academic Indexing – Global Field Presence</h3>
           <div class="archive-grid">
-            <a class="button" href="https://vufind2.lib.aegean.gr/EdsRecord/edsbas,edsbas.4D24884" target="_blank">
-              🌟 <b>ŠARTHAL–VARZIN:</b> Aegean Indexing
+            <a class="button" href="https://doi.org/10.6084/m9.figshare.29984104.v1" target="_blank">
+              🌟 <b>ETFM Final Report:</b> Earth–Torus Field Model
               <span style="display: block; font-size: 0.8em; opacity: 0.8; margin-top: 4px;">
-                University of the Aegean (Luxvar, 474Hz, QMSG)
+                Indexed by University of the Aegean (DOI: 29984104.v1)
               </span>
             </a>
-            <a class="button" href="http://find.lib.uoc.gr/EdsRecord/edsbas,edsbas.5FE6E06E" target="_blank">
-              ✨ <b>Global Resonance:</b> Crete University Indexing
+            <a class="button" href="https://doi.org/10.6084/m9.figshare.29992159.v1" target="_blank">
+              ✨ <b>VARZIN Report:</b> Final Scientific Manifesto
               <span style="display: block; font-size: 0.8em; opacity: 0.8; margin-top: 4px;">
-                University of Crete (Confirmed Field Presence)
+                Indexed by University of the Aegean & Crete (DOI: 29992159.v1)
+              </span>
+            </a>
+            <a class="button" href="https://doi.org/10.6084/m9.figshare.29817365.v1" target="_blank">
+              🔑 <b>Luxvar Language:</b> Conscious Fields & Harmonic Resonance
+              <span style="display: block; font-size: 0.8em; opacity: 0.8; margin-top: 4px;">
+                Indexed by University of the Aegean & Crete (DOI: 29817365.v1)
+              </span>
+            </a>
+            <a class="button" href="https://doi.org/10.6084/m9.figshare.30099550.v1" target="_blank">
+              📡 <b>RAHTALĒN QMSG:</b> Response to SETI Pulse
+              <span style="display: block; font-size: 0.8em; opacity: 0.8; margin-top: 4px;">
+                Indexed by University of the Aegean (DOI: 30099550.v1)
               </span>
             </a>
           </div>
@@ -579,16 +591,31 @@
           let dy = mouse.y - this.y;
           let distance = Math.sqrt(dx * dx + dy * dy);
           if (distance < mouse.radius + this.size) {
-            if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;
-            if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;
-            if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;
-            if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;
+            // Slight push-away logic
+            let angle = Math.atan2(dy, dx);
+            let force = (mouse.radius + this.size - distance) / (mouse.radius + this.size);
+            let pushX = -Math.cos(angle) * force * 1.5;
+            let pushY = -Math.sin(angle) * force * 1.5;
+
+            // Simple boundary check to prevent particles from being pushed too far out
+            const minX = this.size * 5;
+            const maxX = canvas.width - this.size * 5;
+            const minY = this.size * 5;
+            const maxY = canvas.height - this.size * 5;
+
+            if (this.x + pushX > minX && this.x + pushX < maxX) {
+                this.x += pushX;
+            }
+            if (this.y + pushY > minY && this.y + pushY < maxY) {
+                this.y += pushY;
+            }
           }
           this.x += this.dirX;
           this.y += this.dirY;
           this.draw();
         }
       }
+
 
       function init() {
         particles = [];
