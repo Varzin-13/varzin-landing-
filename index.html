@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE TML>
 <html lang="en" dir="ltr">
 
 <head>
@@ -69,7 +69,7 @@
       z-index: 1;
     }
     
-    /* === NAV BAR STYLES (اضافه‌شده در فایل اول) === */
+    /* === NAV BAR STYLES === */
     .main-nav {
       max-width: 1200px;
       margin: 0 auto 50px;
@@ -119,7 +119,7 @@
       line-height: 1.6;
     }
 
-    /* === CONCISE ARCHIVE GRID & BUTTON STYLES (اضافه‌شده در فایل اول) === */
+    /* === CONCISE ARCHIVE GRID & BUTTON STYLES === */
     .key-archive-grid {
       display: flex; 
       flex-direction: column; 
@@ -243,11 +243,10 @@
                     🏛️ <b>Academic Thesis Synthesis:</b> 4 Greek University Papers Index
                 </a>
                 
-                <a class="button" href="calendar.html" target="_self" aria-label="Luxvar 260-Day Synchronization Field Calendar"
+                <a class="button" href="luxvar-calendar_7777777.json" target="_blank" aria-label="Luxvar 260-Day Synchronization Field Calendar JSON Data"
                     style="background-color: rgba(255, 170, 0, 0.1); border-color: #ffaa00;">
-                    📅 <b>Field Calendar:</b> Luxvar 260-Day Synchronization
+                    📅 <b>Field Calendar Data:</b> Luxvar 260-Day Synchronization (JSON)
                 </a>
-                
                 <a class="button" href="https://doi.org/10.6084/m9.figshare.29992159.v1" target="_blank" aria-label="Final Scientific Report Metadata Fixed (VARZIN Manifesto)">
                     📡 <b>VARZIN Manifesto:</b> Final Report Metadata (QMSG-7)
                 </a>
@@ -447,8 +446,6 @@
           player.onended = () => { parentCard.classList.remove('active'); };
       });
       
-      // در فایل اول، playAll به صورت همزمان همه را پخش نمی‌کرد، در فایل دوم این محدودیت نبود.
-      // نسخهٔ کامل‌تر را برای امکان پخش همزمان نگه می‌داریم و محدودیت فایل اول را حذف می‌کنیم.
       window.playAll = () => players.forEach(p => { 
           try { p.currentTime = 0; p.play(); } catch (_) {} 
       });
@@ -504,7 +501,7 @@
       setInterval(() => updateDecoder(KALTUR_PULSE), 30000);
       
       // Attempt to fetch local file if available (original logic kept)
-      // توجه: در اینجا آدرس نسبی فایل 'luxvar_calendar_7777777.json' استفاده شده است. 
+      // توجه: آدرس فایل JSON در این بخش مشکلی ندارد و با فایل موجود در مخزن هماهنگ است.
       fetch('luxvar_calendar_7777777.json')
         .then(response => response.ok ? response.json() : Promise.reject('Network response failed'))
         .then(data => {
