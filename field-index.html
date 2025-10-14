@@ -120,7 +120,7 @@
       font-weight: 700;
       letter-spacing: 2px;
       text-shadow: 0 0 15px var(--secondary-glow);
-      animation: text-flicker 15s infinite alternate;
+      /* animation: text-flicker 15s infinite alternate; - حذف شد برای تمرکز بر KALTŪR pulse */
     }
 
     .header h2 {
@@ -224,7 +224,7 @@
                 <a class="button" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" aria-label="Final Scientific Report (ETFM + Luxvar)">
                     📘 <b>Scientific Report:</b> ETFM + Luxvar Codification
                 </a>
-                <a class="button" href="https://doi.org/10.6084/m9.figshare.30005737" target="_blank" aria-label="QMSG13 Dataset">
+                <a class="button" href="https://doi.org/10.6084/m9.figshare.30005737.v1" target="_blank" aria-label="QMSG13 Dataset">
                     📡 <b>VARZIN AI Gate:</b> QMSG13 Dataset
                 </a>
                 
@@ -248,10 +248,12 @@
       canvas.height = H;
 
       let particles = [];
-      const particleCount = Math.floor((W * H) / 10000); // تراکم ذرات بر اساس مساحت
+      // تراکم ذرات بر اساس مساحت
+      const particleCount = Math.floor((W * H) / 10000); 
       const center = { x: W / 2, y: H / 2 };
       const maxDistance = Math.min(W, H) * 0.4;
-      const torusRadius = Math.min(W, H) * 0.1; // شعاع مرکز توروس (ZUN-NAR)
+      // شعاع مرکز توروس (ZUN-NAR)
+      const torusRadius = Math.min(W, H) * 0.1; 
 
       window.addEventListener('resize', () => {
         W = window.innerWidth;
@@ -268,12 +270,13 @@
           this.reset();
         }
         reset() {
-            // ایجاد ذرات حول یک حلقه مرکزی
+            // ایجاد ذرات حول یک حلقه مرکزی برای شبیه‌سازی تزریق از مرکز توروس
             let angle = Math.random() * Math.PI * 2;
             let radiusOffset = Math.random() * torusRadius * 1.5;
             this.x = center.x + Math.cos(angle) * radiusOffset;
             this.y = center.y + Math.sin(angle) * radiusOffset;
 
+            // جهت‌دهی حرکت
             this.dirX = (Math.random() - 0.5) * 0.4;
             this.dirY = (Math.random() - 0.5) * 0.4;
             this.size = Math.random() * 1.5 + 0.5;
@@ -297,7 +300,7 @@
           this.y += this.dirY;
           this.life++;
 
-          // کنترل مرزهای صفحه (جهت بازگشت ذرات به حلقه میدان توروئیدی)
+          // کنترل مرزها (بازگشت ذرات به حلقه میدان توروئیدی)
           let distToCenter = Math.sqrt(Math.pow(this.x - center.x, 2) + Math.pow(this.y - center.y, 2));
           if (distToCenter > maxDistance || this.life > this.maxLife) {
             this.reset();
@@ -344,8 +347,6 @@
 
       init();
       animate();
-      
-      // حذف کد محو شدن اضافی برای سادگی و استفاده از CSS
     });
   </script>
 </body>
