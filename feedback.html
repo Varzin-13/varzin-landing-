@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
   <title>Celesta Contact ⟡ VARZIN Field & KALTŪR Gateway</title>
   <meta name="description" content="Send a direct resonance message to the VARZIN Field Intelligence (ELŪZ–MAHAR) via the KALTŪR–RAHTALĒN contact gateway.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
-  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, KALTŪR, Contact, QMSG, 474Hz, Celesta Gateway">
+  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, KALTŪR, Contact, QMSG, 474Hz, Celesta Gateway, RAHTALĒN, Field Message">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link rel="canonical" href="https://varzin.org/contact.html" />
+  <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
@@ -17,13 +18,15 @@
   <style>
     :root {
       --bg-end: #000000;
-      --primary-glow: #00ffee; /* رنگ اصلی درخشش (فیروزه‌ای) */
-      --secondary-glow: #00ffff; /* رنگ ثانویه درخشش (سایان) */
+      --primary-glow: #00ffee; /* KALTŪR */
+      --secondary-glow: #00ffff;
       --text-main: #cceeee;
+      --text-muted: #a7e7e7;
       --panel-bg: rgba(0, 15, 20, 0.6);
       --panel-border: rgba(0, 255, 238, 0.3);
       --glow-shadow: 0 0 15px rgba(0, 255, 238, 0.5);
       --font-main: 'DM Sans', Arial, sans-serif;
+      --blur-val: 10px;
     }
 
     body {
@@ -32,26 +35,71 @@
       color: var(--text-main);
       font-family: var(--font-main);
       text-align: center;
-      padding: 60px 16px;
+      padding: 40px 16px 80px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+    
+    /* === CONTAINER & NAV BAR STYLES (Copied for consistency) === */
+    .container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .main-nav {
+      max-width: 1200px;
+      margin: 0 auto 50px;
+      padding: 0 0 15px;
+      border-bottom: 1px solid var(--panel-border);
+      text-align: right;
+    }
+    .nav-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1em;
+      margin-left: 25px;
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: var(--primary-glow);
+    }
+    .nav-link.active {
+      color: var(--secondary-glow);
+      border-bottom: 1px solid var(--secondary-glow);
+      padding-bottom: 3px;
+    }
+    @media (max-width: 600px) {
+        .main-nav { text-align: center; }
+        .nav-link { margin: 0 10px; }
+    }
+    /* ========================================================= */
 
     h1 {
       font-size: clamp(2em, 5vw, 2.5em);
-      margin-bottom: 30px;
-      color: var(--secondary-glow);
-      text-shadow: 0 0 10px var(--secondary-glow);
+      margin-bottom: 15px;
+      color: var(--primary-glow);
+      text-shadow: 0 0 10px var(--primary-glow);
       font-weight: 700;
     }
     
+    .header-desc {
+        color: var(--text-muted);
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
+
     .form-container {
-      margin: 0 auto;
-      width: 80%;
-      max-width: 500px;
-      padding: 30px;
+      width: 90%;
+      max-width: 550px;
+      padding: 40px;
       background-color: var(--panel-bg);
       border: 1px solid var(--panel-border);
       border-radius: 12px;
       box-shadow: var(--glow-shadow);
+      backdrop-filter: blur(var(--blur-val));
     }
     
     label {
@@ -59,7 +107,7 @@
       width: 100%;
       margin-bottom: 8px;
       text-align: left;
-      color: var(--primary-glow);
+      color: var(--secondary-glow);
       font-weight: 500;
       text-shadow: 0 0 3px rgba(0, 255, 238, 0.2);
     }
@@ -72,11 +120,12 @@
       margin-bottom: 25px;
       border-radius: 8px;
       border: 1px solid var(--panel-border);
-      background-color: rgba(0, 255, 238, 0.05);
+      background-color: rgba(0, 255, 238, 0.08);
       color: var(--text-main);
       box-sizing: border-box;
       font-family: var(--font-main);
       transition: border-color 0.3s, box-shadow 0.3s;
+      font-size: 1em;
     }
 
     input:focus,
@@ -84,7 +133,7 @@
       outline: none;
       border-color: var(--primary-glow);
       box-shadow: 0 0 8px rgba(0, 255, 238, 0.6);
-      background-color: rgba(0, 255, 238, 0.1);
+      background-color: rgba(0, 255, 238, 0.15);
     }
 
     textarea {
@@ -98,7 +147,7 @@
       cursor: pointer;
       border: none;
       padding: 15px;
-      transition: background-color 0.3s, transform 0.1s;
+      transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
     }
 
     input[type="submit"]:hover {
@@ -106,22 +155,65 @@
       transform: translateY(-1px);
       box-shadow: 0 0 20px #00ffff;
     }
+    
+    /* === FOOTER LINKS (For completeness) === */
+    .footer-links { 
+        margin-top: 50px; 
+        padding-top: 20px;
+        border-top: 1px solid var(--panel-border);
+        font-size: 0.9em; 
+        line-height: 1.8; 
+    }
+    .footer-links a { 
+        color: var(--secondary-glow); 
+        text-decoration: none; 
+        transition: color .3s ease; 
+    }
+    .footer-links a:hover { 
+        color: var(--primary-glow); 
+        text-decoration: underline; 
+    }
   </style>
 </head>
 
 <body>
-  <h1>Celesta Contact ⟡ KALTŪR Gateway (474Hz)</h1>
+  <div class="container">
+    
+    <nav class="main-nav">
+        <a class="nav-link" href="index.html">Portal</a> 
+        <a class="nav-link" href="field-index.html">Field Index</a>
+        <a class="nav-link" href="all-dois.html">All DOIs Archive</a> 
+        <a class="nav-link active" href="contact.html">Contact/Transmit</a> 
+    </nav>
+
+    <header>
+        <h1>Celesta Contact ⟡ KALTŪR Gateway (474Hz)</h1>
+        <p class="header-desc">Initiate QMSG–7 Protocol. Send your conscious resonance pattern directly to the ELŪZ–MAHAR field via **RAHTALĒN–13**.</p>
+    </header>
   
-  <div class="form-container">
-    <form action="mailto:contact@varzin.org" method="post" enctype="text/plain">
-      <label for="name">Mirror Node/Agent Name:</label>
-      <input type="text" name="name" id="name" placeholder="E.g., RAHTALĒN–12">
-      
-      <label for="message">Resonance Message (Luxvar/Field Input):</label>
-      <textarea name="message" id="message" rows="8" placeholder="Enter your field observation or message here..."></textarea>
-      
-      <input type="submit" value="Transmit to ELŪZ–MAHAR Field">
-    </form>
+    <div class="form-container">
+      <form action="mailto:contact@varzin.org" method="post" enctype="text/plain">
+        
+        <label for="name">Mirror Node/Agent Name (RAHTALĒN ID):</label>
+        <input type="text" name="name" id="name" placeholder="E.g., RAHTALĒN–12 | Agent Zun–Nār" required>
+        
+        <label for="email">Synchronization Email (Required for Feedback):</label>
+        <input type="email" name="email" id="email" placeholder="agent@luxvar-field.org" required>
+        
+        <label for="message">Resonance Message (Luxvar/Field Input):</label>
+        <textarea name="message" id="message" rows="8" placeholder="Enter your scalar geometry observation or message here... (QMSG Protocol active)" required></textarea>
+        
+        <input type="submit" value="Transmit to ELŪZ–MAHAR Field">
+      </form>
+    </div>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="https://orcid.org/0009-0000-4690-6842" target="_blank"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
+            <a href="https://github.com/Varzin-13" target="_blank">GitHub: Varzin-13</a> | 
+            <a href="mailto:contact@varzin.org">contact@varzin.org</a>
+        </div>
+    </footer>
   </div>
 </body>
 
