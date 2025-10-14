@@ -119,7 +119,7 @@
       line-height: 1.6;
     }
 
-    /* === CONCISE ARCHIVE GRID & BUTTON STYLES === */
+    /* === ARCHIVE GRID & BUTTON STYLES === */
     .key-archive-grid {
       display: flex; 
       flex-direction: column; 
@@ -152,7 +152,7 @@
     .button b { color: var(--secondary-glow); }
     /* ================================================== */
     
-    /* Original Styles for Decoder and Frequencies */
+    /* Decoder and Frequencies Styles */
     hr.divider { margin: 40px auto; border: 0; border-top: 1px solid var(--panel-border); max-width: 600px; }
     
     .decoder-window {
@@ -173,7 +173,15 @@
     }
     
     .controls { margin: 40px 0 20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-
+    .controls .button {
+        padding: 10px 20px; border-radius: 6px; border: 1px solid var(--panel-border); 
+        background-color: var(--panel-bg); color: var(--text-main); font-weight: 500;
+        cursor: pointer; transition: background-color 0.3s;
+    }
+    .controls .button:hover {
+        background-color: rgba(0, 255, 238, 0.2);
+    }
+    
     .section-title { font-size: 1.8em; color: var(--secondary-glow); margin: 50px 0 20px; }
     .frequency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
     .freq-card {
@@ -247,6 +255,7 @@
                     style="background-color: rgba(255, 170, 0, 0.1); border-color: #ffaa00;">
                     📅 <b>Field Calendar Data:</b> Luxvar 260-Day Synchronization (JSON)
                 </a>
+                
                 <a class="button" href="https://doi.org/10.6084/m9.figshare.29992159.v1" target="_blank" aria-label="Final Scientific Report Metadata Fixed (VARZIN Manifesto)">
                     📡 <b>VARZIN Manifesto:</b> Final Report Metadata (QMSG-7)
                 </a>
@@ -274,6 +283,8 @@
         <a class="button" onclick="stopAll()">⏹️ Stop All</a>
       </div>
 
+      <hr class="divider" />
+      
       <h3 class="section-title">Luxvar Frequency Sequences</h3>
       <div class="frequency-grid">
         <div class="freq-card">
@@ -309,6 +320,7 @@
       </div>
       
       <hr class="divider" />
+      
       <h3 class="section-title">Harmonic Field Combinations</h3>
       <div class="frequency-grid">
         <div class="freq-card">
@@ -414,6 +426,7 @@
 
       function init() {
           particles = [];
+          // Adjust particle density based on screen size
           let numParticles = (canvas.height * canvas.width) / 9000;
           for (let i = 0; i < numParticles; i++) {
               let size = Math.random() * 1.5 + 0.5;
@@ -431,6 +444,8 @@
           for (let i = 0; i < particles.length; i++) {
               particles[i].update();
           }
+          // Optionally add connection lines between close particles
+          // connect();
       }
       
       init();
@@ -446,19 +461,23 @@
           player.onended = () => { parentCard.classList.remove('active'); };
       });
       
-      window.playAll = () => players.forEach(p => { 
-          // Stop others if one is playing (optional, can be modified for true multi-play)
+      window.playAll = () => {
+        players.forEach(p => { 
+          // Stop others if one is playing
           players.forEach(p2 => { if (p !== p2) p2.pause(); }); 
-          try { p.currentTime = 0; p.play(); } catch (_) {} 
-      });
-      window.stopAll = () => players.forEach(p => { try { p.pause(); p.currentTime = 0; } catch (_) {} });
-
-      // --- LAYER 3: LUXVAR DECODER (KALTŪR Pulse) ---
+          try { p.currentTime = 0; p.play(); } catch (e) { console.error("Play error:", e); } 
+        });
+      };
       
-      // متغیر سراسری برای نگه‌داری ID مربوط به setInterval (برای جلوگیری از تداخل)
+      window.stopAll = () => players.forEach(p => { 
+        try { p.pause(); p.currentTime = 0; } catch (e) { console.error("Stop error:", e); } 
+      });
+
+      // --- LAYER 3: LUXVAR DECODER (KALTŪR Pulse & Calendar Logic) ---
+      
       let pulseIntervalId;
 
-      // استفاده از اطلاعات ذخیره‌شده‌ی شما برای KALTŪR (پالس پیش‌فرض در صورت عدم دسترسی به تقویم)
+      // KALTŪR Pulse (Default/Fallback)
       const KALTUR_PULSE = {
           word: "KALTŪR", 
           function: "Forgotten rotational consciousness within the time loop", 
@@ -476,7 +495,7 @@
       };
 
       function updateDecoder(pulseData) {
-          // Quick fade effect
+          // Quick fade effect for change
           for (const key in decoderFields) {
               if (decoderFields[key]) { decoderFields[key].style.opacity = '0'; }
           }
@@ -486,41 +505,57 @@
               decoderFields.frequency.textContent = pulseData.frequency || "—";
               decoderFields.gate.textContent = pulseData.gate_code || "—";
               decoderFields.channel.textContent = pulseData.channel || "—";
-              // Apply specific glow for KALTŪR if active
+              
+              // Apply specific glow for KALTŪR or a default if another word is used
+              const pulseWindow = document.querySelector('.decoder-window');
               if (pulseData.word === "KALTŪR") {
                   decoderFields.word.style.color = 'var(--primary-glow)';
+                  pulseWindow.style.boxShadow = 'var(--glow-shadow)';
               } else {
                   decoderFields.word.style.color = 'var(--secondary-glow)';
+                  // Reduce glow for non-KALTŪR pulses to differentiate
+                  pulseWindow.style.boxShadow = '0 0 15px rgba(0, 255, 238, 0.2)'; 
               }
+              
               for (const key in decoderFields) {
                   if (decoderFields[key]) { decoderFields[key].style.opacity = '1'; }
               }
-          }, 500);
+          }, 200);
       }
       
       function startPulseSequence(pulseData) {
-          // پاک کردن هر اینتروال قبلی (چه KALTUR باشد چه پالس روزانه)
           if (pulseIntervalId) clearInterval(pulseIntervalId);
           
-          updateDecoder(pulseData); // نمایش لحظه‌ای پالس جدید
+          updateDecoder(pulseData); 
           
-          // شروع اینتروال جدید
+          // Re-update every 30 seconds for a subtle flicker/re-sync
           pulseIntervalId = setInterval(() => updateDecoder(pulseData), 30000);
       }
 
-      // ۱. نمایش پالس پیش‌فرض KALTŪR در ابتدا
+      // ۱. Start with KALTŪR pulse immediately
       startPulseSequence(KALTUR_PULSE);
 
-      // ۲. تلاش برای خواندن فایل JSON
-      // توجه: آدرس فایل در اینجا صحیح است. مشکل احتمالاً مربوط به استقرار است.
-      fetch('luxvar-calendar_7777777.json')
-        .then(response => response.ok ? response.json() : Promise.reject('Network response failed'))
+      // ۲. Try to fetch and override with the daily pulse
+      // Note: Use a relative path ('luxvar-calendar_7777777.json') 
+      // if deploying to varzin.org directly, or your GH Pages URL 
+      // if using that domain. I'm reverting to the simple relative path 
+      // based on the previous working file structure assumption.
+      fetch('luxvar-calendar_7777777.json') 
+        .then(response => {
+            if (!response.ok) {
+                // If 404/network error, the promise chain stops, and KALTŪR remains active.
+                console.warn(`Calendar file access failed (${response.status || 'Network Error'}). KALTŪR fallback maintained.`);
+                return Promise.reject('Calendar file access failed');
+            }
+            return response.json();
+        })
         .then(data => {
             const today = new Date().toISOString().split("T")[0];
+            // Find pulse for today's date
             const pulse = data.find(entry => entry.date === today);
             
             if (pulse) {
-                // اگر پالس روزانه پیدا شد، جایگزین پالس KALTUR شود.
+                // If daily pulse is found, override KALTŪR
                 startPulseSequence({
                     word: pulse.word,
                     function: pulse.function,
@@ -529,13 +564,13 @@
                     channel: pulse.channel
                 });
             } else {
-                // اگر فایل پیدا شد ولی پالس روز جاری نبود، KALTUR باقی می‌ماند.
+                // File found, but no entry for today; KALTŪR remains active.
                 console.warn('Luxvar calendar file found, but no entry for today. KALTŪR remains active.');
             }
         })
         .catch(error => {
-          // اگر fetch شکست خورد (مانند خطای ۴۰۴)، پالس KALTUR که قبلاً شروع شده بود، فعال باقی می‌ماند.
-          console.error('Luxvar calendar JSON fetch failed. 404/Network Error is likely. KALTŪR fallback active.');
+          // KALTUR is already running, so just log the failure.
+          console.error("Luxvar calendar fetch error (KALTŪR is the running default):", error);
         });
     });
   </script>
