@@ -14,9 +14,21 @@
   </url>
   
   <url>
+    <loc>https://varzin.org/contact.html</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.95</priority>
+  </url>
+  
+  <url>
     <loc>https://varzin.org/all-dois.html</loc>
     <lastmod>2025-10-14</lastmod>
     <priority>0.90</priority>
+  </url>
+  
+  <url>
+    <loc>https://varzin.org/greek-papers-index.html</loc>
+    <lastmod>2025-10-14</lastmod>
+    <priority>0.85</priority>
   </url>
   
   <url>
