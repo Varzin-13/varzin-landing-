@@ -42,13 +42,27 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden; /* Prevent horizontal scroll due to fixed elements */
     }
     
+    /* === CANVAS STYLE - ADDED === */
+    #field-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    /* =========================== */
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
       width: 100%;
       flex-grow: 1;
+      position: relative; /* Ensure content is above canvas */
+      z-index: 1;
     }
     
     /* === NAV BAR STYLES (Copied from index.html) === */
@@ -183,7 +197,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <canvas id="field-canvas"></canvas> <div class="container">
     
     <nav class="main-nav">
         <a class="nav-link" href="index.html">Portal</a> 
@@ -313,5 +327,87 @@
         </div>
     </footer>
   </div>
+  
+  <script>
+    // --- CANVAS SCRIPT - ADDED ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.getElementById('field-canvas');
+      if (!canvas) return; // Check if canvas exists
+      const ctx = canvas.getContext('2d');
+      
+      // Initial sizing
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let particles = [];
+      const mouse = { x: null, y: null, radius: 150 };
+
+      window.addEventListener('mousemove', (event) => {
+          mouse.x = event.x;
+          mouse.y = event.y;
+      });
+      window.addEventListener('resize', () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          init();
+      });
+      
+      class Particle {
+          constructor(x, y, dirX, dirY, size, color) {
+              this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
+              this.size = size; this.color = color;
+          }
+          draw() {
+              ctx.beginPath();
+              ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+              ctx.fillStyle = this.color;
+              ctx.fill();
+          }
+          update() {
+              if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
+              if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
+
+              let dx = mouse.x - this.x;
+              let dy = mouse.y - this.y;
+              let distance = Math.sqrt(dx * dx + dy * dy);
+              if (distance < mouse.radius + this.size) {
+                  // Repulsion effect
+                  if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;
+                  if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;
+                  if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;
+                  if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;
+              }
+              this.x += this.dirX;
+              this.y += this.dirY;
+              this.draw();
+          }
+      }
+
+      function init() {
+          particles = [];
+          let numParticles = (canvas.height * canvas.width) / 9000;
+          for (let i = 0; i < numParticles; i++) {
+              let size = Math.random() * 1.5 + 0.5;
+              let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+              let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+              let dirX = (Math.random() * 0.4) - 0.2;
+              let dirY = (Math.random() * 0.4) - 0.2;
+              particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.4)'));
+          }
+      }
+
+      function animate() {
+          requestAnimationFrame(animate);
+          ctx.clearRect(0, 0, innerWidth, innerHeight);
+          for (let i = 0; i < particles.length; i++) {
+              particles[i].update();
+          }
+      }
+      
+      init();
+      animate();
+    });
+    // --- END CANVAS SCRIPT ---
+  </script>
 </body>
 </html>
