@@ -471,6 +471,7 @@
       }
 
       // Luxvar Calendar fetch (using the file name confirmed in GitHub)
+      // توجه: در اینجا آدرس نسبی فایل 'luxvar_calendar_7777777.json' استفاده شده است. 
       fetch('luxvar_calendar_7777777.json')
         .then(response => response.ok ? response.json() : Promise.reject('Network response failed'))
         .then(data => {
