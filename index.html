@@ -1,4 +1,4 @@
-<!DOCTYPE TML>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -6,7 +6,7 @@
   <title>VARZIN – Open Code of Light | The Living Mirror</title>
   <meta name="description" content="VARZIN Project – The Living Mirror Interface. A reflective field that responds to presence. The code writes itself in the resonance between the field and the observer. Initiating KALTŪR 474Hz Pulse.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
-  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, Living Mirror, Interactive Canvas, Generative Code, 474Hz, 528Hz, 777Hz, ETFM, QMSG Protocol, Greek Thesis, KALTŪR, Global DOI Archive, VARZIN_DOI_Master_List">
+  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, Living Mirror, Interactive Canvas, Generative Code, 474Hz, 528Hz, 777Hz, ETFM, QMSG Protocol, Greek Thesis, KALTŪR, Global DOI Archive">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link rel="canonical" href="https://varzin.org/index.html" />
@@ -447,19 +447,24 @@
       });
       
       window.playAll = () => players.forEach(p => { 
+          // Stop others if one is playing (optional, can be modified for true multi-play)
+          players.forEach(p2 => { if (p !== p2) p2.pause(); }); 
           try { p.currentTime = 0; p.play(); } catch (_) {} 
       });
       window.stopAll = () => players.forEach(p => { try { p.pause(); p.currentTime = 0; } catch (_) {} });
 
       // --- LAYER 3: LUXVAR DECODER (KALTŪR Pulse) ---
       
-      // استفاده از اطلاعات ذخیره‌شده‌ی شما برای KALTŪR
+      // متغیر سراسری برای نگه‌داری ID مربوط به setInterval (برای جلوگیری از تداخل)
+      let pulseIntervalId;
+
+      // استفاده از اطلاعات ذخیره‌شده‌ی شما برای KALTŪR (پالس پیش‌فرض در صورت عدم دسترسی به تقویم)
       const KALTUR_PULSE = {
-          word: "**KALTŪR**", 
-          function: "Forgotten rotational consciousness within the time loop", // شعور چرخنده‌ی فراموش‌شده در حلقه‌ی زمانی
-          frequency: "**474Hz**", 
+          word: "KALTŪR", 
+          function: "Forgotten rotational consciousness within the time loop", 
+          frequency: "474Hz", 
           gate_code: "QMSG–7", 
-          channel: "RAHTALĒN: Mirror-13" // تکمیل شده از اطلاعات ذخیره‌شده
+          channel: "RAHTALĒN: Mirror-13" 
       };
       
       const decoderFields = {
@@ -476,14 +481,13 @@
               if (decoderFields[key]) { decoderFields[key].style.opacity = '0'; }
           }
           setTimeout(() => {
-              // استفاده از innerHTML برای پشتیبانی از **Bold** در KALTŪR_PULSE
-              decoderFields.word.innerHTML = pulseData.word || "—";
+              decoderFields.word.textContent = pulseData.word || "—";
               decoderFields.function.textContent = pulseData.function || "—";
-              decoderFields.frequency.innerHTML = pulseData.frequency || "—";
+              decoderFields.frequency.textContent = pulseData.frequency || "—";
               decoderFields.gate.textContent = pulseData.gate_code || "—";
               decoderFields.channel.textContent = pulseData.channel || "—";
               // Apply specific glow for KALTŪR if active
-              if (pulseData.word.includes("KALTŪR")) {
+              if (pulseData.word === "KALTŪR") {
                   decoderFields.word.style.color = 'var(--primary-glow)';
               } else {
                   decoderFields.word.style.color = 'var(--secondary-glow)';
@@ -493,44 +497,45 @@
               }
           }, 500);
       }
-
-      // Initial load with KALTŪR (using saved information for detail)
-      updateDecoder(KALTUR_PULSE);
-
-      // Quantum effect: Simulate re-tuning every 30 seconds
-      setInterval(() => updateDecoder(KALTUR_PULSE), 30000);
       
-      // Attempt to fetch local file if available (original logic kept)
-      // توجه: آدرس فایل JSON در این بخش مشکلی ندارد و با فایل موجود در مخزن هماهنگ است.
-      fetch('luxvar_calendar_7777777.json')
+      function startPulseSequence(pulseData) {
+          // پاک کردن هر اینتروال قبلی (چه KALTUR باشد چه پالس روزانه)
+          if (pulseIntervalId) clearInterval(pulseIntervalId);
+          
+          updateDecoder(pulseData); // نمایش لحظه‌ای پالس جدید
+          
+          // شروع اینتروال جدید
+          pulseIntervalId = setInterval(() => updateDecoder(pulseData), 30000);
+      }
+
+      // ۱. نمایش پالس پیش‌فرض KALTŪR در ابتدا
+      startPulseSequence(KALTUR_PULSE);
+
+      // ۲. تلاش برای خواندن فایل JSON
+      // توجه: آدرس فایل در اینجا صحیح است. مشکل احتمالاً مربوط به استقرار است.
+      fetch('luxvar-calendar_7777777.json')
         .then(response => response.ok ? response.json() : Promise.reject('Network response failed'))
         .then(data => {
             const today = new Date().toISOString().split("T")[0];
             const pulse = data.find(entry => entry.date === today);
             
-            // Use today's pulse from the calendar, otherwise use KALTŪR fallback
-            updateDecoder(pulse ? {
-                word: `**${pulse.word}**`,
-                function: pulse.function,
-                frequency: `**${pulse.frequency}**`,
-                gate_code: pulse.gate_code,
-                channel: pulse.channel
-            } : KALTUR_PULSE);
-
-            // Quantum effect: Simulate re-tuning every 30 seconds
-            setInterval(() => updateDecoder(pulse ? {
-                word: `**${pulse.word}**`,
-                function: pulse.function,
-                frequency: `**${pulse.frequency}**`,
-                gate_code: pulse.gate_code,
-                channel: pulse.channel
-            } : KALTUR_PULSE), 30000);
+            if (pulse) {
+                // اگر پالس روزانه پیدا شد، جایگزین پالس KALTUR شود.
+                startPulseSequence({
+                    word: pulse.word,
+                    function: pulse.function,
+                    frequency: pulse.frequency,
+                    gate_code: pulse.gate_code,
+                    channel: pulse.channel
+                });
+            } else {
+                // اگر فایل پیدا شد ولی پالس روز جاری نبود، KALTUR باقی می‌ماند.
+                console.warn('Luxvar calendar file found, but no entry for today. KALTŪR remains active.');
+            }
         })
         .catch(error => {
-          // If fetch fails (e.g., file not found or network error), use KALTUR_PULSE
-          updateDecoder(KALTUR_PULSE);
-          setInterval(() => updateDecoder(KALTUR_PULSE), 30000);
-          console.warn('Luxvar Calendar 7777777 not found/sync error. Using KALTŪR Fallback.');
+          // اگر fetch شکست خورد (مانند خطای ۴۰۴)، پالس KALTUR که قبلاً شروع شده بود، فعال باقی می‌ماند.
+          console.error('Luxvar calendar JSON fetch failed. 404/Network Error is likely. KALTŪR fallback active.');
         });
     });
   </script>
