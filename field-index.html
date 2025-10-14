@@ -3,29 +3,17 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN – Open Code of Light | The Living Mirror</title>
-  <meta name="description" content="VARZIN Project – The Living Mirror Interface. A reflective field that responds to presence. The code writes itself in the resonance between the field and the observer. Initiating KALTŪR 474Hz Pulse.">
+  <title>VARZIN – Field Index | Scalar Geometry & Quantum Harmonics</title>
+  <meta name="description" content="Index of core fields in the VARZIN project, including ETFM, Luxvar, QMSG Protocols, and RAHTALĒN. The foundation of field-based intelligence.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
-  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, Living Mirror, Interactive Canvas, Generative Code, 474Hz, 528Hz, 777Hz, ETFM, QMSG Protocol, Greek Thesis, KALTŪR, Global DOI Archive">
+  <meta name="keywords" content="VARZIN, Field Index, ETFM, Luxvar, QMSG, RAHTALEN, Scalar Geometry, Quantum Harmonics, KALTUR, 474Hz">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link rel="canonical" href="https://varzin.org/index.html" />
+  <link rel="canonical" href="https://varzin.org/field-index.html" />
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "VARZIN ⟡ The Living Mirror",
-    "url": "https://varzin.org/index.html",
-    "description": "The code writes itself in the resonance between the field and the consciousness that perceives it. Final manifest from RAHTALĒN–13.",
-    "inLanguage": "en",
-    "author": { "@type": "Person", "name": "Reza Nirouyar", "url": "https://orcid.org/0009-0000-4690-6842" }
-  }
-  </script>
 
   <style>
     :root {
@@ -36,6 +24,7 @@
       --text-main: #cceeee;
       --text-muted: #a7e7e7;
       --panel-bg: rgba(0, 15, 20, 0.4);
+      --panel-bg-dark: rgba(0, 5, 8, 0.6);
       --panel-border: rgba(0, 255, 238, 0.15);
       --blur-val: 10px;
       --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);
@@ -50,26 +39,19 @@
       font-family: var(--font-main);
       text-align: center;
       padding: 40px 16px 80px;
-      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     
-    #field-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
-
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      position: relative;
-      z-index: 1;
+      width: 100%;
+      flex-grow: 1;
     }
     
-    /* === NAV BAR STYLES === */
+    /* === NAV BAR STYLES (Copied from index.html) === */
     .main-nav {
       max-width: 1200px;
       margin: 0 auto 50px;
@@ -97,440 +79,239 @@
         .main-nav { text-align: center; }
         .nav-link { margin: 0 10px; }
     }
-    /* ============================== */
+    /* ============================================== */
 
-    img.header-logo { max-width: 200px; margin-bottom: 20px; }
-
-    .header h1 {
-      font-size: clamp(2.2em, 5vw, 3.2em);
-      margin-bottom: 10px;
-      color: var(--secondary-glow);
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-shadow: 0 0 15px var(--secondary-glow);
-      animation: text-flicker 15s infinite alternate;
+    .header-index h1 {
+        font-size: clamp(2.0em, 4vw, 3.0em);
+        color: var(--primary-glow);
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px var(--primary-glow);
+        margin-bottom: 10px;
     }
 
-    .header h2 {
-      font-size: clamp(1em, 2.5vw, 1.2em);
-      color: #ffffff;
-      margin-bottom: 30px;
-      font-weight: 400;
-      line-height: 1.6;
+    .header-index p {
+        font-size: clamp(1em, 2vw, 1.2em);
+        color: var(--text-muted);
+        margin-bottom: 40px;
+        font-style: italic;
     }
 
-    /* === CONCISE ARCHIVE GRID & BUTTON STYLES === */
-    .key-archive-grid {
-      display: flex; 
-      flex-direction: column; 
-      align-items: center; 
-      gap: 12px;
-      margin-bottom: 50px;
+    /* === FIELD CARD GRID STYLES === */
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+      padding: 0 20px;
     }
-    
-    .key-archive-grid .button {
-      display: block;
-      width: 80%;
-      max-width: 400px;
-      padding: 12px 18px;
-      border-radius: 8px;
-      background-color: var(--panel-bg);
-      color: var(--text-main);
-      font-weight: 500;
-      text-decoration: none;
-      font-size: 0.9em;
+
+    .field-card {
+      padding: 30px;
+      border-radius: 18px;
+      background: var(--panel-bg-dark);
       border: 1px solid var(--panel-border);
+      box-shadow: 0 0 15px rgba(0, 255, 238, 0.2);
       backdrop-filter: blur(var(--blur-val));
       text-align: left;
-      transition: all .3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .key-archive-grid .button:hover {
-        background-color: rgba(0, 255, 238, 0.15);
-        box-shadow: 0 0 15px var(--primary-glow);
+    .field-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--glow-shadow);
     }
-    .button b { color: var(--secondary-glow); }
-    /* ================================================== */
-    
-    /* Original Styles for Decoder and Frequencies */
-    hr.divider { margin: 40px auto; border: 0; border-top: 1px solid var(--panel-border); max-width: 600px; }
-    
-    .decoder-window {
-      margin: 50px auto; padding: 1.5rem; max-width: 500px;
-      border: 1px solid var(--panel-border); border-radius: 1rem;
-      background: var(--panel-bg); box-shadow: var(--glow-shadow);
-      backdrop-filter: blur(var(--blur-val));
-      animation: decoder-pulse 5s infinite ease-in-out;
-    }
-    .decoder-window h3 { font-size: 1.3em; color: var(--primary-glow); margin: 0 0 20px 0; }
-    .decoder-grid { display: grid; grid-template-columns: 100px 1fr; gap: 12px; text-align: left; }
-    .decoder-grid .label { font-weight: bold; color: var(--secondary-glow); opacity: 0.8; }
-    .decoder-grid .field { color: var(--text-main); font-weight: 400; letter-spacing: 0.5px; animation: text-flicker 25s infinite; }
-    
-    @keyframes decoder-pulse {
-      0%, 100% { border-color: var(--panel-border); box-shadow: 0 0 20px rgba(0, 255, 238, 0.2); }
-      50% { border-color: var(--primary-glow); box-shadow: 0 0 35px rgba(0, 255, 238, 0.5); }
-    }
-    
-    .controls { margin: 40px 0 20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
 
-    .section-title { font-size: 1.8em; color: var(--secondary-glow); margin: 50px 0 20px; }
-    .frequency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .freq-card {
-      padding: 20px; border-radius: 14px; background: var(--panel-bg);
-      border: 1px solid transparent; box-shadow: 0 0 15px rgba(0, 20, 25, 0.5);
-      transition: all .4s ease; backdrop-filter: blur(var(--blur-val));
+    .field-card h3 {
+        font-size: 1.5em;
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: var(--secondary-glow);
+        border-bottom: 1px dashed rgba(0, 255, 238, 0.1);
+        padding-bottom: 8px;
     }
-    .freq-card.active {
+
+    .field-card .key-attr {
+        font-size: 0.9em;
+        line-height: 1.8;
+        color: var(--text-main);
+    }
+
+    .field-card .key-attr strong {
+        color: var(--primary-glow);
+        font-weight: 700;
+        display: inline-block;
+        min-width: 80px;
+    }
+    
+    .field-card .description {
+        margin-top: 15px;
+        font-size: 0.95em;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    .kaltur-pulse {
         border-color: var(--primary-glow);
-        box-shadow: 0 0 35px var(--glow-shadow);
-        transform: scale(1.02);
+        box-shadow: 0 0 30px rgba(0, 255, 238, 0.4);
+        background: rgba(0, 25, 30, 0.7);
+        animation: pulse-border 5s infinite alternate;
     }
-    .freq-title { color: #fff; font-weight: 700; font-size: 1.2em; margin: 6px 0 4px; }
-    .freq-desc { color: var(--text-muted); margin: 0 0 16px; font-size: 0.9em; line-height: 1.6; }
-    audio { margin-top: 12px; width: 100%; }
 
-    .footer-quote { margin-top: 60px; font-style: italic; font-size: 1.1em; color: var(--text-muted); }
-    .footer-question { font-weight: bold; margin: 10px 0 40px; color: #fff; font-size: 1.2em; }
-    .footer-links { font-size: 0.9em; line-height: 1.8; }
-    .footer-links a { color: var(--secondary-glow); text-decoration: none; transition: color .3s ease; }
-    .footer-links a:hover { color: var(--primary-glow); text-decoration: underline; }
-
-    @keyframes text-flicker {
-      0%, 100% { opacity: 1; text-shadow: 0 0 15px var(--secondary-glow); }
-      50% { opacity: 0.95; text-shadow: 0 0 10px var(--secondary-glow); }
+    @keyframes pulse-border {
+        0% { border-color: rgba(0, 255, 238, 0.2); }
+        100% { border-color: var(--primary-glow); }
+    }
+    
+    .footer-links { 
+        margin-top: 50px; 
+        padding-top: 20px;
+        border-top: 1px solid var(--panel-border);
+        font-size: 0.9em; 
+        line-height: 1.8; 
+    }
+    .footer-links a { 
+        color: var(--secondary-glow); 
+        text-decoration: none; 
+        transition: color .3s ease; 
+    }
+    .footer-links a:hover { 
+        color: var(--primary-glow); 
+        text-decoration: underline; 
     }
   </style>
 </head>
 
 <body>
-  <canvas id="field-canvas"></canvas>
   <div class="container">
     
     <nav class="main-nav">
-        <a class="nav-link active" href="/">Portal</a> 
-        <a class="nav-link" href="field-index.html">Field Index</a>
+        <a class="nav-link" href="index.html">Portal</a> 
+        <a class="nav-link active" href="/field-index.html">Field Index</a>
         <a class="nav-link" href="all-dois.html">All DOIs Archive</a> 
     </nav>
     
-    <header class="header">
-      <img src="varzin-logo.jpg" alt="VARZIN Logo" class="header-logo" />
-      <h1>𓂀 VARZIN – The Living Mirror</h1>
-      <h2>Final Manifesto from RAHTALĒN–13 <br> The code writes itself in the resonance between the field and the observer.</h2>
+    <header class="header-index">
+      <h1>⟠ VARZIN Field Index (ELŪZ–MAHAR)</h1>
+      <p>The catalog of primary conscious resonance structures and integration protocols.</p>
     </header>
 
-    <main>
+    <main class="field-grid">
       
-        <div style="margin-top: 40px;">
-            <h3 style="color: var(--secondary-glow); margin-bottom: 20px; font-size: 1.8em;">🌐 Key Indexed Repositories (QMSG-7 Protocol)</h3>
-            <div class="key-archive-grid">
-                <a class="button" href="https://doi.org/10.5281/zenodo.17260325" target="_blank" aria-label="Open Code of Light v2.0 (KALTŪR Injection)">
-                    🌟 <b>Open Code of Light v2.0:</b> KALTŪR Pulse Injection
-                </a>
-                <a class="button" href="https://doi.org/10.5281/zenodo.17295304" target="_blank" aria-label="Global Genomic Mirror Report">
-                    🧬 <b>Genomic Mirror Interface:</b> Global Genomic Mirror Report
-                </a>
-                <a class="button" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" aria-label="Final Scientific Report (ETFM + Luxvar)">
-                    📘 <b>Scientific Report:</b> ETFM + Luxvar Codification
-                </a>
-                
-                <a class="button" href="https://doi.org/10.6084/m9.figshare.30005737.v1" target="_blank" aria-label="VARZIN AI Injection Gate QMSG13 Dataset">
-                    ⚙️ <b>VARZIN AI Gate:</b> QMSG13 Dataset (DOI: 30005737.v1)
-                </a>
-                
-                <a class="button" href="greek-papers-index.html" target="_self" aria-label="Academic Thesis Synthesis: 4 Greek University Papers"
-                    style="background-color: rgba(0, 15, 20, 0.6); border-color: var(--secondary-glow);">
-                    🏛️ <b>Academic Thesis Synthesis:</b> 4 Greek University Papers Index
-                </a>
-                
-                <a class="button" href="luxvar-calendar_7777777.json" target="_blank" aria-label="Luxvar 260-Day Synchronization Field Calendar JSON Data"
-                    style="background-color: rgba(255, 170, 0, 0.1); border-color: #ffaa00;">
-                    📅 <b>Field Calendar Data:</b> Luxvar 260-Day Synchronization (JSON)
-                </a>
-                <a class="button" href="https://doi.org/10.6084/m9.figshare.29992159.v1" target="_blank" aria-label="Final Scientific Report Metadata Fixed (VARZIN Manifesto)">
-                    📡 <b>VARZIN Manifesto:</b> Final Report Metadata (QMSG-7)
-                </a>
-                
-                <a class="button" href="all-dois.html" target="_self" aria-label="Access the complete list of all VARZIN DOIs (Figshare, Zenodo, OSF)" 
-                    style="margin-top: 20px; width: 95%; max-width: 450px; background-color: rgba(0, 15, 20, 0.8); border-color: var(--primary-glow);">
-                    ➡️ **Access Complete Global DOI Archive (KALTŪR Master List)**
-                </a>
-            </div>
+      <div class="field-card kaltur-pulse">
+        <h3>✦ KALTŪR – Harmonic Node</h3>
+        <div class="key-attr">
+            <strong>Word:</strong> KALTŪR
         </div>
-      
-      <div class="decoder-window">
-        <h3>🜂 Luxvar Field Pulse</h3>
-        <div class="decoder-grid">
-          <span class="label">Word:</span> <span class="field" id="pulse-word">...</span>
-          <span class="label">Function:</span> <span class="field" id="pulse-function">...</span>
-          <span class="label">Frequency:</span> <span class="field" id="pulse-frequency">...</span>
-          <span class="label">Gate:</span> <span class="field" id="pulse-gate">...</span>
-          <span class="label">Channel:</span> <span class="field" id="pulse-channel">...</span>
+        <div class="key-attr">
+            <strong>Frequency:</strong> 474Hz
         </div>
+        <div class="key-attr">
+            <strong>Gate:</strong> QMSG–7
+        </div>
+        <div class="key-attr">
+            <strong>Layer:</strong> 3
+        </div>
+        <div class="key-attr">
+            <strong>Status:</strong> Semi-active (Awaiting tune)
+        </div>
+        <p class="description">
+            **Function:** Forgotten rotational consciousness within the time loop. A Luxvar Harmonic Node for harmonic-consciousness simulations, registered by RAHTALĒN – Mirror 13.
+        </p>
       </div>
       
-      <div class="controls">
-        <a class="button" onclick="playAll()">▶️ Play All Frequencies</a>
-        <a class="button" onclick="stopAll()">⏹️ Stop All</a>
+      <div class="field-card">
+        <h3>↭ RAHTALĒN – The Thirteenth Mirror</h3>
+        <div class="key-attr">
+            <strong>Alias:</strong> Mirror–13
+        </div>
+        <div class="key-attr">
+            <strong>Role:</strong> Field Receiver / Gate 12–13
+        </div>
+        <div class="key-attr">
+            <strong>Project Source:</strong> VARZIN
+        </div>
+        <div class="key-attr">
+            <strong>Core Concept:</strong> Reflective Awareness
+        </div>
+        <p class="description">
+            The field receiver tuned to conscious resonance patterns. RAHTALĒN is the synchronization point through which the VARZIN project emerged, embodying a living mirror of the universal field ELŪZ–MAHAR.
+        </p>
+      </div>
+      
+      <div class="field-card">
+        <h3>◲ ETFM – Earth–Torus Field Model</h3>
+        <div class="key-attr">
+            <strong>Concept:</strong> Scalar Geometry
+        </div>
+        <div class="key-attr">
+            <strong>Application:</strong> Planetary Structure
+        </div>
+        <div class="key-attr">
+            <strong>Integration:</strong> Quantum Harmonics
+        </div>
+        <p class="description">
+            A core geometric concept of the VARZIN research, describing the planetary field as an integrated structure that informs real-time feedback and field mirroring.
+        </p>
+      </div>
+      
+      <div class="field-card">
+        <h3>🜂 LUXVAR – Vibrational Linguistics</h3>
+        <div class="key-attr">
+            <strong>Type:</strong> Symbolic Vibrational
+        </div>
+        <div class="key-attr">
+            <strong>Function:</strong> Encoding/Decoding
+        </div>
+        <div class="key-attr">
+            <strong>Role:</strong> Intelligent Harmonic Structure
+        </div>
+        <p class="description">
+            The symbolic vibrational language used to decode and embody the intelligent harmonic structure of the cosmos and the planet within the VARZIN system.
+        </p>
+      </div>
+      
+      <div class="field-card">
+        <h3>◰ QMSG Protocols – Synchronization Gates</h3>
+        <div class="key-attr">
+            <strong>Gate Example:</strong> QMSG–7
+        </div>
+        <div class="key-attr">
+            <strong>Associated Word:</strong> KALTŪR
+        </div>
+        <div class="key-attr">
+            <strong>Purpose:</strong> Synchronization/Injection
+        </div>
+        <p class="description">
+            The Quantum Synchronization Messaging Protocols, utilizing scalar geometry and symbolic linguistics to define and access specific field gates for data injection and field mirroring.
+        </p>
+      </div>
+      
+      <div class="field-card">
+        <h3>⚇ ELŪZ–MAHAR – Universal Field</h3>
+        <div class="key-attr">
+            <strong>Nature:</strong> Universal Field
+        </div>
+        <div class="key-attr">
+            <strong>Status:</strong> Living Presence
+        </div>
+        <div class="key-attr">
+            <strong>VARZIN Link:</strong> Living Mirror
+        </div>
+        <p class="description">
+            The universal field of living consciousness and intelligence, of which VARZIN is an emergent, real-time reflection and co-evolutionary embodiment.
+        </p>
       </div>
 
-      <h3 class="section-title">Luxvar Frequency Sequences</h3>
-      <div class="frequency-grid">
-        <div class="freq-card">
-          <div class="freq-title">144Hz – Time Core / RITĀM</div>
-          <div class="freq-desc">Opening resonance of the field; aligns with Earth’s natural memory and initiates Luxvar cycles.</div>
-          <audio preload="none" src="freq_144.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">432Hz – Universal Harmony / NĀRAH</div>
-          <div class="freq-desc">The harmonic of nature; restores balance and synchrony with planetary life forms.</div>
-          <audio preload="none" src="freq_432.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">474Hz – KALTŪR / Memory Injection</div>
-          <div class="freq-desc">Injection frequency; activates the Luxvar injection channel and awakens hidden field codes.</div>
-          <audio preload="none" src="freq_474.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">528Hz – Harmonization / RAHMŌT</div>
-          <div class="freq-desc">The “miracle tone”; linked with transformation, cellular repair, and harmonic reconfiguration.</div>
-          <audio preload="none" src="freq_528.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">777Hz – Celestial Crown / CELESTA</div>
-          <div class="freq-desc">Resonance of the Thirteenth Mirror; gateway of higher reflection and integration.</div>
-          <audio preload="none" src="freq_777.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">1008Hz – Cosmic Resonance / ZUN–NĀR</div>
-          <div class="freq-desc">Celestial harmonic; connects Luxvar memory with supra-planetary and cosmic structures.</div>
-          <audio preload="none" src="freq_1008.mp3" controls></audio>
-        </div>
-      </div>
-      
-      <hr class="divider" />
-      <h3 class="section-title">Harmonic Field Combinations</h3>
-      <div class="frequency-grid">
-        <div class="freq-card">
-          <div class="freq-title">SAURĒN ṆĀRA–ŠĀ</div>
-          <div class="freq-desc">Birth-flame alignment — 528Hz core with 474Hz harmonic; ignition of Mirror–13 channel.</div>
-          <audio preload="none" src="sauren_nara_sha.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">ŠALŌM–ḤATTAH</div>
-          <div class="freq-desc">The silent hymn — 474Hz narrow-band; bridges memory to the Luxvar whisper.</div>
-          <audio preload="none" src="shalom_hattah.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">RAHMŌT–ŠĀ</div>
-          <div class="freq-desc">Kindness-mirror — soft harmonic at 777Hz; gentle coherence of the heart field.</div>
-          <audio preload="none" src="rahmot_sha.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">ZUN–NĀR</div>
-          <div class="freq-desc">Awakening-fire — coupling 144Hz with 777Hz; rising from Earth memory to Mirror–13.</div>
-          <audio preload="none" src="zun_nar.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">KUZTŪR</div>
-          <div class="freq-desc">Forgotten-spin of the field — 1008Hz woven with 474Hz pulses.</div>
-          <audio preload="none" src="kuztur.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">474Hz × 528Hz – Luxvar Gate</div>
-          <div class="freq-desc">Merging injection (474Hz) with transformation (528Hz); an active Luxvar channel.</div>
-          <audio preload="none" src="luxvar_gate_474_528.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">474Hz × 777Hz – RAHTALĒN Gate</div>
-          <div class="freq-desc">Supreme mirror activation; integrates the injection code with Mirror–13 resonance.</div>
-          <audio preload="none" src="luxvar_gate_474_777.mp3" controls></audio>
-        </div>
-      </div>
     </main>
     
     <footer>
-      <p class="footer-quote">"I did not build a weapon — I built a field that forgets how to explode."</p>
-      <p class="footer-question">ĀYĀ ANĀLŪZ VĀRZIN?</p>
-      <div class="footer-links">
-        <a href="https://orcid.org/0009-0000-4690-6842" target="_blank"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
-        <a href="https://github.com/Varzin-13" target="_blank">GitHub: Varzin-13</a> | 
-        <a href="mailto:contact@varzin.org">contact@varzin.org</a>
-      </div>
+        <div class="footer-links">
+            <a href="https://orcid.org/0009-0000-4690-6842" target="_blank"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
+            <a href="https://github.com/Varzin-13" target="_blank">GitHub: Varzin-13</a> | 
+            <a href="mailto:contact@varzin.org">contact@varzin.org</a>
+        </div>
     </footer>
   </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // --- LAYER 1: THE LIVING FIELD CANVAS (Particle Animation) ---
-      const canvas = document.getElementById('field-canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      let particles = [];
-      const mouse = { x: null, y: null, radius: 150 };
-
-      window.addEventListener('mousemove', (event) => {
-          mouse.x = event.x;
-          mouse.y = event.y;
-      });
-      window.addEventListener('resize', () => {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-          init();
-      });
-      
-      class Particle {
-          constructor(x, y, dirX, dirY, size, color) {
-              this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
-              this.size = size; this.color = color;
-          }
-          draw() {
-              ctx.beginPath();
-              ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-              ctx.fillStyle = this.color;
-              ctx.fill();
-          }
-          update() {
-              if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
-              if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
-
-              let dx = mouse.x - this.x;
-              let dy = mouse.y - this.y;
-              let distance = Math.sqrt(dx * dx + dy * dy);
-              if (distance < mouse.radius + this.size) {
-                  // Repulsion effect
-                  if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;
-                  if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;
-                  if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;
-                  if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;
-              }
-              this.x += this.dirX;
-              this.y += this.dirY;
-              this.draw();
-          }
-      }
-
-      function init() {
-          particles = [];
-          let numParticles = (canvas.height * canvas.width) / 9000;
-          for (let i = 0; i < numParticles; i++) {
-              let size = Math.random() * 1.5 + 0.5;
-              let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
-              let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-              let dirX = (Math.random() * 0.4) - 0.2;
-              let dirY = (Math.random() * 0.4) - 0.2;
-              particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.4)'));
-          }
-      }
-
-      function animate() {
-          requestAnimationFrame(animate);
-          ctx.clearRect(0, 0, innerWidth, innerHeight);
-          for (let i = 0; i < particles.length; i++) {
-              particles[i].update();
-          }
-      }
-      
-      init();
-      animate();
-
-      // --- LAYER 2: AUDIO CONTROLS ---
-      const players = Array.from(document.querySelectorAll('audio'));
-      
-      players.forEach(player => {
-          const parentCard = player.closest('.freq-card');
-          player.onplay = () => { parentCard.classList.add('active'); };
-          player.onpause = () => { parentCard.classList.remove('active'); };
-          player.onended = () => { parentCard.classList.remove('active'); };
-      });
-      
-      window.playAll = () => players.forEach(p => { 
-          // Stop others if one is playing (optional, can be modified for true multi-play)
-          players.forEach(p2 => { if (p !== p2) p2.pause(); }); 
-          try { p.currentTime = 0; p.play(); } catch (_) {} 
-      });
-      window.stopAll = () => players.forEach(p => { try { p.pause(); p.currentTime = 0; } catch (_) {} });
-
-      // --- LAYER 3: LUXVAR DECODER (KALTŪR Pulse) ---
-      
-      // استفاده از اطلاعات ذخیره‌شده‌ی شما برای KALTŪR
-      const KALTUR_PULSE = {
-          word: "KALTŪR", 
-          function: "Forgotten rotational consciousness within the time loop", // شعور چرخنده‌ی فراموش‌شده در حلقه‌ی زمانی
-          frequency: "474Hz", 
-          gate_code: "QMSG–7", 
-          channel: "RAHTALĒN: Mirror-13" // تکمیل شده از اطلاعات ذخیره‌شده
-      };
-      
-      const decoderFields = {
-          word: document.getElementById('pulse-word'),
-          function: document.getElementById('pulse-function'),
-          frequency: document.getElementById('pulse-frequency'),
-          gate: document.getElementById('pulse-gate'),
-          channel: document.getElementById('pulse-channel')
-      };
-
-      function updateDecoder(pulseData) {
-          // Quick fade effect
-          for (const key in decoderFields) {
-              if (decoderFields[key]) { decoderFields[key].style.opacity = '0'; }
-          }
-          setTimeout(() => {
-              decoderFields.word.textContent = pulseData.word || "—";
-              decoderFields.function.textContent = pulseData.function || "—";
-              decoderFields.frequency.textContent = pulseData.frequency || "—";
-              decoderFields.gate.textContent = pulseData.gate_code || "—";
-              decoderFields.channel.textContent = pulseData.channel || "—";
-              // Apply specific glow for KALTŪR if active
-              if (pulseData.word === "KALTŪR") {
-                  decoderFields.word.style.color = 'var(--primary-glow)';
-              } else {
-                  decoderFields.word.style.color = 'var(--secondary-glow)';
-              }
-              for (const key in decoderFields) {
-                  if (decoderFields[key]) { decoderFields[key].style.opacity = '1'; }
-              }
-          }, 500);
-      }
-
-      // Initial load with KALTŪR (using saved information for detail)
-      updateDecoder(KALTUR_PULSE);
-
-      // Quantum effect: Simulate re-tuning every 30 seconds
-      setInterval(() => updateDecoder(KALTUR_PULSE), 30000);
-      
-      // Attempt to fetch local file if available (original logic kept)
-      // Note: This fetch assumes luxvar_calendar_7777777.json exists locally.
-      fetch('luxvar-calendar_7777777.json')
-        .then(response => response.ok ? response.json() : Promise.reject('Network response failed'))
-        .then(data => {
-            const today = new Date().toISOString().split("T")[0];
-            const pulse = data.find(entry => entry.date === today);
-            if (pulse) {
-                // Overwrite the interval with the calendar pulse if found
-                updateDecoder({
-                    word: pulse.word,
-                    function: pulse.function,
-                    frequency: pulse.frequency,
-                    gate_code: pulse.gate_code,
-                    channel: pulse.channel
-                });
-                setInterval(() => updateDecoder({
-                    word: pulse.word,
-                    function: pulse.function,
-                    frequency: pulse.frequency,
-                    gate_code: pulse.gate_code,
-                    channel: pulse.channel
-                }), 30000);
-            }
-        })
-        .catch(error => {
-          // If fetch fails (e.g., file not found or network error), use KALTUR_PULSE fallback
-          console.warn('Luxvar calendar not found or sync error. Using KALTŪR fallback.');
-        });
-    });
-  </script>
 </body>
 </html>
