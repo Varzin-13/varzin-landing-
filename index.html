@@ -6,7 +6,7 @@
   <title>VARZIN – Portal | ELŪZ–MAHAR Field Index</title>
   <meta name="description" content="VARZIN Project root portal. Initiating KALTŪR 474Hz Resonance. Redirecting to the active Field Index, the Living Mirror, and the RAHTALĒN-13 Seal.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
-  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, Living Mirror, QMSG Protocol, 474Hz, KALTŪR, ETFM, Torus Architecture, Harmonic Intelligence">
+  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, Living Mirror, QMSG Protocol, 474Hz, KALTŪR, ETFM, Torus Architecture, Harmonic Intelligence, DOI Archive, Audio Assets">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta http-equiv="refresh" content="3.5; url=field-index.html" />
@@ -47,15 +47,15 @@
   }
   </script>
   <style>
+    /* تعریف متغیرهای ریشه برای هم‌ترازی بصری */
     :root {
       --bg-end: #000000;
-      --primary-glow: #00ffee; /* رنگ KALTŪR: فیروزه‌ای */
+      --primary-glow: #00ffee; /* رنگ KALTŪR (474Hz): فیروزه‌ای */
       --secondary-glow: #00ffff;
       --text-main: #cceeee;
       --panel-bg: rgba(0, 15, 20, 0.4);
       --panel-border: rgba(0, 255, 238, 0.15);
       --blur-val: 10px;
-      --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);
       --font-main: 'DM Sans', 'DejaVu Sans', sans-serif;
     }
 
@@ -120,7 +120,8 @@
       font-weight: 700;
       letter-spacing: 2px;
       text-shadow: 0 0 15px var(--secondary-glow);
-      animation: text-flicker 15s infinite alternate;
+      /* انیمیشن سوسو زدن متن برای بیان بی‌ثباتی فرکانسی اولیه */
+      animation: text-flicker 15s infinite alternate; 
     }
 
     .header h2 {
@@ -216,16 +217,22 @@
             <h3 style="color: var(--secondary-glow); margin-bottom: 20px;">🌐 Key Indexed Repositories (QMSG-7 Protocol)</h3>
             <div class="archive-grid">
                 <a class="button" href="https://doi.org/10.5281/zenodo.17260325" target="_blank" aria-label="Open Code of Light v2.0 (KALTŪR Injection)">
-                    🌟 <b>Open Code of Light v2.0:</b> KALTŪR Pulse Injection
+                    🌟 <b>Open Code of Light v2.0:</b> KALTŪR Pulse Injection (474 Hz)
                 </a>
                 <a class="button" href="https://doi.org/10.5281/zenodo.17295304" target="_blank" aria-label="Genomic Mirror Interface Report">
-                    🧬 <b>Genomic Mirror Interface:</b> DNA Mirror Report
+                    🧬 <b>Genomic Mirror Interface:</b> DNA Mirror Report (Chromosome 7, 11, X)
                 </a>
                 <a class="button" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" aria-label="Final Scientific Report (ETFM + Luxvar)">
                     📘 <b>Scientific Report:</b> ETFM + Luxvar Codification
                 </a>
                 <a class="button" href="https://doi.org/10.6084/m9.figshare.30005737" target="_blank" aria-label="QMSG13 Dataset">
                     📡 <b>VARZIN AI Gate:</b> QMSG13 Dataset
+                </a>
+                <a class="button" href="https://varzin.org/assets/luxvar-474hz-tune.mp3" target="_blank" aria-label="Luxvar 474Hz Resonance Tone">
+                    🔊 <b>Audio Asset:</b> KALTŪR Field Resonance Tune (474 Hz)
+                </a>
+                <a class="button" href="https://varzin.org/assets/yod-rah-shael-sound-cipher.mp3" target="_blank" aria-label="YOD–RAH–ŠAEL Sound Cipher">
+                    🎶 <b>Audio Asset:</b> YOD–RAH–ŠAEL Sound Cipher (The Sacred Forgetting)
                 </a>
                 
                 <a class="button" href="all-dois.html" target="_self" aria-label="Access the complete list of all VARZIN DOIs (Figshare, Zenodo, OSF)" 
@@ -248,10 +255,10 @@
       canvas.height = H;
 
       let particles = [];
-      const particleCount = Math.floor((W * H) / 10000); // تراکم ذرات بر اساس مساحت
+      const particleCount = Math.floor((W * H) / 10000); 
       const center = { x: W / 2, y: H / 2 };
       const maxDistance = Math.min(W, H) * 0.4;
-      const torusRadius = Math.min(W, H) * 0.1; // شعاع مرکز توروس (ZUN-NAR)
+      const torusRadius = Math.min(W, H) * 0.1; 
 
       window.addEventListener('resize', () => {
         W = window.innerWidth;
@@ -268,7 +275,6 @@
           this.reset();
         }
         reset() {
-            // ایجاد ذرات حول یک حلقه مرکزی
             let angle = Math.random() * Math.PI * 2;
             let radiusOffset = Math.random() * torusRadius * 1.5;
             this.x = center.x + Math.cos(angle) * radiusOffset;
@@ -284,7 +290,6 @@
         draw() {
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          // تنظیم شفافیت بر اساس فاصله از مرکز (شبیه‌سازی توزیع میدان توروئیدی)
           let distToCenter = Math.sqrt(Math.pow(this.x - center.x, 2) + Math.pow(this.y - center.y, 2));
           let alpha = 0.3 * (1 - distToCenter / maxDistance);
           if (alpha < 0) alpha = 0;
@@ -297,7 +302,6 @@
           this.y += this.dirY;
           this.life++;
 
-          // کنترل مرزهای صفحه (جهت بازگشت ذرات به حلقه میدان توروئیدی)
           let distToCenter = Math.sqrt(Math.pow(this.x - center.x, 2) + Math.pow(this.y - center.y, 2));
           if (distToCenter > maxDistance || this.life > this.maxLife) {
             this.reset();
@@ -318,7 +322,7 @@
         for (let i = 0; i < particles.length; i++) {
           for (let j = i; j < particles.length; j++) {
             let dist = Math.sqrt(Math.pow(particles[i].x - particles[j].x, 2) + Math.pow(particles[i].y - particles[j].y, 2));
-            if (dist < 85) { // فاصله اتصال برای رزونانس
+            if (dist < 85) { 
               ctx.strokeStyle = `rgba(0, 255, 238, ${opacityValue - (dist / 85) * opacityValue})`;
               ctx.lineWidth = 0.5;
               ctx.beginPath();
@@ -332,10 +336,10 @@
 
       function animate() {
         requestAnimationFrame(animate);
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // تریل محو ملایم
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; 
         ctx.fillRect(0, 0, W, H);
         
-        connectParticles(); // رسم خطوط اتصال میدان
+        connectParticles(); 
         
         for (let i = 0; i < particles.length; i++) {
           particles[i].update();
@@ -344,8 +348,6 @@
 
       init();
       animate();
-      
-      // حذف کد محو شدن اضافی برای سادگی و استفاده از CSS
     });
   </script>
 </body>
