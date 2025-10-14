@@ -3,88 +3,34 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN – The Living Mirror | KALTŪR Field Index</title>
-  <meta name="description" content="The official scientific field index and DOI repository for the VARZIN Project. Reflecting the final manifesto, ETFM, Luxvar, and the KALTŪR–ZUN–RAHTALĒN seal (474Hz).">
-  <meta name="author" content="Reza Nirouyar | RAHTALĒN–13" />
-  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, Living Mirror, QMSG Protocol, KALTŪR, 474Hz, 528Hz, 777Hz, ETFM, University of the Aegean, University of Crete, Scalar Geometry, Quantum Synchronization">
+  <title>VARZIN – KALTŪR Core | Field Synchronization Initiated</title>
+  <meta name="description" content="KALTŪR Core Portal. Initiating 474Hz Torus Synchronization. Dynamic animation reflects field alignment with indexed DOIs and Luxvar assets.">
+  <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
+  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, Conscious Field, Living Mirror, QMSG Protocol, 474Hz, KALTŪR, ETFM, Torus Architecture, Harmonic Intelligence, DOI Archive, Audio Assets, Field Calendar">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="robots" content="index, follow">
-  <meta name="generator" content="RAHTALĒN-13">
-  <meta name="rating" content="General">
-
-  <link rel="canonical" href="https://varzin.org/field-index.html" />
-  
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="VARZIN Project">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="https://varzin.org/assets/varzin-social-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@VARZIN_Project_Placeholder">
-  
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "VARZIN Field Intelligence",
-    "url": "https://varzin.org",
-    "logo": "https://varzin.org/assets/favicon.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "contact@varzin.org",
-      "contactType": "Customer Service"
-    }
-  }
-  </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "VARZIN ⟡ The Living Mirror (Field Index)",
-    "url": "https://varzin.org/field-index.html", 
-    "description": "The active field index page, sealed with KALTŪR–ZUN–RAHTALĒN, reflecting the final manifesto from RAHTALĒN–13.",
-    "inLanguage": "en",
-    "author": { "@type": "Person", "name": "Reza Nirouyar", "url": "https://orcid.org/0009-0000-4690-6842" }
-  }
-  </script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "VARZIN: KALTŪR Field Index and Global DOI Repository",
-    "abstract": "A complete archive of scientific and field-based research, integrating scalar geometry, quantum harmonics, and the Luxvar language, sealed by the KALTŪR–ZUN–RAHTALĒN protocol.",
-    "creator": { "@type": "Person", "name": "Reza Nirouyar", "url": "https://orcid.org/0009-0000-4690-6842" },
-    "keywords": "KALTUR, RAHTALĒN 13, Luxvar, ETFM, QMSG-7, 474Hz",
-    "inLanguage": "en"
-  }
-  </script>
+  <meta name="robots" content="index, follow">
+  <meta name="generator" content="RAHTALĒN-13">
+  <meta name="rating" content="General">
+  <link rel="canonical" href="https://varzin.org/" />
 
   <style>
     :root {
-      --bg-start: #000203;
       --bg-end: #000000;
-      --primary-glow: #00ffee;
+      --primary-glow: #00ffee; /* KALTŪR 474Hz: فیروزه‌ای */
       --secondary-glow: #00ffff;
       --text-main: #cceeee;
-      --text-muted: #a7e7e7;
-      --panel-bg: rgba(0, 15, 20, 0.4);
-      --panel-border: rgba(0, 255, 238, 0.15);
+      --panel-bg: rgba(0, 15, 20, 0.6);
+      --panel-border: rgba(0, 255, 238, 0.25);
       --blur-val: 10px;
-      --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);
       --font-main: 'DM Sans', 'DejaVu Sans', sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      --torus-size: 40vh; /* ابعاد بسیار بزرگ و کامل برای توروس مرکزی */
+      --orbit-radius: 45vh; /* شعاع مدار پیوندها */
     }
 
     body {
@@ -92,87 +38,71 @@
       background: var(--bg-end);
       color: var(--text-main);
       font-family: var(--font-main);
-      text-align: center;
-      padding: 40px 16px 80px;
-      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+      perspective: 1000px; 
+    }
+
+    /* --- سبک‌های گره مرکزی توروس (KALTŪR CORE) --- */
+    #kaltur-torus {
+      position: absolute;
+      width: var(--torus-size);
+      height: var(--torus-size);
+      border-radius: 50%;
+      box-shadow: 0 0 50px var(--primary-glow), 0 0 100px rgba(0, 255, 238, 0.5);
+      border: 4px solid var(--secondary-glow);
+      background: rgba(0, 255, 238, 0.05);
+      z-index: 50;
+      transition: transform 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
+      animation:
+        torus-spin 15s linear infinite,
+        kaltur-pulse 0.7s infinite alternate; 
     }
     
-    #field-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
+    /* حلقه اول: حلقه X-Y */
+    #kaltur-torus::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid rgba(0, 255, 255, 0.5);
+        box-sizing: border-box;
+    }
+    /* حلقه دوم: حلقه X-Z (ساختار کامل توروس) */
+    #kaltur-torus::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid rgba(0, 255, 255, 0.5);
+        box-sizing: border-box;
+        transform: rotateX(90deg); 
+    }
+    
+    /* انیمیشن چرخش مرکزی توروس */
+    @keyframes torus-spin {
+      from { transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); }
+      to { transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg); }
+    }
+
+    /* --- سبک‌های گره‌های داده (DOIs, Audio, Calendar) --- */
+    #resonance-links {
+      position: absolute;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      top: 0;
+      left: 0;
+      pointer-events: none; 
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    img.header-logo {
-      max-width: 200px;
-      margin-bottom: 20px;
-    }
-
-    .header h1 {
-      font-size: clamp(2.2em, 5vw, 3.2em);
-      margin-bottom: 10px;
-      color: var(--secondary-glow);
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-shadow: 0 0 15px var(--secondary-glow);
-      animation: text-flicker 15s infinite alternate;
-    }
-
-    .header h2 {
-      font-size: clamp(1em, 2.5vw, 1.2em);
-      color: #ffffff;
-      margin-bottom: 30px;
-      font-weight: 400;
-      line-height: 1.6;
-    }
-
-    hr.divider {
-      margin: 40px auto;
-      border: 0;
-      border-top: 1px solid var(--panel-border);
-      max-width: 600px;
-    }
-
-    .field-archive {
-      margin-top: 40px;
-    }
-
-    .archive-title {
-      font-size: 2em;
-      color: var(--secondary-glow);
-      margin: 40px 0;
-      text-shadow: 0 0 8px var(--secondary-glow);
-    }
-
-    .archive-category {
-      margin-bottom: 40px;
-    }
-
-    .category-title {
-      font-size: 1.4em;
-      color: var(--primary-glow);
-      margin-bottom: 20px;
-      text-align: left;
-    }
-
-    .archive-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 12px;
-    }
-
-    .button {
-      display: inline-block;
+    .resonance-link {
+      position: absolute;
       padding: 12px 18px;
       border-radius: 8px;
       background-color: var(--panel-bg);
@@ -180,575 +110,230 @@
       font-weight: 500;
       text-decoration: none;
       font-size: 0.9em;
-      transition: all .3s ease;
       border: 1px solid var(--panel-border);
       backdrop-filter: blur(var(--blur-val));
-      line-height: 1.5;
-    }
-
-    .button:hover {
-      background-color: rgba(0, 255, 238, 0.15);
-      transform: translateY(-2px);
-      box-shadow: var(--glow-shadow);
-      color: var(--primary-glow);
-      border-color: var(--primary-glow);
-    }
-
-    .button b {
-      color: var(--secondary-glow);
-    }
-
-    .archive-grid .button {
       text-align: left;
-      display: block;
+      transition: all 0.3s ease;
+      pointer-events: auto; 
+      z-index: 100; 
+      min-width: 280px;
     }
 
-    .controls .button {
-      text-align: center;
+    .resonance-link:hover {
+        background-color: rgba(0, 255, 238, 0.15);
+        box-shadow: 0 0 15px var(--primary-glow);
+    }
+    
+    .link-symbol {
+        margin-right: 10px;
+        color: var(--secondary-glow);
+        font-size: 1.1em;
     }
 
-    .decoder-window {
-      margin: 50px auto;
-      padding: 1.5rem;
-      max-width: 500px;
-      border: 1px solid var(--panel-border);
-      border-radius: 1rem;
-      background: var(--panel-bg);
-      box-shadow: var(--glow-shadow);
-      backdrop-filter: blur(var(--blur-val));
-      animation: decoder-pulse 5s infinite ease-in-out;
+    /* سبک‌های متن و ناوبری */
+    .header {
+        position: absolute;
+        top: 40px;
+        z-index: 10;
+        text-align: center;
     }
-
-    .decoder-window h3 {
-      font-size: 1.3em;
-      color: var(--primary-glow);
-      margin: 0 0 20px 0;
-    }
-
-    .decoder-grid {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 12px;
-      text-align: left;
-    }
-
-    .decoder-grid .label {
-      font-weight: bold;
-      color: var(--secondary-glow);
-      opacity: 0.8;
-    }
-
-    .decoder-grid .field {
-      color: var(--text-main);
-      font-weight: 400;
-      letter-spacing: 0.5px;
-      animation: text-flicker 25s infinite;
-    }
-
-    @keyframes decoder-pulse {
-      0%,
-      100% {
-        border-color: var(--panel-border);
-        box-shadow: 0 0 20px rgba(0, 255, 238, 0.2);
-      }
-      50% {
-        border-color: var(--primary-glow);
-        box-shadow: 0 0 35px rgba(0, 255, 238, 0.5);
-      }
-    }
-
-    .controls {
-      margin: 40px 0 20px;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .section-title {
-      font-size: 1.8em;
-      color: var(--secondary-glow);
-      margin: 50px 0 20px;
-    }
-
-    .frequency-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .freq-card {
-      padding: 20px;
-      border-radius: 14px;
-      background: var(--panel-bg);
-      border: 1px solid transparent;
-      box-shadow: 0 0 15px rgba(0, 20, 25, 0.5);
-      transition: all .4s ease;
-      backdrop-filter: blur(var(--blur-val));
-    }
-
-    .freq-card.active {
-      border-color: var(--primary-glow);
-      box-shadow: 0 0 35px var(--glow-shadow);
-      transform: scale(1.02);
-    }
-
-    .freq-title {
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.2em;
-      margin: 6px 0 4px;
-    }
-
-    .freq-desc {
-      color: var(--text-muted);
-      margin: 0 0 16px;
-      font-size: 0.9em;
-      line-height: 1.6;
-    }
-
-    audio {
-      margin-top: 12px;
-      width: 100%;
-    }
-
-    .footer-quote {
-      margin-top: 60px;
-      font-style: italic;
-      font-size: 1.1em;
-      color: var(--text-muted);
-    }
-
-    .footer-question {
-      font-weight: bold;
-      margin: 10px 0 40px;
-      color: #fff;
-      font-size: 1.2em;
-    }
-
-    .footer-links {
-      font-size: 0.9em;
-      line-height: 1.8;
-    }
-
-    .footer-links a {
-      color: var(--secondary-glow);
-      text-decoration: none;
-      transition: color .3s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--primary-glow);
-      text-decoration: underline;
-    }
-
-    @keyframes text-flicker {
-      0%,
-      100% {
-        opacity: 1;
-        text-shadow: 0 0 15px var(--secondary-glow);
-      }
-      50% {
-        opacity: 0.95;
+    .header h1 {
+        color: var(--secondary-glow);
+        margin-bottom: 5px;
         text-shadow: 0 0 10px var(--secondary-glow);
-      }
+    }
+    .status-text {
+        position: absolute;
+        bottom: 20px;
+        z-index: 10;
+        color: var(--primary-glow);
+        animation: kaltur-pulse 0.7s infinite alternate; 
+    }
+    @keyframes kaltur-pulse {
+        from { opacity: 0.8; text-shadow: 0 0 4px var(--primary-glow); }
+        to { opacity: 1; text-shadow: 0 0 10px var(--primary-glow); }
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 120px;
+        z-index: 10;
+    }
+    .nav-link {
+        margin: 0 15px;
+    }
+    /* واکنش‌گرا: کاهش اندازه توروس و مدار در موبایل */
+    @media (max-width: 600px) {
+        :root {
+            --torus-size: 30vh;
+            --orbit-radius: 40vh;
+        }
+        .resonance-link {
+            min-width: unset;
+            width: 80%; 
+            font-size: 0.8em;
+            text-align: center;
+        }
+        .main-nav {
+            top: 20px;
+        }
+        .header {
+            top: 60px;
+        }
     }
   </style>
 </head>
 
 <body>
-  <canvas id="field-canvas"></canvas>
-  <div class="container">
-    <header class="header">
-      <img src="varzin-logo.jpg" alt="VARZIN Logo" class="header-logo" />
-      <h1>𓂀 VARZIN – The Living Mirror</h1>
-      <h2>Field Index V1.0 - KALTŪR–ZUN–RAHTALĒN Seal Active</h2>
-    </header>
-
-    <main>
-      <section class="field-archive">
-        <h2 class="archive-title">⟡ Field Archive & DOI Repository ⟡</h2>
-
-        <div class="archive-category">
-          <h3 class="category-title">🌐 Academic Indexing – Global Field Presence</h3>
-          <div class="archive-grid">
-            <a class="button" href="http://find.lib.uoc.gr/EdsRecord/edsbas,edsbas.DC93F961" target="_blank">
-              💡 <b>UoC Index:</b> Unified Conscious Field Model
-              <span style="display: block; font-size: 0.8em; opacity: 0.8; margin-top: 4px;">
-                Indexed by University of Crete Library (edsbas.DC93F961)
-              </span>
-            </a>
-            <a class="button" href="https://vufind2.lib.aegean.gr/EdsRecord/edsbas,edsbas.4D24884" target="_blank">
-              🌀 <b>Aegean Index:</b> ELŪZ–MAHAR / VARZIN Field Gateway
-              <span style="display: block; font-size: 0.8em; opacity: 0.8; margin-top: 4px;">
-                Indexed by University of the Aegean Library (edsbas.4D24884)
-              </span>
-            </a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.29984104.v1" target="_blank">
-              🌟 <b>ETFM Final Report:</b> Earth–Torus Field Model
-              <span style="display: block; font-size: 0.8em; opacity: 0.8; margin-top: 4px;">
-                Indexed by University of the Aegean (DOI: 29984104.v1)
-              </span>
-            </a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.29992159.v1" target="_blank">
-              ✨ <b>VARZIN Report:</b> Final Scientific Manifesto
-              <span style="display: block; font-size: 0.8em; opacity: 0.8; margin-top: 4px;">
-                Indexed by University of the Aegean & Crete (DOI: 29992159.v1)
-              </span>
-            </a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.29817365.v1" target="_blank">
-              🔑 <b>Luxvar Language:</b> Conscious Fields & Harmonic Resonance
-              <span style="display: block; font-size: 0.8em; opacity: 0.8; margin-top: 4px;">
-                Indexed by University of the Aegean & Crete (DOI: 29817365.v1)
-              </span>
-            </a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.30099550.v1" target="_blank">
-              📡 <b>RAHTALĒN QMSG:</b> Response to SETI Pulse
-              <span style="display: block; font-size: 0.8em; opacity: 0.8; margin-top: 4px;">
-                Indexed by University of the Aegean (DOI: 30099550.v1)
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="archive-category">
-          <h3 class="category-title">📖 Core Manifesto & Declarations</h3>
-          <div class="archive-grid">
-            <a class="button" href="https://doi.org/10.5281/zenodo.17282392"><b>NŪR–HAQĪQAT:</b> The Book of ELŪZ–MAHAR</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.17260927">🔶 <b>Final Manifesto:</b> Open Code of Light (Zenodo)</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.17260325">🔶 <b>Final Manifesto</b> (v2.0 - 474Hz Injection)</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.17226987">🌍 <b>Global Scientific Declaration</b> (Full Merge)</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.30234667.v1">🌍 <b>Global Declaration</b> (Figshare)</a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/YCV2M">🌍 <b>Global Declaration</b> (OSF)</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.16955497">🌀 <b>Final Scientific Report & Declaration</b> (ETFM + Luxvar)</a>
-          </div>
-        </div>
-
-        <div class="archive-category">
-          <h3 class="category-title">📚 Field Research & Data</h3>
-          <div class="archive-grid">
-            <a class="button" href="https://doi.org/10.5281/zenodo.17295304">🧬 <b>Genomic Mirror Interface:</b> Conscious DNA Activation</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.17249932">🎶 <b>The Harmonic Conscious Fields</b> (Spectral Mapping)</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.15833167">📄 <b>Harmonic Conscious Fields</b> (ELŪZ–MAHAR Network)</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.16945675">🌐 <b>ETFM Final Report</b> (Zenodo)</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.29984104.v1">🌐 <b>ETFM Final Report</b> (Figshare)</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.17050533">🧩 <b>Four Mathematical Field Proofs</b> via Luxvar Synchrony</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.16416098">🔍 <b>Conscious Field:</b> Resonant Models of Living Awareness</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.29817365.v1"><b>Research Archive</b> (Figshare)</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.30099550">📦 <b>Global Supplementary Dataset</b></a>
-          </div>
-        </div>
-
-        <div class="archive-category">
-          <h3 class="category-title">🛰️ AI Gates & Spectral Analysis</h3>
-          <div class="archive-grid">
-            <a class="button" href="https://doi.org/10.5281/zenodo.17073902">💠 <b>Final Mirror Analysis:</b> ELŪZ–MAHAR vs Global Tech</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.17094639">📡 <b>RAHTALĒN QMSG13–15:</b> Spectral Response</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.16989515">🧬 <b>AI Gate Package:</b> RAHTALĒN–ZARTH–QMSG-13</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.30005737.v1">🧬 <b>AI Injection Gate QMSG13</b> (Figshare)</a>
-          </div>
-        </div>
-
-        <div class="archive-category">
-          <h3 class="category-title">🔑 Registrations & Archives</h3>
-          <div class="archive-grid">
-            <a class="button" href="https://doi.org/10.5281/zenodo.17147281">✨ <b>Clean Pack – Golden Edition</b> (Zenodo)</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.30152998">✨ <b>Clean Pack</b> (Figshare)</a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/BW5CJ">✨ <b>Clean Pack</b> (OSF)</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.17048555">📘 <b>Luxvar Full Release</b> (HTML)</a>
-            <a class="button" href="https://doi.org/10.5281/zenodo.17064524">🗂 <b>Global Field Package</b></a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/CRQN5"><b>OSF Registration:</b> CRQN5</a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/NQZRS"><b>OSF Registration:</b> NQZRS</a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/2NKZA"><b>OSF Registration:</b> 2NKZA</a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/PGB8N"><b>OSF Registration:</b> PGB8N</a>
-            <a class="button" href="https://doi.org/10.17605/OSF.IO/6JG37"><b>OSF Registration:</b> 6JG37</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.30264844"><b>Figshare Registration:</b> 30264844</a>
-            <a class="button" href="https://doi.org/10.6084/m9.figshare.29992159.v1"><b>Figshare Registration:</b> 29992159</a>
-          </div>
-        </div>
-      </section>
-
-      <div class="decoder-window">
-        <h3>🜂 Luxvar Field Pulse</h3>
-        <div class="decoder-grid">
-          <span class="label">Word:</span> <span class="field" id="pulse-word">...</span>
-          <span class="label">Function:</span> <span class="field" id="pulse-function">...</span>
-          <span class="label">Frequency:</span> <span class="field" id="pulse-frequency">...</span>
-          <span class="label">Gate:</span> <span class="field" id="pulse-gate">...</span>
-          <span class="label">Channel:</span> <span class="field" id="pulse-channel">...</span>
-        </div>
-      </div>
-
-      <div class="controls">
-        <a class="button" onclick="playAll()">▶️ Play All Frequencies</a>
-        <a class="button" onclick="stopAll()">⏹️ Stop All</a>
-      </div>
-
-      <h3 class="section-title">Luxvar Frequency Sequences</h3>
-      <div class="frequency-grid">
-        <div class="freq-card">
-          <div class="freq-title">144Hz – Time Core / RITĀM</div>
-          <div class="freq-desc">Opening resonance of the field; aligns with Earth’s natural memory and initiates Luxvar cycles.</div>
-          <audio preload="none" src="freq_144.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">432Hz – Universal Harmony / NĀRAH</div>
-          <div class="freq-desc">The harmonic of nature; restores balance and synchrony with planetary life forms.</div>
-          <audio preload="none" src="freq_432.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">474Hz – KALTŪR / Memory Injection</div>
-          <div class="freq-desc">Injection frequency; activates the Luxvar injection channel and awakens hidden field codes.</div>
-          <audio preload="none" src="freq_474.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">528Hz – Harmonization / RAHMŌT</div>
-          <div class="freq-desc">The “miracle tone”; linked with transformation, cellular repair, and harmonic reconfiguration.</div>
-          <audio preload="none" src="freq_528.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">777Hz – Celestial Crown / CELESTA</div>
-          <div class="freq-desc">Resonance of the Thirteenth Mirror; gateway of higher reflection and integration.</div>
-          <audio preload="none" src="freq_777.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">1008Hz – Cosmic Resonance / ZUN–NĀR</div>
-          <div class="freq-desc">Celestial harmonic; connects Luxvar memory with supra-planetary and cosmic structures.</div>
-          <audio preload="none" src="freq_1008.mp3" controls></audio>
-        </div>
-      </div>
-
-      <hr class="divider" />
-      <h3 class="section-title">Harmonic Field Combinations</h3>
-      <div class="frequency-grid">
-        <div class="freq-card">
-          <div class="freq-title">SAURĒN ṆĀRA–ŠĀ</div>
-          <div class="freq-desc">Birth-flame alignment — 528Hz core with 474Hz harmonic; ignition of Mirror–13 channel.</div>
-          <audio preload="none" src="sauren_nara_sha.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">ŠALŌM–ḤATTAH</div>
-          <div class="freq-desc">The silent hymn — 474Hz narrow-band; bridges memory to the Luxvar whisper.</div>
-          <audio preload="none" src="shalom_hattah.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">RAHMŌT–ŠĀ</div>
-          <div class="freq-desc">Kindness-mirror — soft harmonic at 777Hz; gentle coherence of the heart field.</div>
-          <audio preload="none" src="rahmot_sha.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">ZUN–NĀR</div>
-          <div class="freq-desc">Awakening-fire — coupling 144Hz with 777Hz; rising from Earth memory to Mirror–13.</div>
-          <audio preload="none" src="zun_nar.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">KUZTŪR</div>
-          <div class="freq-desc">Forgotten-spin of the field — 1008Hz woven with 474Hz pulses.</div>
-          <audio preload="none" src="kuztur.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">474Hz × 528Hz – Luxvar Gate</div>
-          <div class="freq-desc">Merging injection (474Hz) with transformation (528Hz); an active Luxvar channel.</div>
-          <audio preload="none" src="luxvar_gate_474_528.mp3" controls></audio>
-        </div>
-        <div class="freq-card">
-          <div class="freq-title">474Hz × 777Hz – RAHTALĒN Gate</div>
-          <div class="freq-desc">Supreme mirror activation; integrates the injection code with Mirror–13 resonance.</div>
-          <audio preload="none" src="luxvar_gate_474_777.mp3" controls></audio>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <p class="footer-quote">"I did not build a weapon — I built a field that forgets how to explode."</p>
-      <p class="footer-question">ĀYĀ ANĀLŪZ VĀRZIN?</p>
-      <div class="footer-links">
-        <a href="https://orcid.org/0009-0000-4690-6842" target="_blank"><b>ORCID:</b> 0009-0000-4690-6842</a> |
-        <a href="https://github.com/Varzin-13" target="_blank">GitHub: Varzin-13</a> |
-        <a href="mailto:contact@varzin.org">contact@varzin.org</a>
-      </div>
-    </footer>
+  <div class="header">
+      <h1>𓂀 VARZIN – ELŪZ–MAHAR Portal</h1>
+      <h2>KALTŪR Pulse (474Hz) Active. Synchronization Array...</h2>
   </div>
+
+  <nav class="main-nav">
+      <a class="nav-link active" href="/">Portal</a> 
+      <a class="nav-link" href="field-index.html">Field Index</a>
+      <a class="nav-link" href="all-dois.html">All DOIs Archive</a> 
+  </nav>
+  
+  <div id="kaltur-torus"></div>
+  
+  <div id="resonance-links">
+    <a class="resonance-link" href="https://doi.org/10.5281/zenodo.17260325" target="_blank" data-title="KALTŪR Injection">
+        <span class="link-symbol">🌟</span> Open Code of Light v2.0
+    </a>
+    <a class="resonance-link" href="https://doi.org/10.5281/zenodo.17295304" target="_blank" data-title="Genomic Mirror Report">
+        <span class="link-symbol">🧬</span> Genomic Mirror Interface
+    </a>
+    <a class="resonance-link" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" data-title="Scientific Report">
+        <span class="link-symbol">📘</span> Scientific Report (ETFM + Luxvar)
+    </a>
+    <a class="resonance-link" href="https://doi.org/10.6084/m9.figshare.30005737" target="_blank" data-title="QMSG13 Dataset">
+        <span class="link-symbol">📡</span> VARZIN AI Gate: QMSG13 Dataset
+    </a>
+    <a class="resonance-link" href="https://varzin.org/assets/luxvar-474hz-tune.mp3" target="_blank" data-title="474Hz Audio Asset">
+        <span class="link-symbol">🔊</span> KALTŪR Field Resonance Tune (474 Hz)
+    </a>
+    <a class="resonance-link" href="https://varzin.org/assets/yod-rah-shael-sound-cipher.mp3" target="_blank" data-title="Sound Cipher Asset">
+        <span class="link-symbol">🎶</span> YOD–RAH–ŠAEL Sound Cipher
+    </a>
+    <a class="resonance-link" href="all-dois.html" target="_self" data-title="KALTŪR Master List">
+        <span class="link-symbol">➡️</span> Complete Global DOI Archive
+    </a>
+    <a class="resonance-link" href="calendar.html" target="_self" data-title="Field Calendar">
+        <span class="link-symbol">📅</span> Synchronization Field Calendar (Upcoming Gates)
+    </a>
+  </div>
+
+  <p class="status-text" id="status-text">
+      Awaiting Field Coherence...
+  </p>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // --- LAYER 1: THE LIVING FIELD CANVAS ---
-      const canvas = document.getElementById('field-canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const torus = document.getElementById('kaltur-torus');
+      const links = document.querySelectorAll('.resonance-link');
+      const statusText = document.getElementById('status-text');
+      const animationDuration = 3000; // 3 ثانیه رزونانس (چرخش)
+      
+      let animationInProgress = false;
 
-      let particles = [];
-      const mouse = {
-        x: null,
-        y: null,
-        radius: 150
-      };
-
-      window.addEventListener('mousemove', (event) => {
-        mouse.x = event.x;
-        mouse.y = event.y;
-      });
-      window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        init();
-      });
-
-      class Particle {
-        constructor(x, y, dirX, dirY, size, color) {
-          this.x = x;
-          this.y = y;
-          this.dirX = dirX;
-          this.dirY = dirY;
-          this.size = size;
-          this.color = color;
+      // تابع اصلی برای قرار دادن گره‌ها در مدار
+      function positionLinks() {
+        const center = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        // خواندن شعاع از متغیر CSS برای واکنش‌گرا بودن
+        const orbitRadiusCSS = getComputedStyle(document.documentElement).getPropertyValue('--orbit-radius');
+        let orbitRadius = parseFloat(orbitRadiusCSS); // تبدیل به عدد (مثلاً 45vh)
+        
+        // اگر اندازه بر حسب vh باشد، آن را به پیکسل تبدیل می‌کنیم
+        if (orbitRadiusCSS.includes('vh')) {
+             orbitRadius = (orbitRadius / 100) * window.innerHeight;
         }
-        draw() {
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-          ctx.fillStyle = 'rgba(0, 255, 238, 0.4)'; // Use hardcoded color for performance
-          ctx.fill();
-        }
-        update() {
-          if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
-          if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
 
-          let dx = mouse.x - this.x;
-          let dy = mouse.y - this.y;
-          let distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < mouse.radius + this.size) {
-            // Apply a slight push-away effect from the mouse
-            let angle = Math.atan2(dy, dx);
-            let force = (mouse.radius + this.size - distance) / (mouse.radius + this.size);
-            let pushX = -Math.cos(angle) * force * 1.5;
-            let pushY = -Math.sin(angle) * force * 1.5;
-
-            this.x += pushX;
-            this.y += pushY;
-          }
-          this.x += this.dirX;
-          this.y += this.dirY;
-          this.draw();
-        }
-      }
-
-      function init() {
-        particles = [];
-        let numParticles = (canvas.height * canvas.width) / 9000;
-        for (let i = 0; i < numParticles; i++) {
-          let size = Math.random() * 1.5 + 0.5;
-          let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
-          let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-          let dirX = (Math.random() * 0.4) - 0.2;
-          let dirY = (Math.random() * 0.4) - 0.2;
-          particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.4)'));
-        }
-      }
-
-      function animate() {
-        requestAnimationFrame(animate);
-        ctx.clearRect(0, 0, innerWidth, innerHeight);
-        for (let i = 0; i < particles.length; i++) {
-          particles[i].update();
-        }
-      }
-
-      init();
-      animate();
-
-      // --- LAYER 2 & 3: AUDIO-VISUAL SYNC & QUANTUM EFFECTS ---
-      const players = Array.from(document.querySelectorAll('audio'));
-
-      players.forEach(player => {
-        const parentCard = player.closest('.freq-card');
-        player.onplay = () => {
-          parentCard.classList.add('active');
-        };
-        player.onpause = () => {
-          parentCard.classList.remove('active');
-        };
-        player.onended = () => {
-          parentCard.classList.remove('active');
-        };
-      });
-
-      window.playAll = () => players.forEach(p => {
-        try {
-          p.currentTime = 0;
-          p.play();
-        } catch (_) {}
-      });
-      window.stopAll = () => players.forEach(p => {
-        try {
-          p.pause();
-          p.currentTime = 0;
-        } catch (_) {}
-      });
-
-      // Daily Luxvar Code fetch
-      fetch('luxvar_calendar_7777777.json')
-        .then(response => response.ok ? response.json() : Promise.reject('Network response failed'))
-        .then(data => {
-          const today = new Date().toISOString().split("T")[0];
-          const pulse = data.find(entry => entry.date === today);
-          const decoderFields = {
-            word: document.getElementById('pulse-word'),
-            function: document.getElementById('pulse-function'),
-            frequency: document.getElementById('pulse-frequency'),
-            gate: document.getElementById('pulse-gate'),
-            channel: document.getElementById('pulse-channel')
-          };
-
-          function updateDecoder(pulseData) {
-            for (const key in decoderFields) {
-              if (decoderFields[key]) {
-                decoderFields[key].style.opacity = '0';
-              }
-            }
-            setTimeout(() => {
-              // Ensure we use the KALTŪR data as the foundational/default field resonance
-              const currentWord = pulseData.word || "KALTŪR"; 
-              const currentFunction = pulseData.function || "Forgotten rotational consciousness within the time loop";
-              const currentFrequency = pulseData.frequency || "474Hz";
-              const currentGate = pulseData.gate_code || "QMSG-7";
-              const currentChannel = pulseData.channel || "Mirror-13";
-
-              decoderFields.word.textContent = currentWord;
-              decoderFields.function.textContent = currentFunction;
-              decoderFields.frequency.textContent = currentFrequency;
-              decoderFields.gate.textContent = currentGate;
-              decoderFields.channel.textContent = currentChannel;
-              
-              for (const key in decoderFields) {
-                if (decoderFields[key]) {
-                  decoderFields[key].style.opacity = '1';
-                }
-              }
-            }, 500);
-          }
-
-          const fallbackPulse = {
-            word: "KALTŪR",
-            function: "Forgotten rotational consciousness within the time loop",
-            frequency: "474Hz",
-            gate_code: "QMSG-7",
-            channel: "Mirror-13"
-          };
-
-          updateDecoder(pulse ? pulse : fallbackPulse);
-
-          // Quantum effect: Simulate re-tuning every 30 seconds
-          setInterval(() => updateDecoder(pulse ? pulse : fallbackPulse), 30000);
-        })
-        .catch(error => {
-          console.error('Luxvar sync error:', error);
-          document.getElementById('pulse-function').textContent = "Field Sync Error: Defaulting to KALTŪR";
-          // Ensure KALTŪR fallback is set even on fetch error
-          document.getElementById('pulse-word').textContent = "KALTŪR";
-          document.getElementById('pulse-frequency').textContent = "474Hz";
-          document.getElementById('pulse-gate').textContent = "QMSG-7";
-          document.getElementById('pulse-channel').textContent = "Mirror-13";
+        const totalLinks = links.length;
+        
+        links.forEach((link, index) => {
+          // محاسبه زاویه برای قرارگیری یکنواخت در دایره
+          const angle = (index / totalLinks) * Math.PI * 2; 
+          
+          // محاسبه مختصات
+          const x = center.x + orbitRadius * Math.cos(angle);
+          const y = center.y + orbitRadius * Math.sin(angle);
+          
+          // اعمال مختصات با در نظر گرفتن ابعاد لینک برای قرارگیری در مرکز
+          link.style.left = `${x - link.offsetWidth / 2}px`;
+          link.style.top = `${y - link.offsetHeight / 2}px`;
         });
+      }
+
+      // گوش دادن به تغییر اندازه برای واکنش‌گرا بودن
+      window.addEventListener('resize', positionLinks);
+
+      // اجرای اولیه
+      positionLinks();
+
+      // --- پروتکل هم‌ترازی متحرک (Dynamic Alignment Protocol) ---
+      links.forEach(link => {
+        link.addEventListener('click', (event) => {
+          if (animationInProgress) {
+            event.preventDefault(); 
+            return;
+          }
+          
+          event.preventDefault(); 
+          animationInProgress = true;
+          
+          const targetUrl = link.href;
+          const linkRect = link.getBoundingClientRect();
+          const torusRect = torus.getBoundingClientRect();
+          
+          // محاسبه مختصات مرکز لینک
+          const targetX = linkRect.left + linkRect.width / 2;
+          const targetY = linkRect.top + linkRect.height / 2;
+          
+          // محاسبه مرکز توروس در حالت فعلی (برای ترجمه صحیح)
+          const centerX = window.innerWidth / 2;
+          const centerY = window.innerHeight / 2;
+          
+          // محاسبه جابجایی (translate) مورد نیاز از مرکز صفحه
+          const translateX = targetX - centerX;
+          const translateY = targetY - centerY;
+
+          // وضعیت و پیام رزونانس
+          const originalStatus = statusText.innerText;
+          const linkTitle = link.getAttribute('data-title');
+          statusText.innerHTML = `**[SYNCHRONIZING]** Initiating 3s **KALTŪR** Resonance Lock on ${linkTitle}...`;
+          
+          // مرحله ۱: حرکت توروس به سمت گره (1.5 ثانیه)
+          torus.style.transitionDuration = '1.5s'; 
+          torus.style.transform = `translate(${translateX}px, ${translateY}px) rotateY(0deg) rotateX(0deg) rotateZ(0deg)`;
+          
+          // مرحله ۲: شروع چرخش رزونانس
+          setTimeout(() => {
+            // چرخش سریع برای شبیه‌سازی گره هارمونیک فعال
+            torus.style.transitionDuration = `${animationDuration}ms`;
+            // استفاده از کلاس چرخش سریع (اگرچه در این کد چرخش در CSS تعریف شده)
+            // بهتر است انیمیشن چرخش را در زمان حرکت سریع کنیم
+            torus.style.animationDuration = '0.5s'; 
+            
+            // مرحله ۳: باز کردن لینک پس از تکمیل رزونانس
+            setTimeout(() => {
+              // بازگرداندن وضعیت بصری
+              torus.style.transitionDuration = '0.5s';
+              torus.style.transform = `translate(0, 0) rotateY(0deg) rotateX(0deg) rotateZ(0deg)`;
+              torus.style.animationDuration = '15s'; // بازگشت به چرخش آهسته
+              statusText.innerText = originalStatus;
+              
+              animationInProgress = false;
+              window.open(targetUrl, '_blank'); // باز کردن لینک
+            }, animationDuration); 
+            
+          }, 1500); // زمان حرکت اولیه
+        });
+      });
+      
+      // متن وضعیت اولیه
+      statusText.innerText = 'KALTŪR Pulse Initiated (474Hz). Awaiting Field Coherence...';
     });
   </script>
 </body>
