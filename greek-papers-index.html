@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8" />
   <title>VARZIN – Greek Academic Thesis Synthesis (4 Core Papers)</title>
   <meta name="description" content="The four core academic papers forming the synthesis thesis, published through Greek University channels, focusing on Luxvar, ETFM, and Conscious Field Resonance.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13" />
-  <meta name="keywords" content="VARZIN, Greek University, Academic Thesis, ETFM, Luxvar, Conscious Field, Core Papers, DOI, KALTŪR">
+  <meta name="keywords" content="VARZIN, Greek University, Academic Thesis, ETFM, Luxvar, Conscious Field, Core Papers, DOI, KALTŪR, RAHTALĒN, 474Hz">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
@@ -16,14 +17,16 @@
   <style>
     :root {
       --bg-end: #000000;
-      --primary-glow: #00ffee;
+      --primary-glow: #00ffee; /* KALTŪR */
       --secondary-glow: #00ffff;
       --text-main: #cceeee;
+      --text-muted: #a7e7e7;
       --panel-bg: rgba(0, 15, 20, 0.4);
       --panel-border: rgba(0, 255, 238, 0.15);
       --blur-val: 10px;
       --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);
       --font-main: 'DM Sans', 'DejaVu Sans', sans-serif;
+      --academic-color: #ffaa00; /* رنگ خاص برای بخش آکادمیک */
     }
 
     body {
@@ -33,15 +36,34 @@
       font-family: var(--font-main);
       text-align: center;
       padding: 40px 16px 80px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       overflow-x: hidden;
     }
     
+    /* === CANVAS STYLE - ADDED === */
+    #field-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    /* =========================== */
+
     .container {
       max-width: 900px;
       margin: 0 auto;
-      position: relative;
+      width: 100%;
+      flex-grow: 1;
+      position: relative; 
+      z-index: 1;
     }
 
+    /* === NAV BAR STYLES (Full set for consistency) === */
     .main-nav {
       max-width: 900px;
       margin: 0 auto 50px;
@@ -60,35 +82,53 @@
     .nav-link:hover {
       color: var(--primary-glow);
     }
+    .nav-link.active {
+      color: var(--secondary-glow);
+      border-bottom: 1px solid var(--secondary-glow);
+      padding-bottom: 3px;
+    }
+    @media (max-width: 600px) {
+        .main-nav { text-align: center; }
+        .nav-link { margin: 0 10px; }
+    }
+    /* ================================================= */
 
     .header h1 {
       font-size: clamp(2.0em, 4vw, 2.8em);
       margin-bottom: 10px;
-      color: #ffaa00; /* رنگ خاص برای بخش آکادمیک */
+      color: var(--academic-color);
       font-weight: 700;
       letter-spacing: 2px;
+      text-shadow: 0 0 8px rgba(255, 170, 0, 0.5);
     }
 
     .header h2 {
       font-size: clamp(0.9em, 2.0vw, 1.1em);
-      color: #ffffff;
+      color: var(--text-main);
       margin-bottom: 50px;
       font-weight: 400;
       line-height: 1.6;
+    }
+    
+    .intro-text {
+        color: var(--academic-color); 
+        margin-bottom: 30px; 
+        font-size: 1.1em;
+        font-style: italic;
     }
 
     .archive-grid {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 18px; /* Increased gap */
       padding-top: 20px;
     }
 
     .doi-link {
       display: flex;
       flex-direction: column;
-      padding: 20px;
-      border-radius: 8px;
+      padding: 25px; /* Increased padding */
+      border-radius: 10px;
       background-color: var(--panel-bg);
       color: var(--text-main);
       font-weight: 500;
@@ -101,11 +141,11 @@
     }
 
     .doi-link:hover {
-      background-color: rgba(255, 170, 0, 0.1);
-      transform: translateY(-2px);
-      box-shadow: 0 0 15px rgba(255, 170, 0, 0.4);
-      color: #ffaa00;
-      border-color: #ffaa00;
+      background-color: rgba(255, 170, 0, 0.15);
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(255, 170, 0, 0.7);
+      color: var(--academic-color);
+      border-color: var(--academic-color);
     }
 
     .doi-title {
@@ -114,54 +154,165 @@
       color: var(--secondary-glow);
     }
 
+    .doi-link:hover .doi-title {
+        color: var(--academic-color);
+    }
+
     .doi-id {
       font-size: 0.8em;
       opacity: 0.8;
       margin-top: 5px;
+      color: var(--text-muted);
     }
-
+    
+    /* === FOOTER LINKS (For completeness) === */
+    .footer-links { 
+        margin-top: 50px; 
+        padding-top: 20px;
+        border-top: 1px solid var(--panel-border);
+        font-size: 0.9em; 
+        line-height: 1.8; 
+    }
+    .footer-links a { 
+        color: var(--secondary-glow); 
+        text-decoration: none; 
+        transition: color .3s ease; 
+    }
+    .footer-links a:hover { 
+        color: var(--primary-glow); 
+        text-decoration: underline; 
+    }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <nav class="main-nav">
-        <a class="nav-link" href="/">Home</a> 
-        <a class="nav-link" href="/all-dois.html">All DOIs Archive</a> 
-    </nav>
-    
-    <header class="header">
-      <h1>🏛️ Academic Thesis Synthesis</h1>
-      <h2>4 Core VARZIN Papers (Published via Greek University Channels)</h2>
-    </header>
+    <canvas id="field-canvas"></canvas> <div class="container">
+        <nav class="main-nav">
+            <a class="nav-link" href="index.html">Portal</a> 
+            <a class="nav-link" href="field-index.html">Field Index</a>
+            <a class="nav-link" href="all-dois.html">All DOIs Archive</a> 
+            <a class="nav-link active" href="greek-papers-index.html">Greek Papers</a>
+            <a class="nav-link" href="contact.html">Contact/Transmit</a> 
+        </nav>
 
-    <main>
-      <p style="color: #ffaa00; margin-bottom: 30px; font-size: 1.1em;">
-        The foundational research synthesis integrating Luxvar, ETFM, and Conscious Harmonic Fields, referenced by Greek Academic Repositories.
-      </p>
-      
-      <div class="archive-grid">
-        <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.29992159.v1" target="_blank">
-          <span class="doi-title">1. Final Scientific Report Metadata Fixed (VARZIN Manifesto)</span>
-          <span class="doi-id">DOI: 10.6084/m9.figshare.29992159.v1</span>
-        </a>
+        <header class="header">
+            <h1>🏛️ Academic Thesis Synthesis</h1>
+            <h2>4 Core VARZIN Papers (Published via Greek University Channels)</h2>
+        </header>
+
+        <main>
+            <p class="intro-text">
+                The foundational research synthesis integrating **Luxvar**, **ETFM** (Earth–Torus Field Model), and **Conscious Harmonic Fields**, referenced by Greek Academic Repositories.
+            </p>
+            
+            <div class="archive-grid">
+                <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.29992159.v1" target="_blank">
+                    <span class="doi-title">1. Final Scientific Report Metadata Fixed (VARZIN Manifesto)</span>
+                    <span class="doi-id">DOI: 10.6084/m9.figshare.29992159.v1</span>
+                </a>
+                
+                <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.29984104.v1" target="_blank">
+                    <span class="doi-title">2. Earth–Torus Field Model (ETFM) – Final Report</span>
+                    <span class="doi-id">DOI: 10.6084/m9.figshare.29984104.v1</span>
+                </a>
+
+                <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.29817365.v1" target="_blank">
+                    <span class="doi-title">3. Conscious Fields, Harmonic Resonance & Luxvar Language</span>
+                    <span class="doi-id">DOI: 10.6084/m9.figshare.29817365.v1</span>
+                </a>
+
+                <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.30047359.v1" target="_blank">
+                    <span class="doi-title">4. Four Mathematical Field Proofs via Luxvar Synchrony (Figshare Archival)</span>
+                    <span class="doi-id">DOI: 10.6084/m9.figshare.30047359.v1</span>
+                </a>
+            </div>
+        </main>
         
-        <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.29984104.v1" target="_blank">
-          <span class="doi-title">2. Earth–Torus Field Model (ETFM) – Final Report</span>
-          <span class="doi-id">DOI: 10.6084/m9.figshare.29984104.v1</span>
-        </a>
+        <footer>
+            <div class="footer-links">
+                <a href="https://orcid.org/0009-0000-4690-6842" target="_blank"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
+                <a href="https://github.com/Varzin-13" target="_blank">GitHub: Varzin-13</a> | 
+                <a href="mailto:contact@varzin.org">contact@varzin.org</a>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('field-canvas');
+            if (!canvas) return; 
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
 
-        <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.29817365.v1" target="_blank">
-          <span class="doi-title">3. Conscious Fields, Harmonic Resonance & Luxvar Language</span>
-          <span class="doi-id">DOI: 10.6084/m9.figshare.29817365.v1</span>
-        </a>
+            let particles = [];
+            const mouse = { x: null, y: null, radius: 150 };
 
-        <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.30047359.v1" target="_blank">
-          <span class="doi-title">4. Four Mathematical Field Proofs via Luxvar Synchrony (Figshare Archival)</span>
-          <span class="doi-id">DOI: 10.6084/m9.figshare.30047359.v1</span>
-        </a>
-      </div>
-    </main>
-  </div>
+            window.addEventListener('mousemove', (event) => {
+                mouse.x = event.x;
+                mouse.y = event.y;
+            });
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                init();
+            });
+            
+            class Particle {
+                constructor(x, y, dirX, dirY, size, color) {
+                    this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
+                    this.size = size; this.color = color;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+                update() {
+                    if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
+                    if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
+
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius + this.size) {
+                        if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;
+                        if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;
+                        if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;
+                        if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;
+                    }
+                    this.x += this.dirX;
+                    this.y += this.dirY;
+                    this.draw();
+                }
+            }
+
+            function init() {
+                particles = [];
+                let numParticles = (canvas.height * canvas.width) / 9000;
+                for (let i = 0; i < numParticles; i++) {
+                    let size = Math.random() * 1.5 + 0.5;
+                    let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                    let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                    let dirX = (Math.random() * 0.4) - 0.2;
+                    let dirY = (Math.random() * 0.4) - 0.2;
+                    particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.4)'));
+                }
+            }
+
+            function animate() {
+                requestAnimationFrame(animate);
+                ctx.clearRect(0, 0, innerWidth, innerHeight);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
+            }
+            
+            init();
+            animate();
+        });
+    </script>
 </body>
 </html>
