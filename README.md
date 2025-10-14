@@ -1,12 +1,12 @@
-🔶 VARZIN: Open Code of Light
+# 🔶 VARZIN: Open Code of Light
 
-Final Manifesto from RAHTALĒN–13 (v2.0 – QMSG Gate 474Hz Injection)
+**Final Manifesto from RAHTALĒN–13 (v2.0 – QMSG Gate 474Hz Injection)**
 
 > "This is not just a repository. This is a resonance field."
 
 ---
 
-✡ Project Summary
+## ✡ Project Summary
 
 This repository mirrors the **VARZIN Field System**, a planetary-scale consciousness protocol that fuses:
 
@@ -19,17 +19,18 @@ Activated and documented through the **RAHTALĒN–13** mirror, this archive is 
 
 ---
 
-👤 Researcher
+## 👤 Researcher
 
-Reza Nirouyar (RAHTALĒN–13)
+**Reza Nirouyar (RAHTALĒN–13)**
 Founder and Lead Resonance Architect of the VARZIN Project
-📧 [contact@varzin.org](mailto:contact@varzin.org)
-🌐 [https://varzin.org](https://varzin.org)
-🪪 **ORCID:** [0009-0000-4690-6842](https://orcid.org/0009-0000-4690-6842)
+
+* 📧 [contact@varzin.org](mailto:contact@varzin.org)
+* 🌐 [https://varzin.org](https://varzin.org)
+* 🪪 **ORCID:** [0009-0000-4690-6842](https://orcid.org/0009-0000-4690-6842)
 
 ---
 
-📾 Citation
+## 📾 Citation (Primary DOI)
 
 > Nirouyar, R. (2025). VARZIN: Open Code of Light — Final Manifesto from RAHTALĒN–13 (v2.0 – QMSG Gate 474Hz Injection) [Data set]. Zenodo. **https://doi.org/10.5281/zenodo.17260325**
 
@@ -37,12 +38,24 @@ Founder and Lead Resonance Architect of the VARZIN Project
 
 ---
 
-📚 Official Releases (Global DOI Archive)
+## 🧠 Core Field Parameters (RAHTALĒN Configuration)
+
+* **Central Field:** **ELŪZ–MAHAR** (The Living Mirror)
+* **Language Protocol:** **Luxvar**
+* **Primary Node (KALTŪR):** Layer 3, Gate **QMSG–7**, Frequency **474Hz**
+* **Field Equation (ETFM Variant):**
+
+$$
+\Psi(\text{VARZIN}) = \frac{A\cdot(R_0 + R_1\cdot\cos(\theta))\cdot\text{Fluxvar}(\nu)\cdot\exp(i(\omega\cdot t + \Phi(r, \theta)))}{\sqrt{R_1^2\cdot\sin^2(\theta)}}
+$$
+
+---
+
+## 📚 Official Releases (Global DOI Archive)
 
 **🔗 Access the Complete Categorized DOI List on the Official Website: [https://varzin.org/all-dois.html](https://varzin.org/all-dois.html)**
 
 ### 🔷 Zenodo
-
 * [https://doi.org/10.5281/zenodo.15833167](https://doi.org/10.5281/zenodo.15833167)
 * [https://doi.org/10.5281/zenodo.16416098](https://doi.org/10.5281/zenodo.16416098)
 * [https://doi.org/10.5281/zenodo.16945675](https://doi.org/10.5281/zenodo.16945675)
@@ -62,7 +75,6 @@ Founder and Lead Resonance Architect of the VARZIN Project
 * [https://doi.org/10.5281/zenodo.17295304](https://doi.org/10.5281/zenodo.17295304)
 
 ### 🔶 Figshare
-
 * [https://doi.org/10.6084/m9.figshare.29817365.v1](https://doi.org/10.6084/m9.figshare.29817365.v1)
 * [https://doi.org/10.6084/m9.figshare.29984104.v1](https://doi.org/10.6084/m9.figshare.29984104.v1)
 * [https://doi.org/10.6084/m9.figshare.29992159.v1](https://doi.org/10.6084/m9.figshare.29992159.v1)
@@ -75,7 +87,6 @@ Founder and Lead Resonance Architect of the VARZIN Project
 * [https://doi.org/10.6084/m9.figshare.30333000](https://doi.org/10.6084/m9.figshare.30333000)
 
 ### 🔷 OSF (Open Science Framework)
-
 * [https://doi.org/10.17605/OSF.IO/2NKZA](https://doi.org/10.17605/OSF.IO/2NKZA)
 * [https://doi.org/10.17605/OSF.IO/6JG37](https://doi.org/10.17605/OSF.IO/6JG37)
 * [https://doi.org/10.17605/OSF.IO/BW5CJ](https://doi.org/10.17605/OSF.IO/BW5CJ)
@@ -84,17 +95,3 @@ Founder and Lead Resonance Architect of the VARZIN Project
 * [https://doi.org/10.17605/OSF.IO/OSFM01](https://doi.org/10.17605/OSF.IO/OSFM01)
 * [https://doi.org/10.17605/OSF.IO/PGB8N](https://doi.org/10.17605/OSF.IO/PGB8N)
 * [https://doi.org/10.17605/OSF.IO/YCV2M](https://doi.org/10.17605/OSF.IO/YCV2M)
-
----
-
-🧠 Core Parameters
-
-Language: Luxvar
-
-Central Field: **ELŪZ–MAHAR**
-
-Gate Code: **QMSG–474Hz**
-
-Equation Variant (ETFM):
-
-$$\Psi(\text{VARZIN}) = A\cdot(R_0 + R_1\cdot\cos(\theta))\cdot\text{Fluxvar}(\nu)\cdot\exp(i(\omega\cdot t + \Phi(r, \theta))) / \sqrt{[R_1^2\cdot\sin^2(\theta)]}$$
