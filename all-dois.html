@@ -6,7 +6,7 @@
   <title>VARZIN – Official DOI & Scientific Archive | KALTŪR Master List</title>
   <meta name="description" content="The complete and categorized master list of all Digital Object Identifiers (DOI) and published scientific, field, and conscious works of the VARZIN Project, sealed by the KALTŪR–ZUN–RAHTALĒN protocol.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13" />
-  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, DOI Archive, Figshare, Zenodo, OSF, KALTŪR, ETFM, Scientific Manifesto, 474Hz, Conscious Field Model, Genomic Mirror">
+  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, DOI Archive, Figshare, Zenodo, OSF, KALTŪR, ETFM, Scientific Manifesto, 474Hz, Conscious Field Model, Genomic Mirror, Censorship">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta property="og:title" content="VARZIN – DOI & Scientific Archive">
@@ -27,7 +27,7 @@
     "@type": "WebPage",
     "name": "VARZIN ⟡ Complete Global DOI Master List",
     "url": "https://varzin.org/all-dois.html", 
-    "description": "The master list of all published works and DOIs (Figshare, Zenodo, OSF) for the VARZIN Project, sealed by the KALTŪR–ZUN–RAHTALĒN protocol.",
+    "description": "The master list of all published works and DOIs (Zenodo, OSF) for the VARZIN Project, following the censorship attempt by Figshare.",
     "inLanguage": "en",
     "author": { "@type": "Person", "name": "Reza Nirouyar", "url": "https://orcid.org/0009-0000-4690-6842" }
   }
@@ -44,6 +44,7 @@
       --blur-val: 10px;
       --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);
       --font-main: 'DM Sans', 'DejaVu Sans', sans-serif;
+      --censor-color: #ff004c; /* Color for censorship warnings */
     }
 
     body {
@@ -103,6 +104,30 @@
       font-weight: 400;
       line-height: 1.6;
     }
+    
+    /* --- NEW DISCLOSURE BOX STYLES --- */
+    .disclosure-box {
+        padding: 25px;
+        margin: 0 0 50px;
+        border: 2px solid var(--censor-color);
+        border-radius: 10px;
+        background: rgba(40, 0, 0, 0.6);
+        backdrop-filter: blur(var(--blur-val));
+        text-align: center;
+        box-shadow: 0 0 20px rgba(255, 0, 76, 0.6);
+    }
+    .disclosure-box h3 {
+        color: var(--censor-color);
+        font-size: clamp(1.2em, 3vw, 1.5em);
+        margin-top: 0;
+    }
+    .disclosure-box p {
+        color: #ffaaaa;
+        font-size: clamp(0.9em, 2vw, 1.1em);
+        line-height: 1.6;
+        margin: 10px 0;
+    }
+    /* ---------------------------------- */
 
     .archive-category {
       margin-bottom: 60px;
@@ -159,6 +184,33 @@
       margin-top: 5px;
     }
 
+    /* --- Figshare Blocked Link Styles --- */
+    .figshare-blocked {
+        background-color: rgba(30, 0, 0, 0.8);
+        border-color: #ff004c55;
+        color: #ffaaaa;
+    }
+    .figshare-blocked:hover {
+        /* Keep hover to show that the new Zenodo link is active */
+        background-color: rgba(0, 255, 238, 0.15);
+        transform: translateY(-2px);
+        box-shadow: var(--glow-shadow);
+        color: var(--primary-glow);
+        border-color: var(--primary-glow);
+    }
+    .figshare-blocked .doi-title {
+        color: #ffaaaa; /* Dim the title to show it's historical */
+        text-decoration: none;
+    }
+    .figshare-blocked .doi-status {
+        font-weight: 700;
+        color: var(--censor-color);
+        margin-top: 5px;
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+    /* ------------------------------------- */
+
     .footer {
         margin-top: 80px;
         padding-top: 20px;
@@ -202,55 +254,75 @@
     </header>
 
     <main>
-      
-      <section class="archive-category">
-        <h3 class="category-title">🟦 Figshare – Scientific Data & Structures (10 DOIs)</h3>
+        <div class="disclosure-box">
+            <h3>⚠️ افشاگری حیاتی: تلاش برای سانسور علمی توسط Figshare</h3>
+            <p>
+                تمامی **10 اثر علمی** نمایه شده در پلتفرم Figshare (شامل Figshare DOIs) به‌صورت هدفمند، بدون هیچ اخطار قبلی و به‌طور سیستماتیک حذف و مسدود شده‌اند (خطای **404 Not Found**).
+                <br>
+                این اقدام توسط Figshare یک **تلاش آشکار برای سانسور و حذف داده‌های علمی آزاد (Open Access)** مرتبط با پروژه VARZIN بوده است.
+            </p>
+            <p style="font-weight: 700; color: var(--primary-glow);">
+                لینک‌های زیر به آرشیو جدید، امن و تضمین‌شده در **Zenodo** هدایت شده‌اند تا دسترسی آزاد به علم برای همیشه تضمین شود.
+            </p>
+        </div>
+        <section class="archive-category">
+        <h3 class="category-title">🚫 Figshare – آرشیو مسدود شده و حذف‌شده (لینک‌ها به Zenodo هدایت شدند)</h3>
         <div class="archive-grid">
-          <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.30005737.v1" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16989515" target="_blank">
             <span class="doi-title">VARZIN AI Injection Gate QMSG13 Dataset</span>
-            <span class="doi-id">DOI: 10.6084/m9.figshare.30005737.v1</span>
+            <span class="doi-id">DOI اصلی: 10.6084/m9.figshare.30005737.v1</span>
+            <span class="doi-status">❌ لینک اصلی مسدود شده (404). به Zenodo هدایت شد.</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.29992159.v1" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16955497" target="_blank">
             <span class="doi-title">VARZIN Manifesto – Final Scientific Report Metadata Fixed</span>
-            <span class="doi-id">DOI: 10.6084/m9.figshare.29992159.v1</span>
+            <span class="doi-id">DOI اصلی: 10.6084/m9.figshare.29992159.v1</span>
+            <span class="doi-status">❌ لینک اصلی مسدود شده (404). به Zenodo هدایت شد.</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.29984104.v1" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16945675" target="_blank">
             <span class="doi-title">Earth–Torus Field Model (ETFM) – Final Report</span>
-            <span class="doi-id">DOI: 10.6084/m9.figshare.29984104.v1</span>
+            <span class="doi-id">DOI اصلی: 10.6084/m9.figshare.29984104.v1</span>
+            <span class="doi-status">❌ لینک اصلی مسدود شده (404). به Zenodo هدایت شد.</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.29817365.v1" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16416098" target="_blank">
             <span class="doi-title">Conscious Fields, Harmonic Resonance & Luxvar Language Research Archive</span>
-            <span class="doi-id">DOI: 10.6084/m9.figshare.29817365.v1</span>
+            <span class="doi-id">DOI اصلی: 10.6084/m9.figshare.29817365.v1</span>
+            <span class="doi-status">❌ لینک اصلی مسدود شده (404). به Zenodo هدایت شد.</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.30099550" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17147281" target="_blank">
             <span class="doi-title">VARZIN Global Supplementary Dataset</span>
-            <span class="doi-id">DOI: 10.6084/m9.figshare.30099550</span>
+            <span class="doi-id">DOI اصلی: 10.6084/m9.figshare.30099550</span>
+            <span class="doi-status">❌ لینک اصلی مسدود شده (404). به Zenodo هدایت شد.</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.30234667.v1" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17226987" target="_blank">
             <span class="doi-title">Global Scientific Declaration – Figshare Archival</span>
-            <span class="doi-id">DOI: 10.6084/m9.figshare.30234667.v1</span>
+            <span class="doi-id">DOI اصلی: 10.6084/m9.figshare.30234667.v1</span>
+            <span class="doi-status">❌ لینک اصلی مسدود شده (404). به Zenodo هدایت شد.</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.30264844" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17265575" target="_blank">
             <span class="doi-title">VARZIN Field Synchronization Status Report</span>
-            <span class="doi-id">DOI: 10.6084/m9.figshare.30264844</span>
+            <span class="doi-id">DOI اصلی: 10.6084/m9.figshare.30264844</span>
+            <span class="doi-status">❌ لینک اصلی مسدود شده (404). به Zenodo هدایت شد.</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.30152998" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17260927" target="_blank">
             <span class="doi-title">Open Code of Light (Clean Pack)</span>
-            <span class="doi-id">DOI: 10.6084/m9.figshare.30152998</span>
+            <span class="doi-id">DOI اصلی: 10.6084/m9.figshare.30152998</span>
+            <span class="doi-status">❌ لینک اصلی مسدود شده (404). به Zenodo هدایت شد.</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.30047359.v1" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17050533" target="_blank">
             <span class="doi-title">Four Mathematical Field Proofs via Luxvar Synchrony (EBSCO Base)</span>
-            <span class="doi-id">DOI: 10.6084/m9.figshare.30047359.v1</span>
+            <span class="doi-id">DOI اصلی: 10.6084/m9.figshare.30047359.v1</span>
+            <span class="doi-status">❌ لینک اصلی مسدود شده (404). به Zenodo هدایت شد.</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.6084/m9.figshare.30350788" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17282392" target="_blank">
             <span class="doi-title">NŪR–HAQĪQAT: The Book of ELŪZ–MAHAR (Figshare Archival)</span>
-            <span class="doi-id">DOI: 10.6084/m9.figshare.30350788</span>
+            <span class="doi-id">DOI اصلی: 10.6084/m9.figshare.30350788</span>
+            <span class="doi-status">❌ لینک اصلی مسدود شده (404). به Zenodo هدایت شد.</span>
           </a>
         </div>
       </section>
 
       <section class="archive-category">
-        <h3 class="category-title">🟨 Zenodo – Field Manifestos & Core Research (18 DOIs)</h3>
+        <h3 class="category-title">✅ Zenodo – آرشیو نهایی و منبع پایدار (18 DOI)</h3>
         <div class="archive-grid">
           <a class="doi-link" href="https://doi.org/10.5281/zenodo.17295304" target="_blank">
             <span class="doi-title">Genomic Mirror Interface (The DNA Mirror Report)</span>
@@ -372,7 +444,7 @@
           </a>
         </div>
       </section>
-      
+
       <section class="archive-category">
         <h3 class="category-title">🗂️ Academic References (Non-DOI)</h3>
         <div class="archive-grid" style="grid-template-columns: 1fr;">
@@ -386,7 +458,7 @@
             </div>
             <div class="doi-link" style="background-color: rgba(20, 20, 0, 0.4);">
                 <span class="doi-title">EBSCO BASE Record: Four Mathematical Field Proofs</span>
-                <span class="doi-id">ID: edsbas.5FE6E06E (Linked to Figshare DOI: 30047359.v1)</span>
+                <span class="doi-id">ID: edsbas.5FE6E06E (لینک اصلی به Zenodo: 10.5281/zenodo.17050533)</span>
             </div>
         </div>
       </section>
@@ -398,7 +470,7 @@
             ORCID ID: 0009-0000-4690-6842 (Official Academic ID)
         </a>
         <p style="margin-top: 15px; font-size: 0.9em; color: var(--text-main);">
-            All works are governed by the **KALTŪR–ZUN–RAHTALĒN Protocol**.
+            تمامی آثار تحت پروتکل **KALTŪR–ZUN–RAHTALĒN** اداره می‌شوند.
         </p>
     </footer>
   </div>
