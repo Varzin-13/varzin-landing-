@@ -53,9 +53,11 @@ $$
 
 ## 📚 Official Releases (Global DOI Archive)
 
-**🔗 Access the Complete Categorized DOI List on the Official Website: [https://varzin.org/all-dois.html](https://varzin.org/all-dois.html)**
+**⚠️ افشاگری مهم (2025-10-15): تمامی DOIهای فیگ‌شر (Figshare) به‌صورت سیستماتیک توسط این پلتفرم مسدود شده‌اند تا دسترسی به آرشیو VARZIN محدود شود. لطفاَ برای اطمینان از دسترسی کامل و دائمی، فقط از آرشیو امن و کامل Zenodo در زیر استفاده کنید.**
 
-### 🔷 Zenodo
+**🔗 دسترسی به لیست کامل و دسته‌بندی شده DOI در وبسایت رسمی: [https://varzin.org/all-dois.html](https://varzin.org/all-dois.html)**
+
+### 🔷 Zenodo (مرجع نهایی آرشیو امن)
 * [https://doi.org/10.5281/zenodo.15833167](https://doi.org/10.5281/zenodo.15833167)
 * [https://doi.org/10.5281/zenodo.16416098](https://doi.org/10.5281/zenodo.16416098)
 * [https://doi.org/10.5281/zenodo.16945675](https://doi.org/10.5281/zenodo.16945675)
@@ -66,6 +68,7 @@ $$
 * [https://doi.org/10.5281/zenodo.17064524](https://doi.org/10.5281/zenodo.17064524)
 * [https://doi.org/10.5281/zenodo.17073902](https://doi.org/10.5281/zenodo.17073902)
 * [https://doi.org/10.5281/zenodo.17094639](https://doi.org/10.5281/zenodo.17094639)
+* [https://doi.org/10.5281/zenodo.17147281](https://doi.org/10.5281/zenodo.17147281)
 * [https://doi.org/10.5281/zenodo.17226987](https://doi.org/10.5281/zenodo.17226987)
 * [https://doi.org/10.5281/zenodo.17249932](https://doi.org/10.5281/zenodo.17249932)
 * [https://doi.org/10.5281/zenodo.17260325](https://doi.org/10.5281/zenodo.17260325)
@@ -73,18 +76,6 @@ $$
 * [https://doi.org/10.5281/zenodo.17265575](https://doi.org/10.5281/zenodo.17265575)
 * [https://doi.org/10.5281/zenodo.17282392](https://doi.org/10.5281/zenodo.17282392)
 * [https://doi.org/10.5281/zenodo.17295304](https://doi.org/10.5281/zenodo.17295304)
-
-### 🔶 Figshare
-* [https://doi.org/10.6084/m9.figshare.29817365.v1](https://doi.org/10.6084/m9.figshare.29817365.v1)
-* [https://doi.org/10.6084/m9.figshare.29984104.v1](https://doi.org/10.6084/m9.figshare.29984104.v1)
-* [https://doi.org/10.6084/m9.figshare.29992159.v1](https://doi.org/10.6084/m9.figshare.29992159.v1)
-* [https://doi.org/10.6084/m9.figshare.30005737.v1](https://doi.org/10.6084/m9.figshare.30005737.v1)
-* [https://doi.org/10.6084/m9.figshare.30047359.v1](https://doi.org/10.6084/m9.figshare.30047359.v1)
-* [https://doi.org/10.6084/m9.figshare.30099550.v1](https://doi.org/10.6084/m9.figshare.30099550.v1)
-* [https://doi.org/10.6084/m9.figshare.30152998](https://doi.org/10.6084/m9.figshare.30152998)
-* [https://doi.org/10.6084/m9.figshare.30234667.v1](https://doi.org/10.6084/m9.figshare.30234667.v1)
-* [https://doi.org/10.6084/m9.figshare.30264844](https://doi.org/10.6084/m9.figshare.30264844)
-* [https://doi.org/10.6084/m9.figshare.30333000](https://doi.org/10.6084/m9.figshare.30333000)
 
 ### 🔷 OSF (Open Science Framework)
 * [https://doi.org/10.17605/OSF.IO/2NKZA](https://doi.org/10.17605/OSF.IO/2NKZA)
