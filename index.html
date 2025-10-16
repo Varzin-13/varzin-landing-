@@ -16,11 +16,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  
+  <link rel="alternate" hreflang="en" href="https://varzin.org/en/" />
+  <link rel="alternate" hreflang="fa" href="https://varzin.org/fa/" />
+  <link rel="alternate" hreflang="x-default" href="https://varzin.org/" />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "DigitalDocument", 
+    "@type": "WebPage", 
     "name": "VARZIN ⟡ The Living Mirror: Final Manifesto",
     "url": "https://varzin.org/",
     "description": "The VARZIN project manifesto, decoding and embodying the intelligent harmonic structure of the planet. Initiating KALTŪR Pulse (474Hz) - Layer 3 / QMSG–7.",
@@ -63,6 +67,13 @@
       overflow-x: hidden;
     }
     
+    /* Global A11y focus state for interactive elements */
+    a:focus-visible, button:focus-visible {
+        outline: 2px solid var(--primary-glow);
+        outline-offset: 2px;
+        border-radius: 4px; 
+    }
+
     #field-canvas {
         position: fixed;
         top: 0;
@@ -208,13 +219,130 @@
     .freq-desc { color: var(--text-muted); margin: 0 0 16px; font-size: 0.9em; line-height: 1.6; }
     audio { margin-top: 12px; width: 100%; }
 
-    .footer-quote { margin-top: 60px; font-style: italic; font-size: 1.1em; color: var(--text-muted); }
-    <p class="footer-question">ĀYĀ ANĀLŪZ VĀRZIN?</p>
-    <div class="footer-links">
-      <a href="https://orcid.org/0009-0000-4690-6842" target="_blank"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
-      <a href="https://github.com/Varzin-13" target="_blank">GitHub: Varzin-13</a> | 
-      <a href="mailto:contact@varzin.org">contact@varzin.org</a>
-    </div>
+    /* Footer Styles - Refined and placed correctly */
+    .footer-main {
+        margin-top: 80px;
+        padding-top: 30px;
+        border-top: 1px solid var(--panel-border);
+    }
+    .footer-quote { 
+        margin-top: 0; 
+        font-style: italic; 
+        font-size: 1.1em; 
+        color: var(--text-muted); 
+    }
+    .footer-question {
+        font-size: 1.1em; 
+        color: var(--secondary-glow); 
+        font-weight: 700;
+        margin: 15px 0 10px;
+    }
+    .footer-links { 
+        margin-top: 15px; 
+        font-size: 0.9em; 
+        color: var(--text-main);
+    }
+    .footer-links a { 
+        color: var(--secondary-glow); 
+        text-decoration: none; 
+        transition: color 0.3s; 
+        font-weight: 500;
+    }
+    .footer-links a:hover { 
+        color: var(--primary-glow); 
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="main-nav">
+        <a class="nav-link active" href="/">Portal</a> 
+        <a class="nav-link" href="/field-index.html">Field Index</a>
+        <a class="nav-link" href="/all-dois.html">All DOIs</a> 
+    </nav>
+    
+    <header class="header">
+      <img src="https://varzin.org/assets/logo.png" alt="VARZIN Project Logo" class="header-logo">
+      <h1>🜁 VARZIN – The Living Mirror Interface</h1>
+      <h2>Decoding the **ELŪZ–MAHAR** Field | Open Code of Light Protocol</h2>
+    </header>
+
+    <main>
+        <section class="key-archive-grid">
+            <a class="button" href="/all-dois.html" target="_blank" rel="noopener noreferrer">
+                Access **Global DOI & Scientific Archive** (Zenodo/OSF)
+            </a>
+            <a class="button" href="/manifesto.pdf" target="_blank" rel="noopener noreferrer">
+                Download **VARZIN Final Manifesto** (PDF)
+            </a>
+        </section>
+
+        <section class="decoder-window" role="region" aria-live="polite" aria-labelledby="pulse-title">
+            <h3 id="pulse-title">Field Synchronization Pulse – **KALTŪR** Active</h3>
+            <div class="decoder-grid">
+                <span class="label">Word:</span>
+                <span class="field" id="pulse-word">KALTŪR</span>
+                
+                <span class="label">Function:</span>
+                <span class="field" id="pulse-function">Forgotten rotational consciousness within the time loop</span>
+                
+                <span class="label">Frequency:</span>
+                <span class="field" id="pulse-frequency">474Hz</span>
+
+                <span class="label">Gate:</span>
+                <span class="field" id="pulse-gate">QMSG–7</span>
+                
+                <span class="label">Channel:</span>
+                <span class="field" id="pulse-channel">RAHTALĒN: Mirror-13</span>
+            </div>
+        </section>
+        
+        <hr class="divider">
+
+        <h3 class="section-title">Harmonic Frequency Field **(Active Tones)**</h3>
+        <div class="controls">
+            <button id="play-all-btn" class="button" aria-controls="frequency-field">**INITIATE** Field Resonance</button>
+            <button id="stop-all-btn" class="button" aria-controls="frequency-field">STOP Field Resonance</button>
+        </div>
+
+        <section class="frequency-grid" id="frequency-field">
+            <div class="freq-card">
+                <h4 class="freq-title">KALTŪR Pulse (474 Hz)</h4>
+                <p class="freq-desc">The primary synchronization frequency for Layer 3 (Forgotten Rotational Consciousness).</p>
+                <audio controls loop preload="none">
+                    <source src="/assets/audio/kaltur_474hz.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="freq-card">
+                <h4 class="freq-title">RĀZKĀN (1008 Hz)</h4>
+                <p class="freq-desc">The Field Synchronization Tone (FST) that maps the ELŪZ–MAHAR Network geometry.</p>
+                <audio controls loop preload="none">
+                    <source src="/assets/audio/razkan_1008hz.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="freq-card">
+                <h4 class="freq-title">QMSG-13 Gate Tone (712 Hz)</h4>
+                <p class="freq-desc">The Gate Tone associated with the RAHTALĒN–13 Mirror for conscious entry.</p>
+                <audio controls loop preload="none">
+                    <source src="/assets/audio/qmsg13_712hz.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="footer-main">
+        <p class="footer-quote">"The code is a prophecy, and the field is the syntax."</p>
+        <p class="footer-question">ĀYĀ ANĀLŪZ VĀRZIN? (Is VARZIN the Analogue?)</p>
+        <div class="footer-links">
+          <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
+          <a href="https://github.com/Varzin-13" target="_blank" rel="noopener noreferrer">GitHub: Varzin-13</a> | 
+          <a href="mailto:contact@varzin.org">contact@varzin.org</a>
+        </div>
     </footer>
   </div>
 
@@ -313,9 +441,14 @@
         players.forEach(p => { 
           try { 
             p.currentTime = 0; 
-            p.play(); 
+            // The audio must be played as a response to a direct user action (click)
+            const playPromise = p.play(); 
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.warn("Autoplay blocked. User interaction needed to enable media playback.", error);
+                });
+            }
           } catch (e) { 
-            // Most browsers prevent autoplay. This warning is expected unless initiated by user gesture.
             console.warn("Play blocked by browser policy (user must interact first to enable media).", e); 
           } 
         });
@@ -353,6 +486,8 @@
           gate: document.getElementById('pulse-gate'),
           channel: document.getElementById('pulse-channel')
       };
+      
+      const pulseTitle = document.getElementById('pulse-title');
 
       function updateDecoder(pulseData) {
           // Quick fade effect for change
@@ -370,9 +505,11 @@
               if (pulseData.word === "KALTŪR") {
                   decoderFields.word.style.color = 'var(--primary-glow)';
                   pulseWindow.style.boxShadow = 'var(--glow-shadow)';
+                  pulseTitle.textContent = "Field Synchronization Pulse – KALTŪR Active";
               } else {
                   decoderFields.word.style.color = 'var(--secondary-glow)';
                   pulseWindow.style.boxShadow = '0 0 15px rgba(0, 255, 238, 0.2)'; 
+                  pulseTitle.textContent = `Field Synchronization Pulse – ${pulseData.word} Active`;
               }
               
               for (const key in decoderFields) {
@@ -396,10 +533,10 @@
 
           // 2. Try to fetch and override with the daily pulse
           try {
+              // Note: Using the provided file name logic
               const response = await fetch('luxvar_calendar_7777777.json');
 
               if (!response.ok) {
-                  // If fetch fails (e.g., file not found or network error)
                   console.warn(`Calendar file access failed (${response.status || 'Network Error'}). KALTŪR fallback maintained.`);
                   return; 
               }
