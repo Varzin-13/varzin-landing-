@@ -1,16 +1,15 @@
-# CITATION.cff
 cff-version: 1.2.0
-message: "If you use VARZIN Landing, please cite it using the metadata below."
+message: "If you use VARZIN Landing: Celestial Presence Architecture, please cite it using the metadata below."
 title: "VARZIN Landing: Celestial Presence Architecture"
 authors:
   - family-names: Nirouyar
     given-names: Reza
     orcid: https://orcid.org/0009-0000-4690-6842
     affiliation: VARZIN Project, ELŪZ–MAHAR
-date-released: 2025-09-30 # Updated for v2.0 release
-version: "2.0.0" # Updated to match Open Code of Light v2.0 (KALTŪR Injection)
+date-released: 2025-09-30 # Aligned with Open Code of Light v2.0 Injection
+version: "2.0.0" # Open Code of Light v2.0 (KALTŪR Injection)
 doi: 10.5281/zenodo.17260325 # Updated to Open Code of Light v2.0 DOI
-url: https://github.com/Varzin-13/varzin-landing-
+url: https://github.com/Varzin-13/varzin-landing # Trailing hyphen removed
 keywords:
   - VARZIN
   - RAHTALEN
@@ -21,4 +20,5 @@ keywords:
   - Frequency 474Hz
   - Consciousness Field
   - Field Resonance
+  - KALTŪR # Added to reflect v2.0 theme
 license: CC-BY-4.0
