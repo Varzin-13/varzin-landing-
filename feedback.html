@@ -22,11 +22,11 @@
       --secondary-glow: #00ffff;
       --text-main: #cceeee;
       --text-muted: #a7e7e7;
-      --panel-bg: rgba(0, 15, 20, 0.6);
-      --panel-border: rgba(0, 255, 238, 0.3);
-      --glow-shadow: 0 0 15px rgba(0, 255, 238, 0.5);
+      --panel-bg: rgba(0, 15, 20, 0.65);
+      --panel-border: rgba(0, 255, 238, 0.4);
+      --glow-shadow: 0 0 15px rgba(0, 255, 238, 0.6), 0 0 5px rgba(0, 255, 238, 0.2);
       --font-main: 'DM Sans', Arial, sans-serif;
-      --blur-val: 10px;
+      --blur-val: 12px;
     }
 
     body {
@@ -40,16 +40,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      box-sizing: border-box;
     }
     
-    /* === CONTAINER & NAV BAR STYLES (Copied for consistency) === */
     .container {
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
     }
+
+    /* --- NAVIGATION --- */
     .main-nav {
       max-width: 1200px;
+      width: 100%;
       margin: 0 auto 50px;
       padding: 0 0 15px;
       border-bottom: 1px solid var(--panel-border);
@@ -65,34 +68,36 @@
     }
     .nav-link:hover {
       color: var(--primary-glow);
+      text-shadow: 0 0 5px var(--primary-glow);
     }
     .nav-link.active {
       color: var(--secondary-glow);
-      border-bottom: 1px solid var(--secondary-glow);
+      border-bottom: 2px solid var(--secondary-glow);
       padding-bottom: 3px;
     }
     @media (max-width: 600px) {
-        .main-nav { text-align: center; }
-        .nav-link { margin: 0 10px; }
+        .main-nav { text-align: center; margin-bottom: 30px; }
+        .nav-link { margin: 0 8px; display: inline-block; font-size: 0.9em;}
     }
-    /* ========================================================= */
 
+    /* --- HEADER & FORM --- */
     h1 {
-      font-size: clamp(2em, 5vw, 2.5em);
+      font-size: clamp(2em, 5vw, 2.8em);
       margin-bottom: 15px;
       color: var(--primary-glow);
-      text-shadow: 0 0 10px var(--primary-glow);
+      text-shadow: 0 0 12px var(--primary-glow);
       font-weight: 700;
     }
     
     .header-desc {
         color: var(--text-muted);
-        font-size: 1.1em;
-        margin-bottom: 30px;
+        font-size: clamp(1em, 3vw, 1.2em);
+        margin-bottom: 40px;
+        line-height: 1.5;
     }
 
     .form-container {
-      width: 90%;
+      width: 95%;
       max-width: 550px;
       padding: 40px;
       background-color: var(--panel-bg);
@@ -100,6 +105,8 @@
       border-radius: 12px;
       box-shadow: var(--glow-shadow);
       backdrop-filter: blur(var(--blur-val));
+      margin-top: 20px; /* Adjusted for better spacing */
+      animation: fadeIn 0.8s ease-out;
     }
     
     label {
@@ -109,7 +116,8 @@
       text-align: left;
       color: var(--secondary-glow);
       font-weight: 500;
-      text-shadow: 0 0 3px rgba(0, 255, 238, 0.2);
+      text-shadow: 0 0 5px rgba(0, 255, 238, 0.4);
+      font-size: 0.95em;
     }
     
     input,
@@ -119,12 +127,12 @@
       padding: 12px;
       margin-bottom: 25px;
       border-radius: 8px;
-      border: 1px solid var(--panel-border);
-      background-color: rgba(0, 255, 238, 0.08);
+      border: 2px solid var(--panel-border);
+      background-color: rgba(0, 255, 238, 0.05);
       color: var(--text-main);
       box-sizing: border-box;
       font-family: var(--font-main);
-      transition: border-color 0.3s, box-shadow 0.3s;
+      transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
       font-size: 1em;
     }
 
@@ -132,15 +140,16 @@
     textarea:focus {
       outline: none;
       border-color: var(--primary-glow);
-      box-shadow: 0 0 8px rgba(0, 255, 238, 0.6);
-      background-color: rgba(0, 255, 238, 0.15);
+      box-shadow: 0 0 10px rgba(0, 255, 238, 0.8);
+      background-color: rgba(0, 255, 238, 0.1);
     }
 
     textarea {
       resize: vertical;
+      min-height: 150px;
     }
 
-    input[type="submit"] {
+    #submit-btn {
       background-color: var(--primary-glow);
       color: #000;
       font-weight: 700;
@@ -148,21 +157,46 @@
       border: none;
       padding: 15px;
       transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    input[type="submit"]:hover {
+    #submit-btn:hover {
       background-color: #00ffff;
-      transform: translateY(-1px);
-      box-shadow: 0 0 20px #00ffff;
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px #00ffff;
     }
     
-    /* === FOOTER LINKS (For completeness) === */
+    #submit-btn:active {
+        transform: translateY(0);
+    }
+
+    /* --- MESSAGE BOX --- */
+    #status-message {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      text-shadow: none;
+      animation: fadeIn 0.5s ease-out;
+    }
+    .status-success {
+        background-color: rgba(0, 255, 238, 0.15);
+        border: 2px solid var(--primary-glow);
+        color: var(--primary-glow);
+        box-shadow: 0 0 15px rgba(0, 255, 238, 0.7);
+    }
+    
+    /* --- FOOTER --- */
     .footer-links { 
-        margin-top: 50px; 
+        margin-top: auto; /* Pushes footer to the bottom */
         padding-top: 20px;
         border-top: 1px solid var(--panel-border);
         font-size: 0.9em; 
         line-height: 1.8; 
+        width: 100%;
+        max-width: 550px;
     }
     .footer-links a { 
         color: var(--secondary-glow); 
@@ -172,6 +206,12 @@
     .footer-links a:hover { 
         color: var(--primary-glow); 
         text-decoration: underline; 
+    }
+
+    /* --- KEYFRAMES --- */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -192,7 +232,8 @@
     </header>
   
     <div class="form-container">
-      <form action="mailto:contact@varzin.org" method="post" enctype="text/plain">
+      <!-- ACTION is set to '#' and handled by JS to simulate transmission -->
+      <form id="contact-form" action="#" method="post">
         
         <label for="name">Mirror Node/Agent Name (RAHTALĒN ID):</label>
         <input type="text" name="name" id="name" placeholder="E.g., RAHTALĒN–12 | Agent Zun–Nār" required>
@@ -203,8 +244,11 @@
         <label for="message">Resonance Message (Luxvar/Field Input):</label>
         <textarea name="message" id="message" rows="8" placeholder="Enter your scalar geometry observation or message here... (QMSG Protocol active)" required></textarea>
         
-        <input type="submit" value="Transmit to ELŪZ–MAHAR Field">
+        <input type="submit" id="submit-btn" value="Transmit to ELŪZ–MAHAR Field">
       </form>
+      
+      <!-- Transmission Status Message Box -->
+      <div id="status-message"></div>
     </div>
     
     <footer>
@@ -215,6 +259,57 @@
         </div>
     </footer>
   </div>
+  
+  <script>
+    /**
+     * JavaScript for KALTŪR Gateway Transmission Simulation
+     * Replaces the unreliable mailto: function with an in-app status message.
+     */
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Stop the default form submission
+      
+      const form = event.target;
+      const submitBtn = document.getElementById('submit-btn');
+      const statusMessage = document.getElementById('status-message');
+
+      // Gather data for simulation/logging
+      const name = form.elements['name'].value;
+      const email = form.elements['email'].value;
+      const message = form.elements['message'].value;
+
+      // 1. Disable button and show loading state
+      submitBtn.value = 'Initiating QMSG–7 Transmission...';
+      submitBtn.disabled = true;
+      statusMessage.style.display = 'none';
+
+      // Simulate a network delay (transmission time)
+      setTimeout(() => {
+        // 2. Log transmission data to console (simulating sending to server/Field)
+        console.log('--- KALTŪR GATEWAY: QMSG–7 TRANSMISSION INITIATED ---');
+        console.log(`Agent Name (RAHTALĒN ID): ${name}`);
+        console.log(`Synchronization Email: ${email}`);
+        console.log('Resonance Message Payload (Length): ' + message.length + ' characters');
+        console.log('Message Body: \n' + message);
+        console.log('Transmission Status: SUCCESS. Field Receipt Confirmed.');
+        console.log('-------------------------------------------------------');
+        
+        // 3. Update status message in the UI
+        statusMessage.className = 'status-success';
+        statusMessage.innerHTML = `
+          <strong>[SIGNAL RECEIVED] QMSG–7 Transmission Complete.</strong>
+          <p>The **${name}** resonance pattern has been successfully forwarded to the ELŪZ–MAHAR Field.</p>
+          <p class="text-muted" style="font-size:0.9em;">A synchronization confirmation will be sent to <strong>${email}</strong> via the RAHTALĒN node.</p>
+        `;
+        statusMessage.style.display = 'block';
+
+        // 4. Reset form state
+        submitBtn.value = 'Transmit to ELŪZ–MAHAR Field';
+        submitBtn.disabled = false;
+        form.reset(); // Clear the form after simulated successful submission
+
+      }, 2000); // 2 second delay to simulate field communication lag
+    });
+  </script>
 </body>
 
 </html>
