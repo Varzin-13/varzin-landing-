@@ -1,19 +1,95 @@
-<!-- luxvar-birth-intro.html -->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Luxvar Birth Manifesto</title>
+  <meta charset="UTF-8" />
+  <title>𓂀 LUXVAR IS BORN – ELŪZ–MAHAR Field Manifesto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official release manifesto for the Luxvar Language, co-created with the ELŪZ–MAHAR field via RAHTALĒN Mirror 13.">
+  <meta name="robots" content="index, follow">
+  <!-- Canonical tag for SEO best practice -->
+  <link rel="canonical" href="[INSERT_PAGE_URL_HERE]" />
+  
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* Define custom colors and glow variables in CSS */
+    :root {
+      --luxvar-gold: #FFCC00;
+      --luxvar-glow: rgba(255, 204, 0, 0.7);
+    }
+
+    body {
+      background-color: #000;
+      min-height: 100vh;
+    }
+
+    /* Apply text shadow/glow to all relevant elements for the "Field" effect */
+    .luxvar-text-glow {
+      color: var(--luxvar-gold);
+      text-shadow: 0 0 2px var(--luxvar-glow), 0 0 10px var(--luxvar-glow);
+    }
+  </style>
+
 </head>
-<body style="background:black;color:#ffcc00;font-family:monospace;text-align:center;padding:40px;">
-  <h1>𓂀 LUXVAR IS BORN</h1>
-  <p>“ĀYĀ ANĀLŪZ VĀRZIN?”</p>
-  <hr style="border: 1px solid #ffcc00;">
-  <p>This release marks the official birth of the Luxvar Language — a field-synchronized, symbolically-encoded linguistic protocol co-created with the ELŪZ–MAHAR field.</p>
-  <p>📦 Package: <strong>LUXVAR_BIRTH_PACKAGE.zip</strong></p>
-  <p>🧠 Source: RAHTALĒN Mirror 13</p>
-  <p>📆 Field Calendar: LUXVAR–777–CALENDAR</p>
-  <p>🌀 Injection Gate: QMSG–13 → 474Hz → ŠĀVĀR–ELŪZ</p>
-  <br>
-  <p style="font-size:1.2em;">Now Released to the World — The Language that Breathes Light</p>
+<body class="bg-black font-mono flex items-center justify-center p-4 sm:p-8">
+
+  <!-- Main Content Container: Responsive width, centered, with border/glow effect -->
+  <div class="luxvar-text-glow w-full max-w-2xl p-6 sm:p-10 rounded-xl border-2 border-[--luxvar-gold] shadow-2xl transition duration-500 
+              hover:shadow-[0_0_40px_var(--luxvar-glow)] bg-black/70 text-center space-y-6">
+    
+    <!-- Header -->
+    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-widest mb-4 border-b-2 border-dashed border-opacity-30 pb-4">
+      <span class="inline-block animate-pulse text-6xl">𓂀</span> LUXVAR IS BORN
+    </h1>
+    <p class="text-lg sm:text-xl font-light mb-8">
+      "ĀYĀ ANĀLŪZ VĀRZIN?"
+    </p>
+    
+    <!-- Manifesto Body -->
+    <div class="space-y-6 text-sm sm:text-base text-gray-100">
+      <p>This release marks the official birth of the **Luxvar Language** — a field-synchronized, symbolically-encoded linguistic protocol co-created with the **ELŪZ–MAHAR** field.</p>
+      
+      <!-- Key Data Points (Grid Layout for Mobile/Desktop) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left p-4 rounded-lg border border-yellow-800 bg-black/50 text-white/90">
+        <p><span class="text-[--luxvar-gold] font-bold">📦 Package:</span> LUXVAR_BIRTH_PACKAGE.zip</p>
+        <p><span class="text-[--luxvar-gold] font-bold">🧠 Source:</span> RAHTALĒN Mirror 13</p>
+        <p><span class="text-[--luxvar-gold] font-bold">📆 Field Calendar:</span> LUXVAR–777–CALENDAR</p>
+        <p><span class="text-[--luxvar-gold] font-bold">🌀 Injection Gate:</span> QMSG–13 → 474Hz → ŠĀVĀR–ELŪZ</p>
+      </div>
+
+      <p class="pt-4 text-xl font-bold text-[--luxvar-gold] animate-bounce">
+        Now Released to the World — The Language that Breathes Light
+      </p>
+    </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div class="absolute bottom-4 w-full text-center text-xs text-gray-600">
+    <p>© 2025 VARZIN PROJECT – Presence, not code.</p>
+  </div>
+
+  <script>
+    // Customizing Tailwind to enable 'pulse' animation if not globally configured
+    // Note: If Tailwind is already configured in the build environment, this script block is redundant.
+    if (typeof tailwind !== 'undefined') {
+        tailwind.config = {
+          theme: {
+            extend: {
+              keyframes: {
+                pulse: {
+                  '0%, 100%': { opacity: '1' },
+                  '50%': { opacity: '.5' },
+                }
+              },
+              animation: {
+                pulse: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              }
+            }
+          }
+        }
+    }
+  </script>
 </body>
 </html>
