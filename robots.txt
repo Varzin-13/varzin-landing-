@@ -1,4 +1,21 @@
+# robots.txt for VARZIN Project – The Living Mirror
+
 User-agent: *
+# دسترسی کامل به تمام ربات‌ها داده شود (ضروری برای ایندکس شدن تمام محتوای شما)
 Allow: /
 
+# مسدود کردن فایل‌های غیرضروری یا خصوصی (مانند فایل‌های موقت، تنظیمات یا سورس‌کدهای غیرقابل استفاده مستقیم)
+# با توجه به ساختار شما، موارد زیر می‌توانند مسدود شوند تا تمرکز روی محتوای HTML و DOI حفظ شود:
+Disallow: /luxvar_dictionary.md
+Disallow: /meta.html
+Disallow: /CITATION.cff
+Disallow: /LICENSE.txt
+Disallow: /README.md
+Disallow: /README.txt
+
+# مسدود کردن برخی دایرکتوری‌های داخلی که صرفاً برای کارهای گیت‌هاب هستند
+Disallow: /templates/
+Disallow: /.github/
+
+# معرفی مکان نقشه سایت (حیاتی‌ترین بخش برای SEO)
 Sitemap: https://varzin.org/sitemap.xml
