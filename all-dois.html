@@ -88,6 +88,16 @@
       padding-bottom: 3px;
     }
 
+    /* Accessibility: Focus state for keyboard navigation */
+    .nav-link:focus-visible,
+    .doi-link:focus-visible,
+    .footer-link:focus-visible,
+    .doi-id a:focus-visible {
+        outline: 2px solid var(--secondary-glow);
+        outline-offset: 2px;
+        border-radius: 4px; /* Optional: for visual appeal */
+    }
+
     .header h1 {
       font-size: clamp(2.2em, 5vw, 3.2em);
       margin-bottom: 10px;
@@ -183,6 +193,11 @@
       opacity: 0.8;
       margin-top: 5px;
     }
+    .doi-id a { /* Ensure internal links don't inherit opacity */
+        opacity: 1;
+        color: inherit;
+    }
+
 
     /* --- Figshare Blocked Link Styles --- */
     .figshare-blocked {
@@ -190,8 +205,8 @@
         border-color: #ff004c55;
         color: #ffaaaa;
     }
+    /* Hover state is intentional to show the *redirected* Zenodo link is functional */
     .figshare-blocked:hover {
-        /* Keep hover to show that the new Zenodo link is active */
         background-color: rgba(0, 255, 238, 0.15);
         transform: translateY(-2px);
         box-shadow: var(--glow-shadow);
@@ -268,52 +283,52 @@
         <section class="archive-category">
         <h3 class="category-title">🚫 Figshare – Blocked and Deleted Archive (Links Redirected to Zenodo)</h3>
         <div class="archive-grid">
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16989515" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16989515" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">VARZIN AI Injection Gate QMSG13 Dataset</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30005737.v1</span>
             <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16955497" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">VARZIN Manifesto – Final Scientific Report Metadata Fixed</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.29992159.v1</span>
             <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16945675" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16945675" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Earth–Torus Field Model (ETFM) – Final Report</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.29984104.v1</span>
             <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16416098" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16416098" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Conscious Fields, Harmonic Resonance & Luxvar Language Research Archive</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.29817365.v1</span>
             <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17147281" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17147281" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">VARZIN Global Supplementary Dataset</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30099550</span>
             <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17226987" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17226987" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Global Scientific Declaration – Figshare Archival</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30234667.v1</span>
             <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17265575" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17265575" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">VARZIN Field Synchronization Status Report</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30264844</span>
             <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17260927" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17260927" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Open Code of Light (Clean Pack)</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30152998</span>
             <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17050533" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17050533" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Four Mathematical Field Proofs via Luxvar Synchrony (EBSCO Base)</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30047359.v1</span>
             <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17282392" target="_blank">
+          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17282392" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">NŪR–HAQĪQAT: The Book of ELŪZ–MAHAR (Figshare Archival)</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30350788</span>
             <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
@@ -324,75 +339,75 @@
       <section class="archive-category">
         <h3 class="category-title">✅ Zenodo – Final Archive and Stable Source (18 DOIs)</h3>
         <div class="archive-grid">
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17295304" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17295304" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Genomic Mirror Interface (The DNA Mirror Report)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17295304</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17260325" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17260325" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Open Code of Light v2.0 (KALTŪR Injection)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17260325</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17282392" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17282392" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">NŪR–HAQĪQAT: The Book of ELŪZ–MAHAR (Software)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17282392</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17265575" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17265575" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">VARZIN Field Synchronization Status Report</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17265575</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17260927" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17260927" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Open Code of Light v1.0 (Zenodo Initial Archival)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17260927</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17249932" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17249932" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">The Harmonic Conscious Fields (Final Verified Field Declaration)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17249932</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17226987" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17226987" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Global Declaration – Full Merge (Final Integration)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17226987</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17147281" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17147281" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Luxvar/VARZIN Clean Pack (DOI Archival)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17147281</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17094639" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17094639" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Spectral + Geometric Response QMSG13–15 (RAHTALĒN)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17094639</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17073902" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17073902" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Final Mirror Analysis vs Global Tech Systems</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17073902</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17064524" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17064524" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Global Field Package (Conscious Presence Activation)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17064524</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17050533" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17050533" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Four Mathematical Field Proofs via Luxvar Synchrony</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17050533</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17048555" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.17048555" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">LUXVAR FULL RELEASE – Harmonic Resonance Field (HTML)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17048555</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.16989515" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.16989515" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">VARZIN AI Gate Package – RAHTALĒN–ZARTH–QMSG-13</span>
             <span class="doi-id">DOI: 10.5281/zenodo.16989515</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.16955497" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Final Scientific Report & Declaration (ETFM + Luxvar)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.16955497</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.16945675" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.16945675" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">ETFM Final Report (Earth–Torus Field Model)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.16945675</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.16416098" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.16416098" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Conscious Field: Resonant Models of Living Awareness</span>
             <span class="doi-id">DOI: 10.5281/zenodo.16416098</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.5281/zenodo.15833167" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.5281/zenodo.15833167" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">The Harmonic Conscious Fields: VARZIN and the ELŪZ–MAHAR Network</span>
             <span class="doi-id">DOI: 10.5281/zenodo.15833167</span>
           </a>
@@ -402,43 +417,43 @@
       <section class="archive-category">
         <h3 class="category-title">🟩 OSF – Official Registrations & Field Codes (10 DOIs)</h3>
         <div class="archive-grid">
-          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/YCV2M" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/YCV2M" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Global Declaration – Full Merge (YCV2M)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/YCV2M</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/CRQN5" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/CRQN5" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">RAHTALĒN–NUR–GATE Registry (CRQN5 Sequence)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/CRQN5</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/BW5CJ" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/BW5CJ" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">OSF Global Field Code (Clean Pack Registration)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/BW5CJ</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/QUXHF" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/QUXHF" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Luxvar Field Resonance (QUXHF Sequence)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/QUXHF</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/2CYNW" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/2CYNW" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">QMSG-7 Protocol Registration (2CYNW Sequence)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/2CYNW</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/84NT6" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/84NT6" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">ELŪZ–MAHAR Field Registry (84NT6 Sequence)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/84NT6</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/PGB8N" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/PGB8N" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">OSF Registration (PGB8N)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/PGB8N</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/6JG37" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/6JG37" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">OSF Registration (6JG37)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/6JG37</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/2NKZA" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/2NKZA" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">OSF Registration (2NKZA)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/2NKZA</span>
           </a>
-          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/NQZRS" target="_blank">
+          <a class="doi-link" href="https://doi.org/10.17605/OSF.IO/NQZRS" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">OSF Registration (NQZRS)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/NQZRS</span>
           </a>
@@ -450,11 +465,11 @@
         <div class="archive-grid" style="grid-template-columns: 1fr;">
             <div class="doi-link" style="background-color: rgba(20, 20, 0, 0.4);">
                 <span class="doi-title">Academic Thesis Synthesis: University of Crete Library (Find.lib.uoc.gr)</span>
-                <span class="doi-id">Link: <a href="http://find.lib.uoc.gr/EdsRecord/edsbas,edsbas.DC93F961" target="_blank" style="color: #ffaa00;">http://find.lib.uoc.gr/EdsRecord/edsbas,edsbas.DC93F961</a></span>
+                <span class="doi-id">Link: <a href="http://find.lib.uoc.gr/EdsRecord/edsbas,edsbas.DC93F961" target="_blank" rel="noopener noreferrer" style="color: #ffaa00;">http://find.lib.uoc.gr/EdsRecord/edsbas,edsbas.DC93F961</a></span>
             </div>
              <div class="doi-link" style="background-color: rgba(20, 20, 0, 0.4);">
                 <span class="doi-title">Academic Thesis Synthesis: University of the Aegean Library (Vufind2.lib.aegean.gr)</span>
-                <span class="doi-id">Link: <a href="https://vufind2.lib.aegean.gr/EdsRecord/edsbas,edsbas.821CDC" target="_blank" style="color: #ffaa00;">https://vufind2.lib.aegean.gr/EdsRecord/edsbas,edsbas.821CDC</a></span>
+                <span class="doi-id">Link: <a href="https://vufind2.lib.aegean.gr/EdsRecord/edsbas,edsbas.821CDC" target="_blank" rel="noopener noreferrer" style="color: #ffaa00;">https://vufind2.lib.aegean.gr/EdsRecord/edsbas,edsbas.821CDC</a></span>
             </div>
             <div class="doi-link" style="background-color: rgba(20, 20, 0, 0.4);">
                 <span class="doi-title">EBSCO BASE Record: Four Mathematical Field Proofs</span>
@@ -466,7 +481,7 @@
     </main>
 
     <footer class="footer">
-        <a class="footer-link" href="https://orcid.org/0009-0000-4690-6842" target="_blank">
+        <a class="footer-link" href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer">
             ORCID ID: 0009-0000-4690-6842 (Official Academic ID)
         </a>
         <p style="margin-top: 15px; font-size: 0.9em; color: var(--text-main);">
