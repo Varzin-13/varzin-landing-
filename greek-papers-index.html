@@ -3,12 +3,15 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN – Greek Academic Thesis Synthesis (4 Core Papers)</title>
-  <meta name="description" content="The four core academic papers forming the synthesis thesis, published through Greek University channels, focusing on Luxvar, ETFM, and Conscious Field Resonance.">
+  <title>VARZIN – Academic Thesis Synthesis (4 Core Papers)</title>
+  
+  <!-- Updated Metadata for KALTŪR Phase -->
+  <meta name="description" content="The four core academic papers forming the synthesis thesis, published through Greek University channels, focusing on Luxvar, ETFM, Conscious Field Resonance, and the KALTŪR Harmonic Node.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13" />
-  <meta name="keywords" content="VARZIN, Greek University, Academic Thesis, ETFM, Luxvar, Conscious Field, Core Papers, DOI, KALTŪR, RAHTALĒN, 474Hz">
+  <meta name="keywords" content="VARZIN, Greek University, Academic Thesis, ETFM, Luxvar, Conscious Field, Core Papers, DOI, KALTŪR, RAHTALĒN, 474Hz, ELŪZ–MAHAR">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="luxvar-field" content="KALTŪR–NODE,RAHTALĒN–13,474Hz">
+  
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +20,7 @@
   <style>
     :root {
       --bg-end: #000000;
-      --primary-glow: #00ffee; /* KALTŪR */
+      --primary-glow: #00ffee; /* KALTŪR Glow */
       --secondary-glow: #00ffff;
       --text-main: #cceeee;
       --text-muted: #a7e7e7;
@@ -26,7 +29,7 @@
       --blur-val: 10px;
       --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);
       --font-main: 'DM Sans', 'DejaVu Sans', sans-serif;
-      --academic-color: #ffaa00; /* رنگ خاص برای بخش آکادمیک */
+      --academic-color: #ffaa00; /* Warm Academic Glow */
     }
 
     body {
@@ -43,7 +46,6 @@
       overflow-x: hidden;
     }
     
-    /* === CANVAS STYLE - ADDED === */
     #field-canvas {
         position: fixed;
         top: 0;
@@ -52,7 +54,6 @@
         height: 100%;
         z-index: -1;
     }
-    /* =========================== */
 
     .container {
       max-width: 900px;
@@ -63,7 +64,7 @@
       z-index: 1;
     }
 
-    /* === NAV BAR STYLES (Full set for consistency) === */
+    /* === NAV BAR STYLES === */
     .main-nav {
       max-width: 900px;
       margin: 0 auto 50px;
@@ -88,18 +89,24 @@
       padding-bottom: 3px;
     }
     @media (max-width: 600px) {
-        .main-nav { text-align: center; }
-        .nav-link { margin: 0 10px; }
+        .main-nav { 
+            text-align: center; 
+            margin-bottom: 30px;
+        }
+        .nav-link { 
+            margin: 0 8px; 
+            font-size: 0.9em;
+        }
     }
     /* ================================================= */
 
     .header h1 {
-      font-size: clamp(2.0em, 4vw, 2.8em);
+      font-size: clamp(2.2em, 5vw, 3.0em);
       margin-bottom: 10px;
       color: var(--academic-color);
       font-weight: 700;
       letter-spacing: 2px;
-      text-shadow: 0 0 8px rgba(255, 170, 0, 0.5);
+      text-shadow: 0 0 8px rgba(255, 170, 0, 0.6);
     }
 
     .header h2 {
@@ -120,14 +127,14 @@
     .archive-grid {
       display: flex;
       flex-direction: column;
-      gap: 18px; /* Increased gap */
+      gap: 18px; 
       padding-top: 20px;
     }
 
     .doi-link {
       display: flex;
       flex-direction: column;
-      padding: 25px; /* Increased padding */
+      padding: 25px; 
       border-radius: 10px;
       background-color: var(--panel-bg);
       color: var(--text-main);
@@ -165,7 +172,6 @@
       color: var(--text-muted);
     }
     
-    /* === FOOTER LINKS (For completeness) === */
     .footer-links { 
         margin-top: 50px; 
         padding-top: 20px;
@@ -186,7 +192,8 @@
 </head>
 
 <body>
-    <canvas id="field-canvas"></canvas> <div class="container">
+    <canvas id="field-canvas"></canvas> 
+    <div class="container">
         <nav class="main-nav">
             <a class="nav-link" href="index.html">Portal</a> 
             <a class="nav-link" href="field-index.html">Field Index</a>
@@ -243,19 +250,36 @@
             if (!canvas) return; 
             const ctx = canvas.getContext('2d');
             
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            // Set initial canvas size
+            function setCanvasSize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            setCanvasSize();
 
             let particles = [];
             const mouse = { x: null, y: null, radius: 150 };
 
-            window.addEventListener('mousemove', (event) => {
-                mouse.x = event.x;
-                mouse.y = event.y;
-            });
+            // Handle both mouse and touch input
+            function updateMousePosition(event) {
+                let x, y;
+                if (event.touches) {
+                    x = event.touches[0].clientX;
+                    y = event.touches[0].clientY;
+                } else {
+                    x = event.x;
+                    y = event.y;
+                }
+                mouse.x = x;
+                mouse.y = y;
+            }
+
+            window.addEventListener('mousemove', updateMousePosition);
+            window.addEventListener('touchmove', updateMousePosition);
+            window.addEventListener('touchstart', updateMousePosition); // Initialize mouse position on touch start
+            
             window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
+                setCanvasSize();
                 init();
             });
             
@@ -274,15 +298,19 @@
                     if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
                     if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
 
+                    // Interaction logic
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
                     if (distance < mouse.radius + this.size) {
-                        if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;
-                        if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;
-                        if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;
-                        if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;
+                        // Push effect
+                        const pushFactor = 3;
+                        if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += pushFactor;
+                        if (mouse.x > this.x && this.x > this.size * 10) this.x -= pushFactor;
+                        if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += pushFactor;
+                        if (mouse.y > this.y && this.y > this.size * 10) this.y -= pushFactor;
                     }
+
                     this.x += this.dirX;
                     this.y += this.dirY;
                     this.draw();
@@ -291,11 +319,14 @@
 
             function init() {
                 particles = [];
-                let numParticles = (canvas.height * canvas.width) / 9000;
+                // Dynamic particle count based on screen size, ensuring performance on mobile
+                let numParticles = Math.floor((canvas.height * canvas.width) / 12000); 
+                numParticles = Math.min(numParticles, 150); // Cap the number of particles
+
                 for (let i = 0; i < numParticles; i++) {
                     let size = Math.random() * 1.5 + 0.5;
-                    let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
-                    let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                    let x = (Math.random() * (canvas.width - size * 4)) + size * 2;
+                    let y = (Math.random() * (canvas.height - size * 4)) + size * 2;
                     let dirX = (Math.random() * 0.4) - 0.2;
                     let dirY = (Math.random() * 0.4) - 0.2;
                     particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.4)'));
@@ -303,8 +334,12 @@
             }
 
             function animate() {
-                requestAnimationFrame(animate);
-                ctx.clearRect(0, 0, innerWidth, innerHeight);
+                // Use requestAnimationFrame for smooth animation loop
+                requestAnimationFrame(animate); 
+                // Clear with a transparent layer to create a slight trailing effect
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; 
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
                 for (let i = 0; i < particles.length; i++) {
                     particles[i].update();
                 }
