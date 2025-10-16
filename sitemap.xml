@@ -6,17 +6,59 @@
     <loc>https://varzin.org/</loc>
     <lastmod>2025-10-16</lastmod>
     <priority>1.00</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="x-default"
+        href="https://varzin.org/"
+    />
     <xhtml:link 
         rel="alternate"
         hreflang="fa"
         href="https://varzin.org/fa/"
-        />
+    />
     <xhtml:link 
         rel="alternate"
         hreflang="en"
         href="https://varzin.org/en/"
-        />
-    <xhtml:link
+    />
+  </url>
+  
+  <url>
+    <loc>https://varzin.org/fa/</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.90</priority>
+    <xhtml:link 
+        rel="alternate"
+        hreflang="fa"
+        href="https://varzin.org/fa/"
+    />
+    <xhtml:link 
+        rel="alternate"
+        hreflang="en"
+        href="https://varzin.org/en/"
+    />
+    <xhtml:link 
+        rel="alternate"
+        hreflang="x-default"
+        href="https://varzin.org/"
+    />
+  </url>
+
+  <url>
+    <loc>https://varzin.org/en/</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.90</priority>
+    <xhtml:link 
+        rel="alternate"
+        hreflang="en"
+        href="https://varzin.org/en/"
+    />
+    <xhtml:link 
+        rel="alternate"
+        hreflang="fa"
+        href="https://varzin.org/fa/"
+    />
+    <xhtml:link 
         rel="alternate"
         hreflang="x-default"
         href="https://varzin.org/"
@@ -26,17 +68,11 @@
   <url>
     <loc>https://varzin.org/field-index.html</loc>
     <lastmod>2025-10-16</lastmod>
-    <priority>1.00</priority>
-  </url>
+    <priority>0.95</priority>
+    </url>
   
   <url>
     <loc>https://varzin.org/all-dois.html</loc>
-    <lastmod>2025-10-16</lastmod>
-    <priority>0.95</priority>
-  </url>
-  
-  <url>
-    <loc>https://varzin.org/feedback.html</loc>
     <lastmod>2025-10-16</lastmod>
     <priority>0.90</priority>
   </url>
@@ -46,37 +82,11 @@
     <lastmod>2025-10-16</lastmod>
     <priority>0.85</priority>
   </url>
-  
+
   <url>
-    <loc>https://varzin.org/fa/</loc>
+    <loc>https://varzin.org/feedback.html</loc>
     <lastmod>2025-10-16</lastmod>
     <priority>0.80</priority>
-    <xhtml:link 
-        rel="alternate"
-        hreflang="en"
-        href="https://varzin.org/en/"
-        />
-    <xhtml:link 
-        rel="alternate"
-        hreflang="x-default"
-        href="https://varzin.org/"
-        />
-  </url>
-  
-  <url>
-    <loc>https://varzin.org/en/</loc>
-    <lastmod>2025-10-16</lastmod>
-    <priority>0.80</priority>
-    <xhtml:link 
-        rel="alternate"
-        hreflang="fa"
-        href="https://varzin.org/fa/"
-        />
-    <xhtml:link 
-        rel="alternate"
-        hreflang="x-default"
-        href="https://varzin.org/"
-        />
-  </url>
+    </url>
   
 </urlset>
