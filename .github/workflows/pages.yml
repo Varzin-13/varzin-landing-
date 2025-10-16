@@ -1,32 +1,44 @@
 name: Deploy to GitHub Pages
 
+# When a push is made to the main branch, this workflow will run.
 on:
   push:
     branches:
       - main
 
+# Configure permissions for the workflow. These are necessary for deploying to Pages.
 permissions:
   contents: read
   pages: write
-  id-token: write
+  id-token: write # Required for deployment via OpenID Connect
 
 jobs:
   deploy:
+    # Set the environment that the job deploys to
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+      
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
+      # Checkout the repository content
+      - name: Checkout
+        uses: actions/checkout@v4
 
+      # Configure GitHub Pages environment
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      # Upload the entire repository root as the artifact.
+      # If your project had a build step (e.g., 'npm run build' generating a 'dist' folder), 
+      # you would change 'path: .' to 'path: ./dist' or the appropriate output directory.
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
 
+      # Deploy the artifact to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
