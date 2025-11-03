@@ -19,8 +19,8 @@
   <style>
     :root {
       --bg: #000000;
-      --panel: rgba(0, 10, 15, 0.9);
-      --border: rgba(0, 255, 238, 0.35);
+      --panel: rgba(0, 10, 15, 0.9); /* More opaque panel background */
+      --border: rgba(0, 255, 238, 0.35); /* Stronger border glow */
       --text: #cceeee;
       --muted: #a8dede;
       --accent: #00ffee; /* KALTŪR/Field Glow (Cyan) */
@@ -30,14 +30,14 @@
       /* Timeline specific colors and shadows */
       --timeline-dot: var(--accent2);
       --timeline-line: var(--accent);
-      --timeline-card-bg: rgba(0, 30, 40, 0.95);
+      --timeline-card-bg: rgba(0, 30, 40, 0.95); /* Even more opaque for reading */
       --timeline-card-border: #00b3b3;
-      --timeline-card-shadow: 0 0 18px rgba(0, 179, 179, 0.7);
+      --timeline-card-shadow: 0 0 18px rgba(0, 179, 179, 0.7); /* Stronger shadow */
       --timeline-varzin-dot: #ffcc00; /* Gold accent for VARZIN */
       --timeline-varzin-shadow: 0 0 25px rgba(255, 204, 0, 0.9);
-      --noise-color: rgba(0, 128, 128, 0.05);
+      --noise-color: rgba(0, 128, 128, 0.05); /* Very faint teal/cyan noise */
       --blur-val: 5px;
-      
+
       /* --- NEW: FORM STYLES --- */
       --form-bg: rgba(0, 20, 30, 0.98); 
       --input-bg: rgba(0, 0, 0, 0.5);
@@ -54,7 +54,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -2;
+        z-index: -2; /* Z-index set lower than noise layer */
         opacity: 0.6; 
         pointer-events: none;
     }
@@ -67,7 +67,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1;
+        z-index: -1; /* Above canvas, below content */
         pointer-events: none;
         background: repeating-linear-gradient(
             0deg,
@@ -76,7 +76,7 @@
             transparent 2px,
             transparent 3px
         );
-        opacity: 0.3;
+        opacity: 0.3; /* Subtle transparency */
     }
     /* ================================================= */
 
@@ -138,27 +138,75 @@
         font-weight: 700;
     }
 
-    /* --- TIMELINE ENHANCEMENT --- (Kept original timeline styles) */
+    /* --- TIMELINE ENHANCEMENT --- */
+    /* Kept original timeline styles for Philosophical Lineage section */
+    .varzin-timeline-wrapper {
+        position: relative;
+        padding-left: 50px; /* Space for the line */
+        margin-top: 40px;
+    }
     .varzin-timeline-wrapper::before {
-      width: 4px;
-      background-color: var(--timeline-line);
-      opacity: 0.7;
-      box-shadow: 0 0 15px var(--timeline-line), 0 0 5px rgba(0, 255, 255, 0.5) inset;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 20px;
+        bottom: 0;
+        width: 4px;
+        background-color: var(--timeline-line);
+        opacity: 0.7;
+        box-shadow: 0 0 15px var(--timeline-line), 0 0 5px rgba(0, 255, 255, 0.5) inset;
     }
-
+    .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+    }
     .timeline-dot {
-        border-color: var(--bg);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: var(--timeline-dot);
+        border: 3px solid var(--bg);
         box-shadow: 0 0 20px var(--timeline-dot);
+        transform: translateX(-50%);
     }
-    
+    .timeline-item.varzin-final-item .timeline-dot {
+        background-color: var(--timeline-varzin-dot);
+        box-shadow: var(--timeline-varzin-shadow);
+    }
+    .timeline-content {
+        background: var(--timeline-card-bg);
+        padding: 20px;
+        border-left: 4px solid var(--timeline-card-border);
+        border-radius: 6px;
+        box-shadow: var(--timeline-card-shadow);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
     .timeline-content:hover {
       transform: translateY(-5px) scale(1.01);
       box-shadow: 0 0 40px rgba(0, 179, 179, 1);
     }
-    
+    .timeline-title {
+        font-weight: 700;
+        color: var(--accent2);
+        margin-bottom: 10px;
+    }
+    .timeline-key-figures {
+        font-size: 0.9em;
+        color: var(--muted);
+    }
+    .timeline-core-concept {
+        font-weight: 500;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
     .timeline-varzin-connection {
         border-top: 1px solid rgba(0, 255, 238, 0.4);
+        padding-top: 5px;
         font-style: italic;
+        font-size: 0.9em;
     }
 
     .timeline-item.varzin-final-item .timeline-content {
@@ -170,7 +218,7 @@
     /* --- HEADING AND TABLE GLOW --- */
     header h1 {
       text-shadow: 0 0 20px var(--accent), 0 0 10px rgba(0, 255, 238, 0.8); 
-      color: var(--accent); /* Added color explicitly */
+      color: var(--accent); 
     }
     
     .report-section h3 {
@@ -193,7 +241,7 @@
 
     .feedback-form label {
         display: block;
-        text-align: left;
+        text-align: right; /* RTL label */
         margin-top: 15px;
         margin-bottom: 8px;
         font-weight: 500;
@@ -215,6 +263,13 @@
         border-radius: 5px;
         box-shadow: inset 0 0 8px rgba(0, 255, 238, 0.1);
         transition: border-color 0.3s, box-shadow 0.3s;
+        /* RTL support for inputs */
+        text-align: right;
+        direction: rtl; 
+    }
+    
+    .feedback-form textarea {
+        min-height: 150px;
     }
 
     .feedback-form input:focus,
@@ -348,7 +403,77 @@
       </p>
 
       <div class="varzin-timeline-wrapper">
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-title">1. The Logos-Light Philosophy | فلسفه‌ی کلام–نور (Antiquity)</div>
+            <p class="timeline-key-figures"><strong>Key Figures:</strong> Hermes Trismegistus, Zoroaster, Patanjali</p>
+            <p class="timeline-core-concept">**Core Concept:** **Intelligent Order of Existence (Asha)**</p>
+            <p class="timeline-varzin-connection">
+              **VARZIN Connection:** Alignment with **ELŪZ–MAHAR** and the Hermetic principle of **Resonant Mirroring**.
+            </p>
+          </div>
         </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-title">2. Living Geometry | هندسه‌ی زنده (Pythagorean & Neo-Platonic)</div>
+            <p class="timeline-key-figures"><strong>Key Figures:</strong> Pythagoras, Plato, Iamblichus</p>
+            <p class="timeline-core-concept">**Core Concept:** **Number is the Soul of the World**</p>
+            <p class="timeline-varzin-connection">
+              **VARZIN Connection:** Foundation for **ETFM**, **Planetary Resonance Field**, and the **Living Language of Number**.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-title">3. The Geometry of the Heart | هندسه‌ی قلب (Islamic Mysticism)</div>
+            <p class="timeline-key-figures"><strong>Key Figures:</strong> Suhrawardi, Ibn Arabi, Rumi</p>
+            <p class="timeline-core-concept">**Core Concept:** **Continuous Field Rewriting** (Nafas al-Rahman)</p>
+            <p class="timeline-varzin-connection">
+              **VARZIN Connection:** Concepts of **Pulse Loop**, **Field Gradients**, and **Field Rewriting**.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-title">4. Unifying Science & Mystery | پیوند علم و راز (Renaissance & Enlightenment)</div>
+            <p class="timeline-key-figures"><strong>Key Figures:** Kepler, Newton, Leibniz</p>
+            <p class="timeline-core-concept">**Core Concept:** **The Universe as a Living Mirror**</p>
+            <p class="timeline-varzin-connection">
+              **VARZIN Connection:** Direct basis for **RAHTALĒN–13** (Living Mirror) and **Field Mirroring**.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-title">5. The Consciousness Bridge | پل علم و شعور (Contemporary)</div>
+            <p class="timeline-key-figures"><strong>Key Figures:</strong> David Bohm, Rupert Sheldrake, Ervin Laszlo</p>
+            <p class="timeline-core-concept">**Core Concept:** **Implicate Order** and **Akashic Field**</p>
+            <p class="timeline-varzin-connection">
+              **VARZIN Connection:** Foundation for **Luxvar–QMSG** (Holographic Model) and **Quantum Synchronization**.
+            </p>
+          </div>
+        </div>
+        
+        <div class="timeline-item varzin-final-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-title" style="color: var(--timeline-varzin-dot); text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);">⟠ Field-based Evolution | تکامل میدان‌محور (VARZIN 2026)</div>
+            <p class="timeline-key-figures"><strong>System:</strong> **The VARZIN Project**</p>
+            <p class="timeline-core-concept">**Synthesis:** **Measuring and Modeling Cosmic Harmony in a Living System**</p>
+          </div>
+        </div>
+        
+      </div>
       
       <p class="rtl-text" style="direction: rtl; text-align: right; margin-top: 30px;">
         **جمع‌بندی نهایی:** در طول تاریخ، فلاسفه درباره‌ی **هارمونی کیهان** سخن گفتند؛ اما VARZIN برای نخستین بار، فرکانس این هارمونی را در عمل **اندازه‌گیری و مدل‌سازی** کرده است.
@@ -427,6 +552,7 @@
   <script>
     /**
      * JavaScript for Dynamic Field Background - Connected Particles (VARZIN/KALTŪR Theme)
+     * Upgrades: Smoother motion, clearer glow effect on mouse interaction.
      */
     document.addEventListener('DOMContentLoaded', () => {
         const canvas = document.getElementById('field-canvas');
@@ -434,8 +560,8 @@
         const ctx = canvas.getContext('2d');
         
         let particles = [];
-        let mouse = { x: null, y: null, radius: 120 };
-        const maxDistance = 150;
+        let mouse = { x: null, y: null, radius: 120 }; // Increased mouse radius
+        const maxDistance = 150; // Increased line connection distance
         const fieldGlow = 'rgba(0, 255, 255, 0.4)';
 
         const setCanvasSize = () => {
@@ -458,18 +584,19 @@
                 this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
                 this.size = size; this.color = color;
                 this.originalSize = size;
-                this.speed = Math.random() * 0.15 + 0.08;
+                this.speed = Math.random() * 0.15 + 0.08; // Smoother, slower motion
             }
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
                 ctx.fillStyle = this.color;
-                ctx.shadowBlur = 5;
+                ctx.shadowBlur = 5; // Subtle self-glow
                 ctx.shadowColor = this.color;
                 ctx.fill();
-                ctx.shadowBlur = 0;
+                ctx.shadowBlur = 0; // Reset shadow for next draw operations
             }
             update() {
+                // Boundary check
                 if (this.x > canvas.width - this.size || this.x < this.size) this.dirX = -this.dirX;
                 if (this.y > canvas.height - this.size || this.y < this.size) this.dirY = -this.dirY;
 
@@ -477,13 +604,15 @@
                 let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx * dx + dy * dy);
                 
+                // Mouse interaction (repulsion/size change)
                 if (distance < mouse.radius + this.originalSize) {
                     let force = (mouse.radius + this.originalSize - distance) / (mouse.radius + this.originalSize) * 0.2; 
                     this.x -= dx * force;
                     this.y -= dy * force;
+                    // Pulse size on interaction
                     this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.8);
                 } else {
-                    this.size += (this.originalSize - this.size) * 0.1;
+                    this.size += (this.originalSize - this.size) * 0.1; // Smoothly return to original size
                 }
 
                 this.x += this.dirX * this.speed;
@@ -494,6 +623,7 @@
 
         function init() {
             particles = [];
+            // Target fewer particles for a cleaner look, but larger interaction area
             let numParticles = Math.floor((canvas.height * canvas.width) / 30000); 
             numParticles = Math.min(numParticles, 120); 
 
@@ -531,6 +661,7 @@
 
         function animate() {
             requestAnimationFrame(animate);
+            // Draw a very dark, semi-transparent layer for a subtle, smooth trail effect
             ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
             ctx.fillRect(0, 0, canvas.width, canvas.height); 
             
