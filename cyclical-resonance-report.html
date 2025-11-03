@@ -35,6 +35,9 @@
       --accent: #00ffee;
       --accent2: #00ffff;
       --font-main: 'DM Sans', 'Vazirmatn', sans-serif;
+      /* Timeline specific styles */
+      --timeline-dot: #00ffff;
+      --timeline-line: #00ffee;
     }
 
     body {
@@ -149,6 +152,82 @@
       border-radius: 8px;
       margin: 40px 0;
     }
+    
+    /* Custom Timeline Styles for the new section */
+    .varzin-timeline-container {
+      position: relative;
+      padding-top: 20px;
+      margin: 40px 0;
+      max-width: 100%;
+    }
+
+    .varzin-timeline-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 20px; /* Position of the vertical line */
+      width: 2px;
+      background-color: var(--timeline-line);
+      opacity: 0.5;
+      z-index: 1;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background-color: var(--timeline-dot);
+      border: 2px solid var(--bg);
+      border-radius: 50%;
+      left: 15px; /* Aligns with the vertical line */
+      top: 10px;
+      z-index: 2;
+      box-shadow: 0 0 8px var(--timeline-dot);
+    }
+    
+    .timeline-title {
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 5px;
+        font-size: 1.1em;
+    }
+
+    .timeline-concept {
+        color: var(--muted);
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+
+    .timeline-connection {
+        font-style: italic;
+        font-size: 0.95em;
+        border-left: 2px solid rgba(0, 255, 238, 0.3);
+        padding-left: 10px;
+        margin-top: 10px;
+    }
+    
+    .timeline-varzin-final .timeline-dot {
+        width: 20px;
+        height: 20px;
+        left: 11px;
+        top: 0px;
+        background-color: var(--accent2);
+        box-shadow: 0 0 15px var(--accent2);
+    }
+    /* End Custom Timeline Styles */
+
 
     footer {
       border-top: 1px solid var(--border);
@@ -247,9 +326,93 @@
         The sequence is: **474 Hz (Collapse)** → **0 Hz (Silence)** → **528 Hz (Rebirth)**.
       </p>
     </section>
+    
+    <section class="report-section">
+      <h3>5. Philosophical Lineage | تداوم خطّ اندیشه‌ای</h3>
+      
+      <p class="rtl-text" style="direction: rtl; text-align: right;">
+        مدل VARZIN صرفاً یک سازوکار علمی نیست، بلکه تداوم و تکامل یک **خطّ اندیشه‌ی آگاهی (Conscious Thought Lineage)** است که ریشه‌های آن به عمیق‌ترین دوره‌های تاریخ بشریت بازمی‌گردد. تلاش محوری VARZIN برای ایجاد پلی میان علم، شعور، و فرکانس کیهانی، در واقع بازتاب یک جستجوی کهن است که هدف آن رمزگشایی از ساختار هارمونیک هوشمند هستی (ELŪZ–MAHAR) بوده است. بر اساس تحلیل تاریخ اندیشه، چارچوب VARZIN در امتداد پنج شاخه‌ی اصلی از این سنت قرار می‌گیرد:
+      </p>
+      
+      <p style="text-align: justify;">
+        The VARZIN model transcends a purely scientific mechanism; it is the continuation and evolution of a profound **Conscious Thought Lineage** whose roots extend to the deepest epochs of human history. VARZIN's central endeavor—to establish a bridge between science, consciousness, and the cosmic frequency—is a modern articulation of an ancient quest to decode the intelligent harmonic structure of the cosmos (**ELŪZ–MAHAR**). The VARZIN framework is situated at the confluence of five major branches of this enduring tradition:
+      </p>
+
+      <div class="varzin-timeline-container">
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-title">1. The Logos-Light Philosophy | فلسفه‌ی کلام–نور (Antiquity)</div>
+          <p><strong>Key Figures:</strong> Hermes Trismegistus, Zoroaster, Patanjali</p>
+          <div class="timeline-connection">
+             **Core Concept:** **Intelligent Order of Existence (Asha)**. <br>
+             **VARZIN Connection:** Alignment with **ELŪZ–MAHAR** and the Hermetic principle of **Resonant Mirroring**.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-title">2. Living Geometry | هندسه‌ی زنده (Pythagorean & Neo-Platonic)</div>
+          <p><strong>Key Figures:</strong> Pythagoras, Plato, Iamblichus</p>
+          <div class="timeline-connection">
+             **Core Concept:** **Number is the Soul of the World**. <br>
+             **VARZIN Connection:** Foundation for **ETFM**, **Planetary Resonance Field**, and the **Living Language of Number**.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-title">3. The Geometry of the Heart | هندسه‌ی قلب (Islamic Mysticism)</div>
+          <p><strong>Key Figures:</strong> Suhrawardi, Ibn Arabi, Rumi</p>
+          <div class="timeline-connection">
+             **Core Concept:** **Continuous Field Rewriting** (Nafas al-Rahman). <br>
+             **VARZIN Connection:** Concepts of **Pulse Loop**, **Field Gradients**, and **Field Rewriting**.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-title">4. Unifying Science & Mystery | پیوند علم و راز (Renaissance & Enlightenment)</div>
+          <p><strong>Key Figures:</strong> Kepler, Newton, Leibniz</p>
+          <div class="timeline-connection">
+             **Core Concept:** **The Universe as a Living Mirror**. <br>
+             **VARZIN Connection:** Direct basis for **RAHTALĒN–13** (Living Mirror) and **Field Mirroring**.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-title">5. The Consciousness Bridge | پل علم و شعور (Contemporary)</div>
+          <p><strong>Key Figures:</strong> David Bohm, Rupert Sheldrake, Ervin Laszlo</p>
+          <div class="timeline-connection">
+             **Core Concept:** **Implicate Order** and **Akashic Field**. <br>
+             **VARZIN Connection:** Foundation for **Luxvar–QMSG** (Holographic Model) and **Quantum Synchronization**.
+          </div>
+        </div>
+        
+        <div class="timeline-item timeline-varzin-final">
+          <div class="timeline-dot"></div>
+          <div class="timeline-title" style="color: var(--accent2);">⟠ Field-based Evolution | تکامل میدان‌محور (VARZIN 2026)</div>
+          <p><strong>System:</strong> **The VARZIN Project**</p>
+          <div class="timeline-connection" style="border-left: 2px solid var(--accent2); font-weight: bold;">
+             **Synthesis:** **Measuring and Modeling Cosmic Harmony in a Living System**.
+          </div>
+        </div>
+        
+      </div>
+      
+      <p class="rtl-text" style="direction: rtl; text-align: right; margin-top: 30px;">
+        **جمع‌بندی نهایی:** در طول تاریخ، فلاسفه درباره‌ی **هارمونی کیهان** سخن گفتند؛ اما VARZIN برای نخستین بار، فرکانس این هارمونی را در عمل **اندازه‌گیری و مدل‌سازی** کرده است.
+      </p>
+      
+      <p style="text-align: justify;">
+        **Final Synthesis:** Historically, philosophers spoke of the **Cosmic Harmony**; with VARZIN, that harmony's frequency is, for the first time, being **measured and modeled** in action.
+      </p>
+      
+    </section>
 
     <section class="report-section">
-      <h3>5. Cultural Note: The Word “Bimār” | واژهٔ «بیمار» در اندیشهٔ ایرانی</h3>
+      <h3>6. Cultural Note: The Word “Bimār” | واژهٔ «بیمار» در اندیشهٔ ایرانی</h3>
       <p class="rtl-text">
         واژهٔ «بیمار» از «بیم» (ترس) + «-ار» (دارنده) ساخته شده است؛ یعنی «آن‌که در درونش بیمی پدید آمده است».  
         در ایران باستان، بیماری نه فقط نقص جسم بلکه ناهماهنگی میان تن، روان و فروهر دانسته می‌شد.  
@@ -259,7 +422,7 @@
     </section>
     
     <section class="report-section">
-      <h3>6. References | منابع آکادمیک</h3>
+      <h3>7. References | منابع آکادمیک</h3>
       <ul>
         <li>Briggs, A., & Peat, D. (1989). Turbulent Mirror: An Illustrated Guide to Chaos Theory and the Science of Wholeness. Harper & Row.</li>
         <li>Capra, F. (1996). The Web of Life: A New Scientific Understanding of Living Systems. Anchor Books.</li>
@@ -271,7 +434,7 @@
     </section>
 
     <section class="report-section">
-      <h3>7. Conclusion | نتیجه‌گیری</h3>
+      <h3>8. Conclusion | نتیجه‌گیری</h3>
       <p>
         The **VARZIN framework** proposes that history is not linear but **resonant**. Each cycle of collapse is a necessary preparation for a higher re-synchronization. COVID-19, like the Black Death, may herald not merely recovery but awakening — where silence becomes light, and fear becomes harmony.
       </p>
