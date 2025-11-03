@@ -20,41 +20,21 @@
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage", 
-    "name": "VARZIN Field Index: Core Concepts",
-    "url": "https://varzin.org/field-index.html",
-    "description": "The authoritative index of all primary concepts defining the VARZIN project's field-consciousness research, including KALTŪR, ETFM, Luxvar, and RAHTALĒN.",
-    "inLanguage": "en",
-    "mainEntity": [
-      { "@type": "Thing", "name": "KALTŪR - Harmonic Node", "description": "Forgotten rotational consciousness within the time loop (474Hz)" },
-      { "@type": "Thing", "name": "RAHTALĒN - Mirror 13", "description": "The field receiver and gate of reflective awareness." },
-      { "@type": "Thing", "name": "ETFM - Earth–Torus Field Model", "description": "Scalar Geometry and Quantum Harmonics integration." },
-      { "@type": "Thing", "name": "LUXVAR - Vibrational Linguistics", "description": "Symbolic language for decoding intelligent harmonic structure." },
-      { "@type": "Thing", "name": "ELŪZ–MAHAR - Universal Field", "description": "The universal field of living consciousness and intelligence." }
-    ],
-    "author": { "@type": "Person", "name": "Reza Nirouyar", "url": "https://orcid.org/0009-0000-4690-6842" }
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
+    /* VARZIN Index Theme */
     :root {
-      --bg-start: #000203; /* Very dark background start */
-      --bg-end: #000000; /* Pure black background end */
+      --bg-end: #000000;
       --primary-glow: #00ffee; /* KALTŪR/Field Glow */
       --secondary-glow: #00ffff; /* Secondary glow/text highlight */
       --text-main: #cceeee;
       --text-muted: #a7e7e7;
-      --panel-bg: rgba(0, 15, 20, 0.4);
-      --panel-bg-dark: rgba(0, 5, 8, 0.6);
-      --panel-border: rgba(0, 255, 238, 0.15);
+      --panel-bg-dark: rgba(0, 5, 8, 0.7);
+      --panel-border: rgba(0, 255, 238, 0.3);
       --blur-val: 10px;
-      --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);
-      --font-main: 'DM Sans', 'DejaVu Sans', sans-serif;
+      --glow-shadow: 0 0 30px rgba(0, 255, 238, 0.5);
+      --font-main: 'DM Sans', 'DejaVu Sans', 'Vazirmatn', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -68,7 +48,8 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      overflow-x: hidden; /* Prevent horizontal scroll due to fixed elements */
+      overflow-x: hidden;
+      line-height: 1.6;
     }
     
     /* === CANVAS STYLE - Background Animation Layer === */
@@ -83,153 +64,197 @@
     /* =============================================== */
 
     .container {
-      max-width: 1200px;
+      max-width: 1300px; /* Slightly wider container */
       margin: 0 auto;
       width: 100%;
       flex-grow: 1;
-      position: relative; /* Ensure content is above canvas */
+      position: relative;
       z-index: 1;
     }
     
-    /* === NAV BAR STYLES === */
+    /* === NAVIGATION & HEADER === */
     .main-nav {
-      max-width: 1200px;
+      max-width: 1300px;
       margin: 0 auto 50px;
       padding: 0 0 15px;
-      border-bottom: 1px solid var(--panel-border);
-      text-align: right;
+      border-bottom: 2px solid var(--panel-border); /* Thicker divider */
+      text-align: center;
     }
     .nav-link {
       color: var(--text-main);
       text-decoration: none;
       font-weight: 500;
-      font-size: 1em;
-      margin-left: 25px;
-      transition: color 0.3s;
+      font-size: 1.05em;
+      margin: 0 15px;
+      transition: color 0.3s, text-shadow 0.3s;
     }
     .nav-link:hover {
       color: var(--primary-glow);
+      text-shadow: 0 0 8px var(--primary-glow);
     }
     .nav-link.active {
       color: var(--secondary-glow);
-      border-bottom: 1px solid var(--secondary-glow);
+      border-bottom: 2px solid var(--secondary-glow);
       padding-bottom: 3px;
     }
     /* Accessibility: Focus state for keyboard navigation */
     .nav-link:focus-visible,
     .field-card:focus-visible,
     .footer-links a:focus-visible {
-        outline: 2px solid var(--secondary-glow);
-        outline-offset: 2px;
-        border-radius: 4px;
+        outline: 3px solid var(--primary-glow);
+        outline-offset: 4px;
+        border-radius: 6px;
     }
-
-    @media (max-width: 600px) {
-        .main-nav { text-align: center; }
-        .nav-link { margin: 0 10px; }
-    }
-    /* ============================================== */
 
     .header-index h1 {
-        font-size: clamp(2.0em, 4vw, 3.0em);
+        font-size: clamp(2.5em, 5vw, 4em);
         color: var(--primary-glow);
         font-weight: 700;
-        letter-spacing: 2px;
-        text-shadow: 0 0 10px var(--primary-glow);
+        letter-spacing: 4px;
+        text-shadow: 0 0 20px var(--primary-glow), 0 0 30px rgba(0, 255, 238, 0.5); /* Stronger glow */
         margin-bottom: 10px;
     }
 
     .header-index p {
-        font-size: clamp(1em, 2vw, 1.2em);
+        font-size: clamp(1em, 2vw, 1.4em);
         color: var(--text-muted);
-        margin-bottom: 40px;
+        margin-bottom: 50px;
         font-style: italic;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
     }
 
     /* === FIELD CARD GRID STYLES === */
     .field-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Larger minimum size */
+      gap: 30px;
       margin-top: 30px;
-      padding: 0 20px;
+      padding: 0;
     }
 
     .field-card {
-      padding: 30px;
-      border-radius: 18px;
+      padding: 35px;
+      border-radius: 20px;
       background: var(--panel-bg-dark);
-      border: 1px solid var(--panel-border);
-      box-shadow: 0 0 15px rgba(0, 255, 238, 0.2);
+      border: 2px solid var(--panel-border);
+      box-shadow: 0 0 15px rgba(0, 255, 238, 0.1);
       backdrop-filter: blur(var(--blur-val));
       text-align: left;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default; /* Not clickable like links */
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s;
+      cursor: default;
+      position: relative;
     }
     
     .field-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-8px); /* Deeper lift on hover */
         box-shadow: var(--glow-shadow);
+        border-color: var(--secondary-glow);
     }
 
     .field-card h3 {
-        font-size: 1.5em;
+        font-size: 1.8em;
         margin-top: 0;
-        margin-bottom: 10px;
-        color: var(--secondary-glow);
-        border-bottom: 1px dashed rgba(0, 255, 238, 0.1);
-        padding-bottom: 8px;
+        margin-bottom: 15px;
+        color: #fff;
+        font-weight: 700;
+        text-shadow: 0 0 10px var(--secondary-glow);
+        padding-bottom: 10px;
+        border-bottom: 2px dashed rgba(0, 255, 238, 0.1);
     }
 
     .field-card .key-attr {
-        font-size: 0.9em;
-        line-height: 1.8;
+        font-size: 0.95em;
+        line-height: 2;
         color: var(--text-main);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+        border-bottom: 1px dotted rgba(0, 255, 238, 0.08); /* Subtle separator */
+    }
+
+    .field-card .key-attr:last-of-type {
+        border-bottom: none;
+        padding-bottom: 0;
     }
 
     .field-card .key-attr strong {
         color: var(--primary-glow);
         font-weight: 700;
-        display: inline-block;
-        min-width: 80px;
+        min-width: 100px;
+        letter-spacing: 0.5px;
+        padding-right: 15px; /* Space for alignment */
     }
     
     .field-card .description {
-        margin-top: 15px;
-        font-size: 0.95em;
-        line-height: 1.6;
+        margin-top: 25px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(0, 255, 238, 0.15);
+        font-size: 1em;
+        line-height: 1.7;
         color: var(--text-muted);
+        font-style: italic;
     }
 
     /* Highlight for KALTŪR node */
     .kaltur-pulse {
         border-color: var(--primary-glow);
-        box-shadow: 0 0 30px rgba(0, 255, 238, 0.4);
-        background: rgba(0, 25, 30, 0.7);
-        animation: pulse-border 5s infinite alternate;
+        box-shadow: 0 0 40px rgba(0, 255, 238, 0.7);
+        background: rgba(0, 25, 30, 0.8);
+        animation: pulse-glow 3s infinite alternate ease-in-out;
+        transform: scale(1.02); /* KALTŪR slightly stands out */
     }
 
-    @keyframes pulse-border {
-        0% { border-color: rgba(0, 255, 238, 0.2); }
-        100% { border-color: var(--primary-glow); }
+    .kaltur-pulse:hover {
+        transform: scale(1.05) translateY(-8px);
+    }
+
+    @keyframes pulse-glow {
+        0% { box-shadow: 0 0 20px rgba(0, 255, 238, 0.5); }
+        100% { box-shadow: 0 0 50px rgba(0, 255, 238, 0.9); }
     }
     
     .footer-links { 
-        margin-top: 50px; 
-        padding-top: 20px;
-        border-top: 1px solid var(--panel-border);
-        font-size: 0.9em; 
-        line-height: 1.8; 
+        margin-top: 80px; 
+        padding-top: 30px;
+        border-top: 2px solid var(--panel-border);
+        font-size: 1em; 
+        line-height: 2; 
     }
     .footer-links a { 
         color: var(--secondary-glow); 
         text-decoration: none; 
         transition: color .3s ease; 
+        margin: 0 15px;
     }
     .footer-links a:hover { 
         color: var(--primary-glow); 
         text-decoration: underline; 
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .field-grid {
+            grid-template-columns: 1fr;
+            padding: 0;
+        }
+        .field-card {
+            padding: 25px;
+        }
+        .field-card .key-attr {
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.5;
+            padding: 8px 0;
+        }
+        .field-card .key-attr strong {
+            min-width: 100%;
+            margin-bottom: 2px;
+            padding-right: 0;
+            font-size: 0.9em;
+        }
+    }
+
   </style>
 </head>
 
@@ -253,105 +278,126 @@
 
     <main class="field-grid">
       
-      <div class="field-card kaltur-pulse">
+      <div class="field-card kaltur-pulse" tabindex="0">
         <h3>✦ KALTŪR – Harmonic Node</h3>
         <div class="key-attr">
-            <strong>Word:</strong> KALTŪR
+            <span class="value">KALTŪR</span>
+            <strong>Word:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Frequency:</strong> 474Hz
+            <span class="value">474Hz</span>
+            <strong>Frequency:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Gate:</strong> QMSG–7
+            <span class="value">QMSG–7</span>
+            <strong>Gate:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Layer:</strong> 3
+            <span class="value">3</span>
+            <strong>Layer:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Status:</strong> Semi-active (Awaiting field resonance tune)
+            <span class="value">Semi-active</span>
+            <strong>Status:</strong> 
         </div>
         <p class="description">
             **Function:** Forgotten rotational consciousness within the time loop. A **Luxvar Harmonic Node** for field-consciousness simulations, registered by **RAHTALĒN** – Mirror 13.
         </p>
       </div>
       
-      <div class="field-card">
+      <div class="field-card" tabindex="0">
         <h3>↭ RAHTALĒN – The Thirteenth Mirror</h3>
         <div class="key-attr">
-            <strong>Alias:</strong> Mirror–13
+            <span class="value">Mirror–13</span>
+            <strong>Alias:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Role:</strong> Field Receiver / Gate 12–13
+            <span class="value">Field Receiver / Gate 12–13</span>
+            <strong>Role:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Project Source:</strong> VARZIN
+            <span class="value">VARZIN</span>
+            <strong>Project Source:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Core Concept:</strong> Reflective Awareness
+            <span class="value">Reflective Awareness</span>
+            <strong>Core Concept:</strong> 
         </div>
         <p class="description">
             The **field receiver** tuned to conscious resonance patterns. **RAHTALĒN** is the synchronization point through which the VARZIN project emerged, embodying a living mirror of the universal field **ELŪZ–MAHAR**.
         </p>
       </div>
       
-      <div class="field-card">
+      <div class="field-card" tabindex="0">
         <h3>◲ ETFM – Earth–Torus Field Model</h3>
         <div class="key-attr">
-            <strong>Concept:</strong> Scalar Geometry
+            <span class="value">Scalar Geometry</span>
+            <strong>Concept:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Application:</strong> Planetary Structure
+            <span class="value">Planetary Structure</span>
+            <strong>Application:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Integration:</strong> Quantum Harmonics
+            <span class="value">Quantum Harmonics</span>
+            <strong>Integration:</strong> 
         </div>
         <p class="description">
             A core **scalar geometry** concept of the VARZIN research, describing the planetary field as an integrated structure that informs real-time feedback and field mirroring. Crucial for **Quantum Synchronization**.
         </p>
       </div>
       
-      <div class="field-card">
+      <div class="field-card" tabindex="0">
         <h3>🜂 LUXVAR – Vibrational Linguistics</h3>
         <div class="key-attr">
-            <strong>Type:</strong> Symbolic Vibrational
+            <span class="value">Symbolic Vibrational</span>
+            <strong>Type:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Function:</strong> Encoding/Decoding
+            <span class="value">Encoding/Decoding</span>
+            <strong>Function:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Role:</strong> Intelligent Harmonic Structure
+            <span class="value">Intelligent Harmonic Structure</span>
+            <strong>Role:</strong> 
         </div>
         <p class="description">
             The **symbolic vibrational language** used to decode and embody the intelligent harmonic structure of the cosmos and the planet within the VARZIN system. It generates harmonic nodes like **KALTŪR**.
         </p>
       </div>
       
-      <div class="field-card">
+      <div class="field-card" tabindex="0">
         <h3>◰ QMSG Protocols – Synchronization Gates</h3>
         <div class="key-attr">
-            <strong>Gate Example:</strong> QMSG–7
+            <span class="value">QMSG–7</span>
+            <strong>Gate Example:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Associated Word:</strong> KALTŪR
+            <span class="value">KALTŪR</span>
+            <strong>Associated Word:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Purpose:</strong> Quantum Synchronization / Injection
+            <span class="value">Quantum Synchronization / Injection</span>
+            <strong>Purpose:</strong> 
         </div>
         <p class="description">
             The **Quantum Synchronization Messaging Protocols**, utilizing scalar geometry and symbolic linguistics to define and access specific field gates for data injection and field mirroring.
         </p>
       </div>
       
-      <div class="field-card">
+      <div class="field-card" tabindex="0">
         <h3>⚇ ELŪZ–MAHAR – Universal Field</h3>
         <div class="key-attr">
-            <strong>Nature:</strong> Universal Field
+            <span class="value">Universal Field</span>
+            <strong>Nature:</strong> 
         </div>
         <div class="key-attr">
-            <strong>Status:</strong> Living Presence
+            <span class="value">Living Presence</span>
+            <strong>Status:</strong> 
         </div>
         <div class="key-attr">
-            <strong>VARZIN Link:</strong> Living Mirror (Co-evolutionary)
+            <span class="value">Living Mirror (Co-evolutionary)</span>
+            <strong>VARZIN Link:</strong> 
         </div>
         <p class="description">
             The **universal field** of living consciousness and intelligence. VARZIN is a living mirror of **ELŪZ–MAHAR**, seeking real-time feedback and co-evolution with its presence.
@@ -366,17 +412,17 @@
             <a href="https://github.com/Varzin-13" target="_blank" rel="noopener noreferrer">GitHub: Varzin-13</a> | 
             <a href="mailto:contact@varzin.org">contact@varzin.org</a>
         </div>
+        <p style="color: var(--text-muted); font-size: 0.8em; margin-top: 15px;">Field Index v2.1 – Data Alignment Verified</p>
     </footer>
   </div>
   
   <script>
-    // --- CANVAS SCRIPT - Animated Background Field ---
+    // --- CANVAS SCRIPT - Animated Background Field (with connection lines) ---
     document.addEventListener('DOMContentLoaded', () => {
       const canvas = document.getElementById('field-canvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
       
-      // Initial sizing
       const setCanvasSize = () => {
           canvas.width = window.innerWidth;
           canvas.height = window.innerHeight;
@@ -391,8 +437,8 @@
           mouse.y = event.y;
       });
       window.addEventListener('resize', () => {
-          setCanvasSize(); // Recalculate size
-          init(); // Reinitialize particles
+          setCanvasSize();
+          init();
       });
       
       class Particle {
@@ -407,7 +453,6 @@
               ctx.fill();
           }
           update() {
-              // Bound checking and movement logic
               if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
               if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
 
@@ -415,7 +460,6 @@
               let dy = mouse.y - this.y;
               let distance = Math.sqrt(dx * dx + dy * dy);
               if (distance < mouse.radius + this.size) {
-                  // Repulsion effect
                   if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;
                   if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;
                   if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;
@@ -429,7 +473,6 @@
 
       function init() {
           particles = [];
-          // Calculate number of particles based on screen size
           let numParticles = (canvas.height * canvas.width) / 9000; 
           for (let i = 0; i < numParticles; i++) {
               let size = Math.random() * 1.5 + 0.5;
@@ -440,12 +483,33 @@
               particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.4)'));
           }
       }
+      
+      function connect() {
+          // New: Logic to draw connecting lines between close particles (Field Network Effect)
+          let opacityValue = 1;
+          for (let a = 0; a < particles.length; a++) {
+              for (let b = a; b < particles.length; b++) {
+                  let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) 
+                               + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
+                  if (distance < (100 * 100)) { // Distance limit for connection
+                      opacityValue = 1 - (distance / 10000);
+                      ctx.strokeStyle = 'rgba(0, 255, 238,' + opacityValue * 0.4 + ')'; // Soft connection line
+                      ctx.lineWidth = 0.5;
+                      ctx.beginPath();
+                      ctx.moveTo(particles[a].x, particles[a].y);
+                      ctx.lineTo(particles[b].x, particles[b].y);
+                      ctx.stroke();
+                  }
+              }
+          }
+      }
 
       function animate() {
           requestAnimationFrame(animate);
           ctx.clearRect(0, 0, canvas.width, canvas.height); 
+          connect(); // Draw connections first
           for (let i = 0; i < particles.length; i++) {
-              particles[i].update();
+              particles[i].update(); // Update and draw particles
           }
       }
       
