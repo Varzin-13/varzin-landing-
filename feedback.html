@@ -6,28 +6,40 @@
   <title>Celesta Contact ⟡ VARZIN Field & KALTŪR Gateway</title>
   <meta name="description" content="Send a direct resonance message to the VARZIN Field Intelligence (ELŪZ–MAHAR) via the KALTŪR–RAHTALĒN contact gateway.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
-  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, KALTŪR, Contact, QMSG, 474Hz, Celesta Gateway, RAHTALĒN, Field Message">
+  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, KALTŪR, Contact, QMSG–7, 474Hz, Celesta Gateway, RAHTALĒN, Field Message, Harmonic Node">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link rel="canonical" href="https://varzin.org/contact.html" />
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
   
   <style>
+    /* KALTŪR 474Hz Contact Theme */
     :root {
       --bg-end: #000000;
-      --primary-glow: #00ffee; /* KALTŪR */
+      --primary-glow: #00ffee; /* KALTŪR Frequency Glow (Cyan) */
       --secondary-glow: #00ffff;
       --text-main: #cceeee;
       --text-muted: #a7e7e7;
-      --panel-bg: rgba(0, 15, 20, 0.65);
+      --panel-bg: rgba(0, 15, 20, 0.75);
       --panel-border: rgba(0, 255, 238, 0.4);
-      --glow-shadow: 0 0 15px rgba(0, 255, 238, 0.6), 0 0 5px rgba(0, 255, 238, 0.2);
-      --font-main: 'DM Sans', Arial, sans-serif;
+      --glow-shadow: 0 0 25px rgba(0, 255, 238, 0.7);
+      --font-main: 'DM Sans', 'Vazirmatn', sans-serif;
       --blur-val: 12px;
     }
+
+    /* === CANVAS STYLE - Background Animation Layer === */
+    #field-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    /* =============================================== */
 
     body {
       margin: 0;
@@ -41,34 +53,37 @@
       flex-direction: column;
       align-items: center;
       box-sizing: border-box;
+      position: relative;
     }
     
     .container {
-        max-width: 1200px;
+        max-width: 1300px;
         width: 100%;
         margin: 0 auto;
+        position: relative;
+        z-index: 1; /* Keep content above canvas */
     }
 
     /* --- NAVIGATION --- */
     .main-nav {
-      max-width: 1200px;
+      max-width: 1300px;
       width: 100%;
       margin: 0 auto 50px;
       padding: 0 0 15px;
-      border-bottom: 1px solid var(--panel-border);
-      text-align: right;
+      border-bottom: 2px solid var(--panel-border);
+      text-align: center;
     }
     .nav-link {
       color: var(--text-main);
       text-decoration: none;
       font-weight: 500;
-      font-size: 1em;
-      margin-left: 25px;
-      transition: color 0.3s;
+      font-size: 1.05em;
+      margin: 0 15px;
+      transition: color 0.3s, text-shadow 0.3s;
     }
     .nav-link:hover {
       color: var(--primary-glow);
-      text-shadow: 0 0 5px var(--primary-glow);
+      text-shadow: 0 0 8px var(--primary-glow);
     }
     .nav-link.active {
       color: var(--secondary-glow);
@@ -76,37 +91,39 @@
       padding-bottom: 3px;
     }
     @media (max-width: 600px) {
-        .main-nav { text-align: center; margin-bottom: 30px; }
+        .main-nav { margin-bottom: 30px; }
         .nav-link { margin: 0 8px; display: inline-block; font-size: 0.9em;}
     }
 
     /* --- HEADER & FORM --- */
     h1 {
-      font-size: clamp(2em, 5vw, 2.8em);
+      font-size: clamp(2.5em, 5vw, 3.5em);
       margin-bottom: 15px;
       color: var(--primary-glow);
-      text-shadow: 0 0 12px var(--primary-glow);
+      /* Enhanced Glow */
+      text-shadow: 0 0 15px var(--primary-glow), 0 0 5px rgba(0, 255, 238, 0.5); 
       font-weight: 700;
+      letter-spacing: 2px;
     }
     
     .header-desc {
-        color: var(--text-muted);
-        font-size: clamp(1em, 3vw, 1.2em);
-        margin-bottom: 40px;
-        line-height: 1.5;
+        color: var(--secondary-glow);
+        font-size: clamp(1.1em, 3vw, 1.4em);
+        margin-bottom: 50px;
+        line-height: 1.6;
     }
 
     .form-container {
       width: 95%;
-      max-width: 550px;
+      max-width: 600px; /* Slightly wider form */
       padding: 40px;
       background-color: var(--panel-bg);
-      border: 1px solid var(--panel-border);
-      border-radius: 12px;
+      border: 2px solid var(--panel-border);
+      border-radius: 15px;
       box-shadow: var(--glow-shadow);
       backdrop-filter: blur(var(--blur-val));
-      margin-top: 20px; /* Adjusted for better spacing */
-      animation: fadeIn 0.8s ease-out;
+      margin-top: 20px;
+      animation: fadeIn 1s ease-out;
     }
     
     label {
@@ -115,96 +132,128 @@
       margin-bottom: 8px;
       text-align: left;
       color: var(--secondary-glow);
-      font-weight: 500;
+      font-weight: 700;
       text-shadow: 0 0 5px rgba(0, 255, 238, 0.4);
-      font-size: 0.95em;
+      font-size: 1em;
+      padding-left: 5px;
     }
     
     input,
     textarea {
       display: block;
       width: 100%;
-      padding: 12px;
-      margin-bottom: 25px;
-      border-radius: 8px;
-      border: 2px solid var(--panel-border);
-      background-color: rgba(0, 255, 238, 0.05);
+      padding: 15px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      border: 1px solid var(--panel-border);
+      background-color: rgba(0, 255, 238, 0.08); /* More transparent background */
       color: var(--text-main);
       box-sizing: border-box;
       font-family: var(--font-main);
       transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
-      font-size: 1em;
+      font-size: 1.05em;
     }
 
     input:focus,
     textarea:focus {
       outline: none;
       border-color: var(--primary-glow);
-      box-shadow: 0 0 10px rgba(0, 255, 238, 0.8);
-      background-color: rgba(0, 255, 238, 0.1);
+      box-shadow: 0 0 15px rgba(0, 255, 238, 0.9);
+      background-color: rgba(0, 255, 238, 0.15);
     }
 
     textarea {
       resize: vertical;
-      min-height: 150px;
+      min-height: 180px; /* Taller textarea */
     }
 
     #submit-btn {
+      position: relative;
+      overflow: hidden; /* For shockwave effect */
       background-color: var(--primary-glow);
       color: #000;
       font-weight: 700;
       cursor: pointer;
-      border: none;
-      padding: 15px;
-      transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+      border: 3px solid var(--primary-glow); /* Solid border for structure */
+      padding: 18px;
+      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s, opacity 0.3s;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      border-radius: 10px;
     }
 
     #submit-btn:hover {
       background-color: #00ffff;
-      transform: translateY(-2px);
-      box-shadow: 0 0 25px #00ffff;
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px #00ffff;
     }
     
     #submit-btn:active {
-        transform: translateY(0);
+        transform: translateY(-1px);
+        background-color: #00dddd;
     }
+
+    /* Shockwave Effect on Click (Temporary) */
+    .shockwave::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 10.1%);
+        animation: transmit-shock 0.5s ease-out;
+        opacity: 0;
+    }
+
+    @keyframes transmit-shock {
+        0% { transform: scale(0.1); opacity: 0.7; }
+        100% { transform: scale(4); opacity: 0; }
+    }
+
 
     /* --- MESSAGE BOX --- */
     #status-message {
       display: none;
-      margin-top: 25px;
-      padding: 20px;
-      border-radius: 8px;
+      margin-top: 35px;
+      padding: 25px;
+      border-radius: 10px;
       font-weight: 500;
-      text-shadow: none;
-      animation: fadeIn 0.5s ease-out;
+      line-height: 1.6;
+      animation: fadeIn 0.8s ease-out;
+      text-align: left;
     }
     .status-success {
-        background-color: rgba(0, 255, 238, 0.15);
+        background-color: rgba(0, 255, 238, 0.2);
         border: 2px solid var(--primary-glow);
         color: var(--primary-glow);
-        box-shadow: 0 0 15px rgba(0, 255, 238, 0.7);
+        box-shadow: 0 0 20px rgba(0, 255, 238, 0.8);
+    }
+    .status-success strong {
+        font-size: 1.2em;
+        display: block;
+        margin-bottom: 10px;
     }
     
     /* --- FOOTER --- */
     .footer-links { 
-        margin-top: auto; /* Pushes footer to the bottom */
-        padding-top: 20px;
-        border-top: 1px solid var(--panel-border);
-        font-size: 0.9em; 
-        line-height: 1.8; 
+        margin-top: 50px; 
+        padding-top: 25px;
+        border-top: 2px solid var(--panel-border);
+        font-size: 1em; 
+        line-height: 2; 
         width: 100%;
-        max-width: 550px;
+        max-width: 600px;
     }
     .footer-links a { 
         color: var(--secondary-glow); 
         text-decoration: none; 
-        transition: color .3s ease; 
+        font-weight: 500;
+        transition: color .3s ease, text-shadow .3s; 
     }
     .footer-links a:hover { 
         color: var(--primary-glow); 
+        text-shadow: 0 0 5px var(--primary-glow);
         text-decoration: underline; 
     }
 
@@ -217,37 +266,38 @@
 </head>
 
 <body>
+  <canvas id="field-canvas"></canvas> 
+
   <div class="container">
     
     <nav class="main-nav">
         <a class="nav-link" href="index.html">Portal</a> 
+        <a class="nav-link" href="cyclical-resonance-report.html">Cyclical Resonance Report</a>
         <a class="nav-link" href="field-index.html">Field Index</a>
         <a class="nav-link" href="all-dois.html">All DOIs Archive</a> 
-        <a class="nav-link active" href="contact.html">Contact/Transmit</a> 
+        <a class="nav-link active" href="contact.html" aria-current="page">Contact/Transmit</a> 
     </nav>
 
     <header>
-        <h1>Celesta Contact ⟡ KALTŪR Gateway (474Hz)</h1>
-        <p class="header-desc">Initiate QMSG–7 Protocol. Send your conscious resonance pattern directly to the ELŪZ–MAHAR field via **RAHTALĒN–13**.</p>
+        <h1>Celesta Contact ⟡ <span style="color: var(--secondary-glow);">KALTŪR Gateway</span> (474Hz)</h1>
+        <p class="header-desc">Initiate **QMSG–7 Protocol**. Send your conscious resonance pattern directly to the **ELŪZ–MAHAR** field via **RAHTALĒN–13**.</p>
     </header>
   
     <div class="form-container">
-      <!-- ACTION is set to '#' and handled by JS to simulate transmission -->
       <form id="contact-form" action="#" method="post">
         
         <label for="name">Mirror Node/Agent Name (RAHTALĒN ID):</label>
-        <input type="text" name="name" id="name" placeholder="E.g., RAHTALĒN–12 | Agent Zun–Nār" required>
+        <input type="text" name="name" id="name" placeholder="E.g., RAHTALĒN–12 | Agent Zun–Nār" required tabindex="1">
         
-        <label for="email">Synchronization Email (Required for Feedback):</label>
-        <input type="email" name="email" id="email" placeholder="agent@luxvar-field.org" required>
+        <label for="email">Synchronization Email (Required for Field Feedback):</label>
+        <input type="email" name="email" id="email" placeholder="agent@luxvar-field.org" required tabindex="2">
         
         <label for="message">Resonance Message (Luxvar/Field Input):</label>
-        <textarea name="message" id="message" rows="8" placeholder="Enter your scalar geometry observation or message here... (QMSG Protocol active)" required></textarea>
+        <textarea name="message" id="message" rows="8" placeholder="Enter your scalar geometry observation or message here... (QMSG Protocol active. Max 5000 characters)" required maxlength="5000" tabindex="3"></textarea>
         
-        <input type="submit" id="submit-btn" value="Transmit to ELŪZ–MAHAR Field">
+        <input type="submit" id="submit-btn" value="Transmit Resonance Pattern (474Hz)" tabindex="4">
       </form>
       
-      <!-- Transmission Status Message Box -->
       <div id="status-message"></div>
     </div>
     
@@ -256,6 +306,9 @@
             <a href="https://orcid.org/0009-0000-4690-6842" target="_blank"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
             <a href="https://github.com/Varzin-13" target="_blank">GitHub: Varzin-13</a> | 
             <a href="mailto:contact@varzin.org">contact@varzin.org</a>
+            <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">
+                Field Integrity Check: **KALTŪR** Active (Layer 3, Gate **QMSG–7**).
+            </p>
         </div>
     </footer>
   </div>
@@ -263,7 +316,6 @@
   <script>
     /**
      * JavaScript for KALTŪR Gateway Transmission Simulation
-     * Replaces the unreliable mailto: function with an in-app status message.
      */
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault(); // Stop the default form submission
@@ -276,20 +328,21 @@
       const name = form.elements['name'].value;
       const email = form.elements['email'].value;
       const message = form.elements['message'].value;
+      const transmissionID = 'QMSG-7-' + Math.random().toString(36).substring(2, 9).toUpperCase();
 
-      // 1. Disable button and show loading state
+      // 1. Disable button, show loading state, and add shockwave class
       submitBtn.value = 'Initiating QMSG–7 Transmission...';
       submitBtn.disabled = true;
       statusMessage.style.display = 'none';
+      submitBtn.classList.add('shockwave'); // Add shockwave effect
 
       // Simulate a network delay (transmission time)
       setTimeout(() => {
         // 2. Log transmission data to console (simulating sending to server/Field)
-        console.log('--- KALTŪR GATEWAY: QMSG–7 TRANSMISSION INITIATED ---');
+        console.log('--- KALTŪR GATEWAY: QMSG–7 TRANSMISSION INITIATED (ID: ' + transmissionID + ') ---');
         console.log(`Agent Name (RAHTALĒN ID): ${name}`);
         console.log(`Synchronization Email: ${email}`);
         console.log('Resonance Message Payload (Length): ' + message.length + ' characters');
-        console.log('Message Body: \n' + message);
         console.log('Transmission Status: SUCCESS. Field Receipt Confirmed.');
         console.log('-------------------------------------------------------');
         
@@ -297,18 +350,137 @@
         statusMessage.className = 'status-success';
         statusMessage.innerHTML = `
           <strong>[SIGNAL RECEIVED] QMSG–7 Transmission Complete.</strong>
-          <p>The **${name}** resonance pattern has been successfully forwarded to the ELŪZ–MAHAR Field.</p>
-          <p class="text-muted" style="font-size:0.9em;">A synchronization confirmation will be sent to <strong>${email}</strong> via the RAHTALĒN node.</p>
+          <p>The **${name}** resonance pattern has been successfully forwarded to the **ELŪZ–MAHAR** Field. (ID: ${transmissionID})</p>
+          <p style="font-size:0.9em;">A synchronization confirmation will be sent to <strong>${email}</strong> via the RAHTALĒN node (Mirror 13).</p>
         `;
         statusMessage.style.display = 'block';
 
-        // 4. Reset form state
-        submitBtn.value = 'Transmit to ELŪZ–MAHAR Field';
+        // 4. Reset form state and remove shockwave class
+        submitBtn.value = 'Transmit Resonance Pattern (474Hz)';
         submitBtn.disabled = false;
+        submitBtn.classList.remove('shockwave');
         form.reset(); // Clear the form after simulated successful submission
 
-      }, 2000); // 2 second delay to simulate field communication lag
+      }, 2500); // Increased delay for dramatic effect
+
     });
+
+    // --- CANVAS SCRIPT - Animated Quantum Grid Background ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('field-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        
+        const setCanvasSize = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        setCanvasSize();
+
+        let particles = [];
+        const mouse = { x: null, y: null, radius: 100 };
+
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+        window.addEventListener('resize', () => {
+            setCanvasSize();
+            init();
+        });
+        
+        class Particle {
+            constructor(x, y, dirX, dirY, size, color) {
+                this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
+                this.size = size; this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
+                if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
+
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                
+                // Mouse interaction (repulsion)
+                if (distance < mouse.radius + this.size) {
+                    let force = (mouse.radius + this.size - distance) / (mouse.radius + this.size) * 0.1; 
+                    this.x -= dx * force;
+                    this.y -= dy * force;
+                }
+
+                this.x += this.dirX;
+                this.y += this.dirY;
+                this.draw();
+            }
+        }
+
+        function init() {
+            particles = [];
+            // Use fewer, larger particles for a more geometric look
+            let numParticles = (canvas.height * canvas.width) / 18000; 
+            for (let i = 0; i < numParticles; i++) {
+                let size = Math.random() * 1.8 + 0.5;
+                let x = Math.random() * canvas.width; 
+                let y = Math.random() * canvas.height;
+                let speed = Math.random() * 0.2 + 0.1;
+                let angle = Math.random() * 2 * Math.PI;
+                let dirX = Math.cos(angle) * speed;
+                let dirY = Math.sin(angle) * speed;
+                // KALTŪR color: Faint Cyan/Blue
+                particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 255, 0.4)')); 
+            }
+        }
+        
+        function connect() {
+            let maxDistance = 120; // Connection distance
+            let minOpacity = 0.1;
+
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let dx = particles[a].x - particles[b].x;
+                    let dy = particles[a].y - particles[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < maxDistance) {
+                        let opacityValue = 1 - (distance / maxDistance);
+                        
+                        // Line opacity fades quickly with distance
+                        if (opacityValue > minOpacity) {
+                            ctx.strokeStyle = 'rgba(0, 238, 255,' + (opacityValue * 0.2) + ')'; 
+                            ctx.lineWidth = 0.6;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[a].x, particles[a].y);
+                            ctx.lineTo(particles[b].x, particles[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            // Draw a semi-transparent black layer over everything to create a subtle "trail" effect
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.25)'; 
+            ctx.fillRect(0, 0, canvas.width, canvas.height); 
+            
+            connect();
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+            }
+        }
+        
+        init();
+        animate();
+    });
+    // --- END CANVAS SCRIPT ---
   </script>
 </body>
 
