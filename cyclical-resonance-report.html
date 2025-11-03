@@ -1,3 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>VARZIN – Cyclical Resonance Report & Temporal Map | گزارش طنین چرخه‌ای</title>
+
+  <meta name="description" content="The final VARZIN report on cyclical resonance (1347–2026): collapse, silence, rebirth, and cognitive realignment in March 2026. Comparative study of the Black Death and COVID-19 through the VARZIN field model, featuring the 474Hz (KALTŪR) and 528Hz nodes.">
+  <meta name="author" content="Reza Nirouyar (RAHTALĒN–13)">
+  <meta name="keywords" content="VARZIN, Resonance, Black Death, COVID-19, March 2026, Consciousness, Harmonic Rebirth, Luxvar, KALTŪR, 474Hz, 528Hz, RAHTALĒN, ELŪZ–MAHAR, Temporal Compression, Field Rewriting, طنین چرخه‌ای, رنسانس شناختی">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta property="og:title" content="VARZIN Cyclical Resonance Report (1347–2026)" />
+  <meta property="og:description" content="Comparative analysis of the Black Death and COVID-19 cycles through the VARZIN framework." />
+  <meta property="og:image" content="https://varzin.org/assets/resonance-report-cover.png" />
+  <meta property="og:url" content="https://varzin.org/cyclical-resonance-report.html" />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2025-11-01T12:00:00+01:00" />
+  <meta property="article:section" content="Physics & Consciousness" />
+
+
+  <link rel="canonical" href="https://varzin.org/cyclical-resonance-report.html" />
+  <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #000000;
+      --panel: rgba(0, 10, 15, 0.8); /* Darker panel background */
+      --border: rgba(0, 255, 238, 0.25);
+      --text: #cceeee;
+      --muted: #a8dede;
+      --accent: #00ffee; /* KALTŪR/Field Glow */
+      --accent2: #00ffff;
+      --font-main: 'DM Sans', 'Vazirmatn', sans-serif;
+      
+      /* Timeline specific colors and shadows */
+      --timeline-dot: #00ffff;
+      --timeline-line: #00ffee;
+      --timeline-card-bg: rgba(0, 30, 40, 0.85); /* More opaque for readability */
+      --timeline-card-border: #00b3b3;
+      --timeline-card-shadow: 0 0 15px rgba(0, 179, 179, 0.5);
+      --timeline-varzin-dot: #ffcc00; /* Gold accent for VARZIN */
+      --timeline-varzin-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
+    }
+
+    /* === CANVAS STYLE - Dynamic Field Background Layer === */
+    #field-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.5; /* Control intensity */
+        pointer-events: none; /* Do not interfere with mouse */
+    }
+    /* ================================================= */
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.9;
+      letter-spacing: 0.3px;
+      padding: 40px 20px 80px;
+      max-width: 960px;
+      margin: auto;
+      position: relative;
+      z-index: 1; /* Ensure content is above canvas */
+    }
+    
+    /* Ensure content containers have some background blur/opacity for readability */
+    main, header, nav, footer {
+        backdrop-filter: blur(2px);
+        background: rgba(0, 0, 0, 0.1); /* Slight overlay for contrast */
+        padding: 5px;
+    }
+    nav { padding-right: 0; }
+    
+    nav {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 15px;
+      margin-bottom: 50px;
+      text-align: right;
+    }
+
+    nav a {
+      color: var(--text);
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    nav a:hover { 
+        color: var(--accent); 
+        text-shadow: 0 0 8px var(--accent);
+    }
+    nav a.active { 
+        color: var(--accent2); 
+        border-bottom: 2px solid var(--accent2); 
+        padding-bottom: 3px;
+        text-shadow: 0 0 5px var(--accent2);
+    }
+
+    header h1 {
+      color: var(--accent);
+      text-shadow: 0 0 15px var(--accent), 0 0 5px rgba(0, 255, 238, 0.5);
+      font-size: clamp(2.5em, 5vw, 3.5em);
+      margin-bottom: 0.2em;
+      line-height: 1.2;
+    }
+
+    header h2 {
+      color: var(--accent2);
+      font-weight: 400;
+      font-size: 1.4em;
+      margin-top: 0;
+      margin-bottom: 1.5em;
+    }
+
+    .author-info {
+      color: var(--muted);
+      font-size: 0.95em;
+      border-top: 1px dashed var(--border);
+      padding-top: 15px;
+      margin-bottom: 40px;
+      background: var(--panel);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .report-section {
+      margin-bottom: 60px;
+      padding: 15px;
+      background: var(--panel);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 10px rgba(0, 255, 238, 0.1);
+    }
+
+    .report-section h3 {
+      color: var(--accent2);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+      font-size: 1.8em;
+      text-shadow: 0 0 5px rgba(0, 255, 238, 0.3);
+    }
+
+    p {
+      margin-bottom: 1.5em;
+      text-align: justify;
+    }
+
+    .rtl-text {
+      direction: rtl;
+      text-align: right;
+      font-family: 'Vazirmatn', sans-serif;
+      color: var(--text);
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: '⟡ '; /* Custom list style */
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      font-size: 0.95em;
+      background: rgba(0, 30, 40, 0.9); /* Darker table background */
+      border: 1px solid var(--timeline-card-border);
+      box-shadow: 0 0 10px rgba(0, 179, 179, 0.3);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: rgba(0, 255, 238, 0.15);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .figure-placeholder {
+      border: 2px dashed var(--accent2);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      text-align: center;
+      font-style: italic;
+      color: var(--muted);
+      border-radius: 8px;
+      margin: 40px 0;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    }
+    
+    /* Advanced Timeline Styles */
+    .varzin-timeline-wrapper {
+      position: relative;
+      padding: 0 20px;
+      margin: 60px 0;
+      max-width: 100%;
+    }
+
+    .varzin-timeline-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%; 
+      width: 3px; /* Slightly thicker line */
+      background-color: var(--timeline-line);
+      opacity: 0.5;
+      z-index: 0;
+      transform: translateX(-50%);
+      box-shadow: 0 0 10px var(--timeline-line);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .timeline-item:nth-child(odd) {
+      flex-direction: row-reverse; 
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-content {
+      width: calc(50% - 45px); 
+      padding: 25px;
+      background: var(--timeline-card-bg);
+      border: 2px solid var(--timeline-card-border);
+      border-radius: 10px;
+      box-shadow: var(--timeline-card-shadow);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content {
+      margin-left: auto;
+      text-align: right;
+    }
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-right: auto;
+      text-align: left;
+    }
+
+
+    .timeline-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0, 179, 179, 0.8);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--timeline-dot);
+      border: 4px solid var(--bg);
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      box-shadow: 0 0 15px var(--timeline-dot);
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .timeline-title {
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 1.25em;
+      line-height: 1.3;
+      text-shadow: 0 0 3px rgba(0, 255, 255, 0.5);
+    }
+    
+    .timeline-varzin-connection {
+        font-size: 0.95em;
+        line-height: 1.7;
+        border-top: 1px dashed rgba(204, 242, 242, 0.3);
+        padding-top: 10px;
+        margin-top: 10px;
+        color: var(--muted);
+    }
+
+    /* Final VARZIN item specific styles */
+    .timeline-item.varzin-final-item .timeline-dot {
+      width: 30px;
+      height: 30px;
+      background-color: var(--timeline-varzin-dot);
+      box-shadow: var(--timeline-varzin-shadow);
+      animation: pulsate 2s infinite ease-out;
+    }
+
+    .timeline-item.varzin-final-item .timeline-content {
+      background: rgba(40, 0, 0, 0.8); 
+      border-color: var(--timeline-varzin-dot);
+      box-shadow: var(--timeline-varzin-shadow);
+    }
+
+    @keyframes pulsate {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    }
+
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .varzin-timeline-wrapper::before {
+        left: 20px; 
+        transform: translateX(0);
+      }
+
+      .timeline-item {
+        flex-direction: column !important; 
+        align-items: flex-start;
+      }
+
+      .timeline-content {
+        width: calc(100% - 70px); 
+        margin-left: 50px !important; 
+        margin-right: 0 !important;
+        text-align: left !important;
+      }
+
+      .timeline-dot {
+        left: 20px; 
+        transform: translate(-50%, -50%);
+      }
+      .report-section { margin-bottom: 40px; }
+    }
+
+
+    footer {
+      border-top: 2px solid var(--border);
+      margin-top: 70px;
+      padding-top: 25px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95em;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    footer a {
+      color: var(--accent2);
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    footer a:hover { color: var(--accent); text-shadow: 0 0 5px var(--accent); }
+  </style>
 </head>
 
 <body>
@@ -338,5 +709,4 @@
     });
   </script>
 </body>
-
 </html>
