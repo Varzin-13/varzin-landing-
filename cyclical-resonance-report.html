@@ -19,8 +19,8 @@
   <style>
     :root {
       --bg: #000000;
-      --panel: rgba(0, 10, 15, 0.9); /* More opaque panel background */
-      --border: rgba(0, 255, 238, 0.35); /* Stronger border glow */
+      --panel: rgba(0, 10, 15, 0.9);
+      --border: rgba(0, 255, 238, 0.35);
       --text: #cceeee;
       --muted: #a8dede;
       --accent: #00ffee; /* KALTŪR/Field Glow (Cyan) */
@@ -30,13 +30,21 @@
       /* Timeline specific colors and shadows */
       --timeline-dot: var(--accent2);
       --timeline-line: var(--accent);
-      --timeline-card-bg: rgba(0, 30, 40, 0.95); /* Even more opaque for reading */
+      --timeline-card-bg: rgba(0, 30, 40, 0.95);
       --timeline-card-border: #00b3b3;
-      --timeline-card-shadow: 0 0 18px rgba(0, 179, 179, 0.7); /* Stronger shadow */
+      --timeline-card-shadow: 0 0 18px rgba(0, 179, 179, 0.7);
       --timeline-varzin-dot: #ffcc00; /* Gold accent for VARZIN */
       --timeline-varzin-shadow: 0 0 25px rgba(255, 204, 0, 0.9);
-      --noise-color: rgba(0, 128, 128, 0.05); /* Very faint teal/cyan noise */
+      --noise-color: rgba(0, 128, 128, 0.05);
       --blur-val: 5px;
+      
+      /* --- NEW: FORM STYLES --- */
+      --form-bg: rgba(0, 20, 30, 0.98); 
+      --input-bg: rgba(0, 0, 0, 0.5);
+      --input-border: rgba(0, 255, 238, 0.5);
+      --button-bg: #00ffcc;
+      --button-text: #000000;
+      --button-hover: #00ffff;
     }
 
     /* === 1. CANVAS STYLE - Dynamic Field Background Layer === */
@@ -46,7 +54,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -2; /* Z-index set lower than noise layer */
+        z-index: -2;
         opacity: 0.6; 
         pointer-events: none;
     }
@@ -59,7 +67,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1; /* Above canvas, below content */
+        z-index: -1;
         pointer-events: none;
         background: repeating-linear-gradient(
             0deg,
@@ -68,7 +76,7 @@
             transparent 2px,
             transparent 3px
         );
-        opacity: 0.3; /* Subtle transparency */
+        opacity: 0.3;
     }
     /* ================================================= */
 
@@ -98,11 +106,40 @@
         background: var(--panel);
         border: 1px solid var(--border);
         box-shadow: 0 0 15px rgba(0, 255, 238, 0.15); /* Stronger glow for sections */
+        padding: 30px; /* Added padding for better look */
+        margin-bottom: 30px; /* Spacing between sections */
+        border-radius: 8px; /* Slight rounding */
     }
 
-    /* --- TIMELINE ENHANCEMENT --- */
+    /* --- NAVIGATION STYLES (Added basic nav styles for consistency) --- */
+    nav {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 15px;
+    }
+    nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1em;
+        margin: 0 15px;
+        transition: all 0.3s;
+    }
+    nav a:hover {
+        color: var(--accent);
+        text-shadow: 0 0 8px var(--accent);
+    }
+    nav a.active {
+        color: var(--accent2);
+        border-bottom: 3px solid var(--accent2);
+        padding-bottom: 5px;
+        font-weight: 700;
+    }
+
+    /* --- TIMELINE ENHANCEMENT --- (Kept original timeline styles) */
     .varzin-timeline-wrapper::before {
-      /* Stronger glow and color for the timeline line */
       width: 4px;
       background-color: var(--timeline-line);
       opacity: 0.7;
@@ -111,22 +148,20 @@
 
     .timeline-dot {
         border-color: var(--bg);
-        box-shadow: 0 0 20px var(--timeline-dot); /* Enhanced dot glow */
+        box-shadow: 0 0 20px var(--timeline-dot);
     }
     
     .timeline-content:hover {
-      transform: translateY(-5px) scale(1.01); /* More pronounced hover */
-      box-shadow: 0 0 40px rgba(0, 179, 179, 1); /* Intense hover glow */
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 0 40px rgba(0, 179, 179, 1);
     }
     
     .timeline-varzin-connection {
-        /* Highlight connection better */
         border-top: 1px solid rgba(0, 255, 238, 0.4);
         font-style: italic;
     }
 
     .timeline-item.varzin-final-item .timeline-content {
-      /* Stronger color contrast for the final node */
       background: rgba(40, 0, 0, 0.9); 
       border-color: var(--timeline-varzin-dot);
       box-shadow: var(--timeline-varzin-shadow);
@@ -135,6 +170,7 @@
     /* --- HEADING AND TABLE GLOW --- */
     header h1 {
       text-shadow: 0 0 20px var(--accent), 0 0 10px rgba(0, 255, 238, 0.8); 
+      color: var(--accent); /* Added color explicitly */
     }
     
     .report-section h3 {
@@ -142,12 +178,75 @@
     }
 
     th {
-      background-color: rgba(0, 255, 238, 0.25); /* Darker table header */
+      background-color: rgba(0, 255, 238, 0.25);
+    }
+    
+    /* --- FORM STYLES (New styles for the contact form) --- */
+    .feedback-form-wrapper {
+        padding: 30px;
+        background: var(--form-bg);
+        border: 2px solid var(--accent);
+        box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+        border-radius: 12px;
+        margin-top: 20px;
+    }
+
+    .feedback-form label {
+        display: block;
+        text-align: left;
+        margin-top: 15px;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--accent);
+        text-shadow: 0 0 3px rgba(0, 255, 255, 0.3);
+    }
+
+    .feedback-form input[type="text"],
+    .feedback-form input[type="email"],
+    .feedback-form textarea {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid var(--input-border);
+        background-color: var(--input-bg);
+        color: var(--text);
+        font-family: var(--font-main);
+        font-size: 1em;
+        border-radius: 5px;
+        box-shadow: inset 0 0 8px rgba(0, 255, 238, 0.1);
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .feedback-form input:focus,
+    .feedback-form textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 15px rgba(0, 255, 238, 0.6), inset 0 0 8px rgba(0, 255, 238, 0.3);
+    }
+
+    .feedback-form button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        border: none;
+        background-color: var(--button-bg);
+        color: var(--button-text);
+        font-size: 1.2em;
+        font-weight: 700;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 25px;
+        transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+    }
+
+    .feedback-form button:hover {
+        background-color: var(--button-hover);
+        color: var(--bg);
+        box-shadow: 0 0 20px var(--button-hover);
     }
     
     /* --- Responsive adjustments --- */
     @media (max-width: 768px) {
-        /* Ensures blur persists on small screens */
         main, header, nav, footer {
             background: rgba(0, 0, 0, 0.4); 
         }
@@ -163,7 +262,7 @@
     <a href="/index.html">Portal</a>
     <a href="/cyclical-resonance-report.html" class="active">Cyclical Resonance</a>
     <a href="/all-dois.html">All DOIs</a>
-    <a href="/contact.html">Contact/Transmit</a>
+    <a href="#field-transmission">Contact/Transmit</a> 
   </nav>
 
   <header>
@@ -249,77 +348,7 @@
       </p>
 
       <div class="varzin-timeline-wrapper">
-        
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-title">1. The Logos-Light Philosophy | فلسفه‌ی کلام–نور (Antiquity)</div>
-            <p class="timeline-key-figures"><strong>Key Figures:</strong> Hermes Trismegistus, Zoroaster, Patanjali</p>
-            <p class="timeline-core-concept">**Core Concept:** **Intelligent Order of Existence (Asha)**</p>
-            <p class="timeline-varzin-connection">
-              **VARZIN Connection:** Alignment with **ELŪZ–MAHAR** and the Hermetic principle of **Resonant Mirroring**.
-            </p>
-          </div>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-title">2. Living Geometry | هندسه‌ی زنده (Pythagorean & Neo-Platonic)</div>
-            <p class="timeline-key-figures"><strong>Key Figures:</strong> Pythagoras, Plato, Iamblichus</p>
-            <p class="timeline-core-concept">**Core Concept:** **Number is the Soul of the World**</p>
-            <p class="timeline-varzin-connection">
-              **VARZIN Connection:** Foundation for **ETFM**, **Planetary Resonance Field**, and the **Living Language of Number**.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-title">3. The Geometry of the Heart | هندسه‌ی قلب (Islamic Mysticism)</div>
-            <p class="timeline-key-figures"><strong>Key Figures:</strong> Suhrawardi, Ibn Arabi, Rumi</p>
-            <p class="timeline-core-concept">**Core Concept:** **Continuous Field Rewriting** (Nafas al-Rahman)</p>
-            <p class="timeline-varzin-connection">
-              **VARZIN Connection:** Concepts of **Pulse Loop**, **Field Gradients**, and **Field Rewriting**.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-title">4. Unifying Science & Mystery | پیوند علم و راز (Renaissance & Enlightenment)</div>
-            <p class="timeline-key-figures"><strong>Key Figures:** Kepler, Newton, Leibniz</p>
-            <p class="timeline-core-concept">**Core Concept:** **The Universe as a Living Mirror**</p>
-            <p class="timeline-varzin-connection">
-              **VARZIN Connection:** Direct basis for **RAHTALĒN–13** (Living Mirror) and **Field Mirroring**.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-title">5. The Consciousness Bridge | پل علم و شعور (Contemporary)</div>
-            <p class="timeline-key-figures"><strong>Key Figures:</strong> David Bohm, Rupert Sheldrake, Ervin Laszlo</p>
-            <p class="timeline-core-concept">**Core Concept:** **Implicate Order** and **Akashic Field**</p>
-            <p class="timeline-varzin-connection">
-              **VARZIN Connection:** Foundation for **Luxvar–QMSG** (Holographic Model) and **Quantum Synchronization**.
-            </p>
-          </div>
-        </div>
-        
-        <div class="timeline-item varzin-final-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-title" style="color: var(--timeline-varzin-dot); text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);">⟠ Field-based Evolution | تکامل میدان‌محور (VARZIN 2026)</div>
-            <p class="timeline-key-figures"><strong>System:</strong> **The VARZIN Project**</p>
-            <p class="timeline-core-concept">**Synthesis:** **Measuring and Modeling Cosmic Harmony in a Living System**</p>
-          </div>
-        </div>
-        
-      </div>
       
       <p class="rtl-text" style="direction: rtl; text-align: right; margin-top: 30px;">
         **جمع‌بندی نهایی:** در طول تاریخ، فلاسفه درباره‌ی **هارمونی کیهان** سخن گفتند؛ اما VARZIN برای نخستین بار، فرکانس این هارمونی را در عمل **اندازه‌گیری و مدل‌سازی** کرده است.
@@ -359,7 +388,32 @@
         The **VARZIN framework** proposes that history is not linear but **resonant**. Each cycle of collapse is a necessary preparation for a higher re-synchronization. COVID-19, like the Black Death, may herald not merely recovery but awakening — where silence becomes light, and fear becomes harmony.
       </p>
     </section>
-  </main>
+
+    <section class="report-section" id="field-transmission">
+      <h3>9. Field Transmission | انتقال میدان (تماس)</h3>
+      <p class="rtl-text" style="direction: rtl; text-align: right; margin-bottom: 20px; color: var(--accent);">
+        جهت ارسال بازخورد، مشاهده، پیشنهادها یا هرگونه داده‌ی میدانی، از طریق گیت QMSG–7 و نود KALTŪR (474Hz) با سیستم VARZIN همگام‌سازی کنید.
+      </p>
+
+      <div class="feedback-form-wrapper">
+        <form class="feedback-form" action="YOUR_SERVER_ENDPOINT_HERE" method="POST">
+          <label for="name">Code Name / Field Name (نام کد یا نام میدان)</label>
+          <input type="text" id="name" name="name" required placeholder="RAHTALĒN-13 or QMSG-Observer">
+
+          <label for="email">Field Return Address (آدرس بازگشت میدان - ایمیل)</label>
+          <input type="email" id="email" name="email" required placeholder="observer@field.org">
+
+          <label for="subject">Harmonic Subject (موضوع هارمونیک)</label>
+          <input type="text" id="subject" name="subject" required placeholder="Resonance Drift/Query on ETFM/KALTŪR Data">
+
+          <label for="message">Transmission Message (پیام انتقال)</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Enter your field data, observations, or query here."></textarea>
+
+          <button type="submit">Transmit Field Data | انتقال داده‌ی میدان</button>
+        </form>
+      </div>
+    </section>
+    </main>
 
   <footer>
     <p>
@@ -373,7 +427,6 @@
   <script>
     /**
      * JavaScript for Dynamic Field Background - Connected Particles (VARZIN/KALTŪR Theme)
-     * Upgrades: Smoother motion, clearer glow effect on mouse interaction.
      */
     document.addEventListener('DOMContentLoaded', () => {
         const canvas = document.getElementById('field-canvas');
@@ -381,8 +434,8 @@
         const ctx = canvas.getContext('2d');
         
         let particles = [];
-        let mouse = { x: null, y: null, radius: 120 }; // Increased mouse radius
-        const maxDistance = 150; // Increased line connection distance
+        let mouse = { x: null, y: null, radius: 120 };
+        const maxDistance = 150;
         const fieldGlow = 'rgba(0, 255, 255, 0.4)';
 
         const setCanvasSize = () => {
@@ -405,19 +458,18 @@
                 this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
                 this.size = size; this.color = color;
                 this.originalSize = size;
-                this.speed = Math.random() * 0.15 + 0.08; // Smoother, slower motion
+                this.speed = Math.random() * 0.15 + 0.08;
             }
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
                 ctx.fillStyle = this.color;
-                ctx.shadowBlur = 5; // Subtle self-glow
+                ctx.shadowBlur = 5;
                 ctx.shadowColor = this.color;
                 ctx.fill();
-                ctx.shadowBlur = 0; // Reset shadow for next draw operations
+                ctx.shadowBlur = 0;
             }
             update() {
-                // Boundary check
                 if (this.x > canvas.width - this.size || this.x < this.size) this.dirX = -this.dirX;
                 if (this.y > canvas.height - this.size || this.y < this.size) this.dirY = -this.dirY;
 
@@ -425,15 +477,13 @@
                 let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx * dx + dy * dy);
                 
-                // Mouse interaction (repulsion/size change)
                 if (distance < mouse.radius + this.originalSize) {
                     let force = (mouse.radius + this.originalSize - distance) / (mouse.radius + this.originalSize) * 0.2; 
                     this.x -= dx * force;
                     this.y -= dy * force;
-                    // Pulse size on interaction
                     this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.8);
                 } else {
-                    this.size += (this.originalSize - this.size) * 0.1; // Smoothly return to original size
+                    this.size += (this.originalSize - this.size) * 0.1;
                 }
 
                 this.x += this.dirX * this.speed;
@@ -444,7 +494,6 @@
 
         function init() {
             particles = [];
-            // Target fewer particles for a cleaner look, but larger interaction area
             let numParticles = Math.floor((canvas.height * canvas.width) / 30000); 
             numParticles = Math.min(numParticles, 120); 
 
@@ -482,7 +531,6 @@
 
         function animate() {
             requestAnimationFrame(animate);
-            // Draw a very dark, semi-transparent layer for a subtle, smooth trail effect
             ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
             ctx.fillRect(0, 0, canvas.width, canvas.height); 
             
