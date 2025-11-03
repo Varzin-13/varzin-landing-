@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <title>VARZIN – Academic Thesis Synthesis (4 Core Papers)</title>
   
-  <!-- Updated Metadata for KALTŪR Phase -->
   <meta name="description" content="The four core academic papers forming the synthesis thesis, published through Greek University channels, focusing on Luxvar, ETFM, Conscious Field Resonance, and the KALTŪR Harmonic Node.">
   <meta name="author" content="Reza Nirouyar | RAHTALĒN–13" />
   <meta name="keywords" content="VARZIN, Greek University, Academic Thesis, ETFM, Luxvar, Conscious Field, Core Papers, DOI, KALTŪR, RAHTALĒN, 474Hz, ELŪZ–MAHAR">
@@ -15,21 +14,43 @@
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+  
   <style>
+    /* 1. ارتقاء استایل‌های پایه و اضافه کردن نویز */
     :root {
       --bg-end: #000000;
-      --primary-glow: #00ffee; /* KALTŪR Glow */
+      --primary-glow: #00ffee; /* KALTŪR Glow (Cyan) */
       --secondary-glow: #00ffff;
       --text-main: #cceeee;
       --text-muted: #a7e7e7;
-      --panel-bg: rgba(0, 15, 20, 0.4);
-      --panel-border: rgba(0, 255, 238, 0.15);
-      --blur-val: 10px;
+      --panel-bg: rgba(0, 15, 20, 0.7); /* کمی کدرتر برای خوانایی بهتر متن */
+      --panel-border: rgba(0, 255, 238, 0.2);
+      --blur-val: 5px; /* کاهش بلور */
       --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);
-      --font-main: 'DM Sans', 'DejaVu Sans', sans-serif;
-      --academic-color: #ffaa00; /* Warm Academic Glow */
+      --font-main: 'DM Sans', 'Vazirmatn', sans-serif;
+      --academic-color: #ffaa00; /* Warm Academic Glow (طلایی) */
+      --noise-color: rgba(255, 170, 0, 0.05); /* نویز گرم با کمی رنگ طلایی */
+    }
+
+    /* === اضافه شدن افکت SCANLINE NOISE === */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0; 
+        pointer-events: none;
+        background: repeating-linear-gradient(
+            0deg,
+            var(--noise-color),
+            var(--noise-color) 1px,
+            transparent 2px,
+            transparent 3px
+        );
+        opacity: 0.4; 
     }
 
     body {
@@ -44,6 +65,7 @@
       flex-direction: column;
       align-items: center;
       overflow-x: hidden;
+      position: relative;
     }
     
     #field-canvas {
@@ -53,6 +75,7 @@
         width: 100%;
         height: 100%;
         z-index: -1;
+        opacity: 0.6; /* پس زمینه ذرات کمی پررنگ‌تر */
     }
 
     .container {
@@ -61,133 +84,102 @@
       width: 100%;
       flex-grow: 1;
       position: relative; 
-      z-index: 1;
+      z-index: 2; /* بالاتر از نویز و پس‌زمینه */
+    }
+    
+    /* اعمال بلور به نوار و آیتم‌ها */
+    .main-nav, .doi-link, footer {
+        backdrop-filter: blur(var(--blur-val));
     }
 
     /* === NAV BAR STYLES === */
     .main-nav {
-      max-width: 900px;
-      margin: 0 auto 50px;
-      padding: 0 0 15px;
-      border-bottom: 1px solid var(--panel-border);
-      text-align: right;
+      /* پس‌زمینه برای خوانایی بهتر در نوار پیمایش */
+      background-color: rgba(0, 0, 0, 0.3); 
+      border-bottom: 2px solid var(--panel-border);
+      padding: 10px 0 15px; 
     }
     .nav-link {
-      color: var(--text-main);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1em;
-      margin-left: 25px;
-      transition: color 0.3s;
+        transition: color 0.3s, text-shadow 0.3s;
     }
     .nav-link:hover {
       color: var(--primary-glow);
+      text-shadow: 0 0 5px var(--primary-glow);
     }
     .nav-link.active {
-      color: var(--secondary-glow);
-      border-bottom: 1px solid var(--secondary-glow);
-      padding-bottom: 3px;
-    }
-    @media (max-width: 600px) {
-        .main-nav { 
-            text-align: center; 
-            margin-bottom: 30px;
-        }
-        .nav-link { 
-            margin: 0 8px; 
-            font-size: 0.9em;
-        }
+      color: var(--academic-color); /* رنگ فعال آکادمیک */
+      border-bottom: 2px solid var(--academic-color);
+      text-shadow: 0 0 5px var(--academic-color);
     }
     /* ================================================= */
 
     .header h1 {
-      font-size: clamp(2.2em, 5vw, 3.0em);
-      margin-bottom: 10px;
+      /* تقویت درخشش سرتیتر */
+      font-size: clamp(2.5em, 5vw, 3.5em);
+      margin-bottom: 15px;
       color: var(--academic-color);
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-shadow: 0 0 8px rgba(255, 170, 0, 0.6);
+      text-shadow: 0 0 15px rgba(255, 170, 0, 0.8), 0 0 5px rgba(255, 170, 0, 0.5);
+      letter-spacing: 3px;
     }
 
     .header h2 {
-      font-size: clamp(0.9em, 2.0vw, 1.1em);
+      font-size: clamp(1.0em, 2.5vw, 1.3em);
       color: var(--text-main);
-      margin-bottom: 50px;
-      font-weight: 400;
-      line-height: 1.6;
+      margin-bottom: 40px;
     }
     
     .intro-text {
-        color: var(--academic-color); 
-        margin-bottom: 30px; 
-        font-size: 1.1em;
-        font-style: italic;
+        color: var(--secondary-glow); /* رنگ مقدمه به سایان تغییر یافت */
+        margin-bottom: 40px; 
+        font-size: 1.2em;
+        font-weight: 500;
+        border: 1px dashed var(--panel-border);
+        padding: 15px;
+        border-radius: 5px;
     }
 
     .archive-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 18px; 
-      padding-top: 20px;
+      gap: 20px; 
     }
 
     .doi-link {
-      display: flex;
-      flex-direction: column;
-      padding: 25px; 
-      border-radius: 10px;
-      background-color: var(--panel-bg);
-      color: var(--text-main);
-      font-weight: 500;
-      text-decoration: none;
-      font-size: 1em;
-      transition: all .3s ease;
-      border: 1px solid var(--panel-border);
-      backdrop-filter: blur(var(--blur-val));
-      text-align: left;
+      padding: 30px; 
+      transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* انیمیشن نرم‌تر */
+      border: 2px solid var(--panel-border); /* مرز قوی‌تر */
+      border-left: 5px solid var(--academic-color); /* تاکید آکادمیک */
     }
 
     .doi-link:hover {
-      background-color: rgba(255, 170, 0, 0.15);
-      transform: translateY(-4px);
-      box-shadow: 0 0 20px rgba(255, 170, 0, 0.7);
+      background-color: rgba(255, 170, 0, 0.25);
+      transform: scale(1.01) translateY(-5px); /* افکت شناور قوی‌تر */
+      box-shadow: 0 0 25px rgba(255, 170, 0, 0.9);
       color: var(--academic-color);
       border-color: var(--academic-color);
     }
 
     .doi-title {
       font-weight: 700;
-      line-height: 1.4;
+      font-size: 1.15em;
       color: var(--secondary-glow);
     }
 
     .doi-link:hover .doi-title {
-        color: var(--academic-color);
+        color: var(--bg-end); /* تغییر رنگ عنوان به مشکی در هاور برای تضاد بیشتر */
+        text-shadow: 0 0 3px var(--academic-color);
     }
 
     .doi-id {
-      font-size: 0.8em;
-      opacity: 0.8;
-      margin-top: 5px;
+      font-size: 0.9em;
+      opacity: 0.9;
+      margin-top: 8px;
       color: var(--text-muted);
     }
     
     .footer-links { 
-        margin-top: 50px; 
-        padding-top: 20px;
-        border-top: 1px solid var(--panel-border);
-        font-size: 0.9em; 
-        line-height: 1.8; 
+        padding: 25px 0;
+        background-color: rgba(0, 0, 0, 0.3);
     }
-    .footer-links a { 
-        color: var(--secondary-glow); 
-        text-decoration: none; 
-        transition: color .3s ease; 
-    }
-    .footer-links a:hover { 
-        color: var(--primary-glow); 
-        text-decoration: underline; 
-    }
+
   </style>
 </head>
 
@@ -198,9 +190,8 @@
             <a class="nav-link" href="index.html">Portal</a> 
             <a class="nav-link" href="field-index.html">Field Index</a>
             <a class="nav-link" href="all-dois.html">All DOIs Archive</a> 
-            <a class="nav-link active" href="greek-papers-index.html">Greek Papers</a>
-            <a class="nav-link" href="contact.html">Contact/Transmit</a> 
-        </nav>
+            <a class="nav-link active" href="greek-papers-index.html" aria-current="page">Greek Papers</a>
+            <a class="nav-link" href="feedback.html">Contact/Transmit</a> </nav>
 
         <header class="header">
             <h1>🏛️ Academic Thesis Synthesis</h1>
@@ -245,12 +236,14 @@
     </div>
     
     <script>
+        /**
+         * 2. ارتقاء اسکریپت پس زمینه - اتصال ذرات برای ساختار شبکه‌ای
+         */
         document.addEventListener('DOMContentLoaded', () => {
             const canvas = document.getElementById('field-canvas');
             if (!canvas) return; 
             const ctx = canvas.getContext('2d');
             
-            // Set initial canvas size
             function setCanvasSize() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
@@ -259,8 +252,10 @@
 
             let particles = [];
             const mouse = { x: null, y: null, radius: 150 };
-
-            // Handle both mouse and touch input
+            const maxDistance = 140; // فاصله اتصال بیشتر
+            const particleColor = 'rgba(0, 255, 238, 0.5)'; // رنگ KALTŪR
+            const linkColor = 'rgba(255, 170, 0, 0.8)'; // رنگ آکادمیک (طلایی) برای لینک‌ها
+            
             function updateMousePosition(event) {
                 let x, y;
                 if (event.touches) {
@@ -276,7 +271,7 @@
 
             window.addEventListener('mousemove', updateMousePosition);
             window.addEventListener('touchmove', updateMousePosition);
-            window.addEventListener('touchstart', updateMousePosition); // Initialize mouse position on touch start
+            window.addEventListener('touchstart', updateMousePosition); 
             
             window.addEventListener('resize', () => {
                 setCanvasSize();
@@ -287,6 +282,7 @@
                 constructor(x, y, dirX, dirY, size, color) {
                     this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
                     this.size = size; this.color = color;
+                    this.speed = Math.random() * 0.2 + 0.1; // سرعت آهسته‌تر و ارگانیک‌تر
                 }
                 draw() {
                     ctx.beginPath();
@@ -295,51 +291,72 @@
                     ctx.fill();
                 }
                 update() {
-                    if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
-                    if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
+                    if (this.x > canvas.width - this.size || this.x < this.size) this.dirX = -this.dirX;
+                    if (this.y > canvas.height - this.size || this.y < this.size) this.dirY = -this.dirY;
 
-                    // Interaction logic
+                    // Interaction logic (Repulsion)
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < mouse.radius + this.size) {
-                        // Push effect
-                        const pushFactor = 3;
-                        if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += pushFactor;
-                        if (mouse.x > this.x && this.x > this.size * 10) this.x -= pushFactor;
-                        if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += pushFactor;
-                        if (mouse.y > this.y && this.y > this.size * 10) this.y -= pushFactor;
+                    
+                    if (distance < mouse.radius) {
+                        let force = (mouse.radius - distance) / mouse.radius; 
+                        this.x -= dx * force * 0.05;
+                        this.y -= dy * force * 0.05;
                     }
 
-                    this.x += this.dirX;
-                    this.y += this.dirY;
+                    this.x += this.dirX * this.speed;
+                    this.y += this.dirY * this.speed;
                     this.draw();
                 }
             }
 
             function init() {
                 particles = [];
-                // Dynamic particle count based on screen size, ensuring performance on mobile
-                let numParticles = Math.floor((canvas.height * canvas.width) / 12000); 
-                numParticles = Math.min(numParticles, 150); // Cap the number of particles
+                // تعداد ذرات متوسط 
+                let numParticles = Math.floor((canvas.height * canvas.width) / 18000); 
+                numParticles = Math.min(numParticles, 150); 
 
                 for (let i = 0; i < numParticles; i++) {
-                    let size = Math.random() * 1.5 + 0.5;
-                    let x = (Math.random() * (canvas.width - size * 4)) + size * 2;
-                    let y = (Math.random() * (canvas.height - size * 4)) + size * 2;
-                    let dirX = (Math.random() * 0.4) - 0.2;
-                    let dirY = (Math.random() * 0.4) - 0.2;
-                    particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.4)'));
+                    let size = Math.random() * 1.5 + 0.8;
+                    let x = (Math.random() * canvas.width);
+                    let y = (Math.random() * canvas.height);
+                    let angle = Math.random() * 2 * Math.PI;
+                    let dirX = Math.cos(angle);
+                    let dirY = Math.sin(angle);
+                    particles.push(new Particle(x, y, dirX, dirY, size, particleColor));
+                }
+            }
+            
+            function connect() {
+                for (let a = 0; a < particles.length; a++) {
+                    for (let b = a; b < particles.length; b++) {
+                        let dx = particles[a].x - particles[b].x;
+                        let dy = particles[a].y - particles[b].y;
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < maxDistance) {
+                            let opacityValue = 1 - (distance / maxDistance);
+                            
+                            // اتصال به رنگ آکادمیک (طلایی) برای تمایز
+                            ctx.strokeStyle = linkColor + ',' + (opacityValue * 0.4) + ')'; 
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[a].x, particles[a].y);
+                            ctx.lineTo(particles[b].x, particles[b].y);
+                            ctx.stroke();
+                        }
+                    }
                 }
             }
 
             function animate() {
-                // Use requestAnimationFrame for smooth animation loop
                 requestAnimationFrame(animate); 
-                // Clear with a transparent layer to create a slight trailing effect
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; 
+                // پاکسازی آهسته برای ایجاد دنباله (Trail)
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.15)'; 
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 
+                connect(); // ترسیم خطوط اتصال شبکه
                 for (let i = 0; i < particles.length; i++) {
                     particles[i].update();
                 }
