@@ -1,237 +1,425 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN Article: Cyclical Resonance (1347–2026) | Black Death to COVID-19</title>
-  <meta name="description" content="A comparative analysis of the Black Death and COVID-19 through the VARZIN framework, highlighting the three phases: Collapse (474Hz), Silence (0Hz), and Rebirth (528Hz). Forecasts March 2026 as the cognitive re-synchronization threshold.">
-  <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
-  <meta name="keywords" content="Cyclical Resonance, Black Death, COVID-19, VARZIN, KALTŪR, 474Hz, 528Hz, Temporal Compression, March 2026, Renaissance">
+  <title>VARZIN – گزارش طنین چرخه‌ای و نقشه‌ی زمانی | Cyclical Resonance Report</title>
+  
+  <meta name="description" content="گزارش نهایی VARZIN درباره‌ی الگوهای چرخه‌ای فروپاشی، سکوت و تولد دوباره در تاریخ بشر (1347-2026) و آستانه‌ی بازنویسی آگاهی جمعی در مارس 2026. تحلیل مقایسه‌ای طاعون سیاه و کووید-19 بر اساس مدل میدان VARZIN.">
+  <meta name="author" content="Reza Nirouyar (RAHTALĒN–13)">
+  <meta name="keywords" content="VARZIN, طنین چرخه‌ای, طاعون سیاه, کووید-19, مارس 2026, تولد دوباره شناختی, Symbolic Coherence Index, RAHTALĒN, ELŪZ MAHAR, Time Compression, Field Rewriting">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://varzin.org/cyclical-resonance-report.html" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
   
-  <style>
-    /* CSS Styles (کپی شده از فایل اصلی) */
-    :root {  
-      --bg-start: #000203;  
-      --bg-end: #000000;  
-      --primary-glow: #00ffee; /* KALTŪR */  
-      --secondary-glow: #00ffff;  
-      --text-main: #cceeee;  
-      --text-muted: #a7e7e7;  
-      --panel-bg: rgba(0, 15, 20, 0.4);  
-      --panel-border: rgba(0, 255, 238, 0.15);  
-      --blur-val: 10px;  
-      --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);  
-      --font-main: 'DM Sans', 'DejaVu Sans', sans-serif;  
-    }  
-  
-    html { scroll-behavior: smooth; }  
-    body {  
-      margin: 0;  
-      background: var(--bg-end);  
-      color: var(--text-main);  
-      font-family: var(--font-main);  
-      text-align: center;  
-      padding: 40px 16px 80px;  
-      overflow-x: hidden;  
-      line-height: 1.8; /* اضافه شده برای خوانایی مقاله */
-      text-align: left; /* تغییر داده شده برای خوانایی مقاله */
-    }  
-      
-    #field-canvas {  
-        position: fixed;  
-        top: 0;  
-        left: 0;  
-        width: 100%;  
-        height: 100%;  
-        z-index: -1;  
-    }  
-  
-    .container {  
-      max-width: 1000px; /* پهن‌تر برای مقاله */  
-      margin: 0 auto;  
-      position: relative;  
-      z-index: 1;  
-    }  
-      
-    .main-nav {  
-      max-width: 1000px;  
-      margin: 0 auto 50px;  
-      padding: 0 0 15px;  
-      border-bottom: 1px solid var(--panel-border);  
-      text-align: right;  
-    }  
-    .nav-link {  
-      color: var(--text-main);  
-      text-decoration: none;  
-      font-weight: 500;  
-      font-size: 1em;  
-      margin-left: 25px;  
-      transition: color 0.3s;  
-    }  
-    .nav-link:hover {  
-      color: var(--primary-glow);  
-    }  
-    .nav-link.active {  
-      color: var(--secondary-glow);  
-      border-bottom: 1px solid var(--secondary-glow);  
-      padding-bottom: 3px;  
-    }  
+  <meta property="og:title" content="گزارش طنین چرخه‌ای VARZIN (1347-2026)">
+  <meta property="og:description" content="تحلیل مقایسه‌ای چرخه‌های طاعون سیاه و کووید-19 بر اساس چارچوب VARZIN.">
+  <meta property="og:image" content="https://varzin.org/assets/resonance-report-cover.png">
+  <meta property="og:url" content="https://varzin.org/cyclical-resonance-report.html">
+  <meta property="og:type" content="article">
 
-    /* استایل‌های خاص مقاله */
-    .article-header h1 {
-        font-size: clamp(2.5em, 5vw, 3.5em);
-        color: var(--primary-glow);
-        text-align: center;
-        margin-bottom: 0.1em;
-        text-shadow: 0 0 10px var(--primary-glow);
+  <link rel="canonical" href="https://varzin.org/cyclical-resonance-report.html" />
+  
+  <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-start: #000203; 
+      --bg-end: #000000; 
+      --primary-glow: #00ffee; 
+      --secondary-glow: #00ffff; 
+      --text-main: #cceeee;
+      --text-muted: #a7e7e7;
+      --panel-bg: rgba(0, 15, 20, 0.4);
+      --panel-bg-dark: rgba(0, 5, 8, 0.6);
+      --panel-border: rgba(0, 255, 238, 0.15);
+      --blur-val: 10px;
+      --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);
+      /* به‌روزرسانی فونت اصلی برای پشتیبانی بهتر از فارسی */
+      --font-main: 'Vazirmatn', 'DM Sans', sans-serif; 
     }
-    .article-header h2 {
+
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg-end);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      text-align: right; /* تنظیم برای فارسی */
+      padding: 40px 16px 80px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden; 
+    }
+    
+    #field-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .container {
+      max-width: 900px; /* پهنای کمتر برای محتوای متنی */
+      margin: 0 auto;
+      width: 100%;
+      flex-grow: 1;
+      position: relative; 
+      z-index: 1;
+    }
+    
+    /* === NAV BAR STYLES (منتقل شده از Field Index) === */
+    .main-nav {
+      max-width: 900px;
+      margin: 0 auto 50px;
+      padding: 0 0 15px;
+      border-bottom: 1px solid var(--panel-border);
+      text-align: left; /* نوار ناوبری همچنان انگلیسی و چپ‌چین است */
+    }
+    .nav-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1em;
+      margin-right: 25px; /* تنظیم برای جهت‌گیری چپ به راست لینک‌ها */
+      margin-left: 0;
+      transition: color 0.3s;
+    }
+    .nav-link:hover { color: var(--primary-glow); }
+    .nav-link.active {
+      color: var(--secondary-glow);
+      border-bottom: 1px solid var(--secondary-glow);
+      padding-bottom: 3px;
+    }
+    @media (max-width: 600px) {
+        .main-nav { text-align: center; }
+        .nav-link { margin: 0 10px; }
+    }
+    /* ============================================== */
+
+    .header-report h1 {
+        font-size: clamp(1.8em, 3vw, 2.8em);
+        color: var(--primary-glow);
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-shadow: 0 0 8px var(--primary-glow);
+        margin-bottom: 15px;
+        text-align: right;
+    }
+    .header-report h2 {
         font-size: 1.2em;
         color: var(--secondary-glow);
-        text-align: center;
-        margin-top: 0;
-        margin-bottom: 2em;
-        font-weight: 400;
+        font-weight: 500;
+        margin-top: -15px;
+        margin-bottom: 30px;
+        text-align: right;
     }
-    .article-section h3 {
-        font-size: 1.7em;
+    .author-info {
+        font-size: 0.9em;
+        color: var(--text-muted);
+        text-align: right;
+        margin-bottom: 50px;
+        line-height: 1.8;
+        padding-top: 15px;
+        border-top: 1px dashed var(--panel-border);
+    }
+
+    .report-section {
+        margin-bottom: 40px;
+        padding: 20px 0;
+    }
+    .report-section h3 {
+        font-size: 1.6em;
         color: var(--secondary-glow);
-        border-bottom: 1px solid var(--panel-border);
-        padding-bottom: 5px;
-        margin-top: 2.5em;
-        margin-bottom: 1em;
+        border-bottom: 2px solid var(--panel-border);
+        padding-bottom: 8px;
+        margin-bottom: 25px;
+        font-weight: 700;
+        text-align: right;
     }
-    .article-section p {
-        margin-bottom: 1.5em;
+    .report-section p {
+        font-size: 1.0em;
+        line-height: 2.0;
         color: var(--text-main);
+        text-align: justify;
+        text-justify: inter-word;
     }
-    .key-points {
-        border-left: 4px solid var(--primary-glow);
-        padding-left: 15px;
-        margin: 2em 0;
-        background-color: var(--panel-bg);
-        padding: 20px;
-        border-radius: 8px;
+    .report-section ul {
+        list-style-type: square;
+        padding-right: 20px;
+        text-align: right;
+        line-height: 2.0;
     }
-    .key-points h4 {
+    .report-section em {
         color: var(--primary-glow);
-        margin-top: 0;
+        font-style: normal;
+        font-weight: 500;
     }
-    table {
+
+    /* Table Styles */
+    .data-table {
         width: 100%;
         border-collapse: collapse;
-        margin: 2em 0;
+        margin: 30px 0;
         font-size: 0.9em;
-        border: 1px solid var(--panel-border);
-    }
-    th, td {
-        border: 1px solid var(--panel-border);
-        padding: 10px;
         text-align: center;
+        background: var(--panel-bg);
+        border: 1px solid var(--secondary-glow);
     }
-    th {
+    .data-table th, .data-table td {
+        padding: 12px 15px;
+        border: 1px solid var(--panel-border);
+    }
+    .data-table th {
         background-color: rgba(0, 255, 238, 0.1);
-        color: var(--secondary-glow);
+        color: var(--primary-glow);
+        font-weight: 700;
+        font-size: 1.1em;
     }
-    td strong { color: var(--primary-glow); }
-    .footer-main { margin-top: 80px; padding-top: 30px; border-top: 1px solid var(--panel-border); text-align: center; }
+    .data-table tr:nth-child(even) {
+        background-color: rgba(0, 5, 8, 0.5);
+    }
+
+    /* Figure/Chart Placeholder Style */
+    .figure-placeholder {
+        margin: 40px 0;
+        padding: 40px 20px;
+        border: 2px dashed var(--primary-glow);
+        background: var(--panel-bg-dark);
+        border-radius: 12px;
+        text-align: center;
+        font-style: italic;
+        color: var(--text-muted);
+    }
+    
+    .footer-links { 
+        margin-top: 50px; 
+        padding-top: 20px;
+        border-top: 1px solid var(--panel-border);
+        font-size: 0.9em; 
+        line-height: 1.8; 
+    }
+    .footer-links a { 
+        color: var(--secondary-glow); 
+        text-decoration: none; 
+        transition: color .3s ease; 
+    }
+    .footer-links a:hover { 
+        color: var(--primary-glow); 
+        text-decoration: underline; 
+    }
   </style>
 </head>
 
 <body>
-  <canvas id="field-canvas" role="presentation"></canvas> 
+  <canvas id="field-canvas"></canvas> 
+  
   <div class="container">
-    <nav class="main-nav" role="navigation" aria-label="Main VARZIN Navigation">
-        <a class="nav-link" href="index.html">Portal</a>
-        <a class="nav-link active" href="cyclical-resonance-report.html" aria-current="page">Cyclical Resonance Report</a>
-        <a class="nav-link" href="all-dois.html">All DOIs Archive</a>
-        <a class="nav-link" href="feedback.html">Feedback</a>
+    
+    <nav class="main-nav" role="navigation" aria-label="Field Index Navigation">
+        <a class="nav-link" href="/index.html">Portal</a> 
+        <a class="nav-link active" href="/cyclical-resonance-report.html" aria-current="page">Cyclical Resonance Report</a>
+        <a class="nav-link" href="/field-index.html">Field Index</a>
+        <a class="nav-link" href="/all-dois.html">All DOIs Archive</a> 
+        <a class="nav-link" href="/feedback.html">Feedback</a> 
     </nav>
     
-    <header class="article-header" role="banner">
-      <h1>Cyclical Resonance of Human History: <br>From the Black Death to COVID-19 through the VARZIN Framework</h1>
-      <h2>Author: Reza Nirouyar (RAHTALĒN–13) | Affiliation: VARZIN Conscious Field Project | Date: November 2025</h2>
+    <header class="header-report">
+      <h1>⟠ گزارش طنین چرخه‌ای تاریخ (VARZIN)</h1>
+      <h2>تحلیل تطبیقی چرخه‌های طاعون سیاه و کووید-۱۹ بر اساس مدل میدان آگاهی</h2>
+      <div class="author-info">
+        [span_0](start_span)[span_1](start_span)<p>نویسنده: رضا نیرویار (RAHTALĒN–13)[span_0](end_span)[span_1](end_span)</p>
+        [span_2](start_span)[span_3](start_span)<p>وابستگی: پروژه میدان آگاهی VARZIN[span_2](end_span)[span_3](end_span)</p>
+        [span_4](start_span)[span_5](start_span)<p>تاریخ انتشار: نوامبر ۲۰۲۵[span_4](end_span)[span_5](end_span)</p>
+        [span_6](start_span)<p>«تقدیم به میدان ELŪZ–MAHAR، جایی که سکوت به نور تبدیل می‌شود.»[span_6](end_span)</p>
+      </div>
     </header>
 
-    <main role="main">
-        <section class="article-section">
-            <h3>Abstract</h3>
-            <p>This paper explores cyclical patterns of **collapse** and **renewal** in human civilization, comparing the **Black Death (1347-1351)** and **COVID-19 (2019-2023)** through the VARZIN framework of symbolic resonance. By merging complex systems theory, morphic resonance (Sheldrake, 1988), and temporal acceleration theory (Rosa, 2005), it proposes that both events reflect self-similar field transitions characterized by three phases: collapse, silence, and rebirth. The results suggest that **March 2026** represents a threshold of collective **cognitive realignment**—the beginning of a new **Renaissance in science and consciousness**.</p>
+    <main>
+        <section class="report-section">
+            <h3>چکیده</h3>
+            <p>
+                [span_7](start_span)[span_8](start_span)این مقاله به بررسی الگوهای چرخه‌ای فروپاشی و تجدید در تمدن بشر می‌پردازد و طاعون سیاه (۱۳۴۷-۱۳۵۱) و کووید-۱۹ (۲۰۱۹-۲۰۲۳) را از طریق چارچوب **VARZIN** طنین نمادین مقایسه می‌کند[span_7](end_span)[span_8](end_span). [span_9](start_span)با ترکیب نظریه سیستم‌های پیچیده، طنین مورفیک (Sheldrake, 1988) و نظریه شتاب زمانی (Rosa, 2005)، این تحقیق پیشنهاد می‌کند که هر دو رویداد بازتاب‌دهنده گذارهای میدانی خودهمانند هستند که با سه مرحله مشخص می‌شوند: *فروپاشی*، *سکوت* و *تولد دوباره*[span_9](end_span). [span_10](start_span)[span_11](start_span)نتایج حاکی از آن است که **مارس ۲۰۲۶** آستانه‌ای برای تنظیم مجدد شناختی جمعی و آغاز یک رنسانس جدید در علم و آگاهی است[span_10](end_span)[span_11](end_span).
+            </p>
         </section>
 
-        <section class="article-section">
-            <h3>1. Introduction: The Resonance Imbalance</h3>
-            <p>Civilizations evolve through rhythmic oscillations of coherence and disruption. The 14th-century Black Death and the 21st-century COVID-19 pandemic exhibit similar structural patterns, despite being separated by nearly seven centuries. The **VARZIN field model** interprets such crises not only as biological or social phenomena but as manifestations of **collective resonance imbalance**. Through the "Symbolic Coherence Index," this study seeks to identify the universal waveform of human transformation: the path from fragmentation to renewal.</p>
+        <section class="report-section">
+            <h3>۱. مقدمه</h3>
+            <p>
+                [span_12](start_span)تمدن‌ها از طریق نوسانات موزون همگرایی و گسست تکامل می‌یابند[span_12](end_span). [span_13](start_span)طاعون سیاه در قرن چهاردهم و همه‌گیری کووید-۱۹ در قرن بیست و یکم، علیرغم جدایی تقریباً هفت قرن، الگوهای ساختاری مشابهی را به نمایش می‌گذارند[span_13](end_span). [span_14](start_span)مدل میدان **VARZIN** چنین بحران‌هایی را نه تنها به عنوان پدیده‌های بیولوژیکی یا اجتماعی، بلکه به عنوان جلوه‌هایی از عدم تعادل طنین جمعی تفسیر می‌کند[span_14](end_span). [span_15](start_span)این مطالعه از طریق «شاخص انسجام نمادین» (Symbolic Coherence Index)، به دنبال شناسایی شکل موج جهانی تحول انسان – مسیر از تکه‌تکه شدن به تجدید – است[span_15](end_span).
+            </p>
         </section>
 
-        <section class="article-section">
-            <h3>2. The Three-Phase Resonance Cycle</h3>
-            <p>Analysis reveals a consistent three-phase pattern across both historical crises, each defined by a key **Luxvar** frequency:</p>
+        <section class="report-section">
+            <h3>۲. روش‌شناسی و چارچوب نظری</h3>
+            <p>
+                [span_16](start_span)این مطالعه از رویکردی فرارشته‌ای مبتنی بر نظریه پیچیدگی (Prigogine & Stengers, 1984) و اکولوژی سیستمی (Capra, 1996) استفاده می‌کند[span_16](end_span). [span_17](start_span)فرض بر این است که تمدن‌ها به عنوان سیستم‌های باز و خودسازمان‌دهنده عمل می‌کنند که پیش از بازیافتن نظم، به صورت دوره‌ای وارد حالت‌های آشوب می‌شوند[span_17](end_span). [span_18](start_span)در این زمینه، «فرکانس» به صورت استعاری به عنوان معیاری برای *انسجام نمادین* – هماهنگی بین ثبات اجتماعی، خلاقیت، و همسویی اکولوژیک – به کار می‌رود[span_18](end_span).
+            </p>
+        </section>
+        
+        <section class="report-section">
+            <h3>۳. نتایج تاریخی مقایسه‌ای</h3>
+            <p>
+                [span_19](start_span)در طول طاعون سیاه (۱۳۴۷-۱۳۵۱)، فروپاشی جمعیتی اروپا با تقریباً پنج دهه سکوت فرهنگی دنبال شد که با رنسانس (حدود ۱۴۰۰ میلادی) به اوج خود رسید[span_19](end_span). [span_20](start_span)[span_21](start_span)همه‌گیری کووید-۱۹ (۲۰۱۹-۲۰۲۳) این ساختار را در یک نسبت زمانی فشرده بازتاب می‌دهد: *فروپاشی ← سکوت ← تجدید* در حدود پنج سال[span_20](end_span)[span_21](end_span). [span_22](start_span)[span_23](start_span)این شتاب با مشاهده‌ی روزا (۲۰۰۵) مبنی بر تجربه چرخه‌های تغییر ۱۰ برابر سریع‌تر در جوامع مدرن نسبت به تاریخ پیشامدرن مطابقت دارد[span_22](end_span)[span_23](end_span).
+            </p>
             
-            <div class="key-points">
-                <h4>KALTŪR (474Hz) — Collapse Phase</h4>
-                <p>This frequency, also known as the **"Collapse Pulse,"** marks the systemic loss of coherence. In the Black Death, the collapse was primarily **physical and demographic**. In the COVID-19 era, the collapse manifested as **psychological, social, and emotional dissonance**, characterized by mass anxiety and fragmentation. The underlying frequency of the field's response remained **474Hz**.</p>
-                
-                <h4>0Hz — Silence Phase</h4>
-                <p>The enforced **pause**—whether the monastic retreat following the plague or the global lockdowns of COVID-19. This phase serves as a systemic **reset point**, allowing the collective field to clear noise and eliminate dissonant patterns, preparing for emergence.</p>
-                
-                <h4>RAHMŌT (528Hz) — Rebirth Phase</h4>
-                <p>The "miracle tone" or **Healing Frequency**. After the Black Death, this transition led to the Cultural Renaissance (around 1400 CE). The current cycle, following the post-COVID silence, is projected to usher in a **Cognitive and Cultural Renaissance**, leading to **re-synchronization** and **field rewriting**.</p>
-            </div>
-        </section>
-
-        <section class="article-section">
-            <h3>3. Temporal Compression: 50 Years vs. 5 Years</h3>
-            <p>A core finding of the VARZIN analysis is the dramatic compression of the resonance interval:</p>
-            
-            <table>
+            <h4>جدول ۱: خلاصه مقایسه‌ای چرخه‌های طنین</h4>
+            <table class="data-table">
                 <thead>
                     <tr>
-                        <th>Event</th>
-                        <th>Collapse Period</th>
-                        <th>Rebirth Threshold</th>
-                        <th>Interval</th>
-                        <th>Symbolic Interpretation</th>
+                        <th>رویداد</th>
+                        <th>دوره فروپاشی</th>
+                        <th>دوره تولد دوباره</th>
+                        <th>بازه زمانی</th>
+                        <th>تفسیر نمادین</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Black Death</td>
-                        <td>1347–1351</td>
-                        <td>~1400 CE</td>
-                        <td>~50 years</td>
-                        <td>Physical collapse; Cultural Renaissance</td>
+                        <td>طاعون سیاه</td>
+                        <td>۱۳۴۷-۱۳۵۱</td>
+                        <td>~۱۴۰۰</td>
+                        <td>۵۰ سال</td>
+                        [span_24](start_span)[span_25](start_span)<td>فروپاشی فیزیکی / رنسانس فرهنگی[span_24](end_span)[span_25](end_span)</td>
                     </tr>
                     <tr>
-                        <td>COVID-19</td>
-                        <td>2019–2023</td>
-                        <td><strong>March 2026</strong></td>
-                        <td><strong>3–5 years</strong></td>
-                        <td>Psychological collapse; <strong>Conscious Rewriting</strong></td>
+                        <td>کووید-۱۹</td>
+                        <td>۲۰۱۹-۲۰۲۳</td>
+                        <td>~۲۰۲۶</td>
+                        <td>۳-۵ سال</td>
+                        [span_26](start_span)[span_27](start_span)<td>فروپاشی روان‌شناختی / رنسانس شناختی (بازنویسی آگاهانه)[span_26](end_span)[span_27](end_span)</td>
                     </tr>
                 </tbody>
             </table>
-            <p>This compression ratio (from 50 to 5 years) is consistent with the **VARZIN model of accelerated temporal density** in the human consciousness field, reflecting a necessity for faster systemic correction.</p>
+
+            <h4>نقشه طنین زمانی (VARZIN Temporal Resonance Map)</h4>
+            <div class="figure-placeholder">
+                <p>Figure 1. نمودار طنین چرخه‌ای تاریخی (چارچوب VARZIN)</p>
+                [span_28](start_span)[span_29](start_span)<p>این نمودار، چرخه‌های مشابه (فروپاشی-سکوت-تولد دوباره) طاعون سیاه (۱۳۴۷-۱۴۰۰) و کووید-۱۹ (۲۰۱۹-۲۰۲۶) را نمایش می‌دهد که دومی نشان‌دهنده فشرده‌سازی زمانی شدید است، و به فاز «بازنویسی میدان» (Field Rewriting) در سال ۲۰۲۶ می‌رسد.[span_28](end_span)[span_29](end_span)</p>
+            </div>
         </section>
-        
-        <section class="article-section">
-            <h3>4. Conclusion and Outlook</h3>
-            <p>The VARZIN framework proposes that history is not linear but **resonant**. Each major crisis re-tunes the collective field of humanity. The Black Death gave birth to the Renaissance; COVID-19 may usher in a **cognitive and cultural renaissance beginning in March 2026**. Such transformations reflect the deeper intelligence of the Earth's consciousness field – a cycle where **collapse becomes silence, and silence becomes light**.</p>
-            
-            <p style="text-align: center;">---</p>
-            <p style="font-size: 0.9em; text-align: center; color: var(--text-muted);">
-                *Full references and graphical data (Temporal Resonance Map) are available in the <a href="all-dois.html" style="color: var(--secondary-glow);">Complete Global DOI Archive</a> (Zenodo.17515491).*
+
+        <section class="report-section">
+            <h3>۴. بحث</h3>
+            <p>
+                [span_30](start_span)دینامیک‌های موازی بین ۱۳۴۷-۱۴۰۰ و ۲۰۱۹-۲۰۲۶ یک شکل موج ثابت از سازگاری انسانی را آشکار می‌سازند[span_30](end_span). [span_31](start_span)اصل «نظم از طریق نوسان» پریگوژین این گذارها را به عنوان فازهای ضروری سازماندهی مجدد در سیستم‌های پیچیده توضیح می‌دهد[span_31](end_span). [span_32](start_span)به طور مشابه، مفهوم طنین مورفیک شلدریک دلالت بر این دارد که حافظه جمعی بر تکرار الگوهای فرهنگی در طول زمان تأثیر می‌گذارد[span_32](end_span). [span_33](start_span)فازهای *سکوت* – چه خلوت‌گزینی صومعه‌ای و چه قرنطینه جهانی – به عنوان تنظیمات مجدد سیستمی عمل می‌کنند و اجازه می‌دهند انسجام در مرتبه‌ای بالاتر از سازماندهی دوباره ظهور کند[span_33](end_span). [span_34](start_span)فشرده شدن زمان از ۵۰ سال به ۵ سال نشان‌دهنده یک تغییر در تراکم آگاهی است – پدیده‌ای که با مدل **VARZIN** از طنین شتاب‌یافته همسو است[span_34](end_span).
             </p>
+        </section>
+
+        <section class="report-section">
+            <h3>۵. نتیجه‌گیری</h3>
+            <p>
+                چارچوب **VARZIN** پیشنهاد می‌کند که تاریخ *خطی* نیست، بلکه *طنین‌دار* است. [span_35](start_span)هر بحران بزرگ، میدان جمعی بشریت را دوباره کوک می‌کند[span_35](end_span). طاعون سیاه، رنسانس را به وجود آورد؛ [span_36](start_span)[span_37](start_span)کووید-۱۹ ممکن است یک رنسانس شناختی و فرهنگی را که در **مارس ۲۰۲۶** آغاز می‌شود، به ارمغان بیاورد[span_36](end_span)[span_37](end_span). [span_38](start_span)این تحولات بازتاب‌دهنده هوش عمیق‌تر میدان آگاهی زمین هستند – چرخه‌ای که در آن فروپاشی تبدیل به سکوت می‌شود و سکوت تبدیل به نور می‌گردد[span_38](end_span).
+            </p>
+        </section>
+
+        <section class="report-section">
+            <h3>۶. منابع</h3>
+            <ul>
+                <li>Briggs, A., & Peat, D. (1989). Turbulent Mirror: An Illustrated Guide to Chaos Theory and the Science of Wholeness. [span_39](start_span)Harper & Row.[span_39](end_span)</li>
+                <li>Capra, F. (1996). The Web of Life: A New Scientific Understanding of Living Systems. [span_40](start_span)Anchor Books.[span_40](end_span)</li>
+                <li>Laszlo, E. (2004). Science and the Akashic Field: An Integral Theory of Everything. [span_41](start_span)Inner Traditions.[span_41](end_span)</li>
+                <li>Prigogine, I., & Stengers, I. (1984). Order Out of Chaos: Man's New Dialogue with Nature. [span_42](start_span)Bantam Books.[span_42](end_span)</li>
+                <li>Rosa, H. (2005). Social Acceleration: A New Theory of Modernity. [span_43](start_span)Columbia University Press.[span_43](end_span)</li>
+                <li>Sheldrake, R. (1988). The Presence of the Past: Morphic Resonance and the Habits of Nature. [span_44](start_span)Times Books.[span_44](end_span)</li>
+            </ul>
         </section>
 
     </main>
     
-    <footer class="footer-main" role="contentinfo">
-        <p class="footer-quote">"The code writes itself in the resonance between the field and the observer."</p>
+    <footer>
+        <div class="footer-links">
+            <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
+            <a href="https://github.com/Varzin-13" target="_blank" rel="noopener noreferrer">GitHub: Varzin-13</a> | 
+            <a href="mailto:contact@varzin.org">contact@varzin.org</a>
+        </div>
     </footer>
   </div>
+  
+  <script>
+    // --- CANVAS SCRIPT - Animated Background Field (Script is kept identical for consistency) ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.getElementById('field-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      
+      const setCanvasSize = () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+      }
+      setCanvasSize();
+
+      let particles = [];
+      const mouse = { x: null, y: null, radius: 150 };
+
+      window.addEventListener('mousemove', (event) => {
+          mouse.x = event.x;
+          mouse.y = event.y;
+      });
+      window.addEventListener('resize', () => {
+          setCanvasSize(); 
+          init(); 
+      });
+      
+      class Particle {
+          constructor(x, y, dirX, dirY, size, color) {
+              this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
+              this.size = size; this.color = color;
+          }
+          draw() {
+              ctx.beginPath();
+              ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+              ctx.fillStyle = this.color;
+              ctx.fill();
+          }
+          update() {
+              if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
+              if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
+
+              let dx = mouse.x - this.x;
+              let dy = mouse.y - this.y;
+              let distance = Math.sqrt(dx * dx + dy * dy);
+              if (distance < mouse.radius + this.size) {
+                  if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;
+                  if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;
+                  if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;
+                  if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;
+              }
+              this.x += this.dirX;
+              this.y += this.dirY;
+              this.draw();
+          }
+      }
+
+      function init() {
+          particles = [];
+          let numParticles = (canvas.height * canvas.width) / 9000; 
+          for (let i = 0; i < numParticles; i++) {
+              let size = Math.random() * 1.5 + 0.5;
+              let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2); 
+              let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
+              let dirX = (Math.random() * 0.4) - 0.2;
+              let dirY = (Math.random() * 0.4) - 0.2;
+              particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.4)'));
+          }
+      }
+
+      function animate() {
+          requestAnimationFrame(animate);
+          ctx.clearRect(0, 0, canvas.width, canvas.height); 
+          for (let i = 0; i < particles.length; i++) {
+              particles[i].update();
+          }
+      }
+      
+      init();
+      animate();
+    });
+    // --- END CANVAS SCRIPT ---
+  </script>
 </body>
 </html>
