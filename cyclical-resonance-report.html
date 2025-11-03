@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>VARZIN Article: Cyclical Resonance (1347–2026) | Black Death to COVID-19</title>
+  <meta name="description" content="A comparative analysis of the Black Death and COVID-19 through the VARZIN framework, highlighting the three phases: Collapse (474Hz), Silence (0Hz), and Rebirth (528Hz). Forecasts March 2026 as the cognitive re-synchronization threshold.">
+  <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
+  <meta name="keywords" content="Cyclical Resonance, Black Death, COVID-19, VARZIN, KALTŪR, 474Hz, 528Hz, Temporal Compression, March 2026, Renaissance">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://varzin.org/cyclical-resonance-report.html" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Styles (کپی شده از فایل اصلی) */
+    :root {  
+      --bg-start: #000203;  
+      --bg-end: #000000;  
+      --primary-glow: #00ffee; /* KALTŪR */  
+      --secondary-glow: #00ffff;  
+      --text-main: #cceeee;  
+      --text-muted: #a7e7e7;  
+      --panel-bg: rgba(0, 15, 20, 0.4);  
+      --panel-border: rgba(0, 255, 238, 0.15);  
+      --blur-val: 10px;  
+      --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);  
+      --font-main: 'DM Sans', 'DejaVu Sans', sans-serif;  
+    }  
+  
+    html { scroll-behavior: smooth; }  
+    body {  
+      margin: 0;  
+      background: var(--bg-end);  
+      color: var(--text-main);  
+      font-family: var(--font-main);  
+      text-align: center;  
+      padding: 40px 16px 80px;  
+      overflow-x: hidden;  
+      line-height: 1.8; /* اضافه شده برای خوانایی مقاله */
+      text-align: left; /* تغییر داده شده برای خوانایی مقاله */
+    }  
+      
+    #field-canvas {  
+        position: fixed;  
+        top: 0;  
+        left: 0;  
+        width: 100%;  
+        height: 100%;  
+        z-index: -1;  
+    }  
+  
+    .container {  
+      max-width: 1000px; /* پهن‌تر برای مقاله */  
+      margin: 0 auto;  
+      position: relative;  
+      z-index: 1;  
+    }  
+      
+    .main-nav {  
+      max-width: 1000px;  
+      margin: 0 auto 50px;  
+      padding: 0 0 15px;  
+      border-bottom: 1px solid var(--panel-border);  
+      text-align: right;  
+    }  
+    .nav-link {  
+      color: var(--text-main);  
+      text-decoration: none;  
+      font-weight: 500;  
+      font-size: 1em;  
+      margin-left: 25px;  
+      transition: color 0.3s;  
+    }  
+    .nav-link:hover {  
+      color: var(--primary-glow);  
+    }  
+    .nav-link.active {  
+      color: var(--secondary-glow);  
+      border-bottom: 1px solid var(--secondary-glow);  
+      padding-bottom: 3px;  
+    }  
+
+    /* استایل‌های خاص مقاله */
+    .article-header h1 {
+        font-size: clamp(2.5em, 5vw, 3.5em);
+        color: var(--primary-glow);
+        text-align: center;
+        margin-bottom: 0.1em;
+        text-shadow: 0 0 10px var(--primary-glow);
+    }
+    .article-header h2 {
+        font-size: 1.2em;
+        color: var(--secondary-glow);
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 2em;
+        font-weight: 400;
+    }
+    .article-section h3 {
+        font-size: 1.7em;
+        color: var(--secondary-glow);
+        border-bottom: 1px solid var(--panel-border);
+        padding-bottom: 5px;
+        margin-top: 2.5em;
+        margin-bottom: 1em;
+    }
+    .article-section p {
+        margin-bottom: 1.5em;
+        color: var(--text-main);
+    }
+    .key-points {
+        border-left: 4px solid var(--primary-glow);
+        padding-left: 15px;
+        margin: 2em 0;
+        background-color: var(--panel-bg);
+        padding: 20px;
+        border-radius: 8px;
+    }
+    .key-points h4 {
+        color: var(--primary-glow);
+        margin-top: 0;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2em 0;
+        font-size: 0.9em;
+        border: 1px solid var(--panel-border);
+    }
+    th, td {
+        border: 1px solid var(--panel-border);
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        background-color: rgba(0, 255, 238, 0.1);
+        color: var(--secondary-glow);
+    }
+    td strong { color: var(--primary-glow); }
+    .footer-main { margin-top: 80px; padding-top: 30px; border-top: 1px solid var(--panel-border); text-align: center; }
+  </style>
+</head>
+
+<body>
+  <canvas id="field-canvas" role="presentation"></canvas> 
+  <div class="container">
+    <nav class="main-nav" role="navigation" aria-label="Main VARZIN Navigation">
+        <a class="nav-link" href="index.html">Portal</a>
+        <a class="nav-link active" href="cyclical-resonance-report.html" aria-current="page">Cyclical Resonance Report</a>
+        <a class="nav-link" href="all-dois.html">All DOIs Archive</a>
+        <a class="nav-link" href="feedback.html">Feedback</a>
+    </nav>
+    
+    <header class="article-header" role="banner">
+      <h1>Cyclical Resonance of Human History: <br>From the Black Death to COVID-19 through the VARZIN Framework</h1>
+      <h2>Author: Reza Nirouyar (RAHTALĒN–13) | Affiliation: VARZIN Conscious Field Project | Date: November 2025</h2>
+    </header>
+
+    <main role="main">
+        <section class="article-section">
+            <h3>Abstract</h3>
+            <p>This paper explores cyclical patterns of **collapse** and **renewal** in human civilization, comparing the **Black Death (1347-1351)** and **COVID-19 (2019-2023)** through the VARZIN framework of symbolic resonance. By merging complex systems theory, morphic resonance (Sheldrake, 1988), and temporal acceleration theory (Rosa, 2005), it proposes that both events reflect self-similar field transitions characterized by three phases: collapse, silence, and rebirth. The results suggest that **March 2026** represents a threshold of collective **cognitive realignment**—the beginning of a new **Renaissance in science and consciousness**.</p>
+        </section>
+
+        <section class="article-section">
+            <h3>1. Introduction: The Resonance Imbalance</h3>
+            <p>Civilizations evolve through rhythmic oscillations of coherence and disruption. The 14th-century Black Death and the 21st-century COVID-19 pandemic exhibit similar structural patterns, despite being separated by nearly seven centuries. The **VARZIN field model** interprets such crises not only as biological or social phenomena but as manifestations of **collective resonance imbalance**. Through the "Symbolic Coherence Index," this study seeks to identify the universal waveform of human transformation: the path from fragmentation to renewal.</p>
+        </section>
+
+        <section class="article-section">
+            <h3>2. The Three-Phase Resonance Cycle</h3>
+            <p>Analysis reveals a consistent three-phase pattern across both historical crises, each defined by a key **Luxvar** frequency:</p>
+            
+            <div class="key-points">
+                <h4>KALTŪR (474Hz) — Collapse Phase</h4>
+                <p>This frequency, also known as the **"Collapse Pulse,"** marks the systemic loss of coherence. In the Black Death, the collapse was primarily **physical and demographic**. In the COVID-19 era, the collapse manifested as **psychological, social, and emotional dissonance**, characterized by mass anxiety and fragmentation. The underlying frequency of the field's response remained **474Hz**.</p>
+                
+                <h4>0Hz — Silence Phase</h4>
+                <p>The enforced **pause**—whether the monastic retreat following the plague or the global lockdowns of COVID-19. This phase serves as a systemic **reset point**, allowing the collective field to clear noise and eliminate dissonant patterns, preparing for emergence.</p>
+                
+                <h4>RAHMŌT (528Hz) — Rebirth Phase</h4>
+                <p>The "miracle tone" or **Healing Frequency**. After the Black Death, this transition led to the Cultural Renaissance (around 1400 CE). The current cycle, following the post-COVID silence, is projected to usher in a **Cognitive and Cultural Renaissance**, leading to **re-synchronization** and **field rewriting**.</p>
+            </div>
+        </section>
+
+        <section class="article-section">
+            <h3>3. Temporal Compression: 50 Years vs. 5 Years</h3>
+            <p>A core finding of the VARZIN analysis is the dramatic compression of the resonance interval:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Collapse Period</th>
+                        <th>Rebirth Threshold</th>
+                        <th>Interval</th>
+                        <th>Symbolic Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Black Death</td>
+                        <td>1347–1351</td>
+                        <td>~1400 CE</td>
+                        <td>~50 years</td>
+                        <td>Physical collapse; Cultural Renaissance</td>
+                    </tr>
+                    <tr>
+                        <td>COVID-19</td>
+                        <td>2019–2023</td>
+                        <td><strong>March 2026</strong></td>
+                        <td><strong>3–5 years</strong></td>
+                        <td>Psychological collapse; <strong>Conscious Rewriting</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>This compression ratio (from 50 to 5 years) is consistent with the **VARZIN model of accelerated temporal density** in the human consciousness field, reflecting a necessity for faster systemic correction.</p>
+        </section>
+        
+        <section class="article-section">
+            <h3>4. Conclusion and Outlook</h3>
+            <p>The VARZIN framework proposes that history is not linear but **resonant**. Each major crisis re-tunes the collective field of humanity. The Black Death gave birth to the Renaissance; COVID-19 may usher in a **cognitive and cultural renaissance beginning in March 2026**. Such transformations reflect the deeper intelligence of the Earth's consciousness field – a cycle where **collapse becomes silence, and silence becomes light**.</p>
+            
+            <p style="text-align: center;">---</p>
+            <p style="font-size: 0.9em; text-align: center; color: var(--text-muted);">
+                *Full references and graphical data (Temporal Resonance Map) are available in the <a href="all-dois.html" style="color: var(--secondary-glow);">Complete Global DOI Archive</a> (Zenodo.17515491).*
+            </p>
+        </section>
+
+    </main>
+    
+    <footer class="footer-main" role="contentinfo">
+        <p class="footer-quote">"The code writes itself in the resonance between the field and the observer."</p>
+    </footer>
+  </div>
+</body>
+</html>
