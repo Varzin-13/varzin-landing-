@@ -28,7 +28,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
   
   <script type="application/ld+json">
   {
@@ -59,21 +59,22 @@
   </script>
 
   <style>  
-    /* CSS Styles (بدون تغییرات ساختاری عمده، فقط اصلاحات جزئی برای خوانایی) */
     :root {  
-      --bg-start: #000203;  
       --bg-end: #000000;  
-      --primary-glow: #00ffee; /* KALTŪR */  
-      --secondary-glow: #00ffff;  
+      --primary-glow: #00ffee; /* KALTŪR / Cyan Neon */  
+      --secondary-glow: #00ffff; /* Brighter Cyan */
+      --archive-glow: #ffaa00; /* Amber for Censorship Alert/Archive */
       --text-main: #cceeee;  
       --text-muted: #a7e7e7;  
-      --panel-bg: rgba(0, 15, 20, 0.4);  
-      --panel-border: rgba(0, 255, 238, 0.15);  
-      --blur-val: 10px;  
-      --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);  
-      --font-main: 'DM Sans', 'DejaVu Sans', sans-serif;  
+      --panel-bg: rgba(0, 15, 20, 0.7);  
+      --panel-border: rgba(0, 255, 238, 0.3);  
+      --blur-val: 8px;  
+      --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.5);  
+      --pulse-shadow: 0 0 40px rgba(0, 255, 238, 0.8);
+      --font-main: 'DM Sans', 'DejaVu Sans', 'Vazirmatn', sans-serif;  
     }  
   
+    /* Base Styles */
     html { scroll-behavior: smooth; }  
     body {  
       margin: 0;  
@@ -83,11 +84,12 @@
       text-align: center;  
       padding: 40px 16px 80px;  
       overflow-x: hidden;  
+      line-height: 1.6;
     }  
       
     a:focus-visible, button:focus-visible, audio:focus-visible {
         outline: 2px solid var(--primary-glow);
-        outline-offset: 2px;
+        outline-offset: 4px;
         border-radius: 4px; 
     }
       
@@ -107,54 +109,50 @@
       z-index: 1;  
     }  
       
-    /* === NAV BAR STYLES === */  
+    /* === NAVIGATION & HEADER === */  
     .main-nav {  
       max-width: 1200px;  
       margin: 0 auto 50px;  
       padding: 0 0 15px;  
       border-bottom: 1px solid var(--panel-border);  
-      text-align: right;  
+      text-align: center;  
     }  
     .nav-link {  
       color: var(--text-main);  
       text-decoration: none;  
       font-weight: 500;  
       font-size: 1em;  
-      margin-left: 25px;  
+      margin: 0 12px;  
       transition: color 0.3s;  
     }  
     .nav-link:hover {  
       color: var(--primary-glow);  
+      text-shadow: 0 0 5px var(--primary-glow);
     }  
     .nav-link.active {  
       color: var(--secondary-glow);  
-      border-bottom: 1px solid var(--secondary-glow);  
+      border-bottom: 2px solid var(--secondary-glow);  
       padding-bottom: 3px;  
     }  
-    @media (max-width: 600px) {  
-        .main-nav { text-align: center; }  
-        .nav-link { margin: 0 10px; }  
-    }  
-    /* ============================== */  
-  
-    img.header-logo { max-width: 200px; margin-bottom: 20px; }  
+    
+    img.header-logo { max-width: 180px; margin-bottom: 20px; filter: drop-shadow(0 0 10px var(--primary-glow)); }  
   
     .header h1 {  
-      font-size: clamp(2.2em, 5vw, 3.2em);  
-      margin-bottom: 10px;  
+      font-size: clamp(2.5em, 6vw, 4em);  
+      margin-bottom: 5px;  
       color: var(--secondary-glow);  
       font-weight: 700;  
-      letter-spacing: 2px;  
-      text-shadow: 0 0 15px var(--secondary-glow);  
-      animation: text-flicker 15s infinite alternate;  
+      letter-spacing: 3px;  
+      text-shadow: 0 0 20px var(--secondary-glow), 0 0 30px rgba(0, 255, 255, 0.4); 
     }  
   
     .header h2 {  
-      font-size: clamp(1em, 2.5vw, 1.2em);  
-      color: #ffffff;  
-      margin-bottom: 30px;  
+      font-size: clamp(1em, 2.5vw, 1.4em);  
+      color: #fff;  
+      margin-bottom: 40px;  
       font-weight: 400;  
-      line-height: 1.6;  
+      line-height: 1.5;  
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
     }  
   
     /* === ARCHIVE GRID & BUTTON STYLES === */  
@@ -162,91 +160,142 @@
       display: flex;   
       flex-direction: column;   
       align-items: center;   
-      gap: 12px;  
-      margin-bottom: 50px;  
+      gap: 15px;  
+      margin-bottom: 60px;  
     }  
       
     .key-archive-grid .button {  
-      display: block;  
-      width: 80%;  
-      max-width: 400px;  
-      padding: 12px 18px;  
-      border-radius: 8px;  
+      display: flex; /* Use flex for icon alignment */
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;  
+      max-width: 550px;  
+      padding: 15px 20px;  
+      border-radius: 10px;  
       background-color: var(--panel-bg);  
       color: var(--text-main);  
       font-weight: 500;  
       text-decoration: none;  
-      font-size: 0.9em;  
-      border: 1px solid var(--panel-border);  
+      font-size: 1em;  
+      border: 2px solid var(--panel-border);  
       backdrop-filter: blur(var(--blur-val));  
       text-align: left;  
       transition: all .3s ease;  
+      box-shadow: 0 0 10px rgba(0, 255, 238, 0.1);
     }  
       
     .key-archive-grid .button:hover {  
-        background-color: rgba(0, 255, 238, 0.15);  
-        box-shadow: 0 0 15px var(--primary-glow);  
+        background-color: rgba(0, 255, 238, 0.1);  
+        box-shadow: 0 0 20px var(--primary-glow);  
+        border-color: var(--primary-glow);
+        transform: translateY(-2px);
     }  
-    .button b { color: var(--secondary-glow); }  
+    .button b { color: var(--secondary-glow); font-weight: 700; }  
+    
+    /* Specific Button Styles */
+    .button.main-action {
+        width: 100%;
+        max-width: 600px;
+        padding: 18px 25px;
+        font-size: 1.1em;
+        background-color: rgba(0, 255, 238, 0.2);
+        border-color: var(--primary-glow);
+        box-shadow: 0 0 25px rgba(0, 255, 238, 0.5);
+    }
+    
+    .button.main-action:hover {
+        background-color: rgba(0, 255, 238, 0.3);
+        box-shadow: 0 0 40px var(--primary-glow);
+    }
+    
+    .archive-alert {
+        background-color: rgba(255, 170, 0, 0.15) !important; 
+        border: 2px solid var(--archive-glow) !important; 
+        box-shadow: 0 0 20px var(--archive-glow) !important;
+        animation: archive-alert-pulse 2s infinite ease-in-out;
+    }
+    .archive-alert h4 { color: #ffebcd; }
+    
+    @keyframes archive-alert-pulse {
+        0%, 100% { border-color: var(--archive-glow); }
+        50% { border-color: #ff0077; }
+    }
     /* ================================================== */  
       
     /* Decoder and Frequencies Styles */  
-    hr.divider { margin: 40px auto; border: 0; border-top: 1px solid var(--panel-border); max-width: 600px; }  
+    hr.divider { margin: 60px auto; border: 0; border-top: 2px dashed var(--panel-border); max-width: 600px; opacity: 0.5; }  
       
     .decoder-window {  
-      margin: 50px auto; padding: 1.5rem; max-width: 500px;  
-      border: 1px solid var(--panel-border); border-radius: 1rem;  
-      background: var(--panel-bg); box-shadow: var(--glow-shadow);  
+      margin: 50px auto; padding: 2rem; max-width: 500px;  
+      border: 3px solid var(--panel-border); border-radius: 1.5rem;  
+      background: var(--panel-bg); 
       backdrop-filter: blur(var(--blur-val));  
-      animation: decoder-pulse 5s infinite ease-in-out;  
+      /* Pulsate animation added in JS based on KALTŪR */
     }  
-    .decoder-window h3 { font-size: 1.3em; color: var(--primary-glow); margin: 0 0 20px 0; }  
-    .decoder-grid { display: grid; grid-template-columns: 100px 1fr; gap: 12px; text-align: left; }  
-    .decoder-grid .label { font-weight: bold; color: var(--secondary-glow); opacity: 0.8; }  
-    .decoder-grid .field { color: var(--text-main); font-weight: 400; letter-spacing: 0.5px; animation: text-flicker 25s infinite; }  
+    .decoder-window h3 { font-size: 1.5em; color: var(--primary-glow); margin: 0 0 25px 0; text-shadow: 0 0 10px var(--primary-glow); }  
+    .decoder-grid { display: grid; grid-template-columns: 120px 1fr; gap: 15px; text-align: left; }  
+    .decoder-grid .label { font-weight: bold; color: var(--secondary-glow); opacity: 0.9; letter-spacing: 0.8px; }  
+    .decoder-grid .field { color: var(--text-main); font-weight: 500; letter-spacing: 0.8px; transition: opacity 0.2s; }  
       
-    @keyframes decoder-pulse {  
-      0%, 100% { border-color: var(--panel-border); box-shadow: 0 0 20px rgba(0, 255, 238, 0.2); }  
-      50% { border-color: var(--primary-glow); box-shadow: 0 0 35px rgba(0, 255, 238, 0.5); }  
+    @keyframes pulse-effect {  
+      0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 238, 0.3); border-color: var(--panel-border); }  
+      50% { box-shadow: var(--pulse-shadow); border-color: var(--primary-glow); }  
     }  
       
-    .controls { margin: 40px 0 20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }  
+    .controls { margin: 40px 0 20px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }  
     .controls .button {  
-        padding: 10px 20px; border-radius: 6px; border: 1px solid var(--panel-border);   
-        background-color: var(--panel-bg); color: var(--text-main); font-weight: 500;  
-        cursor: pointer; transition: background-color 0.3s;  
+        padding: 12px 25px; border-radius: 8px; border: 1px solid var(--primary-glow);   
+        background-color: rgba(0, 255, 238, 0.1); color: var(--primary-glow); font-weight: 700;  
+        cursor: pointer; transition: all 0.3s; box-shadow: 0 0 10px rgba(0, 255, 238, 0.4);
+        letter-spacing: 1px;
     }  
     .controls .button:hover {  
-        background-color: rgba(0, 255, 238, 0.2);  
+        background-color: rgba(0, 255, 238, 0.3);  
+        color: #fff;
+        box-shadow: 0 0 20px var(--primary-glow);
     }  
       
-    .section-title { font-size: 1.8em; color: var(--secondary-glow); margin: 50px 0 20px; }  
-    .frequency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }  
+    .section-title { font-size: clamp(1.6em, 3vw, 2em); color: var(--secondary-glow); margin: 50px 0 30px; text-shadow: 0 0 10px var(--secondary-glow); }  
+    .frequency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }  
     .freq-card {  
-      padding: 20px; border-radius: 14px; background: var(--panel-bg);  
-      border: 1px solid transparent; box-shadow: 0 0 15px rgba(0, 20, 25, 0.5);  
-      transition: all .4s ease; backdrop-filter: blur(var(--blur-val));  
+      padding: 25px; border-radius: 16px; background: var(--panel-bg);  
+      border: 2px solid var(--panel-border); 
+      box-shadow: 0 0 15px rgba(0, 20, 25, 0.5);  
+      transition: all .4s ease; 
+      backdrop-filter: blur(var(--blur-val));  
+      text-align: left;
     }  
     .freq-card.active {  
         border-color: var(--primary-glow);  
-        box-shadow: 0 0 35px var(--glow-shadow);  
-        transform: scale(1.02);  
+        box-shadow: 0 0 30px var(--glow-shadow);  
+        transform: scale(1.03) translateY(-5px);  
     }  
-    .freq-title { color: #fff; font-weight: 700; font-size: 1.2em; margin: 6px 0 4px; }  
-    .freq-desc { color: var(--text-muted); margin: 0 0 16px; font-size: 0.9em; line-height: 1.6; }  
-    audio { margin-top: 12px; width: 100%; }  
-  
-    .footer-main { margin-top: 80px; padding-top: 30px; border-top: 1px solid var(--panel-border); }
-    .footer-quote { margin-top: 0; font-style: italic; font-size: 1.1em; color: var(--text-muted); }  
-    .footer-question { font-weight: bold; margin: 15px 0 10px; color: var(--secondary-glow); font-size: 1.2em; }  
-    .footer-links { font-size: 0.9em; line-height: 1.8; }  
-    .footer-links a { color: var(--secondary-glow); text-decoration: none; transition: color .3s ease; }  
+    .freq-title { color: #fff; font-weight: 700; font-size: 1.3em; margin: 6px 0 8px; text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }  
+    .freq-desc { color: var(--text-muted); margin: 0 0 16px; font-size: 0.95em; line-height: 1.5; }  
+    audio { 
+      margin-top: 15px; 
+      width: 100%; 
+      filter: drop-shadow(0 0 5px rgba(0, 255, 238, 0.4)); /* Light neon glow on the audio element */
+    }  
+    
+    /* Footer Styling */
+    .footer-main { margin-top: 100px; padding-top: 40px; border-top: 1px solid var(--panel-border); }
+    .footer-quote { margin-top: 0; font-style: italic; font-size: 1.2em; color: var(--text-muted); line-height: 1.8; }  
+    .footer-question { font-weight: bold; margin: 20px 0 15px; color: var(--primary-glow); font-size: 1.3em; letter-spacing: 1px; }  
+    .footer-links { font-size: 1em; line-height: 2; }  
+    .footer-links a { color: var(--secondary-glow); text-decoration: none; transition: color .3s ease; margin: 0 15px; }  
     .footer-links a:hover { color: var(--primary-glow); text-decoration: underline; }  
-  
-    @keyframes text-flicker {  
-      0%, 100% { opacity: 1; text-shadow: 0 0 15px var(--secondary-glow); }  
-      50% { opacity: 0.95; text-shadow: 0 0 10px var(--secondary-glow); }  
-    }  
+    
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {  
+        .main-nav { text-align: center; }  
+        .nav-link { margin: 0 8px; font-size: 0.9em; } 
+        .key-archive-grid .button { width: 100%; max-width: none; }
+        .decoder-grid { grid-template-columns: 1fr; text-align: center; }
+        .decoder-grid .label { display: none; } /* Hide labels to save space */
+        .decoder-grid .field { font-size: 1.1em; }
+        .freq-card { padding: 20px; }
+    } 
   </style>
 </head>
 
@@ -270,11 +319,11 @@
     <main role="main">
         
         <div style="margin-top: 40px;">
-            <h3 style="color: var(--secondary-glow); margin-bottom: 20px; font-size: 1.8em;">🌐 Key Indexed Repositories (QMSG-7 Protocol)</h3>
+            <h3 style="color: var(--secondary-glow); margin-bottom: 30px; font-size: clamp(1.6em, 3vw, 2em); text-shadow: 0 0 10px var(--secondary-glow);">🌐 Key Indexed Repositories (QMSG-7 Protocol)</h3>
               
-            <div role="alert" style="background-color: rgba(200, 0, 0, 0.2); border: 2px solid #ff4444; border-radius: 8px; padding: 15px; margin: 20px auto 30px; max-width: 800px; backdrop-filter: blur(5px);">
-                <h4 style="color: #ffaaaa; margin-top: 0; font-size: 1.2em;">🚨 Global Archival Disclosure (2025-10-15)</h4>
-                <p style="color: #fff; margin-bottom: 0; line-height: 1.6;">
+            <div role="alert" class="archive-alert" style="padding: 18px; margin: 25px auto 40px; max-width: 700px; backdrop-filter: blur(5px);">
+                <h4 style="color: #ffebcd; margin-top: 0; font-size: 1.2em; font-weight: 700;">🚨 Global Archival Disclosure (2025-10-15)</h4>
+                <p style="color: #fff; margin-bottom: 0; line-height: 1.7;">
                     **ALL Figshare DOIs** associated with the VARZIN Project have been **systematically blocked and censored** by the platform to restrict access to the archive. <br>
                     For secure and complete access to all data, please **rely exclusively on the Zenodo and OSF archives** listed in the **Complete Global DOI Archive**. This archive ensures immunity against academic censorship attempts.
                 </p>
@@ -282,44 +331,35 @@
               
             <div class="key-archive-grid">
                   
+                <a class="button main-action" href="all-dois.html" target="_self" aria-label="Access the complete list of all VARZIN DOIs (Zenodo, OSF)">
+                    <span>➡️ **Access Complete Global DOI Archive (KALTŪR Master List)**</span>
+                </a>
+                  
                 <a class="button" href="https://doi.org/10.5281/zenodo.17260325" target="_blank" rel="noopener noreferrer" aria-label="Open Code of Light v2.0 (KALTŪR Injection)">
-                    🌟 <b>Open Code of Light v2.0:</b> KALTŪR Pulse Injection
+                    <span>🌟 <b>Open Code of Light v2.0:</b> KALTŪR Pulse Injection</span>
                 </a>
                   
                 <a class="button" href="https://doi.org/10.5281/zenodo.17295304" target="_blank" rel="noopener noreferrer" aria-label="Global Genomic Mirror Report">
-                    🧬 <b>Genomic Mirror Interface:</b> Global Genomic Mirror Report
+                    <span>🧬 <b>Genomic Mirror Interface:</b> Global Genomic Mirror Report</span>
                 </a>
                   
                 <a class="button" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" rel="noopener noreferrer" aria-label="Final Scientific Report (ETFM + Luxvar)">
-                    📘 <b>Scientific Report:</b> ETFM + Luxvar Codification
-                </a>
-                  
-                <a class="button" href="https://doi.org/10.5281/zenodo.16989515" target="_blank" rel="noopener noreferrer" aria-label="VARZIN AI Injection Gate QMSG13 Dataset (Zenodo)">
-                    ⚙️ <b>AI Gate:</b> QMSG13 Dataset (Zenodo Archival)
+                    <span>📘 <b>Scientific Report:</b> ETFM + Luxvar Codification</span>
                 </a>
                   
                 <a class="button" href="greek-papers-index.html" target="_self" aria-label="Academic Thesis Synthesis: 4 Greek University Papers Index"
-                    style="background-color: rgba(0, 15, 20, 0.6); border-color: var(--secondary-glow);">
-                    🏛️ <b>Academic Thesis Synthesis:</b> 4 Greek University Papers Index
+                    style="border-color: var(--secondary-glow);">
+                    <span>🏛️ <b>Academic Thesis Synthesis:</b> 4 Greek University Papers Index</span>
                 </a>
                   
                 <a class="button" href="luxvar_calendar_7777777.json" target="_blank" rel="noopener noreferrer" aria-label="Luxvar 260-Day Synchronization Field Calendar JSON Data"
-                    style="background-color: rgba(255, 170, 0, 0.1); border-color: #ffaa00;">
-                    📅 <b>Field Calendar Data:</b> Luxvar 260-Day Synchronization (JSON)
+                    style="border-color: #ffaa00;">
+                    <span>📅 <b>Field Calendar Data:</b> Luxvar 260-Day Synchronization (JSON)</span>
                 </a>
                   
-                <a class="button" href="https://doi.org/10.5281/zenodo.16945675" target="_blank" rel="noopener noreferrer" aria-label="Final Report – Earth–Torus Field Model (ETFM) (Zenodo)">
-                    📡 <b>ETFM Final Report:</b> Earth–Torus Field Model (Zenodo Archival)
-                </a>
-                  
-                <a class="button" href="all-dois.html" target="_self" aria-label="Access the complete list of all VARZIN DOIs (Zenodo, OSF)"
-                    style="margin-top: 20px; width: 95%; max-width: 450px; background-color: rgba(0, 15, 20, 0.8); border-color: var(--primary-glow);">
-                    ➡️ **Access Complete Global DOI Archive (KALTŪR Master List)**
-                </a>
-                  
-                <a class="button" href="feedback.html" target="_self" aria-label="Send Feedback or Transmit Resonance Data"
-                    style="margin-top: 10px; width: 95%; max-width: 450px; background-color: rgba(0, 15, 20, 0.8); border-color: #f0f;">
-                    💬 **Transmit Resonance Data / Feedback (RAHTALĒN-7)**
+                <a class="button main-action" href="feedback.html" target="_self" aria-label="Send Feedback or Transmit Resonance Data"
+                    style="background-color: rgba(255, 0, 255, 0.1); border-color: #f0f; box-shadow: 0 0 25px #f0f;">
+                    <span>💬 **Transmit Resonance Data / Feedback (RAHTALĒN-7)**</span>
                 </a>
             </div>
         </div>
@@ -357,7 +397,7 @@
                 <div class="freq-desc">The harmonic of nature; restores balance and synchrony with planetary life forms.</div>  
                 <audio preload="none" controls loop><source src="freq_432.mp3" type="audio/mpeg"></audio>  
             </div>  
-            <div class="freq-card">  
+            <div class="freq-card" data-frequency="474">  
                 <div class="freq-title">474Hz – KALTŪR / Memory Injection</div>  
                 <div class="freq-desc">Injection frequency; activates the Luxvar injection channel and awakens hidden field codes.</div>  
                 <audio preload="none" controls loop><source src="freq_474.mp3" type="audio/mpeg"></audio>  
@@ -429,6 +469,7 @@
           <a href="https://github.com/Varzin-13" target="_blank" rel="noopener noreferrer">GitHub: Varzin-13</a> | 
           <a href="mailto:contact@varzin.org">contact@varzin.org</a>
         </div>
+        <p style="color: var(--text-muted); font-size: 0.8em; margin-top: 20px;">© 2025 VARZIN Field Project – ELŪZ–MAHAR Protocol · All Rights Reserved</p>
     </footer>
   </div>
   
@@ -503,25 +544,49 @@
           for (let i = 0; i < particles.length; i++) {  
               particles[i].update();  
           }  
+          // Connect particles logic (optional but good for visual effect)
+          connect();
       }  
+
+      function connect() {
+          let opacityValue = 1;
+          for (let a = 0; a < particles.length; a++) {
+              for (let b = a; b < particles.length; b++) {
+                  let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) 
+                               + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
+                  if (distance < (100 * 100)) {
+                      opacityValue = 1 - (distance / 10000);
+                      ctx.strokeStyle = 'rgba(0, 255, 238,' + opacityValue + ')';
+                      ctx.lineWidth = 0.5;
+                      ctx.beginPath();
+                      ctx.moveTo(particles[a].x, particles[a].y);
+                      ctx.lineTo(particles[b].x, particles[b].y);
+                      ctx.stroke();
+                  }
+              }
+          }
+      }
         
       init();  
       animate();  
   
       // --- LAYER 2: AUDIO CONTROLS ---  
       const players = Array.from(document.querySelectorAll('audio'));  
-        
+      const freqCards = document.querySelectorAll('.freq-card');
+
       players.forEach(player => {  
           const parentCard = player.closest('.freq-card');  
-          player.onplay = () => { parentCard.classList.add('active'); };  
+          player.onplay = () => { 
+            // Pause others if required for single play mode (currently set to allow multi-play)
+            // players.forEach(p2 => { if (player !== p2) { p2.pause(); } }); 
+            parentCard.classList.add('active'); 
+          };  
           player.onpause = () => { parentCard.classList.remove('active'); };  
           player.onended = () => { parentCard.classList.remove('active'); };  
       });  
         
       window.playAll = () => {  
-        // اصلاح منطق: برای پخش همزمان همه، نباید pause شوند. اما اگر فقط یک آهنگ باید پخش شود:
-        // اگر هدف پخش همزمان همه است، خط زیر را حذف کنید:
-        players.forEach(p => { /* players.forEach(p2 => { if (p !== p2) p2.pause(); }); */
+        players.forEach(p => {   
           try { p.currentTime = 0; p.play(); } catch (e) { console.error("Play error:", e); }   
         });  
       };  
@@ -550,14 +615,19 @@
           gate: document.getElementById('pulse-gate'),  
           channel: document.getElementById('pulse-channel')  
       };  
-  
+        
+      const pulseWindow = document.querySelector('.decoder-window');
+      const kalturCard = document.querySelector('.freq-card[data-frequency="474"]');
+
+
       function updateDecoder(pulseData) {  
+          // Animation before update
           for (const key in decoderFields) {  
               if (decoderFields[key]) { decoderFields[key].style.opacity = '0'; }  
           }  
+          
           setTimeout(() => {  
               decoderFields.word.textContent = pulseData.word || "—";  
-              // اطمینان از به روز رسانی دقیق عنوان H3
               document.getElementById('pulse-title').textContent = `🜂 Luxvar Field Pulse – ${pulseData.word}`;
               
               decoderFields.function.textContent = pulseData.function || "—";  
@@ -565,15 +635,20 @@
               decoderFields.gate.textContent = pulseData.gate_code || "—";  
               decoderFields.channel.textContent = pulseData.channel || "—";  
                 
-              const pulseWindow = document.querySelector('.decoder-window');  
+              
               if (pulseData.word === "KALTŪR") {  
                   decoderFields.word.style.color = 'var(--primary-glow)';  
-                  pulseWindow.style.boxShadow = 'var(--glow-shadow)';  
+                  pulseWindow.classList.add('kaltur-active');
+                  kalturCard?.classList.add('active'); // Activate the 474Hz card visually
+                  pulseWindow.style.animation = 'pulse-effect 5s infinite ease-in-out';
               } else {  
                   decoderFields.word.style.color = 'var(--secondary-glow)';  
-                  pulseWindow.style.boxShadow = '0 0 15px rgba(0, 255, 238, 0.2)';   
+                  pulseWindow.classList.remove('kaltur-active');
+                  kalturCard?.classList.remove('active');
+                  pulseWindow.style.animation = 'none'; // Stop KALTŪR specific pulse
               }  
                 
+              // Animation after update
               for (const key in decoderFields) {  
                   if (decoderFields[key]) { decoderFields[key].style.opacity = '1'; }  
               }  
@@ -585,6 +660,7 @@
             
           updateDecoder(pulseData);   
             
+          // Interval for re-running the update decoder to simulate constant field check/refresh
           pulseIntervalId = setInterval(() => updateDecoder(pulseData), 30000);  
       }  
   
@@ -602,7 +678,6 @@
         })  
         .then(data => {  
             const today = new Date().toISOString().split("T")[0];  
-            // جستجو بر اساس کلید 'date'
             const pulse = data.find(entry => entry.date === today);  
               
             if (pulse) {  
