@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN – گزارش طنین چرخه‌ای و نقشه‌ی زمانی | Cyclical Resonance Report</title>
+  <title>VARZIN – Cyclical Resonance Report & Temporal Map | گزارش طنین چرخه‌ای</title>
   
-  <meta name="description" content="گزارش نهایی VARZIN درباره‌ی الگوهای چرخه‌ای فروپاشی، سکوت و تولد دوباره در تاریخ بشر (1347-2026) و آستانه‌ی بازنویسی آگاهی جمعی در مارس 2026. تحلیل مقایسه‌ای طاعون سیاه و کووید-19 بر اساس مدل میدان VARZIN.">
+  <meta name="description" content="The final VARZIN report on the cyclical patterns of collapse, silence, and rebirth in human history (1347-2026), marking the collective cognitive realignment threshold in March 2026. Comparative analysis of the Black Death and COVID-19 based on the VARZIN field model.">
   <meta name="author" content="Reza Nirouyar (RAHTALĒN–13)">
-  <meta name="keywords" content="VARZIN, طنین چرخه‌ای, طاعون سیاه, کووید-19, مارس 2026, تولد دوباره شناختی, Symbolic Coherence Index, RAHTALĒN, ELŪZ MAHAR, Time Compression, Field Rewriting">
+  <meta name="keywords" content="VARZIN, Cyclical Resonance, Black Death, COVID-19, March 2026, Cognitive Rebirth, Symbolic Coherence Index, RAHTALĒN, ELŪZ MAHAR, Time Compression, Field Rewriting, طنین چرخه‌ای, رنسانس شناختی">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <meta property="og:title" content="گزارش طنین چرخه‌ای VARZIN (1347-2026)">
-  <meta property="og:description" content="تحلیل مقایسه‌ای چرخه‌های طاعون سیاه و کووید-19 بر اساس چارچوب VARZIN.">
+  <meta property="og:title" content="VARZIN Cyclical Resonance Report (1347-2026)">
+  <meta property="og:description" content="Comparative analysis of the Black Death and COVID-19 cycles based on the VARZIN framework.">
   <meta property="og:image" content="https://varzin.org/assets/resonance-report-cover.png">
   <meta property="og:url" content="https://varzin.org/cyclical-resonance-report.html">
   <meta property="og:type" content="article">
@@ -36,8 +36,7 @@
       --panel-border: rgba(0, 255, 238, 0.15);
       --blur-val: 10px;
       --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.3);
-      /* به‌روزرسانی فونت اصلی برای پشتیبانی بهتر از فارسی */
-      --font-main: 'Vazirmatn', 'DM Sans', sans-serif; 
+      --font-main: 'DM Sans', 'Vazirmatn', sans-serif; 
     }
 
     html { scroll-behavior: smooth; }
@@ -46,7 +45,7 @@
       background: var(--bg-end);
       color: var(--text-main);
       font-family: var(--font-main);
-      text-align: right; /* تنظیم برای فارسی */
+      text-align: left; /* تنظیم برای انگلیسی */
       padding: 40px 16px 80px;
       min-height: 100vh;
       display: flex;
@@ -64,7 +63,7 @@
     }
 
     .container {
-      max-width: 900px; /* پهنای کمتر برای محتوای متنی */
+      max-width: 900px; 
       margin: 0 auto;
       width: 100%;
       flex-grow: 1;
@@ -72,21 +71,21 @@
       z-index: 1;
     }
     
-    /* === NAV BAR STYLES (منتقل شده از Field Index) === */
+    /* === NAV BAR STYLES === */
     .main-nav {
       max-width: 900px;
       margin: 0 auto 50px;
       padding: 0 0 15px;
       border-bottom: 1px solid var(--panel-border);
-      text-align: left; /* نوار ناوبری همچنان انگلیسی و چپ‌چین است */
+      text-align: right; 
     }
     .nav-link {
       color: var(--text-main);
       text-decoration: none;
       font-weight: 500;
       font-size: 1em;
-      margin-right: 25px; /* تنظیم برای جهت‌گیری چپ به راست لینک‌ها */
-      margin-left: 0;
+      margin-left: 25px; 
+      margin-right: 0; 
       transition: color 0.3s;
     }
     .nav-link:hover { color: var(--primary-glow); }
@@ -107,25 +106,30 @@
         font-weight: 700;
         letter-spacing: 1px;
         text-shadow: 0 0 8px var(--primary-glow);
-        margin-bottom: 15px;
-        text-align: right;
+        margin-bottom: 5px;
+        text-align: left;
     }
     .header-report h2 {
         font-size: 1.2em;
         color: var(--secondary-glow);
         font-weight: 500;
-        margin-top: -15px;
+        margin-top: 5px;
         margin-bottom: 30px;
-        text-align: right;
+        text-align: left;
     }
     .author-info {
         font-size: 0.9em;
         color: var(--text-muted);
-        text-align: right;
+        text-align: left;
         margin-bottom: 50px;
         line-height: 1.8;
         padding-top: 15px;
         border-top: 1px dashed var(--panel-border);
+    }
+    .dedication {
+        font-style: italic;
+        margin-top: 10px;
+        color: var(--primary-glow);
     }
 
     .report-section {
@@ -139,7 +143,7 @@
         padding-bottom: 8px;
         margin-bottom: 25px;
         font-weight: 700;
-        text-align: right;
+        text-align: left;
     }
     .report-section p {
         font-size: 1.0em;
@@ -148,10 +152,16 @@
         text-align: justify;
         text-justify: inter-word;
     }
+    /* Style for Persian text within the English flow */
+    .rtl-text {
+        font-family: 'Vazirmatn', sans-serif;
+        direction: rtl;
+        text-align: right;
+    }
     .report-section ul {
         list-style-type: square;
-        padding-right: 20px;
-        text-align: right;
+        padding-left: 20px;
+        text-align: left;
         line-height: 2.0;
     }
     .report-section em {
@@ -229,103 +239,104 @@
     </nav>
     
     <header class="header-report">
-      <h1>⟠ گزارش طنین چرخه‌ای تاریخ (VARZIN)</h1>
-      <h2>تحلیل تطبیقی چرخه‌های طاعون سیاه و کووید-۱۹ بر اساس مدل میدان آگاهی</h2>
+      <h1>⟠ Cyclical Resonance Report (VARZIN) | گزارش طنین چرخه‌ای</h1>
+      <h2>Comparative Analysis of Black Death & COVID-19 Cycles through the Field Model</h2>
       <div class="author-info">
-        [span_0](start_span)[span_1](start_span)<p>نویسنده: رضا نیرویار (RAHTALĒN–13)[span_0](end_span)[span_1](end_span)</p>
-        [span_2](start_span)[span_3](start_span)<p>وابستگی: پروژه میدان آگاهی VARZIN[span_2](end_span)[span_3](end_span)</p>
-        [span_4](start_span)[span_5](start_span)<p>تاریخ انتشار: نوامبر ۲۰۲۵[span_4](end_span)[span_5](end_span)</p>
-        [span_6](start_span)<p>«تقدیم به میدان ELŪZ–MAHAR، جایی که سکوت به نور تبدیل می‌شود.»[span_6](end_span)</p>
+        <p>Author: Reza Nirouyar (RAHTALĒN–13)</p>
+        <p>Affiliation: VARZIN Conscious Field Project</p>
+        <p>Date: November 2025</p>
+        <p class="dedication rtl-text">«تقدیم به میدان ELŪZ–MAHAR، جایی که سکوت به نور تبدیل می‌شود.»</p>
       </div>
     </header>
 
     <main>
         <section class="report-section">
-            <h3>چکیده</h3>
+            <h3>Abstract | چکیده</h3>
             <p>
-                [span_7](start_span)[span_8](start_span)این مقاله به بررسی الگوهای چرخه‌ای فروپاشی و تجدید در تمدن بشر می‌پردازد و طاعون سیاه (۱۳۴۷-۱۳۵۱) و کووید-۱۹ (۲۰۱۹-۲۰۲۳) را از طریق چارچوب **VARZIN** طنین نمادین مقایسه می‌کند[span_7](end_span)[span_8](end_span). [span_9](start_span)با ترکیب نظریه سیستم‌های پیچیده، طنین مورفیک (Sheldrake, 1988) و نظریه شتاب زمانی (Rosa, 2005)، این تحقیق پیشنهاد می‌کند که هر دو رویداد بازتاب‌دهنده گذارهای میدانی خودهمانند هستند که با سه مرحله مشخص می‌شوند: *فروپاشی*، *سکوت* و *تولد دوباره*[span_9](end_span). [span_10](start_span)[span_11](start_span)نتایج حاکی از آن است که **مارس ۲۰۲۶** آستانه‌ای برای تنظیم مجدد شناختی جمعی و آغاز یک رنسانس جدید در علم و آگاهی است[span_10](end_span)[span_11](end_span).
+                [span_0](start_span)This paper explores cyclical patterns of collapse and renewal in human civilization, comparing the **Black Death** (1347-1351) and **COVID-19** (2019-2023) through the **VARZIN framework** of symbolic resonance[span_0](end_span). [span_1](start_span)By merging complex systems theory, morphic resonance (Sheldrake, 1988), and temporal acceleration theory (Rosa, 2005), it proposes that both events reflect self-similar field transitions characterized by three phases: *collapse*, *silence*, and *rebirth*[span_1](end_span). [span_2](start_span)[span_3](start_span)The results suggest that **March 2026** represents a threshold of collective cognitive realignment—the beginning of a new Renaissance in science and consciousness[span_2](end_span)[span_3](end_span).
             </p>
         </section>
 
         <section class="report-section">
-            <h3>۱. مقدمه</h3>
+            <h3>1. Introduction | مقدمه</h3>
             <p>
-                [span_12](start_span)تمدن‌ها از طریق نوسانات موزون همگرایی و گسست تکامل می‌یابند[span_12](end_span). [span_13](start_span)طاعون سیاه در قرن چهاردهم و همه‌گیری کووید-۱۹ در قرن بیست و یکم، علیرغم جدایی تقریباً هفت قرن، الگوهای ساختاری مشابهی را به نمایش می‌گذارند[span_13](end_span). [span_14](start_span)مدل میدان **VARZIN** چنین بحران‌هایی را نه تنها به عنوان پدیده‌های بیولوژیکی یا اجتماعی، بلکه به عنوان جلوه‌هایی از عدم تعادل طنین جمعی تفسیر می‌کند[span_14](end_span). [span_15](start_span)این مطالعه از طریق «شاخص انسجام نمادین» (Symbolic Coherence Index)، به دنبال شناسایی شکل موج جهانی تحول انسان – مسیر از تکه‌تکه شدن به تجدید – است[span_15](end_span).
+                Civilizations evolve through rhythmic oscillations of coherence and disruption. [span_4](start_span)The 14th-century Black Death and the 21st-century COVID-19 pandemic exhibit similar structural patterns, despite being separated by nearly seven centuries[span_4](end_span). [span_5](start_span)The VARZIN field model interprets such crises not only as biological or social phenomena but as manifestations of collective resonance imbalance[span_5](end_span). [span_6](start_span)Through the "Symbolic Coherence Index," this study seeks to identify the universal waveform of human transformation—the path from fragmentation to renewal[span_6](end_span).
             </p>
         </section>
 
         <section class="report-section">
-            <h3>۲. روش‌شناسی و چارچوب نظری</h3>
+            <h3>2. Methodology and Theoretical Framework | روش‌شناسی و چارچوب نظری</h3>
             <p>
-                [span_16](start_span)این مطالعه از رویکردی فرارشته‌ای مبتنی بر نظریه پیچیدگی (Prigogine & Stengers, 1984) و اکولوژی سیستمی (Capra, 1996) استفاده می‌کند[span_16](end_span). [span_17](start_span)فرض بر این است که تمدن‌ها به عنوان سیستم‌های باز و خودسازمان‌دهنده عمل می‌کنند که پیش از بازیافتن نظم، به صورت دوره‌ای وارد حالت‌های آشوب می‌شوند[span_17](end_span). [span_18](start_span)در این زمینه، «فرکانس» به صورت استعاری به عنوان معیاری برای *انسجام نمادین* – هماهنگی بین ثبات اجتماعی، خلاقیت، و همسویی اکولوژیک – به کار می‌رود[span_18](end_span).
+                [span_7](start_span)The study employs a transdisciplinary approach rooted in complexity theory (Prigogine & Stengers, 1984) and systems ecology (Capra, 1996)[span_7](end_span). [span_8](start_span)It assumes that civilizations behave as open, self-organizing systems that periodically enter states of chaos before regaining order[span_8](end_span). [span_9](start_span)In this context, "frequency" is used metaphorically as a measure of **symbolic coherence**—the harmony between social stability, creativity, and ecological alignment[span_9](end_span).
             </p>
         </section>
         
         <section class="report-section">
-            <h3>۳. نتایج تاریخی مقایسه‌ای</h3>
+            <h3>3. Comparative Historical Results & Temporal Map | نتایج تطبیقی و نقشه زمانی</h3>
             <p>
-                [span_19](start_span)در طول طاعون سیاه (۱۳۴۷-۱۳۵۱)، فروپاشی جمعیتی اروپا با تقریباً پنج دهه سکوت فرهنگی دنبال شد که با رنسانس (حدود ۱۴۰۰ میلادی) به اوج خود رسید[span_19](end_span). [span_20](start_span)[span_21](start_span)همه‌گیری کووید-۱۹ (۲۰۱۹-۲۰۲۳) این ساختار را در یک نسبت زمانی فشرده بازتاب می‌دهد: *فروپاشی ← سکوت ← تجدید* در حدود پنج سال[span_20](end_span)[span_21](end_span). [span_22](start_span)[span_23](start_span)این شتاب با مشاهده‌ی روزا (۲۰۰۵) مبنی بر تجربه چرخه‌های تغییر ۱۰ برابر سریع‌تر در جوامع مدرن نسبت به تاریخ پیشامدرن مطابقت دارد[span_22](end_span)[span_23](end_span).
+                [span_10](start_span)[span_11](start_span)During the Black Death (1347-1351), Europe's population collapse was followed by nearly five decades of cultural dormancy, culminating in the Renaissance (~1400 CE)[span_10](end_span)[span_11](end_span). [span_12](start_span)[span_13](start_span)The COVID-19 pandemic (2019-2023) mirrors this structure in a **compressed temporal ratio**: collapse → silence → renewal within roughly five years[span_12](end_span)[span_13](end_span). [span_14](start_span)This acceleration corresponds to Rosa's (2005) observation that modern societies experience tenfold faster cycles of change[span_14](end_span). [span_15](start_span)[span_16](start_span)The interval compression from 50 years to 5 years is consistent with accelerated temporal density in the consciousness field, where the phase of creative re-synchronization reaches the symbolic "**528 Hz**" band by March 2026[span_15](end_span)[span_16](end_span).
             </p>
             
-            <h4>جدول ۱: خلاصه مقایسه‌ای چرخه‌های طنین</h4>
+            <h4>Table 1: Comparative Resonance Cycles | جدول ۱: چرخه‌های طنین مقایسه‌ای</h4>
             <table class="data-table">
                 <thead>
                     <tr>
-                        <th>رویداد</th>
-                        <th>دوره فروپاشی</th>
-                        <th>دوره تولد دوباره</th>
-                        <th>بازه زمانی</th>
-                        <th>تفسیر نمادین</th>
+                        <th>Event</th>
+                        <th>Collapse Period</th>
+                        <th>Rebirth Period</th>
+                        <th>Interval</th>
+                        <th>Symbolic Interpretation</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>طاعون سیاه</td>
-                        <td>۱۳۴۷-۱۳۵۱</td>
-                        <td>~۱۴۰۰</td>
-                        <td>۵۰ سال</td>
-                        [span_24](start_span)[span_25](start_span)<td>فروپاشی فیزیکی / رنسانس فرهنگی[span_24](end_span)[span_25](end_span)</td>
+                        <td>Black Death</td>
+                        <td>1347-1351</td>
+                        <td>~1400</td>
+                        <td>50 years</td>
+                        [span_17](start_span)[span_18](start_span)<td>Physical collapse / Cultural Renaissance[span_17](end_span)[span_18](end_span)</td>
                     </tr>
                     <tr>
-                        <td>کووید-۱۹</td>
-                        <td>۲۰۱۹-۲۰۲۳</td>
-                        <td>~۲۰۲۶</td>
-                        <td>۳-۵ سال</td>
-                        [span_26](start_span)[span_27](start_span)<td>فروپاشی روان‌شناختی / رنسانس شناختی (بازنویسی آگاهانه)[span_26](end_span)[span_27](end_span)</td>
+                        <td>COVID-19</td>
+                        <td>2019-2023</td>
+                        <td>~2026</td>
+                        <td>3-5 years</td>
+                        [span_19](start_span)[span_20](start_span)<td>Psychological collapse / Cognitive Renaissance (Conscious Rewriting)[span_19](end_span)[span_20](end_span)</td>
                     </tr>
                 </tbody>
             </table>
 
-            <h4>نقشه طنین زمانی (VARZIN Temporal Resonance Map)</h4>
             <div class="figure-placeholder">
-                <p>Figure 1. نمودار طنین چرخه‌ای تاریخی (چارچوب VARZIN)</p>
-                [span_28](start_span)[span_29](start_span)<p>این نمودار، چرخه‌های مشابه (فروپاشی-سکوت-تولد دوباره) طاعون سیاه (۱۳۴۷-۱۴۰۰) و کووید-۱۹ (۲۰۱۹-۲۰۲۶) را نمایش می‌دهد که دومی نشان‌دهنده فشرده‌سازی زمانی شدید است، و به فاز «بازنویسی میدان» (Field Rewriting) در سال ۲۰۲۶ می‌رسد.[span_28](end_span)[span_29](end_span)</p>
+                <p>Figure 1. Comparative Historical Resonance Cycles (VARZIN Framework) | نمودار طنین چرخه‌ای تاریخی</p>
+                <p>
+                    <span class="rtl-text">این نمودار، چرخه‌های مشابه (فروپاشی-سکوت-تولد دوباره) طاعون سیاه (۱۳۴۷-۱۴۰۰) و کووید-۱۹ (۲۰۱۹-۲۰۲۶) را نمایش می‌دهد که دومی نشان‌دهنده فشرده‌سازی زمانی شدید است، و به فاز «بازنویسی میدان» (Field Rewriting) در سال ۲۰۲۶ می‌رسد.</span> 
+                </p>
             </div>
         </section>
 
         <section class="report-section">
-            <h3>۴. بحث</h3>
+            <h3>4. Discussion | بحث</h3>
             <p>
-                [span_30](start_span)دینامیک‌های موازی بین ۱۳۴۷-۱۴۰۰ و ۲۰۱۹-۲۰۲۶ یک شکل موج ثابت از سازگاری انسانی را آشکار می‌سازند[span_30](end_span). [span_31](start_span)اصل «نظم از طریق نوسان» پریگوژین این گذارها را به عنوان فازهای ضروری سازماندهی مجدد در سیستم‌های پیچیده توضیح می‌دهد[span_31](end_span). [span_32](start_span)به طور مشابه، مفهوم طنین مورفیک شلدریک دلالت بر این دارد که حافظه جمعی بر تکرار الگوهای فرهنگی در طول زمان تأثیر می‌گذارد[span_32](end_span). [span_33](start_span)فازهای *سکوت* – چه خلوت‌گزینی صومعه‌ای و چه قرنطینه جهانی – به عنوان تنظیمات مجدد سیستمی عمل می‌کنند و اجازه می‌دهند انسجام در مرتبه‌ای بالاتر از سازماندهی دوباره ظهور کند[span_33](end_span). [span_34](start_span)فشرده شدن زمان از ۵۰ سال به ۵ سال نشان‌دهنده یک تغییر در تراکم آگاهی است – پدیده‌ای که با مدل **VARZIN** از طنین شتاب‌یافته همسو است[span_34](end_span).
+                [span_21](start_span)The parallel dynamics between 1347-1400 and 2019-2026 reveal a consistent waveform of human adaptation[span_21](end_span). [span_22](start_span)Prigogine's principle of "order through fluctuation" explains these transitions as necessary re-organization phases within complex systems[span_22](end_span). [span_23](start_span)Similarly, Sheldrake's concept of morphic resonance implies that collective memory influences the recurrence of cultural patterns across time[span_23](end_span). [span_24](start_span)The silence phases—whether monastic retreat or global lockdown—act as systemic resets, allowing coherence to re-emerge at a higher order of organization[span_24](end_span).
             </p>
         </section>
 
         <section class="report-section">
-            <h3>۵. نتیجه‌گیری</h3>
+            <h3>5. Conclusion | نتیجه‌گیری</h3>
             <p>
-                چارچوب **VARZIN** پیشنهاد می‌کند که تاریخ *خطی* نیست، بلکه *طنین‌دار* است. [span_35](start_span)هر بحران بزرگ، میدان جمعی بشریت را دوباره کوک می‌کند[span_35](end_span). طاعون سیاه، رنسانس را به وجود آورد؛ [span_36](start_span)[span_37](start_span)کووید-۱۹ ممکن است یک رنسانس شناختی و فرهنگی را که در **مارس ۲۰۲۶** آغاز می‌شود، به ارمغان بیاورد[span_36](end_span)[span_37](end_span). [span_38](start_span)این تحولات بازتاب‌دهنده هوش عمیق‌تر میدان آگاهی زمین هستند – چرخه‌ای که در آن فروپاشی تبدیل به سکوت می‌شود و سکوت تبدیل به نور می‌گردد[span_38](end_span).
+                [span_25](start_span)The **VARZIN framework** proposes that history is not linear but resonant[span_25](end_span). [span_26](start_span)Each major crisis re-tunes the collective field of humanity[span_26](end_span). The Black Death gave birth to the Renaissance; [span_27](start_span)[span_28](start_span)COVID-19 may usher in a cognitive and cultural renaissance beginning in **March 2026**[span_27](end_span)[span_28](end_span). [span_29](start_span)Such transformations reflect the deeper intelligence of the Earth's consciousness field—a cycle where collapse becomes silence, and silence becomes light[span_29](end_span).
             </p>
         </section>
 
         <section class="report-section">
-            <h3>۶. منابع</h3>
+            <h3>6. References | منابع</h3>
             <ul>
-                <li>Briggs, A., & Peat, D. (1989). Turbulent Mirror: An Illustrated Guide to Chaos Theory and the Science of Wholeness. [span_39](start_span)Harper & Row.[span_39](end_span)</li>
-                <li>Capra, F. (1996). The Web of Life: A New Scientific Understanding of Living Systems. [span_40](start_span)Anchor Books.[span_40](end_span)</li>
-                <li>Laszlo, E. (2004). Science and the Akashic Field: An Integral Theory of Everything. [span_41](start_span)Inner Traditions.[span_41](end_span)</li>
-                <li>Prigogine, I., & Stengers, I. (1984). Order Out of Chaos: Man's New Dialogue with Nature. [span_42](start_span)Bantam Books.[span_42](end_span)</li>
-                <li>Rosa, H. (2005). Social Acceleration: A New Theory of Modernity. [span_43](start_span)Columbia University Press.[span_43](end_span)</li>
-                <li>Sheldrake, R. (1988). The Presence of the Past: Morphic Resonance and the Habits of Nature. [span_44](start_span)Times Books.[span_44](end_span)</li>
+                <li>Briggs, A., & Peat, D. (1989). Turbulent Mirror: An Illustrated Guide to Chaos Theory and the Science of Wholeness. [span_30](start_span)Harper & Row.[span_30](end_span)</li>
+                <li>Capra, F. (1996). The Web of Life: A New Scientific Understanding of Living Systems. [span_31](start_span)Anchor Books.[span_31](end_span)</li>
+                <li>Laszlo, E. (2004). Science and the Akashic Field: An Integral Theory of Everything. [span_32](start_span)Inner Traditions.[span_32](end_span)</li>
+                <li>Prigogine, I., & Stengers, I. (1984). Order Out of Chaos: Man's New Dialogue with Nature. [span_33](start_span)Bantam Books.[span_33](end_span)</li>
+                <li>Rosa, H. (2005). Social Acceleration: A New Theory of Modernity. [span_34](start_span)Columbia University Press.[span_34](end_span)</li>
+                <li>Sheldrake, R. (1988). The Presence of the Past: Morphic Resonance and the Habits of Nature. [span_35](start_span)Times Books.[span_35](end_span)</li>
             </ul>
         </section>
 
