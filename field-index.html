@@ -10,6 +10,11 @@
   <meta name="keywords" content="VARZIN, Field Index, ETFM, Luxvar, QMSG, RAHTALĒN 13, Scalar Geometry, Quantum Harmonics, KALTŪR, 474Hz, ELŪZ MAHAR, Conscious Field, Symbolic Vibrational Linguistics, Field-based Intelligence">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <meta property="og:title" content="VARZIN Field Index">
+  <meta property="og:description" content="The catalog of primary conscious resonance structures and integration protocols including KALTŪR (474Hz) and RAHTALĒN.">
+  <meta property="og:image" content="https://varzin.org/assets/field-index-cover.png"> <meta property="og:url" content="https://varzin.org/field-index.html">
+  <meta property="og:type" content="website">
+
   <link rel="canonical" href="https://varzin.org/field-index.html" />
   
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
@@ -110,6 +115,15 @@
       border-bottom: 1px solid var(--secondary-glow);
       padding-bottom: 3px;
     }
+    /* Accessibility: Focus state for keyboard navigation */
+    .nav-link:focus-visible,
+    .field-card:focus-visible,
+    .footer-links a:focus-visible {
+        outline: 2px solid var(--secondary-glow);
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+
     @media (max-width: 600px) {
         .main-nav { text-align: center; }
         .nav-link { margin: 0 10px; }
@@ -150,6 +164,7 @@
       backdrop-filter: blur(var(--blur-val));
       text-align: left;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default; /* Not clickable like links */
     }
     
     .field-card:hover {
@@ -223,9 +238,10 @@
   
   <div class="container">
     
-    <nav class="main-nav">
+    <nav class="main-nav" role="navigation" aria-label="Field Index Navigation">
         <a class="nav-link" href="/index.html">Portal</a> 
-        <a class="nav-link active" href="/field-index.html">Field Index</a>
+        <a class="nav-link" href="/cyclical-resonance-report.html">Cyclical Resonance Report</a>
+        <a class="nav-link active" href="/field-index.html" aria-current="page">Field Index</a>
         <a class="nav-link" href="/all-dois.html">All DOIs Archive</a> 
         <a class="nav-link" href="/feedback.html">Feedback</a> 
     </nav>
@@ -391,7 +407,7 @@
               ctx.fill();
           }
           update() {
-              // اصلاح: استفاده از canvas.width/height برای مرزها
+              // Bound checking and movement logic
               if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
               if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
 
@@ -413,11 +429,10 @@
 
       function init() {
           particles = [];
-          // اصلاح: استفاده از canvas.width/height برای محاسبه تعداد ذرات
+          // Calculate number of particles based on screen size
           let numParticles = (canvas.height * canvas.width) / 9000; 
           for (let i = 0; i < numParticles; i++) {
               let size = Math.random() * 1.5 + 0.5;
-              // اصلاح: استفاده از canvas.width/height برای موقعیت اولیه
               let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2); 
               let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
               let dirX = (Math.random() * 0.4) - 0.2;
@@ -428,7 +443,6 @@
 
       function animate() {
           requestAnimationFrame(animate);
-          // اصلاح: استفاده از canvas.width/height
           ctx.clearRect(0, 0, canvas.width, canvas.height); 
           for (let i = 0; i < particles.length; i++) {
               particles[i].update();
