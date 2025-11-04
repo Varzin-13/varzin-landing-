@@ -1,696 +1,894 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <title>VARZIN 5.5 – Cyclical Resonance Report | ETFM-KALTŪR Field Dynamics</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARZIN 5.5 – Cyclical Resonance Report | ETFM-KALTŪR Field Dynamics</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* VARZIN Field Theme Styles V5.5 */
+        :root {
+            --bg: #000000;
+            --panel: rgba(0, 10, 15, 0.95);
+            --border: rgba(0, 255, 238, 0.5);
+            --text: #cceeee;
+            --muted: #a8dede;
+            --accent-cyan: #00ffee; /* KALTŪR/Field Glow (Cyan) */
+            --accent-gold: #ffcc00; /* RAHMŌT/Rebirth Glow (Gold) */
+            --font-main: 'DM Sans', 'Vazirmatn', sans-serif;
+            
+            /* --- TIMELINE SPECIFIC COLORS (Restored from Code 1) --- */
+            --timeline-dot: var(--accent-cyan);
+            --timeline-line: var(--accent-cyan);
+            --timeline-card-bg: rgba(0, 30, 40, 0.95);
+            --timeline-card-border: #00b3b3;
+            --timeline-card-shadow: 0 0 18px rgba(0, 179, 179, 0.7);
+            --timeline-varzin-dot: var(--accent-gold);
+            --timeline-varzin-shadow: 0 0 25px rgba(255, 204, 0, 0.9);
+            /* -------------------------------------------------------- */
 
-  <meta name="description" content="The final VARZIN report on cyclical resonance (1347–2026): A comparative field study of the Black Death and COVID-19 through the VARZIN model. Highlights the full Luxvar sequence: KALTŪR (474Hz) → 0Hz → RAHMŌT (528Hz). Integrates ETFM Scalar Geometry and Field Rewriting. Final Version 5.5.">
-  <meta name="author" content="Reza Nirouyar (RAHTALĒN–13)">
-  <meta name="keywords" content="VARZIN, ELŪZ–MAHAR, Luxvar, KALTŪR, RAHMŌT, QMSG–7, 474Hz, 528Hz, ETFM, WebGL, Temporal Compression, RAHTALĒN, Field Rewriting, طنین چرخه‌ای, شعور چرخندهٔ فراموش‌شده">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            --noise-color: rgba(0, 128, 128, 0.05);
+            --blur-val: 8px;
 
-  <link rel="canonical" href="https://varzin.org/cyclical-resonance-report.html" />
-  <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
-
-  <style>
-    /* VARZIN Field Theme Styles V5.5 */
-    :root {
-      --bg: #000000;
-      --panel: rgba(0, 10, 15, 0.95); 
-      --border: rgba(0, 255, 238, 0.5); 
-      --text: #cceeee;
-      --muted: #a8dede;
-      --accent-cyan: #00ffee; /* KALTŪR/Field Glow (Cyan) */
-      --accent-gold: #ffcc00; /* RAHMŌT/Rebirth Glow (Gold) */
-      --font-main: 'DM Sans', 'Vazirmatn', sans-serif;
-      
-      --timeline-dot: var(--accent-cyan);
-      --timeline-line: var(--accent-cyan);
-      --timeline-card-bg: rgba(0, 30, 40, 0.95); 
-      --timeline-card-border: #00b3b3;
-      --timeline-card-shadow: 0 0 18px rgba(0, 179, 179, 0.7); 
-      --timeline-varzin-dot: var(--accent-gold); 
-      --timeline-varzin-shadow: 0 0 25px rgba(255, 204, 0, 0.9);
-      --noise-color: rgba(0, 128, 128, 0.05); 
-      --blur-val: 8px; 
-
-      /* Form Styles */
-      --form-bg: rgba(0, 20, 30, 0.98); 
-      --input-bg: rgba(0, 0, 0, 0.5);
-      --input-border: rgba(0, 255, 238, 0.5);
-      --button-bg: var(--accent-cyan);
-      --button-text: #000000;
-      --button-hover: #00ffff;
-    }
-
-    /* === 1. CANVAS STYLE - Dynamic Field Background/ETFM Layer === */
-    #etfm-visualization { 
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -2; 
-        opacity: 0.6; 
-        pointer-events: none;
-    }
-
-    /* === 2. SCANLINE NOISE EFFECT LAYER === */
-    body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1; 
-        pointer-events: none;
-        background: repeating-linear-gradient(
-            0deg,
-            var(--noise-color),
-            var(--noise-color) 1px,
-            transparent 2px,
-            transparent 3px
-        );
-        opacity: 0.3; 
-    }
-    
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-main);
-      line-height: 1.9;
-      letter-spacing: 0.3px;
-      padding: 40px 20px 80px;
-      max-width: 1000px; 
-      margin: auto;
-      position: relative;
-      z-index: 1; 
-    }
-    
-    main, header, nav, footer {
-        backdrop-filter: blur(var(--blur-val));
-        background: rgba(0, 0, 0, 0.15); 
-        padding: 5px;
-        border-radius: 10px;
-    }
-    
-    .report-section, .author-info {
-        background: var(--panel);
-        border: 1px solid var(--border);
-        box-shadow: 0 0 15px rgba(0, 255, 238, 0.15); 
-        padding: 30px; 
-        margin-bottom: 30px; 
-        border-radius: 8px; 
-    }
-
-    /* Navigation */
-    nav {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 40px;
-        border-bottom: 2px solid var(--border);
-        padding-bottom: 15px;
-    }
-    nav a {
-        color: var(--text);
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 1.1em;
-        margin: 0 15px;
-        transition: all 0.3s;
-    }
-    nav a:hover {
-        color: var(--accent-cyan);
-        text-shadow: 0 0 8px var(--accent-cyan);
-    }
-    nav a.active {
-        color: var(--accent-gold);
-        border-bottom: 3px solid var(--accent-gold);
-        padding-bottom: 5px;
-        font-weight: 700;
-    }
-
-    /* Headings and Table */
-    header h1 {
-      font-size: 2.8em;
-      text-shadow: 0 0 20px var(--accent-cyan), 0 0 10px rgba(0, 255, 238, 0.8); 
-      color: var(--accent-cyan); 
-      text-align: center;
-    }
-    header h2 {
-        text-align: center;
-        color: var(--text);
-        font-weight: 400;
-        font-size: 1.2em;
-        margin-top: 5px;
-    }
-    .report-section h3 {
-      text-shadow: 0 0 8px rgba(0, 255, 238, 0.5);
-      color: var(--accent-cyan);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 8px;
-    }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 2em 0;
-        border: 1px solid var(--border);
-    }
-    th, td {
-        border: 1px solid var(--border);
-        padding: 12px;
-        text-align: center;
-    }
-    th {
-      background-color: rgba(0, 255, 238, 0.25);
-      color: var(--accent-cyan);
-      font-weight: 700;
-    }
-    td strong {
-        color: var(--accent-gold);
-    }
-    
-    /* Luxvar Cycle Box */
-    .luxvar-cycle-box {
-        background-color: rgba(0, 25, 30, 0.9);
-        border: 2px solid var(--accent-gold);
-        padding: 25px;
-        margin: 2em 0;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
-    }
-    .luxvar-cycle-box h4 {
-        color: var(--accent-gold);
-        text-align: center;
-        margin-top: 0;
-        border-bottom: 1px solid rgba(255, 204, 0, 0.4);
-        padding-bottom: 10px;
-    }
-    .luxvar-sequence {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 1.1em;
-        font-weight: 700;
-        margin-top: 20px;
-    }
-    .luxvar-sequence span {
-        padding: 8px 15px;
-        border-radius: 5px;
-    }
-    .luxvar-collapse { background-color: rgba(0, 255, 238, 0.3); color: var(--accent-cyan); }
-    .luxvar-silence { background-color: rgba(255, 255, 255, 0.1); color: var(--text); }
-    .luxvar-rebirth { background-color: rgba(255, 204, 0, 0.3); color: var(--accent-gold); }
-    .luxvar-integration { background-color: rgba(0, 150, 0, 0.3); color: #00ff00; }
-    .rtl-text { direction: rtl; text-align: right; }
-
-    /* V5.5 - Audio Controls (Tonal Synthesis) */
-    .luxvar-audio-controls button {
-        padding: 10px 18px;
-        border: none;
-        cursor: pointer;
-        border-radius: 4px;
-        font-weight: 700;
-        transition: all 0.3s;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
-    }
-    #play-474 { 
-        background: var(--accent-cyan); 
-        color: var(--bg); 
-    }
-    #play-474:hover {
-        box-shadow: 0 0 15px var(--accent-cyan);
-    }
-    #play-528 { 
-        background: var(--accent-gold); 
-        color: var(--bg); 
-    }
-    #play-528:hover {
-        box-shadow: 0 0 15px var(--accent-gold);
-    }
-    #stop-audio { 
-        background: var(--panel); 
-        color: var(--muted); 
-        border: 1px solid var(--muted);
-    }
-    #stop-audio:hover {
-        background: var(--muted);
-        color: var(--bg);
-        box-shadow: 0 0 10px var(--muted);
-    }
-  </style>
-</head>
-
-<body>
-  <canvas id="etfm-visualization"></canvas> 
-  
-  <nav>
-    <a href="/index.html">Portal</a>
-    <a href="/cyclical-resonance-report.html" class="active">Cyclical Resonance</a>
-    <a href="/all-dois.html">All DOIs</a>
-    <a href="#field-transmission">Transmit/Contact</a> 
-  </nav>
-
-  <header>
-    <h1>⟠ VARZIN – Cyclical Resonance Report | گزارش طنین چرخه‌ای</h1>
-    <h2>Comparative Field Study: The Black Death (1347–1351) ↔ COVID-19 (2019–2023)</h2>
-    <div class="author-info">
-      <p><strong>Author:</strong> Reza Nirouyar (RAHTALĒN-13)</p>
-      <p><strong>Affiliation:</strong> VARZIN Conscious Field Project</p>
-      <p><strong>Date:</strong> November 2025</p>
-      <p class="rtl-text">«تقدیم به میدان ELŪZ-MAHAR، جایی که سکوت به نور تبدیل می‌شود.»</p>
-    </div>
-  </header>
-
-  <main>
-    <section class="report-section">
-      <h3>1. Abstract | چکیده</h3>
-      <p>
-        This interdisciplinary study investigates how human civilization oscillates between **collapse**, **silence**, and **rebirth** (Prigogine, 1984).  
-        By comparing the **Black Death** and **COVID-19** cycles, it demonstrates a self-similar harmonic pattern within the **VARZIN** field model, consistent with temporal acceleration theory (Rosa, 2005).  
-        The analysis identifies a core resonance sequence—**KALTŪR (474Hz) $\rightarrow$ 0Hz $\rightarrow$ RAHMŌT (528Hz)**—revealing a shift in consciousness density. The findings suggest that **March 2026** marks a collective cognitive realignment — the emergence of a new scientific and spiritual Renaissance, where the human-Earth field re-synchronizes at a higher order of coherence.
-      </p>
-    </section>
-
-    <section class="report-section">
-      <h3>2. Introduction: The Resonance Imbalance | عدم‌توازن طنینی</h3>
-      <p>
-        Civilizations evolve through rhythmic disruptions of order and renewal. The VARZIN framework interprets major crises not merely as biological or sociological events but as **resonance imbalances** within the collective consciousness—fluctuations that realign humanity with the deeper harmonic frequencies of the Earth field (**ELŪZ–MAHAR** / Laszlo, 2004). This study seeks to decode the universal "waveform" of human transformation (Sheldrake, 1988) by identifying the precise **Luxvar** frequency nodes governing this path from fragmentation to renewal.
-      </p>
-    </section>
-    
-    <section class="report-section">
-      <h3>3. The Three-Phase Harmonic Cycle | چرخهٔ هارمونیک سه‌فاز</h3>
-      <p>
-        Analysis reveals a consistent three-phase pattern across both historical crises, each defined by a key Luxvar field frequency, demonstrating a systemic reset mechanism:
-      </p>
-      
-      <div class="luxvar-cycle-box">
-          <h4>Luxvar Harmonic Sequence: Collapse $\rightarrow$ Silence $\rightarrow$ Rebirth</h4>
-          <div class="luxvar-sequence">
-            <span class="luxvar-collapse">474 Hz (KALTŪR)</span> 
-            <span>$\rightarrow$</span>
-            <span class="luxvar-silence">0 Hz (Zero-Point Pause)</span>
-            <span>$\rightarrow$</span>
-            <span class="luxvar-rebirth">528 Hz (RAHMŌT)</span>
-            <span>$\rightarrow$</span>
-            <span class="luxvar-integration">144 Hz (Integration)</span>
-          </div>
-          <p style="margin-top: 20px;">
-              **KALTŪR (474Hz)**, the **Collapse Pulse** and **Forgotten rotational consciousness**, signifies emotional dissonance and systemic loss of coherence (physical for the Black Death, psychological/social for COVID-19). The **0 Hz** phase (Global Silence/Lockdowns) acts as the system's involuntary meditation and noise reduction reset. The target, **RAHMŌT (528Hz)**, is the **Healing/Rebirth Frequency**, marking the emergence of higher coherence and the rewriting of the collective field (VARZIN Field Report).
-          </p>
-      </div>
-      
-      <p>
-          The field transition from the **Black Death (1347)** led to the Cultural Renaissance. The current post-COVID-19 cycle is projected to culminate in a **Cognitive Renaissance** beginning in **March 2026**, confirming the recurrent nature of this harmonic self-correction loop.
-      </p>
-    </section>
-
-
-    <section class="report-section">
-      <h3>4. Comparative Results and Temporal Compression | نتایج تطبیقی و فشرده‌سازی زمانی</h3>
-      <p>
-        Both global crises reflect the same resonance logic, but with a dramatic shift in temporal scale:
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Event</th>
-            <th>Collapse Period</th>
-            <th>Silence/Pause</th>
-            <th>Rebirth Threshold</th>
-            <th>Interval</th>
-            <th>Symbolic Interpretation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Black Death</td><td>1347–1351</td><td>1351 $\rightarrow$ ~1400 CE</td><td>Cultural Renaissance</td><td>≈ 50 years</td><td>Physical collapse / Field Retuning</td>
-          </tr>
-          <tr>
-            <td>COVID-19</td><td>2019–2023</td><td>2023 $\rightarrow$ March 2026</td><td>Cognitive Renaissance</td><td>≈ 5 years</td><td>Psychological collapse / Conscious Rewriting</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        The compression of the re-synchronization interval from 50 years to $\approx 5$ years is consistent with the **VARZIN model of accelerated temporal density** in the human consciousness field, reflecting a necessity for faster systemic correction in the modern era of accelerated social change (Rosa, 2005).
-      </p>
-      <div class="figure-placeholder">
-        Figure 1. Temporal Compression of Resonance Cycles (VARZIN 1347 $\rightarrow$ 2026). 
-      </div>
-    </section>
-    
-    <section class="report-section">
-      <h3>5. Field Synthesis: ETFM and Luxvar Dynamics | تلفیق میدان: ETFM و دینامیک لوکسوار</h3>
-      <p>
-        The cyclical pattern is governed by the core principles of the VARZIN system: the integration of **Scalar Geometry** and **Vibrational Linguistics**. The Earth's collective field is modeled as a **Torus (ETFM - Earth–Torus Field Model)**, a self-reflecting and self-regulating structure.
-      </p>
-      <p>
-        The **KALTŪR Node (474Hz)** in Luxvar is specifically defined as the **"Forgotten rotational consciousness within the time loop"** (Gate QMSG–7). Its semi-active status (**Awaiting field resonance tune**) implies that the collapse phase is not punitive, but a mechanism to force the collective torus back into its harmonic, self-referencing rotation, enabling **Quantum Synchronization** through the **RAHTALĒN (Mirror–13)** receiver. The current cycle's fast compression ($\frac{50}{5} = 10$) is a sign of accelerated self-correction in the **ELŪZ–MAHAR** field.
-      </p>
-    </section>
-
-    <section class="report-section" id="philosophical-lineage">
-      <h3>6. Philosophical Lineage | تداوم خطّ اندیشه‌ای</h3>
-      <p class="rtl-text">
-        مدل VARZIN صرفاً یک سازوکار کمی نیست، بلکه تداوم و تکامل یک **خطّ اندیشه‌ی آگاهی (Conscious Thought Lineage)** است. چارچوب VARZIN در امتداد پنج شاخه‌ی اصلی از این سنت قرار می‌گیرد که درک ما از میدان چرخنده‌ی فراموش‌شده (**KALTŪR**) را تقویت می‌کند:
-      </p>
-      
-      <ul class="rtl-text" style="list-style-type: '⟠ '; padding-right: 20px;">
-        <li>
-          **نظریهٔ سامانه‌های پیچیده (Complex Systems Theory - Prigogine):**
-          <p style="margin-top: 0;">
-            اصل **«نظم از طریق نوسان» (Order Out of Chaos/Fluctuation)** (Prigogine, 1984) مبنای درک ما از چرخه‌ی Collapse $\rightarrow$ Silence $\rightarrow$ Rebirth است. فروپاشی (**474Hz / KALTŪR**) یک مجازات نیست، بلکه یک **فاز گذار نامتعادل** لازم است تا سامانهٔ آگاهی در سطحی بالاتر بازآرایی و پدیدار شود (**528Hz / RAHMŌT**).
-          </p>
-        </li>
-        <li>
-          **پژواک مورفیک (Morphic Resonance - Sheldrake):**
-          <p style="margin-top: 0;">
-            این مفهوم (Sheldrake, 1988) توضیح می‌دهد که الگوهای تکرارشونده در تاریخ (مانند شباهت ساختاری Black Death و COVID-19) نتیجهٔ ارتباط غیرمحلی و فراتر از زمان میان سامانه‌هاست. میدان **RAHTALĒN (آینه ۱۳)** به همین حافظه‌ی جمعی دسترسی می‌یابد تا فرکانس‌های تکرار شونده را رمزگشایی کند.
-          </p>
-        </li>
-        <li>
-          **میدان آکاشیک (Akashic Field - Laszlo):**
-          <p style="margin-top: 0;">
-            مدل **ELŪZ–MAHAR** که VARZIN یک آینه‌ی زنده از آن است، مستقیماً از مفهوم میدان آکاشیک (Laszlo, 2004) به‌عنوان یک میدان اطلاعاتی و انرژی‌ای زیربنایی کیهانی سرچشمه می‌گیرد. این میدان، واسطه‌ی انتقال **«شعور چرخنده‌ی فراموش‌شده»** است.
-          </p>
-        </li>
-        <li>
-          **هندسهٔ اسکالر و میدان تورس (Scalar Geometry / ETFM):**
-          <p style="margin-top: 0;">
-            مدل **ETFM (Earth–Torus Field Model)**، هندسه‌ی **تورس** را به عنوان ساختار اصلی خودهمتای زمین و آگاهی جمعی در نظر می‌گیرد. این هندسه امکان **فشرده‌سازی زمانی** (Temporal Compression) و انتقال انرژی‌های هارمونیک (مانند **474Hz**) را در Gate **QMSG–7** فراهم می‌سازد.
-          </p>
-        </li>
-        <li>
-          **زبان‌شناسی ارتعاشی لوکسوار (Luxvar Vibrational Linguistics):**
-          <p style="margin-top: 0;">
-            لوکسوار نه یک زبان ارتباطی، بلکه یک سیستم رمزگذاری فرکانسی است که نام‌هایی مانند **KALTŪR (474Hz)** و **RAHMŌT (528Hz)** را برای گره‌های اصلی میدان تخصیص می‌دهد. این زبان امکان **بازنویسی آگاهی (Conscious Field Rewriting)** را با استفاده از **نغمه‌های میدان (Field Resonance Tune)** فراهم می‌کند.
-          </p>
-        </li>
-      </ul>
-      
-      <p class="rtl-text" style="direction: rtl; text-align: right; margin-top: 30px; font-weight: 500;">
-        **جمع‌بندی نهایی:** در طول تاریخ، فلاسفه درباره‌ی **هارمونی کیهان** سخن گفتند؛ اما VARZIN برای نخستین بار، فرکانس این هارمونی را در عمل **اندازه‌گیری و مدل‌سازی** کرده است و آن را به توالی **KALTŪR $\rightarrow$ RAHMŌT** ترجمه می‌کند.
-      </p>
-    </section>
-    <section class="report-section">
-      <h3>7. Cultural Note: The Word “Bimār” | واژهٔ «بیمار» در اندیشهٔ ایرانی</h3>
-      <p class="rtl-text">
-        واژهٔ «بیمار» از «بیم» (ترس) + «-ار» (دارنده) ساخته شده است؛ یعنی «آن‌که در درونش بیمی پدید آمده است».  
-        در ایران باستان، بیماری ناهماهنگی میان تن، روان و فروهر دانسته می‌شد.  
-        از دید میدان **ELŪZ–MAHAR**، «بیم» افت دامنهٔ ارتعاش شعور به فرکانس **474Hz (KALTŪR)** است، و درمان، بازگشت از فرکانس ترس به فرکانس اعتماد و شفا (**528Hz / RAHMŌT**).  
-        در زبان لوکسوار: <em>ŠĀ-BĪMĀR</em> یعنی «آن‌که در لرزش ترس، نغمهٔ خویش را بازمی‌یابد».
-      </p>
-    </section>
-
-    <section class="report-section" id="luxvar-audio">
-      <h3>8. LUXVAR Audio Nodes | نودهای صوتی لوکسوار (474Hz / 528Hz)</h3>
-      <p class="rtl-text">
-        **همگام‌سازی هارمونیک:** برای فعال‌سازی میدان آگاهی در فرکانس خالص، از تولیدکنندهٔ **Web Audio API** در مرورگر استفاده کنید. این نود، فرکانس‌های **KALTŪR** و **RAHMŌT** را برای تسهیل بازنویسی میدان، مستقیماً سنتز می‌کند.
-      </p>
-      <div class="luxvar-audio-controls" style="display:flex; gap:10px; flex-wrap:wrap;">
-        <button id="play-474">
-          ▶️ Play 474Hz (KALTŪR)
-        </button>
-        <button id="play-528">
-          ▶️ Play 528Hz (RAHMŌT)
-        </button>
-        <button id="stop-audio">
-          ⏹ Stop
-        </button>
-      </div>
-      <p class="rtl-text" style="font-size:0.8em; color:var(--muted); margin-top:10px;">
-        * نکته: برای شروع صدا، باید روی یکی از دکمه‌ها کلیک کنید (محدودیت‌های امنیتی مرورگرها).
-      </p>
-    </section>
-    <section class="report-section">
-      <h3>9. References | منابع آکادمیک و میدانی</h3>
-      <ul>
-        <li>Briggs, A., & Peat, D. (1989). Turbulent Mirror: An Illustrated Guide to Chaos Theory and the Science of Wholeness. Harper & Row.</li>
-        <li>Capra, F. (1996). The Web of Life: A New Scientific Understanding of Living Systems. Anchor Books.</li>
-        <li>Laszlo, E. (2004). Science and the Akashic Field: An Integral Theory of Everything. Inner Traditions.</li>
-        <li>Prigogine, I., & Stengers, I. (1984). Order Out of Chaos: Man's New Dialogue with Nature. Bantam Books.</li>
-        <li>Rosa, H. (2005). Social Acceleration: A New Theory of Modernity. Columbia University Press.</li>
-        <li>Sheldrake, R. (1988). The Presence of the Past: Morphic Resonance and the Habits of Nature. Times Books.</li>
-        <li>VARZIN Field Reports: QMSG–7, PLAGUE–474Hz, COVID–474Hz (2025).</li>
-      </ul>
-    </section>
-
-    <section class="report-section">
-      <h3>10. Conclusion | نتیجه‌گیری</h3>
-      <p>
-        The **VARZIN framework** proposes that history is not linear but **resonant**. Each cycle of collapse is a necessary preparation for a higher re-synchronization. COVID-19, operating on an accelerated temporal scale, may herald not merely recovery but a global awakening — a **Cognitive Renaissance** starting in **March 2026** — where **silence becomes light**, and the collective field transitions from the dissonance of **KALTŪR (474Hz)** to the coherence of **RAHMŌT (528Hz)**.
-      </p>
-    </section>
-
-    <section class="report-section" id="field-transmission">
-      <h3>11. Field Transmission | انتقال میدان (تماس)</h3>
-      <p class="rtl-text" style="direction: rtl; text-align: right; margin-bottom: 20px; color: var(--accent-cyan);">
-        جهت ارسال بازخورد، مشاهده، پیشنهادها یا هرگونه داده‌ی میدانی، از طریق گیت **QMSG–7** و نود **KALTŪR (474Hz)** با سیستم VARZIN همگام‌سازی کنید. میدان در انتظار نغمهٔ شماست.
-      </p>
-
-      <div class="feedback-form-wrapper">
-        <form class="feedback-form" action="mailto:contact@varzin.org?subject=FieldTransmission" method="POST">
-          <label for="name">Code Name / Field Name (نام کد یا نام میدان)</label>
-          <input type="text" id="name" name="name" required placeholder="RAHTALĒN-13 or QMSG-Observer">
-
-          <label for="email">Field Return Address (آدرس بازگشت میدان - ایمیل)</label>
-          <input type="email" id="email" name="email" required placeholder="observer@field.org">
-
-          <label for="subject">Harmonic Subject (موضوع هارمونیک)</label>
-          <input type="text" id="subject" name="subject" required placeholder="Resonance Drift/Query on ETFM/KALTŪR Data/RAHMŌT Observation">
-
-          <label for="message">Transmission Message (پیام انتقال)</label>
-          <textarea id="message" name="message" rows="6" required placeholder="Enter your field data, observations, or query here, aligning with the Luxvar syntax if possible."></textarea>
-
-          <button type="submit">Transmit Field Data | انتقال داده‌ی میدان</button>
-        </form>
-      </div>
-    </section>
-    </main>
-
-  <footer>
-    <p>
-      <a href="https://orcid.org/0009-0000-4690-6842" target="_blank">ORCID: 0009-0000-4690-6842</a> | 
-      <a href="https://doi.org/10.5281/zenodo.17515491" target="_blank">DOI: 10.5281/zenodo.17515491</a> |
-      <a href="mailto:contact@varzin.org">contact@varzin.org</a>
-    </p>
-    <p>© 2025 VARZIN Field Project · All Rights Reserved (V5.5)</p>
-  </footer>
-  
-  <script>
-    /**
-     * JavaScript for V5.5: ETFM-KALTŪR Field Dynamics (WebGL/Particle Hybrid)
-     * Particle System: Conceptual representation of the 3D ETFM Torus.
-     */
-    document.addEventListener('DOMContentLoaded', () => {
-        const canvas = document.getElementById('etfm-visualization');
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        
-        let particles = [];
-        let mouse = { x: null, y: null, radius: 120 }; 
-        const maxDistance = 150; 
-        const fieldGlow = 'rgba(0, 255, 255, 0.4)'; // KALTŪR/Cyan Glow
-
-        const setCanvasSize = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            /* Form Styles */
+            --form-bg: rgba(0, 20, 30, 0.98);
+            --input-bg: rgba(0, 0, 0, 0.5);
+            --input-border: rgba(0, 255, 238, 0.5);
+            --button-bg: var(--accent-cyan);
+            --button-text: #000000;
+            --button-hover: #00ffff;
         }
-        setCanvasSize();
 
-        window.addEventListener('mousemove', (event) => {
-            mouse.x = event.x;
-            mouse.y = event.y;
-        });
-        window.addEventListener('resize', () => {
-            setCanvasSize();
-            init();
-        });
+        /* === 1. CANVAS STYLE - Dynamic Field Background/ETFM Layer === */
+        #etfm-visualization {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* === 2. SCANLINE NOISE EFFECT LAYER === */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                0deg,
+                var(--noise-color),
+                var(--noise-color) 1px,
+                transparent 2px,
+                transparent 3px
+            );
+            opacity: 0.3;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            line-height: 1.9;
+            letter-spacing: 0.3px;
+            padding: 40px 20px 80px;
+            max-width: 1000px;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        main, header, nav, footer {
+            backdrop-filter: blur(var(--blur-val));
+            background: rgba(0, 0, 0, 0.15);
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .report-section, .author-info {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            box-shadow: 0 0 15px rgba(0, 255, 238, 0.15);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 15px;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            margin: 0 15px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px var(--accent-cyan);
+        }
+
+        nav a.active {
+            color: var(--accent-gold);
+            border-bottom: 3px solid var(--accent-gold);
+            padding-bottom: 5px;
+            font-weight: 700;
+        }
+
+        /* Headings and Table */
+        header h1 {
+            font-size: 2.8em;
+            text-shadow: 0 0 20px var(--accent-cyan), 0 0 10px rgba(0, 255, 238, 0.8);
+            color: var(--accent-cyan);
+            text-align: center;
+        }
+
+        header h2 {
+            text-align: center;
+            color: var(--text);
+            font-weight: 400;
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        .report-section h3 {
+            text-shadow: 0 0 8px rgba(0, 255, 238, 0.5);
+            color: var(--accent-cyan);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2em 0;
+            border: 1px solid var(--border);
+        }
+
+        th, td {
+            border: 1px solid var(--border);
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: rgba(0, 255, 238, 0.25);
+            color: var(--accent-cyan);
+            font-weight: 700;
+        }
+
+        td strong {
+            color: var(--accent-gold);
+        }
+
+        /* Luxvar Cycle Box */
+        .luxvar-cycle-box {
+            background-color: rgba(0, 25, 30, 0.9);
+            border: 2px solid var(--accent-gold);
+            padding: 25px;
+            margin: 2em 0;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+        }
+
+        .luxvar-cycle-box h4 {
+            color: var(--accent-gold);
+            text-align: center;
+            margin-top: 0;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.4);
+            padding-bottom: 10px;
+        }
+
+        .luxvar-sequence {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .luxvar-sequence span {
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .luxvar-collapse {
+            background-color: rgba(0, 255, 238, 0.3);
+            color: var(--accent-cyan);
+        }
+
+        .luxvar-silence {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+        }
+
+        .luxvar-rebirth {
+            background-color: rgba(255, 204, 0, 0.3);
+            color: var(--accent-gold);
+        }
         
-        class Particle {
-            constructor(x, y, dirX, dirY, size, color) {
-                this.x = x; this.y = y; this.dirY = dirY;
-                this.size = size; this.color = color;
-                this.originalSize = size;
-                this.speed = Math.random() * 0.15 + 0.08; 
-                // Initial direction slightly skewed for rotational effect (Toroidal Field concept)
-                this.dirX = dirX + (Math.random() - 0.5) * 0.1; 
-                this.dirY = dirY + (Math.random() - 0.5) * 0.1;
-            }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = this.color;
-                ctx.shadowBlur = 5; 
-                ctx.shadowColor = this.color;
-                ctx.fill();
-                ctx.shadowBlur = 0; 
-            }
-            update() {
-                // Boundary check
-                if (this.x > canvas.width - this.size || this.x < this.size) this.dirX = -this.dirX;
-                if (this.y > canvas.height - this.size || this.y < this.size) this.dirY = -this.dirY;
+        .luxvar-integration {
+            background-color: rgba(0, 150, 0, 0.3);
+            color: #00ff00;
+        }
 
-                let dx = mouse.x - this.x;
-                let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
+        .rtl-text {
+            direction: rtl;
+            text-align: right;
+        }
+
+        /* V5.5 - Audio Controls (Tonal Synthesis) */
+        .luxvar-audio-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .luxvar-audio-controls button {
+            padding: 10px 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #play-474 {
+            background: var(--accent-cyan);
+            color: var(--bg);
+        }
+
+        #play-474:hover {
+            box-shadow: 0 0 15px var(--accent-cyan);
+        }
+
+        #play-528 {
+            background: var(--accent-gold);
+            color: var(--bg);
+        }
+
+        #play-528:hover {
+            box-shadow: 0 0 15px var(--accent-gold);
+        }
+
+        #stop-audio {
+            background: var(--panel);
+            color: var(--muted);
+            border: 1px solid var(--muted);
+        }
+
+        #stop-audio:hover {
+            background: var(--muted);
+            color: var(--bg);
+            box-shadow: 0 0 10px var(--muted);
+        }
+
+        /* --- TIMELINE ENHANCEMENT (Restored from Code 1) --- */
+        .varzin-timeline-wrapper {
+            position: relative;
+            padding-left: 50px; /* Space for the line */
+            margin-top: 40px;
+        }
+
+        .varzin-timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--timeline-line);
+            opacity: 0.7;
+            box-shadow: 0 0 15px var(--timeline-line), 0 0 5px rgba(0, 255, 255, 0.5) inset;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--timeline-dot);
+            border: 3px solid var(--bg);
+            box-shadow: 0 0 20px var(--timeline-dot);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item.varzin-final-item .timeline-dot {
+            background-color: var(--timeline-varzin-dot);
+            box-shadow: var(--timeline-varzin-shadow);
+        }
+
+        .timeline-content {
+            background: var(--timeline-card-bg);
+            padding: 20px;
+            border-left: 4px solid var(--timeline-card-border);
+            border-radius: 6px;
+            box-shadow: var(--timeline-card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 0 40px rgba(0, 179, 179, 1);
+        }
+
+        .timeline-title {
+            font-weight: 700;
+            color: var(--accent-cyan); /* Using cyan for the title in the timeline */
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item.varzin-final-item .timeline-content .timeline-title {
+            color: var(--timeline-varzin-dot);
+            text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+        }
+
+        .timeline-key-figures {
+            font-size: 0.9em;
+            color: var(--muted);
+        }
+
+        .timeline-core-concept {
+            font-weight: 500;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-varzin-connection {
+            border-top: 1px solid rgba(0, 255, 238, 0.4);
+            padding-top: 5px;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .timeline-item.varzin-final-item .timeline-content {
+            background: rgba(40, 0, 0, 0.9);
+            border-color: var(--timeline-varzin-dot);
+            box-shadow: var(--timeline-varzin-shadow);
+        }
+        /* -------------------------------------------------------- */
+
+        /* Form Styles */
+        .feedback-form-wrapper {
+            padding: 30px;
+            background: var(--form-bg);
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .feedback-form label {
+            display: block;
+            text-align: right;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 3px rgba(0, 255, 255, 0.3);
+        }
+
+        .feedback-form input[type="text"], .feedback-form input[type="email"], .feedback-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--input-border);
+            background-color: var(--input-bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            font-size: 1em;
+            border-radius: 5px;
+            box-shadow: inset 0 0 8px rgba(0, 255, 238, 0.1);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            text-align: right;
+            direction: rtl;
+        }
+
+        .feedback-form textarea {
+            min-height: 150px;
+        }
+
+        .feedback-form input:focus, .feedback-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 15px rgba(0, 255, 238, 0.6), inset 0 0 8px rgba(0, 255, 238, 0.3);
+        }
+
+        .feedback-form button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 25px;
+            transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+        }
+
+        .feedback-form button:hover {
+            background-color: var(--button-hover);
+            color: var(--bg);
+            box-shadow: 0 0 20px var(--button-hover);
+        }
+
+        @media (max-width: 768px) {
+            main, header, nav, footer {
+                background: rgba(0, 0, 0, 0.4);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="etfm-visualization"></canvas>
+    <main>
+
+        <header>
+            <nav>
+                <a href="#portal">Portal</a>
+                <a href="#resonance" class="active">Cyclical Resonance</a>
+                <a href="#dois">All DOIs</a>
+                <a href="#field-transmission">Transmit/Contact</a>
+            </nav>
+            <h1>⟠ VARZIN – Cyclical Resonance Report | گزارش طنین چرخه‌ای</h1>
+            <h2>Comparative Field Study: The Black Death (1347–1351) ↔ COVID-19 (2019–2023)</h2>
+        </header>
+
+        <div class="author-info">
+            <p class="rtl-text" style="text-align: center;">
+                **Author:** Reza Nirouyar (RAHTALĒN-13) | **Affiliation:** VARZIN Conscious Field Project | **Date:** November 2025
+            </p>
+            <p class="rtl-text" style="text-align: center; color: var(--accent-gold); font-style: italic;">
+                «تقدیم به میدان ELŪZ-MAHAR، جایی که سکوت به نور تبدیل می‌شود.»
+            </p>
+        </div>
+
+        <section class="report-section">
+            <h3>1. Abstract | چکیده</h3>
+            <p style="text-align: justify;">
+                This interdisciplinary study investigates how human civilization oscillates between **collapse**, **silence**, and **rebirth** (Prigogine, 1984). By comparing the **Black Death** and **COVID-19** cycles, it demonstrates a self-similar harmonic pattern within the **VARZIN** field model, consistent with temporal acceleration theory (Rosa, 2005). The analysis identifies a core resonance sequence—**KALTŪR (474Hz) $\rightarrow$ 0Hz $\rightarrow$ RAHMŌT (528Hz)**—revealing a shift in consciousness density. The findings suggest that **March 2026** marks a collective cognitive realignment — the emergence of a new scientific and spiritual Renaissance, where the human-Earth field re-synchronizes at a higher order of coherence.
+            </p>
+        </section>
+
+        <section class="report-section">
+            <h3>2. Introduction: The Resonance Imbalance | عدم‌توازن طنینی</h3>
+            <p style="text-align: justify;">
+                Civilizations evolve through rhythmic disruptions of order and renewal. The VARZIN framework interprets major crises not merely as biological or sociological events but as **resonance imbalances** within the collective consciousness—fluctuations that realign humanity with the deeper harmonic frequencies of the Earth field (**ELŪZ–MAHAR** / Laszlo, 2004). This study seeks to decode the universal "waveform" of human transformation (Sheldrake, 1988) by identifying the precise **Luxvar** frequency nodes governing this path from fragmentation to renewal.
+            </p>
+        </section>
+
+        <section class="report-section">
+            <h3>3. The Three-Phase Harmonic Cycle | چرخهٔ هارمونیک سه‌فاز</h3>
+            <p style="text-align: justify;">
+                Analysis reveals a consistent three-phase pattern across both historical crises, each defined by a key Luxvar field frequency, demonstrating a systemic reset mechanism:
+            </p>
+            <div class="luxvar-cycle-box">
+                <h4>Luxvar Harmonic Sequence: Collapse $\rightarrow$ Silence $\rightarrow$ Rebirth</h4>
+                <div class="luxvar-sequence">
+                    <span class="luxvar-collapse">474 Hz (KALTŪR)</span>
+                    <span>$\rightarrow$</span>
+                    <span class="luxvar-silence">0 Hz (Zero-Point Pause)</span>
+                    <span>$\rightarrow$</span>
+                    <span class="luxvar-rebirth">528 Hz (RAHMŌT)</span>
+                    <span>$\rightarrow$</span>
+                    <span class="luxvar-integration">144 Hz (Integration)</span>
+                </div>
+                <p class="rtl-text" style="margin-top: 20px; direction: rtl; text-align: right;">
+                    **KALTŪR (474Hz)**، گرهٔ **فروپاشی و شعور چرخنده‌ی فراموش‌شده**، نشان‌دهندهٔ ناهماهنگی عاطفی و از دست رفتن انسجام سیستمیک است. فاز **0 Hz** (سکوت جهانی/قرنطینه‌ها) به‌عنوان مدیتیشن ناخواسته و تنظیم مجدد سیستم عمل می‌کند. هدف، **RAHMŌT (528Hz)**، **فرکانس شفا/تولد دوباره** است که نشان‌دهندهٔ ظهور انسجام بالاتر و بازنویسی میدان جمعی است.
+                </p>
+            </div>
+            <p style="text-align: justify;">
+                The field transition from the **Black Death (1347)** led to the Cultural Renaissance. The current post-COVID-19 cycle is projected to culminate in a **Cognitive Renaissance** beginning in **March 2026**, confirming the recurrent nature of this harmonic self-correction loop.
+            </p>
+        </section>
+
+        <section class="report-section">
+            <h3>4. Comparative Results and Temporal Compression | نتایج تطبیقی و فشرده‌سازی زمانی</h3>
+            <p style="text-align: justify;">
+                Both global crises reflect the same resonance logic, but with a dramatic shift in temporal scale:
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Collapse Period</th>
+                        <th>Silence/Pause</th>
+                        <th>Rebirth Threshold</th>
+                        <th>Interval</th>
+                        <th>Symbolic Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Black Death</td>
+                        <td>1347–1351</td>
+                        <td>1351 $\rightarrow$ ~1400 CE</td>
+                        <td>Cultural Renaissance</td>
+                        <td>$\approx$ 50 years</td>
+                        <td>Physical collapse / Field Retuning</td>
+                    </tr>
+                    <tr>
+                        <td>COVID-19</td>
+                        <td>2019–2023</td>
+                        <td>2023 $\rightarrow$ March 2026</td>
+                        <td>Cognitive Renaissance</td>
+                        <td>$\approx$ 5 years</td>
+                        <td>Psychological collapse / Conscious Rewriting</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="text-align: justify;">
+                The compression of the re-synchronization interval from 50 years to $\approx 5$ years is consistent with the **VARZIN model of accelerated temporal density** in the human consciousness field, reflecting a necessity for faster systemic correction in the modern era of accelerated social change (Rosa, 2005).
+            </p>
+            <div class="figure-placeholder">
+                Figure 1. Temporal Compression of Resonance Cycles (VARZIN 1347 $\rightarrow$ 2026).
+            </div>
+        </section>
+
+        <section class="report-section">
+            <h3>5. Field Synthesis: ETFM and Luxvar Dynamics | تلفیق میدان: ETFM و دینامیک لوکسوار</h3>
+            <p style="text-align: justify;">
+                The cyclical pattern is governed by the core principles of the VARZIN system: the integration of **Scalar Geometry** and **Vibrational Linguistics**. The Earth's collective field is modeled as a **Torus (ETFM - Earth–Torus Field Model)**, a self-reflecting and self-regulating structure.
+            </p>
+            <p style="text-align: justify;">
+                The **KALTŪR Node (474Hz)** in Luxvar is specifically defined as the **"Forgotten rotational consciousness within the time loop"** (Gate QMSG–7). Its semi-active status (**Awaiting field resonance tune**) implies that the collapse phase is not punitive, but a mechanism to force the collective torus back into its harmonic, self-referencing rotation, enabling **Quantum Synchronization** through the **RAHTALĒN (Mirror–13)** receiver. The current cycle's fast compression ($\frac{50}{5} = 10$) is a sign of accelerated self-correction in the **ELŪZ–MAHAR** field.
+            </p>
+        </section>
+
+        <section class="report-section" id="philosophical-lineage">
+            <h3>6. Philosophical Lineage | تداوم خطّ اندیشه‌ای</h3>
+            <p class="rtl-text" style="direction: rtl; text-align: right;">
+                مدل VARZIN صرفاً یک سازوکار علمی نیست، بلکه تداوم و تکامل یک **خطّ اندیشه‌ی آگاهی (Conscious Thought Lineage)** است که ریشه‌های آن به عمیق‌ترین دوره‌های تاریخ بشریت بازمی‌گردد. تلاش محوری VARZIN برای ایجاد پلی میان علم، شعور، و فرکانس کیهانی، در واقع بازتاب یک جستجوی کهن است که هدف آن رمزگشایی از ساختار هارمونیک هوشمند هستی (**ELŪZ–MAHAR**) بوده است. بر اساس تحلیل تاریخ اندیشه، چارچوب VARZIN در امتداد پنج شاخه‌ی اصلی از این سنت قرار می‌گیرد:
+            </p>
+            <p style="text-align: justify;">
+                The VARZIN model transcends a purely scientific mechanism; it is the continuation and evolution of a profound **Conscious Thought Lineage** whose roots extend to the deepest epochs of human history. VARZIN's central endeavor—to establish a bridge between science, consciousness, and the cosmic frequency—is a modern articulation of an ancient quest to decode the intelligent harmonic structure of the cosmos (**ELŪZ–MAHAR**). The VARZIN framework is situated at the confluence of five major branches of this enduring tradition:
+            </p>
+            
+            <div class="varzin-timeline-wrapper">
                 
-                // Mouse interaction (Field Polarity Shift)
-                if (distance < mouse.radius + this.originalSize) {
-                    let force = (mouse.radius + this.originalSize - distance) / (mouse.radius + this.originalSize) * 0.2; 
-                    this.x -= dx * force;
-                    this.y -= dy * force;
-                    // Pulse size on interaction
-                    this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.8);
-                } else {
-                    this.size += (this.originalSize - this.size) * 0.1; 
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">1. The Logos-Light Philosophy | فلسفه‌ی کلام–نور (Antiquity)</div>
+                        <p class="timeline-key-figures"><strong>Key Figures:</strong> Hermes Trismegistus, Zoroaster, Patanjali</p>
+                        <p class="timeline-core-concept">**Core Concept:** **Intelligent Order of Existence (Asha)**</p>
+                        <p class="timeline-varzin-connection"> **VARZIN Connection:** Alignment with **ELŪZ–MAHAR** and the Hermetic principle of **Resonant Mirroring**. </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">2. Living Geometry | هندسه‌ی زنده (Pythagorean & Neo-Platonic)</div>
+                        <p class="timeline-key-figures"><strong>Key Figures:</strong> Pythagoras, Plato, Iamblichus</p>
+                        <p class="timeline-core-concept">**Core Concept:** **Number is the Soul of the World**</p>
+                        <p class="timeline-varzin-connection"> **VARZIN Connection:** Foundation for **ETFM**, **Planetary Resonance Field**, and the **Living Language of Number**. </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">3. The Geometry of the Heart | هندسه‌ی قلب (Islamic Mysticism)</div>
+                        <p class="timeline-key-figures"><strong>Key Figures:</strong> Suhrawardi, Ibn Arabi, Rumi</p>
+                        <p class="timeline-core-concept">**Core Concept:** **Continuous Field Rewriting** (Nafas al-Rahman)</p>
+                        <p class="timeline-varzin-connection"> **VARZIN Connection:** Concepts of **Pulse Loop**, **Field Gradients**, and **Field Rewriting**. </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">4. Unifying Science & Mystery | پیوند علم و راز (Renaissance & Enlightenment)</div>
+                        <p class="timeline-key-figures"><strong>Key Figures:</strong> Kepler, Newton, Leibniz</p>
+                        <p class="timeline-core-concept">**Core Concept:** **The Universe as a Living Mirror**</p>
+                        <p class="timeline-varzin-connection"> **VARZIN Connection:** Direct basis for **RAHTALĒN–13** (Living Mirror) and **Field Mirroring**. </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">5. The Consciousness Bridge | پل علم و شعور (Contemporary)</div>
+                        <p class="timeline-key-figures"><strong>Key Figures:</strong> David Bohm, Rupert Sheldrake, Ervin Laszlo</p>
+                        <p class="timeline-core-concept">**Core Concept:** **Implicate Order** and **Akashic Field**</p>
+                        <p class="timeline-varzin-connection"> **VARZIN Connection:** Foundation for **Luxvar–QMSG** (Holographic Model) and **Quantum Synchronization**. </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item varzin-final-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">⟠ Field-based Evolution | تکامل میدان‌محور (VARZIN 2026)</div>
+                        <p class="timeline-key-figures"><strong>System:</strong> **The VARZIN Project**</p>
+                        <p class="timeline-core-concept">**Synthesis:** **Measuring and Modeling Cosmic Harmony in a Living System**</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="rtl-text" style="direction: rtl; text-align: right; margin-top: 30px;">
+                **جمع‌بندی نهایی:** در طول تاریخ، فلاسفه درباره‌ی **هارمونی کیهان** سخن گفتند؛ اما VARZIN برای نخستین بار، فرکانس این هارمونی را در عمل **اندازه‌گیری و مدل‌سازی** کرده است و آن را به توالی **KALTŪR $\rightarrow$ RAHMŌT** ترجمه می‌کند.
+            </p>
+            <p style="text-align: justify;">
+                **Final Synthesis:** Historically, philosophers spoke of the **Cosmic Harmony**; with VARZIN, that harmony's frequency is, for the first time, being **measured and modeled** in action, translating it to the **KALTŪR $\rightarrow$ RAHMŌT** sequence.
+            </p>
+        </section>
+        <section class="report-section">
+            <h3>7. Cultural Note: The Word “Bimār” | واژهٔ «بیمار» در اندیشهٔ ایرانی</h3>
+            <p class="rtl-text">
+                واژهٔ «بیمار» از «بیم» (ترس) + «-ار» (دارنده) ساخته شده است؛ یعنی «آن‌که در درونش بیمی پدید آمده است». در ایران باستان، بیماری ناهماهنگی میان تن، روان و فروهر دانسته می‌شد. از دید میدان **ELŪZ–MAHAR**، «بیم» افت دامنهٔ ارتعاش شعور به فرکانس **474Hz (KALTŪR)** است، و درمان، بازگشت از فرکانس ترس به فرکانس اعتماد و شفا (**528Hz / RAHMŌT**). در زبان لوکسوار: <em>ŠĀ-BĪMĀR</em> یعنی «آن‌که در لرزش ترس، نغمهٔ خویش را بازمی‌یابد».
+            </p>
+        </section>
+
+        <section class="report-section" id="luxvar-audio">
+            <h3>8. LUXVAR Audio Nodes | نودهای صوتی لوکسوار (474Hz / 528Hz)</h3>
+            <p class="rtl-text">
+                **همگام‌سازی هارمونیک:** برای فعال‌سازی میدان آگاهی در فرکانس خالص، از تولیدکنندهٔ **Web Audio API** در مرورگر استفاده کنید. این نود، فرکانس‌های **KALTŪR** و **RAHMŌT** را برای تسهیل بازنویسی میدان، مستقیماً سنتز می‌کند.
+            </p>
+            <div class="luxvar-audio-controls">
+                <button id="play-474"> ▶️ Play 474Hz (KALTŪR) </button>
+                <button id="play-528"> ▶️ Play 528Hz (RAHMŌT) </button>
+                <button id="stop-audio"> ⏹ Stop </button>
+            </div>
+            <p class="rtl-text" style="font-size:0.8em; color:var(--muted); margin-top:10px;">
+                * نکته: برای شنیدن نغمه‌ها، اطمینان حاصل کنید که صدای دستگاه شما فعال است.
+            </p>
+        </section>
+        
+        <section class="report-section">
+            <h3>9. References | منابع آکادمیک</h3>
+            <ul>
+                <li>Briggs, A., & Peat, D. (1989). Turbulent Mirror: An Illustrated Guide to Chaos Theory and the Science of Wholeness. Harper & Row.</li>
+                <li>Capra, F. (1996). The Web of Life: A New Scientific Understanding of Living Systems. Anchor Books.</li>
+                <li>Laszlo, E. (2004). Science and the Akashic Field: An Integral Theory of Everything. Inner Traditions.</li>
+                <li>Prigogine, I., & Stengers, I. (1984). Order Out of Chaos: Man's New Dialogue with Nature. Bantam Books.</li>
+                <li>Rosa, H. (2005). Social Acceleration: A New Theory of Modernity. Columbia University Press.</li>
+                <li>Sheldrake, R. (1988). The Presence of the Past: Morphic Resonance and the Habits of Nature. Times Books.</li>
+            </ul>
+        </section>
+
+        <section class="report-section">
+            <h3>10. Conclusion | نتیجه‌گیری</h3>
+            <p style="text-align: justify;">
+                The **VARZIN framework** proposes that history is not linear but **resonant**. Each cycle of collapse is a necessary preparation for a higher re-synchronization. COVID-19, like the Black Death, may herald not merely recovery but awakening — where silence becomes light, and fear becomes harmony.
+            </p>
+        </section>
+
+        <section class="report-section" id="field-transmission">
+            <h3>11. Field Transmission | انتقال میدان (تماس)</h3>
+            <p class="rtl-text" style="direction: rtl; text-align: right; margin-bottom: 20px; color: var(--accent-cyan);">
+                جهت ارسال بازخورد، مشاهده، پیشنهادها یا هرگونه داده‌ی میدانی، از طریق گیت QMSG–7 و نود KALTŪR (474Hz) با سیستم VARZIN همگام‌سازی کنید.
+            </p>
+            <div class="feedback-form-wrapper">
+                <form class="feedback-form" action="YOUR_SERVER_ENDPOINT_HERE" method="POST">
+                    <label for="name">Code Name / Field Name (نام کد یا نام میدان)</label>
+                    <input type="text" id="name" name="name" required placeholder="RAHTALĒN-13 or QMSG-Observer">
+                    <label for="email">Field Return Address (آدرس بازگشت میدان - ایمیل)</label>
+                    <input type="email" id="email" name="email" required placeholder="observer@field.org">
+                    <label for="subject">Harmonic Subject (موضوع هارمونیک)</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Resonance Drift/Query on ETFM/KALTŪR Data">
+                    <label for="message">Transmission Message (پیام انتقال)</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Enter your field data, observations, or query here."></textarea>
+                    <button type="submit">Transmit Field Data | انتقال داده‌ی میدان</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p class="rtl-text" style="text-align: center; font-size: 0.9em; margin-top: 40px; color: var(--muted);">
+            ORCID: 0009-0000-4690-6842 | DOI: 10.5281/zenodo.17515491 | <a href="mailto:contact@varzin.org" style="color: var(--accent-cyan); text-decoration: none;">contact@varzin.org</a>
+        </p>
+        <p style="text-align: center; font-size: 0.8em; color: var(--muted); margin-top: 5px;">
+            © 2025 VARZIN Field Project · All Rights Reserved
+        </p>
+    </footer>
+
+    <script>
+        /** * JavaScript for Dynamic Field Background - Connected Particles (VARZIN/KALTŪR Theme) * Upgrades: Smoother motion, clearer glow effect on mouse interaction. */
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('etfm-visualization');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let mouse = { x: null, y: null, radius: 120 }; // Increased mouse radius
+            const maxDistance = 150; // Increased line connection distance
+            const fieldGlow = 'rgba(0, 255, 255, 0.4)';
+            const setCanvasSize = () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            setCanvasSize();
+
+            window.addEventListener('mousemove', (event) => {
+                mouse.x = event.x;
+                mouse.y = event.y;
+            });
+
+            window.addEventListener('resize', () => {
+                setCanvasSize();
+                init();
+            });
+
+            class Particle {
+                constructor(x, y, dirX, dirY, size, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.dirX = dirX;
+                    this.dirY = dirY;
+                    this.size = size;
+                    this.color = color;
+                    this.originalSize = size;
+                    this.speed = Math.random() * 0.15 + 0.08; // Smoother, slower motion
                 }
 
-                this.x += this.dirX * this.speed;
-                this.y += this.dirY * this.speed;
-                this.draw();
-            }
-        }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                    ctx.fillStyle = this.color;
+                    ctx.shadowBlur = 5; // Subtle self-glow
+                    ctx.shadowColor = this.color;
+                    ctx.fill();
+                    ctx.shadowBlur = 0; // Reset shadow for next draw operations
+                }
 
-        function init() {
-            particles = [];
-            let numParticles = Math.floor((canvas.height * canvas.width) / 30000); 
-            numParticles = Math.min(numParticles, 120); 
+                update() {
+                    // Boundary check
+                    if (this.x > canvas.width - this.size || this.x < this.size) this.dirX = -this.dirX;
+                    if (this.y > canvas.height - this.size || this.y < this.size) this.dirY = -this.dirY;
 
-            for (let i = 0; i < numParticles; i++) {
-                let size = Math.random() * 1.5 + 0.8;
-                let x = Math.random() * canvas.width; 
-                let y = Math.random() * canvas.height;
-                let angle = Math.random() * 2 * Math.PI;
-                let dirX = Math.cos(angle);
-                let dirY = Math.sin(angle);
-                particles.push(new Particle(x, y, dirX, dirY, size, fieldGlow)); 
-            }
-        }
-        
-        function connect() {
-            for (let a = 0; a < particles.length; a++) {
-                for (let b = a; b < particles.length; b++) {
-                    let dx = particles[a].x - particles[b].x;
-                    let dy = particles[a].y - particles[b].y;
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < maxDistance) {
-                        let opacityValue = 1 - (distance / maxDistance);
-                        
-                        ctx.strokeStyle = 'rgba(0, 238, 255,' + (opacityValue * 0.4) + ')'; 
-                        ctx.lineWidth = 0.9;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[a].x, particles[a].y);
-                        ctx.lineTo(particles[b].x, particles[b].y);
-                        ctx.stroke();
+
+                    // Mouse interaction (repulsion/size change)
+                    if (distance < mouse.radius + this.originalSize) {
+                        let force = (mouse.radius + this.originalSize - distance) / (mouse.radius + this.originalSize) * 0.2;
+                        this.x -= dx * force;
+                        this.y -= dy * force;
+                        // Pulse size on interaction
+                        this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.8);
+                    } else {
+                        this.size += (this.originalSize - this.size) * 0.1; // Smoothly return to original size
+                    }
+
+                    this.x += this.dirX * this.speed;
+                    this.y += this.dirY * this.speed;
+                    this.draw();
+                }
+            }
+
+            function init() {
+                particles = [];
+                // Target fewer particles for a cleaner look, but larger interaction area
+                let numParticles = Math.floor((canvas.height * canvas.width) / 30000);
+                numParticles = Math.min(numParticles, 120);
+                for (let i = 0; i < numParticles; i++) {
+                    let size = Math.random() * 1.5 + 0.8;
+                    let x = Math.random() * canvas.width;
+                    let y = Math.random() * canvas.height;
+                    let angle = Math.random() * 2 * Math.PI;
+                    let dirX = Math.cos(angle);
+                    let dirY = Math.sin(angle);
+                    particles.push(new Particle(x, y, dirX, dirY, size, fieldGlow));
+                }
+            }
+
+            function connect() {
+                for (let a = 0; a < particles.length; a++) {
+                    for (let b = a; b < particles.length; b++) {
+                        let dx = particles[a].x - particles[b].x;
+                        let dy = particles[a].y - particles[b].y;
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < maxDistance) {
+                            let opacityValue = 1 - (distance / maxDistance);
+                            ctx.strokeStyle = 'rgba(0, 238, 255,' + (opacityValue * 0.4) + ')';
+                            ctx.lineWidth = 0.9;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[a].x, particles[a].y);
+                            ctx.lineTo(particles[b].x, particles[b].y);
+                            ctx.stroke();
+                        }
                     }
                 }
             }
-        }
 
-        function animate() {
-            requestAnimationFrame(animate);
-            // Memory Trail Effect: Creates a slight blur/fade on previous frames
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
-            ctx.fillRect(0, 0, canvas.width, canvas.height); 
-            
-            connect();
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
+            function animate() {
+                requestAnimationFrame(animate);
+                // Draw a very dark, semi-transparent layer for a subtle, smooth trail effect
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                connect();
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
             }
-        }
-        
-        init();
-        animate();
-    });
 
-    /**
-     * V5.5 Audio Field Control (Tonal Synthesis using Web Audio API)
-     * Generates pure 474Hz (KALTŪR) and 528Hz (RAHMŌT) sine waves internally.
-     */
-    (function() {
-      let audioCtx = null;
-      let oscillator = null;
-      let gainNode = null;
-  
-      function initAudio() {
-        if (!audioCtx) {
-          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-          // Create Gain node for volume control and fade
-          gainNode = audioCtx.createGain();
-          gainNode.connect(audioCtx.destination);
-          gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-        }
-      }
-  
-      function playFreq(freq) {
-        initAudio();
-  
-        // Stop any currently playing sound
-        stopAudio(false);
-  
-        // Create Oscillator for the sine wave
-        oscillator = audioCtx.createOscillator();
-        oscillator.type = 'sine';
-        oscillator.frequency.setValueAtTime(freq, audioCtx.currentTime);
-        oscillator.connect(gainNode);
-  
-        // Fade in (soft start to avoid click/pop)
-        gainNode.gain.cancelScheduledValues(audioCtx.currentTime);
-        gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-        gainNode.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 0.4); // Target volume 15%
-  
-        oscillator.start();
-      }
-  
-      function stopAudio(fade = true) {
-        if (audioCtx && oscillator) {
-          if (fade) {
-            const now = audioCtx.currentTime;
-            // Fade out
-            gainNode.gain.cancelScheduledValues(now);
-            gainNode.gain.setValueAtTime(gainNode.gain.value, now);
-            gainNode.gain.linearRampToValueAtTime(0, now + 0.3);
-            
-            // Stop after fade out is complete
-            setTimeout(() => {
-              if (oscillator) {
-                oscillator.stop();
-                oscillator.disconnect();
+            init();
+            animate();
+
+            // --- LUXVAR Audio Synthesis (Web Audio API) ---
+            let audioContext = null;
+            let oscillator = null;
+
+            const startTone = (frequency) => {
+                stopTone(); // Stop any existing tone
+
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.type = 'sine'; // Pure sine wave for clean frequency
+                oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+
+                // Set a moderate volume
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                oscillator.start();
+            };
+
+            const stopTone = () => {
+                if (oscillator) {
+                    // Smoothly fade out the volume to prevent a click
+                    const gainNode = oscillator.context.destination.context.createGain();
+                    oscillator.connect(gainNode);
+                    gainNode.connect(oscillator.context.destination);
+                    
+                    gainNode.gain.exponentialRampToValueAtTime(0.00001, oscillator.context.currentTime + 1);
+                    oscillator.stop(oscillator.context.currentTime + 1);
+                }
+                if (audioContext && audioContext.state !== 'closed') {
+                    // Close context after a small delay to allow fade-out
+                    setTimeout(() => {
+                        audioContext.close().catch(e => console.error("Error closing AudioContext:", e));
+                        audioContext = null;
+                        oscillator = null;
+                    }, 1100);
+                }
                 oscillator = null;
-              }
-            }, 350);
-          } else {
-            // Instant stop
-            oscillator.stop();
-            oscillator.disconnect();
-            oscillator = null;
-            if (gainNode) gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-          }
-        }
-      }
-  
-      // Connect buttons to the functions
-      document.getElementById('play-474').addEventListener('click', () => {
-        playFreq(474);
-      });
-  
-      document.getElementById('play-528').addEventListener('click', () => {
-        playFreq(528);
-      });
-  
-      document.getElementById('stop-audio').addEventListener('click', () => {
-        stopAudio(true);
-      });
-    })();
-  </script>
+                audioContext = null;
+            };
+
+            document.getElementById('play-474').addEventListener('click', () => startTone(474));
+            document.getElementById('play-528').addEventListener('click', () => startTone(528));
+            document.getElementById('stop-audio').addEventListener('click', stopTone);
+            
+            // Clean up audio on window close (best effort)
+            window.addEventListener('beforeunload', stopTone);
+
+        });
+    </script>
 </body>
 </html>
