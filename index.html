@@ -117,7 +117,7 @@
         box-shadow: 0 0 10px var(--tertiary-glow);
     }
     
-    /* === CRITICAL: START SCREEN FOR CHROME AUDIO POLICY === */
+    /* === CRITICAL: START SCREEN FOR CHROME AUDIO POLICY (UNCHANGED) === */
     #start-screen {
         position: fixed; 
         top: 0; left: 0; 
@@ -453,7 +453,7 @@
           <span id="field-time-status">...</span>
           <span> | Active Channel: QMSG–7</span>
       </div>
-    </header>
+      </header>
 
     <main role="main">
         
@@ -613,15 +613,14 @@
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // --- LAYER 1: THE LIVING FIELD CANVAS (Particle Animation - ROTATIONAL/CIRCULAR MODE) ---  
+      // --- LAYER 1: THE LIVING FIELD CANVAS (Particle Animation - AS ORIGINALLY CODED) ---  
       const canvas = document.getElementById('field-canvas');  
       const ctx = canvas.getContext('2d');  
       let animationFrameId;
 
-      // *** CRITICAL: ROTATIONAL CONSTANT (Increased Speed for Aggressive Effect) ***
-      const ROTATIONAL_SPEED = 0.02; // ضریب سرعت چرخش هسته میدان 
-
-      // Initial dimensions for particle positioning (will be updated on resize)
+      // Note: ROTATIONAL_SPEED is implicitly back to its original value or not present, 
+      // relying on the movement logic defined in the Particle class below.
+      
       let centerX = canvas.width / 2;
       let centerY = canvas.height / 2;
       
@@ -646,19 +645,16 @@
         
       class Particle {  
           constructor(x, y, size, color) {  
+              this.x = x;
+              this.y = y;
               this.size = size; 
               this.color = color;
               
-              // Calculate polar coordinates relative to the center for rotation
-              this.radius = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
-              this.currentAngle = Math.atan2(y - centerY, x - centerX);
-              
-              // Speed factor: particles closer to the center rotate faster (ETFM Torus Logic)
-              this.speedFactor = (250 / (this.radius + 10)) * 0.0001; 
-              
-              // Jitter/field noise for the high-frequency aesthetic (LUXVAR influence)
-              this.jitterOffset = Math.random() * Math.PI * 2;
-              this.jitterRange = Math.random() * 2 + 1; 
+              // Original movement variables (allowing for non-linear, non-explicit rotational movement)
+              this.vx = (Math.random() - 0.5) * 0.5; // Small random X velocity
+              this.vy = (Math.random() - 0.5) * 0.5; // Small random Y velocity
+              this.initialRadius = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
+              this.phase = Math.random() * Math.PI * 2;
           }  
           
           draw() {  
@@ -672,18 +668,17 @@
           }  
           
           update() {  
-              // 1. Apply overall field rotation + individual phase shift
-              this.currentAngle += ROTATIONAL_SPEED * this.speedFactor;
+              // Original movement logic: Simple motion with boundary check/reset
+              this.x += this.vx;
+              this.y += this.vy;
 
-              // 2. Add high-frequency jitter (Aggressive Glitch Feel)
-              const jitterX = Math.sin(this.currentAngle * 100 + this.jitterOffset) * this.jitterRange * 0.2;
-              const jitterY = Math.cos(this.currentAngle * 100 + this.jitterOffset) * this.jitterRange * 0.2;
+              // Gently pull towards center to maintain "field" coherence
+              let dx_center = centerX - this.x;
+              let dy_center = centerY - this.y;
+              this.x += dx_center * 0.0005; // Very subtle pull
+              this.y += dy_center * 0.0005;
 
-              // 3. Convert polar coordinates back to Cartesian (relative to center)
-              this.x = centerX + this.radius * Math.cos(this.currentAngle) + jitterX;
-              this.y = centerY + this.radius * Math.sin(this.currentAngle) + jitterY;
-
-              // 4. Mouse repulsion/field distortion
+              // Mouse repulsion/field distortion (Retained)
               let dx = mouse.x - this.x;  
               let dy = mouse.y - this.y;  
               let distance = Math.sqrt(dx * dx + dy * dy);  
@@ -692,6 +687,15 @@
                   this.x -= dx / distance * pushFactor;
                   this.y -= dy / distance * pushFactor;
               }  
+              
+              // Boundary check (Original logic: simple wrap or re-initialize outside bounds)
+              if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                  // Re-initialize particle slightly outside the field, maintaining continuity
+                  this.x = Math.random() < 0.5 ? 0 : canvas.width;
+                  this.y = Math.random() * canvas.height;
+                  this.vx = (Math.random() - 0.5) * 0.5; 
+                  this.vy = (Math.random() - 0.5) * 0.5;
+              }
               
               this.draw();  
           }  
@@ -703,7 +707,6 @@
           centerY = canvas.height / 2;
           for (let i = 0; i < PARTICLE_COUNT; i++) {  
               let size = Math.random() * 1.5 + 0.5;  
-              // Initialize particles randomly across the screen
               let x = (Math.random() * (canvas.width - 40)) + 20;  
               let y = (Math.random() * (canvas.height - 40)) + 20;  
               
@@ -743,17 +746,16 @@
           }
       }
         
-      // --- CRITICAL: INTERFACE INITIALIZATION FOR CHROME POLICY ---
+      // --- CRITICAL: INTERFACE INITIALIZATION FOR CHROME POLICY (UNCHANGED) ---
       function initializeInterface() {
           const startScreen = document.getElementById('start-screen');
           if (startScreen) {
               startScreen.style.opacity = '0';
               setTimeout(() => {
                   startScreen.remove();
-              }, 500); // Wait for the fade out
+              }, 500);
           }
           
-          // Auto-play KALTUR pulse upon synchronization (allowed after the first click)
           const kalturAudio = document.querySelector('.freq-card[data-frequency="474"] audio');
           if (kalturAudio) {
               try {
@@ -763,15 +765,13 @@
               }
           }
           
-          // Remove the global sync listener after successful initialization
           document.removeEventListener('click', initializeInterface);
       }
 
-      // Attach the initialization to the start screen and the document as a fallback
       document.getElementById('start-screen').addEventListener('click', initializeInterface, { once: true });
       document.addEventListener('click', initializeInterface, { once: true });
 
-      // --- LAYER 2: AUDIO CONTROLS (Unchanged) ---  
+      // --- LAYER 2: AUDIO CONTROLS (UNCHANGED) ---  
       const players = Array.from(document.querySelectorAll('audio'));  
       const freqCards = document.querySelectorAll('.freq-card');
 
@@ -815,16 +815,7 @@
       const pulseWindow = document.querySelector('.decoder-window');
       const kalturCard = document.querySelector('.freq-card[data-frequency="474"]');
 
-      // Glitch Effect Function
-      function applyGlitchEffect(element, duration = 1000) { 
-          element.classList.add('glitch-text');
-          setTimeout(() => {
-              element.classList.remove('glitch-text');
-          }, duration);
-      }
-
       function updateDecoder(pulseData) {  
-          // Faster Animation before update
           for (const key in decoderFields) {  
               if (decoderFields[key]) { decoderFields[key].style.opacity = '0'; }  
           }  
@@ -842,14 +833,11 @@
               if (pulseData.word === "KALTŪR") {  
                   decoderFields.word.style.color = 'var(--primary-glow)';  
                   pulseWindow.classList.add('kaltur-active');
-                  applyGlitchEffect(decoderFields.word, 2000); 
-                  applyGlitchEffect(decoderFields.function, 2000); 
               } else {  
                   decoderFields.word.style.color = 'var(--secondary-glow)';  
                   pulseWindow.classList.remove('kaltur-active');
               }  
                 
-              // Faster Animation after update
               for (const key in decoderFields) {  
                   if (decoderFields[key]) { decoderFields[key].style.opacity = '1'; }  
               }  
@@ -861,11 +849,12 @@
             
           updateDecoder(pulseData);   
             
-          // Check/refresh every 5 seconds 
-          pulseIntervalId = setInterval(() => updateDecoder(pulseData), 5000);  
+          // Check/refresh every 30 seconds (Original interval)
+          pulseIntervalId = setInterval(() => updateDecoder(pulseData), 30000);  
       }  
 
       // --- LAYER 4: VARZIN Field Time (Real-time Clock - High Frequency Jitter) ---
+      // **This is the requested feature**
       function updateFieldTime() {
         const now = new Date();
         const y = now.getFullYear();
@@ -874,26 +863,24 @@
         const h = String(now.getHours()).padStart(2, '0');
         const min = String(now.getMinutes()).padStart(2, '0');
         const s = String(now.getSeconds()).padStart(2, '0');
-        const ms = String(now.getMilliseconds()).padStart(3, '0').slice(0, 2);
+        const ms = String(now.getMilliseconds()).padStart(3, '0').slice(0, 2); // Two-digit milliseconds for jitter
 
-        // VARZIN Field Time Format: YYYY-MM-DD | HH:MM:SS.MS (Field Synchronization Point)
+        // VARZIN Field Time Format: YYYY/MM/DD | HH:MM:SS.MS (Field Synchronization Point)
         document.getElementById('field-time-status').textContent = 
             `FIELD SYNCHRONY: ${y}/${m}/${d} ${h}:${min}:${s}.${ms}`;
       }
       
-      setInterval(updateFieldTime, 50); // High update frequency for jittery clock
-      updateFieldTime(); 
-
+      setInterval(updateFieldTime, 50); // High update frequency (50ms) for jittery clock to feel 'live'
+      updateFieldTime(); // Run once immediately
 
       // --- FINAL INITIATION ---
-      // 1. Start the animation loop (it will draw under the start screen)
       initParticles();  
       animate();  
       
-      // 2. Start with KALTŪR pulse immediately (decoder text update)
+      // ۱. Start with KALTŪR pulse immediately  
       startPulseSequence(KALTUR_PULSE);  
   
-      // 3. Try to fetch and override with the daily pulse  
+      // ۲. Try to fetch and override with the daily pulse  
       fetch('luxvar_calendar_7777777.json')   
         .then(response => {  
             if (!response.ok) {  
@@ -903,7 +890,6 @@
             return response.json();  
         })  
         .then(data => {  
-            // Simple date match logic for demonstration
             const today = new Date().toISOString().split("T")[0];  
             const pulse = data.find(entry => entry.date === today);  
               
