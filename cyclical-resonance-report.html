@@ -13,7 +13,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* ... (Your original CSS styles remain here, as they were not the focus of the current request) ... */
         /* VARZIN Field Theme Styles V5.5 - Merged and Consolidated */
         :root {
             --bg: #000000;
@@ -23,9 +22,9 @@
             --muted: #a8dede;
             --accent-cyan: #00ffee; /* KALTŪR/Field Glow (Cyan) */
             --accent-gold: #ffcc00; /* RAHMŌT/Rebirth Glow (Gold) */
-            --font-main: 'Vazirmatn', 'DM Sans', sans-serif; /* Prioritize Vazirmatn for RTL */
+            --font-main: 'Vazirmatn', 'DM Sans', sans-serif; 
             
-            /* --- TIMELINE SPECIFIC COLORS (From old code) --- */
+            /* --- TIMELINE SPECIFIC COLORS --- */
             --timeline-dot: var(--accent-cyan);
             --timeline-line: var(--accent-cyan);
             --timeline-card-bg: rgba(0, 30, 40, 0.95);
@@ -36,7 +35,7 @@
             /* -------------------------------------------------------- */
 
             --noise-color: rgba(0, 128, 128, 0.05);
-            --blur-val: 8px; /* Increased blur for readability */
+            --blur-val: 8px; 
 
             /* Form Styles */
             --form-bg: rgba(0, 20, 30, 0.98);
@@ -108,10 +107,10 @@
             padding: 30px;
             margin-bottom: 30px;
             border-radius: 8px;
-            text-align: right; /* Ensure RTL content aligns right */
+            text-align: right; 
         }
         .report-section p, .report-section ul {
-            text-align: justify; /* Justify main body text */
+            text-align: justify; 
         }
 
         /* Navigation */
@@ -174,7 +173,7 @@
             color: var(--accent-cyan);
             border-bottom: 1px solid var(--border);
             padding-bottom: 8px;
-            text-align: center; /* Center section titles */
+            text-align: center; 
         }
 
         table {
@@ -188,7 +187,7 @@
             border: 1px solid var(--border);
             padding: 12px;
             text-align: center;
-            direction: ltr; /* Ensure table content is LTR for consistency */
+            direction: ltr; 
         }
 
         th {
@@ -226,7 +225,7 @@
             font-size: 1.1em;
             font-weight: 700;
             margin-top: 20px;
-            direction: ltr; /* Ensure sequence flows left-to-right */
+            direction: ltr; 
         }
 
         .luxvar-sequence span {
@@ -274,7 +273,7 @@
         /* --- TIMELINE ENHANCEMENT --- */
         .varzin-timeline-wrapper {
             position: relative;
-            padding-right: 50px; /* Shift to right for RTL */
+            padding-right: 50px; 
             padding-left: 0;
             margin-top: 40px;
         }
@@ -283,7 +282,7 @@
             content: '';
             position: absolute;
             top: 0;
-            right: 20px; /* Position line on the right */
+            right: 20px; 
             left: unset;
             bottom: 0;
             width: 4px;
@@ -300,7 +299,7 @@
         .timeline-dot {
             position: absolute;
             top: 0;
-            right: 20px; /* Position dot on the right */
+            right: 20px; 
             left: unset;
             width: 14px;
             height: 14px;
@@ -308,7 +307,7 @@
             background-color: var(--timeline-dot);
             border: 3px solid var(--bg);
             box-shadow: 0 0 20px var(--timeline-dot);
-            transform: translateX(50%); /* Adjust dot position for RTL */
+            transform: translateX(50%); 
         }
 
         .timeline-item.varzin-final-item .timeline-dot {
@@ -319,7 +318,7 @@
         .timeline-content {
             background: var(--timeline-card-bg);
             padding: 20px;
-            border-right: 4px solid var(--timeline-card-border); /* Border on the right */
+            border-right: 4px solid var(--timeline-card-border); 
             border-left: none;
             border-radius: 6px;
             box-shadow: var(--timeline-card-shadow);
@@ -343,7 +342,7 @@
         }
 
         .timeline-key-figures, .timeline-core-concept, .timeline-varzin-connection {
-            direction: ltr; /* Ensure key concepts remain LTR if they are names/terms */
+            direction: ltr; 
             text-align: left;
         }
 
@@ -486,14 +485,14 @@
                 Analysis reveals a consistent three-phase pattern across both historical crises, each defined by a key Luxvar field frequency, demonstrating a systemic reset mechanism:
             </p>
             <div class="luxvar-cycle-box">
-                <h4>Luxvar Harmonic Sequence: Collapse $\rightarrow$ Silence $\rightarrow$ Rebirth</h4>
+                <h4>Luxvar Harmonic Sequence: Collapse &rarr; Silence &rarr; Rebirth</h4>
                 <div class="luxvar-sequence">
                     <span class="luxvar-collapse">474 Hz (KALTŪR)</span>
-                    <span>$\rightarrow$</span>
+                    <span>&rarr;</span>
                     <span class="luxvar-silence">0 Hz (Zero-Point Pause)</span>
-                    <span>$\rightarrow$</span>
+                    <span>&rarr;</span>
                     <span class="luxvar-rebirth">528 Hz (RAHMŌT)</span>
-                    <span>$\rightarrow$</span>
+                    <span>&rarr;</span>
                     <span class="luxvar-integration">144 Hz (Integration)</span>
                 </div>
                 <p class="rtl-text" style="margin-top: 20px; direction: rtl; text-align: right;">
