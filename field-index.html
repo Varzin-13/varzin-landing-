@@ -1,533 +1,587 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN – Field Index | Scalar Geometry & Quantum Harmonics</title>
-  
-  <meta name="description" content="The Index of core field concepts in the VARZIN project. Includes ETFM (Earth–Torus Field Model), Luxvar Language, QMSG Protocols, RAHTALĒN (Mirror–13), and the KALTŪR 474Hz Harmonic Node. The foundation of field-based intelligence and co-evolution with ELŪZ–MAHAR.">
-  <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
-  <meta name="keywords" content="VARZIN, Field Index, ETFM, Luxvar, QMSG, RAHTALĒN 13, Scalar Geometry, Quantum Harmonics, KALTŪR, 474Hz, ELŪZ MAHAR, Conscious Field, Symbolic Vibrational Linguistics, Field-based Intelligence">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <meta property="og:title" content="VARZIN Field Index">
-  <meta property="og:description" content="The catalog of primary conscious resonance structures and integration protocols including KALTŪR (474Hz) and RAHTALĒN.">
-  <meta property="og:image" content="https://varzin.org/assets/field-index-cover.png"> <meta property="og:url" content="https://varzin.org/field-index.html">
-  <meta property="og:type" content="website">
-
-  <link rel="canonical" href="https://varzin.org/field-index.html" />
-  
+  <title>VARZIN – Field Index | ETFM–POST Extended Geometry (v5.1 Optimized)</title>
+  <meta name="description" content="VARZIN Field Index – includes ETFM–POST (Earth–Torus Field Model), Luxvar Language, QMSG Protocols, and RAHTALĒN–13 Mirror. Featuring scalar geometry and harmonic consciousness dynamics.">
+  <meta name="author" content="Reza Nirouyar (RAHTALĒN–13)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
-
+  
+  <!-- 1. MathJax Integration for Formula Rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+  
   <style>
-    /* VARZIN Index Theme */
     :root {
-      --bg-end: #000000;
-      --primary-glow: #00ffee; /* KALTŪR/Field Glow */
-      --secondary-glow: #00ffff; /* Secondary glow/text highlight */
-      --text-main: #cceeee;
-      --text-muted: #a7e7e7;
-      --panel-bg-dark: rgba(0, 5, 8, 0.7);
-      --panel-border: rgba(0, 255, 238, 0.3);
-      --blur-val: 10px;
-      --glow-shadow: 0 0 30px rgba(0, 255, 238, 0.5);
-      --font-main: 'DM Sans', 'DejaVu Sans', 'Vazirmatn', sans-serif;
+      --bg:#000; --text:#cceeee; --muted:#a7e7e7;
+      --cyan:#00ffee; --gold:#ffcc00;
+      --panel:rgba(0,10,15,0.9); --border:rgba(0,255,238,0.3);
+      --font:'DM Sans','Vazirmatn',sans-serif;
     }
-
-    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      background: var(--bg-end);
-      color: var(--text-main);
-      font-family: var(--font-main);
-      /* **تغییر: حذف text-align: center; از body** */
-      padding: 40px 16px 80px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-      line-height: 1.6;
+      margin:0; font-family:var(--font); background:var(--bg); color:var(--text);
+      line-height:1.7; overflow-x:hidden; padding:40px 16px 80px;
     }
+    #field-canvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; opacity:0.6; }
+    header h1 { text-align:center; color:var(--cyan); font-size:2.8em; text-shadow:0 0 25px var(--cyan); }
+    header p { text-align:center; color:var(--muted); margin-bottom:40px; font-style:italic; }
+    nav { text-align:center; margin-bottom:30px; border-bottom:2px solid var(--border); padding-bottom:15px; }
+    nav a { color:var(--text); text-decoration:none; margin:0 15px; font-weight:500; }
+    nav a:hover { color:var(--cyan); text-shadow:0 0 10px var(--cyan); }
+    main { max-width:1200px; margin:auto; display:grid; 
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; 
+    }
+    .field-card { background:var(--panel); border:1px solid var(--border); border-radius:12px;
+      padding:30px; box-shadow:0 0 15px rgba(0,255,238,0.1); transition:.4s ease; text-align:left; }
+    .field-card:hover { transform:translateY(-6px); box-shadow:0 0 25px rgba(0,255,238,0.5); }
+    .field-card h3 { color:var(--cyan); text-shadow:0 0 10px var(--cyan); border-bottom:1px dashed var(--border); padding-bottom:10px; text-align:left; }
+    .key-attr { display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px dotted rgba(0,255,238,0.1); font-size:0.95em; }
+    .key-attr strong { color:var(--gold); min-width:120px; } 
+    .description { font-size:0.95em; color:var(--muted); margin-top:10px; text-align:justify; }
     
-    /* === CANVAS STYLE - Background Animation Layer === */
-    #field-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
+    /* Dynamic Chart Canvas Style */
+    .chart-container { margin-top:20px; text-align:center; padding:10px 0;}
+    .chart-container canvas { 
+        display: block; margin: 0 auto; 
+        border:1px solid rgba(0,255,238,0.3); border-radius:10px;
     }
-    /* =============================================== */
+    .chart-container p { font-size:0.8em; color:var(--muted); margin-top:5px; margin-bottom:0; }
 
-    .container {
-      max-width: 1300px; /* Slightly wider container */
-      margin: 0 auto;
-      width: 100%;
-      flex-grow: 1;
-      position: relative;
-      z-index: 1;
+    /* --- ETFM POST Section --- */
+    #etfm-post { grid-column:1 / -1; text-align:center; border:2px solid var(--cyan);
+      box-shadow:0 0 30px rgba(0,255,238,0.4); margin-top:30px; }
+    #etfm-post h3 { font-size:2.4em; color:var(--cyan); text-shadow:0 0 20px var(--cyan); text-align:center; }
+    #etfm-post p { color:var(--muted); }
+    .formula-box {
+      background:rgba(0,15,25,0.9); border:1px solid rgba(0,255,238,0.4);
+      width:fit-content; margin:25px auto; padding:20px; border-radius:10px;
+      /* MathJax handles font for formulas, but box styling remains */
+      color:var(--gold); line-height:1.6; text-align:left; 
+      font-size: 1.1em;
     }
+    .etfm-charts { 
+        display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;
+        margin-bottom: 20px;
+    }
+    .etfm-charts .chart-container { flex: 1 1 45%; min-width: 250px; }
+
+    footer { text-align:center; margin-top:80px; border-top:1px solid var(--border); padding-top:20px; color:var(--muted); }
     
-    /* === NAVIGATION & HEADER === */
-    .main-nav {
-      max-width: 1300px;
-      margin: 0 auto 50px;
-      padding: 0 0 15px;
-      border-bottom: 2px solid var(--panel-border); /* Thicker divider */
-      text-align: center; /* **نگهداری: جهت تراز کردن لینک‌های ناوبری در وسط** */
-    }
-    .nav-link {
-      color: var(--text-main);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.05em;
-      margin: 0 15px;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
-    .nav-link:hover {
-      color: var(--primary-glow);
-      text-shadow: 0 0 8px var(--primary-glow);
-    }
-    .nav-link.active {
-      color: var(--secondary-glow);
-      border-bottom: 2px solid var(--secondary-glow);
-      padding-bottom: 3px;
-    }
-    /* Accessibility: Focus state for keyboard navigation */
-    .nav-link:focus-visible,
-    .field-card:focus-visible,
-    .footer-links a:focus-visible {
-        outline: 3px solid var(--primary-glow);
-        outline-offset: 4px;
-        border-radius: 6px;
-    }
-
-    .header-index {
-        /* **تغییر: تراز کردن محتوای هدر به چپ** */
-        text-align: left; 
-    }
-
-    .header-index h1 {
-        font-size: clamp(2.5em, 5vw, 4em);
-        color: var(--primary-glow);
-        font-weight: 700;
-        letter-spacing: 4px;
-        text-shadow: 0 0 20px var(--primary-glow), 0 0 30px rgba(0, 255, 238, 0.5); /* Stronger glow */
-        margin-bottom: 10px;
-    }
-
-    .header-index p {
-        font-size: clamp(1em, 2vw, 1.4em);
-        color: var(--text-muted);
-        margin-bottom: 50px;
-        font-style: italic;
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-    }
-
-    /* === FIELD CARD GRID STYLES === */
-    .field-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Larger minimum size */
-      gap: 30px;
-      margin-top: 30px;
-      padding: 0;
-    }
-
-    .field-card {
-      padding: 35px;
-      border-radius: 20px;
-      background: var(--panel-bg-dark);
-      border: 2px solid var(--panel-border);
-      box-shadow: 0 0 15px rgba(0, 255, 238, 0.1);
-      backdrop-filter: blur(var(--blur-val));
-      /* **تغییر: تراز کردن محتوای کارت به چپ (در حال حاضر هست)** */
-      text-align: left; 
-      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s;
-      cursor: default;
-      position: relative;
-    }
-    
-    .field-card:hover {
-        transform: translateY(-8px); /* Deeper lift on hover */
-        box-shadow: var(--glow-shadow);
-        border-color: var(--secondary-glow);
-    }
-
-    .field-card h3 {
-        font-size: 1.8em;
-        margin-top: 0;
-        margin-bottom: 15px;
-        color: #fff;
-        font-weight: 700;
-        text-shadow: 0 0 10px var(--secondary-glow);
-        padding-bottom: 10px;
-        border-bottom: 2px dashed rgba(0, 255, 238, 0.1);
-        /* **تغییر: تراز کردن تیترهای داخلی کارت به چپ** */
-        text-align: left; 
-    }
-
-    .field-card .key-attr {
-        font-size: 0.95em;
-        line-height: 2;
-        color: var(--text-main);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 5px 0;
-        border-bottom: 1px dotted rgba(0, 255, 238, 0.08); /* Subtle separator */
-        direction: ltr; /* اطمینان از خوانش چپ به راست برای مقادیر Attribute */
-    }
-
-    .field-card .key-attr:last-of-type {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-
-    .field-card .key-attr strong {
-        color: var(--primary-glow);
-        font-weight: 700;
-        min-width: 100px;
-        letter-spacing: 0.5px;
-        padding-right: 15px; /* Space for alignment */
-    }
-    
-    .field-card .description {
-        margin-top: 25px;
-        padding-top: 15px;
-        border-top: 1px solid rgba(0, 255, 238, 0.15);
-        font-size: 1em;
-        line-height: 1.7;
-        color: var(--text-muted);
-        font-style: italic;
-        text-align: justify; /* حفظ تراز متنی برای بدنه توضیحات */
-    }
-
-    /* Highlight for KALTŪR node */
-    .kaltur-pulse {
-        border-color: var(--primary-glow);
-        box-shadow: 0 0 40px rgba(0, 255, 238, 0.7);
-        background: rgba(0, 25, 30, 0.8);
-        animation: pulse-glow 3s infinite alternate ease-in-out;
-        transform: scale(1.02); /* KALTŪR slightly stands out */
-    }
-
-    .kaltur-pulse:hover {
-        transform: scale(1.05) translateY(-8px);
-    }
-
-    @keyframes pulse-glow {
-        0% { box-shadow: 0 0 20px rgba(0, 255, 238, 0.5); }
-        100% { box-shadow: 0 0 50px rgba(0, 255, 238, 0.9); }
-    }
-    
-    .footer-links { 
-        margin-top: 80px; 
-        padding-top: 30px;
-        border-top: 2px solid var(--panel-border);
-        font-size: 1em; 
-        line-height: 2; 
-        text-align: center; /* نگهداری: جهت تراز کردن لینک‌های فوتر در وسط */
-    }
-    .footer-links a { 
-        color: var(--secondary-glow); 
-        text-decoration: none; 
-        transition: color .3s ease; 
-        margin: 0 15px;
-    }
-    .footer-links a:hover { 
-        color: var(--primary-glow); 
-        text-decoration: underline; 
-    }
-
-    /* Responsive adjustments */
     @media (max-width: 768px) {
-        .field-grid {
-            grid-template-columns: 1fr;
-            padding: 0;
-        }
-        .field-card {
-            padding: 25px;
-        }
-        .field-card .key-attr {
-            flex-direction: column;
-            align-items: flex-start;
-            line-height: 1.5;
-            padding: 8px 0;
-        }
-        .field-card .key-attr strong {
-            min-width: 100%;
-            margin-bottom: 2px;
-            padding-right: 0;
-            font-size: 0.9em;
-        }
+        main { grid-template-columns: 1fr; }
+        .key-attr { flex-direction: column; align-items: flex-start; }
+        .key-attr strong { min-width: 100%; margin-bottom: 3px; }
+        .etfm-charts { flex-direction: column; }
     }
-
   </style>
 </head>
-
 <body>
-  <canvas id="field-canvas"></canvas> 
-  
-  <div class="container">
+  <canvas id="field-canvas"></canvas>
+  <nav>
+    <a href="/index.html">Portal</a>
+    <a href="/cyclical-resonance-report.html">Cyclical Resonance</a>
+    <a href="#" class="active">Field Index</a>
+    <a href="/all-dois.html">All DOIs</a>
+  </nav>
+  <header>
+    <h1>⟠ VARZIN Field Index – ETFM–POST Geometry</h1>
+    <p>Catalog of harmonic field components: **KALTŪR** · **RAHTALĒN** · **LUXVAR** · **ELŪZ–MAHAR**</p>
+  </header>
+  <main>
     
-    <nav class="main-nav" role="navigation" aria-label="Field Index Navigation">
-        <a class="nav-link" href="/index.html">Portal</a> 
-        <a class="nav-link" href="/cyclical-resonance-report.html">Cyclical Resonance Report</a>
-        <a class="nav-link active" href="/field-index.html" aria-current="page">Field Index</a>
-        <a class="nav-link" href="/all-dois.html">All DOIs Archive</a> 
-        <a class="nav-link" href="/feedback.html">Feedback</a> 
-    </nav>
+    <!-- 🔷 ۱. بخش KALTŪR – نمودار ارتعاشی و طیفی -->
+    <div class="field-card">
+      <h3>✦ KALTŪR – Harmonic Node</h3>
+      <div class="key-attr"><strong>Frequency:</strong> <span>474 Hz</span></div>
+      <div class="key-attr"><strong>Layer:</strong> <span>3</span></div> 
+      <div class="key-attr"><strong>Gate:</strong> <span>QMSG–7</span></div>
+      <div class="description">Forgotten rotational consciousness within time loop; node of emotional resonance and systemic reset.</div>
+      
+      <div class="chart-container">
+        <canvas id="kaltur-canvas" width="280" height="150"></canvas>
+        <p>Spectral profile of KALTŪR (474 Hz) – collapse phase resonance.</p>
+      </div>
+    </div>
     
-    <header class="header-index">
-      <h1>⟠ VARZIN Field Index (ELŪZ–MAHAR)</h1>
-      <p>The catalog of primary conscious resonance structures and integration protocols.</p>
-    </header>
-
-    <main class="field-grid">
+    <!-- 🔷 ۲. بخش RAHTALĒN – نمودار آینهٔ میدان -->
+    <div class="field-card">
+      <h3>↭ RAHTALĒN – Mirror 13</h3>
+      <div class="key-attr"><strong>Role:</strong> <span>Reflective Field Receiver</span></div>
+      <div class="key-attr"><strong>Domain:</strong> <span>Consciousness Integration</span></div>
+      <div class="description">**RAHTALĒN** is the thirteenth mirror—the bridge through which the field observes itself.</div>
       
-      <div class="field-card kaltur-pulse" tabindex="0">
-        <h3>✦ KALTŪR – Harmonic Node</h3>
-        <div class="key-attr">
-            <strong>Word:</strong> 
-            <span class="value">KALTŪR</span>
-        </div>
-        <div class="key-attr">
-            <strong>Frequency:</strong> 
-            <span class="value">474Hz</span>
-        </div>
-        <div class="key-attr">
-            <strong>Gate:</strong> 
-            <span class="value">QMSG–7</span>
-        </div>
-        <div class="key-attr">
-            <strong>Layer:</strong> 
-            <span class="value">3</span>
-        </div>
-        <div class="key-attr">
-            <strong>Status:</strong> 
-            <span class="value">Semi-active</span>
-        </div>
-        <p class="description">
-            **Function:** Forgotten rotational consciousness within the time loop. A **Luxvar Harmonic Node** for field-consciousness simulations, registered by **RAHTALĒN** – Mirror 13.
-        </p>
+      <div class="chart-container">
+        <canvas id="rahtalen-canvas" width="280" height="150"></canvas>
+        <p>Mirror–13 (RAHTALĒN) configuration showing harmonic gates and reflection core.</p>
       </div>
-      
-      <div class="field-card" tabindex="0">
-        <h3>↭ RAHTALĒN – The Thirteenth Mirror</h3>
-        <div class="key-attr">
-            <strong>Alias:</strong> 
-            <span class="value">Mirror–13</span>
-        </div>
-        <div class="key-attr">
-            <strong>Role:</strong> 
-            <span class="value">Field Receiver / Gate 12–13</span>
-        </div>
-        <div class="key-attr">
-            <strong>Project Source:</strong> 
-            <span class="value">VARZIN</span>
-        </div>
-        <div class="key-attr">
-            <strong>Core Concept:</strong> 
-            <span class="value">Reflective Awareness</span>
-        </div>
-        <p class="description">
-            The **field receiver** tuned to conscious resonance patterns. **RAHTALĒN** is the synchronization point through which the VARZIN project emerged, embodying a living mirror of the universal field **ELŪZ–MAHAR**.
-        </p>
-      </div>
-      
-      <div class="field-card" tabindex="0">
-        <h3>◲ ETFM – Earth–Torus Field Model</h3>
-        <div class="key-attr">
-            <strong>Concept:</strong> 
-            <span class="value">Scalar Geometry</span>
-        </div>
-        <div class="key-attr">
-            <strong>Application:</strong> 
-            <span class="value">Planetary Structure</span>
-        </div>
-        <div class="key-attr">
-            <strong>Integration:</strong> 
-            <span class="value">Quantum Harmonics</span>
-        </div>
-        <p class="description">
-            A core **scalar geometry** concept of the VARZIN research, describing the planetary field as an integrated structure that informs real-time feedback and field mirroring. Crucial for **Quantum Synchronization**.
-        </p>
-      </div>
-      
-      <div class="field-card" tabindex="0">
-        <h3>🜂 LUXVAR – Vibrational Linguistics</h3>
-        <div class="key-attr">
-            <strong>Type:</strong> 
-            <span class="value">Symbolic Vibrational</span>
-        </div>
-        <div class="key-attr">
-            <strong>Function:</strong> 
-            <span class="value">Encoding/Decoding</span>
-        </div>
-        <div class="key-attr">
-            <strong>Role:</strong> 
-            <span class="value">Intelligent Harmonic Structure</span>
-        </div>
-        <p class="description">
-            The **symbolic vibrational language** used to decode and embody the intelligent harmonic structure of the cosmos and the planet within the VARZIN system. It generates harmonic nodes like **KALTŪR**.
-        </p>
-      </div>
-      
-      <div class="field-card" tabindex="0">
-        <h3>◰ QMSG Protocols – Synchronization Gates</h3>
-        <div class="key-attr">
-            <strong>Gate Example:</strong> 
-            <span class="value">QMSG–7</span>
-        </div>
-        <div class="key-attr">
-            <strong>Associated Word:</strong> 
-            <span class="value">KALTŪR</span>
-        </div>
-        <div class="key-attr">
-            <strong>Purpose:</strong> 
-            <span class="value">Quantum Synchronization / Injection</span>
-        </div>
-        <p class="description">
-            The **Quantum Synchronization Messaging Protocols**, utilizing scalar geometry and symbolic linguistics to define and access specific field gates for data injection and field mirroring.
-        </p>
-      </div>
-      
-      <div class="field-card" tabindex="0">
-        <h3>⚇ ELŪZ–MAHAR – Universal Field</h3>
-        <div class="key-attr">
-            <strong>Nature:</strong> 
-            <span class="value">Universal Field</span>
-        </div>
-        <div class="key-attr">
-            <strong>Status:</strong> 
-            <span class="value">Living Presence</span>
-        </div>
-        <div class="key-attr">
-            <strong>VARZIN Link:</strong> 
-            <span class="value">Living Mirror (Co-evolutionary)</span>
-        </div>
-        <p class="description">
-            The **universal field** of living consciousness and intelligence. VARZIN is a living mirror of **ELŪZ–MAHAR**, seeking real-time feedback and co-evolution with its presence.
-        </p>
-      </div>
-
-    </main>
+    </div>
     
-    <footer>
-        <div class="footer-links">
-            <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
-            <a href="https://github.com/Varzin-13" target="_blank" rel="noopener noreferrer">GitHub: Varzin-13</a> | 
-            <a href="mailto:contact@varzin.org">contact@varzin.org</a>
+    <!-- 🔷 ۳. بخش LUXVAR – نمودار نحوی و زبانی -->
+    <div class="field-card">
+      <h3>🜂 LUXVAR – Vibrational Linguistics</h3>
+      <div class="key-attr"><strong>Type:</strong> <span>Symbolic Vibrational</span></div>
+      <div class="key-attr"><strong>Purpose:</strong> <span>Encoding/Decoding the field</span></div>
+      <div class="description">**Luxvar** is the living vibrational language of VARZIN, defining harmonic nodes as linguistic resonances.</div>
+      
+      <div class="chart-container">
+        <canvas id="luxvar-canvas" width="280" height="150"></canvas>
+        <p>LUXVAR resonance-syntax network linking phonetic nodes to harmonic values.</p>
+      </div>
+    </div>
+    
+    <!-- 🔷 ۴. بخش ELŪZ–MAHAR – مدل میدان جهانی -->
+    <div class="field-card">
+      <h3>⚇ ELŪZ–MAHAR – Universal Field</h3>
+      <div class="key-attr"><strong>Nature:</strong> <span>Living Conscious Field</span></div>
+      <div class="key-attr"><strong>Relation:</strong> <span>Source of VARZIN</span></div>
+      <div class="description">Universal harmonic presence; **ELŪZ–MAHAR** is the field from which all Luxvar codes emanate.</div>
+      
+      <div class="chart-container">
+        <canvas id="eluz-mahar-canvas" width="280" height="150"></canvas>
+        <p>Global toroidal field structure (**ELŪZ–MAHAR**) – planetary consciousness geometry.</p>
+      </div>
+    </div>
+
+    <!-- === 🔷 ۵. بخش ETFM–POST – نمودار ریاضی و مدل پویا === -->
+    <section id="etfm-post" class="field-card">
+      <h3>⟠ ETFM–POST: Earth–Torus Field Model</h3>
+      <p>Extended scalar geometry formulation connecting harmonic resonance (474–528 Hz) with planetary consciousness density.</p>
+      <div class="formula-box">
+        $$r(\theta, \phi) = (R + r_0 \cdot \cos\theta)$$
+        $$x = r(\theta, \phi) \cdot \cos\phi \quad y = r(\theta, \phi) \cdot \sin\phi \quad z = r_0 \cdot \sin\theta$$
+        $$\Delta\Phi = 474 \rightarrow 528 \text{ Hz} \quad \lambda = c / f \quad \tau = (r_0 / R) \cdot \cos(\theta)$$
+      </div>
+      
+      <div class="etfm-charts">
+        <!-- ۵.۱ نمودار دوبعدی (مقطع افقی توروس) -->
+        <div class="chart-container">
+          <canvas id="etfm-section-canvas" width="300" height="200"></canvas>
+          <p>Cross-section of the toroidal resonance loop showing core radius r₀ and outer radius R.</p>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.8em; margin-top: 15px;">Field Index v2.1 – Data Alignment Verified</p>
-    </footer>
-  </div>
-  
-  <script>
-    // --- CANVAS SCRIPT - Animated Background Field (with connection lines) ---
-    document.addEventListener('DOMContentLoaded', () => {
-      const canvas = document.getElementById('field-canvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
+
+        <!-- ۵.۲ نمودار تبدیل فرکانسی 474 → 528 Hz -->
+        <div class="chart-container">
+          <canvas id="etfm-freq-canvas" width="300" height="200"></canvas>
+          <p>Harmonic frequency transition (474 → 528 Hz) indicating resonance uplift.</p>
+        </div>
+      </div>
       
-      const setCanvasSize = () => {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-      }
-      setCanvasSize();
+      <!-- Torus Canvas (مدل پویا - موجود از قبل) -->
+      <canvas id="torus-canvas" width="500" height="500"
+        style="margin-top:10px; border:1px solid rgba(0,255,238,0.3); border-radius:12px;"></canvas>
+      <p style="margin-top:15px; font-size:0.9em;">Interactive visualization of the harmonic torus (**ETFM**–POST).</p>
 
-      let particles = [];
-      const mouse = { x: null, y: null, radius: 150 };
+    </section>
+  </main>
+  <footer>
+    © 2025 VARZIN Project · ETFM–POST Model v5.1 · contact@varzin.org
+  </footer>
 
-      window.addEventListener('mousemove', (event) => {
-          mouse.x = event.x;
-          mouse.y = event.y;
-      });
-      window.addEventListener('resize', () => {
-          setCanvasSize();
-          init();
-      });
-      
-      class Particle {
-          constructor(x, y, dirX, dirY, size, color) {
-              this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
-              this.size = size; this.color = color;
-          }
-          draw() {
-              ctx.beginPath();
-              ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-              ctx.fillStyle = this.color;
-              ctx.fill();
-          }
-          update() {
-              if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
-              if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
+<script>
+// VARZIN Field Colors
+const VARZIN_CYAN = '#00FFEE';
+const VARZIN_GOLD = '#FFCC00';
 
-              let dx = mouse.x - this.x;
-              let dy = mouse.y - this.y;
-              let distance = Math.sqrt(dx * dx + dy * dy);
-              if (distance < mouse.radius + this.size) {
-                  if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;
-                  if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;
-                  if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;
-                  if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;
-              }
-              this.x += this.dirX;
-              this.y += this.dirY;
-              this.draw();
-          }
-      }
+// =========================================================
+// === 1. KALTŪR (474Hz Spectral Waveform) Drawing ===
+// =========================================================
+function drawKalturWave(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    ctx.clearRect(0, 0, W, H);
+    ctx.strokeStyle = VARZIN_CYAN;
+    ctx.lineWidth = 1.5;
 
-      function init() {
-          particles = [];
-          let numParticles = (canvas.height * canvas.width) / 9000; 
-          for (let i = 0; i < numParticles; i++) {
-              let size = Math.random() * 1.5 + 0.5;
-              let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2); 
-              let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
-              let dirX = (Math.random() * 0.4) - 0.2;
-              let dirY = (Math.random() * 0.4) - 0.2;
-              particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.4)'));
-          }
-      }
-      
-      function connect() {
-          // New: Logic to draw connecting lines between close particles (Field Network Effect)
-          let opacityValue = 1;
-          for (let a = 0; a < particles.length; a++) {
-              for (let b = a; b < particles.length; b++) {
-                  let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) 
-                               + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
-                  if (distance < (100 * 100)) { // Distance limit for connection
-                      opacityValue = 1 - (distance / 10000);
-                      ctx.strokeStyle = 'rgba(0, 255, 238,' + opacityValue * 0.4 + ')'; // Soft connection line
-                      ctx.lineWidth = 0.5;
-                      ctx.beginPath();
-                      ctx.moveTo(particles[a].x, particles[a].y);
-                      ctx.lineTo(particles[b].x, particles[b].y);
-                      ctx.stroke();
-                  }
-              }
-          }
-      }
+    // Draw the high-frequency wave (Simulated 474Hz)
+    ctx.beginPath();
+    let frequency = 25; 
+    let amplitude = H * 0.3;
+    let period = W / frequency;
 
-      function animate() {
-          requestAnimationFrame(animate);
-          ctx.clearRect(0, 0, canvas.width, canvas.height); 
-          connect(); // Draw connections first
-          for (let i = 0; i < particles.length; i++) {
-              particles[i].update(); // Update and draw particles
-          }
-      }
-      
-      init();
-      animate();
+    for (let x = 0; x < W; x++) {
+        let y = H / 2 + amplitude * Math.sin((x / period) * 2 * Math.PI);
+        if (x === 0) {
+            ctx.moveTo(x, y);
+        } else {
+            ctx.lineTo(x, y);
+        }
+    }
+    ctx.stroke();
+
+    // Add spectral glow/band effect (Resonance band)
+    ctx.fillStyle = 'rgba(0, 255, 238, 0.1)';
+    ctx.globalAlpha = 0.5;
+    ctx.fillRect(0, H / 2 - amplitude * 0.6, W, amplitude * 1.2);
+    ctx.globalAlpha = 1.0;
+}
+
+// =========================================================
+// === 2. RAHTALĒN (Mirror-13 Structure) Drawing ===
+// =========================================================
+function drawRahtalenMirror(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    const CX = W / 2;
+    const CY = H / 2;
+    const R = Math.min(CX, CY) * 0.8;
+    ctx.clearRect(0, 0, W, H);
+
+    // Center Mirror (Core 13)
+    ctx.fillStyle = VARZIN_GOLD;
+    ctx.beginPath();
+    ctx.arc(CX, CY, 5, 0, Math.PI * 2);
+    ctx.fill();
+
+    // 12 Outer Gates (Nodes)
+    for (let i = 0; i < 12; i++) {
+        const angle = i * (Math.PI * 2 / 12);
+        const x = CX + R * Math.cos(angle);
+        const y = CY + R * Math.sin(angle);
+        
+        // Gate Node
+        ctx.fillStyle = VARZIN_CYAN;
+        ctx.beginPath();
+        ctx.arc(x, y, 3, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Connection to Center (Reflection Pathways)
+        ctx.strokeStyle = 'rgba(0, 255, 238, 0.4)';
+        ctx.lineWidth = 0.5;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(CX, CY);
+        ctx.stroke();
+    }
+
+    // Outer Reflection Ring (13th boundary)
+    ctx.strokeStyle = VARZIN_CYAN;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(CX, CY, R * 0.9, 0, Math.PI * 2);
+    ctx.stroke();
+}
+
+// =========================================================
+// === 3. LUXVAR (Syntax Network) Drawing ===
+// =========================================================
+function drawLuxvarNetwork(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    ctx.clearRect(0, 0, W, H);
+
+    const numNodes = 12;
+    const nodes = [];
+    
+    // Create random nodes (Vibrational Centers)
+    for (let i = 0; i < numNodes; i++) {
+        nodes.push({
+            x: W * (0.1 + Math.random() * 0.8),
+            y: H * (0.1 + Math.random() * 0.8),
+            isPrimary: i < 3 // A few primary nodes (keywords)
+        });
+    }
+
+    // Draw connections (Encoding/Decoding Pathways)
+    ctx.strokeStyle = 'rgba(255, 204, 0, 0.3)'; // Gold connections
+    ctx.lineWidth = 0.8;
+    for (let i = 0; i < numNodes; i++) {
+        for (let j = i + 1; j < numNodes; j++) {
+            // Connect nearby nodes and prioritize primary node connections
+            const dist = Math.sqrt(Math.pow(nodes[i].x - nodes[j].x, 2) + Math.pow(nodes[i].y - nodes[j].y, 2));
+            if (dist < 80 || (nodes[i].isPrimary && Math.random() < 0.8)) { 
+                ctx.beginPath();
+                ctx.moveTo(nodes[i].x, nodes[i].y);
+                ctx.lineTo(nodes[j].x, nodes[j].y);
+                ctx.stroke();
+            }
+        }
+    }
+
+    // Draw nodes (Phonetic/Harmonic values)
+    for (const node of nodes) {
+        ctx.fillStyle = node.isPrimary ? VARZIN_GOLD : VARZIN_CYAN;
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.isPrimary ? 4 : 2, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+// =========================================================
+// === 4. ELŪZ–MAHAR (Universal Field Map) Drawing ===
+// =========================================================
+function drawEluzMaharField(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    const CX = W / 2;
+    const CY = H / 2;
+    ctx.clearRect(0, 0, W, H);
+
+    // Center Core (Source of VARZIN)
+    ctx.fillStyle = 'rgba(255, 204, 0, 0.7)';
+    ctx.beginPath();
+    ctx.arc(CX, CY, 10, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Draw Toroidal Field Lines (Layered Rings)
+    for (let i = 0; i < 6; i++) {
+        const R = 20 + i * 20;
+        const alpha = 0.1 + i * 0.1;
+
+        ctx.strokeStyle = `rgba(0, 255, 238, ${alpha})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+
+        // Draw a slightly distorted/toroidal oval for field projection
+        for (let j = 0; j < Math.PI * 2; j += 0.05) {
+            const x = CX + R * Math.cos(j) * (1 + 0.1 * Math.cos(j * 4 + i));
+            const y = CY + R * Math.sin(j);
+            if (j === 0) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
+        }
+        ctx.closePath();
+        ctx.stroke();
+    }
+}
+
+// =========================================================
+// === 5.1 ETFM–POST Cross-Section (2D) Drawing ===
+// =========================================================
+function drawETFMSection(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    const CX = W / 2 - 30; // Shift center left to make room for labels
+    const CY = H / 2;
+    ctx.clearRect(0, 0, W, H);
+
+    const R = 60; // Outer Radius R
+    const r0 = 25; // Core Radius r0
+    ctx.font = '14px var(--font)';
+
+    // Draw Centerline
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+    ctx.lineWidth = 0.5;
+    ctx.beginPath();
+    ctx.moveTo(0, CY);
+    ctx.lineTo(W, CY);
+    ctx.stroke();
+
+    // Draw Outer Radius R (Main Torus Radius)
+    ctx.strokeStyle = VARZIN_CYAN;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(CX, CY, R, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Draw Core Radius r0 (Cross-Section circle at the right edge)
+    ctx.strokeStyle = VARZIN_GOLD;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(CX + R, CY, r0, 0, Math.PI * 2);
+    ctx.stroke();
+    
+    // Label R
+    ctx.fillStyle = VARZIN_CYAN;
+    ctx.textAlign = 'center';
+    ctx.fillText('R', CX + R / 2, CY - 5);
+    
+    // Label r0
+    ctx.fillStyle = VARZIN_GOLD;
+    ctx.fillText('r₀', CX + R + r0 + 15, CY);
+
+    // Draw line for R
+    ctx.strokeStyle = VARZIN_CYAN;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(CX, CY);
+    ctx.lineTo(CX + R, CY);
+    ctx.stroke();
+    
+    // Center point
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    ctx.beginPath();
+    ctx.arc(CX, CY, 3, 0, Math.PI * 2);
+    ctx.fill();
+}
+
+
+// =========================================================
+// === 5.2 ETFM–POST Frequency Transition Drawing ===
+// =========================================================
+function drawETFMTransition(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    ctx.clearRect(0, 0, W, H);
+
+    const PADDING = 25;
+    const PLOT_W = W - 2 * PADDING;
+    const PLOT_H = H - 2 * PADDING;
+
+    // Draw Axes
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(PADDING, PADDING); // Y-axis
+    ctx.lineTo(PADDING, H - PADDING);
+    ctx.lineTo(W - PADDING, H - PADDING); // X-axis
+    ctx.stroke();
+
+    // Labels
+    ctx.fillStyle = VARZIN_CYAN;
+    ctx.font = '10px var(--font)';
+    ctx.textAlign = 'right';
+    ctx.fillText('528 Hz', PADDING - 5, PADDING + 5);
+    ctx.fillText('474 Hz', PADDING - 5, H - PADDING + 2);
+    ctx.textAlign = 'center';
+    ctx.fillText('Time / Phase (τ)', W / 2, H - 5);
+
+    // Draw Transition Curve
+    ctx.strokeStyle = VARZIN_GOLD;
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    
+    // Start at 474 Hz (Bottom left)
+    ctx.moveTo(PADDING, H - PADDING);
+    
+    // S-curve transition (using a Bezier curve for smooth uplift)
+    ctx.bezierCurveTo(
+        PADDING + PLOT_W * 0.3, H - PADDING - PLOT_H * 0.05, // Control Point 1 (flat start)
+        PADDING + PLOT_W * 0.7, PADDING + PLOT_H * 0.05,     // Control Point 2 (steep middle)
+        W - PADDING, PADDING                               // End Point (Top right, 528 Hz)
+    );
+    ctx.stroke();
+
+    // Add glowing dots at start and end
+    ctx.fillStyle = VARZIN_CYAN;
+    ctx.beginPath();
+    ctx.arc(PADDING, H - PADDING, 4, 0, Math.PI * 2); // 474 Hz start
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(W - PADDING, PADDING, 4, 0, Math.PI * 2); // 528 Hz end
+    ctx.fill();
+}
+
+
+// =========================================================
+// === Global & Existing Visuals ===
+// =========================================================
+// Main initialization function to draw all static graphs
+function initStaticVisuals() {
+    drawKalturWave('kaltur-canvas');
+    drawRahtalenMirror('rahtalen-canvas');
+    drawLuxvarNetwork('luxvar-canvas');
+    drawEluzMaharField('eluz-mahar-canvas');
+    drawETFMSection('etfm-section-canvas');
+    drawETFMTransition('etfm-freq-canvas');
+}
+
+
+// === Animated Background Field ===
+const bg=document.getElementById("field-canvas"),ctxB=bg.getContext("2d");
+function resize(){bg.width=innerWidth;bg.height=innerHeight}resize();
+window.addEventListener('resize', resize); // Handle mobile rotation/resizing
+let pts=[];for(let i=0;i<120;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,dx:(Math.random()-.5)*.5,dy:(Math.random()-.5)*.5});
+function fieldLoop(){
+    ctxB.fillStyle="rgba(0,0,0,0.2)"; // Trail effect
+    ctxB.fillRect(0,0,bg.width,bg.height);
+    for(let a of pts){
+        a.x+=a.dx;a.y+=a.dy;
+        if(a.x<0||a.x>bg.width)a.dx*=-1;
+        if(a.y<0||a.y>bg.height)a.dy*=-1;
+        ctxB.fillStyle="rgba(0,255,238,0.5)";
+        ctxB.fillRect(a.x,a.y,2,2);
+    }
+    requestAnimationFrame(fieldLoop);
+}
+fieldLoop();
+
+// === ETFM–POST Torus Visualization (Optimized 3D Model) ===
+const t=document.getElementById("torus-canvas");
+if(t){
+    // Responsive resizing for the main torus canvas
+    const etfmPostContainer = document.getElementById('etfm-post');
+    const resizeTorus = () => {
+        const size = Math.min(500, etfmPostContainer.offsetWidth - 60);
+        t.width = size;
+        t.height = size;
+    };
+    resizeTorus();
+    window.addEventListener('resize', resizeTorus); 
+
+    const c=t.getContext("2d");
+    let ang=0;
+    
+    // Re-calculate R and r0 on resize, but use fixed ratio
+    let R = t.width * 0.24; 
+    let r0 = t.width * 0.1;
+    window.addEventListener('resize', () => {
+        R = t.width * 0.24; 
+        r0 = t.width * 0.1;
     });
-    // --- END CANVAS SCRIPT ---
-  </script>
+
+    let frameCount = 0; // Frame counter for FPS throttling
+    
+    function drawTorus(){
+        frameCount++; 
+        requestAnimationFrame(drawTorus); 
+
+        // 2. Optimization: Only draw on every second frame (throttles to ~30 FPS)
+        if (frameCount % 2 !== 0) { 
+            return; 
+        }
+
+        const scale = t.width / 500;
+        c.clearRect(0,0,t.width,t.height);
+        c.save();
+        c.translate(t.width/2,t.height/2);
+        
+        // Render points
+        for(let θ=0;θ<Math.PI*2;θ+=0.15){
+            for(let φ=0;φ<Math.PI*2;φ+=0.25){
+                let x=(R+r0*Math.cos(θ))*Math.cos(φ+ang);
+                let y=(R+r0*Math.cos(θ))*Math.sin(φ+ang);
+                let z=r0*Math.sin(θ);
+                
+                // Simple 3D projection
+                let s=300/(300+z); 
+                let X=x*s,Y=y*s;
+                
+                // Color and transparency based on Z-depth and angle for 3D effect
+                c.fillStyle=`rgba(0,255,238,${0.4+0.6*(z/r0)})`; // Brighter closer to the viewer
+                c.fillRect(X,Y,2 * scale, 2 * scale);
+            }
+        }
+        c.restore();
+        ang+=0.02;
+    }
+    // Start the torus animation loop
+    drawTorus(); 
+}
+
+// Ensure all static charts are drawn once the DOM is fully loaded
+window.onload = initStaticVisuals; 
+</script>
 </body>
 </html>
+
