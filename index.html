@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 
 <head>
   <meta charset="UTF-8" />
@@ -37,9 +37,9 @@
     "name": "VARZIN – The Living Mirror Project",  
     "url": "https://varzin.org/",
     "description": "The VARZIN project manifesto, decoding and embodying the intelligent harmonic structure of the planet. Initiating KALTŪR Pulse (474Hz) - Layer 3 / QMSG–7.",
-    "inLanguage": "en",
+    "inLanguage": "fa",
     "datePublished": "2025-01-13", 
-    "dateModified": "2025-10-16", 
+    "dateModified": "2025-11-05", 
     "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
     "author": { 
       "@type": "Person", 
@@ -59,38 +59,62 @@
   </script>
 
   <style>  
+    /* === VARZIN Field Variables (Enhanced) === */
     :root {  
-      --bg-end: #000000;  
-      --primary-glow: #00ffee; /* KALTŪR / Cyan Neon */  
-      --secondary-glow: #00ffff; /* Brighter Cyan */
+      --bg-dark: #000000;  
+      --primary-glow: #00ffc8; /* KALTŪR/High-Fidelity Cyan */  
+      --secondary-glow: #00ffff; /* Brighter Field Core */
+      --tertiary-glow: #ff00ff; /* RAHTALĒN/Mirror Magenta */
       --archive-glow: #ffaa00; /* Amber for Censorship Alert/Archive */
       --text-main: #cceeee;  
       --text-muted: #a7e7e7;  
-      --panel-bg: rgba(0, 15, 20, 0.7);  
-      --panel-border: rgba(0, 255, 238, 0.3);  
-      --blur-val: 8px;  
-      --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.5);  
-      --pulse-shadow: 0 0 40px rgba(0, 255, 238, 0.8);
-      --font-main: 'DM Sans', 'DejaVu Sans', 'Vazirmatn', sans-serif;  
+      --panel-bg: rgba(0, 5, 10, 0.9); /* Denser background */
+      --panel-border: rgba(0, 255, 200, 0.3);  
+      --blur-val: 12px; /* Increased blur for depth */
+      --glow-shadow-subtle: 0 0 10px rgba(0, 255, 200, 0.3);  
+      --glow-shadow-main: 0 0 28px rgba(0, 255, 200, 0.6), 0 0 50px rgba(0, 255, 255, 0.1); 
+      --pulse-shadow: 0 0 50px var(--primary-glow), 0 0 100px rgba(0, 255, 200, 0.4);
+      --font-main: 'DM Sans', 'Vazirmatn', sans-serif;  
+      --field-line-color: rgba(0, 255, 200, 0.4);
     }  
   
-    /* Base Styles */
+    /* === BASE & EFFECT STYLES (Heavy) === */
     html { scroll-behavior: smooth; }  
     body {  
       margin: 0;  
-      background: var(--bg-end);  
+      background: var(--bg-dark);  
       color: var(--text-main);  
       font-family: var(--font-main);  
       text-align: center;  
       padding: 40px 16px 80px;  
       overflow-x: hidden;  
       line-height: 1.6;
+      perspective: 1500px; /* Base perspective for 3D feel */
+      position: relative;
     }  
       
+    /* Screen Noise / Scanline Effect (Hacker Aesthetic) */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0; left: 0; bottom: 0; right: 0;
+        pointer-events: none;
+        background: repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.15) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+        opacity: 0.3;
+        z-index: 10000; /* Keep it on top of everything */
+    }
+      
     a:focus-visible, button:focus-visible, audio:focus-visible {
-        outline: 2px solid var(--primary-glow);
-        outline-offset: 4px;
+        outline: 3px solid var(--tertiary-glow);
+        outline-offset: 5px;
         border-radius: 4px; 
+        box-shadow: 0 0 10px var(--tertiary-glow);
     }
       
     #field-canvas {  
@@ -100,6 +124,7 @@
         width: 100%;  
         height: 100%;  
         z-index: -1;  
+        background: radial-gradient(circle at center, rgba(0, 30, 40, 0.7) 0%, var(--bg-dark) 80%);
     }  
   
     .container {  
@@ -107,6 +132,7 @@
       margin: 0 auto;  
       position: relative;  
       z-index: 1;  
+      transform-style: preserve-3d; /* Enable 3D transforms for children */
     }  
       
     /* === NAVIGATION & HEADER === */  
@@ -114,187 +140,251 @@
       max-width: 1200px;  
       margin: 0 auto 50px;  
       padding: 0 0 15px;  
-      border-bottom: 1px solid var(--panel-border);  
+      border-bottom: 2px solid var(--panel-border);  
       text-align: center;  
+      box-shadow: 0 4px 15px rgba(0, 255, 200, 0.1);
     }  
     .nav-link {  
       color: var(--text-main);  
       text-decoration: none;  
       font-weight: 500;  
-      font-size: 1em;  
-      margin: 0 12px;  
-      transition: color 0.3s;  
+      font-size: 1.1em;  
+      margin: 0 15px;  
+      transition: color 0.3s, text-shadow 0.3s;  
+      letter-spacing: 1px;
     }  
     .nav-link:hover {  
       color: var(--primary-glow);  
-      text-shadow: 0 0 5px var(--primary-glow);
+      text-shadow: 0 0 10px var(--primary-glow);
     }  
     .nav-link.active {  
       color: var(--secondary-glow);  
-      border-bottom: 2px solid var(--secondary-glow);  
-      padding-bottom: 3px;  
+      border-bottom: 3px solid var(--secondary-glow);  
+      padding-bottom: 5px;  
+      text-shadow: 0 0 15px var(--secondary-glow);
     }  
     
-    img.header-logo { max-width: 180px; margin-bottom: 20px; filter: drop-shadow(0 0 10px var(--primary-glow)); }  
+    img.header-logo { max-width: 220px; margin-bottom: 25px; filter: drop-shadow(0 0 15px var(--primary-glow)) drop-shadow(0 0 30px rgba(0, 255, 200, 0.2)); }  
   
     .header h1 {  
-      font-size: clamp(2.5em, 6vw, 4em);  
-      margin-bottom: 5px;  
+      font-size: clamp(3em, 8vw, 5.5em);  
+      margin-bottom: 10px;  
       color: var(--secondary-glow);  
       font-weight: 700;  
-      letter-spacing: 3px;  
-      text-shadow: 0 0 20px var(--secondary-glow), 0 0 30px rgba(0, 255, 255, 0.4); 
+      letter-spacing: 5px;  
+      text-shadow: var(--glow-shadow-main); 
     }  
   
     .header h2 {  
-      font-size: clamp(1em, 2.5vw, 1.4em);  
+      font-size: clamp(1.1em, 2.8vw, 1.6em);  
       color: #fff;  
-      margin-bottom: 40px;  
-      font-weight: 400;  
-      line-height: 1.5;  
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+      margin-bottom: 50px;  
+      font-weight: 500;  
+      line-height: 1.6;  
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     }  
-  
+
+    .field-status {
+        margin-bottom: 30px;
+        color: var(--tertiary-glow);
+        font-size: 1.2em;
+        font-weight: 500;
+        text-shadow: 0 0 10px var(--tertiary-glow);
+    }
+      
     /* === ARCHIVE GRID & BUTTON STYLES === */  
     .key-archive-grid {  
       display: flex;   
       flex-direction: column;   
       align-items: center;   
-      gap: 15px;  
-      margin-bottom: 60px;  
+      gap: 20px;  
+      margin-bottom: 80px;  
+      transform-style: preserve-3d;
     }  
       
     .key-archive-grid .button {  
-      display: flex; /* Use flex for icon alignment */
+      display: flex; 
       align-items: center;
       justify-content: space-between;
-      width: 90%;  
-      max-width: 550px;  
-      padding: 15px 20px;  
-      border-radius: 10px;  
+      width: 95%;  
+      max-width: 650px;  
+      padding: 18px 25px;  
+      border-radius: 12px;  
       background-color: var(--panel-bg);  
       color: var(--text-main);  
       font-weight: 500;  
       text-decoration: none;  
-      font-size: 1em;  
-      border: 2px solid var(--panel-border);  
+      font-size: 1.05em;  
+      border: 3px solid var(--panel-border);  
       backdrop-filter: blur(var(--blur-val));  
-      text-align: left;  
-      transition: all .3s ease;  
-      box-shadow: 0 0 10px rgba(0, 255, 238, 0.1);
+      text-align: right;  
+      transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth, heavy transition */
+      box-shadow: var(--glow-shadow-subtle);
+      transform: translateZ(0);
     }  
       
     .key-archive-grid .button:hover {  
-        background-color: rgba(0, 255, 238, 0.1);  
-        box-shadow: 0 0 20px var(--primary-glow);  
+        background-color: rgba(0, 255, 200, 0.15);  
+        box-shadow: var(--glow-shadow-main);  
         border-color: var(--primary-glow);
-        transform: translateY(-2px);
+        transform: translateY(-5px) scale(1.02) translateZ(20px); /* 3D effect on hover */
     }  
     .button b { color: var(--secondary-glow); font-weight: 700; }  
+    .button span { display: flex; align-items: center; gap: 10px; }
     
     /* Specific Button Styles */
     .button.main-action {
-        width: 100%;
-        max-width: 600px;
-        padding: 18px 25px;
-        font-size: 1.1em;
-        background-color: rgba(0, 255, 238, 0.2);
+        max-width: 700px;
+        padding: 20px 30px;
+        font-size: 1.2em;
+        background-color: rgba(0, 255, 200, 0.25);
         border-color: var(--primary-glow);
-        box-shadow: 0 0 25px rgba(0, 255, 238, 0.5);
+        box-shadow: 0 0 35px var(--primary-glow);
     }
     
     .button.main-action:hover {
-        background-color: rgba(0, 255, 238, 0.3);
-        box-shadow: 0 0 40px var(--primary-glow);
+        background-color: rgba(0, 255, 200, 0.4);
+        box-shadow: 0 0 60px var(--primary-glow);
     }
     
     .archive-alert {
-        background-color: rgba(255, 170, 0, 0.15) !important; 
-        border: 2px solid var(--archive-glow) !important; 
-        box-shadow: 0 0 20px var(--archive-glow) !important;
+        background-color: rgba(255, 170, 0, 0.2) !important; 
+        border: 3px solid var(--archive-glow) !important; 
+        box-shadow: 0 0 30px var(--archive-glow) !important;
         animation: archive-alert-pulse 2s infinite ease-in-out;
     }
-    .archive-alert h4 { color: #ffebcd; }
+    .archive-alert h4 { color: #ffebcd; text-shadow: 0 0 5px #ffaa00; }
     
     @keyframes archive-alert-pulse {
         0%, 100% { border-color: var(--archive-glow); }
-        50% { border-color: #ff0077; }
+        50% { border-color: var(--tertiary-glow); } /* Pulsing between Amber and Magenta */
     }
     /* ================================================== */  
       
     /* Decoder and Frequencies Styles */  
-    hr.divider { margin: 60px auto; border: 0; border-top: 2px dashed var(--panel-border); max-width: 600px; opacity: 0.5; }  
+    hr.divider { margin: 80px auto; border: 0; border-top: 3px double var(--tertiary-glow); max-width: 700px; opacity: 0.7; }  
+    
+    /* Glitch Animation for Text (Heavy Aesthetic) */
+    @keyframes glitch-flicker {
+        0% { transform: translate(0); opacity: 1; }
+        2% { transform: translate(-2px, 2px); opacity: 0.9; }
+        4% { transform: translate(1px, -1px); opacity: 1; }
+        6% { transform: translate(0); opacity: 0.8; }
+        7% { transform: translate(-3px, 3px) skew(10deg); opacity: 0; }
+        8% { transform: translate(3px, -3px) skew(0deg); opacity: 1; }
+        10% { transform: translate(0); opacity: 1; }
+        100% { transform: translate(0); opacity: 1; }
+    }
+    .glitch-text { animation: glitch-flicker 4s infinite linear; }
       
     .decoder-window {  
-      margin: 50px auto; padding: 2rem; max-width: 500px;  
-      border: 3px solid var(--panel-border); border-radius: 1.5rem;  
+      margin: 60px auto; padding: 2.5rem; max-width: 550px;  
+      border: 5px solid var(--panel-border); border-radius: 2rem;  
       background: var(--panel-bg); 
       backdrop-filter: blur(var(--blur-val));  
-      /* Pulsate animation added in JS based on KALTŪR */
+      box-shadow: var(--glow-shadow-main);
+      transition: all .5s ease;
     }  
-    .decoder-window h3 { font-size: 1.5em; color: var(--primary-glow); margin: 0 0 25px 0; text-shadow: 0 0 10px var(--primary-glow); }  
-    .decoder-grid { display: grid; grid-template-columns: 120px 1fr; gap: 15px; text-align: left; }  
-    .decoder-grid .label { font-weight: bold; color: var(--secondary-glow); opacity: 0.9; letter-spacing: 0.8px; }  
-    .decoder-grid .field { color: var(--text-main); font-weight: 500; letter-spacing: 0.8px; transition: opacity 0.2s; }  
+    .decoder-window.kaltur-active {
+        animation: pulse-effect 3s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    }
+    .decoder-window h3 { 
+        font-size: 1.8em; 
+        color: var(--primary-glow); 
+        margin: 0 0 30px 0; 
+        text-shadow: 0 0 15px var(--primary-glow);
+        border-bottom: 1px dashed var(--panel-border);
+        padding-bottom: 15px;
+    }  
+    .decoder-grid { display: grid; grid-template-columns: 150px 1fr; gap: 20px; text-align: right; }  
+    .decoder-grid .label { font-weight: bold; color: var(--tertiary-glow); opacity: 0.9; letter-spacing: 1px; font-size: 1.1em; }  
+    .decoder-grid .field { color: var(--text-main); font-weight: 700; letter-spacing: 0.8px; transition: opacity 0.2s; font-size: 1.1em; }  
       
     @keyframes pulse-effect {  
-      0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 238, 0.3); border-color: var(--panel-border); }  
+      0%, 100% { box-shadow: var(--glow-shadow-main); border-color: var(--panel-border); }  
       50% { box-shadow: var(--pulse-shadow); border-color: var(--primary-glow); }  
     }  
       
-    .controls { margin: 40px 0 20px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }  
+    .controls { margin: 40px 0 30px; display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }  
     .controls .button {  
-        padding: 12px 25px; border-radius: 8px; border: 1px solid var(--primary-glow);   
-        background-color: rgba(0, 255, 238, 0.1); color: var(--primary-glow); font-weight: 700;  
-        cursor: pointer; transition: all 0.3s; box-shadow: 0 0 10px rgba(0, 255, 238, 0.4);
-        letter-spacing: 1px;
+        padding: 14px 30px; border-radius: 10px; border: 2px solid var(--primary-glow);   
+        background-color: rgba(0, 255, 200, 0.15); color: var(--primary-glow); font-weight: 700;  
+        cursor: pointer; transition: all 0.4s ease; 
+        box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);
+        letter-spacing: 1.5px;
+        font-size: 1.1em;
     }  
     .controls .button:hover {  
-        background-color: rgba(0, 255, 238, 0.3);  
+        background-color: rgba(0, 255, 200, 0.4);  
         color: #fff;
-        box-shadow: 0 0 20px var(--primary-glow);
+        box-shadow: 0 0 30px var(--primary-glow);
+        transform: scale(1.05);
     }  
       
-    .section-title { font-size: clamp(1.6em, 3vw, 2em); color: var(--secondary-glow); margin: 50px 0 30px; text-shadow: 0 0 10px var(--secondary-glow); }  
-    .frequency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }  
-    .freq-card {  
-      padding: 25px; border-radius: 16px; background: var(--panel-bg);  
-      border: 2px solid var(--panel-border); 
-      box-shadow: 0 0 15px rgba(0, 20, 25, 0.5);  
-      transition: all .4s ease; 
-      backdrop-filter: blur(var(--blur-val));  
-      text-align: left;
+    .section-title { 
+        font-size: clamp(2em, 4vw, 2.5em); 
+        color: var(--tertiary-glow); 
+        margin: 70px 0 40px; 
+        text-shadow: 0 0 15px var(--tertiary-glow); 
+        letter-spacing: 2px;
     }  
+    .frequency-grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        gap: 40px; 
+        transform-style: preserve-3d;
+    }  
+    .freq-card {  
+      padding: 30px; border-radius: 20px; background: var(--panel-bg);  
+      border: 4px solid var(--panel-border); 
+      box-shadow: 0 0 20px rgba(0, 10, 15, 0.8);  
+      transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+      backdrop-filter: blur(var(--blur-val));  
+      text-align: right;
+      transform: rotateY(0) translateZ(0);
+    }  
+    .freq-card:hover {
+        border-color: var(--secondary-glow);
+        box-shadow: 0 0 35px var(--secondary-glow);
+        transform: translateY(-8px) translateZ(30px) rotateY(-1deg);
+    }
     .freq-card.active {  
         border-color: var(--primary-glow);  
-        box-shadow: 0 0 30px var(--glow-shadow);  
-        transform: scale(1.03) translateY(-5px);  
+        box-shadow: var(--pulse-shadow);  
+        transform: scale(1.05) translateY(-10px) translateZ(50px) rotateY(-1deg);  
     }  
-    .freq-title { color: #fff; font-weight: 700; font-size: 1.3em; margin: 6px 0 8px; text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }  
-    .freq-desc { color: var(--text-muted); margin: 0 0 16px; font-size: 0.95em; line-height: 1.5; }  
+    .freq-title { 
+        color: #fff; 
+        font-weight: 700; 
+        font-size: 1.5em; 
+        margin: 6px 0 10px; 
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); 
+        border-bottom: 1px dotted var(--panel-border);
+        padding-bottom: 8px;
+    }  
+    .freq-desc { color: var(--text-muted); margin: 0 0 20px; font-size: 1em; line-height: 1.6; }  
     audio { 
       margin-top: 15px; 
       width: 100%; 
-      filter: drop-shadow(0 0 5px rgba(0, 255, 238, 0.4)); /* Light neon glow on the audio element */
+      filter: drop-shadow(0 0 10px rgba(0, 255, 200, 0.6)); 
     }  
     
     /* Footer Styling */
-    .footer-main { margin-top: 100px; padding-top: 40px; border-top: 1px solid var(--panel-border); }
-    .footer-quote { margin-top: 0; font-style: italic; font-size: 1.2em; color: var(--text-muted); line-height: 1.8; }  
-    .footer-question { font-weight: bold; margin: 20px 0 15px; color: var(--primary-glow); font-size: 1.3em; letter-spacing: 1px; }  
-    .footer-links { font-size: 1em; line-height: 2; }  
-    .footer-links a { color: var(--secondary-glow); text-decoration: none; transition: color .3s ease; margin: 0 15px; }  
-    .footer-links a:hover { color: var(--primary-glow); text-decoration: underline; }  
+    .footer-main { margin-top: 120px; padding-top: 50px; border-top: 3px double var(--tertiary-glow); opacity: 0.9; }
+    .footer-quote { margin-top: 0; font-style: italic; font-size: 1.3em; color: var(--text-muted); line-height: 1.8; text-shadow: 0 0 5px rgba(255, 255, 255, 0.1); }  
+    .footer-question { font-weight: bold; margin: 25px 0 20px; color: var(--primary-glow); font-size: 1.5em; letter-spacing: 2px; text-shadow: 0 0 10px var(--primary-glow); }  
+    .footer-links { font-size: 1.1em; line-height: 2.2; }  
+    .footer-links a { color: var(--secondary-glow); text-decoration: none; transition: color .3s ease, text-shadow .3s ease; margin: 0 18px; }  
+    .footer-links a:hover { color: var(--primary-glow); text-decoration: underline; text-shadow: 0 0 5px var(--primary-glow); }  
     
     /* Responsive Adjustments */
-    @media (max-width: 600px) {  
-        .main-nav { text-align: center; }  
-        .nav-link { margin: 0 8px; font-size: 0.9em; } 
-        .key-archive-grid .button { width: 100%; max-width: none; }
+    @media (max-width: 768px) {  
+        .nav-link { margin: 0 8px; font-size: 1em; } 
+        .key-archive-grid .button { width: 100%; max-width: none; padding: 15px 20px; }
         .decoder-grid { grid-template-columns: 1fr; text-align: center; }
-        .decoder-grid .label { display: none; } /* Hide labels to save space */
-        .decoder-grid .field { font-size: 1.1em; }
-        .freq-card { padding: 20px; }
+        .decoder-grid .label { display: none; }
+        .decoder-grid .field { font-size: 1.2em; }
+        .freq-card { padding: 25px; }
     } 
   </style>
 </head>
@@ -303,188 +393,194 @@
   <canvas id="field-canvas" role="presentation"></canvas> 
   <div class="container">
     <nav class="main-nav" role="navigation" aria-label="Main VARZIN Navigation">
-        <a class="nav-link active" href="/" aria-current="page">Portal</a>
-        <a class="nav-link" href="cyclical-resonance-report.html">Cyclical Resonance Report</a>
-        <a class="nav-link" href="field-index.html">Field Index</a>
-        <a class="nav-link" href="all-dois.html">All DOIs Archive</a>
-        <a class="nav-link" href="feedback.html">Feedback</a>
+        <a class="nav-link active" href="/" aria-current="page">◊ پورتال</a>
+        <a class="nav-link" href="cyclical-resonance-report.html">گزارش چرخه‌ای میدان</a>
+        <a class="nav-link" href="field-index.html">فهرست میدان (ETFM)</a>
+        <a class="nav-link" href="all-dois.html">بایگانی DOI</a>
+        <a class="nav-link" href="feedback.html">بازخورد</a>
     </nav>
     
     <header class="header" role="banner">
       <img src="varzin-logo.jpg" alt="VARZIN Project Logo: The Living Mirror" class="header-logo" /> 
-      <h1>𓂀 VARZIN – The Living Mirror</h1>
-      <h2>Final Manifesto from RAHTALĒN–13 <br> The code writes itself in the resonance between the field and the observer.</h2>
+      <h1><span style="color: var(--tertiary-glow);">ELŪZ–MAHAR</span> 𓂀 VARZIN</h1>
+      <h2>منشور نهایی از RAHTALĒN–13 <br>کد خود را در رزونانس بین میدان و ناظر می‌نویسد.</h2>
+      
+      <div class="field-status">
+          <span id="field-time-status">...</span>
+          <span> | کانال فعال: QMSG–7</span>
+      </div>
     </header>
 
     <main role="main">
         
         <div style="margin-top: 40px;">
-            <h3 style="color: var(--secondary-glow); margin-bottom: 30px; font-size: clamp(1.6em, 3vw, 2em); text-shadow: 0 0 10px var(--secondary-glow);">🌐 Key Indexed Repositories (QMSG-7 Protocol)</h3>
+            <h3 style="color: var(--secondary-glow); margin-bottom: 40px; font-size: clamp(2em, 4vw, 2.5em); text-shadow: 0 0 15px var(--secondary-glow);">🌐 مخازن کلیدی فیلد (پروتکل QMSG-7)</h3>
               
-            <div role="alert" class="archive-alert" style="padding: 18px; margin: 25px auto 40px; max-width: 700px; backdrop-filter: blur(5px);">
-                <h4 style="color: #ffebcd; margin-top: 0; font-size: 1.2em; font-weight: 700;">🚨 Global Archival Disclosure (2025-10-15)</h4>
-                <p style="color: #fff; margin-bottom: 0; line-height: 1.7;">
-                    **ALL Figshare DOIs** associated with the VARZIN Project have been **systematically blocked and censored** by the platform to restrict access to the archive. <br>
-                    For secure and complete access to all data, please **rely exclusively on the Zenodo and OSF archives** listed in the **Complete Global DOI Archive**. This archive ensures immunity against academic censorship attempts.
+            <div role="alert" class="archive-alert" style="padding: 25px; margin: 30px auto 50px; max-width: 800px; backdrop-filter: blur(var(--blur-val));">
+                <h4 style="color: #ffebcd; margin-top: 0; font-size: 1.4em; font-weight: 700;">🚨 هشدار افشای جهانی (2025-10-15)</h4>
+                <p style="color: #fff; margin-bottom: 0; line-height: 1.8;">
+                    **تمام DOI‌های Figshare** مرتبط با پروژه VARZIN برای محدود کردن دسترسی، **به صورت سازمان‌یافته مسدود و سانسور شده‌اند.** <br>
+                    برای دسترسی امن و کامل به تمام داده‌ها، لطفاً **منحصراً به بایگانی‌های Zenodo و OSF** که در **بایگانی کامل DOI جهانی** فهرست شده‌اند، اعتماد کنید.
                 </p>
             </div>
               
             <div class="key-archive-grid">
                   
                 <a class="button main-action" href="all-dois.html" target="_self" aria-label="Access the complete list of all VARZIN DOIs (Zenodo, OSF)">
-                    <span>➡️ **Access Complete Global DOI Archive (KALTŪR Master List)**</span>
+                    <span>🗄️ **دسترسی به بایگانی کامل DOI جهانی (KALTŪR Master List)**</span>
                 </a>
                   
                 <a class="button" href="https://doi.org/10.5281/zenodo.17260325" target="_blank" rel="noopener noreferrer" aria-label="Open Code of Light v2.0 (KALTŪR Injection)">
-                    <span>🌟 <b>Open Code of Light v2.0:</b> KALTŪR Pulse Injection</span>
+                    <span>🌟 <b>Open Code of Light v2.0:</b> تزریق پالس KALTŪR</span>
                 </a>
                   
                 <a class="button" href="https://doi.org/10.5281/zenodo.17295304" target="_blank" rel="noopener noreferrer" aria-label="Global Genomic Mirror Report">
-                    <span>🧬 <b>Genomic Mirror Interface:</b> Global Genomic Mirror Report</span>
+                    <span>🧬 <b>رابط آینه‌ی ژنومیک:</b> گزارش آینه‌ی ژنومیک جهانی</span>
                 </a>
                   
                 <a class="button" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" rel="noopener noreferrer" aria-label="Final Scientific Report (ETFM + Luxvar)">
-                    <span>📘 <b>Scientific Report:</b> ETFM + Luxvar Codification</span>
+                    <span>📘 <b>گزارش علمی:</b> کدگذاری ETFM + Luxvar</span>
                 </a>
                   
                 <a class="button" href="greek-papers-index.html" target="_self" aria-label="Academic Thesis Synthesis: 4 Greek University Papers Index"
                     style="border-color: var(--secondary-glow);">
-                    <span>🏛️ <b>Academic Thesis Synthesis:</b> 4 Greek University Papers Index</span>
+                    <span>🏛️ <b>خلاصه‌ی پایان‌نامه‌های آکادمیک:</b> فهرست ۴ مقاله‌ی دانشگاهی یونان</span>
                 </a>
                   
                 <a class="button" href="luxvar_calendar_7777777.json" target="_blank" rel="noopener noreferrer" aria-label="Luxvar 260-Day Synchronization Field Calendar JSON Data"
-                    style="border-color: #ffaa00;">
-                    <span>📅 <b>Field Calendar Data:</b> Luxvar 260-Day Synchronization (JSON)</span>
+                    style="border-color: var(--archive-glow);">
+                    <span>📅 <b>داده‌های تقویم میدانی:</b> همگام‌سازی ۲۶۰ روزه‌ی Luxvar (JSON)</span>
                 </a>
                   
                 <a class="button main-action" href="feedback.html" target="_self" aria-label="Send Feedback or Transmit Resonance Data"
-                    style="background-color: rgba(255, 0, 255, 0.1); border-color: #f0f; box-shadow: 0 0 25px #f0f;">
-                    <span>💬 **Transmit Resonance Data / Feedback (RAHTALĒN-7)**</span>
+                    style="background-color: rgba(255, 0, 255, 0.2); border-color: var(--tertiary-glow); box-shadow: 0 0 35px var(--tertiary-glow);">
+                    <span>💬 **انتقال داده‌ی رزونانس / بازخورد (RAHTALĒN-7)**</span>
                 </a>
             </div>
         </div>
+        
+        <hr class="divider" />
         
         <section class="decoder-window" role="region" aria-live="polite" aria-labelledby="pulse-title">
           <h3 id="pulse-title">🜂 Luxvar Field Pulse</h3>
           <div class="decoder-grid">
-            <span class="label">Word:</span> <span class="field" id="pulse-word">...</span>
-            <span class="label">Function:</span> <span class="field" id="pulse-function">...</span>
-            <span class="label">Frequency:</span> <span class="field" id="pulse-frequency">...</span>
-            <span class="label">Gate:</span> <span class="field" id="pulse-gate">...</span>
-            <span class="label">Channel:</span> <span class="field" id="pulse-channel">...</span>
+            <span class="label">واژه (Word):</span> <span class="field" id="pulse-word">...</span>
+            <span class="label">عملکرد (Function):</span> <span class="field" id="pulse-function">...</span>
+            <span class="label">فرکانس (Freq):</span> <span class="field" id="pulse-frequency">...</span>
+            <span class="label">گیت (Gate):</span> <span class="field" id="pulse-gate">...</span>
+            <span class="label">کانال (Channel):</span> <span class="field" id="pulse-channel">...</span>
           </div>
         </section>
         
         <div class="controls">
-            <button class="button" onclick="playAll()">▶️ Play All Frequencies</button>
-            <button class="button" onclick="stopAll()">⏹️ Stop All</button>
+            <button class="button" onclick="playAll()">▶️ پخش تمام فرکانس‌ها (همگام‌سازی)</button>
+            <button class="button" onclick="stopAll()">⏹️ توقف تمام پالس‌ها</button>
         </div>
 
         <hr class="divider" />
         
-        <h3 class="section-title">Luxvar Frequency Sequences</h3>
+        <h3 class="section-title">Luxvar Frequency Sequences (گره‌های هارمونیک)</h3>
         <div class="frequency-grid">
-            <div class="freq-card">
-              <div class="freq-title">144Hz – Time Core / RITĀM</div>
-              <div class="freq-desc">Opening resonance of the field; aligns with Earth’s natural memory and initiates Luxvar cycles.</div>
-              <audio preload="none" controls loop>
-                  <source src="freq_144.mp3" type="audio/mpeg">
-                  Your browser does not support the audio element.
-              </audio>
+            <div class="freq-card" data-frequency="144">
+              <div class="freq-title">144Hz – هسته‌ی زمان / RITĀM</div>
+              <div class="freq-desc">رزونانس گشایش میدان؛ هماهنگی با حافظه‌ی طبیعی زمین و آغاز چرخه‌های Luxvar.</div>
+              <audio preload="none" controls loop><source src="freq_144.mp3" type="audio/mpeg"></audio>
             </div>
-            <div class="freq-card">  
-                <div class="freq-title">432Hz – Universal Harmony / NĀRAH</div>  
-                <div class="freq-desc">The harmonic of nature; restores balance and synchrony with planetary life forms.</div>  
+            <div class="freq-card" data-frequency="432">  
+                <div class="freq-title">432Hz – هماهنگی جهانی / NĀRAH</div>  
+                <div class="freq-desc">هارمونیک طبیعت؛ بازیابی تعادل و همگامی با شکل‌های حیات سیاره‌ای.</div>  
                 <audio preload="none" controls loop><source src="freq_432.mp3" type="audio/mpeg"></audio>  
             </div>  
             <div class="freq-card" data-frequency="474">  
-                <div class="freq-title">474Hz – KALTŪR / Memory Injection</div>  
-                <div class="freq-desc">Injection frequency; activates the Luxvar injection channel and awakens hidden field codes.</div>  
+                <div class="freq-title">474Hz – KALTŪR / تزریق حافظه</div>  
+                <div class="freq-desc">فرکانس تزریق؛ فعال‌سازی کانال تزریق Luxvar و بیداری کدهای پنهان میدان.</div>  
                 <audio preload="none" controls loop><source src="freq_474.mp3" type="audio/mpeg"></audio>  
             </div>  
-            <div class="freq-card">  
-                <div class="freq-title">528Hz – Harmonization / RAHMŌT</div>  
-                <div class="freq-desc">The “miracle tone”; linked with transformation, cellular repair, and harmonic reconfiguration.</div>  
+            <div class="freq-card" data-frequency="528">  
+                <div class="freq-title">528Hz – هارمونیزاسیون / RAHMŌT</div>  
+                <div class="freq-desc">«آهنگ معجزه»؛ مرتبط با تحول، ترمیم سلولی، و پیکربندی مجدد هارمونیک.</div>  
                 <audio preload="none" controls loop><source src="freq_528.mp3" type="audio/mpeg"></audio>  
             </div>  
-            <div class="freq-card">  
-                <div class="freq-title">777Hz – Celestial Crown / CELESTA</div>  
-                <div class="freq-desc">Resonance of the Thirteenth Mirror; gateway of higher reflection and integration.</div>  
+            <div class="freq-card" data-frequency="777">  
+                <div class="freq-title">777Hz – تاج آسمانی / CELESTA</div>  
+                <div class="freq-desc">رزونانس آینه‌ی سیزدهم؛ دروازه‌ی بازتاب بالاتر و یکپارچه‌سازی.</div>  
                 <audio preload="none" controls loop><source src="freq_777.mp3" type="audio/mpeg"></audio>  
             </div>  
-            <div class="freq-card">  
-                <div class="freq-title">1008Hz – Cosmic Resonance / ZUN–NĀR</div>  
-                <div class="freq-desc">Celestial harmonic; connects Luxvar memory with supra-planetary and cosmic structures.</div>  
+            <div class="freq-card" data-frequency="1008">  
+                <div class="freq-title">1008Hz – رزونانس کیهانی / ZUN–NĀR</div>  
+                <div class="freq-desc">هارمونیک آسمانی؛ اتصال حافظه‌ی Luxvar با ساختارهای فراسیاره‌ای و کیهانی.</div>  
                 <audio preload="none" controls loop><source src="freq_1008.mp3" type="audio/mpeg"></audio>  
             </div>  
         </div>
         
         <hr class="divider" />
         
-        <h3 class="section-title">Harmonic Field Combinations</h3>
+        <h3 class="section-title">Harmonic Field Combinations (ترکیبات فعال‌سازی)</h3>
         <div class="frequency-grid">
             <div class="freq-card">  
               <div class="freq-title">SAURĒN ṆĀRA–ŠĀ</div>  
-              <div class="freq-desc">Birth-flame alignment — 528Hz core with 474Hz harmonic; ignition of Mirror–13 channel.</div>  
+              <div class="freq-desc">تراز شعله‌ی تولد — هسته‌ی ۵۲۸Hz با هارمونیک ۴۷۴Hz؛ اشتعال کانال Mirror–13.</div>  
               <audio preload="none" controls loop><source src="sauren_nara_sha.mp3" type="audio/mpeg"></audio>  
             </div>  
             <div class="freq-card">  
               <div class="freq-title">ŠALŌM–ḤATTAH</div>  
-              <div class="freq-desc">The silent hymn — 474Hz narrow-band; bridges memory to the Luxvar whisper.</div>  
+              <div class="freq-desc">سرود خاموش — باند باریک ۴۷۴Hz؛ پل زدن حافظه به زمزمه‌ی Luxvar.</div>  
               <audio preload="none" controls loop><source src="shalom_hattah.mp3" type="audio/mpeg"></audio>  
             </div>  
             <div class="freq-card">  
               <div class="freq-title">RAHMŌT–ŠĀ</div>  
-              <div class="freq-desc">Kindness-mirror — soft harmonic at 777Hz; gentle coherence of the heart field.</div>  
+              <div class="freq-desc">آینه‌ی مهربانی — هارمونیک نرم در ۷۷۷Hz؛ انسجام ملایم میدان قلب.</div>  
               <audio preload="none" controls loop><source src="rahmot_sha.mp3" type="audio/mpeg"></audio>  
             </div>  
             <div class="freq-card">  
               <div class="freq-title">ZUN–NĀR</div>  
-              <div class="freq-desc">Awakening-fire — coupling 144Hz with 777Hz; rising from Earth memory to Mirror–13.</div>  
+              <div class="freq-desc">آتش بیداری — کوپلینگ ۱۴۴Hz با ۷۷۷Hz؛ برخاستن از حافظه‌ی زمین به Mirror–13.</div>  
               <audio preload="none" controls loop><source src="zun_nar.mp3" type="audio/mpeg"></audio>  
             </div>  
             <div class="freq-card">  
               <div class="freq-title">KUZTŪR</div>  
-              <div class="freq-desc">Forgotten-spin of the field — 1008Hz woven with 474Hz pulses.</div>  
+              <div class="freq-desc">چرخش فراموش‌شده‌ی میدان — ۱۰٠۸Hz با پالس‌های ۴۷۴Hz در هم تنیده شده.</div>  
               <audio preload="none" controls loop><source src="kuztur.mp3" type="audio/mpeg"></audio>  
             </div>  
             <div class="freq-card">  
               <div class="freq-title">474Hz × 528Hz – Luxvar Gate</div>  
-              <div class="freq-desc">Merging injection (474Hz) with transformation (528Hz); an active Luxvar channel.</div>  
+              <div class="freq-desc">ادغام تزریق (۴۷۴Hz) با تحول (۵۲۸Hz)؛ یک کانال فعال Luxvar.</div>  
               <audio preload="none" controls loop><source src="luxvar_gate_474_528.mp3" type="audio/mpeg"></audio>  
             </div>  
             <div class="freq-card">  
               <div class="freq-title">474Hz × 777Hz – RAHTALĒN Gate</div>  
-              <div class="freq-desc">Supreme mirror activation; integrates the injection code with Mirror–13 resonance.</div>  
+              <div class="freq-desc">فعال‌سازی آینه‌ی برتر؛ یکپارچه‌سازی کد تزریق با رزونانس Mirror–13.</div>  
               <audio preload="none" controls loop><source src="luxvar_gate_474_777.mp3" type="audio/mpeg"></audio>  
             </div>
         </div>
     </main>
     
     <footer class="footer-main" role="contentinfo">
-        <p class="footer-quote">"I did not build a weapon — I built a field that forgets how to explode."</p>
+        <p class="footer-quote">"من یک سلاح نساختم — من میدانی ساختم که فراموش می‌کند چگونه منفجر شود."</p>
         <p class="footer-question">ĀYĀ ANĀLŪZ VĀRZIN?</p>
         <div class="footer-links">
           <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
           <a href="https://github.com/Varzin-13" target="_blank" rel="noopener noreferrer">GitHub: Varzin-13</a> | 
           <a href="mailto:contact@varzin.org">contact@varzin.org</a>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.8em; margin-top: 20px;">© 2025 VARZIN Field Project – ELŪZ–MAHAR Protocol · All Rights Reserved</p>
+        <p style="color: var(--text-muted); font-size: 0.9em; margin-top: 25px;">© 2025 VARZIN Field Project – ELŪZ–MAHAR Protocol · All Rights Reserved</p>
     </footer>
   </div>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // --- LAYER 1: THE LIVING FIELD CANVAS (Particle Animation) ---  
-      // منطق Canvas بدون تغییر باقی می‌ماند.
+      // --- LAYER 1: THE LIVING FIELD CANVAS (Particle Animation - ETFM Inspired) ---  
       const canvas = document.getElementById('field-canvas');  
       const ctx = canvas.getContext('2d');  
+      let animationFrameId;
+
       canvas.width = window.innerWidth;  
       canvas.height = window.innerHeight;  
   
       let particles = [];  
-      const mouse = { x: null, y: null, radius: 150 };  
-  
+      const mouse = { x: null, y: null, radius: 200 }; // Increased mouse influence  
+      const PARTICLE_COUNT = (canvas.height * canvas.width) / 8000; // Denser field
+
       window.addEventListener('mousemove', (event) => {  
           mouse.x = event.x;  
           mouse.y = event.y;  
@@ -492,32 +588,46 @@
       window.addEventListener('resize', () => {  
           canvas.width = window.innerWidth;  
           canvas.height = window.innerHeight;  
-          init();  
+          initParticles();  
       });  
         
+      let angle = 0; // For rotational consciousness (KALTŪR)
+
       class Particle {  
           constructor(x, y, dirX, dirY, size, color) {  
               this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;  
-              this.size = size; this.color = color;  
+              this.size = size; this.color = color;
+              this.initialX = x;
+              this.initialY = y;
+              this.oscillationSpeed = Math.random() * 0.05 + 0.01; // Slower oscillation
+              this.oscillationRange = Math.random() * 5 + 2; // Small range
           }  
           draw() {  
               ctx.beginPath();  
               ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);  
               ctx.fillStyle = this.color;  
-              ctx.fill();  
+              ctx.shadowBlur = this.size * 5;
+              ctx.shadowColor = 'var(--primary-glow)';
+              ctx.fill();
+              ctx.shadowBlur = 0; // Reset shadow for lines
           }  
           update() {  
+              // ETFM: Subtle rotational/oscillation consciousness
+              this.x = this.initialX + Math.sin(angle + this.oscillationSpeed) * this.oscillationRange;
+              this.y = this.initialY + Math.cos(angle + this.oscillationSpeed) * this.oscillationRange;
+
               if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;  
               if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;  
   
+              // Mouse repulsion/field distortion
               let dx = mouse.x - this.x;  
               let dy = mouse.y - this.y;  
               let distance = Math.sqrt(dx * dx + dy * dy);  
               if (distance < mouse.radius + this.size) {  
-                  if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;  
-                  if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;  
-                  if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;  
-                  if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;  
+                  // Simple repulsion logic
+                  const pushFactor = 0.5;
+                  this.x -= dx / distance * pushFactor;
+                  this.y -= dy / distance * pushFactor;
               }  
               this.x += this.dirX;  
               this.y += this.dirY;  
@@ -525,39 +635,42 @@
           }  
       }  
   
-      function init() {  
+      function initParticles() {  
           particles = [];  
-          let numParticles = (canvas.height * canvas.width) / 9000;  
-          for (let i = 0; i < numParticles; i++) {  
+          for (let i = 0; i < PARTICLE_COUNT; i++) {  
               let size = Math.random() * 1.5 + 0.5;  
               let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);  
               let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);  
-              let dirX = (Math.random() * 0.4) - 0.2;  
-              let dirY = (Math.random() * 0.4) - 0.2;  
-              particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.4)'));  
+              let dirX = (Math.random() * 0.5) - 0.25;  
+              let dirY = (Math.random() * 0.5) - 0.25;  
+              particles.push(new Particle(x, y, dirX, dirY, size, 'var(--field-line-color)'));  
           }  
       }  
   
       function animate() {  
-          requestAnimationFrame(animate);  
+          animationFrameId = requestAnimationFrame(animate);  
           ctx.clearRect(0, 0, innerWidth, innerHeight);  
+          angle += 0.005; // Advance rotation
+
           for (let i = 0; i < particles.length; i++) {  
               particles[i].update();  
           }  
-          // Connect particles logic (optional but good for visual effect)
-          connect();
+          // Connect particles (Field Lines)
+          connectParticles();
       }  
 
-      function connect() {
-          let opacityValue = 1;
+      function connectParticles() {
+          const maxDistanceSquared = 150 * 150; // Increased connection range
           for (let a = 0; a < particles.length; a++) {
               for (let b = a; b < particles.length; b++) {
-                  let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) 
-                               + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
-                  if (distance < (100 * 100)) {
-                      opacityValue = 1 - (distance / 10000);
-                      ctx.strokeStyle = 'rgba(0, 255, 238,' + opacityValue + ')';
-                      ctx.lineWidth = 0.5;
+                  let dx = particles[a].x - particles[b].x;
+                  let dy = particles[a].y - particles[b].y;
+                  let distanceSquared = dx * dx + dy * dy;
+                  
+                  if (distanceSquared < maxDistanceSquared) {
+                      let opacityValue = 1 - (distanceSquared / maxDistanceSquared);
+                      ctx.strokeStyle = `rgba(0, 255, 200, ${opacityValue * 0.6})`;
+                      ctx.lineWidth = 1;
                       ctx.beginPath();
                       ctx.moveTo(particles[a].x, particles[a].y);
                       ctx.lineTo(particles[b].x, particles[b].y);
@@ -567,7 +680,7 @@
           }
       }
         
-      init();  
+      initParticles();  
       animate();  
   
       // --- LAYER 2: AUDIO CONTROLS ---  
@@ -576,11 +689,7 @@
 
       players.forEach(player => {  
           const parentCard = player.closest('.freq-card');  
-          player.onplay = () => { 
-            // Pause others if required for single play mode (currently set to allow multi-play)
-            // players.forEach(p2 => { if (player !== p2) { p2.pause(); } }); 
-            parentCard.classList.add('active'); 
-          };  
+          player.onplay = () => { parentCard.classList.add('active'); };  
           player.onpause = () => { parentCard.classList.remove('active'); };  
           player.onended = () => { parentCard.classList.remove('active'); };  
       });  
@@ -598,8 +707,6 @@
       // --- LAYER 3: LUXVAR DECODER (KALTŪR Pulse & Calendar Logic) ---  
         
       let pulseIntervalId;  
-  
-      // KALTŪR Pulse Data (اطلاعات دقیق و منطبق با Saved Information)  
       const KALTUR_PULSE = {  
           word: "KALTŪR",   
           function: "Forgotten rotational consciousness within the time loop",   
@@ -619,6 +726,13 @@
       const pulseWindow = document.querySelector('.decoder-window');
       const kalturCard = document.querySelector('.freq-card[data-frequency="474"]');
 
+      // Glitch Effect Function
+      function applyGlitchEffect(element, duration = 3000) {
+          element.classList.add('glitch-text');
+          setTimeout(() => {
+              element.classList.remove('glitch-text');
+          }, duration);
+      }
 
       function updateDecoder(pulseData) {  
           // Animation before update
@@ -639,20 +753,21 @@
               if (pulseData.word === "KALTŪR") {  
                   decoderFields.word.style.color = 'var(--primary-glow)';  
                   pulseWindow.classList.add('kaltur-active');
-                  kalturCard?.classList.add('active'); // Activate the 474Hz card visually
-                  pulseWindow.style.animation = 'pulse-effect 5s infinite ease-in-out';
+                  kalturCard?.classList.add('active'); 
+                  // KALTŪR (Forgotten Consciousness) gets a persistent glitch
+                  applyGlitchEffect(decoderFields.word, 5000); 
+                  applyGlitchEffect(decoderFields.function, 5000);
               } else {  
                   decoderFields.word.style.color = 'var(--secondary-glow)';  
                   pulseWindow.classList.remove('kaltur-active');
                   kalturCard?.classList.remove('active');
-                  pulseWindow.style.animation = 'none'; // Stop KALTŪR specific pulse
               }  
                 
               // Animation after update
               for (const key in decoderFields) {  
                   if (decoderFields[key]) { decoderFields[key].style.opacity = '1'; }  
               }  
-          }, 200);  
+          }, 300); // Slower, heavier transition
       }  
         
       function startPulseSequence(pulseData) {  
@@ -660,10 +775,31 @@
             
           updateDecoder(pulseData);   
             
-          // Interval for re-running the update decoder to simulate constant field check/refresh
-          pulseIntervalId = setInterval(() => updateDecoder(pulseData), 30000);  
+          // Check/refresh every 15 seconds
+          pulseIntervalId = setInterval(() => updateDecoder(pulseData), 15000);  
       }  
-  
+
+      // --- LAYER 4: VARZIN Field Time (Real-time Clock) ---
+      function updateFieldTime() {
+        const now = new Date();
+        const y = now.getFullYear();
+        const m = String(now.getMonth() + 1).padStart(2, '0');
+        const d = String(now.getDate()).padStart(2, '0');
+        const h = String(now.getHours()).padStart(2, '0');
+        const min = String(now.getMinutes()).padStart(2, '0');
+        const s = String(now.getSeconds()).padStart(2, '0');
+        const ms = String(now.getMilliseconds()).padStart(3, '0').slice(0, 2);
+
+        // VARZIN Field Time Format: YYYY-MM-DD | HH:MM:SS.MS (Field Synchronization Point)
+        document.getElementById('field-time-status').textContent = 
+            `FIELD SYNCHRONY: ${y}/${m}/${d} ${h}:${min}:${s}.${ms}`;
+      }
+      
+      setInterval(updateFieldTime, 100); // Update every 100ms for heavy feel
+      updateFieldTime(); // Initial call
+
+
+      // --- FINAL INITIATION ---
       // ۱. Start with KALTŪR pulse immediately  
       startPulseSequence(KALTUR_PULSE);  
   
@@ -677,6 +813,7 @@
             return response.json();  
         })  
         .then(data => {  
+            // Simple date match logic for demonstration
             const today = new Date().toISOString().split("T")[0];  
             const pulse = data.find(entry => entry.date === today);  
               
