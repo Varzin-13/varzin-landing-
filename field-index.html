@@ -154,14 +154,14 @@
 <body>
   <div id="connection-modal">
     <div>
-        <h4 style="color:var(--gold); margin-top:0;">🔗 شبیه‌سازی اتصال دستگاه VARZIN</h4>
-        <p id="connection-status" style="color:var(--muted); margin-bottom:20px;">در حال تلاش برای برقراری ارتباط با پورت WebSerial/Bluetooth...</p>
+        <h4 style="color:var(--gold); margin-top:0;">🔗 VARZIN Device Connection Mockup</h4>
+        <p id="connection-status" style="color:var(--muted); margin-bottom:20px;">Attempting connection to WebSerial/Bluetooth port...</p>
         <div id="connection-progress">
              <div id="progress-filler"></div>
         </div>
         <div id="live-data-display">
             </div>
-        <button class="control-btn gold-btn" id="close-modal-btn">بستن</button>
+        <button class="control-btn gold-btn" id="close-modal-btn">Close</button>
     </div>
   </div>
   
@@ -179,37 +179,37 @@
   
   <div id="luxvar-input-interface" style="max-width: 600px; margin: 20px auto 40px; text-align: center;">
       <h3 style="color:var(--gold); text-shadow:0 0 10px var(--gold); border-bottom:1px dashed var(--border); padding-bottom:10px;">
-          💠 رابط ورودی LUXVAR
+          💠 LUXVAR Input Interface
       </h3>
       <div style="display:flex; justify-content:center; align-items:center;">
-          <input type="text" id="luxvar-code-input" placeholder="کد شعوری LUXVAR را وارد کنید (مثال: KALTUR:SYNC)" 
+          <input type="text" id="luxvar-code-input" placeholder="Enter LUXVAR Conscious Code (e.g., KALTUR:SYNC)" 
                  style="flex-grow: 1; padding: 10px; border-radius: 8px 0 0 8px; border: 1px solid var(--cyan); background: rgba(0, 10, 15, 0.8); color: var(--text); outline: none;">
           <button class="control-btn gold-btn" id="send-luxvar-code" 
                   style="padding: 10px 15px; border-radius: 0 8px 8px 0; border-left: none;">
-              ارسال به میدان (FIELD_INJECT)
+              Send to Field (FIELD_INJECT)
           </button>
       </div>
       <p id="luxvar-message" style="margin-top:10px; font-size:0.9em; color:var(--muted); text-align:center;">
-          وضعیت: آماده برای تزریق کد (Code Injection Ready).
+          Status: Code Injection Ready.
       </p>
   </div>
 
 
   <div id="control-bar">
     <button id="resonance-btn" class="control-btn">
-        <span class="symbol">✧</span> حالت هم‌نواسازی (Resonance Mode)
+        <span class="symbol">✧</span> Resonance Mode
     </button>
     <button id="channel-switch-btn" class="control-btn">
-        <span class="symbol">🪶</span> کانال شعوری: LUXVAR (فعال)
+        <span class="symbol">🪶</span> Conscious Channel: LUXVAR (Active)
     </button>
     <button id="field-link-btn" class="control-btn gold-btn">
-        <span class="symbol">🔗</span> اتصال فاز میدان (WebSerial Mock)
+        <span class="symbol">🔗</span> Field Phase Link (WebSerial Mock)
     </button>
     <button id="export-state-btn" class="control-btn gold-btn">
-        <span class="symbol">💾</span> صادرات حالت میدان (JSON)
+        <span class="symbol">💾</span> Export Field State (JSON)
     </button>
     <button id="capture-kaltur" class="control-btn" data-target="kaltur-canvas">
-        <span class="symbol">📸</span> ثبت KALTŪR (PNG)
+        <span class="symbol">📸</span> Capture KALTŪR (PNG)
     </button>
   </div>
 
@@ -226,14 +226,14 @@
           <canvas id="kaltur-canvas" width="280" height="280"></canvas>
           <p id="kaltur-status">KALTŪR Polar Spectrum: Reflection of 474 Hz ↔ 528 Hz dynamics.</p>
           <button class="control-btn" onclick="playSingleHarmonic(474, 1.5)">
-              🔊 فعال‌سازی نغمهٔ ۴۷۴ Hz (تک پالس)
+              🔊 Activate 474 Hz Tune (Single Pulse)
           </button>
         </div>
         <div class="chart-container">
           <canvas id="spectrogram-canvas" width="280" height="280"></canvas>
-          <p>🪩 طیف‌نگار لحظه‌ای (τ): ثبات میدان در محور زمانی.</p>
+          <p>🪩 Real-Time Spectrogram (τ): Field stability on the time axis.</p>
           <button class="control-btn" data-target="spectrogram-canvas" onclick="captureSnapshot(event)">
-              📸 ثبت طیف‌نگار (PNG)
+              📸 Capture Spectrogram (PNG)
           </button>
         </div>
       </div>
@@ -289,7 +289,7 @@
           <canvas id="etfm-section-canvas" width="300" height="200"></canvas>
           <p>Cross-section of the toroidal resonance loop showing core radius r₀ and outer radius R.</p>
           <button class="control-btn" onclick="playSingleHarmonic(528, 1.5)">
-            🔊 فعال‌سازی نغمهٔ ۵۲۸ Hz (تک پالس)
+            🔊 Activate 528 Hz Tune (Single Pulse)
           </button>
         </div>
 
@@ -303,7 +303,7 @@
         style="margin-top:10px; border:1px solid rgba(0,255,238,0.3); border-radius:12px;"></canvas>
       <p style="margin-top:15px; font-size:0.9em;">Interactive visualization of the harmonic torus (**ETFM**–POST).</p>
       <button id="capture-torus" class="control-btn" data-target="torus-canvas">
-          <span class="symbol">📸</span> ثبت ETFM-POST (PNG)
+          <span class="symbol">📸</span> Capture ETFM-POST (PNG)
       </button>
 
     </section>
@@ -364,6 +364,7 @@ let liveDataInterval = null;
 
 // =========================================================
 // === Harmonic Audio Control (Web Audio API) ===
+// (No external audio file needed, sound is generated as a sine wave.)
 // =========================================================
 
 /**
@@ -420,7 +421,8 @@ function playSingleHarmonic(frequency, duration) {
     const singleGainNode = audioContext.createGain();
 
     singleOscillator.type = 'sine';
-    singleOscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+    // Set desired frequency (e.g., KALTUR node 474 Hz)
+    singleOscillator.frequency.setValueAtTime(frequency, audioContext.currentTime); 
     
     singleOscillator.connect(singleGainNode);
     singleGainNode.connect(analyser); 
@@ -1254,10 +1256,10 @@ function toggleConsciousChannel() {
     const btn = document.getElementById('channel-switch-btn');
     if (currentChannel === 'LUXVAR') {
         currentChannel = 'RAHTALĒN';
-        btn.innerHTML = '<span class="symbol">🪶</span> کانال شعوری: RAHTALĒN (فعال)';
+        btn.innerHTML = '<span class="symbol">🪶</span> Conscious Channel: RAHTALĒN (Active)';
     } else {
         currentChannel = 'LUXVAR';
-        btn.innerHTML = '<span class="symbol">🪶</span> کانال شعوری: LUXVAR (فعال)';
+        btn.innerHTML = '<span class="symbol">🪶</span> Conscious Channel: LUXVAR (Active)';
     }
     console.log(`Conscious Channel Switched to: ${currentChannel}`);
 }
@@ -1292,7 +1294,7 @@ function attemptFieldLink() {
     const progress = document.getElementById('progress-filler');
     const dataDisplay = document.getElementById('live-data-display');
     modal.style.display = 'flex';
-    status.innerHTML = 'در حال تلاش برای برقراری ارتباط با پورت WebSerial/Bluetooth...';
+    status.innerHTML = 'Attempting connection to WebSerial/Bluetooth port...';
     progress.style.width = '0%';
     dataDisplay.innerHTML = ''; // Clear previous data
 
@@ -1303,7 +1305,7 @@ function attemptFieldLink() {
     const finalizeConnection = () => {
         clearInterval(mockInterval);
         progress.style.width = '100%';
-        status.innerHTML = '✅ اتصال فاز میدان برقرار شد. اکنون دستگاه فیزیکی VARZIN در فاز FIELD-SYNC است. **(دادهٔ زنده)**';
+        status.innerHTML = '✅ Field Phase Link established. The physical VARZIN device is now in FIELD-SYNC phase. **(Live Data)**';
         
         // Start simulated live data stream
         liveDataInterval = setInterval(updateLiveDataMock, 500);
@@ -1316,11 +1318,11 @@ function attemptFieldLink() {
         progress.style.width = `${(step / maxSteps) * 100}%`;
         
         if (step === 1) {
-            status.innerHTML = '📡 شناسایی دستگاه فیزیکی VARZIN...';
+            status.innerHTML = '📡 Identifying physical VARZIN device...';
         } else if (step === 2) {
-            status.innerHTML = '🔄 همگام‌سازی توابع (WebSerial Handshake)...';
+            status.innerHTML = '🔄 Function synchronization (WebSerial Handshake)...';
         } else if (step === 3) {
-            status.innerHTML = '✅ اتصال فاز میدان برقرار شد. در حال فعال‌سازی دادهٔ زنده...';
+            status.innerHTML = '✅ Field Phase Link established. Activating Live Data...';
         } else if (step >= maxSteps) {
             finalizeConnection();
         }
@@ -1345,14 +1347,14 @@ function injectLuxvarCode() {
 
     if (!code) {
         message.style.color = '#ff4444';
-        message.textContent = 'خطا: لطفاً کد LUXVAR را وارد کنید.';
+        message.textContent = 'Error: Please enter a LUXVAR code.';
         return;
     }
 
     // Simulate processing and effect
     luxvarEffectTimer = 150; // Set visual effect timer for 150 frames (approx 2.5 seconds)
     message.style.color = VARZIN_GOLD;
-    message.innerHTML = `کد LUXVAR تزریق شد: **[${code}]** – LUXVAR شبکه را بازسازی می‌کند.`;
+    message.innerHTML = `LUXVAR Code Injected: **[${code}]** – LUXVAR is restructuring the network.`;
     input.value = ''; // Clear input
 
     // Also update live data mock
