@@ -116,6 +116,44 @@
         border-radius: 4px; 
         box-shadow: 0 0 10px var(--tertiary-glow);
     }
+    
+    /* === CRITICAL: START SCREEN FOR CHROME AUDIO POLICY === */
+    #start-screen {
+        position: fixed; 
+        top: 0; left: 0; 
+        width: 100%; height: 100%; 
+        background: rgba(0, 0, 0, 0.98); 
+        z-index: 10000; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        cursor: pointer; 
+        backdrop-filter: blur(15px);
+        transition: opacity 0.5s ease-out;
+    }
+    #start-screen h1 {
+        font-size: clamp(2.5em, 5vw, 4.5em); 
+        color: var(--primary-glow); 
+        text-shadow: var(--glow-shadow-main); 
+        margin-bottom: 25px;
+        animation: pulse-effect 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    }
+    #start-screen h2 {
+        color: #fff; 
+        font-size: clamp(1.4em, 3vw, 2.2em); 
+        border: 3px solid var(--primary-glow); 
+        padding: 15px 30px; 
+        border-radius: 12px;
+        box-shadow: 0 0 30px var(--primary-glow);
+        background-color: rgba(0, 255, 200, 0.15);
+    }
+    #start-screen p {
+        color: var(--text-muted); 
+        margin-top: 50px; 
+        font-size: 1.1em;
+    }
+    /* ======================================================= */
       
     #field-canvas {  
         position: fixed;  
@@ -390,6 +428,12 @@
 </head>
 
 <body>
+  
+  <div id="start-screen" role="dialog" aria-modal="true" aria-labelledby="sync-title" aria-describedby="sync-desc">
+      <h1 id="sync-title">[INITIATING] VARZIN Field Engine</h1>
+      <h2 id="sync-desc">Click Anywhere to Synchronize ⟡</h2>
+      <p>(Required for Chrome Audio and Animation Policy)</p>
+  </div>
   <canvas id="field-canvas" role="presentation"></canvas> 
   <div class="container">
     <nav class="main-nav" role="navigation" aria-label="Main VARZIN Navigation">
@@ -574,8 +618,8 @@
       const ctx = canvas.getContext('2d');  
       let animationFrameId;
 
-      // *** ROTATIONAL CONSTANT (Increased Speed for Aggressive Effect) ***
-      const ROTATIONAL_SPEED = 0.01; 
+      // *** CRITICAL: ROTATIONAL CONSTANT (Increased Speed for Aggressive Effect) ***
+      const ROTATIONAL_SPEED = 0.02; // ضریب سرعت چرخش هسته میدان 
 
       // Initial dimensions for particle positioning (will be updated on resize)
       let centerX = canvas.width / 2;
@@ -609,13 +653,12 @@
               this.radius = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
               this.currentAngle = Math.atan2(y - centerY, x - centerX);
               
-              // Speed factor: particles closer to the center rotate faster
-              // The formula 1 / (radius + 10) ensures small radii (center) lead to high speeds.
+              // Speed factor: particles closer to the center rotate faster (ETFM Torus Logic)
               this.speedFactor = (250 / (this.radius + 10)) * 0.0001; 
               
-              // Jitter/field noise for the high-frequency aesthetic
+              // Jitter/field noise for the high-frequency aesthetic (LUXVAR influence)
               this.jitterOffset = Math.random() * Math.PI * 2;
-              this.jitterRange = Math.random() * 2 + 1; // Subtle jitter
+              this.jitterRange = Math.random() * 2 + 1; 
           }  
           
           draw() {  
@@ -664,7 +707,6 @@
               let x = (Math.random() * (canvas.width - 40)) + 20;  
               let y = (Math.random() * (canvas.height - 40)) + 20;  
               
-              // Only pass position, size, and color to the new constructor
               particles.push(new Particle(x, y, size, 'var(--field-line-color)'));  
           }  
       }  
@@ -701,9 +743,34 @@
           }
       }
         
-      initParticles();  
-      animate();  
-  
+      // --- CRITICAL: INTERFACE INITIALIZATION FOR CHROME POLICY ---
+      function initializeInterface() {
+          const startScreen = document.getElementById('start-screen');
+          if (startScreen) {
+              startScreen.style.opacity = '0';
+              setTimeout(() => {
+                  startScreen.remove();
+              }, 500); // Wait for the fade out
+          }
+          
+          // Auto-play KALTUR pulse upon synchronization (allowed after the first click)
+          const kalturAudio = document.querySelector('.freq-card[data-frequency="474"] audio');
+          if (kalturAudio) {
+              try {
+                  kalturAudio.play();
+              } catch (e) {
+                  console.warn("KALTŪR pulse failed to auto-play after sync click. Please click the control button.", e);
+              }
+          }
+          
+          // Remove the global sync listener after successful initialization
+          document.removeEventListener('click', initializeInterface);
+      }
+
+      // Attach the initialization to the start screen and the document as a fallback
+      document.getElementById('start-screen').addEventListener('click', initializeInterface, { once: true });
+      document.addEventListener('click', initializeInterface, { once: true });
+
       // --- LAYER 2: AUDIO CONTROLS (Unchanged) ---  
       const players = Array.from(document.querySelectorAll('audio'));  
       const freqCards = document.querySelectorAll('.freq-card');
@@ -725,7 +792,7 @@
         try { p.pause(); p.currentTime = 0; } catch (e) { console.error("Stop error:", e); }   
       });  
   
-      // --- LAYER 3: LUXVAR DECODER (KALTŪR Pulse & Calendar Logic - Unchanged) ---  
+      // --- LAYER 3: LUXVAR DECODER (KALTŪR Pulse & Calendar Logic) ---  
         
       let pulseIntervalId;  
       // KALTUR Data (from Saved Information)
@@ -749,7 +816,7 @@
       const kalturCard = document.querySelector('.freq-card[data-frequency="474"]');
 
       // Glitch Effect Function
-      function applyGlitchEffect(element, duration = 1000) { // Default glitch duration reduced
+      function applyGlitchEffect(element, duration = 1000) { 
           element.classList.add('glitch-text');
           setTimeout(() => {
               element.classList.remove('glitch-text');
@@ -762,7 +829,7 @@
               if (decoderFields[key]) { decoderFields[key].style.opacity = '0'; }  
           }  
           
-          setTimeout(() => {  // Reduced timeout for faster update
+          setTimeout(() => {  
               decoderFields.word.textContent = pulseData.word || "—";  
               document.getElementById('pulse-title').textContent = `🜂 Luxvar Field Pulse – ${pulseData.word}`;
               
@@ -775,14 +842,11 @@
               if (pulseData.word === "KALTŪR") {  
                   decoderFields.word.style.color = 'var(--primary-glow)';  
                   pulseWindow.classList.add('kaltur-active');
-                  kalturCard?.classList.add('active'); 
-                  // KALTŪR (Forgotten Consciousness) gets a persistent glitch
-                  applyGlitchEffect(decoderFields.word, 2000); // Glitch duration reduced
-                  applyGlitchEffect(decoderFields.function, 2000); // Glitch duration reduced
+                  applyGlitchEffect(decoderFields.word, 2000); 
+                  applyGlitchEffect(decoderFields.function, 2000); 
               } else {  
                   decoderFields.word.style.color = 'var(--secondary-glow)';  
                   pulseWindow.classList.remove('kaltur-active');
-                  kalturCard?.classList.remove('active');
               }  
                 
               // Faster Animation after update
@@ -797,7 +861,7 @@
             
           updateDecoder(pulseData);   
             
-          // Check/refresh every 5 seconds (Increased frequency)
+          // Check/refresh every 5 seconds 
           pulseIntervalId = setInterval(() => updateDecoder(pulseData), 5000);  
       }  
 
@@ -822,10 +886,14 @@
 
 
       // --- FINAL INITIATION ---
-      // 1. Start with KALTŪR pulse immediately  
+      // 1. Start the animation loop (it will draw under the start screen)
+      initParticles();  
+      animate();  
+      
+      // 2. Start with KALTŪR pulse immediately (decoder text update)
       startPulseSequence(KALTUR_PULSE);  
   
-      // 2. Try to fetch and override with the daily pulse  
+      // 3. Try to fetch and override with the daily pulse  
       fetch('luxvar_calendar_7777777.json')   
         .then(response => {  
             if (!response.ok) {  
