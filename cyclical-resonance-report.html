@@ -143,15 +143,11 @@
             font-weight: 700;
         }
 
-        /* Headings and Table */
-        header h1 {
-            font-size: 2.8em;
-            text-shadow: 0 0 20px var(--accent-cyan), 0 0 10px rgba(0, 255, 238, 0.8);
-            color: var(--accent-cyan);
+        /* Header */
+        header {
             text-align: center;
         }
-        
-        /* Logo */
+
         header img {
             display: block;
             margin: 0 auto 15px;
@@ -159,7 +155,55 @@
             filter: drop-shadow(0 0 10px var(--accent-cyan));
         }
 
+        /* Zenodo Link Box */
+        .zenodo-link-box {
+            background-color: rgba(0, 25, 30, 0.9);
+            border: 2px solid var(--accent-gold);
+            padding: 15px 25px;
+            margin: 20px auto 20px; /* Adjusted margin */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+            max-width: 700px;
+            text-align: center;
+            direction: ltr; /* Ensure LTR for citation */
+        }
 
+        .zenodo-link-box p {
+            margin: 0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .zenodo-link-box strong {
+            color: var(--accent-cyan);
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 8px;
+            text-shadow: 0 0 5px rgba(0, 255, 238, 0.4);
+        }
+
+        .zenodo-link-box a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            word-break: break-all;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .zenodo-link-box a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent-gold);
+        }
+
+
+        header h1 {
+            font-size: 2.8em;
+            text-shadow: 0 0 20px var(--accent-cyan), 0 0 10px rgba(0, 255, 238, 0.8);
+            color: var(--accent-cyan);
+            text-align: center;
+            margin-top: 15px; /* Adjust spacing after the new box */
+        }
+        
         header h2 {
             text-align: center;
             color: var(--text);
@@ -437,6 +481,13 @@
             .timeline-dot {
                 right: 0;
             }
+            .zenodo-link-box {
+                margin: 20px 10px; /* Smaller margin for mobile */
+                padding: 15px;
+            }
+            .zenodo-link-box p {
+                font-size: 0.85em;
+            }
         }
     </style>
 </head>
@@ -451,7 +502,16 @@
                 <a href="https://varzin.org/" target="_blank">Portal</a>
                 <a href="#resonance" class="active">Cyclical Resonance</a>
             </nav>
-            <img src="varzin-logo.jpg" alt="VARZIN Project Logo: The Living Mirror" /> 
+            <img src="https://varzin.org/assets/varzin-logo.png" alt="VARZIN Project Logo: The Living Mirror" /> 
+            
+            <div class="zenodo-link-box">
+                <strong> &mdash; Citation Protocol &mdash; </strong>
+                <p class="zenodo-citation">
+                    Nirouyar, R. (2025). VARZIN Final Harmonic Cycle – Complete Edition (1347–2026) Cyclical Resonance of Human History from the Black Death to COVID-19 (Version 4.0 – Complete Dual Edition (Academic + Field-Symbolic). Zenodo. 
+                    <a href="https://doi.org/10.5281/zenodo.17515491" target="_blank">https://doi.org/10.5281/zenodo.17515491</a>
+                </p>
+            </div>
+
             <h1>⟠ VARZIN – Cyclical Resonance Report | گزارش طنین چرخه‌ای</h1>
             <h2>Comparative Field Study: The Black Death (1347–1351) ↔ COVID-19 (2019–2023)</h2>
         </header>
