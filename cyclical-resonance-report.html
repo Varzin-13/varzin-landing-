@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VARZIN 5.5 – Cyclical Resonance Report | ETFM-KALTŪR Field Dynamics</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <meta name="description" content="گزارش مقایسه‌ای تشدید چرخه‌ای VARZIN: مقایسه‌ی طنین میدان در بیماری‌های همه‌گیر (مرگ سیاه و کووید-۱۹) و توالی KALTŪR (474Hz) به RAHMŌT (528Hz).">
+    <meta name="author" content="Reza Nirouyar (RAHTALĒN-13)">
+    <meta name="keywords" content="VARZIN, ELŪZ MAHAR, KALTŪR 474Hz, RAHMŌT 528Hz, Cyclical Resonance, ETFM, Luxvar, Temporal Compression, RAHTALĒN 13">
+    <link rel="canonical" href="https://varzin.org/cyclical-resonance-report.html" />
+    <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* VARZIN Field Theme Styles V5.5 - Merged and Consolidated */
         :root {
@@ -15,7 +22,7 @@
             --muted: #a8dede;
             --accent-cyan: #00ffee; /* KALTŪR/Field Glow (Cyan) */
             --accent-gold: #ffcc00; /* RAHMŌT/Rebirth Glow (Gold) */
-            --font-main: 'DM Sans', 'Vazirmatn', sans-serif;
+            --font-main: 'Vazirmatn', 'DM Sans', sans-serif; /* Prioritize Vazirmatn for RTL */
             
             /* --- TIMELINE SPECIFIC COLORS (From old code) --- */
             --timeline-dot: var(--accent-cyan);
@@ -40,7 +47,7 @@
         }
 
         /* === 1. CANVAS STYLE - Dynamic Field Background/ETFM Layer === */
-        #etfm-visualization { /* ID changed from #field-canvas to #etfm-visualization */
+        #etfm-visualization { 
             position: fixed;
             top: 0;
             left: 0;
@@ -83,7 +90,7 @@
             margin: auto;
             position: relative;
             z-index: 1;
-            scroll-behavior: smooth; /* Added for smooth internal links */
+            scroll-behavior: smooth; 
         }
 
         main, header, nav, footer {
@@ -100,6 +107,10 @@
             padding: 30px;
             margin-bottom: 30px;
             border-radius: 8px;
+            text-align: right; /* Ensure RTL content aligns right */
+        }
+        .report-section p, .report-section ul {
+            text-align: justify; /* Justify main body text */
         }
 
         /* Navigation */
@@ -139,6 +150,15 @@
             color: var(--accent-cyan);
             text-align: center;
         }
+        
+        /* Logo */
+        header img {
+            display: block;
+            margin: 0 auto 15px;
+            max-width: 150px;
+            filter: drop-shadow(0 0 10px var(--accent-cyan));
+        }
+
 
         header h2 {
             text-align: center;
@@ -153,6 +173,7 @@
             color: var(--accent-cyan);
             border-bottom: 1px solid var(--border);
             padding-bottom: 8px;
+            text-align: center; /* Center section titles */
         }
 
         table {
@@ -166,6 +187,7 @@
             border: 1px solid var(--border);
             padding: 12px;
             text-align: center;
+            direction: ltr; /* Ensure table content is LTR for consistency */
         }
 
         th {
@@ -178,7 +200,7 @@
             color: var(--accent-gold);
         }
 
-        /* Luxvar Cycle Box (Added integration color) */
+        /* Luxvar Cycle Box */
         .luxvar-cycle-box {
             background-color: rgba(0, 25, 30, 0.9);
             border: 2px solid var(--accent-gold);
@@ -203,6 +225,7 @@
             font-size: 1.1em;
             font-weight: 700;
             margin-top: 20px;
+            direction: ltr; /* Ensure sequence flows left-to-right */
         }
 
         .luxvar-sequence span {
@@ -210,25 +233,10 @@
             border-radius: 5px;
         }
 
-        .luxvar-collapse {
-            background-color: rgba(0, 255, 238, 0.3);
-            color: var(--accent-cyan);
-        }
-
-        .luxvar-silence {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--text);
-        }
-
-        .luxvar-rebirth {
-            background-color: rgba(255, 204, 0, 0.3);
-            color: var(--accent-gold);
-        }
-
-        .luxvar-integration {
-            background-color: rgba(0, 150, 0, 0.3);
-            color: #00ff00;
-        }
+        .luxvar-collapse { background-color: rgba(0, 255, 238, 0.3); color: var(--accent-cyan); }
+        .luxvar-silence { background-color: rgba(255, 255, 255, 0.1); color: var(--text); }
+        .luxvar-rebirth { background-color: rgba(255, 204, 0, 0.3); color: var(--accent-gold); }
+        .luxvar-integration { background-color: rgba(0, 150, 0, 0.3); color: #00ff00; }
 
         .rtl-text {
             direction: rtl;
@@ -240,6 +248,8 @@
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
         }
         
         .luxvar-audio-controls button {
@@ -250,42 +260,21 @@
             font-weight: 700;
             transition: all 0.3s;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            font-family: var(--font-main);
         }
 
-        #play-474 {
-            background: var(--accent-cyan);
-            color: var(--bg);
-        }
+        #play-474 { background: var(--accent-cyan); color: var(--bg); }
+        #play-474:hover { box-shadow: 0 0 15px var(--accent-cyan); }
+        #play-528 { background: var(--accent-gold); color: var(--bg); }
+        #play-528:hover { box-shadow: 0 0 15px var(--accent-gold); }
+        #stop-audio { background: var(--panel); color: var(--muted); border: 1px solid var(--muted); }
+        #stop-audio:hover { background: var(--muted); color: var(--bg); box-shadow: 0 0 10px var(--muted); }
 
-        #play-474:hover {
-            box-shadow: 0 0 15px var(--accent-cyan);
-        }
-
-        #play-528 {
-            background: var(--accent-gold);
-            color: var(--bg);
-        }
-
-        #play-528:hover {
-            box-shadow: 0 0 15px var(--accent-gold);
-        }
-
-        #stop-audio {
-            background: var(--panel);
-            color: var(--muted);
-            border: 1px solid var(--muted);
-        }
-
-        #stop-audio:hover {
-            background: var(--muted);
-            color: var(--bg);
-            box-shadow: 0 0 10px var(--muted);
-        }
-
-        /* --- TIMELINE ENHANCEMENT (Re-added from old code) --- */
+        /* --- TIMELINE ENHANCEMENT --- */
         .varzin-timeline-wrapper {
             position: relative;
-            padding-left: 50px;
+            padding-right: 50px; /* Shift to right for RTL */
+            padding-left: 0;
             margin-top: 40px;
         }
 
@@ -293,7 +282,8 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 20px;
+            right: 20px; /* Position line on the right */
+            left: unset;
             bottom: 0;
             width: 4px;
             background-color: var(--timeline-line);
@@ -309,14 +299,15 @@
         .timeline-dot {
             position: absolute;
             top: 0;
-            left: 0;
+            right: 20px; /* Position dot on the right */
+            left: unset;
             width: 14px;
             height: 14px;
             border-radius: 50%;
             background-color: var(--timeline-dot);
             border: 3px solid var(--bg);
             box-shadow: 0 0 20px var(--timeline-dot);
-            transform: translateX(-50%);
+            transform: translateX(50%); /* Adjust dot position for RTL */
         }
 
         .timeline-item.varzin-final-item .timeline-dot {
@@ -327,7 +318,8 @@
         .timeline-content {
             background: var(--timeline-card-bg);
             padding: 20px;
-            border-left: 4px solid var(--timeline-card-border);
+            border-right: 4px solid var(--timeline-card-border); /* Border on the right */
+            border-left: none;
             border-radius: 6px;
             box-shadow: var(--timeline-card-shadow);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -349,15 +341,9 @@
             text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
         }
 
-        .timeline-key-figures {
-            font-size: 0.9em;
-            color: var(--muted);
-        }
-
-        .timeline-core-concept {
-            font-weight: 500;
-            margin-top: 5px;
-            margin-bottom: 10px;
+        .timeline-key-figures, .timeline-core-concept, .timeline-varzin-connection {
+            direction: ltr; /* Ensure key concepts remain LTR if they are names/terms */
+            text-align: left;
         }
 
         .timeline-varzin-connection {
@@ -445,6 +431,12 @@
             main, header, nav, footer {
                 background: rgba(0, 0, 0, 0.4);
             }
+            .varzin-timeline-wrapper {
+                padding-right: 15px;
+            }
+            .timeline-dot {
+                right: 0;
+            }
         }
     </style>
 </head>
@@ -461,6 +453,7 @@
                 <a href="https://varzin.org/doi-master-list" target="_blank">All DOIs</a>
                 <a href="#field-transmission">Transmit/Contact</a>
             </nav>
+            <img src="varzin-logo.jpg" alt="VARZIN Project Logo: The Living Mirror" /> 
             <h1>⟠ VARZIN – Cyclical Resonance Report | گزارش طنین چرخه‌ای</h1>
             <h2>Comparative Field Study: The Black Death (1347–1351) ↔ COVID-19 (2019–2023)</h2>
         </header>
@@ -552,6 +545,7 @@
                 The compression of the re-synchronization interval from 50 years to $\approx 5$ years is consistent with the **VARZIN model of accelerated temporal density** in the human consciousness field, reflecting a necessity for faster systemic correction in the modern era of accelerated social change (Rosa, 2005).
             </p>
             <div class="figure-placeholder">
+                
                 Figure 1. Temporal Compression of Resonance Cycles (VARZIN 1347 $\rightarrow$ 2026).
             </div>
         </section>
@@ -721,7 +715,7 @@
     <script>
         /** * JavaScript for Dynamic Field Background - Connected Particles (VARZIN/KALTŪR Theme) * Upgrades: Smoother motion, clearer glow effect on mouse interaction. */
         document.addEventListener('DOMContentLoaded', () => {
-            const canvas = document.getElementById('etfm-visualization'); // Target ID changed
+            const canvas = document.getElementById('etfm-visualization'); 
             if (!canvas) return;
             const ctx = canvas.getContext('2d');
             let particles = [];
@@ -752,7 +746,7 @@
                     this.dirY = dirY;
                     this.size = size;
                     this.originalSize = size;
-                    this.color = color; // Added color
+                    this.color = color;
                     this.speed = Math.random() * 0.15 + 0.08;
                 }
 
@@ -842,50 +836,55 @@
             let oscillator = null;
 
             const startTone = (frequency) => {
-                stopTone(); // Stop any existing tone
+                stopTone(); 
 
                 audioContext = new (window.AudioContext || window.webkitAudioContext)();
                 oscillator = audioContext.createOscillator();
                 const gainNode = audioContext.createGain();
 
-                oscillator.type = 'sine'; // Pure sine wave for clean frequency
+                oscillator.type = 'sine'; 
                 oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
 
-                // Set a moderate volume
                 gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
                 
                 oscillator.connect(gainNode);
                 gainNode.connect(audioContext.destination);
                 oscillator.start();
+                
+                // Set button state
+                document.getElementById('play-474').disabled = (frequency === 474);
+                document.getElementById('play-528').disabled = (frequency === 528);
             };
 
             const stopTone = () => {
                 if (oscillator) {
-                    // Smoothly fade out the volume to prevent a click
-                    const gainNode = oscillator.context.destination.context.createGain();
-                    oscillator.connect(gainNode);
-                    gainNode.connect(oscillator.context.destination);
+                    const currentGain = oscillator.context.destination.context.createGain();
+                    oscillator.connect(currentGain);
+                    currentGain.connect(oscillator.context.destination);
                     
-                    gainNode.gain.exponentialRampToValueAtTime(0.00001, oscillator.context.currentTime + 1);
-                    oscillator.stop(oscillator.context.currentTime + 1);
-                }
-                if (audioContext && audioContext.state !== 'closed') {
-                    // Close context after a small delay to allow fade-out
+                    // Smoothly fade out the volume
+                    currentGain.gain.exponentialRampToValueAtTime(0.00001, oscillator.context.currentTime + 1.0); // 1-second fade
+                    oscillator.stop(oscillator.context.currentTime + 1.0);
+                    
+                    // Close context after fade-out
                     setTimeout(() => {
-                        audioContext.close().catch(e => console.error("Error closing AudioContext:", e));
-                        audioContext = null;
+                        if (audioContext && audioContext.state !== 'closed') {
+                            audioContext.close().catch(e => console.error("Error closing AudioContext:", e));
+                            audioContext = null;
+                        }
                         oscillator = null;
                     }, 1100);
                 }
-                oscillator = null;
-                audioContext = null;
+                
+                // Reset button state
+                document.getElementById('play-474').disabled = false;
+                document.getElementById('play-528').disabled = false;
             };
 
             document.getElementById('play-474').addEventListener('click', () => startTone(474));
             document.getElementById('play-528').addEventListener('click', () => startTone(528));
             document.getElementById('stop-audio').addEventListener('click', stopTone);
             
-            // Clean up audio on window close (best effort)
             window.addEventListener('beforeunload', stopTone);
 
         });
