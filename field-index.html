@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN – Field Index | ETFM–POST Extended Geometry (v5.1 Optimized)</title>
+  <title>VARZIN – Field Index | ETFM–POST Field Synchronization (v5.2)</title>
   <meta name="description" content="VARZIN Field Index – includes ETFM–POST (Earth–Torus Field Model), Luxvar Language, QMSG Protocols, and RAHTALĒN–13 Mirror. Featuring scalar geometry and harmonic consciousness dynamics.">
   <meta name="author" content="Reza Nirouyar (RAHTALĒN–13)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,16 +32,25 @@
     main { max-width:1200px; margin:auto; display:grid; 
         grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; 
     }
-    .field-card { background:var(--panel); border:1px solid var(--border); border-radius:12px;
-      padding:30px; box-shadow:0 0 15px rgba(0,255,238,0.1); transition:.4s ease; text-align:left; }
+    .field-card { 
+      background:var(--panel); border:1px solid var(--border); border-radius:12px;
+      padding:30px; box-shadow:0 0 15px rgba(0,255,238,0.1); transition:.4s ease; 
+      display: flex; flex-direction: column; /* Ensure vertical stacking */
+    }
     .field-card:hover { transform:translateY(-6px); box-shadow:0 0 25px rgba(0,255,238,0.5); }
-    .field-card h3 { color:var(--cyan); text-shadow:0 0 10px var(--cyan); border-bottom:1px dashed var(--border); padding-bottom:10px; text-align:left; }
+    .field-card h3 { 
+        color:var(--cyan); text-shadow:0 0 10px var(--cyan); border-bottom:1px dashed var(--border); 
+        padding-bottom:10px; text-align:left; margin-bottom: 15px;
+    }
     .key-attr { display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px dotted rgba(0,255,238,0.1); font-size:0.95em; }
     .key-attr strong { color:var(--gold); min-width:120px; } 
-    .description { font-size:0.95em; color:var(--muted); margin-top:10px; text-align:justify; }
+    .description { font-size:0.95em; color:var(--muted); margin-top:15px; margin-bottom: 20px; text-align:justify; flex-grow: 1; } /* Allow description to push chart down */
     
-    /* Dynamic Chart Canvas Style */
-    .chart-container { margin-top:20px; text-align:center; padding:10px 0;}
+    /* Dynamic Chart Canvas Style: Adjusted padding to reduce visual separation */
+    .chart-container { 
+        margin-top:auto; /* Pushes the chart to the bottom of the card */
+        text-align:center; padding-top:10px; border-top: 1px solid rgba(0, 255, 238, 0.1);
+    }
     .chart-container canvas { 
         display: block; margin: 0 auto; 
         border:1px solid rgba(0,255,238,0.3); border-radius:10px;
@@ -56,7 +65,6 @@
     .formula-box {
       background:rgba(0,15,25,0.9); border:1px solid rgba(0,255,238,0.4);
       width:fit-content; margin:25px auto; padding:20px; border-radius:10px;
-      /* MathJax handles font for formulas, but box styling remains */
       color:var(--gold); line-height:1.6; text-align:left; 
       font-size: 1.1em;
     }
@@ -175,7 +183,7 @@
     </section>
   </main>
   <footer>
-    © 2025 VARZIN Project · ETFM–POST Model v5.1 · contact@varzin.org
+    © 2025 VARZIN Project · ETFM–POST Model v5.2 · contact@varzin.org
   </footer>
 
 <script>
@@ -546,7 +554,7 @@ if(t){
         frameCount++; 
         requestAnimationFrame(drawTorus); 
 
-        // 2. Optimization: Only draw on every second frame (throttles to ~30 FPS)
+        // 1. FPS Optimization (throttles to ~30 FPS for mobile performance)
         if (frameCount % 2 !== 0) { 
             return; 
         }
@@ -573,7 +581,11 @@ if(t){
             }
         }
         c.restore();
-        ang+=0.02;
+        
+        // 2. Field Synchronization Fix: Reversing the rotation direction
+        // The previous version had `ang += 0.02;` which caused left/CCW rotation.
+        // We change it to negative to ensure right/CW rotation for field alignment.
+        ang -= 0.02; 
     }
     // Start the torus animation loop
     drawTorus(); 
