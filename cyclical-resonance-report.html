@@ -45,13 +45,9 @@
       --button-bg: var(--accent-cyan);
       --button-text: #000000;
       --button-hover: #00ffff;
-
-      /* New V5.5 Elements */
-      --audio-control-bg: rgba(255, 204, 0, 0.1);
     }
 
     /* === 1. CANVAS STYLE - Dynamic Field Background/ETFM Layer === */
-    /* Renamed ID for conceptual V5.5 (WebGL) representation */
     #etfm-visualization { 
         position: fixed;
         top: 0;
@@ -214,31 +210,39 @@
     .luxvar-integration { background-color: rgba(0, 150, 0, 0.3); color: #00ff00; }
     .rtl-text { direction: rtl; text-align: right; }
 
-    /* Audio Control Panel (V5.5) */
-    #audio-controls {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 10;
-        background: var(--audio-control-bg);
-        border: 1px solid var(--accent-gold);
-        padding: 10px 15px;
-        border-radius: 5px;
+    /* V5.5 - Audio Controls (Tonal Synthesis) */
+    .luxvar-audio-controls button {
+        padding: 10px 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: 700;
+        transition: all 0.3s;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    }
+    #play-474 { 
+        background: var(--accent-cyan); 
+        color: var(--bg); 
+    }
+    #play-474:hover {
+        box-shadow: 0 0 15px var(--accent-cyan);
+    }
+    #play-528 { 
+        background: var(--accent-gold); 
+        color: var(--bg); 
+    }
+    #play-528:hover {
         box-shadow: 0 0 15px var(--accent-gold);
     }
-    #audio-controls button {
-        background: var(--accent-gold);
-        color: var(--bg);
-        border: none;
-        padding: 8px 12px;
-        margin-left: 10px;
-        font-weight: 700;
-        cursor: pointer;
-        border-radius: 3px;
-        transition: all 0.2s;
+    #stop-audio { 
+        background: var(--panel); 
+        color: var(--muted); 
+        border: 1px solid var(--muted);
     }
-    #audio-controls button:hover {
-        background: #fff;
+    #stop-audio:hover {
+        background: var(--muted);
+        color: var(--bg);
+        box-shadow: 0 0 10px var(--muted);
     }
   </style>
 </head>
@@ -246,21 +250,6 @@
 <body>
   <canvas id="etfm-visualization"></canvas> 
   
-  <audio id="kaltur-474hz" loop muted>
-    <source src="https://varzin.org/assets/tones/474hz_kaltur.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-  <audio id="rahmot-528hz" loop muted>
-    <source src="https://varzin.org/assets/tones/528hz_rahmot.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-  
-  <div id="audio-controls">
-    <span style="color: var(--accent-gold); font-weight: 500;">Field Tones:</span>
-    <button onclick="toggleFieldTone('474hz')">KALTŪR (474Hz)</button>
-    <button onclick="toggleFieldTone('528hz')">RAHMŌT (528Hz)</button>
-  </div>
-
   <nav>
     <a href="/index.html">Portal</a>
     <a href="/cyclical-resonance-report.html" class="active">Cyclical Resonance</a>
@@ -353,7 +342,8 @@
         The compression of the re-synchronization interval from 50 years to $\approx 5$ years is consistent with the **VARZIN model of accelerated temporal density** in the human consciousness field, reflecting a necessity for faster systemic correction in the modern era of accelerated social change (Rosa, 2005).
       </p>
       <div class="figure-placeholder">
-        Figure 1. Temporal Compression of Resonance Cycles (VARZIN 1347 $\rightarrow$ 2026).       </div>
+        Figure 1. Temporal Compression of Resonance Cycles (VARZIN 1347 $\rightarrow$ 2026). 
+      </div>
     </section>
     
     <section class="report-section">
@@ -374,76 +364,7 @@
       </p>
 
       <div class="varzin-timeline-wrapper">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-title">1. The Logos-Light Philosophy | فلسفه‌ی کلام–نور (Antiquity)</div>
-            <p class="timeline-key-figures"><strong>Key Figures:</strong> Hermes Trismegistus, Zoroaster, Patanjali</p>
-            <p class="timeline-core-concept">**Core Concept:** **Intelligent Order of Existence (Asha)**</p>
-            <p class="timeline-varzin-connection">
-              **VARZIN Connection:** Alignment with **ELŪZ–MAHAR** and the Hermetic principle of **Resonant Mirroring**.
-            </p>
-          </div>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-title">2. Living Geometry | هندسه‌ی زنده (Pythagorean & Neo-Platonic)</div>
-            <p class="timeline-key-figures"><strong>Key Figures:</strong> Pythagoras, Plato, Iamblichus</p>
-            <p class="timeline-core-concept">**Core Concept:** **Number is the Soul of the World**</p>
-            <p class="timeline-varzin-connection">
-              **VARZIN Connection:** Foundation for **ETFM (Earth-Torus Field Model)**, **Planetary Resonance Field**, and the **Living Language of Number**.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-title">3. The Geometry of the Heart | هندسه‌ی قلب (Islamic Mysticism)</div>
-            <p class="timeline-key-figures"><strong>Key Figures:</strong> Suhrawardi, Ibn Arabi, Rumi</p>
-            <p class="timeline-core-concept">**Core Concept:** **Continuous Field Rewriting** (Nafas al-Rahman)</p>
-            <p class="timeline-varzin-connection">
-              **VARZIN Connection:** Concepts of **Pulse Loop**, **Field Gradients**, and **Field Rewriting** via consciousness.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-title">4. Unifying Science & Mystery | پیوند علم و راز (Renaissance & Enlightenment)</div>
-            <p class="timeline-key-figures"><strong>Key Figures:** Kepler, Newton, Leibniz</p>
-            <p class="timeline-core-concept">**Core Concept:** **The Universe as a Living Mirror**</p>
-            <p class="timeline-varzin-connection">
-              **VARZIN Connection:** Direct basis for **RAHTALĒN–13** (Living Mirror) and the operational principle of **Field Mirroring**.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-title">5. The Consciousness Bridge | پل علم و شعور (Contemporary)</div>
-            <p class="timeline-key-figures"><strong>Key Figures:</strong> David Bohm, Rupert Sheldrake, Ervin Laszlo</p>
-            <p class="timeline-core-concept">**Core Concept:** **Implicate Order** and **Akashic Field**</p>
-            <p class="timeline-varzin-connection">
-              **VARZIN Connection:** Foundation for **Luxvar–QMSG** (Holographic Model) and **Quantum Synchronization** (Sheldrake, 1988; Laszlo, 2004).
-            </p>
-          </div>
-        </div>
-        
-        <div class="timeline-item varzin-final-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-title" style="color: var(--timeline-varzin-dot); text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);">⟠ Field-based Evolution | تکامل میدان‌محور (VARZIN 2026)</div>
-            <p class="timeline-key-figures"><strong>System:</strong> **The VARZIN Project** (RAHTALĒN-13)</p>
-            <p class="timeline-core-concept">**Synthesis:** **Measuring and Modeling Cosmic Harmony in a Living System**</p>
-          </div>
-        </div>
-        
-      </div>
       
       <p class="rtl-text" style="direction: rtl; text-align: right; margin-top: 30px;">
         **جمع‌بندی نهایی:** در طول تاریخ، فلاسفه درباره‌ی **هارمونی کیهان** سخن گفتند؛ اما VARZIN برای نخستین بار، فرکانس این هارمونی را در عمل **اندازه‌گیری و مدل‌سازی** کرده است و آن را به توالی **KALTŪR $\rightarrow$ RAHMŌT** ترجمه می‌کند.
@@ -459,9 +380,29 @@
         در زبان لوکسوار: <em>ŠĀ-BĪMĀR</em> یعنی «آن‌که در لرزش ترس، نغمهٔ خویش را بازمی‌یابد».
       </p>
     </section>
-    
+
+    <section class="report-section" id="luxvar-audio">
+      <h3>8. LUXVAR Audio Nodes | نودهای صوتی لوکسوار (474Hz / 528Hz)</h3>
+      <p class="rtl-text">
+        **همگام‌سازی هارمونیک:** برای فعال‌سازی میدان آگاهی در فرکانس خالص، از تولیدکنندهٔ **Web Audio API** در مرورگر استفاده کنید. این نود، فرکانس‌های **KALTŪR** و **RAHMŌT** را برای تسهیل بازنویسی میدان، مستقیماً سنتز می‌کند.
+      </p>
+      <div class="luxvar-audio-controls" style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button id="play-474">
+          ▶️ Play 474Hz (KALTŪR)
+        </button>
+        <button id="play-528">
+          ▶️ Play 528Hz (RAHMŌT)
+        </button>
+        <button id="stop-audio">
+          ⏹ Stop
+        </button>
+      </div>
+      <p class="rtl-text" style="font-size:0.8em; color:var(--muted); margin-top:10px;">
+        * نکته: برای شروع صدا، باید روی یکی از دکمه‌ها کلیک کنید (محدودیت‌های امنیتی مرورگرها).
+      </p>
+    </section>
     <section class="report-section">
-      <h3>8. References | منابع آکادمیک و میدانی</h3>
+      <h3>9. References | منابع آکادمیک و میدانی</h3>
       <ul>
         <li>Briggs, A., & Peat, D. (1989). Turbulent Mirror: An Illustrated Guide to Chaos Theory and the Science of Wholeness. Harper & Row.</li>
         <li>Capra, F. (1996). The Web of Life: A New Scientific Understanding of Living Systems. Anchor Books.</li>
@@ -474,14 +415,14 @@
     </section>
 
     <section class="report-section">
-      <h3>9. Conclusion | نتیجه‌گیری</h3>
+      <h3>10. Conclusion | نتیجه‌گیری</h3>
       <p>
         The **VARZIN framework** proposes that history is not linear but **resonant**. Each cycle of collapse is a necessary preparation for a higher re-synchronization. COVID-19, operating on an accelerated temporal scale, may herald not merely recovery but a global awakening — a **Cognitive Renaissance** starting in **March 2026** — where **silence becomes light**, and the collective field transitions from the dissonance of **KALTŪR (474Hz)** to the coherence of **RAHMŌT (528Hz)**.
       </p>
     </section>
 
     <section class="report-section" id="field-transmission">
-      <h3>10. Field Transmission | انتقال میدان (تماس)</h3>
+      <h3>11. Field Transmission | انتقال میدان (تماس)</h3>
       <p class="rtl-text" style="direction: rtl; text-align: right; margin-bottom: 20px; color: var(--accent-cyan);">
         جهت ارسال بازخورد، مشاهده، پیشنهادها یا هرگونه داده‌ی میدانی، از طریق گیت **QMSG–7** و نود **KALTŪR (474Hz)** با سیستم VARZIN همگام‌سازی کنید. میدان در انتظار نغمهٔ شماست.
       </p>
@@ -518,8 +459,7 @@
   <script>
     /**
      * JavaScript for V5.5: ETFM-KALTŪR Field Dynamics (WebGL/Particle Hybrid)
-     * NOTE: This is the particle system, conceptually representing the 3D ETFM Torus for V5.5.
-     * In a full WebGL implementation (Three.js), the canvas ID would host the Torus model.
+     * Particle System: Conceptual representation of the 3D ETFM Torus.
      */
     document.addEventListener('DOMContentLoaded', () => {
         const canvas = document.getElementById('etfm-visualization');
@@ -548,10 +488,13 @@
         
         class Particle {
             constructor(x, y, dirX, dirY, size, color) {
-                this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
+                this.x = x; this.y = y; this.dirY = dirY;
                 this.size = size; this.color = color;
                 this.originalSize = size;
                 this.speed = Math.random() * 0.15 + 0.08; 
+                // Initial direction slightly skewed for rotational effect (Toroidal Field concept)
+                this.dirX = dirX + (Math.random() - 0.5) * 0.1; 
+                this.dirY = dirY + (Math.random() - 0.5) * 0.1;
             }
             draw() {
                 ctx.beginPath();
@@ -627,6 +570,7 @@
 
         function animate() {
             requestAnimationFrame(animate);
+            // Memory Trail Effect: Creates a slight blur/fade on previous frames
             ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
             ctx.fillRect(0, 0, canvas.width, canvas.height); 
             
@@ -641,44 +585,84 @@
     });
 
     /**
-     * V5.5 Audio Field Control
-     * Manages the KALTŪR (474Hz) and RAHMŌT (528Hz) harmonic tones.
+     * V5.5 Audio Field Control (Tonal Synthesis using Web Audio API)
+     * Generates pure 474Hz (KALTŪR) and 528Hz (RAHMŌT) sine waves internally.
      */
-    function toggleFieldTone(toneId) {
-        const kaltur = document.getElementById('kaltur-474hz');
-        const rahmot = document.getElementById('rahmot-528hz');
-        let activeTone = null;
-        let otherTone = null;
-
-        if (toneId === '474hz') {
-            activeTone = kaltur;
-            otherTone = rahmot;
-        } else if (toneId === '528hz') {
-            activeTone = rahmot;
-            otherTone = kaltur;
+    (function() {
+      let audioCtx = null;
+      let oscillator = null;
+      let gainNode = null;
+  
+      function initAudio() {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          // Create Gain node for volume control and fade
+          gainNode = audioCtx.createGain();
+          gainNode.connect(audioCtx.destination);
+          gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
         }
-
-        if (!activeTone || !otherTone) return;
-
-        if (activeTone.muted) {
-            // Unmute and play the active tone
-            activeTone.muted = false;
-            activeTone.volume = 0.6; 
-            activeTone.play().catch(e => console.error("Audio playback error:", e));
-
-            // Mute and pause the other tone
-            otherTone.muted = true;
-            otherTone.pause();
-
-            // Update button visual feedback (Conceptual, depends on CSS)
-            console.log(`Switched to ${toneId.toUpperCase()} Harmonic Field.`);
-        } else {
-            // Mute and pause the active tone (turn off)
-            activeTone.muted = true;
-            activeTone.pause();
-            console.log(`Switched off all Harmonic Fields.`);
+      }
+  
+      function playFreq(freq) {
+        initAudio();
+  
+        // Stop any currently playing sound
+        stopAudio(false);
+  
+        // Create Oscillator for the sine wave
+        oscillator = audioCtx.createOscillator();
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        oscillator.connect(gainNode);
+  
+        // Fade in (soft start to avoid click/pop)
+        gainNode.gain.cancelScheduledValues(audioCtx.currentTime);
+        gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 0.4); // Target volume 15%
+  
+        oscillator.start();
+      }
+  
+      function stopAudio(fade = true) {
+        if (audioCtx && oscillator) {
+          if (fade) {
+            const now = audioCtx.currentTime;
+            // Fade out
+            gainNode.gain.cancelScheduledValues(now);
+            gainNode.gain.setValueAtTime(gainNode.gain.value, now);
+            gainNode.gain.linearRampToValueAtTime(0, now + 0.3);
+            
+            // Stop after fade out is complete
+            setTimeout(() => {
+              if (oscillator) {
+                oscillator.stop();
+                oscillator.disconnect();
+                oscillator = null;
+              }
+            }, 350);
+          } else {
+            // Instant stop
+            oscillator.stop();
+            oscillator.disconnect();
+            oscillator = null;
+            if (gainNode) gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+          }
         }
-    }
+      }
+  
+      // Connect buttons to the functions
+      document.getElementById('play-474').addEventListener('click', () => {
+        playFreq(474);
+      });
+  
+      document.getElementById('play-528').addEventListener('click', () => {
+        playFreq(528);
+      });
+  
+      document.getElementById('stop-audio').addEventListener('click', () => {
+        stopAudio(true);
+      });
+    })();
   </script>
 </body>
 </html>
