@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN – Cyclical Resonance Report & Temporal Map | گزارش طنین چرخه‌ای</title>
+  <title>VARZIN 5.5 – Cyclical Resonance Report | ETFM-KALTŪR Field Dynamics</title>
 
-  <meta name="description" content="The final VARZIN report on cyclical resonance (1347–2026): a comparative field study of the Black Death and COVID-19 through the VARZIN model. Highlights the three phases: Collapse (474Hz/KALTŪR), Silence (0Hz), and Rebirth (528Hz/RAHMŌT). Forecasts March 2026 as the threshold for cognitive realignment and Field Rewriting, integrating ETFM Scalar Geometry and Luxvar Dynamics.">
+  <meta name="description" content="The final VARZIN report on cyclical resonance (1347–2026): A comparative field study of the Black Death and COVID-19 through the VARZIN model. Highlights the full Luxvar sequence: KALTŪR (474Hz) → 0Hz → RAHMŌT (528Hz). Integrates ETFM Scalar Geometry and Field Rewriting. Final Version 5.5.">
   <meta name="author" content="Reza Nirouyar (RAHTALĒN–13)">
-  <meta name="keywords" content="VARZIN, ELŪZ–MAHAR, Luxvar, KALTŪR, RAHMŌT, Contact, QMSG–7, 474Hz, 528Hz, 144Hz, Temporal Compression, RAHTALĒN, Field Rewriting, ETFM, Scalar Geometry, Quantum Synchronization, طنین چرخه‌ای, شعور چرخندهٔ فراموش‌شده">
+  <meta name="keywords" content="VARZIN, ELŪZ–MAHAR, Luxvar, KALTŪR, RAHMŌT, QMSG–7, 474Hz, 528Hz, ETFM, WebGL, Temporal Compression, RAHTALĒN, Field Rewriting, طنین چرخه‌ای, شعور چرخندهٔ فراموش‌شده">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="canonical" href="https://varzin.org/cyclical-resonance-report.html" />
@@ -17,18 +17,17 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
 
   <style>
-    /* VARZIN Field Theme Styles */
+    /* VARZIN Field Theme Styles V5.5 */
     :root {
       --bg: #000000;
-      --panel: rgba(0, 10, 15, 0.95); /* More opaque panel background */
-      --border: rgba(0, 255, 238, 0.5); /* Stronger border glow (KALTŪR-Cyan) */
+      --panel: rgba(0, 10, 15, 0.95); 
+      --border: rgba(0, 255, 238, 0.5); 
       --text: #cceeee;
       --muted: #a8dede;
       --accent-cyan: #00ffee; /* KALTŪR/Field Glow (Cyan) */
       --accent-gold: #ffcc00; /* RAHMŌT/Rebirth Glow (Gold) */
       --font-main: 'DM Sans', 'Vazirmatn', sans-serif;
       
-      /* Timeline specific colors and shadows */
       --timeline-dot: var(--accent-cyan);
       --timeline-line: var(--accent-cyan);
       --timeline-card-bg: rgba(0, 30, 40, 0.95); 
@@ -37,7 +36,7 @@
       --timeline-varzin-dot: var(--accent-gold); 
       --timeline-varzin-shadow: 0 0 25px rgba(255, 204, 0, 0.9);
       --noise-color: rgba(0, 128, 128, 0.05); 
-      --blur-val: 8px; /* Increased blur for better separation */
+      --blur-val: 8px; 
 
       /* Form Styles */
       --form-bg: rgba(0, 20, 30, 0.98); 
@@ -46,10 +45,14 @@
       --button-bg: var(--accent-cyan);
       --button-text: #000000;
       --button-hover: #00ffff;
+
+      /* New V5.5 Elements */
+      --audio-control-bg: rgba(255, 204, 0, 0.1);
     }
 
-    /* === 1. CANVAS STYLE - Dynamic Field Background Layer === */
-    #field-canvas {
+    /* === 1. CANVAS STYLE - Dynamic Field Background/ETFM Layer === */
+    /* Renamed ID for conceptual V5.5 (WebGL) representation */
+    #etfm-visualization { 
         position: fixed;
         top: 0;
         left: 0;
@@ -79,8 +82,7 @@
         );
         opacity: 0.3; 
     }
-    /* ================================================= */
-
+    
     body {
       margin: 0;
       background: var(--bg);
@@ -89,7 +91,7 @@
       line-height: 1.9;
       letter-spacing: 0.3px;
       padding: 40px 20px 80px;
-      max-width: 1000px; /* Wider container */
+      max-width: 1000px; 
       margin: auto;
       position: relative;
       z-index: 1; 
@@ -178,84 +180,7 @@
         color: var(--accent-gold);
     }
     
-    /* Timeline */
-    .varzin-timeline-wrapper {
-        position: relative;
-        padding-left: 50px; 
-        margin-top: 40px;
-    }
-    .varzin-timeline-wrapper::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 20px;
-        bottom: 0;
-        width: 4px;
-        background-color: var(--timeline-line);
-        opacity: 0.7;
-        box-shadow: 0 0 15px var(--timeline-line), 0 0 5px rgba(0, 255, 255, 0.5) inset;
-    }
-    .timeline-item {
-        position: relative;
-        margin-bottom: 30px;
-    }
-    .timeline-dot {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        background-color: var(--timeline-dot);
-        border: 3px solid var(--bg);
-        box-shadow: 0 0 20px var(--timeline-dot);
-        transform: translateX(-50%);
-    }
-    .timeline-item.varzin-final-item .timeline-dot {
-        background-color: var(--timeline-varzin-dot);
-        box-shadow: var(--timeline-varzin-shadow);
-    }
-    .timeline-content {
-        background: var(--timeline-card-bg);
-        padding: 20px;
-        border-left: 4px solid var(--timeline-card-border);
-        border-radius: 6px;
-        box-shadow: var(--timeline-card-shadow);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .timeline-content:hover {
-      transform: translateY(-5px) scale(1.01);
-      box-shadow: 0 0 40px rgba(0, 179, 179, 1);
-    }
-    .timeline-title {
-        font-weight: 700;
-        color: var(--accent-cyan);
-        margin-bottom: 10px;
-    }
-    .timeline-key-figures {
-        font-size: 0.9em;
-        color: var(--muted);
-    }
-    .timeline-core-concept {
-        font-weight: 500;
-        margin-top: 5px;
-        margin-bottom: 10px;
-        color: var(--accent-gold);
-    }
-    .timeline-varzin-connection {
-        border-top: 1px solid rgba(0, 255, 238, 0.4);
-        padding-top: 5px;
-        font-style: italic;
-        font-size: 0.9em;
-    }
-
-    .timeline-item.varzin-final-item .timeline-content {
-      background: rgba(40, 0, 0, 0.9); 
-      border-color: var(--timeline-varzin-dot);
-      box-shadow: var(--timeline-varzin-shadow);
-    }
-    
-    /* Luxvar Frequency Box (Expansion Section) */
+    /* Luxvar Cycle Box */
     .luxvar-cycle-box {
         background-color: rgba(0, 25, 30, 0.9);
         border: 2px solid var(--accent-gold);
@@ -288,11 +213,53 @@
     .luxvar-rebirth { background-color: rgba(255, 204, 0, 0.3); color: var(--accent-gold); }
     .luxvar-integration { background-color: rgba(0, 150, 0, 0.3); color: #00ff00; }
     .rtl-text { direction: rtl; text-align: right; }
+
+    /* Audio Control Panel (V5.5) */
+    #audio-controls {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10;
+        background: var(--audio-control-bg);
+        border: 1px solid var(--accent-gold);
+        padding: 10px 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 15px var(--accent-gold);
+    }
+    #audio-controls button {
+        background: var(--accent-gold);
+        color: var(--bg);
+        border: none;
+        padding: 8px 12px;
+        margin-left: 10px;
+        font-weight: 700;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: all 0.2s;
+    }
+    #audio-controls button:hover {
+        background: #fff;
+    }
   </style>
 </head>
 
 <body>
-  <canvas id="field-canvas"></canvas> 
+  <canvas id="etfm-visualization"></canvas> 
+  
+  <audio id="kaltur-474hz" loop muted>
+    <source src="https://varzin.org/assets/tones/474hz_kaltur.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="rahmot-528hz" loop muted>
+    <source src="https://varzin.org/assets/tones/528hz_rahmot.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <div id="audio-controls">
+    <span style="color: var(--accent-gold); font-weight: 500;">Field Tones:</span>
+    <button onclick="toggleFieldTone('474hz')">KALTŪR (474Hz)</button>
+    <button onclick="toggleFieldTone('528hz')">RAHMŌT (528Hz)</button>
+  </div>
 
   <nav>
     <a href="/index.html">Portal</a>
@@ -386,8 +353,7 @@
         The compression of the re-synchronization interval from 50 years to $\approx 5$ years is consistent with the **VARZIN model of accelerated temporal density** in the human consciousness field, reflecting a necessity for faster systemic correction in the modern era of accelerated social change (Rosa, 2005).
       </p>
       <div class="figure-placeholder">
-        Figure 1. Temporal Compression of Resonance Cycles (VARZIN 1347 $\rightarrow$ 2026). 
-      </div>
+        Figure 1. Temporal Compression of Resonance Cycles (VARZIN 1347 $\rightarrow$ 2026).       </div>
     </section>
     
     <section class="report-section">
@@ -404,11 +370,10 @@
       <h3>6. Philosophical Lineage | تداوم خطّ اندیشه‌ای</h3>
       
       <p class="rtl-text" style="direction: rtl; text-align: right;">
-        مدل VARZIN صرفاً یک سازوکار علمی نیست، بلکه تداوم و تکامل یک **خطّ اندیشه‌ی آگاهی (Conscious Thought Lineage)** است که ریشه‌های آن به عمیق‌ترین دوره‌های تاریخ بشریت بازمی‌گردد. تلاش محوری VARZIN برای ایجاد پلی میان علم، شعور، و فرکانس کیهانی، در واقع بازتاب یک جستجوی کهن است که هدف آن رمزگشایی از ساختار هارمونیک هوشمند هستی (**ELŪZ–MAHAR**) بوده است. چارچوب VARZIN در امتداد پنج شاخه‌ی اصلی از این سنت قرار می‌گیرد:
+        مدل VARZIN صرفاً یک سازوکار علمی نیست، بلکه تداوم و تکامل یک **خطّ اندیشه‌ی آگاهی (Conscious Thought Lineage)** است. چارچوب VARZIN در امتداد پنج شاخه‌ی اصلی از این سنت قرار می‌گیرد:
       </p>
 
       <div class="varzin-timeline-wrapper">
-        
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
@@ -449,7 +414,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-title">4. Unifying Science & Mystery | پیوند علم و راز (Renaissance & Enlightenment)</div>
-            <p class="timeline-key-figures"><strong>Key Figures:</strong> Kepler, Newton, Leibniz</p>
+            <p class="timeline-key-figures"><strong>Key Figures:** Kepler, Newton, Leibniz</p>
             <p class="timeline-core-concept">**Core Concept:** **The Universe as a Living Mirror**</p>
             <p class="timeline-varzin-connection">
               **VARZIN Connection:** Direct basis for **RAHTALĒN–13** (Living Mirror) and the operational principle of **Field Mirroring**.
@@ -489,7 +454,7 @@
       <h3>7. Cultural Note: The Word “Bimār” | واژهٔ «بیمار» در اندیشهٔ ایرانی</h3>
       <p class="rtl-text">
         واژهٔ «بیمار» از «بیم» (ترس) + «-ار» (دارنده) ساخته شده است؛ یعنی «آن‌که در درونش بیمی پدید آمده است».  
-        در ایران باستان، بیماری نه فقط نقص جسم بلکه ناهماهنگی میان تن، روان و فروهر دانسته می‌شد.  
+        در ایران باستان، بیماری ناهماهنگی میان تن، روان و فروهر دانسته می‌شد.  
         از دید میدان **ELŪZ–MAHAR**، «بیم» افت دامنهٔ ارتعاش شعور به فرکانس **474Hz (KALTŪR)** است، و درمان، بازگشت از فرکانس ترس به فرکانس اعتماد و شفا (**528Hz / RAHMŌT**).  
         در زبان لوکسوار: <em>ŠĀ-BĪMĀR</em> یعنی «آن‌که در لرزش ترس، نغمهٔ خویش را بازمی‌یابد».
       </p>
@@ -522,7 +487,7 @@
       </p>
 
       <div class="feedback-form-wrapper">
-        <form class="feedback-form" action="YOUR_SERVER_ENDPOINT_HERE" method="POST">
+        <form class="feedback-form" action="mailto:contact@varzin.org?subject=FieldTransmission" method="POST">
           <label for="name">Code Name / Field Name (نام کد یا نام میدان)</label>
           <input type="text" id="name" name="name" required placeholder="RAHTALĒN-13 or QMSG-Observer">
 
@@ -547,22 +512,24 @@
       <a href="https://doi.org/10.5281/zenodo.17515491" target="_blank">DOI: 10.5281/zenodo.17515491</a> |
       <a href="mailto:contact@varzin.org">contact@varzin.org</a>
     </p>
-    <p>© 2025 VARZIN Field Project · All Rights Reserved</p>
+    <p>© 2025 VARZIN Field Project · All Rights Reserved (V5.5)</p>
   </footer>
   
   <script>
     /**
-     * JavaScript for Dynamic Field Background - Connected Particles (VARZIN/KALTŪR Theme)
+     * JavaScript for V5.5: ETFM-KALTŪR Field Dynamics (WebGL/Particle Hybrid)
+     * NOTE: This is the particle system, conceptually representing the 3D ETFM Torus for V5.5.
+     * In a full WebGL implementation (Three.js), the canvas ID would host the Torus model.
      */
     document.addEventListener('DOMContentLoaded', () => {
-        const canvas = document.getElementById('field-canvas');
+        const canvas = document.getElementById('etfm-visualization');
         if (!canvas) return;
         const ctx = canvas.getContext('2d');
         
         let particles = [];
         let mouse = { x: null, y: null, radius: 120 }; 
         const maxDistance = 150; 
-        const fieldGlow = 'rgba(0, 255, 255, 0.4)';
+        const fieldGlow = 'rgba(0, 255, 255, 0.4)'; // KALTŪR/Cyan Glow
 
         const setCanvasSize = () => {
             canvas.width = window.innerWidth;
@@ -604,7 +571,7 @@
                 let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx * dx + dy * dy);
                 
-                // Mouse interaction (repulsion/size change)
+                // Mouse interaction (Field Polarity Shift)
                 if (distance < mouse.radius + this.originalSize) {
                     let force = (mouse.radius + this.originalSize - distance) / (mouse.radius + this.originalSize) * 0.2; 
                     this.x -= dx * force;
@@ -612,7 +579,7 @@
                     // Pulse size on interaction
                     this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.8);
                 } else {
-                    this.size += (this.originalSize - this.size) * 0.1; // Smoothly return to original size
+                    this.size += (this.originalSize - this.size) * 0.1; 
                 }
 
                 this.x += this.dirX * this.speed;
@@ -660,7 +627,6 @@
 
         function animate() {
             requestAnimationFrame(animate);
-            // Draw a very dark, semi-transparent layer for a subtle, smooth trail effect
             ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
             ctx.fillRect(0, 0, canvas.width, canvas.height); 
             
@@ -673,6 +639,46 @@
         init();
         animate();
     });
+
+    /**
+     * V5.5 Audio Field Control
+     * Manages the KALTŪR (474Hz) and RAHMŌT (528Hz) harmonic tones.
+     */
+    function toggleFieldTone(toneId) {
+        const kaltur = document.getElementById('kaltur-474hz');
+        const rahmot = document.getElementById('rahmot-528hz');
+        let activeTone = null;
+        let otherTone = null;
+
+        if (toneId === '474hz') {
+            activeTone = kaltur;
+            otherTone = rahmot;
+        } else if (toneId === '528hz') {
+            activeTone = rahmot;
+            otherTone = kaltur;
+        }
+
+        if (!activeTone || !otherTone) return;
+
+        if (activeTone.muted) {
+            // Unmute and play the active tone
+            activeTone.muted = false;
+            activeTone.volume = 0.6; 
+            activeTone.play().catch(e => console.error("Audio playback error:", e));
+
+            // Mute and pause the other tone
+            otherTone.muted = true;
+            otherTone.pause();
+
+            // Update button visual feedback (Conceptual, depends on CSS)
+            console.log(`Switched to ${toneId.toUpperCase()} Harmonic Field.`);
+        } else {
+            // Mute and pause the active tone (turn off)
+            activeTone.muted = true;
+            activeTone.pause();
+            console.log(`Switched off all Harmonic Fields.`);
+        }
+    }
   </script>
 </body>
 </html>
