@@ -6,7 +6,7 @@
     <title>VARZIN 5.5 – Cyclical Resonance Report | ETFM-KALTŪR Field Dynamics</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* VARZIN Field Theme Styles V5.5 */
+        /* VARZIN Field Theme Styles V5.5 - Merged and Consolidated */
         :root {
             --bg: #000000;
             --panel: rgba(0, 10, 15, 0.95);
@@ -17,7 +17,7 @@
             --accent-gold: #ffcc00; /* RAHMŌT/Rebirth Glow (Gold) */
             --font-main: 'DM Sans', 'Vazirmatn', sans-serif;
             
-            /* --- TIMELINE SPECIFIC COLORS (Restored from Code 1) --- */
+            /* --- TIMELINE SPECIFIC COLORS (From old code) --- */
             --timeline-dot: var(--accent-cyan);
             --timeline-line: var(--accent-cyan);
             --timeline-card-bg: rgba(0, 30, 40, 0.95);
@@ -28,7 +28,7 @@
             /* -------------------------------------------------------- */
 
             --noise-color: rgba(0, 128, 128, 0.05);
-            --blur-val: 8px;
+            --blur-val: 8px; /* Increased blur for readability */
 
             /* Form Styles */
             --form-bg: rgba(0, 20, 30, 0.98);
@@ -40,7 +40,7 @@
         }
 
         /* === 1. CANVAS STYLE - Dynamic Field Background/ETFM Layer === */
-        #etfm-visualization {
+        #etfm-visualization { /* ID changed from #field-canvas to #etfm-visualization */
             position: fixed;
             top: 0;
             left: 0;
@@ -83,6 +83,7 @@
             margin: auto;
             position: relative;
             z-index: 1;
+            scroll-behavior: smooth; /* Added for smooth internal links */
         }
 
         main, header, nav, footer {
@@ -177,7 +178,7 @@
             color: var(--accent-gold);
         }
 
-        /* Luxvar Cycle Box */
+        /* Luxvar Cycle Box (Added integration color) */
         .luxvar-cycle-box {
             background-color: rgba(0, 25, 30, 0.9);
             border: 2px solid var(--accent-gold);
@@ -223,7 +224,7 @@
             background-color: rgba(255, 204, 0, 0.3);
             color: var(--accent-gold);
         }
-        
+
         .luxvar-integration {
             background-color: rgba(0, 150, 0, 0.3);
             color: #00ff00;
@@ -281,10 +282,10 @@
             box-shadow: 0 0 10px var(--muted);
         }
 
-        /* --- TIMELINE ENHANCEMENT (Restored from Code 1) --- */
+        /* --- TIMELINE ENHANCEMENT (Re-added from old code) --- */
         .varzin-timeline-wrapper {
             position: relative;
-            padding-left: 50px; /* Space for the line */
+            padding-left: 50px;
             margin-top: 40px;
         }
 
@@ -339,7 +340,7 @@
 
         .timeline-title {
             font-weight: 700;
-            color: var(--accent-cyan); /* Using cyan for the title in the timeline */
+            color: var(--accent-cyan);
             margin-bottom: 10px;
         }
         
@@ -455,9 +456,9 @@
 
         <header>
             <nav>
-                <a href="#portal">Portal</a>
+                <a href="https://varzin.org/main-portal" target="_blank">Portal</a>
                 <a href="#resonance" class="active">Cyclical Resonance</a>
-                <a href="#dois">All DOIs</a>
+                <a href="https://varzin.org/doi-master-list" target="_blank">All DOIs</a>
                 <a href="#field-transmission">Transmit/Contact</a>
             </nav>
             <h1>⟠ VARZIN – Cyclical Resonance Report | گزارش طنین چرخه‌ای</h1>
@@ -629,7 +630,7 @@
                 <div class="timeline-item varzin-final-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-title">⟠ Field-based Evolution | تکامل میدان‌محور (VARZIN 2026)</div>
+                        <div class="timeline-title" style="color: var(--timeline-varzin-dot); text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);">⟠ Field-based Evolution | تکامل میدان‌محور (VARZIN 2026)</div>
                         <p class="timeline-key-figures"><strong>System:</strong> **The VARZIN Project**</p>
                         <p class="timeline-core-concept">**Synthesis:** **Measuring and Modeling Cosmic Harmony in a Living System**</p>
                     </div>
@@ -720,12 +721,12 @@
     <script>
         /** * JavaScript for Dynamic Field Background - Connected Particles (VARZIN/KALTŪR Theme) * Upgrades: Smoother motion, clearer glow effect on mouse interaction. */
         document.addEventListener('DOMContentLoaded', () => {
-            const canvas = document.getElementById('etfm-visualization');
+            const canvas = document.getElementById('etfm-visualization'); // Target ID changed
             if (!canvas) return;
             const ctx = canvas.getContext('2d');
             let particles = [];
-            let mouse = { x: null, y: null, radius: 120 }; // Increased mouse radius
-            const maxDistance = 150; // Increased line connection distance
+            let mouse = { x: null, y: null, radius: 120 };
+            const maxDistance = 150;
             const fieldGlow = 'rgba(0, 255, 255, 0.4)';
             const setCanvasSize = () => {
                 canvas.width = window.innerWidth;
@@ -750,23 +751,22 @@
                     this.dirX = dirX;
                     this.dirY = dirY;
                     this.size = size;
-                    this.color = color;
                     this.originalSize = size;
-                    this.speed = Math.random() * 0.15 + 0.08; // Smoother, slower motion
+                    this.color = color; // Added color
+                    this.speed = Math.random() * 0.15 + 0.08;
                 }
 
                 draw() {
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
                     ctx.fillStyle = this.color;
-                    ctx.shadowBlur = 5; // Subtle self-glow
+                    ctx.shadowBlur = 5;
                     ctx.shadowColor = this.color;
                     ctx.fill();
-                    ctx.shadowBlur = 0; // Reset shadow for next draw operations
+                    ctx.shadowBlur = 0;
                 }
 
                 update() {
-                    // Boundary check
                     if (this.x > canvas.width - this.size || this.x < this.size) this.dirX = -this.dirX;
                     if (this.y > canvas.height - this.size || this.y < this.size) this.dirY = -this.dirY;
 
@@ -774,15 +774,13 @@
                     let dy = mouse.y - this.y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
 
-                    // Mouse interaction (repulsion/size change)
                     if (distance < mouse.radius + this.originalSize) {
                         let force = (mouse.radius + this.originalSize - distance) / (mouse.radius + this.originalSize) * 0.2;
                         this.x -= dx * force;
                         this.y -= dy * force;
-                        // Pulse size on interaction
                         this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.8);
                     } else {
-                        this.size += (this.originalSize - this.size) * 0.1; // Smoothly return to original size
+                        this.size += (this.originalSize - this.size) * 0.1;
                     }
 
                     this.x += this.dirX * this.speed;
@@ -793,7 +791,6 @@
 
             function init() {
                 particles = [];
-                // Target fewer particles for a cleaner look, but larger interaction area
                 let numParticles = Math.floor((canvas.height * canvas.width) / 30000);
                 numParticles = Math.min(numParticles, 120);
                 for (let i = 0; i < numParticles; i++) {
@@ -829,7 +826,6 @@
 
             function animate() {
                 requestAnimationFrame(animate);
-                // Draw a very dark, semi-transparent layer for a subtle, smooth trail effect
                 ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 connect();
