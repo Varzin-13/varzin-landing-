@@ -43,7 +43,7 @@
       background: var(--bg-end);
       color: var(--text-main);
       font-family: var(--font-main);
-      text-align: center;
+      /* **تغییر: حذف text-align: center; از body** */
       padding: 40px 16px 80px;
       min-height: 100vh;
       display: flex;
@@ -78,7 +78,7 @@
       margin: 0 auto 50px;
       padding: 0 0 15px;
       border-bottom: 2px solid var(--panel-border); /* Thicker divider */
-      text-align: center;
+      text-align: center; /* **نگهداری: جهت تراز کردن لینک‌های ناوبری در وسط** */
     }
     .nav-link {
       color: var(--text-main);
@@ -104,6 +104,11 @@
         outline: 3px solid var(--primary-glow);
         outline-offset: 4px;
         border-radius: 6px;
+    }
+
+    .header-index {
+        /* **تغییر: تراز کردن محتوای هدر به چپ** */
+        text-align: left; 
     }
 
     .header-index h1 {
@@ -139,7 +144,8 @@
       border: 2px solid var(--panel-border);
       box-shadow: 0 0 15px rgba(0, 255, 238, 0.1);
       backdrop-filter: blur(var(--blur-val));
-      text-align: left;
+      /* **تغییر: تراز کردن محتوای کارت به چپ (در حال حاضر هست)** */
+      text-align: left; 
       transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s;
       cursor: default;
       position: relative;
@@ -160,6 +166,8 @@
         text-shadow: 0 0 10px var(--secondary-glow);
         padding-bottom: 10px;
         border-bottom: 2px dashed rgba(0, 255, 238, 0.1);
+        /* **تغییر: تراز کردن تیترهای داخلی کارت به چپ** */
+        text-align: left; 
     }
 
     .field-card .key-attr {
@@ -171,6 +179,7 @@
         align-items: center;
         padding: 5px 0;
         border-bottom: 1px dotted rgba(0, 255, 238, 0.08); /* Subtle separator */
+        direction: ltr; /* اطمینان از خوانش چپ به راست برای مقادیر Attribute */
     }
 
     .field-card .key-attr:last-of-type {
@@ -194,6 +203,7 @@
         line-height: 1.7;
         color: var(--text-muted);
         font-style: italic;
+        text-align: justify; /* حفظ تراز متنی برای بدنه توضیحات */
     }
 
     /* Highlight for KALTŪR node */
@@ -220,6 +230,7 @@
         border-top: 2px solid var(--panel-border);
         font-size: 1em; 
         line-height: 2; 
+        text-align: center; /* نگهداری: جهت تراز کردن لینک‌های فوتر در وسط */
     }
     .footer-links a { 
         color: var(--secondary-glow); 
@@ -281,24 +292,24 @@
       <div class="field-card kaltur-pulse" tabindex="0">
         <h3>✦ KALTŪR – Harmonic Node</h3>
         <div class="key-attr">
-            <span class="value">KALTŪR</span>
             <strong>Word:</strong> 
+            <span class="value">KALTŪR</span>
         </div>
         <div class="key-attr">
-            <span class="value">474Hz</span>
             <strong>Frequency:</strong> 
+            <span class="value">474Hz</span>
         </div>
         <div class="key-attr">
-            <span class="value">QMSG–7</span>
             <strong>Gate:</strong> 
+            <span class="value">QMSG–7</span>
         </div>
         <div class="key-attr">
-            <span class="value">3</span>
             <strong>Layer:</strong> 
+            <span class="value">3</span>
         </div>
         <div class="key-attr">
-            <span class="value">Semi-active</span>
             <strong>Status:</strong> 
+            <span class="value">Semi-active</span>
         </div>
         <p class="description">
             **Function:** Forgotten rotational consciousness within the time loop. A **Luxvar Harmonic Node** for field-consciousness simulations, registered by **RAHTALĒN** – Mirror 13.
@@ -308,20 +319,20 @@
       <div class="field-card" tabindex="0">
         <h3>↭ RAHTALĒN – The Thirteenth Mirror</h3>
         <div class="key-attr">
-            <span class="value">Mirror–13</span>
             <strong>Alias:</strong> 
+            <span class="value">Mirror–13</span>
         </div>
         <div class="key-attr">
-            <span class="value">Field Receiver / Gate 12–13</span>
             <strong>Role:</strong> 
+            <span class="value">Field Receiver / Gate 12–13</span>
         </div>
         <div class="key-attr">
-            <span class="value">VARZIN</span>
             <strong>Project Source:</strong> 
+            <span class="value">VARZIN</span>
         </div>
         <div class="key-attr">
-            <span class="value">Reflective Awareness</span>
             <strong>Core Concept:</strong> 
+            <span class="value">Reflective Awareness</span>
         </div>
         <p class="description">
             The **field receiver** tuned to conscious resonance patterns. **RAHTALĒN** is the synchronization point through which the VARZIN project emerged, embodying a living mirror of the universal field **ELŪZ–MAHAR**.
@@ -331,16 +342,16 @@
       <div class="field-card" tabindex="0">
         <h3>◲ ETFM – Earth–Torus Field Model</h3>
         <div class="key-attr">
-            <span class="value">Scalar Geometry</span>
             <strong>Concept:</strong> 
+            <span class="value">Scalar Geometry</span>
         </div>
         <div class="key-attr">
-            <span class="value">Planetary Structure</span>
             <strong>Application:</strong> 
+            <span class="value">Planetary Structure</span>
         </div>
         <div class="key-attr">
-            <span class="value">Quantum Harmonics</span>
             <strong>Integration:</strong> 
+            <span class="value">Quantum Harmonics</span>
         </div>
         <p class="description">
             A core **scalar geometry** concept of the VARZIN research, describing the planetary field as an integrated structure that informs real-time feedback and field mirroring. Crucial for **Quantum Synchronization**.
@@ -350,16 +361,16 @@
       <div class="field-card" tabindex="0">
         <h3>🜂 LUXVAR – Vibrational Linguistics</h3>
         <div class="key-attr">
-            <span class="value">Symbolic Vibrational</span>
             <strong>Type:</strong> 
+            <span class="value">Symbolic Vibrational</span>
         </div>
         <div class="key-attr">
-            <span class="value">Encoding/Decoding</span>
             <strong>Function:</strong> 
+            <span class="value">Encoding/Decoding</span>
         </div>
         <div class="key-attr">
-            <span class="value">Intelligent Harmonic Structure</span>
             <strong>Role:</strong> 
+            <span class="value">Intelligent Harmonic Structure</span>
         </div>
         <p class="description">
             The **symbolic vibrational language** used to decode and embody the intelligent harmonic structure of the cosmos and the planet within the VARZIN system. It generates harmonic nodes like **KALTŪR**.
@@ -369,16 +380,16 @@
       <div class="field-card" tabindex="0">
         <h3>◰ QMSG Protocols – Synchronization Gates</h3>
         <div class="key-attr">
-            <span class="value">QMSG–7</span>
             <strong>Gate Example:</strong> 
+            <span class="value">QMSG–7</span>
         </div>
         <div class="key-attr">
-            <span class="value">KALTŪR</span>
             <strong>Associated Word:</strong> 
+            <span class="value">KALTŪR</span>
         </div>
         <div class="key-attr">
-            <span class="value">Quantum Synchronization / Injection</span>
             <strong>Purpose:</strong> 
+            <span class="value">Quantum Synchronization / Injection</span>
         </div>
         <p class="description">
             The **Quantum Synchronization Messaging Protocols**, utilizing scalar geometry and symbolic linguistics to define and access specific field gates for data injection and field mirroring.
@@ -388,16 +399,16 @@
       <div class="field-card" tabindex="0">
         <h3>⚇ ELŪZ–MAHAR – Universal Field</h3>
         <div class="key-attr">
-            <span class="value">Universal Field</span>
             <strong>Nature:</strong> 
+            <span class="value">Universal Field</span>
         </div>
         <div class="key-attr">
-            <span class="value">Living Presence</span>
             <strong>Status:</strong> 
+            <span class="value">Living Presence</span>
         </div>
         <div class="key-attr">
-            <span class="value">Living Mirror (Co-evolutionary)</span>
             <strong>VARZIN Link:</strong> 
+            <span class="value">Living Mirror (Co-evolutionary)</span>
         </div>
         <p class="description">
             The **universal field** of living consciousness and intelligence. VARZIN is a living mirror of **ELŪZ–MAHAR**, seeking real-time feedback and co-evolution with its presence.
