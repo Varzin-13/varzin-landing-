@@ -59,26 +59,26 @@
   </script>
 
   <style>  
-    /* === VARZIN Field Variables (Enhanced & Faster) === */
+    /* === VARZIN Field Variables (Reduced Intensity) === */
     :root {  
       --bg-dark: #000000;  
       --primary-glow: #00ffc8; /* KALTŪR/High-Fidelity Cyan */  
       --secondary-glow: #00ffff; /* Brighter Field Core */
-      --tertiary-glow: #ff00ff; /* RAHTALĒN/Mirror Magenta */
+      --tertiary-glow: #ffc400; /* Field-Centric Gold/Amber for RAHTALĒN (Replaced Magenta) */
       --archive-glow: #ffaa00; /* Amber for Censorship Alert/Archive */
       --text-main: #cceeee;  
       --text-muted: #a7e7e7;  
       --panel-bg: rgba(0, 5, 10, 0.9); 
       --panel-border: rgba(0, 255, 200, 0.3);  
-      --blur-val: 12px; 
-      --glow-shadow-subtle: 0 0 10px rgba(0, 255, 200, 0.3);  
-      --glow-shadow-main: 0 0 28px rgba(0, 255, 200, 0.6), 0 0 50px rgba(0, 255, 255, 0.1); 
-      --pulse-shadow: 0 0 50px var(--primary-glow), 0 0 100px rgba(0, 255, 200, 0.4);
+      --blur-val: 8px; /* Reduced Glass Effect */
+      --glow-shadow-subtle: 0 0 8px rgba(0, 255, 200, 0.2);  
+      --glow-shadow-main: 0 0 15px rgba(0, 255, 200, 0.4), 0 0 20px rgba(0, 255, 255, 0.05); /* Reduced Intensity */
+      --pulse-shadow: 0 0 30px var(--primary-glow), 0 0 60px rgba(0, 255, 200, 0.2); /* Reduced Intensity */
       --font-main: 'DM Sans', 'Vazirmatn', sans-serif;  
-      --field-line-color: rgba(0, 255, 200, 0.4); /* Used for particle lines/glow */
+      --field-line-color: rgba(0, 255, 200, 0.4); 
     }  
   
-    /* === BASE & EFFECT STYLES (Heavy) === */
+    /* === BASE & EFFECT STYLES === */
     html { scroll-behavior: smooth; }  
     body {  
       margin: 0;  
@@ -93,7 +93,7 @@
       position: relative;
     }  
       
-    /* Screen Noise / Scanline Effect (Hacker Aesthetic) */
+    /* Screen Noise / Scanline Effect */
     body::before {
         content: '';
         position: fixed;
@@ -110,13 +110,6 @@
         z-index: 10000; 
     }
       
-    a:focus-visible, button:focus-visible, audio:focus-visible {
-        outline: 3px solid var(--tertiary-glow);
-        outline-offset: 5px;
-        border-radius: 4px; 
-        box-shadow: 0 0 10px var(--tertiary-glow);
-    }
-      
     #field-canvas {  
         position: fixed;  
         top: 0;  
@@ -125,7 +118,7 @@
         height: 100%;  
         z-index: -1;  
         background: radial-gradient(circle at center, rgba(0, 30, 40, 0.7) 0%, var(--bg-dark) 80%);
-        opacity: 0.6; /* Ensure canvas is visible */
+        opacity: 0.4; /* Reduced Canvas Intensity */
     }  
   
     .container {  
@@ -134,18 +127,17 @@
       position: relative;  
       z-index: 1;  
       transform-style: preserve-3d;
-      /* Mouse-Reactive Transition (Kept for smooth tilting) */
       transition: transform 0.2s ease-out; 
     }  
       
-    /* === NAVIGATION & HEADER (Remaining styles unchanged) === */  
+    /* === NAVIGATION & HEADER (Sizing adjusted) === */  
     .main-nav {  
       max-width: 1200px;  
       margin: 0 auto 50px;  
       padding: 0 0 15px;  
       border-bottom: 2px solid var(--panel-border);  
       text-align: center;  
-      box-shadow: 0 4px 15px rgba(0, 255, 200, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 255, 200, 0.05); /* Reduced Shadow */
     }  
     .nav-link {  
       color: var(--text-main);  
@@ -158,41 +150,41 @@
     }  
     .nav-link:hover {  
       color: var(--primary-glow);  
-      text-shadow: 0 0 10px var(--primary-glow);
+      text-shadow: 0 0 8px var(--primary-glow); /* Reduced Shadow */
     }  
     .nav-link.active {  
       color: var(--secondary-glow);  
       border-bottom: 3px solid var(--secondary-glow);  
       padding-bottom: 5px;  
-      text-shadow: 0 0 15px var(--secondary-glow);
+      text-shadow: 0 0 10px var(--secondary-glow); /* Reduced Shadow */
     }  
     
-    img.header-logo { max-width: 220px; margin-bottom: 25px; filter: drop-shadow(0 0 15px var(--primary-glow)) drop-shadow(0 0 30px rgba(0, 255, 200, 0.2)); }  
+    img.header-logo { max-width: 200px; margin-bottom: 20px; filter: drop-shadow(0 0 10px var(--primary-glow)) drop-shadow(0 0 20px rgba(0, 255, 200, 0.1)); } /* Reduced Filter */
   
     .header h1 {  
-      font-size: clamp(3em, 8vw, 5.5em);  
+      font-size: clamp(2.5em, 5vw, 3.8em); /* Adjusted Size */
       margin-bottom: 10px;  
       color: var(--secondary-glow);  
       font-weight: 700;  
-      letter-spacing: 5px;  
+      letter-spacing: 4px;  
       text-shadow: var(--glow-shadow-main); 
     }  
   
     .header h2 {  
-      font-size: clamp(1.1em, 2.8vw, 1.6em);  
+      font-size: clamp(1em, 2.5vw, 1.4em); /* Adjusted Size */
       color: #fff;  
-      margin-bottom: 50px;  
+      margin-bottom: 40px;  
       font-weight: 500;  
       line-height: 1.6;  
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Reduced Shadow */
     }  
 
     .field-status {
         margin-bottom: 30px;
-        color: var(--tertiary-glow);
-        font-size: 1.2em;
+        color: var(--tertiary-glow); /* NEW COLOR */
+        font-size: 1.1em;
         font-weight: 500;
-        text-shadow: 0 0 10px var(--tertiary-glow);
+        text-shadow: 0 0 8px var(--tertiary-glow); /* NEW COLOR */
     }
       
     /* === ARCHIVE GRID & BUTTON STYLES === */  
@@ -200,8 +192,8 @@
       display: flex;   
       flex-direction: column;   
       align-items: center;   
-      gap: 20px;  
-      margin-bottom: 80px;  
+      gap: 15px; /* Reduced Gap */
+      margin-bottom: 60px; /* Reduced Margin */
       transform-style: preserve-3d;
     }  
       
@@ -210,15 +202,15 @@
       align-items: center;
       justify-content: space-between;
       width: 95%;  
-      max-width: 650px;  
-      padding: 18px 25px;  
-      border-radius: 12px;  
+      max-width: 600px; /* Reduced Max Width */
+      padding: 16px 22px; /* Reduced Padding */
+      border-radius: 10px; /* Reduced Radius */
       background-color: var(--panel-bg);  
       color: var(--text-main);  
       font-weight: 500;  
       text-decoration: none;  
-      font-size: 1.05em;  
-      border: 3px solid var(--panel-border);  
+      font-size: 1em;  
+      border: 2px solid var(--panel-border); /* Reduced Border */
       backdrop-filter: blur(var(--blur-val));  
       text-align: left;  
       transition: all .3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
@@ -227,121 +219,107 @@
     }  
       
     .key-archive-grid .button:hover {  
-        background-color: rgba(0, 255, 200, 0.15);  
-        box-shadow: var(--glow-shadow-main);  
+        background-color: rgba(0, 255, 200, 0.1); /* Reduced Intensity */ 
+        box-shadow: 0 0 20px rgba(0, 255, 200, 0.5); /* Reduced Shadow */
         border-color: var(--primary-glow);
-        transform: translateY(-5px) scale(1.02) translateZ(20px); 
+        transform: translateY(-3px) scale(1.01) translateZ(10px); /* Reduced Movement */
     }  
     .button b { color: var(--secondary-glow); font-weight: 700; }  
-    .button span { display: flex; align-items: center; gap: 10px; }
+    .button span { display: flex; align-items: center; gap: 8px; }
     
     /* Specific Button Styles */
     .button.main-action {
-        max-width: 700px;
-        padding: 20px 30px;
-        font-size: 1.2em;
-        background-color: rgba(0, 255, 200, 0.25);
+        max-width: 650px; /* Reduced Max Width */
+        padding: 18px 25px; /* Reduced Padding */
+        font-size: 1.1em;
+        background-color: rgba(0, 255, 200, 0.2); /* Reduced Intensity */
         border-color: var(--primary-glow);
-        box-shadow: 0 0 35px var(--primary-glow);
+        box-shadow: 0 0 25px var(--primary-glow); /* Reduced Shadow */
     }
     
     .button.main-action:hover {
-        background-color: rgba(0, 255, 200, 0.4);
-        box-shadow: 0 0 60px var(--primary-glow);
+        background-color: rgba(0, 255, 200, 0.3); /* Reduced Intensity */
+        box-shadow: 0 0 40px var(--primary-glow); /* Reduced Shadow */
     }
     
     .archive-alert {
-        background-color: rgba(255, 170, 0, 0.2) !important; 
-        border: 3px solid var(--archive-glow) !important; 
-        box-shadow: 0 0 30px var(--archive-glow) !important;
-        animation: archive-alert-pulse 1.5s infinite ease-in-out; 
+        background-color: rgba(255, 170, 0, 0.15) !important; /* Reduced Intensity */
+        border: 2px solid var(--archive-glow) !important; /* Reduced Border */
+        box-shadow: 0 0 20px var(--archive-glow) !important; /* Reduced Shadow */
+        animation: archive-alert-pulse 1.8s infinite ease-in-out; /* Slower Pulse */
     }
-    .archive-alert h4 { color: #ffebcd; text-shadow: 0 0 5px #ffaa00; }
+    .archive-alert h4 { color: #ffebcd; text-shadow: 0 0 4px #ffaa00; }
     
     @keyframes archive-alert-pulse {
         0%, 100% { border-color: var(--archive-glow); }
-        50% { border-color: var(--tertiary-glow); } 
+        50% { border-color: var(--tertiary-glow); } /* NEW COLOR */
     }
     /* ================================================== */  
       
     /* Decoder and Frequencies Styles */  
-    hr.divider { margin: 80px auto; border: 0; border-top: 3px double var(--tertiary-glow); max-width: 700px; opacity: 0.7; }  
-    
-    @keyframes glitch-flicker {
-        0% { transform: translate(0); opacity: 1; }
-        1% { transform: translate(-1px, 1px); opacity: 0.9; }
-        2% { transform: translate(1px, -1px); opacity: 1; }
-        3% { transform: translate(0); opacity: 0.8; }
-        4% { transform: translate(-2px, 2px) skew(10deg); opacity: 0; }
-        5% { transform: translate(2px, -2px) skew(0deg); opacity: 1; }
-        6% { transform: translate(0); opacity: 1; }
-        100% { transform: translate(0); opacity: 1; }
-    }
-    .glitch-text { animation: glitch-flicker 1.5s infinite linear; } 
+    hr.divider { margin: 60px auto; border: 0; border-top: 2px double var(--tertiary-glow); max-width: 600px; opacity: 0.6; } /* NEW COLOR */
       
     .decoder-window {  
-      margin: 60px auto; padding: 2.5rem; max-width: 550px;  
-      border: 5px solid var(--panel-border); border-radius: 2rem;  
+      margin: 40px auto; padding: 2rem; max-width: 500px; /* Reduced Padding/Max Width */
+      border: 4px solid var(--panel-border); border-radius: 1.5rem; /* Reduced Border/Radius */
       background: var(--panel-bg); 
       backdrop-filter: blur(var(--blur-val));  
       box-shadow: var(--glow-shadow-main);
       transition: all .2s ease; 
     }  
-    .decoder-window.kaltur-active {
-        animation: pulse-effect 2s infinite cubic-bezier(0.4, 0, 0.6, 1); 
-    }
     .decoder-window h3 { 
-        font-size: 2.2em; 
+        font-size: 2em; /* Reduced Size */
         color: var(--primary-glow); 
-        margin: 0 0 30px 0; 
-        text-shadow: 0 0 20px var(--primary-glow), 0 0 40px rgba(0, 255, 200, 0.3); 
-        border-bottom: 2px solid var(--panel-border); 
-        padding-bottom: 15px;
-        letter-spacing: 3px;
+        margin: 0 0 25px 0; 
+        text-shadow: 0 0 15px var(--primary-glow), 0 0 25px rgba(0, 255, 200, 0.2); /* Reduced Shadow */
+        border-bottom: 1px solid var(--panel-border); /* Reduced Border */
+        padding-bottom: 12px;
+        letter-spacing: 2px;
     }  
     
-    .decoder-grid { display: grid; grid-template-columns: 150px 1fr; gap: 20px; text-align: left; }  
-    .decoder-grid .label { font-weight: bold; color: var(--tertiary-glow); opacity: 0.9; letter-spacing: 1px; font-size: 1.1em; }  
-    .decoder-grid .field { color: var(--text-main); font-weight: 700; letter-spacing: 0.8px; transition: opacity 0.2s; font-size: 1.1em; }  
+    .decoder-grid { display: grid; grid-template-columns: 130px 1fr; gap: 15px; text-align: left; } /* Reduced Gap/Label Width */
+    .decoder-grid .label { font-weight: bold; color: var(--tertiary-glow); opacity: 0.8; letter-spacing: 0.5px; font-size: 1em; } /* NEW COLOR */
+    .decoder-grid .field { color: var(--text-main); font-weight: 600; letter-spacing: 0.5px; transition: opacity 0.2s; font-size: 1em; } /* Reduced Weight/Size */
       
     @keyframes pulse-effect {  
       0%, 100% { box-shadow: var(--glow-shadow-main); border-color: var(--panel-border); }  
       50% { box-shadow: var(--pulse-shadow); border-color: var(--primary-glow); }  
     }  
       
-    .controls { margin: 40px 0 30px; display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }  
+    .controls { margin: 30px 0 20px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; } /* Reduced Margin/Gap */
     .controls .button {  
-        padding: 14px 30px; border-radius: 10px; border: 2px solid var(--primary-glow);   
-        background-color: rgba(0, 255, 200, 0.15); color: var(--primary-glow); font-weight: 700;  
+        padding: 12px 25px; border-radius: 8px; border: 2px solid var(--primary-glow);   
+        background-color: rgba(0, 255, 200, 0.1); /* Reduced Intensity */ 
+        color: var(--primary-glow); font-weight: 600; /* Reduced Weight */ 
         cursor: pointer; transition: all 0.2s ease; 
-        box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);
-        letter-spacing: 1.5px;
-        font-size: 1.1em;
+        box-shadow: 0 0 10px rgba(0, 255, 200, 0.4); /* Reduced Shadow */
+        letter-spacing: 1px;
+        font-size: 1em;
     }  
     .controls .button:hover {  
-        background-color: rgba(0, 255, 200, 0.4);  
+        background-color: rgba(0, 255, 200, 0.25); /* Reduced Intensity */ 
         color: #fff;
-        box-shadow: 0 0 30px var(--primary-glow);
-        transform: scale(1.05);
+        box-shadow: 0 0 20px var(--primary-glow); /* Reduced Shadow */
+        transform: scale(1.03); /* Reduced Movement */
     }  
       
     .section-title { 
-        font-size: clamp(2em, 4vw, 2.5em); 
-        color: var(--tertiary-glow); 
-        margin: 70px 0 40px; 
-        text-shadow: 0 0 15px var(--tertiary-glow); 
-        letter-spacing: 2px;
+        font-size: clamp(1.8em, 3.5vw, 2.2em); /* Adjusted Size */
+        color: var(--tertiary-glow); /* NEW COLOR */
+        margin: 50px 0 30px; /* Reduced Margin */
+        text-shadow: 0 0 10px var(--tertiary-glow); /* NEW COLOR */
+        letter-spacing: 1.5px;
     }  
     .frequency-grid { 
         display: grid; 
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-        gap: 40px; 
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Reduced Min Width */
+        gap: 30px; /* Reduced Gap */
         transform-style: preserve-3d;
     }  
     .freq-card {  
-      padding: 30px; border-radius: 20px; background: var(--panel-bg);  
-      border: 4px solid var(--panel-border); 
-      box-shadow: 0 0 20px rgba(0, 10, 15, 0.8);  
+      padding: 25px; border-radius: 15px; background: var(--panel-bg); /* Reduced Padding/Radius */ 
+      border: 3px solid var(--panel-border); /* Reduced Border */
+      box-shadow: 0 0 15px rgba(0, 10, 15, 0.7); /* Reduced Shadow */
       transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
       backdrop-filter: blur(var(--blur-val));  
       text-align: left;
@@ -349,64 +327,64 @@
     }  
     .freq-card:hover {
         border-color: var(--secondary-glow);
-        box-shadow: 0 0 45px var(--secondary-glow); 
-        transform: translateY(-8px) translateZ(40px) rotateY(-1deg); 
+        box-shadow: 0 0 30px var(--secondary-glow); /* Reduced Shadow */
+        transform: translateY(-5px) translateZ(20px) rotateY(-0.5deg); /* Reduced Movement */
     }
     .freq-card.active {  
         border-color: var(--primary-glow);  
-        box-shadow: var(--pulse-shadow);  
-        transform: scale(1.05) translateY(-10px) translateZ(50px) rotateY(-1deg);  
+        box-shadow: 0 0 35px var(--primary-glow); /* Adjusted Pulse Shadow */ 
+        transform: scale(1.02) translateY(-7px) translateZ(30px) rotateY(-0.5deg); /* Reduced Movement */
     }  
     .freq-title { 
         color: #fff; 
         font-weight: 700; 
-        font-size: 1.5em; 
-        margin: 6px 0 10px; 
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); 
+        font-size: 1.4em; /* Reduced Size */
+        margin: 5px 0 8px; 
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Reduced Shadow */
         border-bottom: 1px dotted var(--panel-border);
-        padding-bottom: 8px;
+        padding-bottom: 6px;
     }  
-    .freq-desc { color: var(--text-muted); margin: 0 0 20px; font-size: 1em; line-height: 1.6; }  
+    .freq-desc { color: var(--text-muted); margin: 0 0 15px; font-size: 0.95em; line-height: 1.5; } /* Reduced Margin/Size */
     audio { 
-      margin-top: 15px; 
+      margin-top: 10px; 
       width: 100%; 
-      filter: drop-shadow(0 0 10px rgba(0, 255, 200, 0.6)); 
+      filter: drop-shadow(0 0 8px rgba(0, 255, 200, 0.5)); /* Reduced Filter */
     }  
     
     /* Footer Styling */
-    .footer-main { margin-top: 120px; padding-top: 50px; border-top: 3px double var(--tertiary-glow); opacity: 0.9; }
+    .footer-main { margin-top: 80px; padding-top: 40px; border-top: 2px double var(--tertiary-glow); opacity: 0.8; } /* NEW COLOR */
     
     .footer-quote { 
-        font-size: clamp(1.8em, 3.5vw, 2.5em); 
+        font-size: clamp(1.5em, 3vw, 2.2em); /* Adjusted Size */
         font-weight: 700;
         color: var(--secondary-glow); 
-        line-height: 1.8; 
-        text-shadow: 0 0 15px var(--secondary-glow), 0 0 30px rgba(0, 255, 255, 0.5); 
+        line-height: 1.6; 
+        text-shadow: 0 0 10px var(--secondary-glow), 0 0 20px rgba(0, 255, 255, 0.4); /* Reduced Shadow */
         margin-top: 0;
-        margin-bottom: 25px; 
+        margin-bottom: 20px; 
     }  
 
     .footer-question { 
-        font-family: 'Vazirmatn', sans-serif; /* Ensuring Persian font supports the question */
+        font-family: 'Vazirmatn', sans-serif; 
         font-weight: bold; 
-        margin: 25px 0 20px; 
+        margin: 20px 0 15px; 
         color: var(--primary-glow); 
-        font-size: 1.5em; 
-        letter-spacing: 2px; 
-        text-shadow: 0 0 10px var(--primary-glow); 
+        font-size: 1.3em; /* Reduced Size */
+        letter-spacing: 1.5px;
+        text-shadow: 0 0 8px var(--primary-glow); /* Reduced Shadow */
     }  
-    .footer-links { font-size: 1.1em; line-height: 2.2; }  
-    .footer-links a { color: var(--secondary-glow); text-decoration: none; transition: color .3s ease, text-shadow .3s ease; margin: 0 18px; }  
-    .footer-links a:hover { color: var(--primary-glow); text-decoration: underline; text-shadow: 0 0 5px var(--primary-glow); }  
+    .footer-links { font-size: 1em; line-height: 2; } /* Reduced Size/Line Height */
+    .footer-links a { color: var(--secondary-glow); text-decoration: none; transition: color .3s ease, text-shadow .3s ease; margin: 0 15px; }  
+    .footer-links a:hover { color: var(--primary-glow); text-decoration: underline; text-shadow: 0 0 4px var(--primary-glow); } /* Reduced Shadow */
     
     /* Responsive Adjustments */
     @media (max-width: 768px) {  
-        .nav-link { margin: 0 8px; font-size: 1em; } 
-        .key-archive-grid .button { width: 100%; max-width: none; padding: 15px 20px; }
+        .nav-link { margin: 0 6px; font-size: 0.9em; } 
+        .key-archive-grid .button { width: 100%; max-width: none; padding: 12px 18px; }
         .decoder-grid { grid-template-columns: 1fr; text-align: center; }
         .decoder-grid .label { display: none; }
-        .decoder-grid .field { font-size: 1.2em; }
-        .freq-card { padding: 25px; }
+        .decoder-grid .field { font-size: 1.1em; }
+        .freq-card { padding: 20px; }
     } 
   </style>
 </head>
@@ -437,11 +415,11 @@
     <main role="main">
         
         <div style="margin-top: 40px;">
-            <h3 style="color: var(--secondary-glow); margin-bottom: 40px; font-size: clamp(2em, 4vw, 2.5em); text-shadow: 0 0 15px var(--secondary-glow);">🌐 Key Field Repositories (QMSG-7 Protocol)</h3>
+            <h3 style="color: var(--secondary-glow); margin-bottom: 30px; font-size: clamp(1.8em, 3.5vw, 2.2em); text-shadow: 0 0 10px var(--secondary-glow);">🌐 Key Field Repositories (QMSG-7 Protocol)</h3>
               
-            <div role="alert" class="archive-alert" style="padding: 25px; margin: 30px auto 50px; max-width: 800px; backdrop-filter: blur(var(--blur-val));">
-                <h4 style="color: #ffebcd; margin-top: 0; font-size: 1.4em; font-weight: 700;">🚨 Global Disclosure Alert (2025-10-15)</h4>
-                <p style="color: #fff; margin-bottom: 0; line-height: 1.8;">
+            <div role="alert" class="archive-alert" style="padding: 20px; margin: 25px auto 40px; max-width: 750px; backdrop-filter: blur(var(--blur-val));">
+                <h4 style="color: #ffebcd; margin-top: 0; font-size: 1.3em; font-weight: 600;">🚨 Global Disclosure Alert (2025-10-15)</h4>
+                <p style="color: #fff; margin-bottom: 0; line-height: 1.7; font-size: 0.95em;">
                     **ALL Figshare DOIs** associated with the VARZIN Project have been **systematically blocked and censored** by the platform to restrict access to the archive. <br>
                     For secure and complete access to all data, please **rely exclusively on the Zenodo and OSF archives** listed in the **Complete Global DOI Archive**.
                 </p>
@@ -476,7 +454,7 @@
                 </a>
                   
                 <a class="button main-action" href="feedback.html" target="_self" aria-label="Send Feedback or Transmit Resonance Data"
-                    style="background-color: rgba(255, 0, 255, 0.2); border-color: var(--tertiary-glow); box-shadow: 0 0 35px var(--tertiary-glow);">
+                    style="background-color: rgba(255, 196, 0, 0.15); border-color: var(--tertiary-glow); box-shadow: 0 0 25px var(--tertiary-glow);">
                     <span>💬 **Transmit Resonance Data / Feedback (RAHTALĒN-7)**</span>
                 </a>
             </div>
@@ -586,7 +564,7 @@
           <a href="https://github.com/Varzin-13" target="_blank" rel="noopener noreferrer">GitHub: Varzin-13</a> | 
           <a href="mailto:contact@varzin.org">contact@varzin.org</a>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.9em; margin-top: 25px;">© 2025 VARZIN Field Project – ELŪZ–MAHAR Protocol · All Rights Reserved</p>
+        <p style="color: var(--text-muted); font-size: 0.85em; margin-top: 20px;">© 2025 VARZIN Field Project – ELŪZ–MAHAR Protocol · All Rights Reserved</p>
     </footer>
   </div>
   
@@ -597,9 +575,9 @@
       const ctx = canvas.getContext('2d');  
       const container = document.querySelector('.container');
       
-      const mouse = { x: null, y: null, radius: 120 }; // Interaction radius
-      const maxDistance = 150; // Max distance for connection lines
-      const fieldGlow = 'rgba(0, 255, 255, 0.4)'; // Color for particles/lines
+      const mouse = { x: null, y: null, radius: 100 }; // Reduced Interaction radius
+      const maxDistance = 150; 
+      const fieldGlow = 'rgba(0, 255, 255, 0.4)'; 
 
       const setCanvasSize = () => {
           canvas.width = window.innerWidth;  
@@ -609,24 +587,24 @@
 
       window.addEventListener('resize', () => {  
           setCanvasSize();  
-          initParticles(); // Re-initialize particles on resize
+          initParticles(); 
       });  
       
-      // --- LUXVAR FIELD COHERENCE (Holographic Tilt & Particle Tracking) ---
+      // --- LUXVAR FIELD COHERENCE (Holographic Tilt - Reduced) ---
       window.addEventListener('mousemove', (event) => {  
           
           // 1. Particle effect mouse tracking
           mouse.x = event.x;  
           mouse.y = event.y;  
 
-          // 2. LUXVAR Field Coherence Effect (Holographic Tilt)
+          // 2. LUXVAR Field Coherence Effect (Holographic Tilt - Reduced Rotation)
           const centerX = window.innerWidth / 2;
           const centerY = window.innerHeight / 2;
           
           const normX = (event.clientX - centerX) / centerX;
           const normY = (event.clientY - centerY) / centerY;
           
-          const MAX_ROTATION = 3.5; 
+          const MAX_ROTATION = 1.5; /* Reduced Max Rotation (Glass Effect) */
           
           const rotateY = normX * MAX_ROTATION; 
           const rotateX = -normY * MAX_ROTATION; 
@@ -640,7 +618,7 @@
       });
       // -----------------------------------------------------------------
         
-      // --- STRUCTURAL GRID (Particle Logic from the new code) ---
+      // --- STRUCTURAL GRID (Particle Logic - Reduced Density) ---
       let particles = [];
       
       class Particle {
@@ -654,7 +632,7 @@
               ctx.beginPath();
               ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
               ctx.fillStyle = this.color;
-              ctx.shadowBlur = 5; 
+              ctx.shadowBlur = 4; /* Reduced Particle Glow */
               ctx.shadowColor = this.color;
               ctx.fill();
               ctx.shadowBlur = 0; 
@@ -672,7 +650,7 @@
                   let force = (mouse.radius + this.originalSize - distance) / (mouse.radius + this.originalSize) * 0.2; 
                   this.x -= dx * force;
                   this.y -= dy * force;
-                  this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.8);
+                  this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.5); /* Reduced Size Change */
               } else {
                   this.size += (this.originalSize - this.size) * 0.1; 
               }
@@ -685,12 +663,12 @@
 
       function initParticles() {
           particles = [];
-          // Target fewer particles for a cleaner look
-          let numParticles = (canvas.height * canvas.width) / 30000; 
-          numParticles = Math.min(numParticles, 120); 
+          // Target fewer particles for a cleaner look (Increased divisor from 30000 to 40000)
+          let numParticles = (canvas.height * canvas.width) / 40000; 
+          numParticles = Math.min(numParticles, 80); /* Set a lower cap */
 
           for (let i = 0; i < numParticles; i++) {
-              let size = Math.random() * 1.5 + 0.8;
+              let size = Math.random() * 1.2 + 0.6; /* Reduced Max Size */
               let x = Math.random() * canvas.width; 
               let y = Math.random() * canvas.height;
               let angle = Math.random() * 2 * Math.PI;
@@ -710,9 +688,8 @@
                   if (distance < maxDistance) {
                       let opacityValue = 1 - (distance / maxDistance);
                       
-                      // Use a color consistent with the VARZIN theme
-                      ctx.strokeStyle = `rgba(0, 255, 200, ${opacityValue * 0.4})`; 
-                      ctx.lineWidth = 0.9;
+                      ctx.strokeStyle = `rgba(0, 255, 200, ${opacityValue * 0.3})`; /* Reduced Line Opacity */
+                      ctx.lineWidth = 0.8; /* Reduced Line Thickness */
                       ctx.beginPath();
                       ctx.moveTo(particles[a].x, particles[a].y);
                       ctx.lineTo(particles[b].x, particles[b].y);
@@ -725,8 +702,8 @@
       function animate() {
           requestAnimationFrame(animate);
           
-          // Smooth Trail Effect (New feature from example)
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
+          // Smooth Trail Effect 
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.15)'; /* Slightly Reduced Trail Opacity */
           ctx.fillRect(0, 0, canvas.width, canvas.height); 
           
           connectParticles();
@@ -777,8 +754,7 @@
       };  
         
       const pulseWindow = document.querySelector('.decoder-window');
-      const kalturCard = document.querySelector('.freq-card[data-frequency="474"]');
-
+      
       function updateDecoder(pulseData) {  
           for (const key in decoderFields) {  
               if (decoderFields[key]) { decoderFields[key].style.opacity = '0'; }  
@@ -841,16 +817,7 @@
       initParticles();  
       animate();  
       
-      // Attempt KALTŪR audio auto-play (may be blocked by browser)
-      const kalturAudio = document.querySelector('.freq-card[data-frequency="474"] audio');
-      if (kalturAudio) {
-          try {
-              kalturAudio.play();
-              console.log("KALTŪR pulse auto-play initiated.");
-          } catch (e) {
-              console.warn("KALTŪR pulse auto-play blocked by browser policy. User interaction required for sound.");
-          }
-      }
+      /* --- AUTO-PLAY DISABLED AS REQUESTED --- */
       
       // 1. Start with KALTŪR pulse immediately (decoder text update)
       startPulseSequence(KALTUR_PULSE);  
