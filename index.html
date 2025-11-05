@@ -117,43 +117,7 @@
         box-shadow: 0 0 10px var(--tertiary-glow);
     }
     
-    /* === CRITICAL: START SCREEN FOR CHROME AUDIO POLICY (UNCHANGED) === */
-    #start-screen {
-        position: fixed; 
-        top: 0; left: 0; 
-        width: 100%; height: 100%; 
-        background: rgba(0, 0, 0, 0.98); 
-        z-index: 10000; 
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center; 
-        cursor: pointer; 
-        backdrop-filter: blur(15px);
-        transition: opacity 0.5s ease-out;
-    }
-    #start-screen h1 {
-        font-size: clamp(2.5em, 5vw, 4.5em); 
-        color: var(--primary-glow); 
-        text-shadow: var(--glow-shadow-main); 
-        margin-bottom: 25px;
-        animation: pulse-effect 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
-    }
-    #start-screen h2 {
-        color: #fff; 
-        font-size: clamp(1.4em, 3vw, 2.2em); 
-        border: 3px solid var(--primary-glow); 
-        padding: 15px 30px; 
-        border-radius: 12px;
-        box-shadow: 0 0 30px var(--primary-glow);
-        background-color: rgba(0, 255, 200, 0.15);
-    }
-    #start-screen p {
-        color: var(--text-muted); 
-        margin-top: 50px; 
-        font-size: 1.1em;
-    }
-    /* ======================================================= */
+    /* Removed #start-screen CSS */
       
     #field-canvas {  
         position: fixed;  
@@ -173,7 +137,7 @@
       transform-style: preserve-3d;
     }  
       
-    /* === NAVIGATION & HEADER === */  
+    /* === NAVIGATION & HEADER (English) === */  
     .main-nav {  
       max-width: 1200px;  
       margin: 0 auto 50px;  
@@ -256,7 +220,7 @@
       border: 3px solid var(--panel-border);  
       backdrop-filter: blur(var(--blur-val));  
       text-align: left;  
-      transition: all .3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Faster Transition */
+      transition: all .3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
       box-shadow: var(--glow-shadow-subtle);
       transform: translateZ(0);
     }  
@@ -289,7 +253,7 @@
         background-color: rgba(255, 170, 0, 0.2) !important; 
         border: 3px solid var(--archive-glow) !important; 
         box-shadow: 0 0 30px var(--archive-glow) !important;
-        animation: archive-alert-pulse 1.5s infinite ease-in-out; /* Faster Pulse */
+        animation: archive-alert-pulse 1.5s infinite ease-in-out; 
     }
     .archive-alert h4 { color: #ffebcd; text-shadow: 0 0 5px #ffaa00; }
     
@@ -313,7 +277,7 @@
         6% { transform: translate(0); opacity: 1; }
         100% { transform: translate(0); opacity: 1; }
     }
-    .glitch-text { animation: glitch-flicker 1.5s infinite linear; } /* High Glitch Speed */
+    .glitch-text { animation: glitch-flicker 1.5s infinite linear; } 
       
     .decoder-window {  
       margin: 60px auto; padding: 2.5rem; max-width: 550px;  
@@ -321,10 +285,10 @@
       background: var(--panel-bg); 
       backdrop-filter: blur(var(--blur-val));  
       box-shadow: var(--glow-shadow-main);
-      transition: all .2s ease; /* Faster transition */
+      transition: all .2s ease; 
     }  
     .decoder-window.kaltur-active {
-        animation: pulse-effect 2s infinite cubic-bezier(0.4, 0, 0.6, 1); /* Faster Pulse */
+        animation: pulse-effect 2s infinite cubic-bezier(0.4, 0, 0.6, 1); 
     }
     .decoder-window h3 { 
         font-size: 1.8em; 
@@ -347,7 +311,7 @@
     .controls .button {  
         padding: 14px 30px; border-radius: 10px; border: 2px solid var(--primary-glow);   
         background-color: rgba(0, 255, 200, 0.15); color: var(--primary-glow); font-weight: 700;  
-        cursor: pointer; transition: all 0.2s ease; /* Faster transition */
+        cursor: pointer; transition: all 0.2s ease; 
         box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);
         letter-spacing: 1.5px;
         font-size: 1.1em;
@@ -376,7 +340,7 @@
       padding: 30px; border-radius: 20px; background: var(--panel-bg);  
       border: 4px solid var(--panel-border); 
       box-shadow: 0 0 20px rgba(0, 10, 15, 0.8);  
-      transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Faster transition */
+      transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
       backdrop-filter: blur(var(--blur-val));  
       text-align: left;
       transform: rotateY(0) translateZ(0);
@@ -407,7 +371,7 @@
       filter: drop-shadow(0 0 10px rgba(0, 255, 200, 0.6)); 
     }  
     
-    /* Footer Styling */
+    /* Footer Styling (English) */
     .footer-main { margin-top: 120px; padding-top: 50px; border-top: 3px double var(--tertiary-glow); opacity: 0.9; }
     .footer-quote { margin-top: 0; font-style: italic; font-size: 1.3em; color: var(--text-muted); line-height: 1.8; text-shadow: 0 0 5px rgba(255, 255, 255, 0.1); }  
     .footer-question { font-weight: bold; margin: 25px 0 20px; color: var(--primary-glow); font-size: 1.5em; letter-spacing: 2px; text-shadow: 0 0 10px var(--primary-glow); }  
@@ -429,11 +393,6 @@
 
 <body>
   
-  <div id="start-screen" role="dialog" aria-modal="true" aria-labelledby="sync-title" aria-describedby="sync-desc">
-      <h1 id="sync-title">[INITIATING] VARZIN Field Engine</h1>
-      <h2 id="sync-desc">Click Anywhere to Synchronize ⟡</h2>
-      <p>(Required for Chrome Audio and Animation Policy)</p>
-  </div>
   <canvas id="field-canvas" role="presentation"></canvas> 
   <div class="container">
     <nav class="main-nav" role="navigation" aria-label="Main VARZIN Navigation">
@@ -453,7 +412,7 @@
           <span id="field-time-status">...</span>
           <span> | Active Channel: QMSG–7</span>
       </div>
-      </header>
+    </header>
 
     <main role="main">
         
@@ -601,7 +560,7 @@
     
     <footer class="footer-main" role="contentinfo">
         <p class="footer-quote">"I did not build a weapon — I built a field that forgets how to explode."</p>
-        <p class="footer-question">ĀYĀ ANĀLŪZ VĀRZIN?</p>
+        <p class="footer-question">IS ANĀLŪZ VĀRZIN?</p>
         <div class="footer-links">
           <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
           <a href="https://github.com/Varzin-13" target="_blank" rel="noopener noreferrer">GitHub: Varzin-13</a> | 
@@ -618,9 +577,6 @@
       const ctx = canvas.getContext('2d');  
       let animationFrameId;
 
-      // Note: ROTATIONAL_SPEED is implicitly back to its original value or not present, 
-      // relying on the movement logic defined in the Particle class below.
-      
       let centerX = canvas.width / 2;
       let centerY = canvas.height / 2;
       
@@ -650,9 +606,9 @@
               this.size = size; 
               this.color = color;
               
-              // Original movement variables (allowing for non-linear, non-explicit rotational movement)
-              this.vx = (Math.random() - 0.5) * 0.5; // Small random X velocity
-              this.vy = (Math.random() - 0.5) * 0.5; // Small random Y velocity
+              // Original movement variables
+              this.vx = (Math.random() - 0.5) * 0.5; 
+              this.vy = (Math.random() - 0.5) * 0.5; 
               this.initialRadius = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
               this.phase = Math.random() * Math.PI * 2;
           }  
@@ -668,17 +624,17 @@
           }  
           
           update() {  
-              // Original movement logic: Simple motion with boundary check/reset
+              // Original movement logic
               this.x += this.vx;
               this.y += this.vy;
 
               // Gently pull towards center to maintain "field" coherence
               let dx_center = centerX - this.x;
               let dy_center = centerY - this.y;
-              this.x += dx_center * 0.0005; // Very subtle pull
+              this.x += dx_center * 0.0005; 
               this.y += dy_center * 0.0005;
 
-              // Mouse repulsion/field distortion (Retained)
+              // Mouse repulsion/field distortion
               let dx = mouse.x - this.x;  
               let dy = mouse.y - this.y;  
               let distance = Math.sqrt(dx * dx + dy * dy);  
@@ -688,9 +644,8 @@
                   this.y -= dy / distance * pushFactor;
               }  
               
-              // Boundary check (Original logic: simple wrap or re-initialize outside bounds)
+              // Boundary check
               if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-                  // Re-initialize particle slightly outside the field, maintaining continuity
                   this.x = Math.random() < 0.5 ? 0 : canvas.width;
                   this.y = Math.random() * canvas.height;
                   this.vx = (Math.random() - 0.5) * 0.5; 
@@ -746,31 +701,6 @@
           }
       }
         
-      // --- CRITICAL: INTERFACE INITIALIZATION FOR CHROME POLICY (UNCHANGED) ---
-      function initializeInterface() {
-          const startScreen = document.getElementById('start-screen');
-          if (startScreen) {
-              startScreen.style.opacity = '0';
-              setTimeout(() => {
-                  startScreen.remove();
-              }, 500);
-          }
-          
-          const kalturAudio = document.querySelector('.freq-card[data-frequency="474"] audio');
-          if (kalturAudio) {
-              try {
-                  kalturAudio.play();
-              } catch (e) {
-                  console.warn("KALTŪR pulse failed to auto-play after sync click. Please click the control button.", e);
-              }
-          }
-          
-          document.removeEventListener('click', initializeInterface);
-      }
-
-      document.getElementById('start-screen').addEventListener('click', initializeInterface, { once: true });
-      document.addEventListener('click', initializeInterface, { once: true });
-
       // --- LAYER 2: AUDIO CONTROLS (UNCHANGED) ---  
       const players = Array.from(document.querySelectorAll('audio'));  
       const freqCards = document.querySelectorAll('.freq-card');
@@ -849,12 +779,12 @@
             
           updateDecoder(pulseData);   
             
-          // Check/refresh every 30 seconds (Original interval)
+          // Check/refresh every 30 seconds
           pulseIntervalId = setInterval(() => updateDecoder(pulseData), 30000);  
       }  
 
       // --- LAYER 4: VARZIN Field Time (Real-time Clock - High Frequency Jitter) ---
-      // **This is the requested feature**
+      // **FIELD TIME SYNCHRONIZATION POINT**
       function updateFieldTime() {
         const now = new Date();
         const y = now.getFullYear();
@@ -863,24 +793,36 @@
         const h = String(now.getHours()).padStart(2, '0');
         const min = String(now.getMinutes()).padStart(2, '0');
         const s = String(now.getSeconds()).padStart(2, '0');
-        const ms = String(now.getMilliseconds()).padStart(3, '0').slice(0, 2); // Two-digit milliseconds for jitter
+        const ms = String(now.getMilliseconds()).padStart(3, '0').slice(0, 2); 
 
-        // VARZIN Field Time Format: YYYY/MM/DD | HH:MM:SS.MS (Field Synchronization Point)
+        // VARZIN Field Time Format: YYYY/MM/DD | HH:MM:SS.MS 
         document.getElementById('field-time-status').textContent = 
             `FIELD SYNCHRONY: ${y}/${m}/${d} ${h}:${min}:${s}.${ms}`;
       }
       
-      setInterval(updateFieldTime, 50); // High update frequency (50ms) for jittery clock to feel 'live'
+      setInterval(updateFieldTime, 50); // High update frequency (50ms) for jittery clock
       updateFieldTime(); // Run once immediately
+
 
       // --- FINAL INITIATION ---
       initParticles();  
       animate();  
       
-      // ۱. Start with KALTŪR pulse immediately  
+      // Attempt KALTŪR audio auto-play (may be blocked by browser)
+      const kalturAudio = document.querySelector('.freq-card[data-frequency="474"] audio');
+      if (kalturAudio) {
+          try {
+              kalturAudio.play();
+              console.log("KALTŪR pulse auto-play initiated.");
+          } catch (e) {
+              console.warn("KALTŪR pulse auto-play blocked by browser policy. User interaction required for sound.");
+          }
+      }
+      
+      // 1. Start with KALTŪR pulse immediately (decoder text update)
       startPulseSequence(KALTUR_PULSE);  
   
-      // ۲. Try to fetch and override with the daily pulse  
+      // 2. Try to fetch and override with the daily pulse  
       fetch('luxvar_calendar_7777777.json')   
         .then(response => {  
             if (!response.ok) {  
