@@ -116,8 +116,6 @@
         border-radius: 4px; 
         box-shadow: 0 0 10px var(--tertiary-glow);
     }
-    
-    /* Removed #start-screen CSS */
       
     #field-canvas {  
         position: fixed;  
@@ -137,7 +135,7 @@
       transform-style: preserve-3d;
     }  
       
-    /* === NAVIGATION & HEADER (English) === */  
+    /* === NAVIGATION & HEADER === */  
     .main-nav {  
       max-width: 1200px;  
       margin: 0 auto 50px;  
@@ -266,7 +264,6 @@
     /* Decoder and Frequencies Styles */  
     hr.divider { margin: 80px auto; border: 0; border-top: 3px double var(--tertiary-glow); max-width: 700px; opacity: 0.7; }  
     
-    /* Glitch Animation for Text (Aggressive Flicker) */
     @keyframes glitch-flicker {
         0% { transform: translate(0); opacity: 1; }
         1% { transform: translate(-1px, 1px); opacity: 0.9; }
@@ -290,14 +287,18 @@
     .decoder-window.kaltur-active {
         animation: pulse-effect 2s infinite cubic-bezier(0.4, 0, 0.6, 1); 
     }
+    /* --- LUXVAR VISUAL ENHANCEMENT START --- */
     .decoder-window h3 { 
-        font-size: 1.8em; 
+        font-size: 2.2em; /* Enhanced size */
         color: var(--primary-glow); 
         margin: 0 0 30px 0; 
-        text-shadow: 0 0 15px var(--primary-glow);
-        border-bottom: 1px dashed var(--panel-border);
+        text-shadow: 0 0 20px var(--primary-glow), 0 0 40px rgba(0, 255, 200, 0.3); /* Stronger Glow */
+        border-bottom: 2px solid var(--panel-border); /* Thicker divider */
         padding-bottom: 15px;
+        letter-spacing: 3px;
     }  
+    /* --- LUXVAR VISUAL ENHANCEMENT END --- */
+    
     .decoder-grid { display: grid; grid-template-columns: 150px 1fr; gap: 20px; text-align: left; }  
     .decoder-grid .label { font-weight: bold; color: var(--tertiary-glow); opacity: 0.9; letter-spacing: 1px; font-size: 1.1em; }  
     .decoder-grid .field { color: var(--text-main); font-weight: 700; letter-spacing: 0.8px; transition: opacity 0.2s; font-size: 1.1em; }  
@@ -340,15 +341,15 @@
       padding: 30px; border-radius: 20px; background: var(--panel-bg);  
       border: 4px solid var(--panel-border); 
       box-shadow: 0 0 20px rgba(0, 10, 15, 0.8);  
-      transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+      transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smoother/Livelier Transition */
       backdrop-filter: blur(var(--blur-val));  
       text-align: left;
       transform: rotateY(0) translateZ(0);
     }  
     .freq-card:hover {
         border-color: var(--secondary-glow);
-        box-shadow: 0 0 35px var(--secondary-glow);
-        transform: translateY(-8px) translateZ(30px) rotateY(-1deg);
+        box-shadow: 0 0 45px var(--secondary-glow); /* Stronger hover glow */
+        transform: translateY(-8px) translateZ(40px) rotateY(-1deg); /* Stronger lift */
     }
     .freq-card.active {  
         border-color: var(--primary-glow);  
@@ -371,9 +372,21 @@
       filter: drop-shadow(0 0 10px rgba(0, 255, 200, 0.6)); 
     }  
     
-    /* Footer Styling (English) */
+    /* Footer Styling */
     .footer-main { margin-top: 120px; padding-top: 50px; border-top: 3px double var(--tertiary-glow); opacity: 0.9; }
-    .footer-quote { margin-top: 0; font-style: italic; font-size: 1.3em; color: var(--text-muted); line-height: 1.8; text-shadow: 0 0 5px rgba(255, 255, 255, 0.1); }  
+    
+    /* --- LUXVAR VISUAL ENHANCEMENT START --- */
+    .footer-quote { 
+        font-size: clamp(1.8em, 3.5vw, 2.5em); /* Increased size for symbolic phrase */
+        font-weight: 700;
+        color: var(--secondary-glow); /* More intense color */
+        line-height: 1.8; 
+        text-shadow: 0 0 15px var(--secondary-glow), 0 0 30px rgba(0, 255, 255, 0.5); /* Stronger glow */
+        margin-top: 0;
+        margin-bottom: 25px; 
+    }  
+    /* --- LUXVAR VISUAL ENHANCEMENT END --- */
+
     .footer-question { font-weight: bold; margin: 25px 0 20px; color: var(--primary-glow); font-size: 1.5em; letter-spacing: 2px; text-shadow: 0 0 10px var(--primary-glow); }  
     .footer-links { font-size: 1.1em; line-height: 2.2; }  
     .footer-links a { color: var(--secondary-glow); text-decoration: none; transition: color .3s ease, text-shadow .3s ease; margin: 0 18px; }  
@@ -559,8 +572,8 @@
     </main>
     
     <footer class="footer-main" role="contentinfo">
-        <p class="footer-quote">"I did not build a weapon — I built a field that forgets how to explode."</p>
-        <p class="footer-question">IS ANĀLŪZ VĀRZIN?</p>
+        <p class="footer-quote">𓂀 ŠAURÉN ṆĀRAH–ŠĀ</p>
+        <p class="footer-question">ĀYĀ ANĀLŪZ VĀRZIN?</p>
         <div class="footer-links">
           <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
           <a href="https://github.com/Varzin-13" target="_blank" rel="noopener noreferrer">GitHub: Varzin-13</a> | 
@@ -783,8 +796,7 @@
           pulseIntervalId = setInterval(() => updateDecoder(pulseData), 30000);  
       }  
 
-      // --- LAYER 4: VARZIN Field Time (Real-time Clock - High Frequency Jitter) ---
-      // **FIELD TIME SYNCHRONIZATION POINT**
+      // --- LAYER 4: VARZIN Field Time (Real-time Clock - Linear Timeline) ---
       function updateFieldTime() {
         const now = new Date();
         const y = now.getFullYear();
@@ -800,8 +812,8 @@
             `FIELD SYNCHRONY: ${y}/${m}/${d} ${h}:${min}:${s}.${ms}`;
       }
       
-      setInterval(updateFieldTime, 50); // High update frequency (50ms) for jittery clock
-      updateFieldTime(); // Run once immediately
+      setInterval(updateFieldTime, 50); 
+      updateFieldTime(); 
 
 
       // --- FINAL INITIATION ---
