@@ -75,7 +75,7 @@
       --glow-shadow-main: 0 0 28px rgba(0, 255, 200, 0.6), 0 0 50px rgba(0, 255, 255, 0.1); 
       --pulse-shadow: 0 0 50px var(--primary-glow), 0 0 100px rgba(0, 255, 200, 0.4);
       --font-main: 'DM Sans', 'Vazirmatn', sans-serif;  
-      --field-line-color: rgba(0, 255, 200, 0.4);
+      --field-line-color: rgba(0, 255, 200, 0.4); /* Used for particle lines/glow */
     }  
   
     /* === BASE & EFFECT STYLES (Heavy) === */
@@ -125,6 +125,7 @@
         height: 100%;  
         z-index: -1;  
         background: radial-gradient(circle at center, rgba(0, 30, 40, 0.7) 0%, var(--bg-dark) 80%);
+        opacity: 0.6; /* Ensure canvas is visible */
     }  
   
     .container {  
@@ -133,11 +134,11 @@
       position: relative;  
       z-index: 1;  
       transform-style: preserve-3d;
-      /* Mouse-Reactive Transition (Added for smooth tilting) */
+      /* Mouse-Reactive Transition (Kept for smooth tilting) */
       transition: transform 0.2s ease-out; 
     }  
       
-    /* === NAVIGATION & HEADER === */  
+    /* === NAVIGATION & HEADER (Remaining styles unchanged) === */  
     .main-nav {  
       max-width: 1200px;  
       margin: 0 auto 50px;  
@@ -591,54 +592,45 @@
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // --- LAYER 1: THE LIVING FIELD CANVAS (Particle Animation - AS ORIGINALLY CODED) ---  
+      // --- CANVAS SETUP & CONSTANTS ---
       const canvas = document.getElementById('field-canvas');  
       const ctx = canvas.getContext('2d');  
-      let animationFrameId;
-
-      let centerX = canvas.width / 2;
-      let centerY = canvas.height / 2;
+      const container = document.querySelector('.container');
       
-      canvas.width = window.innerWidth;  
-      canvas.height = window.innerHeight;  
-  
-      let particles = [];  
-      const mouse = { x: null, y: null, radius: 200 }; 
-      const PARTICLE_COUNT = (canvas.height * canvas.width) / 8000; 
+      const mouse = { x: null, y: null, radius: 120 }; // Interaction radius
+      const maxDistance = 150; // Max distance for connection lines
+      const fieldGlow = 'rgba(0, 255, 255, 0.4)'; // Color for particles/lines
 
-      window.addEventListener('resize', () => {  
+      const setCanvasSize = () => {
           canvas.width = window.innerWidth;  
           canvas.height = window.innerHeight;  
-          centerX = canvas.width / 2;
-          centerY = canvas.height / 2;
-          initParticles();  
+      }
+      setCanvasSize();
+
+      window.addEventListener('resize', () => {  
+          setCanvasSize();  
+          initParticles(); // Re-initialize particles on resize
       });  
       
-      // --- MOUSE-REACTIVE LUXVAR FIELD COHERENCE (NEW BEHAVIOR) ---
-      const container = document.querySelector('.container');
+      // --- LUXVAR FIELD COHERENCE (Holographic Tilt & Particle Tracking) ---
       window.addEventListener('mousemove', (event) => {  
-          // 1. Particle effect mouse tracking (existing)
+          
+          // 1. Particle effect mouse tracking
           mouse.x = event.x;  
           mouse.y = event.y;  
 
           // 2. LUXVAR Field Coherence Effect (Holographic Tilt)
-          
-          // Calculate center
           const centerX = window.innerWidth / 2;
           const centerY = window.innerHeight / 2;
           
-          // Normalized position relative to center (-1 to 1)
           const normX = (event.clientX - centerX) / centerX;
           const normY = (event.clientY - centerY) / centerY;
           
-          // Define sensitivity (Max rotation degrees)
           const MAX_ROTATION = 3.5; 
           
-          // Calculate rotation (Mouse X affects RotateY, Mouse Y affects RotateX)
           const rotateY = normX * MAX_ROTATION; 
-          const rotateX = -normY * MAX_ROTATION; // Inverted Y-axis for natural tilt
+          const rotateX = -normY * MAX_ROTATION; 
 
-          // Apply transform to the main container
           container.style.transform = `
               perspective(1500px) 
               rotateX(${rotateX}deg) 
@@ -648,99 +640,79 @@
       });
       // -----------------------------------------------------------------
         
-      class Particle {  
-          constructor(x, y, size, color) {  
-              this.x = x;
-              this.y = y;
-              this.size = size; 
-              this.color = color;
-              
-              // Original movement variables
-              this.vx = (Math.random() - 0.5) * 0.5; 
-              this.vy = (Math.random() - 0.5) * 0.5; 
-              this.initialRadius = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
-              this.phase = Math.random() * Math.PI * 2;
-          }  
-          
-          draw() {  
-              ctx.beginPath();  
-              ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);  
-              ctx.fillStyle = this.color;  
-              ctx.shadowBlur = this.size * 5;
-              ctx.shadowColor = 'var(--primary-glow)';
+      // --- STRUCTURAL GRID (Particle Logic from the new code) ---
+      let particles = [];
+      
+      class Particle {
+          constructor(x, y, dirX, dirY, size, color) {
+              this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
+              this.size = size; this.color = color;
+              this.originalSize = size;
+              this.speed = Math.random() * 0.15 + 0.08; 
+          }
+          draw() {
+              ctx.beginPath();
+              ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+              ctx.fillStyle = this.color;
+              ctx.shadowBlur = 5; 
+              ctx.shadowColor = this.color;
               ctx.fill();
               ctx.shadowBlur = 0; 
-          }  
-          
-          update() {  
-              // Original movement logic
-              this.x += this.vx;
-              this.y += this.vy;
+          }
+          update() {
+              if (this.x > canvas.width - this.size || this.x < this.size) this.dirX = -this.dirX;
+              if (this.y > canvas.height - this.size || this.y < this.size) this.dirY = -this.dirY;
 
-              // Gently pull towards center to maintain "field" coherence
-              let dx_center = centerX - this.x;
-              let dy_center = centerY - this.y;
-              this.x += dx_center * 0.0005; 
-              this.y += dy_center * 0.0005;
-
-              // Mouse repulsion/field distortion
-              let dx = mouse.x - this.x;  
-              let dy = mouse.y - this.y;  
-              let distance = Math.sqrt(dx * dx + dy * dy);  
-              if (distance < mouse.radius + this.size) {  
-                  const pushFactor = 0.5;
-                  this.x -= dx / distance * pushFactor;
-                  this.y -= dy / distance * pushFactor;
-              }  
+              let dx = mouse.x - this.x;
+              let dy = mouse.y - this.y;
+              let distance = Math.sqrt(dx * dx + dy * dy);
               
-              // Boundary check
-              if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-                  this.x = Math.random() < 0.5 ? 0 : canvas.width;
-                  this.y = Math.random() * canvas.height;
-                  this.vx = (Math.random() - 0.5) * 0.5; 
-                  this.vy = (Math.random() - 0.5) * 0.5;
+              // Mouse interaction (repulsion/size change)
+              if (distance < mouse.radius + this.originalSize) {
+                  let force = (mouse.radius + this.originalSize - distance) / (mouse.radius + this.originalSize) * 0.2; 
+                  this.x -= dx * force;
+                  this.y -= dy * force;
+                  this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.8);
+              } else {
+                  this.size += (this.originalSize - this.size) * 0.1; 
               }
-              
-              this.draw();  
-          }  
-      }  
-  
-      function initParticles() {  
-          particles = [];  
-          centerX = canvas.width / 2;
-          centerY = canvas.height / 2;
-          for (let i = 0; i < PARTICLE_COUNT; i++) {  
-              let size = Math.random() * 1.5 + 0.5;  
-              let x = (Math.random() * (canvas.width - 40)) + 20;  
-              let y = (Math.random() * (canvas.height - 40)) + 20;  
-              
-              particles.push(new Particle(x, y, size, 'var(--field-line-color)'));  
-          }  
-      }  
-  
-      function animate() {  
-          animationFrameId = requestAnimationFrame(animate);  
-          ctx.clearRect(0, 0, innerWidth, innerHeight);  
-  
-          for (let i = 0; i < particles.length; i++) {  
-              particles[i].update();  
-          }  
-          // Connect particles (Field Lines)
-          connectParticles();
-      }  
 
+              this.x += this.dirX * this.speed;
+              this.y += this.dirY * this.speed;
+              this.draw();
+          }
+      }
+
+      function initParticles() {
+          particles = [];
+          // Target fewer particles for a cleaner look
+          let numParticles = (canvas.height * canvas.width) / 30000; 
+          numParticles = Math.min(numParticles, 120); 
+
+          for (let i = 0; i < numParticles; i++) {
+              let size = Math.random() * 1.5 + 0.8;
+              let x = Math.random() * canvas.width; 
+              let y = Math.random() * canvas.height;
+              let angle = Math.random() * 2 * Math.PI;
+              let dirX = Math.cos(angle);
+              let dirY = Math.sin(angle);
+              particles.push(new Particle(x, y, dirX, dirY, size, fieldGlow)); 
+          }
+      }
+      
       function connectParticles() {
-          const maxDistanceSquared = 150 * 150; 
           for (let a = 0; a < particles.length; a++) {
               for (let b = a; b < particles.length; b++) {
                   let dx = particles[a].x - particles[b].x;
                   let dy = particles[a].y - particles[b].y;
-                  let distanceSquared = dx * dx + dy * dy;
+                  let distance = Math.sqrt(dx * dx + dy * dy);
                   
-                  if (distanceSquared < maxDistanceSquared) {
-                      let opacityValue = 1 - (distanceSquared / maxDistanceSquared);
-                      ctx.strokeStyle = `rgba(0, 255, 200, ${opacityValue * 0.6})`;
-                      ctx.lineWidth = 1;
+                  if (distance < maxDistance) {
+                      let opacityValue = 1 - (distance / maxDistance);
+                      
+                      // Use a color consistent with the VARZIN theme
+                      ctx.strokeStyle = `rgba(0, 255, 200, ${opacityValue * 0.4})`; 
+                      ctx.lineWidth = 0.9;
                       ctx.beginPath();
                       ctx.moveTo(particles[a].x, particles[a].y);
                       ctx.lineTo(particles[b].x, particles[b].y);
@@ -749,8 +721,21 @@
               }
           }
       }
+
+      function animate() {
+          requestAnimationFrame(animate);
+          
+          // Smooth Trail Effect (New feature from example)
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
+          ctx.fillRect(0, 0, canvas.width, canvas.height); 
+          
+          connectParticles();
+          for (let i = 0; i < particles.length; i++) {
+              particles[i].update();
+          }
+      }
         
-      // --- LAYER 2: AUDIO CONTROLS (UNCHANGED) ---  
+      // --- AUDIO CONTROLS (UNCHANGED) ---  
       const players = Array.from(document.querySelectorAll('audio'));  
       const freqCards = document.querySelectorAll('.freq-card');
 
@@ -771,7 +756,7 @@
         try { p.pause(); p.currentTime = 0; } catch (e) { console.error("Stop error:", e); }   
       });  
   
-      // --- LAYER 3: LUXVAR DECODER (KALTŪR Pulse & Calendar Logic) ---  
+      // --- LUXVAR DECODER (KALTŪR Pulse & Calendar Logic) ---  
         
       let pulseIntervalId;  
       // KALTUR Data (from Saved Information)
@@ -832,7 +817,7 @@
           pulseIntervalId = setInterval(() => updateDecoder(pulseData), 30000);  
       }  
 
-      // --- LAYER 4: VARZIN Field Time (Real-time Clock - Linear Timeline) ---
+      // --- VARZIN Field Time (Real-time Clock - Linear Timeline) ---
       function updateFieldTime() {
         const now = new Date();
         const y = now.getFullYear();
