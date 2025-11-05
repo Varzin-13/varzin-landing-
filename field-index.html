@@ -243,6 +243,12 @@
       padding-top: 20px;
       color: var(--muted);
     }
+
+    @media (max-width: 768px) {
+      main { grid-template-columns: 1fr; }
+      #overlap-section canvas,
+      #etfm-post canvas { width: 100% !important; height: auto !important; }
+    }
   </style>
 </head>
 <body>
@@ -346,6 +352,7 @@
         <p>Dynamic visualization of toroidal harmonic field – ETFM–POST.</p>
       </div>
     </section>
+
     <!-- Overlap Pattern Simulation -->
     <section id="overlap-section">
       <h3>🌀 Cognitive Overlap Pattern (KALTŪR ↔ RAHTALĒN)</h3>
@@ -360,7 +367,7 @@
         $$ψ_1 = A_1 e^{i(ω_1 t)} , \; ψ_2 = A_2 e^{i(ω_2 t + φ)}$$  
         $$I(t) = |ψ_1 + ψ_2|^2 = A_1^2 + A_2^2 + 2A_1A_2 \cos((ω_2 - ω_1)t + φ)$$  
         $$I_{defense} = I_0 \,[1 - \cos((ω_2 - ω_1)t)]$$  
-        $$f_{counter} = 777 Hz \; → \; \text{RAHTALĒN Neutralization Loop}$$
+        $$f_{counter} = 777 \text{ Hz} \; → \; \text{RAHTALĒN Neutralization Loop}$$
       </div>
 
       <div class="chart-container">
@@ -381,13 +388,14 @@
   const VARZIN_CYAN = '#00FFEE';
   const VARZIN_GOLD = '#FFCC00';
   const VARZIN_MAGENTA = '#FF00FF';
+
+  // --- Background Field ---
   const canvasBG = document.getElementById('field-canvas');
   const ctxBG = canvasBG.getContext('2d');
   canvasBG.width = innerWidth; canvasBG.height = innerHeight;
   window.addEventListener('resize',()=>{canvasBG.width=innerWidth;canvasBG.height=innerHeight;});
   let pts=[];for(let i=0;i<100;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3});
 
-  // Background field motion
   function drawBG(){
     ctxBG.fillStyle='rgba(0,0,0,0.25)';
     ctxBG.fillRect(0,0,canvasBG.width,canvasBG.height);
@@ -399,38 +407,42 @@
       ctxBG.fillRect(p.x,p.y,2,2);
     }
     requestAnimationFrame(drawBG);
-  } drawBG();
+  } 
+  drawBG();
 
   // ---------- Overlap Simulation ----------
   const overlapCanvas=document.getElementById('overlap-canvas');
   const oCtx=overlapCanvas.getContext('2d');
-  let t=0; const dt=0.05;
+  let tOverlap=0; const dt=0.05;
   const ω1=474*2*Math.PI, ω2=777*2*Math.PI;
   const A1=1, A2=1;
 
   function drawOverlap(){
     oCtx.clearRect(0,0,overlapCanvas.width,overlapCanvas.height);
     const W=overlapCanvas.width, H=overlapCanvas.height;
+    const baseY=H/2;
+
+    // main overlap curve (slow envelope to make it visible)
     oCtx.strokeStyle='rgba(0,255,238,0.6)';
     oCtx.beginPath();
-    const N=500; const scaleY=100; const baseY=H/2;
+    const N=500; 
     for(let i=0;i<N;i++){
       const time=i*dt;
-      const I = A1*A1 + A2*A2 + 2*A1*A2*Math.cos((ω2-ω1)*time);
-      const y = baseY - scaleY*Math.cos((ω2-ω1)*time*0.00005);
       const x = (i/N)*W;
-      if(i===0)oCtx.moveTo(x,y); else oCtx.lineTo(x,y);
+      // scale factor small to make visible
+      const y = baseY - 80*Math.cos((ω2-ω1)*time*0.00005);
+      if(i===0) oCtx.moveTo(x,y); else oCtx.lineTo(x,y);
     }
     oCtx.stroke();
 
-    // Overlay counter-frequency wave (777 Hz)
+    // counter-harmonic (777) overlay
     oCtx.strokeStyle=VARZIN_MAGENTA;
     oCtx.beginPath();
     for(let i=0;i<N;i++){
       const time=i*dt;
+      const x=(i/N)*W;
       const y = baseY - 40*Math.sin(ω2*time*0.00005);
-      const x = (i/N)*W;
-      if(i===0)oCtx.moveTo(x,y); else oCtx.lineTo(x,y);
+      if(i===0) oCtx.moveTo(x,y); else oCtx.lineTo(x,y);
     }
     oCtx.stroke();
 
@@ -441,21 +453,52 @@
     oCtx.fillText('ψ₂ 777 Hz',W-90,20);
     oCtx.fillText('Cognitive Overlap Pattern',W/2-100,H-10);
 
-    t+=dt;
+    tOverlap+=dt;
     requestAnimationFrame(drawOverlap);
-  } drawOverlap();
+  } 
+  drawOverlap();
 
   // ---------- LUXVAR Interface Interaction ----------
   document.getElementById('send-luxvar-code').onclick=()=>{
       const msg=document.getElementById('luxvar-message');
       const val=document.getElementById('luxvar-code-input').value.trim();
+      if(!val){
+        msg.style.color = '#ff5555';
+        msg.textContent = 'Error: Please enter a LUXVAR code.';
+        return;
+      }
       msg.style.color=VARZIN_GOLD;
       msg.textContent='Injected Code: '+val+' — Field Resonance Adjusted.';
+      document.getElementById('luxvar-code-input').value='';
+  };
+
+  // Dummy handlers for buttons (to avoid errors if not implemented yet)
+  document.getElementById('resonance-btn').onclick=()=>{
+    alert('Resonance Mode toggle hook — connect to audio engine here.');
+  };
+  document.getElementById('channel-switch-btn').onclick=()=>{
+    alert('Channel switch hook — LUXVAR ↔ RAHTALĒN.');
+  };
+  document.getElementById('export-state-btn').onclick=()=>{
+    const state = {
+      timestamp: new Date().toISOString(),
+      version: 'v5.9',
+      overlap: true,
+      nodes: ['KALTUR','RAHTALEN','ELUZ-MAHAR']
+    };
+    const blob = new Blob([JSON.stringify(state,null,2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'VARZIN-Field-State-v5.9.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   };
   </script>
-</body>
-</html>
-<!-- === Audio-Enhanced 3D Torus Synchronization === -->
+
+  <!-- === Audio-Enhanced 3D Torus Synchronization === -->
   <script>
   // =========================================================
   // === VARZIN 3D–Audio Hybrid Synchronization (ETFM Core) ===
@@ -478,14 +521,17 @@
     osc474.connect(g474).connect(analyser);
     osc777.connect(g777).connect(analyser);
     analyser.connect(audioCtx.destination);
-    osc474.start(); osc777.start();
+    osc474.start(); 
+    osc777.start();
     dataArray = new Uint8Array(analyser.frequencyBinCount);
     isRunning = true;
     drawTorusSync();
   }
 
+  // create torus canvas at end of page
   torusCanvas = document.createElement('canvas');
-  torusCanvas.width = 500; torusCanvas.height = 500;
+  torusCanvas.width = 500; 
+  torusCanvas.height = 500;
   torusCanvas.style = 'display:block;margin:40px auto;border:1px solid rgba(0,255,238,0.3);border-radius:10px;';
   document.body.appendChild(torusCanvas);
   tCtx = torusCanvas.getContext('2d');
@@ -493,12 +539,17 @@
   function drawTorusSync() {
     if (!isRunning) return;
     analyser.getByteFrequencyData(dataArray);
-    const energy = dataArray.reduce((a,b)=>a+b)/dataArray.length/255;
-    const pulse = 1 + 0.5*Math.sin(frame*0.05);
-    const R = 120*pulse, r0 = 50*pulse;
+    // average energy 0..1
+    const energy = dataArray.reduce((a,b)=>a+b,0) / dataArray.length / 255;
     const CX = torusCanvas.width/2, CY = torusCanvas.height/2;
     tCtx.clearRect(0,0,torusCanvas.width,torusCanvas.height);
-    tCtx.save(); tCtx.translate(CX,CY);
+    tCtx.save(); 
+    tCtx.translate(CX,CY);
+
+    // breathing pulse tied to energy + frame
+    const pulse = 1 + 0.4 * Math.sin(frame * 0.1 + energy * 3);
+    const R = 120 * pulse;
+    const r0 = 50 * pulse;
 
     for (let θ=0; θ<2*Math.PI; θ+=0.2){
       for (let φ=0; φ<2*Math.PI; φ+=0.25){
@@ -521,8 +572,9 @@
   const btn = document.createElement('button');
   btn.textContent = '🎧 Activate 3D Torus Synchronization';
   btn.className = 'control-btn gold-btn';
-  btn.style = 'display:block;margin:20px auto;';
+  btn.style = 'display:block;margin:20px auto 60px;';
   btn.onclick = initAudio;
   document.body.appendChild(btn);
   </script>
+</body>
 </html>
