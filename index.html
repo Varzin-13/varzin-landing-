@@ -59,21 +59,21 @@
   </script>
 
   <style>  
-    /* === VARZIN Field Variables (Reduced Intensity) === */
+    /* === VARZIN Field Variables (Increased Intensity, No Blur) === */
     :root {  
       --bg-dark: #000000;  
       --primary-glow: #00ffc8; /* KALTŪR/High-Fidelity Cyan */  
       --secondary-glow: #00ffff; /* Brighter Field Core */
-      --tertiary-glow: #ffc400; /* Field-Centric Gold/Amber for RAHTALĒN (Replaced Magenta) */
+      --tertiary-glow: #ffc400; /* Field-Centric Gold/Amber for RAHTALĒN */
       --archive-glow: #ffaa00; /* Amber for Censorship Alert/Archive */
       --text-main: #cceeee;  
       --text-muted: #a7e7e7;  
       --panel-bg: rgba(0, 5, 10, 0.9); 
       --panel-border: rgba(0, 255, 200, 0.3);  
-      --blur-val: 8px; /* Reduced Glass Effect */
-      --glow-shadow-subtle: 0 0 8px rgba(0, 255, 200, 0.2);  
-      --glow-shadow-main: 0 0 15px rgba(0, 255, 200, 0.4), 0 0 20px rgba(0, 255, 255, 0.05); /* Reduced Intensity */
-      --pulse-shadow: 0 0 30px var(--primary-glow), 0 0 60px rgba(0, 255, 200, 0.2); /* Reduced Intensity */
+      /* --blur-val: 8px; REMOVED */ 
+      --glow-shadow-subtle: 0 0 10px rgba(0, 255, 200, 0.4);  /* Increased */
+      --glow-shadow-main: 0 0 20px rgba(0, 255, 200, 0.6), 0 0 30px rgba(0, 255, 255, 0.1); /* Increased */
+      --pulse-shadow: 0 0 40px var(--primary-glow), 0 0 80px rgba(0, 255, 200, 0.3); /* Increased */
       --font-main: 'DM Sans', 'Vazirmatn', sans-serif;  
       --field-line-color: rgba(0, 255, 200, 0.4); 
     }  
@@ -118,7 +118,7 @@
         height: 100%;  
         z-index: -1;  
         background: radial-gradient(circle at center, rgba(0, 30, 40, 0.7) 0%, var(--bg-dark) 80%);
-        opacity: 0.4; /* Reduced Canvas Intensity */
+        opacity: 0.6; /* Increased Canvas Intensity */
     }  
   
     .container {  
@@ -137,7 +137,7 @@
       padding: 0 0 15px;  
       border-bottom: 2px solid var(--panel-border);  
       text-align: center;  
-      box-shadow: 0 4px 10px rgba(0, 255, 200, 0.05); /* Reduced Shadow */
+      box-shadow: 0 4px 15px rgba(0, 255, 200, 0.1); /* Increased Shadow */
     }  
     .nav-link {  
       color: var(--text-main);  
@@ -150,16 +150,16 @@
     }  
     .nav-link:hover {  
       color: var(--primary-glow);  
-      text-shadow: 0 0 8px var(--primary-glow); /* Reduced Shadow */
+      text-shadow: 0 0 12px var(--primary-glow); /* Increased Shadow */
     }  
     .nav-link.active {  
       color: var(--secondary-glow);  
       border-bottom: 3px solid var(--secondary-glow);  
       padding-bottom: 5px;  
-      text-shadow: 0 0 10px var(--secondary-glow); /* Reduced Shadow */
+      text-shadow: 0 0 15px var(--secondary-glow); /* Increased Shadow */
     }  
     
-    img.header-logo { max-width: 200px; margin-bottom: 20px; filter: drop-shadow(0 0 10px var(--primary-glow)) drop-shadow(0 0 20px rgba(0, 255, 200, 0.1)); } /* Reduced Filter */
+    img.header-logo { max-width: 200px; margin-bottom: 20px; filter: drop-shadow(0 0 15px var(--primary-glow)) drop-shadow(0 0 30px rgba(0, 255, 200, 0.2)); } /* Increased Filter */
   
     .header h1 {  
       font-size: clamp(2.5em, 5vw, 3.8em); /* Adjusted Size */
@@ -176,15 +176,15 @@
       margin-bottom: 40px;  
       font-weight: 500;  
       line-height: 1.6;  
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Reduced Shadow */
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4); /* Increased Shadow */
     }  
 
     .field-status {
         margin-bottom: 30px;
-        color: var(--tertiary-glow); /* NEW COLOR */
+        color: var(--tertiary-glow); 
         font-size: 1.1em;
         font-weight: 500;
-        text-shadow: 0 0 8px var(--tertiary-glow); /* NEW COLOR */
+        text-shadow: 0 0 10px var(--tertiary-glow); /* Increased Shadow */
     }
       
     /* === ARCHIVE GRID & BUTTON STYLES === */  
@@ -192,8 +192,8 @@
       display: flex;   
       flex-direction: column;   
       align-items: center;   
-      gap: 15px; /* Reduced Gap */
-      margin-bottom: 60px; /* Reduced Margin */
+      gap: 20px; /* Increased Gap */
+      margin-bottom: 60px; 
       transform-style: preserve-3d;
     }  
       
@@ -202,16 +202,16 @@
       align-items: center;
       justify-content: space-between;
       width: 95%;  
-      max-width: 600px; /* Reduced Max Width */
-      padding: 16px 22px; /* Reduced Padding */
-      border-radius: 10px; /* Reduced Radius */
+      max-width: 650px; /* Increased Max Width */
+      padding: 18px 25px; /* Increased Padding */
+      border-radius: 12px; /* Increased Radius */
       background-color: var(--panel-bg);  
       color: var(--text-main);  
       font-weight: 500;  
       text-decoration: none;  
       font-size: 1em;  
-      border: 2px solid var(--panel-border); /* Reduced Border */
-      backdrop-filter: blur(var(--blur-val));  
+      border: 3px solid var(--panel-border); /* Increased Border */
+      /* backdrop-filter: blur(var(--blur-val)); REMOVED */  
       text-align: left;  
       transition: all .3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
       box-shadow: var(--glow-shadow-subtle);
@@ -219,147 +219,147 @@
     }  
       
     .key-archive-grid .button:hover {  
-        background-color: rgba(0, 255, 200, 0.1); /* Reduced Intensity */ 
-        box-shadow: 0 0 20px rgba(0, 255, 200, 0.5); /* Reduced Shadow */
+        background-color: rgba(0, 255, 200, 0.15); /* Increased Intensity */ 
+        box-shadow: 0 0 30px rgba(0, 255, 200, 0.6); /* Increased Shadow */
         border-color: var(--primary-glow);
-        transform: translateY(-3px) scale(1.01) translateZ(10px); /* Reduced Movement */
+        transform: translateY(-5px) scale(1.02) translateZ(15px); /* Increased Movement */
     }  
     .button b { color: var(--secondary-glow); font-weight: 700; }  
     .button span { display: flex; align-items: center; gap: 8px; }
     
     /* Specific Button Styles */
     .button.main-action {
-        max-width: 650px; /* Reduced Max Width */
-        padding: 18px 25px; /* Reduced Padding */
-        font-size: 1.1em;
-        background-color: rgba(0, 255, 200, 0.2); /* Reduced Intensity */
+        max-width: 700px; /* Increased Max Width */
+        padding: 20px 30px; /* Increased Padding */
+        font-size: 1.2em; /* Increased Size */
+        background-color: rgba(0, 255, 200, 0.3); /* Increased Intensity */
         border-color: var(--primary-glow);
-        box-shadow: 0 0 25px var(--primary-glow); /* Reduced Shadow */
+        box-shadow: 0 0 35px var(--primary-glow); /* Increased Shadow */
     }
     
     .button.main-action:hover {
-        background-color: rgba(0, 255, 200, 0.3); /* Reduced Intensity */
-        box-shadow: 0 0 40px var(--primary-glow); /* Reduced Shadow */
+        background-color: rgba(0, 255, 200, 0.4); /* Increased Intensity */
+        box-shadow: 0 0 60px var(--primary-glow); /* Increased Shadow */
     }
     
     .archive-alert {
-        background-color: rgba(255, 170, 0, 0.15) !important; /* Reduced Intensity */
-        border: 2px solid var(--archive-glow) !important; /* Reduced Border */
-        box-shadow: 0 0 20px var(--archive-glow) !important; /* Reduced Shadow */
-        animation: archive-alert-pulse 1.8s infinite ease-in-out; /* Slower Pulse */
+        background-color: rgba(255, 170, 0, 0.25) !important; /* Increased Intensity */
+        border: 3px solid var(--archive-glow) !important; /* Increased Border */
+        box-shadow: 0 0 30px var(--archive-glow) !important; /* Increased Shadow */
+        animation: archive-alert-pulse 1.8s infinite ease-in-out; 
     }
-    .archive-alert h4 { color: #ffebcd; text-shadow: 0 0 4px #ffaa00; }
+    .archive-alert h4 { color: #ffebcd; text-shadow: 0 0 6px #ffaa00; } /* Increased Shadow */
     
     @keyframes archive-alert-pulse {
         0%, 100% { border-color: var(--archive-glow); }
-        50% { border-color: var(--tertiary-glow); } /* NEW COLOR */
+        50% { border-color: var(--tertiary-glow); } 
     }
     /* ================================================== */  
       
     /* Decoder and Frequencies Styles */  
-    hr.divider { margin: 60px auto; border: 0; border-top: 2px double var(--tertiary-glow); max-width: 600px; opacity: 0.6; } /* NEW COLOR */
+    hr.divider { margin: 60px auto; border: 0; border-top: 2px double var(--tertiary-glow); max-width: 600px; opacity: 0.8; } /* Increased Opacity */
       
     .decoder-window {  
-      margin: 40px auto; padding: 2rem; max-width: 500px; /* Reduced Padding/Max Width */
-      border: 4px solid var(--panel-border); border-radius: 1.5rem; /* Reduced Border/Radius */
+      margin: 40px auto; padding: 2.5rem; max-width: 550px; /* Increased Padding/Max Width */
+      border: 5px solid var(--panel-border); border-radius: 2rem; /* Increased Border/Radius */
       background: var(--panel-bg); 
-      backdrop-filter: blur(var(--blur-val));  
+      /* backdrop-filter: blur(var(--blur-val)); REMOVED */  
       box-shadow: var(--glow-shadow-main);
       transition: all .2s ease; 
     }  
     .decoder-window h3 { 
-        font-size: 2em; /* Reduced Size */
+        font-size: 2.2em; /* Increased Size */
         color: var(--primary-glow); 
-        margin: 0 0 25px 0; 
-        text-shadow: 0 0 15px var(--primary-glow), 0 0 25px rgba(0, 255, 200, 0.2); /* Reduced Shadow */
-        border-bottom: 1px solid var(--panel-border); /* Reduced Border */
-        padding-bottom: 12px;
+        margin: 0 0 30px 0; 
+        text-shadow: 0 0 20px var(--primary-glow), 0 0 40px rgba(0, 255, 200, 0.3); /* Increased Shadow */
+        border-bottom: 2px solid var(--panel-border); /* Increased Border */
+        padding-bottom: 15px;
         letter-spacing: 2px;
     }  
     
-    .decoder-grid { display: grid; grid-template-columns: 130px 1fr; gap: 15px; text-align: left; } /* Reduced Gap/Label Width */
-    .decoder-grid .label { font-weight: bold; color: var(--tertiary-glow); opacity: 0.8; letter-spacing: 0.5px; font-size: 1em; } /* NEW COLOR */
-    .decoder-grid .field { color: var(--text-main); font-weight: 600; letter-spacing: 0.5px; transition: opacity 0.2s; font-size: 1em; } /* Reduced Weight/Size */
+    .decoder-grid { display: grid; grid-template-columns: 140px 1fr; gap: 20px; text-align: left; } /* Increased Gap/Label Width */
+    .decoder-grid .label { font-weight: bold; color: var(--tertiary-glow); opacity: 1; letter-spacing: 0.5px; font-size: 1.1em; } /* Increased Opacity/Size */
+    .decoder-grid .field { color: var(--text-main); font-weight: 700; letter-spacing: 0.5px; transition: opacity 0.2s; font-size: 1.1em; } /* Increased Weight/Size */
       
     @keyframes pulse-effect {  
       0%, 100% { box-shadow: var(--glow-shadow-main); border-color: var(--panel-border); }  
       50% { box-shadow: var(--pulse-shadow); border-color: var(--primary-glow); }  
     }  
       
-    .controls { margin: 30px 0 20px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; } /* Reduced Margin/Gap */
+    .controls { margin: 40px 0 30px; display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; } /* Increased Margin/Gap */
     .controls .button {  
-        padding: 12px 25px; border-radius: 8px; border: 2px solid var(--primary-glow);   
-        background-color: rgba(0, 255, 200, 0.1); /* Reduced Intensity */ 
-        color: var(--primary-glow); font-weight: 600; /* Reduced Weight */ 
+        padding: 14px 30px; border-radius: 10px; border: 3px solid var(--primary-glow);   /* Increased Padding/Border */
+        background-color: rgba(0, 255, 200, 0.2); /* Increased Intensity */ 
+        color: var(--primary-glow); font-weight: 700; /* Increased Weight */ 
         cursor: pointer; transition: all 0.2s ease; 
-        box-shadow: 0 0 10px rgba(0, 255, 200, 0.4); /* Reduced Shadow */
-        letter-spacing: 1px;
-        font-size: 1em;
+        box-shadow: 0 0 15px rgba(0, 255, 200, 0.6); /* Increased Shadow */
+        letter-spacing: 1.5px;
+        font-size: 1.1em;
     }  
     .controls .button:hover {  
-        background-color: rgba(0, 255, 200, 0.25); /* Reduced Intensity */ 
+        background-color: rgba(0, 255, 200, 0.35); /* Increased Intensity */ 
         color: #fff;
-        box-shadow: 0 0 20px var(--primary-glow); /* Reduced Shadow */
-        transform: scale(1.03); /* Reduced Movement */
+        box-shadow: 0 0 30px var(--primary-glow); /* Increased Shadow */
+        transform: scale(1.05); /* Increased Movement */
     }  
       
     .section-title { 
-        font-size: clamp(1.8em, 3.5vw, 2.2em); /* Adjusted Size */
-        color: var(--tertiary-glow); /* NEW COLOR */
-        margin: 50px 0 30px; /* Reduced Margin */
-        text-shadow: 0 0 10px var(--tertiary-glow); /* NEW COLOR */
-        letter-spacing: 1.5px;
+        font-size: clamp(2.0em, 4vw, 2.5em); /* Increased Size */
+        color: var(--tertiary-glow); 
+        margin: 60px 0 40px; /* Increased Margin */
+        text-shadow: 0 0 15px var(--tertiary-glow); /* Increased Shadow */
+        letter-spacing: 2px;
     }  
     .frequency-grid { 
         display: grid; 
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Reduced Min Width */
-        gap: 30px; /* Reduced Gap */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased Min Width */
+        gap: 40px; /* Increased Gap */
         transform-style: preserve-3d;
     }  
     .freq-card {  
-      padding: 25px; border-radius: 15px; background: var(--panel-bg); /* Reduced Padding/Radius */ 
-      border: 3px solid var(--panel-border); /* Reduced Border */
-      box-shadow: 0 0 15px rgba(0, 10, 15, 0.7); /* Reduced Shadow */
+      padding: 30px; border-radius: 20px; background: var(--panel-bg); /* Increased Padding/Radius */ 
+      border: 4px solid var(--panel-border); /* Increased Border */
+      box-shadow: 0 0 20px rgba(0, 10, 15, 0.8); /* Increased Shadow */
       transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-      backdrop-filter: blur(var(--blur-val));  
+      /* backdrop-filter: blur(var(--blur-val)); REMOVED */  
       text-align: left;
       transform: rotateY(0) translateZ(0);
     }  
     .freq-card:hover {
         border-color: var(--secondary-glow);
-        box-shadow: 0 0 30px var(--secondary-glow); /* Reduced Shadow */
-        transform: translateY(-5px) translateZ(20px) rotateY(-0.5deg); /* Reduced Movement */
+        box-shadow: 0 0 40px var(--secondary-glow); /* Increased Shadow */
+        transform: translateY(-8px) translateZ(30px) rotateY(-1deg); /* Increased Movement */
     }
     .freq-card.active {  
         border-color: var(--primary-glow);  
-        box-shadow: 0 0 35px var(--primary-glow); /* Adjusted Pulse Shadow */ 
-        transform: scale(1.02) translateY(-7px) translateZ(30px) rotateY(-0.5deg); /* Reduced Movement */
+        box-shadow: 0 0 50px var(--primary-glow); /* Increased Pulse Shadow */ 
+        transform: scale(1.03) translateY(-10px) translateZ(40px) rotateY(-1deg); /* Increased Movement */
     }  
     .freq-title { 
         color: #fff; 
         font-weight: 700; 
-        font-size: 1.4em; /* Reduced Size */
-        margin: 5px 0 8px; 
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Reduced Shadow */
-        border-bottom: 1px dotted var(--panel-border);
-        padding-bottom: 6px;
+        font-size: 1.6em; /* Increased Size */
+        margin: 5px 0 10px; 
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Increased Shadow */
+        border-bottom: 2px dotted var(--panel-border); /* Increased Border */
+        padding-bottom: 8px;
     }  
-    .freq-desc { color: var(--text-muted); margin: 0 0 15px; font-size: 0.95em; line-height: 1.5; } /* Reduced Margin/Size */
+    .freq-desc { color: var(--text-muted); margin: 0 0 20px; font-size: 1em; line-height: 1.5; } /* Increased Margin/Size */
     audio { 
       margin-top: 10px; 
       width: 100%; 
-      filter: drop-shadow(0 0 8px rgba(0, 255, 200, 0.5)); /* Reduced Filter */
+      filter: drop-shadow(0 0 12px rgba(0, 255, 200, 0.8)); /* Increased Filter */
     }  
     
     /* Footer Styling */
-    .footer-main { margin-top: 80px; padding-top: 40px; border-top: 2px double var(--tertiary-glow); opacity: 0.8; } /* NEW COLOR */
+    .footer-main { margin-top: 80px; padding-top: 40px; border-top: 2px double var(--tertiary-glow); opacity: 1; } /* Increased Opacity */
     
     .footer-quote { 
-        font-size: clamp(1.5em, 3vw, 2.2em); /* Adjusted Size */
+        font-size: clamp(1.8em, 3.5vw, 2.5em); /* Increased Size */
         font-weight: 700;
         color: var(--secondary-glow); 
         line-height: 1.6; 
-        text-shadow: 0 0 10px var(--secondary-glow), 0 0 20px rgba(0, 255, 255, 0.4); /* Reduced Shadow */
+        text-shadow: 0 0 15px var(--secondary-glow), 0 0 30px rgba(0, 255, 255, 0.6); /* Increased Shadow */
         margin-top: 0;
         margin-bottom: 20px; 
     }  
@@ -367,24 +367,24 @@
     .footer-question { 
         font-family: 'Vazirmatn', sans-serif; 
         font-weight: bold; 
-        margin: 20px 0 15px; 
+        margin: 25px 0 20px; /* Increased Margin */
         color: var(--primary-glow); 
-        font-size: 1.3em; /* Reduced Size */
+        font-size: 1.4em; /* Increased Size */
         letter-spacing: 1.5px;
-        text-shadow: 0 0 8px var(--primary-glow); /* Reduced Shadow */
+        text-shadow: 0 0 10px var(--primary-glow); /* Increased Shadow */
     }  
-    .footer-links { font-size: 1em; line-height: 2; } /* Reduced Size/Line Height */
+    .footer-links { font-size: 1.1em; line-height: 2; } /* Increased Size/Line Height */
     .footer-links a { color: var(--secondary-glow); text-decoration: none; transition: color .3s ease, text-shadow .3s ease; margin: 0 15px; }  
-    .footer-links a:hover { color: var(--primary-glow); text-decoration: underline; text-shadow: 0 0 4px var(--primary-glow); } /* Reduced Shadow */
+    .footer-links a:hover { color: var(--primary-glow); text-decoration: underline; text-shadow: 0 0 6px var(--primary-glow); } /* Increased Shadow */
     
     /* Responsive Adjustments */
     @media (max-width: 768px) {  
-        .nav-link { margin: 0 6px; font-size: 0.9em; } 
-        .key-archive-grid .button { width: 100%; max-width: none; padding: 12px 18px; }
+        .nav-link { margin: 0 8px; font-size: 1em; } 
+        .key-archive-grid .button { width: 100%; max-width: none; padding: 15px 20px; }
         .decoder-grid { grid-template-columns: 1fr; text-align: center; }
         .decoder-grid .label { display: none; }
-        .decoder-grid .field { font-size: 1.1em; }
-        .freq-card { padding: 20px; }
+        .decoder-grid .field { font-size: 1.2em; }
+        .freq-card { padding: 25px; }
     } 
   </style>
 </head>
@@ -417,7 +417,7 @@
         <div style="margin-top: 40px;">
             <h3 style="color: var(--secondary-glow); margin-bottom: 30px; font-size: clamp(1.8em, 3.5vw, 2.2em); text-shadow: 0 0 10px var(--secondary-glow);">🌐 Key Field Repositories (QMSG-7 Protocol)</h3>
               
-            <div role="alert" class="archive-alert" style="padding: 20px; margin: 25px auto 40px; max-width: 750px; backdrop-filter: blur(var(--blur-val));">
+            <div role="alert" class="archive-alert" style="padding: 20px; margin: 25px auto 40px; max-width: 750px;">
                 <h4 style="color: #ffebcd; margin-top: 0; font-size: 1.3em; font-weight: 600;">🚨 Global Disclosure Alert (2025-10-15)</h4>
                 <p style="color: #fff; margin-bottom: 0; line-height: 1.7; font-size: 0.95em;">
                     **ALL Figshare DOIs** associated with the VARZIN Project have been **systematically blocked and censored** by the platform to restrict access to the archive. <br>
@@ -454,7 +454,7 @@
                 </a>
                   
                 <a class="button main-action" href="feedback.html" target="_self" aria-label="Send Feedback or Transmit Resonance Data"
-                    style="background-color: rgba(255, 196, 0, 0.15); border-color: var(--tertiary-glow); box-shadow: 0 0 25px var(--tertiary-glow);">
+                    style="background-color: rgba(255, 196, 0, 0.25); border-color: var(--tertiary-glow); box-shadow: 0 0 35px var(--tertiary-glow);">
                     <span>💬 **Transmit Resonance Data / Feedback (RAHTALĒN-7)**</span>
                 </a>
             </div>
@@ -575,7 +575,7 @@
       const ctx = canvas.getContext('2d');  
       const container = document.querySelector('.container');
       
-      const mouse = { x: null, y: null, radius: 100 }; // Reduced Interaction radius
+      const mouse = { x: null, y: null, radius: 100 }; 
       const maxDistance = 150; 
       const fieldGlow = 'rgba(0, 255, 255, 0.4)'; 
 
@@ -590,21 +590,21 @@
           initParticles(); 
       });  
       
-      // --- LUXVAR FIELD COHERENCE (Holographic Tilt - Reduced) ---
+      // --- LUXVAR FIELD COHERENCE (Holographic Tilt - Increased Rotation) ---
       window.addEventListener('mousemove', (event) => {  
           
           // 1. Particle effect mouse tracking
           mouse.x = event.x;  
           mouse.y = event.y;  
 
-          // 2. LUXVAR Field Coherence Effect (Holographic Tilt - Reduced Rotation)
+          // 2. LUXVAR Field Coherence Effect (Holographic Tilt - Increased Rotation)
           const centerX = window.innerWidth / 2;
           const centerY = window.innerHeight / 2;
           
           const normX = (event.clientX - centerX) / centerX;
           const normY = (event.clientY - centerY) / centerY;
           
-          const MAX_ROTATION = 1.5; /* Reduced Max Rotation (Glass Effect) */
+          const MAX_ROTATION = 3.0; /* Increased Max Rotation */
           
           const rotateY = normX * MAX_ROTATION; 
           const rotateX = -normY * MAX_ROTATION; 
@@ -618,7 +618,7 @@
       });
       // -----------------------------------------------------------------
         
-      // --- STRUCTURAL GRID (Particle Logic - Reduced Density) ---
+      // --- STRUCTURAL GRID (Particle Logic - Increased Density) ---
       let particles = [];
       
       class Particle {
@@ -632,7 +632,7 @@
               ctx.beginPath();
               ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
               ctx.fillStyle = this.color;
-              ctx.shadowBlur = 4; /* Reduced Particle Glow */
+              ctx.shadowBlur = 6; /* Increased Particle Glow */
               ctx.shadowColor = this.color;
               ctx.fill();
               ctx.shadowBlur = 0; 
@@ -645,12 +645,12 @@
               let dy = mouse.y - this.y;
               let distance = Math.sqrt(dx * dx + dy * dy);
               
-              // Mouse interaction (repulsion/size change)
+              // Mouse interaction (repulsion/size change - Increased Effect)
               if (distance < mouse.radius + this.originalSize) {
-                  let force = (mouse.radius + this.originalSize - distance) / (mouse.radius + this.originalSize) * 0.2; 
+                  let force = (mouse.radius + this.originalSize - distance) / (mouse.radius + this.originalSize) * 0.3; /* Increased Force */
                   this.x -= dx * force;
                   this.y -= dy * force;
-                  this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.5); /* Reduced Size Change */
+                  this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.8); /* Increased Size Change */
               } else {
                   this.size += (this.originalSize - this.size) * 0.1; 
               }
@@ -663,12 +663,12 @@
 
       function initParticles() {
           particles = [];
-          // Target fewer particles for a cleaner look (Increased divisor from 30000 to 40000)
-          let numParticles = (canvas.height * canvas.width) / 40000; 
-          numParticles = Math.min(numParticles, 80); /* Set a lower cap */
+          // Target more particles for a denser look (Divisor from 40000 to 30000)
+          let numParticles = (canvas.height * canvas.width) / 30000; 
+          numParticles = Math.min(numParticles, 100); /* Increased Cap */
 
           for (let i = 0; i < numParticles; i++) {
-              let size = Math.random() * 1.2 + 0.6; /* Reduced Max Size */
+              let size = Math.random() * 1.5 + 0.8; /* Increased Max Size */
               let x = Math.random() * canvas.width; 
               let y = Math.random() * canvas.height;
               let angle = Math.random() * 2 * Math.PI;
@@ -688,8 +688,8 @@
                   if (distance < maxDistance) {
                       let opacityValue = 1 - (distance / maxDistance);
                       
-                      ctx.strokeStyle = `rgba(0, 255, 200, ${opacityValue * 0.3})`; /* Reduced Line Opacity */
-                      ctx.lineWidth = 0.8; /* Reduced Line Thickness */
+                      ctx.strokeStyle = `rgba(0, 255, 200, ${opacityValue * 0.5})`; /* Increased Line Opacity */
+                      ctx.lineWidth = 1.0; /* Increased Line Thickness */
                       ctx.beginPath();
                       ctx.moveTo(particles[a].x, particles[a].y);
                       ctx.lineTo(particles[b].x, particles[b].y);
@@ -703,7 +703,7 @@
           requestAnimationFrame(animate);
           
           // Smooth Trail Effect 
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.15)'; /* Slightly Reduced Trail Opacity */
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; /* Decreased Trail Opacity (Cleaner/Brighter Field) */
           ctx.fillRect(0, 0, canvas.width, canvas.height); 
           
           connectParticles();
