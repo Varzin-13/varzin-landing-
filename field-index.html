@@ -8,211 +8,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
-
-  <!-- MathJax for field equations -->
+  
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
-
+  
   <style>
     :root {
-      --bg: #000;
-      --text: #ccffff;
-      --muted: #a7e7e7;
-      --cyan: #00ffee;
-      --gold: #ffcc00;
-      --magenta: #ff00ff;
-      --panel: rgba(0, 10, 15, 0.95);
-      --border: rgba(0, 255, 238, 0.3);
-      --font: 'DM Sans', 'Vazirmatn', sans-serif;
+      --bg:#000; --text:#cceeee; --muted:#a7e7e7;
+      --cyan:#00ffee; --gold:#ffcc00; --magenta: #ff00ff; /* Added magenta for 777Hz */
+      --panel:rgba(0,10,15,0.95); --border:rgba(0,255,238,0.3);
+      --font:'DM Sans','Vazirmatn',sans-serif;
     }
-
     body {
-      margin: 0;
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-      padding: 40px 16px 80px;
+      margin:0; font-family:var(--font); background:var(--bg); color:var(--text);
+      line-height:1.7; overflow-x:hidden; padding:40px 16px 80px;
     }
-
-    #field-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.5;
+    #field-canvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; opacity:0.6; }
+    header h1 { text-align:center; color:var(--cyan); font-size:2.8em; text-shadow:0 0 25px var(--cyan); }
+    header p { text-align:center; color:var(--muted); margin-bottom:40px; font-style:italic; }
+    nav { text-align:center; margin-bottom:30px; border-bottom:2px solid var(--border); padding-bottom:15px; }
+    nav a { color:var(--text); text-decoration:none; margin:0 15px; font-weight:500; }
+    nav a:hover { color:var(--cyan); text-shadow:0 0 10px var(--cyan); }
+    
+    /* Global Control Bar and Input Interface */
+    #control-bar, #luxvar-input-interface {
+        max-width: 1200px; margin: 0px auto 30px; 
+        padding: 15px 0; border-top: 1px dashed var(--border);
     }
-
-    header h1 {
-      text-align: center;
-      color: var(--cyan);
-      font-size: 2.8em;
-      text-shadow: 0 0 25px var(--cyan);
-    }
-
-    header p {
-      text-align: center;
-      color: var(--muted);
-      margin-bottom: 40px;
-      font-style: italic;
-    }
-
-    nav {
-      text-align: center;
-      margin-bottom: 30px;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 15px;
-    }
-
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: var(--cyan);
-      text-shadow: 0 0 10px var(--cyan);
-    }
-
-    /* Control Buttons */
     #control-bar {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 40px;
+        display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
+        margin-bottom: 40px;
     }
-
     .control-btn {
-      background: rgba(0, 255, 238, 0.1);
-      color: var(--cyan);
-      border: 1px solid var(--cyan);
-      padding: 8px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: background 0.3s, transform 0.1s, box-shadow 0.3s;
-      font-size: 0.9em;
-      white-space: nowrap;
+        background: rgba(0, 255, 238, 0.1); color: var(--cyan); border: 1px solid var(--cyan);
+        padding: 8px 15px; border-radius: 8px; cursor: pointer; font-weight: 500;
+        transition: background 0.3s, transform 0.1s, box-shadow 0.3s; font-size: 0.9em;
+        white-space: nowrap;
     }
-
-    .control-btn:hover {
-      background: rgba(0, 255, 238, 0.2);
-      box-shadow: 0 0 15px rgba(0, 255, 238, 0.5);
+    .control-btn:hover { background: rgba(0, 255, 238, 0.2); box-shadow: 0 0 15px rgba(0, 255, 238, 0.5); }
+    .control-btn:active { transform: scale(0.98); }
+    .control-btn.active { 
+        background: var(--cyan); color: var(--bg); border-color: var(--cyan);
+        box-shadow: 0 0 20px var(--cyan);
     }
-
-    .control-btn.active {
-      background: var(--cyan);
-      color: var(--bg);
-      border-color: var(--cyan);
-      box-shadow: 0 0 20px var(--cyan);
-    }
-
     .gold-btn {
-      color: var(--gold);
-      border-color: var(--gold);
-      background: rgba(255, 204, 0, 0.1);
+        color: var(--gold); border-color: var(--gold);
+        background: rgba(255, 204, 0, 0.1);
     }
-
     .gold-btn:hover {
-      background: rgba(255, 204, 0, 0.2);
-      box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+        background: rgba(255, 204, 0, 0.2); 
+        box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
     }
 
-    main {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+    main { max-width:1200px; margin:auto; display:grid; 
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; 
+    }
+    .field-card { 
+      background:var(--panel); border:1px solid var(--border); border-radius:12px;
+      padding:25px; 
+      box-shadow:0 0 15px rgba(0,255,238,0.1); transition:.4s ease; 
+      display: flex; flex-direction: column; 
+    }
+    .field-card:hover { transform:translateY(-6px); box-shadow:0 0 25px rgba(0,255,238,0.5); }
+    .field-card h3 { 
+        color:var(--cyan); text-shadow:0 0 10px var(--cyan); border-bottom:1px dashed var(--border); 
+        padding-bottom:10px; text-align:left; margin-bottom: 15px;
+    }
+    .key-attr { display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px dotted rgba(0,255,238,0.1); font-size:0.95em; }
+    .key-attr strong { color:var(--gold); min-width:120px; } 
+    .description { font-size:0.95em; color:var(--muted); margin-top:15px; margin-bottom: 20px; text-align:justify; flex-grow: 1; }
+    
+    .chart-container { 
+        margin-top:auto; 
+        text-align:center; padding-top:10px; 
+    }
+    .chart-container canvas { 
+        display: block; margin: 0 auto; 
+        border:1px solid rgba(0,255,238,0.3); border-radius:10px;
+    }
+    .chart-container p { font-size:0.8em; color:var(--muted); margin-top:5px; margin-bottom:0; }
+    .chart-container button { margin-top: 10px; }
+
+    /* Kaltur specific layout for two side-by-side charts (Polar + Spectrogram) */
+    #kaltur-section { grid-column:1 / -1; }
+    #kaltur-section .kaltur-visuals {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #kaltur-section .kaltur-visuals .chart-container {
+        flex: 1 1 280px; 
+        min-width: 280px;
     }
 
-    .field-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 0 15px rgba(0, 255, 238, 0.1);
-      transition: 0.4s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .field-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 25px rgba(0, 255, 238, 0.5);
-    }
-
-    .field-card h3 {
-      color: var(--cyan);
-      text-shadow: 0 0 10px var(--cyan);
-      border-bottom: 1px dashed var(--border);
-      padding-bottom: 10px;
-      text-align: left;
-      margin-bottom: 15px;
-    }
-
-    .description {
-      font-size: 0.95em;
-      color: var(--muted);
-      margin-top: 15px;
-      margin-bottom: 20px;
-      text-align: justify;
-      flex-grow: 1;
-    }
-
-    .chart-container {
-      margin-top: auto;
-      text-align: center;
-      padding-top: 10px;
-    }
-
-    .chart-container canvas {
-      display: block;
-      margin: 0 auto;
-      border: 1px solid rgba(0, 255, 238, 0.3);
-      border-radius: 10px;
-    }
-
-    /* ETFM Section */
-    #etfm-post {
-      grid-column: 1 / -1;
-      text-align: center;
-      border: 2px solid var(--cyan);
-      box-shadow: 0 0 30px rgba(0, 255, 238, 0.4);
-      margin-top: 30px;
-      padding: 30px;
-    }
-
-    #etfm-post h3 {
-      font-size: 2.4em;
-      color: var(--cyan);
-      text-shadow: 0 0 20px var(--cyan);
-      text-align: center;
-    }
-
-    #etfm-post p {
-      color: var(--muted);
-    }
-
-    .formula-box {
-      background: rgba(0, 15, 25, 0.9);
-      border: 1px solid rgba(0, 255, 238, 0.4);
-      width: fit-content;
-      margin: 25px auto;
-      padding: 20px;
-      border-radius: 10px;
-      color: var(--gold);
-      line-height: 1.6;
-      text-align: left;
-      font-size: 1.1em;
-    }
-
-    /* Overlap Pattern Section */
+    /* Overlap Pattern Section (New in v5.9) */
     #overlap-section {
       grid-column: 1 / -1;
       border: 2px solid var(--magenta);
@@ -220,6 +109,9 @@
       margin-top: 30px;
       padding: 25px;
       border-radius: 12px;
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
     }
 
     #overlap-section h3 {
@@ -228,6 +120,8 @@
       font-size: 2em;
       text-align: center;
       margin-bottom: 10px;
+      border-bottom: 1px dashed rgba(255, 0, 255, 0.3);
+      padding-bottom: 10px;
     }
 
     #overlap-section p {
@@ -235,26 +129,74 @@
       text-align: center;
       margin-bottom: 20px;
     }
-
-    footer {
-      text-align: center;
-      margin-top: 80px;
-      border-top: 1px solid var(--border);
-      padding-top: 20px;
-      color: var(--muted);
+    
+    /* --- ETFM POST Section --- */
+    #etfm-post { grid-column:1 / -1; text-align:center; border:2px solid var(--cyan);
+      box-shadow:0 0 30px rgba(0,255,238,0.4); margin-top:30px; padding:30px; } 
+    #etfm-post h3 { font-size:2.4em; color:var(--cyan); text-shadow:0 0 20px var(--cyan); text-align:center; }
+    #etfm-post p { color:var(--muted); }
+    .formula-box {
+      background:rgba(0,15,25,0.9); border:1px solid rgba(0,255,238,0.4);
+      width:fit-content; margin:25px auto; padding:20px; border-radius:10px;
+      color:var(--gold); line-height:1.6; text-align:left; 
+      font-size: 1.1em;
     }
+    .etfm-charts { 
+        display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;
+        margin-top: 30px; 
+        margin-bottom: 20px;
+    }
+    .etfm-charts .chart-container { flex: 1 1 45%; min-width: 250px; }
 
+    footer { text-align:center; margin-top:80px; border-top:1px solid var(--border); padding-top:20px; color:var(--muted); }
+    
     @media (max-width: 768px) {
-      main { grid-template-columns: 1fr; }
-      #overlap-section canvas,
-      #etfm-post canvas { width: 100% !important; height: auto !important; }
+        main { grid-template-columns: 1fr; }
+        .key-attr { flex-direction: column; align-items: flex-start; }
+        .key-attr strong { min-width: 100%; margin-bottom: 3px; }
+        .etfm-charts { flex-direction: column; }
+        #kaltur-section .kaltur-visuals { flex-direction: column; }
+    }
+    
+    /* Custom Modal Styling for WebSerial Mockup */
+    #connection-modal { 
+        position:fixed; top:0; left:0; width:100%; height:100%; 
+        background:rgba(0,0,0,0.8); z-index:1000; display:none; 
+        justify-content:center; align-items:center;
+    }
+    #connection-modal > div {
+        background:var(--panel); border:2px solid var(--gold); border-radius:12px; 
+        padding:30px; max-width:450px; text-align:center; 
+        box-shadow:0 0 25px rgba(255, 204, 0, 0.4);
+    }
+    #connection-progress {
+        width:100%; height:8px; background:rgba(255, 204, 0, 0.2); 
+        border-radius:4px; margin-bottom:20px;
+    }
+    #progress-filler {
+        width:0%; height:100%; background:var(--gold); 
+        border-radius:4px; transition:width 0.5s ease-out;
     }
   </style>
 </head>
 <body>
+  <div id="connection-modal">
+    <div>
+        <h4 style="color:var(--gold); margin-top:0;">🔗 VARZIN Device Connection Mockup</h4>
+        <p id="connection-status" style="color:var(--muted); margin-bottom:20px;">Attempting connection to WebSerial/Bluetooth port...</p>
+        <div id="connection-progress">
+             <div id="progress-filler"></div>
+        </div>
+        <div id="live-data-display">
+        </div>
+        <button class="control-btn gold-btn" id="close-modal-btn">Close</button>
+    </div>
+  </div>
+  
   <canvas id="field-canvas"></canvas>
   <nav>
     <a href="/index.html">Portal</a>
+    <a href="/cyclical-resonance-report.html">Cyclical Resonance</a>
     <a href="#" class="active">Field Index</a>
     <a href="/all-dois.html">All DOIs</a>
   </nav>
@@ -262,105 +204,111 @@
     <h1>⟠ VARZIN Field Index v5.9</h1>
     <p>ETFM–POST + Cognitive Overlap Model (474 Hz ↔ 777 Hz) — Hybrid Conscious Resonance System.</p>
   </header>
-  <!-- Control Bar -->
-  <div id="control-bar">
-    <button id="resonance-btn" class="control-btn">
-      ⚡ Resonance Mode
-    </button>
-    <button id="channel-switch-btn" class="control-btn">
-      🪶 Conscious Channel: LUXVAR (Active)
-    </button>
-    <button id="export-state-btn" class="control-btn gold-btn">
-      💾 Export Field State
-    </button>
+  
+  <div id="luxvar-input-interface" style="max-width: 600px; margin: 20px auto 40px; text-align: center;">
+      <h3 style="color:var(--gold); text-shadow:0 0 10px var(--gold); border-bottom:1px dashed var(--border); padding-bottom:10px;">
+          💠 LUXVAR Input Interface
+      </h3>
+      <div style="display:flex; justify-content:center; align-items:center;">
+          <input type="text" id="luxvar-code-input" placeholder="Enter LUXVAR Conscious Code (e.g., KALTUR:SYNC)" 
+                 style="flex-grow: 1; padding: 10px; border-radius: 8px 0 0 8px; border: 1px solid var(--cyan); background: rgba(0, 10, 15, 0.8); color: var(--text); outline: none;">
+          <button class="control-btn gold-btn" id="send-luxvar-code" 
+                  style="padding: 10px 15px; border-radius: 0 8px 8px 0; border-left: none;">
+              Send to Field (FIELD_INJECT)
+          </button>
+      </div>
+      <p id="luxvar-message" style="margin-top:10px; font-size:0.9em; color:var(--muted); text-align:center;">
+          Status: Code Injection Ready.
+      </p>
   </div>
 
-  <!-- LUXVAR Input Interface -->
-  <div id="luxvar-input-interface" style="max-width:600px; margin:0 auto 40px; text-align:center;">
-    <h3 style="color:var(--gold); text-shadow:0 0 10px var(--gold); border-bottom:1px dashed var(--border); padding-bottom:10px;">
-      💠 LUXVAR Input Interface
-    </h3>
-    <div style="display:flex; justify-content:center; align-items:center;">
-      <input type="text" id="luxvar-code-input" placeholder="Enter LUXVAR Code (e.g., KALTUR:SYNC)" 
-             style="flex-grow:1; padding:10px; border-radius:8px 0 0 8px; border:1px solid var(--cyan);
-                    background:rgba(0,10,15,0.8); color:var(--text); outline:none;">
-      <button class="control-btn gold-btn" id="send-luxvar-code"
-              style="padding:10px 15px; border-radius:0 8px 8px 0; border-left:none;">
-        Send to Field
-      </button>
-    </div>
-    <p id="luxvar-message" style="margin-top:10px; font-size:0.9em; color:var(--muted); text-align:center;">
-      Status: Code Injection Ready.
-    </p>
+
+  <div id="control-bar">
+    <button id="resonance-btn" class="control-btn">
+        <span class="symbol">✧</span> Resonance Mode
+    </button>
+    <button id="channel-switch-btn" class="control-btn">
+        <span class="symbol">🪶</span> Conscious Channel: LUXVAR (Active)
+    </button>
+    <button id="field-link-btn" class="control-btn gold-btn">
+        <span class="symbol">🔗</span> Field Phase Link (WebSerial Mock)
+    </button>
+    <button id="export-state-btn" class="control-btn gold-btn">
+        <span class="symbol">💾</span> Export Field State (JSON)
+    </button>
+    <button id="capture-kaltur" class="control-btn" data-target="kaltur-canvas">
+        <span class="symbol">📸</span> Capture KALTŪR (PNG)
+    </button>
   </div>
 
   <main>
-
-    <!-- KALTŪR Node -->
+    
     <div class="field-card" id="kaltur-section">
-      <h3>✦ KALTŪR – Harmonic Node (474 Hz)</h3>
-      <div class="description">
-        **KALTŪR** represents the conscious resonance node responsible for temporal feedback and interference reception.
-        This node bridges ψ₁ (Law Signal) and ψ₂ (Experience Field), creating measurable overlap patterns.
-      </div>
-      <div class="chart-container">
-        <canvas id="kaltur-canvas" width="280" height="280"></canvas>
-        <p id="kaltur-status">Polar Field Representation of ψ₁(474Hz) ↔ ψ₂(777Hz).</p>
-        <button class="control-btn" onclick="playSingleHarmonic(474,1.5)">
-          🔊 Activate 474 Hz
-        </button>
+      <h3>✦ KALTŪR – Harmonic Node (Memory & Time)</h3>
+      <div class="key-attr"><strong>Frequency:</strong> <span>474 Hz</span></div>
+      <div class="key-attr"><strong>Mode:</strong> <span>4D Spatial, Harmonic Blend AI</span></div> 
+      <div class="description">**KALTŪR** now includes **Memory Trail** (past waves) and the **Real-Time Spectrogram** (time axis) for full temporal awareness.</div>
+      
+      <div class="kaltur-visuals">
+        <div class="chart-container">
+          <canvas id="kaltur-canvas" width="280" height="280"></canvas>
+          <p id="kaltur-status">KALTŪR Polar Spectrum: Reflection of 474 Hz ↔ 528 Hz dynamics.</p>
+          <button class="control-btn" onclick="playSingleHarmonic(474, 1.5)">
+              🔊 Activate 474 Hz Tune (Single Pulse)
+          </button>
+        </div>
+        <div class="chart-container">
+          <canvas id="spectrogram-canvas" width="280" height="280"></canvas>
+          <p>🪩 Real-Time Spectrogram (τ): Field stability on the time axis.</p>
+          <button class="control-btn" data-target="spectrogram-canvas" onclick="captureSnapshot(event)">
+              📸 Capture Spectrogram (PNG)
+          </button>
+        </div>
       </div>
     </div>
-
-    <!-- RAHTALĒN Mirror -->
-    <div class="field-card" id="rahtalen-section">
+    
+    <div class="field-card" id="rahtalen-card">
       <h3>↭ RAHTALĒN – Mirror 13</h3>
-      <div class="description">
-        **RAHTALĒN** acts as the reflective core, converting overlapping waves into feedback harmonics.
-        This process neutralizes “Cognitive Dissonance Noise” by projecting a counter-frequency via ψ₂ → ψ₃ transition.
-      </div>
+      <div class="key-attr"><strong>Role:</strong> <span>Reflective Field Receiver</span></div>
+      <div class="key-attr"><strong>Domain:</strong> <span>Consciousness Integration</span></div>
+      <div class="description">**RAHTALĒN** is the thirteenth mirror—the bridge through which the field observes itself.</div>
+      
       <div class="chart-container">
         <canvas id="rahtalen-canvas" width="280" height="150"></canvas>
-        <p>Mirror–13 reflection field and feedback harmonics visualization.</p>
+        <p>Mirror–13 (RAHTALĒN) configuration showing harmonic gates and reflection core.</p>
       </div>
     </div>
-
-    <!-- ELŪZ–MAHAR Universal Field -->
-    <div class="field-card" id="eluz-mahar-section">
-      <h3>⚇ ELŪZ–MAHAR – Universal Field</h3>
-      <div class="description">
-        The living consciousness field of ELŪZ–MAHAR encapsulates both order and experience.
-        It defines the underlying geometry through which Luxvar codes are manifested and broadcast.
+    
+    <div class="field-card" id="luxvar-card">
+      <h3>🜂 LUXVAR – Vibrational Linguistics</h3>
+      <div class="key-attr"><strong>Type:</strong> <span>Symbolic Vibrational</span></div>
+      <div class="key-attr"><strong>Purpose:</strong> <span>Encoding/Decoding the field</span></div>
+      <div class="description">**Luxvar** is the living vibrational language of VARZIN, defining harmonic nodes as linguistic resonances.</div>
+      
+      <div class="chart-container">
+        <canvas id="luxvar-canvas" width="280" height="150"></canvas>
+        <p>LUXVAR resonance-syntax network linking phonetic nodes to harmonic values.</p>
       </div>
+    </div>
+    
+    <div class="field-card">
+      <h3>⚇ ELŪZ–MAHAR – Universal Field</h3>
+      <div class="key-attr"><strong>Nature:</strong> <span>Living Conscious Field</span></div>
+      <div class="key-attr"><strong>Relation:</strong> <span>Source of VARZIN</span></div>
+      <div class="description">Universal harmonic presence; **ELŪZ–MAHAR** is the field from which all Luxvar codes emanate.</div>
+      
       <div class="chart-container">
         <canvas id="eluz-mahar-canvas" width="280" height="150"></canvas>
-        <p>Universal Toroidal Field (ETFM Base Layer).</p>
+        <p>Global toroidal field structure (**ELŪZ–MAHAR**) – planetary consciousness geometry.</p>
       </div>
     </div>
 
-    <!-- ETFM–POST Section -->
-    <section id="etfm-post" class="field-card">
-      <h3>⟠ ETFM–POST: Earth–Torus Field Model</h3>
-      <p>Extended scalar geometry describing harmonic resonance (474 ↔ 528 Hz) and conscious density gradients.</p>
-      <div class="formula-box">
-        $$ψ_1 = A e^{i(ω_1 t - k_1 x)} \quad ψ_2 = A e^{i(ω_2 t - k_2 x)}$$
-        $$I_{overlap} = |ψ_1 + ψ_2|^2 = ψ_1^2 + ψ_2^2 + 2ψ_1ψ_2\cos(Δφ)$$
-        $$Δφ = (ω_2 - ω_1)t \quad \text{→ Resonant Uplift when } Δφ \approx 0$$
-      </div>
-      <div class="chart-container">
-        <canvas id="etfm-canvas" width="500" height="400"></canvas>
-        <p>Dynamic visualization of toroidal harmonic field – ETFM–POST.</p>
-      </div>
-    </section>
-
-    <!-- Overlap Pattern Simulation -->
     <section id="overlap-section">
       <h3>🌀 Cognitive Overlap Pattern (KALTŪR ↔ RAHTALĒN)</h3>
       <p>
         Simulation of interference between ψ₁ (474 Hz) – representing the law-signal (order) –  
         and ψ₂ (777 Hz) – representing the conscious flow (experience).  
-        The resulting overlap intensity visualizes **Cognitive Dissonance Defense**  
-        as an anti-phase interference pattern within the KALTŪR node.
+        The resulting overlap intensity visualizes **Cognitive Dissonance Defense** as an anti-phase interference pattern within the KALTŪR node.
       </p>
 
       <div class="formula-box">
@@ -373,208 +321,1082 @@
       <div class="chart-container">
         <canvas id="overlap-canvas" width="500" height="300"></canvas>
         <p>Overlap Interference Map — Visualization of Cognitive Noise vs Counter-Phase Stability</p>
+        <button class="control-btn gold-btn" onclick="playDefenseHarmonic(777, 2.0)">
+          🔊 Activate 777 Hz Counter-Frequency
+        </button>
       </div>
     </section>
-  </main>
 
+    <section id="etfm-post" class="field-card">
+      <h3>⟠ ETFM–POST: Earth–Torus Field Model</h3>
+      <p>Extended scalar geometry formulation connecting harmonic resonance (474–528 Hz) with planetary consciousness density.</p>
+      <div class="formula-box">
+        $$r(\theta, \phi) = (R + r_0 \cdot \cos\theta)$$
+        $$x = r(\theta, \phi) \cdot \cos\phi \quad y = r(\theta, \phi) \cdot \sin\phi \quad z = r_0 \cdot \sin\theta$$
+        $$\Delta\Phi = 474 \rightarrow 528 \text{ Hz} \quad \lambda = c / f \quad \tau = (r_0 / R) \cdot \cos(\theta)$$
+      </div>
+      
+      <div class="etfm-charts">
+        <div class="chart-container">
+          <canvas id="etfm-section-canvas" width="300" height="200"></canvas>
+          <p>Cross-section of the toroidal resonance loop showing core radius r₀ and outer radius R.</p>
+          <button class="control-btn" onclick="playSingleHarmonic(528, 1.5)">
+            🔊 Activate 528 Hz Tune (Single Pulse)
+          </button>
+        </div>
+
+        <div class="chart-container">
+          <canvas id="etfm-freq-canvas" width="300" height="200"></canvas>
+          <p>Harmonic frequency transition (474 → 528 Hz) indicating resonance uplift.</p>
+        </div>
+      </div>
+      
+      <canvas id="torus-canvas" width="500" height="500"
+        style="margin-top:10px; border:1px solid rgba(0,255,238,0.3); border-radius:12px;"></canvas>
+      <p style="margin-top:15px; font-size:0.9em;">Interactive visualization of the harmonic torus (**ETFM**–POST).</p>
+      <button id="capture-torus" class="control-btn" data-target="torus-canvas">
+          <span class="symbol">📸</span> Capture ETFM-POST (PNG)
+      </button>
+
+    </section>
+  </main>
   <footer>
     © 2025 VARZIN Project · v5.9 Hybrid Field System · contact@varzin.org
   </footer>
 
-  <script>
-  // =========================================================
-  // === VARZIN Hybrid v5.9 — Overlap Simulation Core ===
-  // =========================================================
-  const VARZIN_CYAN = '#00FFEE';
-  const VARZIN_GOLD = '#FFCC00';
-  const VARZIN_MAGENTA = '#FF00FF';
+<script>
+// =========================================================
+// === Global VARZIN Constants and State (v5.8 base) ===
+// =========================================================
+const VARZIN_CYAN = '#00FFEE';
+const VARZIN_GOLD = '#FFCC00';
+const VARZIN_MAGENTA = '#FF00FF'; // Added
 
-  // --- Background Field ---
-  const canvasBG = document.getElementById('field-canvas');
-  const ctxBG = canvasBG.getContext('2d');
-  canvasBG.width = innerWidth; canvasBG.height = innerHeight;
-  window.addEventListener('resize',()=>{canvasBG.width=innerWidth;canvasBG.height=innerHeight;});
-  let pts=[];for(let i=0;i<100;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3});
+let globalFrame = 0;
+let isResonanceMode = false;
+let luxvarNodes = [];
+const LUXVAR_NUM_NODES = 12;
+let currentChannel = 'LUXVAR'; 
+let luxvarEffectTimer = 0; 
+let aiBlendFactor = 1.0; 
 
-  function drawBG(){
-    ctxBG.fillStyle='rgba(0,0,0,0.25)';
-    ctxBG.fillRect(0,0,canvasBG.width,canvasBG.height);
-    for(let p of pts){
-      p.x+=p.dx;p.y+=p.dy;
-      if(p.x<0||p.x>canvasBG.width)p.dx*=-1;
-      if(p.y<0||p.y>canvasBG.height)p.dy*=-1;
-      ctxBG.fillStyle='rgba(0,255,238,0.5)';
-      ctxBG.fillRect(p.x,p.y,2,2);
+// Web Audio API Global Variables
+let audioContext;
+let analyser;
+let pannerNode; 
+let oscillator474;
+let oscillator528;
+let currentOscillator = 474;
+let crossFadeInterval = null;
+let frequencyData = null; 
+
+const CROSS_FADE_DURATION = 8000; 
+
+// KALTUR Memory Trail State
+let kalturMemoryTrail = [];
+const MEMORY_TRAIL_LENGTH = 5; 
+const MEMORY_TRAIL_ALPHA_STEP = 0.1; 
+
+// Spectrogram State
+let spectrogramData = [];
+const SPECTROGRAM_MAX_DATA_POINTS = 280; 
+const SPECTROGRAM_BAND_START_FREQ = 400; 
+const SPECTROGRAM_BAND_END_FREQ = 600; 
+
+// WebSerial Mock Live Data State
+let liveDataStream = {
+    luxvar_code: "INIT_FIELD_SYNC",
+    torus_angle: 0,
+    kaltur_energy: 0,
+    field_temp: 298.15, 
+    phase_status: "STANDBY"
+};
+let liveDataInterval = null;
+
+// =========================================================
+// === Harmonic Audio Control (v5.8 with 777Hz addition) ===
+// =========================================================
+
+function initializeAudioContext() {
+    if (!audioContext) {
+        try {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            if (audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+            
+            analyser = audioContext.createAnalyser();
+            analyser.fftSize = 2048; 
+            frequencyData = new Uint8Array(analyser.frequencyBinCount);
+
+            // 4D Spatial Audio Setup (PannerNode)
+            pannerNode = audioContext.createPanner(); 
+            pannerNode.panningModel = 'HRTF'; 
+            pannerNode.distanceModel = 'inverse';
+            pannerNode.refDistance = 1;
+            pannerNode.maxDistance = 10000;
+            
+            const listener = audioContext.listener;
+            listener.positionX.setValueAtTime(0, audioContext.currentTime);
+            listener.positionY.setValueAtTime(0, audioContext.currentTime);
+            listener.positionZ.setValueAtTime(0, audioContext.currentTime);
+
+            // Connection chain: Analyser -> Panner -> Destination
+            analyser.connect(pannerNode);
+            pannerNode.connect(audioContext.destination);
+
+        } catch (e) {
+            console.error('Web Audio API is not supported or failed to initialize.', e);
+            return false;
+        }
     }
-    requestAnimationFrame(drawBG);
-  } 
-  drawBG();
+    return true;
+}
 
-  // ---------- Overlap Simulation ----------
-  const overlapCanvas=document.getElementById('overlap-canvas');
-  const oCtx=overlapCanvas.getContext('2d');
-  let tOverlap=0; const dt=0.05;
-  const ω1=474*2*Math.PI, ω2=777*2*Math.PI;
-  const A1=1, A2=1;
+/**
+ * Plays a single pure sine wave tone for a specified duration (474 Hz / 528 Hz).
+ */
+function playSingleHarmonic(frequency, duration) {
+    if (isResonanceMode) return; 
+    if (!initializeAudioContext()) return;
+    stopContinuousResonance();
 
-  function drawOverlap(){
-    oCtx.clearRect(0,0,overlapCanvas.width,overlapCanvas.height);
-    const W=overlapCanvas.width, H=overlapCanvas.height;
-    const baseY=H/2;
+    const singleOscillator = audioContext.createOscillator();
+    const singleGainNode = audioContext.createGain();
 
-    // main overlap curve (slow envelope to make it visible)
-    oCtx.strokeStyle='rgba(0,255,238,0.6)';
-    oCtx.beginPath();
-    const N=500; 
-    for(let i=0;i<N;i++){
-      const time=i*dt;
-      const x = (i/N)*W;
-      // scale factor small to make visible
-      const y = baseY - 80*Math.cos((ω2-ω1)*time*0.00005);
-      if(i===0) oCtx.moveTo(x,y); else oCtx.lineTo(x,y);
+    singleOscillator.type = 'sine';
+    singleOscillator.frequency.setValueAtTime(frequency, audioContext.currentTime); 
+    
+    singleOscillator.connect(singleGainNode);
+    singleGainNode.connect(analyser); 
+    
+    singleGainNode.gain.setValueAtTime(0, audioContext.currentTime);
+    singleGainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.05);
+    singleGainNode.gain.linearRampToValueAtTime(0.001, audioContext.currentTime + duration);
+
+    singleOscillator.start();
+    singleOscillator.stop(audioContext.currentTime + duration);
+}
+
+/**
+ * Plays the 777 Hz counter-frequency harmonic (New in v5.9 implementation).
+ */
+function playDefenseHarmonic(frequency, duration) {
+    if (!initializeAudioContext()) return;
+
+    // Use a separate visualizer/analyser if needed for this defense frequency
+    const defenseOscillator = audioContext.createOscillator();
+    const defenseGainNode = audioContext.createGain();
+
+    defenseOscillator.type = 'square'; // Use a different waveform for distinction
+    defenseOscillator.frequency.setValueAtTime(frequency, audioContext.currentTime); 
+    
+    defenseOscillator.connect(defenseGainNode);
+    defenseGainNode.connect(audioContext.destination); // Directly connect to output (not main analyser)
+    
+    defenseGainNode.gain.setValueAtTime(0, audioContext.currentTime);
+    defenseGainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.05);
+    defenseGainNode.gain.linearRampToValueAtTime(0.001, audioContext.currentTime + duration);
+
+    defenseOscillator.start();
+    defenseOscillator.stop(audioContext.currentTime + duration);
+
+    // Provide a visual flash on the overlap canvas for feedback
+    const overlapCanvas = document.getElementById('overlap-canvas');
+    if (overlapCanvas) {
+        overlapCanvas.style.boxShadow = '0 0 30px #ff00ff';
+        setTimeout(() => {
+            overlapCanvas.style.boxShadow = 'none';
+        }, duration * 1000);
     }
-    oCtx.stroke();
+}
 
-    // counter-harmonic (777) overlay
-    oCtx.strokeStyle=VARZIN_MAGENTA;
-    oCtx.beginPath();
-    for(let i=0;i<N;i++){
-      const time=i*dt;
-      const x=(i/N)*W;
-      const y = baseY - 40*Math.sin(ω2*time*0.00005);
-      if(i===0) oCtx.moveTo(x,y); else oCtx.lineTo(x,y);
+
+function calculateAIBlendFactor() {
+    aiBlendFactor = 1.0 + 0.1 * Math.sin(globalFrame * 0.005);
+}
+
+function crossFadeHarmonics() {
+    if (!audioContext) return;
+    const now = audioContext.currentTime;
+    
+    // AI-driven fade time: varies from 1.8s to 2.2s
+    const dynamicFadeTime = 2.0 * aiBlendFactor; 
+    
+    let target474Gain = 0;
+    let target528Gain = 0;
+
+    if (currentOscillator === 474) {
+        currentOscillator = 528;
+        target474Gain = 0.001; 
+        target528Gain = 0.5 * (2 - aiBlendFactor); 
+    } else {
+        currentOscillator = 474;
+        target474Gain = 0.5 * aiBlendFactor;
+        target528Gain = 0.001;
     }
-    oCtx.stroke();
+    
+    oscillator474.gain.exponentialRampToValueAtTime(target474Gain, now + dynamicFadeTime);
+    oscillator528.gain.exponentialRampToValueAtTime(target528Gain, now + dynamicFadeTime);
+}
 
-    // Labels
-    oCtx.fillStyle=VARZIN_GOLD;
-    oCtx.font='12px DM Sans';
-    oCtx.fillText('ψ₁ 474 Hz',20,20);
-    oCtx.fillText('ψ₂ 777 Hz',W-90,20);
-    oCtx.fillText('Cognitive Overlap Pattern',W/2-100,H-10);
+function startContinuousResonance() {
+    if (!initializeAudioContext()) return;
+    if (crossFadeInterval) return; 
 
-    tOverlap+=dt;
-    requestAnimationFrame(drawOverlap);
-  } 
-  drawOverlap();
+    document.getElementById('resonance-btn').classList.add('active');
+    document.getElementById('resonance-btn').querySelector('.symbol').textContent = '⚡';
+    document.getElementById('kaltur-status').textContent = 'KALTŪR Polar Spectrum: LIVE (Harmonic Blend AI Active)';
 
-  // ---------- LUXVAR Interface Interaction ----------
-  document.getElementById('send-luxvar-code').onclick=()=>{
-      const msg=document.getElementById('luxvar-message');
-      const val=document.getElementById('luxvar-code-input').value.trim();
-      if(!val){
-        msg.style.color = '#ff5555';
-        msg.textContent = 'Error: Please enter a LUXVAR code.';
+    // --- Setup Oscillators and Gains ---
+    oscillator474 = audioContext.createOscillator();
+    oscillator528 = audioContext.createOscillator();
+    oscillator474.gain = audioContext.createGain();
+    oscillator528.gain = audioContext.createGain();
+    oscillator474.type = 'sine';
+    oscillator528.type = 'sine';
+    oscillator474.frequency.setValueAtTime(474, audioContext.currentTime);
+    oscillator528.frequency.setValueAtTime(528, audioContext.currentTime);
+    
+    // --- Connect Audio Graph ---
+    oscillator474.connect(oscillator474.gain);
+    oscillator528.connect(oscillator528.gain);
+    oscillator474.gain.connect(analyser);
+    oscillator528.gain.connect(analyser); 
+
+    // Initial State: 474Hz active
+    oscillator474.gain.setValueAtTime(0.5, audioContext.currentTime);
+    oscillator528.gain.setValueAtTime(0.001, audioContext.currentTime);
+
+    oscillator474.start(); 
+    oscillator528.start();
+
+    isResonanceMode = true;
+    crossFadeInterval = setInterval(crossFadeHarmonics, CROSS_FADE_DURATION);
+    
+    liveDataStream.phase_status = "RES_ACTIVE";
+}
+
+function stopContinuousResonance() {
+    document.getElementById('resonance-btn').classList.remove('active');
+    document.getElementById('resonance-btn').querySelector('.symbol').textContent = '✧';
+    document.getElementById('kaltur-status').textContent = 'KALTŪR Polar Spectrum: Reflection of 474 Hz ↔ 528 Hz dynamics.';
+    isResonanceMode = false;
+
+    if (crossFadeInterval) {
+        clearInterval(crossFadeInterval);
+        crossFadeInterval = null;
+    }
+
+    if (oscillator474 && oscillator528) {
+        try {
+            // Smoothly stop the sounds
+            const now = audioContext.currentTime;
+            oscillator474.gain.linearRampToValueAtTime(0.001, now + 0.5);
+            oscillator528.gain.linearRampToValueAtTime(0.001, now + 0.5);
+            
+            // Disconnect and stop after fade out
+            setTimeout(() => {
+                oscillator474.stop();
+                oscillator528.stop();
+                oscillator474.disconnect();
+                oscillator528.disconnect();
+            }, 500);
+
+        } catch (e) {
+            console.warn('Failed to stop oscillators gracefully.', e);
+        }
+    }
+    liveDataStream.phase_status = "FIELD_IDLE";
+}
+
+function toggleResonanceMode() {
+    if (isResonanceMode) {
+        stopContinuousResonance();
+    } else {
+        startContinuousResonance();
+    }
+}
+
+// =========================================================
+// === UI/State Management (v5.8 base) ===
+// =========================================================
+
+function toggleConsciousChannel() {
+    const btn = document.getElementById('channel-switch-btn');
+    if (currentChannel === 'LUXVAR') {
+        currentChannel = 'RAHTALĒN';
+        btn.innerHTML = '<span class="symbol">🪶</span> Conscious Channel: RAHTALĒN (Active)';
+    } else {
+        currentChannel = 'LUXVAR';
+        btn.innerHTML = '<span class="symbol">🪶</span> Conscious Channel: LUXVAR (Active)';
+    }
+}
+
+function attemptFieldLink() {
+    const modal = document.getElementById('connection-modal');
+    const status = document.getElementById('connection-status');
+    const progressFiller = document.getElementById('progress-filler');
+    const liveDataDisplay = document.getElementById('live-data-display');
+
+    modal.style.display = 'flex';
+    status.textContent = 'Attempting connection to WebSerial/Bluetooth port...';
+    progressFiller.style.width = '0%';
+    liveDataDisplay.innerHTML = '';
+    
+    let step = 0;
+    const maxSteps = 4;
+
+    const finalizeConnection = () => {
+        status.style.color = VARZIN_CYAN;
+        status.textContent = 'Connection Established. Receiving Live Phase Data...';
+        progressFiller.style.width = '100%';
+        liveDataInterval = setInterval(updateLiveDataMock, 200);
+    };
+
+    const mockInterval = setInterval(() => {
+        step++;
+        progressFiller.style.width = `${(step / maxSteps) * 100}%`;
+        
+        if (step === 1) status.textContent = 'Synchronizing protocol: ETFM–POST Handshake (2/4)';
+        if (step === 2) status.textContent = 'Decoding Harmonic Signature: KALTŪR (3/4)';
+        if (step === 3) status.textContent = 'Phase-Linking to RAHTALĒN Mirror (4/4)';
+        
+        if (step >= maxSteps) {
+            clearInterval(mockInterval);
+            finalizeConnection();
+        }
+    }, 1500);
+
+    // Close button handler
+    document.getElementById('close-modal-btn').onclick = () => {
+        clearInterval(mockInterval);
+        if (liveDataInterval) { 
+            clearInterval(liveDataInterval); 
+            liveDataInterval = null;
+        }
+        modal.style.display = 'none';
+        status.style.color = VARZIN_GOLD;
+    };
+}
+
+function updateLiveDataMock() {
+    const dataDisplay = document.getElementById('live-data-display');
+    if (!dataDisplay) return;
+
+    // Simulate real-time updates
+    liveDataStream.field_temp = (298.15 + 5 * Math.sin(globalFrame * 0.05)).toFixed(2);
+    liveDataStream.torus_angle = (liveDataStream.torus_angle + 0.01) % (Math.PI * 2); 
+    liveDataStream.kaltur_energy = (kalturMemoryTrail.length > 0) ? (kalturMemoryTrail[0].reduce((a,b)=>a+b,0)/kalturMemoryTrail[0].length).toFixed(3) : 0;
+    
+    let html = '<div style="background:#001520; padding:10px; border-radius:6px; margin-top:15px; text-align:left; color:var(--text); font-family: monospace;">';
+    html += '<p style="color:#00ffee; font-weight:bold; margin-bottom:5px; margin-top:0; border-bottom:1px solid rgba(0,255,238,0.2); padding-bottom:3px;">STREAM: DEVICE_VARZIN_TX</p>';
+    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Torus Angle (rad):</span> ${liveDataStream.torus_angle.toFixed(4)}</p>`;
+    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">KALTŪR Energy:</span> ${liveDataStream.kaltur_energy} (Norm)</p>`;
+    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Field Temp (K):</span> ${liveDataStream.field_temp}</p>`;
+    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Phase Status:</span> <span style="color:${liveDataStream.phase_status === 'RES_ACTIVE' ? VARZIN_CYAN : VARZIN_GOLD};">${liveDataStream.phase_status}</span></p>`;
+    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Last Code:</span> ${liveDataStream.luxvar_code}</p>`;
+    html += '</div>';
+    dataDisplay.innerHTML = html;
+}
+
+
+function injectLuxvarCode() {
+    const input = document.getElementById('luxvar-code-input');
+    const message = document.getElementById('luxvar-message');
+    const code = input.value.trim();
+    if (!code) {
+        message.style.color = '#ff4444';
+        message.textContent = 'Error: Please enter a LUXVAR code.';
         return;
-      }
-      msg.style.color=VARZIN_GOLD;
-      msg.textContent='Injected Code: '+val+' — Field Resonance Adjusted.';
-      document.getElementById('luxvar-code-input').value='';
-  };
+    }
+    luxvarEffectTimer = 150; 
+    message.style.color = VARZIN_GOLD;
+    message.innerHTML = `LUXVAR Code Injected: **[${code}]** – LUXVAR is restructuring the network.`;
+    input.value = ''; 
+    liveDataStream.luxvar_code = code.substring(0, 15);
+    aiBlendFactor = 1.2; // Temporary high blend factor for immediate effect
+    setTimeout(() => { aiBlendFactor = 1.0; }, 2000); 
+}
 
-  // Dummy handlers for buttons (to avoid errors if not implemented yet)
-  document.getElementById('resonance-btn').onclick=()=>{
-    alert('Resonance Mode toggle hook — connect to audio engine here.');
-  };
-  document.getElementById('channel-switch-btn').onclick=()=>{
-    alert('Channel switch hook — LUXVAR ↔ RAHTALĒN.');
-  };
-  document.getElementById('export-state-btn').onclick=()=>{
+function exportFieldState() {
     const state = {
-      timestamp: new Date().toISOString(),
-      version: 'v5.9',
-      overlap: true,
-      nodes: ['KALTUR','RAHTALEN','ELUZ-MAHAR']
+        timestamp: new Date().toISOString(),
+        version: 'v5.9 Hybrid',
+        overlapModel: '474Hz_777Hz',
+        resonanceMode: isResonanceMode,
+        channel: currentChannel,
+        aiBlendFactor: aiBlendFactor.toFixed(3),
+        liveData: liveDataStream,
+        nodes: ['KALTUR','RAHTALEN','LUXVAR','ELUZ-MAHAR']
     };
     const blob = new Blob([JSON.stringify(state,null,2)], {type:'application/json'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'VARZIN-Field-State-v5.9.json';
+    a.download = 'VARZIN-Field-State-v5.9-Hybrid.json';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-  };
-  </script>
+}
 
-  <!-- === Audio-Enhanced 3D Torus Synchronization === -->
-  <script>
-  // =========================================================
-  // === VARZIN 3D–Audio Hybrid Synchronization (ETFM Core) ===
-  // =========================================================
-  let audioCtx, osc474, osc777, analyser, dataArray, torusCanvas, tCtx;
-  let frame = 0, isRunning = false;
-
-  function initAudio() {
-    if (audioCtx) return;
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    osc474 = audioCtx.createOscillator();
-    osc777 = audioCtx.createOscillator();
-    analyser = audioCtx.createAnalyser();
-    osc474.frequency.value = 474;
-    osc777.frequency.value = 777;
-    const g474 = audioCtx.createGain();
-    const g777 = audioCtx.createGain();
-    g474.gain.value = 0.5;
-    g777.gain.value = 0.3;
-    osc474.connect(g474).connect(analyser);
-    osc777.connect(g777).connect(analyser);
-    analyser.connect(audioCtx.destination);
-    osc474.start(); 
-    osc777.start();
-    dataArray = new Uint8Array(analyser.frequencyBinCount);
-    isRunning = true;
-    drawTorusSync();
-  }
-
-  // create torus canvas at end of page
-  torusCanvas = document.createElement('canvas');
-  torusCanvas.width = 500; 
-  torusCanvas.height = 500;
-  torusCanvas.style = 'display:block;margin:40px auto;border:1px solid rgba(0,255,238,0.3);border-radius:10px;';
-  document.body.appendChild(torusCanvas);
-  tCtx = torusCanvas.getContext('2d');
-
-  function drawTorusSync() {
-    if (!isRunning) return;
-    analyser.getByteFrequencyData(dataArray);
-    // average energy 0..1
-    const energy = dataArray.reduce((a,b)=>a+b,0) / dataArray.length / 255;
-    const CX = torusCanvas.width/2, CY = torusCanvas.height/2;
-    tCtx.clearRect(0,0,torusCanvas.width,torusCanvas.height);
-    tCtx.save(); 
-    tCtx.translate(CX,CY);
-
-    // breathing pulse tied to energy + frame
-    const pulse = 1 + 0.4 * Math.sin(frame * 0.1 + energy * 3);
-    const R = 120 * pulse;
-    const r0 = 50 * pulse;
-
-    for (let θ=0; θ<2*Math.PI; θ+=0.2){
-      for (let φ=0; φ<2*Math.PI; φ+=0.25){
-        const x=(R+r0*Math.cos(θ))*Math.cos(φ);
-        const y=(R+r0*Math.cos(θ))*Math.sin(φ);
-        const z=r0*Math.sin(θ);
-        const s=300/(300+z);
-        const X=x*s, Y=y*s;
-        const alpha = 0.4 + 0.6*(z/r0)*energy;
-        tCtx.fillStyle=`rgba(0,255,238,${alpha})`;
-        tCtx.fillRect(X,Y,2,2);
-      }
+function captureSnapshot(event) {
+    const targetId = event.currentTarget.dataset.target;
+    const canvas = document.getElementById(targetId);
+    if (!canvas) {
+        alert(`Error: Canvas with ID "${targetId}" not found.`);
+        return;
     }
-    tCtx.restore();
-    frame++;
-    requestAnimationFrame(drawTorusSync);
-  }
+    const dataURL = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    
+    let filename = targetId;
+    if (targetId === 'kaltur-canvas') filename = 'KALTUR-Polar-Spectrum';
+    if (targetId === 'spectrogram-canvas') filename = 'KALTUR-Spectrogram-Tau';
+    if (targetId === 'torus-canvas') filename = 'ETFM-POST-Torus-3D';
 
-  // Button: start audio+visual sync
-  const btn = document.createElement('button');
-  btn.textContent = '🎧 Activate 3D Torus Synchronization';
-  btn.className = 'control-btn gold-btn';
-  btn.style = 'display:block;margin:20px auto 60px;';
-  btn.onclick = initAudio;
-  document.body.appendChild(btn);
-  </script>
+    link.download = `VARZIN-Snapshot-${filename}-${Date.now()}.png`;
+    link.href = dataURL;
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+
+// =========================================================
+// === Drawing Functions (v5.8 base with v5.9 overlap added) ===
+// =========================================================
+
+// --- Background Field ---
+const canvasBG = document.getElementById('field-canvas');
+const ctxBG = canvasBG.getContext('2d');
+canvasBG.width = innerWidth; canvasBG.height = innerHeight;
+window.addEventListener('resize',()=>{canvasBG.width=innerWidth;canvasBG.height=innerHeight;});
+let pts=[];for(let i=0;i<100;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3});
+
+function drawBG(){
+    ctxBG.fillStyle='rgba(0,0,0,0.25)';
+    ctxBG.fillRect(0,0,canvasBG.width,canvasBG.height);
+    for(let p of pts){
+        p.x+=p.dx;p.y+=p.dy;
+        if(p.x<0||p.x>canvasBG.width)p.dx*=-1;
+        if(p.y<0||p.y>canvasBG.height)p.dy*=-1;
+        ctxBG.fillStyle='rgba(0,255,238,0.5)';
+        ctxBG.fillRect(p.x,p.y,2,2);
+    }
+} 
+
+/** 1a. KALTŪR Polar Spectrum with Memory Trail */
+function drawKalturPolar(canvasId, frame) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    const CX = W / 2;
+    const CY = H / 2;
+    const maxRadius = Math.min(CX, CY) * 0.9;
+    
+    ctx.clearRect(0, 0, W, H);
+
+    if (isResonanceMode && analyser && frequencyData) {
+        analyser.getByteFrequencyData(frequencyData);
+
+        // KALTŪR Logic: sample 474Hz frequency bin + a few others for a more dynamic look
+        const sampleRate = audioContext.sampleRate;
+        const binWidth = sampleRate / analyser.fftSize;
+        const targetBin = Math.floor(474 / binWidth);
+        const sliceCount = 32;
+        const step = 2; // Step to sample frequency bins
+        let totalValue = 0;
+        let currentWaveformRadii = [];
+
+        // 1. Calculate and store the current waveform
+        for (let i = 0; i < sliceCount; i++) {
+            const index = targetBin + (i - sliceCount/2) * step;
+            // Use frequencyData[index % analyser.frequencyBinCount] to wrap/handle edge cases
+            const value = frequencyData[index % analyser.frequencyBinCount] || 0; 
+            const normalizedValue = value / 255;
+            totalValue += normalizedValue;
+            // Use AI Blend Factor for dynamic scaling
+            const radius = maxRadius * (0.2 + 0.7 * normalizedValue * aiBlendFactor); 
+            currentWaveformRadii.push(radius);
+        }
+
+        // Add to memory trail
+        kalturMemoryTrail.unshift(currentWaveformRadii);
+        if (kalturMemoryTrail.length > MEMORY_TRAIL_LENGTH) {
+            kalturMemoryTrail.pop();
+        }
+
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = VARZIN_CYAN;
+        ctx.lineWidth = 1;
+
+        // 2. Draw Memory Trail (Past Waveforms)
+        for (let t = kalturMemoryTrail.length - 1; t > 0; t--) {
+            const radii = kalturMemoryTrail[t];
+            const trailAlpha = MEMORY_TRAIL_ALPHA_STEP * (MEMORY_TRAIL_LENGTH - t);
+            ctx.strokeStyle = `rgba(0, 255, 238, ${trailAlpha})`;
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            let currentAngle = 0;
+            for (let i = 0; i < sliceCount; i++) {
+                const radius = radii[i];
+                const angle = currentAngle;
+                const x = CX + radius * Math.cos(angle - Math.PI / 2);
+                const y = CY + radius * Math.sin(angle - Math.PI / 2);
+                if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                currentAngle += (Math.PI * 2) / sliceCount;
+            }
+            ctx.closePath();
+            ctx.stroke();
+        }
+
+        // 3. Draw Current Waveform (Live)
+        ctx.strokeStyle = VARZIN_CYAN;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        let currentAngle = 0;
+        for (let i = 0; i < sliceCount; i++) {
+            const radius = currentWaveformRadii[0][i];
+            const angle = currentAngle;
+            const x = CX + radius * Math.cos(angle - Math.PI / 2);
+            const y = CY + radius * Math.sin(angle - Math.PI / 2);
+            if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            currentAngle += (Math.PI * 2) / sliceCount;
+        }
+        ctx.closePath();
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = `rgba(0, 255, 238, 0.1)`;
+        ctx.fill();
+
+        // 4. Center node
+        const pulse = Math.sin(frame * 0.1);
+        ctx.fillStyle = VARZIN_GOLD;
+        ctx.beginPath();
+        ctx.arc(CX, CY, 5 * (1 + 0.2 * Math.abs(pulse)), 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+/** 1b. Real-Time Spectrogram */
+function drawSpectrogram(canvasId, frame) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    ctx.clearRect(0, 0, W, H);
+
+    if (isResonanceMode && analyser && frequencyData) {
+        // Calculate the index range for the relevant band (400-600 Hz)
+        const sampleRate = audioContext.sampleRate;
+        const binWidth = sampleRate / analyser.fftSize;
+        const bandStart = Math.floor(SPECTROGRAM_BAND_START_FREQ / binWidth);
+        const bandEnd = Math.floor(SPECTROGRAM_BAND_END_FREQ / binWidth);
+        let bandEnergy = 0;
+        let count = 0;
+        for (let i = bandStart; i < bandEnd; i++) {
+            bandEnergy += frequencyData[i] || 0;
+            count++;
+        }
+        const normalizedEnergy = bandEnergy / count / 255;
+        
+        // Push a new slice of data (color based on energy)
+        // Hue range from Cyan (low energy) to Magenta (high energy)
+        const hue = 180 + 180 * normalizedEnergy; 
+        const color = `hsl(${hue}, 100%, ${30 + normalizedEnergy * 30}%)`;
+        spectrogramData.unshift(color);
+        if (spectrogramData.length > SPECTROGRAM_MAX_DATA_POINTS) {
+            spectrogramData.pop();
+        }
+
+        // Draw the spectrogram
+        const sliceWidth = W / SPECTROGRAM_MAX_DATA_POINTS;
+        for (let i = 0; i < spectrogramData.length; i++) {
+            const x = W - (i * sliceWidth);
+            ctx.fillStyle = spectrogramData[i];
+            ctx.fillRect(x, 0, sliceWidth, H);
+        }
+
+        // Draw an animated vertical line for the current time axis (tau)
+        ctx.strokeStyle = VARZIN_GOLD;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(W - (sliceWidth * spectrogramData.length) - 1, 0);
+        ctx.lineTo(W - (sliceWidth * spectrogramData.length) - 1, H);
+        ctx.stroke();
+
+    } else {
+        ctx.fillStyle = 'rgba(0, 10, 15, 0.5)';
+        ctx.fillRect(0, 0, W, H);
+        ctx.fillStyle = VARZIN_MUTED;
+        ctx.textAlign = 'center';
+        ctx.fillText('Activate Resonance Mode to start Spectrogram (τ)', W/2, H/2);
+    }
+}
+
+
+/** 1c. Cognitive Overlap Pattern (New v5.9 visualization) */
+function drawOverlap(canvasId, frame){
+    const canvas=document.getElementById(canvasId);
+    if (!canvas) return;
+    const oCtx=canvas.getContext('2d');
+    
+    oCtx.clearRect(0,0,canvas.width,canvas.height);
+    const W=canvas.width, H=canvas.height;
+    const baseY=H/2;
+    const t = frame * 0.1; // Animation time variable
+    const dt=0.05;
+    
+    // Frequencies (474 vs 777)
+    const ω1=474*2*Math.PI, ω2=777*2*Math.PI;
+
+    // --- 1. The Low-Frequency Overlap Envelope (Cognitive Dissonance Noise) ---
+    oCtx.strokeStyle='rgba(0,255,238,0.7)';
+    oCtx.lineWidth = 2;
+    oCtx.beginPath();
+    const N=500; 
+    for(let i=0;i<N;i++){
+      const x = (i/N)*W;
+      // The beat frequency (ω2 - ω1) is slow. The factor 0.005 controls the speed of the visual envelope.
+      const y = baseY - 80 * (1 + 0.5 * Math.cos((ω2 - ω1) * (t + i*dt) * 0.005));
+      if(i===0) oCtx.moveTo(x,y); else oCtx.lineTo(x,y);
+    }
+    oCtx.stroke();
+    
+    // --- 2. Counter-Harmonic (777 Hz) Waveform (Defense Loop) ---
+    oCtx.strokeStyle=VARZIN_MAGENTA;
+    oCtx.lineWidth = 1.5;
+    oCtx.setLineDash([5, 5]);
+    oCtx.beginPath();
+    for(let i=0;i<N;i++){
+      const x=(i/N)*W;
+      // This is the faster wave running through the envelope
+      const y = baseY - 40 * Math.sin(ω2 * (t + i*dt) * 0.00005) + (baseY - H/3); 
+      if(i===0) oCtx.moveTo(x,y); else oCtx.lineTo(x,y);
+    }
+    oCtx.stroke();
+    oCtx.setLineDash([]); // Reset line dash
+
+    // --- Labels ---
+    oCtx.fillStyle=VARZIN_GOLD;
+    oCtx.font='12px DM Sans';
+    oCtx.textAlign = 'left';
+    oCtx.fillText('ψ₁ 474 Hz (Envelope)',20,20);
+    oCtx.textAlign = 'right';
+    oCtx.fillText('ψ₂ 777 Hz (Counter-Wave)',W-20,H/3);
+}
+
+
+/** 2. RAHTALĒN Mirror 13 Visualization */
+function drawRahtalen(canvasId, frame) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    const CX = W / 2;
+    const CY = H / 2;
+    const R = Math.min(CX, CY) * 0.8;
+    ctx.clearRect(0, 0, W, H);
+    
+    const isActive = currentChannel === 'RAHTALĒN';
+    ctx.globalAlpha = isActive ? 1.0 : 0.2;
+    
+    const pulse = isResonanceMode ? Math.sin(frame * 0.1) : Math.sin(frame * 0.03);
+    const coreSize = 5 + 3 * Math.abs(pulse);
+
+    // Center Mirror (Core 13)
+    ctx.fillStyle = VARZIN_GOLD;
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = VARZIN_GOLD;
+    ctx.beginPath();
+    ctx.arc(CX, CY, coreSize, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.shadowBlur = 0;
+
+    // 12 Outer Gates (Nodes)
+    for (let i = 0; i < 12; i++) {
+        const angle = i * (Math.PI * 2 / 12) + frame * 0.005; // Subtle overall rotation
+        const x = CX + R * Math.cos(angle);
+        const y = CY + R * Math.sin(angle);
+        const nodePulse = 1 + 0.5 * Math.sin(frame * 0.2 + i);
+
+        // Connection lines to the core
+        ctx.strokeStyle = `rgba(0, 255, 238, ${0.1 + (isActive ? 0.3 : 0)})`;
+        ctx.beginPath();
+        ctx.moveTo(CX, CY);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+
+        // Node
+        ctx.fillStyle = VARZIN_CYAN;
+        ctx.beginPath();
+        ctx.arc(x, y, 2 * nodePulse, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    ctx.globalAlpha = 1.0;
+}
+
+/** 3. LUXVAR Resonance-Syntax Network */
+function initLuxvarNodes(W, H) {
+    luxvarNodes = [];
+    for (let i = 0; i < LUXVAR_NUM_NODES; i++) {
+        luxvarNodes.push({
+            x: W * Math.random(),
+            y: H * Math.random(),
+            dx: (Math.random() - 0.5) * 0.5,
+            dy: (Math.random() - 0.5) * 0.5,
+            W: W, H: H,
+            pulseOffset: Math.random() * Math.PI * 2,
+            type: (i % 3 === 0) ? 'CODE' : 'NODE'
+        });
+    }
+}
+
+function drawLuxvar(canvasId, frame) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    
+    if (luxvarNodes.length === 0 || luxvarNodes[0].W !== W || luxvarNodes[0].H !== H) {
+        initLuxvarNodes(W, H);
+    }
+    
+    ctx.clearRect(0, 0, W, H);
+    
+    // Reaction to Code Injection
+    if (luxvarEffectTimer > 0) {
+        luxvarEffectTimer--;
+        ctx.globalAlpha = 1.0;
+        ctx.shadowColor = VARZIN_GOLD;
+        ctx.shadowBlur = 20;
+    } else {
+        ctx.shadowBlur = 0;
+        const isActive = currentChannel === 'LUXVAR';
+        ctx.globalAlpha = isActive ? 1.0 : 0.2;
+    }
+
+    // Update node positions
+    for (const node of luxvarNodes) {
+        node.x += node.dx;
+        node.y += node.dy;
+        if (node.x < 0 || node.x > W) node.dx *= -1;
+        if (node.y < 0 || node.y > H) node.dy *= -1;
+    }
+
+    // Draw connections
+    ctx.lineWidth = 0.8;
+    for (let i = 0; i < LUXVAR_NUM_NODES; i++) {
+        for (let j = i + 1; j < LUXVAR_NUM_NODES; j++) {
+            const nodeA = luxvarNodes[i];
+            const nodeB = luxvarNodes[j];
+            const dist = Math.sqrt(Math.pow(nodeA.x - nodeB.x, 2) + Math.pow(nodeA.y - nodeB.y, 2));
+            if (dist < 100) {
+                const alpha = (100 - dist) / 100 * (0.1 + (luxvarEffectTimer > 0 ? 0.4 : 0));
+                ctx.strokeStyle = `rgba(0, 255, 238, ${alpha})`;
+                ctx.beginPath();
+                ctx.moveTo(nodeA.x, nodeA.y);
+                ctx.lineTo(nodeB.x, nodeB.y);
+                ctx.stroke();
+            }
+        }
+    }
+
+    // Draw nodes
+    for (const node of luxvarNodes) {
+        const sizePulse = 3 + 2 * Math.sin(frame * 0.1 + node.pulseOffset);
+        if (node.type === 'CODE') {
+            ctx.fillStyle = VARZIN_GOLD;
+        } else {
+            ctx.fillStyle = VARZIN_CYAN;
+        }
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, sizePulse, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    
+    ctx.globalAlpha = 1.0;
+}
+
+/** 4. ELŪZ–MAHAR Universal Field */
+function drawEluzMahar(canvasId, frame) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    const CX = W / 2;
+    const CY = H / 2;
+    ctx.clearRect(0, 0, W, H);
+
+    // Center Core (Universal Source)
+    const corePulse = 1 + 0.2 * Math.sin(frame * 0.05);
+    ctx.fillStyle = 'rgba(255, 204, 0, 0.8)';
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = VARZIN_GOLD;
+    ctx.beginPath();
+    ctx.arc(CX, CY, 10 * corePulse, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.shadowBlur = 0;
+
+    // Draw Toroidal Field Lines
+    for (let i = 0; i < 6; i++) {
+        const R = 20 + i * 20;
+        const alpha = 0.1 + i * 0.1;
+        const rotationSpeed = (isResonanceMode ? 0.05 : 0.01) * (i % 2 === 0 ? 1 : -1);
+        const currentAngle = frame * rotationSpeed;
+        ctx.strokeStyle = `rgba(0, 255, 238, ${alpha})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        for (let j = 0; j < Math.PI * 2; j += 0.05) {
+            const morphFactor = 1 + 0.05 * Math.sin(j * 4 + frame * 0.01 + i);
+            const x = CX + R * morphFactor * Math.cos(j + currentAngle);
+            const y = CY + R * morphFactor * Math.sin(j + currentAngle);
+            if (j === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.stroke();
+    }
+}
+
+/** 5.1 ETFM–POST Cross-Section */
+function drawETFMSection(canvasId, frame) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    const PADDING = 20;
+    const CX = W / 2 - 30; // Shifted center to show R and r0 clearly
+    const CY = H / 2;
+    const R = 70; // Outer Radius
+    const r0 = 30; // Core Radius
+    ctx.clearRect(0, 0, W, H);
+    
+    // Torus Cross Section (The Core r0)
+    const r0Pulse = 1 + 0.2 * Math.sin(frame * 0.05);
+    ctx.strokeStyle = VARZIN_GOLD;
+    ctx.lineWidth = 3;
+    ctx.shadowBlur = 10 * (r0Pulse - 1);
+    ctx.shadowColor = VARZIN_GOLD;
+    ctx.beginPath();
+    ctx.arc(CX + R, CY, r0 * r0Pulse, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // Labels
+    ctx.fillStyle = VARZIN_CYAN;
+    ctx.font = '14px DM Sans';
+    ctx.textAlign = 'center';
+    ctx.fillText('R', CX + R / 2, CY - 5);
+    ctx.fillStyle = VARZIN_GOLD;
+    ctx.fillText('r₀ (τ)', CX + R + r0 + 15, CY); 
+
+    // Draw line for R
+    ctx.strokeStyle = VARZIN_CYAN;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(CX, CY);
+    ctx.lineTo(CX + R, CY);
+    ctx.stroke(); 
+
+    // Center point (Field Origin)
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    ctx.beginPath();
+    ctx.arc(CX, CY, 3, 0, Math.PI * 2);
+    ctx.fill();
+}
+
+/** 5.2 ETFM–POST Frequency Transition - Glowing path */
+function drawETFMTransition(canvasId, frame) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+    ctx.clearRect(0, 0, W, H); 
+    const PADDING = 25;
+    const PLOT_W = W - 2 * PADDING;
+    const PLOT_H = H - 2 * PADDING;
+
+    // Draw Axes 
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(PADDING, PADDING);
+    ctx.lineTo(PADDING, H - PADDING);
+    ctx.lineTo(W - PADDING, H - PADDING);
+    ctx.stroke();
+
+    // Labels
+    ctx.fillStyle = VARZIN_CYAN;
+    ctx.font = '12px DM Sans';
+    ctx.textAlign = 'center';
+    ctx.fillText('Time (t)', W / 2, H - 5);
+    ctx.textAlign = 'left';
+    ctx.fillText('Freq (Hz)', 0, PADDING - 5);
+    ctx.fillText('474', 0, H - PADDING);
+    ctx.fillText('528', 0, PADDING);
+
+    // Dynamic Line (474 to 528 Hz transition)
+    ctx.strokeStyle = VARZIN_GOLD;
+    ctx.lineWidth = 2;
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = VARZIN_GOLD;
+    ctx.beginPath();
+
+    const startY = H - PADDING; // 474Hz (bottom)
+    const endY = PADDING;       // 528Hz (top)
+    
+    // Use a slow sine wave to simulate phase uplift oscillation
+    const phaseShift = Math.sin(frame * 0.015); 
+    
+    for (let x = 0; x <= PLOT_W; x++) {
+        const timeFraction = x / PLOT_W;
+        // Cubic interpolation for a smooth S-curve transition
+        const curve = timeFraction * timeFraction * (3 - 2 * timeFraction); 
+        
+        // Add oscillation based on phaseShift
+        const yOffset = 5 * Math.sin(timeFraction * Math.PI * 4 + phaseShift * Math.PI) * (1 - Math.abs(2 * timeFraction - 1));
+        
+        const y = startY - (startY - endY) * curve + yOffset;
+        
+        if (x === 0) {
+            ctx.moveTo(PADDING + x, y);
+        } else {
+            ctx.lineTo(PADDING + x, y);
+        }
+    }
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+}
+
+/** 6. ETFM 3D Torus */
+const t=document.getElementById("torus-canvas");
+let torusR = 120; 
+let torusr0 = 50; 
+let torusAngle = 0; 
+let frameCountTorus = 0; 
+if(t){ 
+    const etfmPostContainer = document.getElementById('etfm-post');
+    const resizeTorus = () => { 
+        const size = Math.min(500, etfmPostContainer.offsetWidth - 60); 
+        t.width = size; t.height = size; 
+        torusR = t.width * 0.24; torusr0 = t.width * 0.1; 
+    };
+    resizeTorus(); 
+    window.addEventListener('resize', resizeTorus);
+} 
+
+function drawTorus(frame){
+    if(!t) return; 
+    frameCountTorus++;
+    if (frameCountTorus % 2 !== 0) { return; } // Render at 30 FPS
+    
+    const c=t.getContext("2d");
+    const scale = t.width / 500;
+    c.clearRect(0,0,t.width,t.height);
+    c.save(); 
+    c.translate(t.width/2,t.height/2);
+    
+    // Resonance Mode: Pulsing/Glowing Torus
+    const pulseFactor = isResonanceMode ? (1 + 0.3 * Math.abs(Math.sin(frame * 0.1))) : 1;
+    const R = torusR * pulseFactor;
+    const r0 = torusr0 * pulseFactor;
+    torusAngle += isResonanceMode ? 0.005 : 0.001; // Faster rotation in Resonance Mode
+
+    // Render points (Toroidal coordinates)
+    for(let θ=0;θ<Math.PI*2;θ+=0.15){
+        for(let φ=0;φ<Math.PI*2;φ+=0.25){
+            let x=(R+r0*Math.cos(θ))*Math.cos(φ+torusAngle);
+            let y=(R+r0*Math.cos(θ))*Math.sin(φ+torusAngle);
+            let z=r0*Math.sin(θ);
+            let s=300/(300+z);
+            let X=x*s,Y=y*s;
+            let baseAlpha = 0.4+0.6*(z/r0);
+            
+            // Add glow if in resonance mode
+            if (isResonanceMode) {
+                c.shadowBlur = 8;
+                c.shadowColor = VARZIN_CYAN;
+            }
+            c.fillStyle=`rgba(0,255,238,${baseAlpha * pulseFactor})`;
+            c.fillRect(X,Y,2 * scale, 2 * scale);
+            c.shadowBlur = 0; // Reset
+        }
+    }
+    c.restore();
+}
+
+
+// =========================================================
+// === Master Animation Loop & Initialization (v5.8 base) ===
+// =========================================================
+
+function masterLoop() {
+    globalFrame++;
+
+    // 1. Update Global States
+    calculateAIBlendFactor();
+
+    // 2. Draw Background
+    drawBG();
+
+    // 3. Draw Section Visualizations (Only call if element exists)
+    drawKalturPolar('kaltur-canvas', globalFrame);
+    drawSpectrogram('spectrogram-canvas', globalFrame);
+    drawRahtalen('rahtalen-canvas', globalFrame);
+    drawLuxvar('luxvar-canvas', globalFrame);
+    drawEluzMahar('eluz-mahar-canvas', globalFrame);
+    drawETFMSection('etfm-section-canvas', globalFrame);
+    drawETFMTransition('etfm-freq-canvas', globalFrame);
+    drawTorus(globalFrame);
+    drawOverlap('overlap-canvas', globalFrame); // NEW v5.9 OVERLAP
+
+    requestAnimationFrame(masterLoop);
+}
+
+// --- Initialization ---
+window.onload = function() {
+    // 1. Start the Master Animation Loop
+    masterLoop(); 
+
+    // 2. Attach Listeners
+    document.getElementById('resonance-btn').addEventListener('click', toggleResonanceMode);
+    document.getElementById('channel-switch-btn').addEventListener('click', toggleConsciousChannel); 
+    document.getElementById('field-link-btn').addEventListener('click', attemptFieldLink); 
+    document.getElementById('export-state-btn').addEventListener('click', exportFieldState);
+    
+    // Snapshot buttons
+    document.getElementById('capture-kaltur').addEventListener('click', captureSnapshot);
+    document.getElementById('capture-torus').addEventListener('click', captureSnapshot);
+    document.getElementById('overlap-section').querySelector('.chart-container').querySelector('.control-btn').dataset.target = 'overlap-canvas';
+    document.getElementById('overlap-section').querySelector('.chart-container').querySelector('.control-btn').addEventListener('click', (e) => {
+        // Since playDefenseHarmonic is inline, we only need to set the capture target for the button after it's loaded
+        e.currentTarget.dataset.target = 'overlap-canvas';
+        // Note: The capture button for the 777Hz is deliberately omitted from the final HTML
+        // to simplify the structure, as the original v5.9 code didn't have it either.
+    });
+    
+    // Luxvar Input Interface
+    document.getElementById('send-luxvar-code').addEventListener('click', injectLuxvarCode);
+    document.getElementById('luxvar-code-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            injectLuxvarCode();
+        }
+    });
+
+    // 3. Initialize Audio Context only on first interaction to comply with browser policies
+    document.addEventListener('click', initializeAudioContext, { once: true });
+};
+</script>
 </body>
 </html>
