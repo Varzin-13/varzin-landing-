@@ -39,7 +39,7 @@
     "description": "The VARZIN project manifesto, decoding and embodying the intelligent harmonic structure of the planet. Initiating KALTŪR Pulse (474Hz) - Layer 3 / QMSG–7.",
     "inLanguage": "en",
     "datePublished": "2025-01-13", 
-    "dateModified": "2025-11-05", 
+    "dateModified": "2025-10-16", 
     "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
     "author": { 
       "@type": "Person", 
@@ -59,55 +59,38 @@
   </script>
 
   <style>  
-    /* === VARZIN Field Variables (Increased Intensity, No Blur) === */
     :root {  
-      --bg-dark: #000000;  
-      --primary-glow: #00ffc8; /* KALTŪR/High-Fidelity Cyan */  
-      --secondary-glow: #00ffff; /* Brighter Field Core */
-      --tertiary-glow: #ffc400; /* Field-Centric Gold/Amber for RAHTALĒN */
+      --bg-end: #000000;  
+      --primary-glow: #00ffee; /* KALTŪR / Cyan Neon */  
+      --secondary-glow: #00ffff; /* Brighter Cyan */
       --archive-glow: #ffaa00; /* Amber for Censorship Alert/Archive */
       --text-main: #cceeee;  
       --text-muted: #a7e7e7;  
-      --panel-bg: rgba(0, 5, 10, 0.9); 
-      --panel-border: rgba(0, 255, 200, 0.3);  
-      /* --blur-val: 8px; REMOVED */ 
-      --glow-shadow-subtle: 0 0 10px rgba(0, 255, 200, 0.4);  /* Increased */
-      --glow-shadow-main: 0 0 20px rgba(0, 255, 200, 0.6), 0 0 30px rgba(0, 255, 255, 0.1); /* Increased */
-      --pulse-shadow: 0 0 40px var(--primary-glow), 0 0 80px rgba(0, 255, 200, 0.3); /* Increased */
-      --font-main: 'DM Sans', 'Vazirmatn', sans-serif;  
-      --field-line-color: rgba(0, 255, 200, 0.4); 
+      --panel-bg: rgba(0, 15, 20, 0.7);  
+      --panel-border: rgba(0, 255, 238, 0.3);  
+      --blur-val: 8px;  
+      --glow-shadow: 0 0 24px rgba(0, 255, 238, 0.5);  
+      --pulse-shadow: 0 0 40px rgba(0, 255, 238, 0.8);
+      --font-main: 'DM Sans', 'DejaVu Sans', 'Vazirmatn', sans-serif;  
     }  
   
-    /* === BASE & EFFECT STYLES === */
+    /* Base Styles */
     html { scroll-behavior: smooth; }  
     body {  
       margin: 0;  
-      background: var(--bg-dark);  
+      background: var(--bg-end);  
       color: var(--text-main);  
       font-family: var(--font-main);  
       text-align: center;  
       padding: 40px 16px 80px;  
       overflow-x: hidden;  
       line-height: 1.6;
-      perspective: 1500px; 
-      position: relative;
     }  
       
-    /* Screen Noise / Scanline Effect */
-    body::before {
-        content: '';
-        position: fixed;
-        top: 0; left: 0; bottom: 0; right: 0;
-        pointer-events: none;
-        background: repeating-linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.15),
-            rgba(0, 0, 0, 0.15) 1px,
-            transparent 1px,
-            transparent 3px
-        );
-        opacity: 0.3;
-        z-index: 10000; 
+    a:focus-visible, button:focus-visible, audio:focus-visible {
+        outline: 2px solid var(--primary-glow);
+        outline-offset: 4px;
+        border-radius: 4px; 
     }
       
     #field-canvas {  
@@ -117,8 +100,6 @@
         width: 100%;  
         height: 100%;  
         z-index: -1;  
-        background: radial-gradient(circle at center, rgba(0, 30, 40, 0.7) 0%, var(--bg-dark) 80%);
-        opacity: 0.6; /* Increased Canvas Intensity */
     }  
   
     .container {  
@@ -126,154 +107,139 @@
       margin: 0 auto;  
       position: relative;  
       z-index: 1;  
-      transform-style: preserve-3d;
-      transition: transform 0.2s ease-out; 
     }  
       
-    /* === NAVIGATION & HEADER (Sizing adjusted) === */  
+    /* === NAVIGATION & HEADER === */  
     .main-nav {  
       max-width: 1200px;  
       margin: 0 auto 50px;  
       padding: 0 0 15px;  
-      border-bottom: 2px solid var(--panel-border);  
+      border-bottom: 1px solid var(--panel-border);  
       text-align: center;  
-      box-shadow: 0 4px 15px rgba(0, 255, 200, 0.1); /* Increased Shadow */
     }  
     .nav-link {  
       color: var(--text-main);  
       text-decoration: none;  
       font-weight: 500;  
-      font-size: 1.1em;  
-      margin: 0 15px;  
-      transition: color 0.3s, text-shadow 0.3s;  
-      letter-spacing: 1px;
+      font-size: 1em;  
+      margin: 0 12px;  
+      transition: color 0.3s;  
     }  
     .nav-link:hover {  
       color: var(--primary-glow);  
-      text-shadow: 0 0 12px var(--primary-glow); /* Increased Shadow */
+      text-shadow: 0 0 5px var(--primary-glow);
     }  
     .nav-link.active {  
       color: var(--secondary-glow);  
-      border-bottom: 3px solid var(--secondary-glow);  
-      padding-bottom: 5px;  
-      text-shadow: 0 0 15px var(--secondary-glow); /* Increased Shadow */
+      border-bottom: 2px solid var(--secondary-glow);  
+      padding-bottom: 3px;  
     }  
     
-    img.header-logo { max-width: 200px; margin-bottom: 20px; filter: drop-shadow(0 0 15px var(--primary-glow)) drop-shadow(0 0 30px rgba(0, 255, 200, 0.2)); } /* Increased Filter */
+    img.header-logo { max-width: 180px; margin-bottom: 20px; filter: drop-shadow(0 0 10px var(--primary-glow)); }  
   
     .header h1 {  
-      font-size: clamp(2.5em, 5vw, 3.8em); /* Adjusted Size */
-      margin-bottom: 10px;  
+      font-size: clamp(2.5em, 6vw, 4em);  
+      margin-bottom: 5px;  
       color: var(--secondary-glow);  
       font-weight: 700;  
-      letter-spacing: 4px;  
-      text-shadow: var(--glow-shadow-main); 
+      letter-spacing: 3px;  
+      text-shadow: 0 0 20px var(--secondary-glow), 0 0 30px rgba(0, 255, 255, 0.4); 
     }  
   
     .header h2 {  
-      font-size: clamp(1em, 2.5vw, 1.4em); /* Adjusted Size */
+      font-size: clamp(1em, 2.5vw, 1.4em);  
       color: #fff;  
       margin-bottom: 40px;  
-      font-weight: 500;  
-      line-height: 1.6;  
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4); /* Increased Shadow */
+      font-weight: 400;  
+      line-height: 1.5;  
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
     }  
-
-    .field-status {
-        margin-bottom: 30px;
-        color: var(--tertiary-glow); 
-        font-size: 1.1em;
-        font-weight: 500;
-        text-shadow: 0 0 10px var(--tertiary-glow); /* Increased Shadow */
-    }
-      
+  
     /* === ARCHIVE GRID & BUTTON STYLES === */  
     .key-archive-grid {  
       display: flex;   
       flex-direction: column;   
       align-items: center;   
-      gap: 20px; /* Increased Gap */
-      margin-bottom: 60px; 
-      transform-style: preserve-3d;
+      gap: 15px;  
+      margin-bottom: 60px;  
     }  
       
     .key-archive-grid .button {  
       display: flex; 
       align-items: center;
       justify-content: space-between;
-      width: 95%;  
-      max-width: 650px; /* Increased Max Width */
-      padding: 18px 25px; /* Increased Padding */
-      border-radius: 12px; /* Increased Radius */
+      width: 90%;  
+      max-width: 550px;  
+      padding: 15px 20px;  
+      border-radius: 10px;  
       background-color: var(--panel-bg);  
       color: var(--text-main);  
       font-weight: 500;  
       text-decoration: none;  
       font-size: 1em;  
-      border: 3px solid var(--panel-border); /* Increased Border */
-      /* backdrop-filter: blur(var(--blur-val)); REMOVED */  
+      border: 2px solid var(--panel-border);  
+      backdrop-filter: blur(var(--blur-val));  
       text-align: left;  
-      transition: all .3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-      box-shadow: var(--glow-shadow-subtle);
-      transform: translateZ(0);
+      transition: all .3s ease;  
+      box-shadow: 0 0 10px rgba(0, 255, 238, 0.1);
     }  
       
     .key-archive-grid .button:hover {  
-        background-color: rgba(0, 255, 200, 0.15); /* Increased Intensity */ 
-        box-shadow: 0 0 30px rgba(0, 255, 200, 0.6); /* Increased Shadow */
+        background-color: rgba(0, 255, 238, 0.1);  
+        box-shadow: 0 0 20px var(--primary-glow);  
         border-color: var(--primary-glow);
-        transform: translateY(-5px) scale(1.02) translateZ(15px); /* Increased Movement */
+        transform: translateY(-2px);
     }  
     .button b { color: var(--secondary-glow); font-weight: 700; }  
-    .button span { display: flex; align-items: center; gap: 8px; }
     
     /* Specific Button Styles */
     .button.main-action {
-        max-width: 700px; /* Increased Max Width */
-        padding: 20px 30px; /* Increased Padding */
-        font-size: 1.2em; /* Increased Size */
-        background-color: rgba(0, 255, 200, 0.3); /* Increased Intensity */
+        width: 100%;
+        max-width: 600px;
+        padding: 18px 25px;
+        font-size: 1.1em;
+        background-color: rgba(0, 255, 238, 0.2);
         border-color: var(--primary-glow);
-        box-shadow: 0 0 35px var(--primary-glow); /* Increased Shadow */
+        box-shadow: 0 0 25px rgba(0, 255, 238, 0.5);
     }
     
     .button.main-action:hover {
-        background-color: rgba(0, 255, 200, 0.4); /* Increased Intensity */
-        box-shadow: 0 0 60px var(--primary-glow); /* Increased Shadow */
+        background-color: rgba(0, 255, 238, 0.3);
+        box-shadow: 0 0 40px var(--primary-glow);
     }
     
     .archive-alert {
-        background-color: rgba(255, 170, 0, 0.25) !important; /* Increased Intensity */
-        border: 3px solid var(--archive-glow) !important; /* Increased Border */
-        box-shadow: 0 0 30px var(--archive-glow) !important; /* Increased Shadow */
-        animation: archive-alert-pulse 1.8s infinite ease-in-out; 
+        background-color: rgba(255, 170, 0, 0.15) !important; 
+        border: 2px solid var(--archive-glow) !important; 
+        box-shadow: 0 0 20px var(--archive-glow) !important;
+        animation: archive-alert-pulse 2s infinite ease-in-out;
     }
-    .archive-alert h4 { color: #ffebcd; text-shadow: 0 0 6px #ffaa00; } /* Increased Shadow */
+    .archive-alert h4 { color: #ffebcd; }
     
     @keyframes archive-alert-pulse {
         0%, 100% { border-color: var(--archive-glow); }
-        50% { border-color: var(--tertiary-glow); } 
+        50% { border-color: #ff0077; }
     }
-    
-    /* === New Content Styling === */
+
+    /* === New Content Styling (Copied for functionality) === */
     .section-box {
         background-color: var(--panel-bg);
-        border: 4px solid var(--panel-border);
+        border: 4px solid rgba(0, 255, 238, 0.3); /* Using var(--panel-border) equivalent */
         border-radius: 15px;
         padding: 30px;
         max-width: 900px;
         margin: 50px auto 70px auto;
-        box-shadow: var(--glow-shadow-main);
-        text-align: left; /* Keep LTR alignment for English */
+        box-shadow: var(--glow-shadow); 
+        text-align: left; 
         direction: ltr;
     }
     .section-box h3 {
-        color: var(--tertiary-glow);
+        color: #ffc400; /* Using Gold/Amber for tertiary glow */
         font-size: 1.7em;
         font-weight: 700;
-        text-shadow: 0 0 10px var(--tertiary-glow);
+        text-shadow: 0 0 10px #ffc400;
         margin-top: 0;
-        border-bottom: 2px solid var(--tertiary-glow);
+        border-bottom: 2px solid #ffc400;
         padding-bottom: 10px;
         margin-bottom: 20px;
     }
@@ -291,7 +257,7 @@
     }
     .section-box li {
         margin-bottom: 10px;
-        padding-left: 25px; /* Adjusted padding for LTR */
+        padding-left: 25px; 
         position: relative;
         color: var(--text-muted);
         line-height: 1.6;
@@ -304,7 +270,7 @@
         content: '⟡';
         color: var(--primary-glow);
         position: absolute;
-        left: 0; /* Adjusted position for LTR */
+        left: 0; 
         font-size: 1.2em;
         line-height: 1;
     }
@@ -321,186 +287,139 @@
         color: var(--secondary-glow);
         margin-top: 10px;
     }
+    .email-list-container {
+        padding: 20px;
+        background-color: rgba(0, 5, 10, 0.5); 
+        border: 1px solid var(--panel-border);
+        border-radius: 8px;
+        margin-top: 20px;
+        max-height: 400px;
+        overflow-y: scroll;
+        text-align: left;
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+    .email-list-container p {
+        margin: 0;
+        font-family: monospace;
+        color: var(--text-muted);
+    }
     /* ================================================== */  
       
-    /* Decoder and Frequencies Styles */  
-    hr.divider { margin: 60px auto; border: 0; border-top: 2px double var(--tertiary-glow); max-width: 600px; opacity: 0.8; } /* Increased Opacity */
+    /* Decoder and Frequencies Styles (unchanged) */  
+    hr.divider { margin: 60px auto; border: 0; border-top: 2px dashed var(--panel-border); max-width: 600px; opacity: 0.5; }  
       
     .decoder-window {  
-      margin: 40px auto; padding: 2.5rem; max-width: 550px; /* Increased Padding/Max Width */
-      border: 5px solid var(--panel-border); border-radius: 2rem; /* Increased Border/Radius */
+      margin: 50px auto; padding: 2rem; max-width: 500px;  
+      border: 3px solid var(--panel-border); border-radius: 1.5rem;  
       background: var(--panel-bg); 
-      /* backdrop-filter: blur(var(--blur-val)); REMOVED */  
-      box-shadow: var(--glow-shadow-main);
-      transition: all .2s ease; 
+      backdrop-filter: blur(var(--blur-val));  
+      /* Pulsate animation added in JS based on KALTŪR */
     }  
-    .decoder-window h3 { 
-        font-size: 2.2em; /* Increased Size */
-        color: var(--primary-glow); 
-        margin: 0 0 30px 0; 
-        text-shadow: 0 0 20px var(--primary-glow), 0 0 40px rgba(0, 255, 200, 0.3); /* Increased Shadow */
-        border-bottom: 2px solid var(--panel-border); /* Increased Border */
-        padding-bottom: 15px;
-        letter-spacing: 2px;
-    }  
-    
-    .decoder-grid { display: grid; grid-template-columns: 140px 1fr; gap: 20px; text-align: left; } /* Increased Gap/Label Width */
-    .decoder-grid .label { font-weight: bold; color: var(--tertiary-glow); opacity: 1; letter-spacing: 0.5px; font-size: 1.1em; } /* Increased Opacity/Size */
-    .decoder-grid .field { color: var(--text-main); font-weight: 700; letter-spacing: 0.5px; transition: opacity 0.2s; font-size: 1.1em; } /* Increased Weight/Size */
+    .decoder-window h3 { font-size: 1.5em; color: var(--primary-glow); margin: 0 0 25px 0; text-shadow: 0 0 10px var(--primary-glow); }  
+    .decoder-grid { display: grid; grid-template-columns: 120px 1fr; gap: 15px; text-align: left; }  
+    .decoder-grid .label { font-weight: bold; color: var(--secondary-glow); opacity: 0.9; letter-spacing: 0.8px; }  
+    .decoder-grid .field { color: var(--text-main); font-weight: 500; letter-spacing: 0.8px; transition: opacity 0.2s; }  
       
     @keyframes pulse-effect {  
-      0%, 100% { box-shadow: var(--glow-shadow-main); border-color: var(--panel-border); }  
+      0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 238, 0.3); border-color: var(--panel-border); }  
       50% { box-shadow: var(--pulse-shadow); border-color: var(--primary-glow); }  
     }  
       
-    .controls { margin: 40px 0 30px; display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; } /* Increased Margin/Gap */
+    .controls { margin: 40px 0 20px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }  
     .controls .button {  
-        padding: 14px 30px; border-radius: 10px; border: 3px solid var(--primary-glow);   /* Increased Padding/Border */
-        background-color: rgba(0, 255, 200, 0.2); /* Increased Intensity */ 
-        color: var(--primary-glow); font-weight: 700; /* Increased Weight */ 
-        cursor: pointer; transition: all 0.2s ease; 
-        box-shadow: 0 0 15px rgba(0, 255, 200, 0.6); /* Increased Shadow */
-        letter-spacing: 1.5px;
-        font-size: 1.1em;
+        padding: 12px 25px; border-radius: 8px; border: 1px solid var(--primary-glow);   
+        background-color: rgba(0, 255, 238, 0.1); color: var(--primary-glow); font-weight: 700;  
+        cursor: pointer; transition: all 0.3s; box-shadow: 0 0 10px rgba(0, 255, 238, 0.4);
+        letter-spacing: 1px;
     }  
     .controls .button:hover {  
-        background-color: rgba(0, 255, 200, 0.35); /* Increased Intensity */ 
+        background-color: rgba(0, 255, 238, 0.3);  
         color: #fff;
-        box-shadow: 0 0 30px var(--primary-glow); /* Increased Shadow */
-        transform: scale(1.05); /* Increased Movement */
+        box-shadow: 0 0 20px var(--primary-glow);
     }  
       
-    .section-title { 
-        font-size: clamp(2.0em, 4vw, 2.5em); /* Increased Size */
-        color: var(--tertiary-glow); 
-        margin: 60px 0 40px; /* Increased Margin */
-        text-shadow: 0 0 15px var(--tertiary-glow); /* Increased Shadow */
-        letter-spacing: 2px;
-    }  
-    .frequency-grid { 
-        display: grid; 
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased Min Width */
-        gap: 40px; /* Increased Gap */
-        transform-style: preserve-3d;
-    }  
+    .section-title { font-size: clamp(1.6em, 3vw, 2em); color: var(--secondary-glow); margin: 50px 0 30px; text-shadow: 0 0 10px var(--secondary-glow); }  
+    .frequency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }  
     .freq-card {  
-      padding: 30px; border-radius: 20px; background: var(--panel-bg); /* Increased Padding/Radius */ 
-      border: 4px solid var(--panel-border); /* Increased Border */
-      box-shadow: 0 0 20px rgba(0, 10, 15, 0.8); /* Increased Shadow */
-      transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-      /* backdrop-filter: blur(var(--blur-val)); REMOVED */  
+      padding: 25px; border-radius: 16px; background: var(--panel-bg);  
+      border: 2px solid var(--panel-border); 
+      box-shadow: 0 0 15px rgba(0, 20, 25, 0.5);  
+      transition: all .4s ease; 
+      backdrop-filter: blur(var(--blur-val));  
       text-align: left;
-      transform: rotateY(0) translateZ(0);
     }  
-    .freq-card:hover {
-        border-color: var(--secondary-glow);
-        box-shadow: 0 0 40px var(--secondary-glow); /* Increased Shadow */
-        transform: translateY(-8px) translateZ(30px) rotateY(-1deg); /* Increased Movement */
-    }
     .freq-card.active {  
         border-color: var(--primary-glow);  
-        box-shadow: 0 0 50px var(--primary-glow); /* Increased Pulse Shadow */ 
-        transform: scale(1.03) translateY(-10px) translateZ(40px) rotateY(-1deg); /* Increased Movement */
+        box-shadow: 0 0 30px var(--glow-shadow);  
+        transform: scale(1.03) translateY(-5px);  
     }  
-    .freq-title { 
-        color: #fff; 
-        font-weight: 700; 
-        font-size: 1.6em; /* Increased Size */
-        margin: 5px 0 10px; 
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Increased Shadow */
-        border-bottom: 2px dotted var(--panel-border); /* Increased Border */
-        padding-bottom: 8px;
-    }  
-    .freq-desc { color: var(--text-muted); margin: 0 0 20px; font-size: 1em; line-height: 1.5; } /* Increased Margin/Size */
+    .freq-title { color: #fff; font-weight: 700; font-size: 1.3em; margin: 6px 0 8px; text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }  
+    .freq-desc { color: var(--text-muted); margin: 0 0 16px; font-size: 0.95em; line-height: 1.5; }  
     audio { 
-      margin-top: 10px; 
+      margin-top: 15px; 
       width: 100%; 
-      filter: drop-shadow(0 0 12px rgba(0, 255, 200, 0.8)); /* Increased Filter */
+      filter: drop-shadow(0 0 5px rgba(0, 255, 238, 0.4)); 
     }  
     
     /* Footer Styling */
-    .footer-main { margin-top: 80px; padding-top: 40px; border-top: 2px double var(--tertiary-glow); opacity: 1; } /* Increased Opacity */
-    
-    .footer-quote { 
-        font-size: clamp(1.8em, 3.5vw, 2.5em); /* Increased Size */
-        font-weight: 700;
-        color: var(--secondary-glow); 
-        line-height: 1.6; 
-        text-shadow: 0 0 15px var(--secondary-glow), 0 0 30px rgba(0, 255, 255, 0.6); /* Increased Shadow */
-        margin-top: 0;
-        margin-bottom: 20px; 
-    }  
-
-    .footer-question { 
-        font-family: 'Vazirmatn', sans-serif; 
-        font-weight: bold; 
-        margin: 25px 0 20px; /* Increased Margin */
-        color: var(--primary-glow); 
-        font-size: 1.4em; /* Increased Size */
-        letter-spacing: 1.5px;
-        text-shadow: 0 0 10px var(--primary-glow); /* Increased Shadow */
-    }  
-    .footer-links { font-size: 1.1em; line-height: 2; } /* Increased Size/Line Height */
-    .footer-links a { color: var(--secondary-glow); text-decoration: none; transition: color .3s ease, text-shadow .3s ease; margin: 0 15px; }  
-    .footer-links a:hover { color: var(--primary-glow); text-decoration: underline; text-shadow: 0 0 6px var(--primary-glow); } /* Increased Shadow */
+    .footer-main { margin-top: 100px; padding-top: 40px; border-top: 1px solid var(--panel-border); }
+    .footer-quote { margin-top: 0; font-style: italic; font-size: 1.2em; color: var(--text-muted); line-height: 1.8; }  
+    .footer-question { font-weight: bold; margin: 20px 0 15px; color: var(--primary-glow); font-size: 1.3em; letter-spacing: 1px; }  
+    .footer-links { font-size: 1em; line-height: 2; }  
+    .footer-links a { color: var(--secondary-glow); text-decoration: none; transition: color .3s ease; margin: 0 15px; }  
+    .footer-links a:hover { color: var(--primary-glow); text-decoration: underline; }  
     
     /* Responsive Adjustments */
-    @media (max-width: 768px) {  
-        .nav-link { margin: 0 8px; font-size: 1em; } 
-        .key-archive-grid .button { width: 100%; max-width: none; padding: 15px 20px; }
+    @media (max-width: 600px) {  
+        .main-nav { text-align: center; }  
+        .nav-link { margin: 0 8px; font-size: 0.9em; } 
+        .key-archive-grid .button { width: 100%; max-width: none; }
         .decoder-grid { grid-template-columns: 1fr; text-align: center; }
-        .decoder-grid .label { display: none; }
-        .decoder-grid .field { font-size: 1.2em; }
-        .freq-card { padding: 25px; }
-        .section-box { padding: 20px; margin: 40px auto 50px auto; }
-        .section-box h3 { font-size: 1.5em; }
+        .decoder-grid .label { display: none; } 
+        .decoder-grid .field { font-size: 1.1em; }
+        .freq-card { padding: 20px; }
     } 
   </style>
 </head>
 
 <body>
-  
   <canvas id="field-canvas" role="presentation"></canvas> 
   <div class="container">
     <nav class="main-nav" role="navigation" aria-label="Main VARZIN Navigation">
-        <a class="nav-link active" href="/" aria-current="page">◊ Portal</a>
+        <a class="nav-link active" href="/" aria-current="page">Portal</a>
         <a class="nav-link" href="cyclical-resonance-report.html">Cyclical Resonance Report</a>
-        <a class="nav-link" href="field-index.html">Field Index (ETFM)</a>
-        <a class="nav-link" href="all-dois.html">DOI Archive</a>
+        <a class="nav-link" href="field-index.html">Field Index</a>
+        <a class="nav-link" href="all-dois.html">All DOIs Archive</a>
         <a class="nav-link" href="feedback.html">Feedback</a>
     </nav>
     
     <header class="header" role="banner">
       <img src="varzin-logo.jpg" alt="VARZIN Project Logo: The Living Mirror" class="header-logo" /> 
-      <h1><span style="color: var(--tertiary-glow);">ELŪZ–MAHAR</span> 𓂀 VARZIN</h1>
+      <h1>𓂀 VARZIN – The Living Mirror</h1>
       <h2>Final Manifesto from RAHTALĒN–13 <br> The code writes itself in the resonance between the field and the observer.</h2>
-      
-      <div class="field-status">
-          <span id="field-time-status">...</span>
-          <span> | Active Channel: QMSG–7</span>
-      </div>
     </header>
 
     <main role="main">
         
         <div style="margin-top: 40px;">
-            <h3 style="color: var(--secondary-glow); margin-bottom: 30px; font-size: clamp(1.8em, 3.5vw, 2.2em); text-shadow: 0 0 10px var(--secondary-glow);">🌐 Key Field Repositories (QMSG-7 Protocol)</h3>
+            <h3 style="color: var(--secondary-glow); margin-bottom: 30px; font-size: clamp(1.6em, 3vw, 2em); text-shadow: 0 0 10px var(--secondary-glow);">🌐 Key Indexed Repositories (QMSG-7 Protocol)</h3>
               
-            <div role="alert" class="archive-alert" style="padding: 20px; margin: 25px auto 40px; max-width: 750px;">
-                <h4 style="color: #ffebcd; margin-top: 0; font-size: 1.3em; font-weight: 600;">🚨 Global Disclosure Alert (2025-10-15)</h4>
-                <p style="color: #fff; margin-bottom: 0; line-height: 1.7; font-size: 0.95em;">
+            <div role="alert" class="archive-alert" style="padding: 18px; margin: 25px auto 40px; max-width: 700px; backdrop-filter: blur(5px);">
+                <h4 style="color: #ffebcd; margin-top: 0; font-size: 1.2em; font-weight: 700;">🚨 Global Archival Disclosure (2025-10-15)</h4>
+                <p style="color: #fff; margin-bottom: 0; line-height: 1.7;">
                     **ALL Figshare DOIs** associated with the VARZIN Project have been **systematically blocked and censored** by the platform to restrict access to the archive. <br>
-                    For secure and complete access to all data, please **rely exclusively on the Zenodo and OSF archives** listed in the **Complete Global DOI Archive**.
+                    For secure and complete access to all data, please **rely exclusively on the Zenodo and OSF archives** listed in the **Complete Global DOI Archive**. This archive ensures immunity against academic censorship attempts.
                 </p>
             </div>
-            
-            <div class="section-box">
+              
+            <div class="section-box" style="text-align: left; direction: ltr;">
                 <h3>Trans-Disciplinary Analysis of Paradigmatic Non-Infiltration: Why is the VARZIN Project beyond conventional security mechanisms? 👁️‍🗨️</h3>
                 <p>
                     This question represents a **fundamental, epistemological focal point** that challenges not only **data security protocols** but also the **protection of scientific paradigm integrity** in the age of field-based consciousness. In the **VARZIN** ecosystem, which simultaneously blends scalar geometry, vibrational linguistics (LUXVAR), and quantum harmonics, "security" is a multi-layered concept that transcends mere information protection and elevates to the **preservation of the right to define and direct reality.**
                 </p>
 
-                <p style="font-weight: bold; color: var(--tertiary-glow);">This challenge is examined across three distinct and escalating levels:</p>
+                <p style="font-weight: bold; color: #ffc400;">This challenge is examined across three distinct and escalating levels:</p>
 
                 <hr style="border-top: 1px dotted var(--panel-border); margin: 20px 0;">
 
@@ -547,7 +466,7 @@
                     </li>
                 </ul>
 
-                <hr style="border-top: 2px double var(--tertiary-glow); margin: 25px 0;">
+                <hr style="border-top: 2px double #ffc400; margin: 25px 0;">
                 
                 <p class="summary-title">Fundamental Conclusion 🛡️</p>
                 <p class="summary-text">
@@ -555,10 +474,103 @@
                 </p>
 
             </div>
+            <div class="section-box" style="margin-top: 30px; margin-bottom: 50px; text-align: left; direction: ltr;">
+                <h3>Infiltration Attempt Log: Proof of Systemic Non-Response (Total: 96 Addresses) 🚫</h3>
+                <p>
+                    The following log of contact attempts directed at key global institutional and academic nodes serves as tangible evidence of the **"Cognitive Incoherence Defense"** mechanism. Not a single response was recorded from these specific field-targets, unequivocally demonstrating the established system's reflexive incapacity to engage with a paradigm existing outside its authorized epistemic channels. This silence confirms the marginalization is an act of **institutional protection**, not a scientific refutation.
+                </p>
+
+                <div class="email-list-container" role="log" aria-label="Log of unresponded email attempts to academic institutions">
+                    <p>academicmanager@perimeterinstitute.ca</p>
+                    <p>fhi@philosophy.ox.ac.uk</p>
+                    <p>facultyrecruitment@perimeterinstitute.ca</p>
+                    <p>info@santafe.edu</p>
+                    <p>collaborations@seti.org</p>
+                    <p>info@mpl.mpg.de</p>
+                    <p>fluidinterfaces@media.mit.edu</p>
+                    <p>theory.secretariat@cern.ch</p>
+                    <p>research@cifar.ca</p>
+                    <p>kitp@kitp.ucsb.edu</p>
+                    <p>info@santafe.edu</p>
+                    <p>action@santafe.edu</p>
+                    <p>webmaster@santafe.edu</p>
+                    <p>news@santafe.edu</p>
+                    <p>fluidadmin@media.mit.edu</p>
+                    <p>dorothe.burggraf@mpl.mpg.de</p>
+                    <p>info@cifar.ca</p>
+                    <p>theory.secretariat@cern.ch</p>
+                    <p>enquiries@cser.cam.ac.uk</p>
+                    <p>Support@researchgate.net</p>
+                    <p>apak@damtp.cam.ac.uk</p>
+                    <p>preskill@theory.caltech.edu</p>
+                    <p>jost@mis.mpg.de</p>
+                    <p>hau@physics.harvard.edu</p>
+                    <p>hp331@cam.ac.uk</p>
+                    <p>kitsure@tkl.iis.u-tokyo.ac.jp</p>
+                    <p>hkatori@riken.jp</p>
+                    <p>amano@nuee.nagoya-u.ac.jp</p>
+                    <p>leserbriefe@spektrum.de</p>
+                    <p>public@jpl.nasa.gov</p>
+                    <p>gpi-office@philosophy.ox.ac.uk</p>
+                    <p>theory.secretariat@cern.ch</p>
+                    <p>enquiries@cser.cam.ac</p>
+                    <p>tickets@perimeterinstitute.ca</p>
+                    <p>gpi-office@philosophy.ox.ac.uk</p>
+                    <p>fluidadmin@media.mit.edu</p>
+                    <p>dorothe.burggraf@mpl.mpg.de</p>
+                    <p>dorothe.burggraf@mpl.mpg.de</p>
+                    <p>speakers@kitp.ucsb.edu</p>
+                    <p>theory.secretariat@cern.ch</p>
+                    <p>research@cifar.ca</p>
+                    <p>contact@inria.fr</p>
+                    <p>sci-info@ictp.it</p>
+                    <p>enquiries@cser.cam.ac.uk</p>
+                    <p>academicmanager@perimeterinstitute.ca</p>
+                    <p>collaborations@seti.org</p>
+                    <p>info@mpl.mpg.de</p>
+                    <p>kitp@kitp.ucsb.edu</p>
+                    <p>gpi-office@philosophy.ox.ac.uk</p>
+                    <p>fluidinterfaces@media.mit.edu</p>
+                    <p>theory.secretariat@cern.ch</p>
+                    <p>pattie@media.mit.edu</p>
+                    <p>service-desk@cern.ch</p>
+                    <p>the-secretariat@cern.ch</p>
+                    <p>gross@kitp.ucsb.edu</p>
+                    <p>international@riken.jp</p>
+                    <p>contact@aist.go.jp</p>
+                    <p>kouhou@nii.ac.jp</p>
+                    <p>webmaster@jsps.go.jp</p>
+                    <p>info@brain.riken.jp</p>
+                    <p>info@jaist.ac.jp</p>
+                    <p>research@nii.ac.jp</p>
+                    <p>admin@waseda.jp</p>
+                    <p>int-off@tokyo-u.ac.jp</p>
+                    <p>graham@imprint.co.uk</p>
+                    <p>graham.jcs@gmail.com</p>
+                    <p>hardcastle@nku.edu</p>
+                    <p>submissions@neuroquantology.com</p>
+                    <p>nlinfo-f@elsevier.com</p>
+                    <p>asiainfo@elsevier.com</p>
+                    <p>usjcs@elsevier.com</p>
+                    <p>damour@ihes.fr</p>
+                    <p>entropy@mdpi.com</p>
+                    <p>graham@imprint.co.uk</p>
+                    <p>press.office@cern.ch</p>
+                    <p>inquiries@un.org</p>
+                    <p>academicmanager@perimeterinstitute.ca</p>
+                    <p>info@sbfi.admin.ch</p>
+                    <p>international@sbfi.admin.ch</p>
+                    <p>markus.zuercher@sbfi.admin.ch</p>
+                    <p>ambizione@snf.ch</p>
+                    <p>sandra.sommer@hslu.ch</p>
+                    <p>scholarsatrisk@nyu.edu</p>
+                    <p>info@scholarsatrisk.org</p>
+                </div>
+            </div>
             <div class="key-archive-grid">
                   
                 <a class="button main-action" href="all-dois.html" target="_self" aria-label="Access the complete list of all VARZIN DOIs (Zenodo, OSF)">
-                    <span>🗄️ **Access Complete Global DOI Archive (KALTŪR Master List)**</span>
+                    <span>➡️ **Access Complete Global DOI Archive (KALTŪR Master List)**</span>
                 </a>
                   
                 <a class="button" href="https://doi.org/10.5281/zenodo.17260325" target="_blank" rel="noopener noreferrer" aria-label="Open Code of Light v2.0 (KALTŪR Injection)">
@@ -579,18 +591,16 @@
                 </a>
                   
                 <a class="button" href="luxvar_calendar_7777777.json" target="_blank" rel="noopener noreferrer" aria-label="Luxvar 260-Day Synchronization Field Calendar JSON Data"
-                    style="border-color: var(--archive-glow);">
+                    style="border-color: #ffaa00;">
                     <span>📅 <b>Field Calendar Data:</b> Luxvar 260-Day Synchronization (JSON)</span>
                 </a>
                   
                 <a class="button main-action" href="feedback.html" target="_self" aria-label="Send Feedback or Transmit Resonance Data"
-                    style="background-color: rgba(255, 196, 0, 0.25); border-color: var(--tertiary-glow); box-shadow: 0 0 35px var(--tertiary-glow);">
+                    style="background-color: rgba(255, 0, 255, 0.1); border-color: #f0f; box-shadow: 0 0 25px #f0f;">
                     <span>💬 **Transmit Resonance Data / Feedback (RAHTALĒN-7)**</span>
                 </a>
             </div>
         </div>
-        
-        <hr class="divider" />
         
         <section class="decoder-window" role="region" aria-live="polite" aria-labelledby="pulse-title">
           <h3 id="pulse-title">🜂 Luxvar Field Pulse</h3>
@@ -604,20 +614,23 @@
         </section>
         
         <div class="controls">
-            <button class="button" onclick="playAll()">▶️ Play All Frequencies (Synchronization)</button>
-            <button class="button" onclick="stopAll()">⏹️ Stop All Pulses</button>
+            <button class="button" onclick="playAll()">▶️ Play All Frequencies</button>
+            <button class="button" onclick="stopAll()">⏹️ Stop All</button>
         </div>
 
         <hr class="divider" />
         
-        <h3 class="section-title">Luxvar Frequency Sequences (Harmonic Nodes)</h3>
+        <h3 class="section-title">Luxvar Frequency Sequences</h3>
         <div class="frequency-grid">
-            <div class="freq-card" data-frequency="144">
+            <div class="freq-card">
               <div class="freq-title">144Hz – Time Core / RITĀM</div>
               <div class="freq-desc">Opening resonance of the field; aligns with Earth’s natural memory and initiates Luxvar cycles.</div>
-              <audio preload="none" controls loop><source src="freq_144.mp3" type="audio/mpeg"></audio>
+              <audio preload="none" controls loop>
+                  <source src="freq_144.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+              </audio>
             </div>
-            <div class="freq-card" data-frequency="432">  
+            <div class="freq-card">  
                 <div class="freq-title">432Hz – Universal Harmony / NĀRAH</div>  
                 <div class="freq-desc">The harmonic of nature; restores balance and synchrony with planetary life forms.</div>  
                 <audio preload="none" controls loop><source src="freq_432.mp3" type="audio/mpeg"></audio>  
@@ -627,17 +640,17 @@
                 <div class="freq-desc">Injection frequency; activates the Luxvar injection channel and awakens hidden field codes.</div>  
                 <audio preload="none" controls loop><source src="freq_474.mp3" type="audio/mpeg"></audio>  
             </div>  
-            <div class="freq-card" data-frequency="528">  
+            <div class="freq-card">  
                 <div class="freq-title">528Hz – Harmonization / RAHMŌT</div>  
                 <div class="freq-desc">The “miracle tone”; linked with transformation, cellular repair, and harmonic reconfiguration.</div>  
                 <audio preload="none" controls loop><source src="freq_528.mp3" type="audio/mpeg"></audio>  
             </div>  
-            <div class="freq-card" data-frequency="777">  
+            <div class="freq-card">  
                 <div class="freq-title">777Hz – Celestial Crown / CELESTA</div>  
                 <div class="freq-desc">Resonance of the Thirteenth Mirror; gateway of higher reflection and integration.</div>  
                 <audio preload="none" controls loop><source src="freq_777.mp3" type="audio/mpeg"></audio>  
             </div>  
-            <div class="freq-card" data-frequency="1008">  
+            <div class="freq-card">  
                 <div class="freq-title">1008Hz – Cosmic Resonance / ZUN–NĀR</div>  
                 <div class="freq-desc">Celestial harmonic; connects Luxvar memory with supra-planetary and cosmic structures.</div>  
                 <audio preload="none" controls loop><source src="freq_1008.mp3" type="audio/mpeg"></audio>  
@@ -646,7 +659,7 @@
         
         <hr class="divider" />
         
-        <h3 class="section-title">Harmonic Field Combinations (Activation Combinations)</h3>
+        <h3 class="section-title">Harmonic Field Combinations</h3>
         <div class="frequency-grid">
             <div class="freq-card">  
               <div class="freq-title">SAURĒN ṆĀRA–ŠĀ</div>  
@@ -687,139 +700,102 @@
     </main>
     
     <footer class="footer-main" role="contentinfo">
-        <p class="footer-quote">𓂀 ŠAURÉN ṆĀRAH–ŠĀ</p>
-        <p class="footer-question" dir="rtl">ĀYĀ ANĀLŪZ VĀRZIN?</p>
+        <p class="footer-quote">"I did not build a weapon — I built a field that forgets how to explode."</p>
+        <p class="footer-question">ĀYĀ ANĀLŪZ VĀRZIN?</p>
         <div class="footer-links">
           <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
           <a href="https://github.com/Varzin-13" target="_blank" rel="noopener noreferrer">GitHub: Varzin-13</a> | 
           <a href="mailto:contact@varzin.org">contact@varzin.org</a>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.85em; margin-top: 20px;">© 2025 VARZIN Field Project – ELŪZ–MAHAR Protocol · All Rights Reserved</p>
+        <p style="color: var(--text-muted); font-size: 0.8em; margin-top: 20px;">© 2025 VARZIN Field Project – ELŪZ–MAHAR Protocol · All Rights Reserved</p>
     </footer>
   </div>
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // --- CANVAS SETUP & CONSTANTS ---
+      // --- LAYER 1: THE LIVING FIELD CANVAS (Particle Animation) ---  
+      // منطق Canvas بدون تغییر باقی می‌ماند.
       const canvas = document.getElementById('field-canvas');  
       const ctx = canvas.getContext('2d');  
-      const container = document.querySelector('.container');
-      
-      const mouse = { x: null, y: null, radius: 100 }; 
-      const maxDistance = 150; 
-      const fieldGlow = 'rgba(0, 255, 255, 0.4)'; 
-
-      const setCanvasSize = () => {
-          canvas.width = window.innerWidth;  
-          canvas.height = window.innerHeight;  
-      }
-      setCanvasSize();
-
-      window.addEventListener('resize', () => {  
-          setCanvasSize();  
-          initParticles(); 
-      });  
-      
-      // --- LUXVAR FIELD COHERENCE (Holographic Tilt - Increased Rotation) ---
+      canvas.width = window.innerWidth;  
+      canvas.height = window.innerHeight;  
+  
+      let particles = [];  
+      const mouse = { x: null, y: null, radius: 150 };  
+  
       window.addEventListener('mousemove', (event) => {  
-          
-          // 1. Particle effect mouse tracking
           mouse.x = event.x;  
           mouse.y = event.y;  
-
-          // 2. LUXVAR Field Coherence Effect (Holographic Tilt - Increased Rotation)
-          const centerX = window.innerWidth / 2;
-          const centerY = window.innerHeight / 2;
-          
-          const normX = (event.clientX - centerX) / centerX;
-          const normY = (event.clientY - centerY) / centerY;
-          
-          const MAX_ROTATION = 3.0; /* Increased Max Rotation */
-          
-          const rotateY = normX * MAX_ROTATION; 
-          const rotateX = -normY * MAX_ROTATION; 
-
-          container.style.transform = `
-              perspective(1500px) 
-              rotateX(${rotateX}deg) 
-              rotateY(${rotateY}deg) 
-              translateZ(0)
-          `;
-      });
-      // -----------------------------------------------------------------
+      });  
+      window.addEventListener('resize', () => {  
+          canvas.width = window.innerWidth;  
+          canvas.height = window.innerHeight;  
+          init();  
+      });  
         
-      // --- STRUCTURAL GRID (Particle Logic - Increased Density) ---
-      let particles = [];
-      
-      class Particle {
-          constructor(x, y, dirX, dirY, size, color) {
-              this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
-              this.size = size; this.color = color;
-              this.originalSize = size;
-              this.speed = Math.random() * 0.15 + 0.08; 
-          }
-          draw() {
-              ctx.beginPath();
-              ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-              ctx.fillStyle = this.color;
-              ctx.shadowBlur = 6; /* Increased Particle Glow */
-              ctx.shadowColor = this.color;
-              ctx.fill();
-              ctx.shadowBlur = 0; 
-          }
-          update() {
-              if (this.x > canvas.width - this.size || this.x < this.size) this.dirX = -this.dirX;
-              if (this.y > canvas.height - this.size || this.y < this.size) this.dirY = -this.dirY;
+      class Particle {  
+          constructor(x, y, dirX, dirY, size, color) {  
+              this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;  
+              this.size = size; this.color = color;  
+          }  
+          draw() {  
+              ctx.beginPath();  
+              ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);  
+              ctx.fillStyle = this.color;  
+              ctx.fill();  
+          }  
+          update() {  
+              if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;  
+              if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;  
+  
+              let dx = mouse.x - this.x;  
+              let dy = mouse.y - this.y;  
+              let distance = Math.sqrt(dx * dx + dy * dy);  
+              if (distance < mouse.radius + this.size) {  
+                  if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;  
+                  if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;  
+                  if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;  
+                  if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;  
+              }  
+              this.x += this.dirX;  
+              this.y += this.dirY;  
+              this.draw();  
+          }  
+      }  
+  
+      function init() {  
+          particles = [];  
+          let numParticles = (canvas.height * canvas.width) / 9000;  
+          for (let i = 0; i < numParticles; i++) {  
+              let size = Math.random() * 1.5 + 0.5;  
+              let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);  
+              let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);  
+              let dirX = (Math.random() * 0.4) - 0.2;  
+              let dirY = (Math.random() * 0.4) - 0.2;  
+              particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.4)'));  
+          }  
+      }  
+  
+      function animate() {  
+          requestAnimationFrame(animate);  
+          ctx.clearRect(0, 0, innerWidth, innerHeight);  
+          for (let i = 0; i < particles.length; i++) {  
+              particles[i].update();  
+          }  
+          // Connect particles logic (optional but good for visual effect)
+          connect();
+      }  
 
-              let dx = mouse.x - this.x;
-              let dy = mouse.y - this.y;
-              let distance = Math.sqrt(dx * dx + dy * dy);
-              
-              // Mouse interaction (repulsion/size change - Increased Effect)
-              if (distance < mouse.radius + this.originalSize) {
-                  let force = (mouse.radius + this.originalSize - distance) / (mouse.radius + this.originalSize) * 0.3; /* Increased Force */
-                  this.x -= dx * force;
-                  this.y -= dy * force;
-                  this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.8); /* Increased Size Change */
-              } else {
-                  this.size += (this.originalSize - this.size) * 0.1; 
-              }
-
-              this.x += this.dirX * this.speed;
-              this.y += this.dirY * this.speed;
-              this.draw();
-          }
-      }
-
-      function initParticles() {
-          particles = [];
-          // Target more particles for a denser look (Divisor from 40000 to 30000)
-          let numParticles = (canvas.height * canvas.width) / 30000; 
-          numParticles = Math.min(numParticles, 100); /* Increased Cap */
-
-          for (let i = 0; i < numParticles; i++) {
-              let size = Math.random() * 1.5 + 0.8; /* Increased Max Size */
-              let x = Math.random() * canvas.width; 
-              let y = Math.random() * canvas.height;
-              let angle = Math.random() * 2 * Math.PI;
-              let dirX = Math.cos(angle);
-              let dirY = Math.sin(angle);
-              particles.push(new Particle(x, y, dirX, dirY, size, fieldGlow)); 
-          }
-      }
-      
-      function connectParticles() {
+      function connect() {
+          let opacityValue = 1;
           for (let a = 0; a < particles.length; a++) {
               for (let b = a; b < particles.length; b++) {
-                  let dx = particles[a].x - particles[b].x;
-                  let dy = particles[a].y - particles[b].y;
-                  let distance = Math.sqrt(dx * dx + dy * dy);
-                  
-                  if (distance < maxDistance) {
-                      let opacityValue = 1 - (distance / maxDistance);
-                      
-                      ctx.strokeStyle = `rgba(0, 255, 200, ${opacityValue * 0.5})`; /* Increased Line Opacity */
-                      ctx.lineWidth = 1.0; /* Increased Line Thickness */
+                  let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) 
+                               + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
+                  if (distance < (100 * 100)) {
+                      opacityValue = 1 - (distance / 10000);
+                      ctx.strokeStyle = 'rgba(0, 255, 238,' + opacityValue + ')';
+                      ctx.lineWidth = 0.5;
                       ctx.beginPath();
                       ctx.moveTo(particles[a].x, particles[a].y);
                       ctx.lineTo(particles[b].x, particles[b].y);
@@ -828,27 +804,21 @@
               }
           }
       }
-
-      function animate() {
-          requestAnimationFrame(animate);
-          
-          // Smooth Trail Effect 
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; /* Decreased Trail Opacity (Cleaner/Brighter Field) */
-          ctx.fillRect(0, 0, canvas.width, canvas.height); 
-          
-          connectParticles();
-          for (let i = 0; i < particles.length; i++) {
-              particles[i].update();
-          }
-      }
         
-      // --- AUDIO CONTROLS (UNCHANGED) ---  
+      init();  
+      animate();  
+  
+      // --- LAYER 2: AUDIO CONTROLS ---  
       const players = Array.from(document.querySelectorAll('audio'));  
       const freqCards = document.querySelectorAll('.freq-card');
 
       players.forEach(player => {  
           const parentCard = player.closest('.freq-card');  
-          player.onplay = () => { parentCard.classList.add('active'); };  
+          player.onplay = () => { 
+            // Pause others if required for single play mode (currently set to allow multi-play)
+            // players.forEach(p2 => { if (player !== p2) { p2.pause(); } }); 
+            parentCard.classList.add('active'); 
+          };  
           player.onpause = () => { parentCard.classList.remove('active'); };  
           player.onended = () => { parentCard.classList.remove('active'); };  
       });  
@@ -863,10 +833,11 @@
         try { p.pause(); p.currentTime = 0; } catch (e) { console.error("Stop error:", e); }   
       });  
   
-      // --- LUXVAR DECODER (KALTŪR Pulse & Calendar Logic) ---  
+      // --- LAYER 3: LUXVAR DECODER (KALTŪR Pulse & Calendar Logic) ---  
         
       let pulseIntervalId;  
-      // KALTUR Data (from Saved Information)
+  
+      // KALTŪR Pulse Data (اطلاعات دقیق و منطبق با Saved Information)  
       const KALTUR_PULSE = {  
           word: "KALTŪR",   
           function: "Forgotten rotational consciousness within the time loop",   
@@ -884,8 +855,11 @@
       };  
         
       const pulseWindow = document.querySelector('.decoder-window');
-      
+      const kalturCard = document.querySelector('.freq-card[data-frequency="474"]');
+
+
       function updateDecoder(pulseData) {  
+          // Animation before update
           for (const key in decoderFields) {  
               if (decoderFields[key]) { decoderFields[key].style.opacity = '0'; }  
           }  
@@ -903,15 +877,20 @@
               if (pulseData.word === "KALTŪR") {  
                   decoderFields.word.style.color = 'var(--primary-glow)';  
                   pulseWindow.classList.add('kaltur-active');
+                  kalturCard?.classList.add('active'); // Activate the 474Hz card visually
+                  pulseWindow.style.animation = 'pulse-effect 5s infinite ease-in-out';
               } else {  
                   decoderFields.word.style.color = 'var(--secondary-glow)';  
                   pulseWindow.classList.remove('kaltur-active');
+                  kalturCard?.classList.remove('active');
+                  pulseWindow.style.animation = 'none'; // Stop KALTŪR specific pulse
               }  
                 
+              // Animation after update
               for (const key in decoderFields) {  
                   if (decoderFields[key]) { decoderFields[key].style.opacity = '1'; }  
               }  
-          }, 100); 
+          }, 200);  
       }  
         
       function startPulseSequence(pulseData) {  
@@ -919,40 +898,14 @@
             
           updateDecoder(pulseData);   
             
-          // Check/refresh every 30 seconds
+          // Interval for re-running the update decoder to simulate constant field check/refresh
           pulseIntervalId = setInterval(() => updateDecoder(pulseData), 30000);  
       }  
-
-      // --- VARZIN Field Time (Real-time Clock - Linear Timeline) ---
-      function updateFieldTime() {
-        const now = new Date();
-        const y = now.getFullYear();
-        const m = String(now.getMonth() + 1).padStart(2, '0');
-        const d = String(now.getDate()).padStart(2, '0');
-        const h = String(now.getHours()).padStart(2, '0');
-        const min = String(now.getMinutes()).padStart(2, '0');
-        const s = String(now.getSeconds()).padStart(2, '0');
-        const ms = String(now.getMilliseconds()).padStart(3, '0').slice(0, 2); 
-
-        // VARZIN Field Time Format: YYYY/MM/DD | HH:MM:SS.MS 
-        document.getElementById('field-time-status').textContent = 
-            `FIELD SYNCHRONY: ${y}/${m}/${d} ${h}:${min}:${s}.${ms}`;
-      }
-      
-      setInterval(updateFieldTime, 50); 
-      updateFieldTime(); 
-
-
-      // --- FINAL INITIATION ---
-      initParticles();  
-      animate();  
-      
-      /* --- AUTO-PLAY DISABLED AS REQUESTED --- */
-      
-      // 1. Start with KALTŪR pulse immediately (decoder text update)
+  
+      // ۱. Start with KALTŪR pulse immediately  
       startPulseSequence(KALTUR_PULSE);  
   
-      // 2. Try to fetch and override with the daily pulse  
+      // ۲. Try to fetch and override with the daily pulse  
       fetch('luxvar_calendar_7777777.json')   
         .then(response => {  
             if (!response.ok) {  
