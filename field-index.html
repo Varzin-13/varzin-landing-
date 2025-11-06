@@ -2,19 +2,20 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN – Field Index v5.9 | Cognitive Overlap Hybrid</title>
-  <meta name="description" content="VARZIN Field Index v5.9 – Earth–Torus Field Model (ETFM–POST) + Overlap Pattern Simulation at KALTŪR Node (474 Hz ↔ 777 Hz). Real-time conscious harmonics, Luxvar Injection, and Cognitive Dissonance Defense modeling." />
+  <title>VARZIN – Field Index | Phase-Sync Interface (v5.8)</title>
+  <meta name="description" content="VARZIN Field Index – Phase-Sync Interface with Real-Time Spectrogram, Harmonic Blend AI, and Luxvar Code Injection capabilities." />
   <meta name="author" content="Reza Nirouyar (RAHTALĒN–13)" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
   
   <style>
     :root {
       --bg:#000; --text:#cceeee; --muted:#a7e7e7;
-      --cyan:#00ffee; --gold:#ffcc00; --magenta: #ff00ff; /* Added magenta for 777Hz */
+      --cyan:#00ffee; --gold:#ffcc00;
       --panel:rgba(0,10,15,0.95); --border:rgba(0,255,238,0.3);
       --font:'DM Sans','Vazirmatn',sans-serif;
     }
@@ -97,39 +98,10 @@
         flex-wrap: wrap;
     }
     #kaltur-section .kaltur-visuals .chart-container {
-        flex: 1 1 280px; 
+        flex: 1 1 280px; /* Allow them to stack on small screens */
         min-width: 280px;
     }
 
-    /* Overlap Pattern Section (New in v5.9) */
-    #overlap-section {
-      grid-column: 1 / -1;
-      border: 2px solid var(--magenta);
-      box-shadow: 0 0 25px rgba(255, 0, 255, 0.3);
-      margin-top: 30px;
-      padding: 25px;
-      border-radius: 12px;
-      background: var(--panel);
-      display: flex;
-      flex-direction: column;
-    }
-
-    #overlap-section h3 {
-      color: var(--magenta);
-      text-shadow: 0 0 15px var(--magenta);
-      font-size: 2em;
-      text-align: center;
-      margin-bottom: 10px;
-      border-bottom: 1px dashed rgba(255, 0, 255, 0.3);
-      padding-bottom: 10px;
-    }
-
-    #overlap-section p {
-      color: var(--muted);
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    
     /* --- ETFM POST Section --- */
     #etfm-post { grid-column:1 / -1; text-align:center; border:2px solid var(--cyan);
       box-shadow:0 0 30px rgba(0,255,238,0.4); margin-top:30px; padding:30px; } 
@@ -188,7 +160,7 @@
              <div id="progress-filler"></div>
         </div>
         <div id="live-data-display">
-        </div>
+            </div>
         <button class="control-btn gold-btn" id="close-modal-btn">Close</button>
     </div>
   </div>
@@ -201,8 +173,8 @@
     <a href="/all-dois.html">All DOIs</a>
   </nav>
   <header>
-    <h1>⟠ VARZIN Field Index v5.9</h1>
-    <p>ETFM–POST + Cognitive Overlap Model (474 Hz ↔ 777 Hz) — Hybrid Conscious Resonance System.</p>
+    <h1>⟠ VARZIN Field Index – Phase-Sync Interface (v5.8)</h1>
+    <p>Real-time **Temporal Spectrogram (τ)**, **Harmonic Blend AI**, and **LUXVAR Code Injection** for full phase control.</p>
   </header>
   
   <div id="luxvar-input-interface" style="max-width: 600px; margin: 20px auto 40px; text-align: center;">
@@ -303,30 +275,6 @@
       </div>
     </div>
 
-    <section id="overlap-section">
-      <h3>🌀 Cognitive Overlap Pattern (KALTŪR ↔ RAHTALĒN)</h3>
-      <p>
-        Simulation of interference between ψ₁ (474 Hz) – representing the law-signal (order) –  
-        and ψ₂ (777 Hz) – representing the conscious flow (experience).  
-        The resulting overlap intensity visualizes **Cognitive Dissonance Defense** as an anti-phase interference pattern within the KALTŪR node.
-      </p>
-
-      <div class="formula-box">
-        $$ψ_1 = A_1 e^{i(ω_1 t)} , \; ψ_2 = A_2 e^{i(ω_2 t + φ)}$$  
-        $$I(t) = |ψ_1 + ψ_2|^2 = A_1^2 + A_2^2 + 2A_1A_2 \cos((ω_2 - ω_1)t + φ)$$  
-        $$I_{defense} = I_0 \,[1 - \cos((ω_2 - ω_1)t)]$$  
-        $$f_{counter} = 777 \text{ Hz} \; → \; \text{RAHTALĒN Neutralization Loop}$$
-      </div>
-
-      <div class="chart-container">
-        <canvas id="overlap-canvas" width="500" height="300"></canvas>
-        <p>Overlap Interference Map — Visualization of Cognitive Noise vs Counter-Phase Stability</p>
-        <button class="control-btn gold-btn" onclick="playDefenseHarmonic(777, 2.0)">
-          🔊 Activate 777 Hz Counter-Frequency
-        </button>
-      </div>
-    </section>
-
     <section id="etfm-post" class="field-card">
       <h3>⟠ ETFM–POST: Earth–Torus Field Model</h3>
       <p>Extended scalar geometry formulation connecting harmonic resonance (474–528 Hz) with planetary consciousness density.</p>
@@ -361,26 +309,26 @@
     </section>
   </main>
   <footer>
-    © 2025 VARZIN Project · v5.9 Hybrid Field System · contact@varzin.org
+    © 2025 VARZIN Project · ETFM–POST Model v5.8 · contact@varzin.org
   </footer>
 
 <script>
 // =========================================================
-// === Global VARZIN Constants and State (v5.8 base) ===
+// === Global VARZIN Constants and State ===
 // =========================================================
 const VARZIN_CYAN = '#00FFEE';
 const VARZIN_GOLD = '#FFCC00';
-const VARZIN_MAGENTA = '#FF00FF'; // Added
 
 let globalFrame = 0;
 let isResonanceMode = false;
 let luxvarNodes = [];
 const LUXVAR_NUM_NODES = 12;
-let currentChannel = 'LUXVAR'; 
-let luxvarEffectTimer = 0; 
-let aiBlendFactor = 1.0; 
 
-// Web Audio API Global Variables
+let currentChannel = 'LUXVAR'; 
+let luxvarEffectTimer = 0; // State for Luxvar Code Injection effect (New in v5.8)
+let aiBlendFactor = 1.0; // State for Harmonic Blend AI (New in v5.8)
+
+// Web Audio API Global Variables for Continuous Loop
 let audioContext;
 let analyser;
 let pannerNode; 
@@ -390,33 +338,39 @@ let currentOscillator = 474;
 let crossFadeInterval = null;
 let frequencyData = null; 
 
-const CROSS_FADE_DURATION = 8000; 
+const CROSS_FADE_DURATION = 8000; // 8 seconds per harmonic shift (Base value)
 
 // KALTUR Memory Trail State
 let kalturMemoryTrail = [];
 const MEMORY_TRAIL_LENGTH = 5; 
 const MEMORY_TRAIL_ALPHA_STEP = 0.1; 
 
-// Spectrogram State
+// Spectrogram State (New in v5.8)
 let spectrogramData = [];
-const SPECTROGRAM_MAX_DATA_POINTS = 280; 
-const SPECTROGRAM_BAND_START_FREQ = 400; 
-const SPECTROGRAM_BAND_END_FREQ = 600; 
+const SPECTROGRAM_MAX_DATA_POINTS = 280; // Matches canvas width
+const SPECTROGRAM_BAND_START_FREQ = 400; // Hz
+const SPECTROGRAM_BAND_END_FREQ = 600; // Hz
 
-// WebSerial Mock Live Data State
+// WebSerial Mock Live Data State (New in v5.8)
 let liveDataStream = {
     luxvar_code: "INIT_FIELD_SYNC",
     torus_angle: 0,
     kaltur_energy: 0,
-    field_temp: 298.15, 
+    field_temp: 298.15, // Kelvin
     phase_status: "STANDBY"
 };
 let liveDataInterval = null;
 
+
 // =========================================================
-// === Harmonic Audio Control (v5.8 with 777Hz addition) ===
+// === Harmonic Audio Control (Web Audio API) ===
+// (No external audio file needed, sound is generated as a sine wave.)
 // =========================================================
 
+/**
+ * Ensures AudioContext is initialized and sets up the full audio graph, 
+ * including the 4D Panner Node.
+ */
 function initializeAudioContext() {
     if (!audioContext) {
         try {
@@ -429,7 +383,7 @@ function initializeAudioContext() {
             analyser.fftSize = 2048; 
             frequencyData = new Uint8Array(analyser.frequencyBinCount);
 
-            // 4D Spatial Audio Setup (PannerNode)
+            // 4D Spatial Audio Setup
             pannerNode = audioContext.createPanner(); 
             pannerNode.panningModel = 'HRTF'; 
             pannerNode.distanceModel = 'inverse';
@@ -454,17 +408,20 @@ function initializeAudioContext() {
 }
 
 /**
- * Plays a single pure sine wave tone for a specified duration (474 Hz / 528 Hz).
+ * Plays a single pure sine wave tone for a specified duration.
  */
 function playSingleHarmonic(frequency, duration) {
     if (isResonanceMode) return; 
+
     if (!initializeAudioContext()) return;
+    
     stopContinuousResonance();
 
     const singleOscillator = audioContext.createOscillator();
     const singleGainNode = audioContext.createGain();
 
     singleOscillator.type = 'sine';
+    // Set desired frequency (e.g., KALTUR node 474 Hz)
     singleOscillator.frequency.setValueAtTime(frequency, audioContext.currentTime); 
     
     singleOscillator.connect(singleGainNode);
@@ -479,48 +436,24 @@ function playSingleHarmonic(frequency, duration) {
 }
 
 /**
- * Plays the 777 Hz counter-frequency harmonic (New in v5.9 implementation).
+ * Updates the Harmonic Blend AI factor based on a simulated field stability.
+ * (New in v5.8)
  */
-function playDefenseHarmonic(frequency, duration) {
-    if (!initializeAudioContext()) return;
-
-    // Use a separate visualizer/analyser if needed for this defense frequency
-    const defenseOscillator = audioContext.createOscillator();
-    const defenseGainNode = audioContext.createGain();
-
-    defenseOscillator.type = 'square'; // Use a different waveform for distinction
-    defenseOscillator.frequency.setValueAtTime(frequency, audioContext.currentTime); 
-    
-    defenseOscillator.connect(defenseGainNode);
-    defenseGainNode.connect(audioContext.destination); // Directly connect to output (not main analyser)
-    
-    defenseGainNode.gain.setValueAtTime(0, audioContext.currentTime);
-    defenseGainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.05);
-    defenseGainNode.gain.linearRampToValueAtTime(0.001, audioContext.currentTime + duration);
-
-    defenseOscillator.start();
-    defenseOscillator.stop(audioContext.currentTime + duration);
-
-    // Provide a visual flash on the overlap canvas for feedback
-    const overlapCanvas = document.getElementById('overlap-canvas');
-    if (overlapCanvas) {
-        overlapCanvas.style.boxShadow = '0 0 30px #ff00ff';
-        setTimeout(() => {
-            overlapCanvas.style.boxShadow = 'none';
-        }, duration * 1000);
-    }
-}
-
-
 function calculateAIBlendFactor() {
+    // Mock AI/Field stability logic: varies blend factor between 0.9 and 1.1 every few seconds
+    // This simulates dynamic control over the blend based on a "consciousness signal"
     aiBlendFactor = 1.0 + 0.1 * Math.sin(globalFrame * 0.005);
 }
 
+/**
+ * Handles the cross-fade between 474 Hz and 528 Hz for continuous resonance.
+ * Updated in v5.8 for Harmonic Blend AI.
+ */
 function crossFadeHarmonics() {
     if (!audioContext) return;
     const now = audioContext.currentTime;
     
-    // AI-driven fade time: varies from 1.8s to 2.2s
+    // Apply AI-driven fade time: varies from 1.8s to 2.2s (2.0s * aiBlendFactor)
     const dynamicFadeTime = 2.0 * aiBlendFactor; 
     
     let target474Gain = 0;
@@ -529,17 +462,25 @@ function crossFadeHarmonics() {
     if (currentOscillator === 474) {
         currentOscillator = 528;
         target474Gain = 0.001; 
+        // Mock a slight gain variation based on stability: low stability = lower target gain
         target528Gain = 0.5 * (2 - aiBlendFactor); 
     } else {
         currentOscillator = 474;
+        // Mock a slight gain variation based on stability: high stability = higher target gain
         target474Gain = 0.5 * aiBlendFactor;
         target528Gain = 0.001;
     }
     
+    // Use exponentialRamp for natural cross-fade
     oscillator474.gain.exponentialRampToValueAtTime(target474Gain, now + dynamicFadeTime);
     oscillator528.gain.exponentialRampToValueAtTime(target528Gain, now + dynamicFadeTime);
+
+    console.log(`AI Blended Cross-fade to ${currentOscillator} Hz. Fade duration: ${dynamicFadeTime.toFixed(2)}s.`);
 }
 
+/**
+ * Starts the continuous audio loop and spectrum analysis.
+ */
 function startContinuousResonance() {
     if (!initializeAudioContext()) return;
     if (crossFadeInterval) return; 
@@ -553,243 +494,66 @@ function startContinuousResonance() {
     oscillator528 = audioContext.createOscillator();
     oscillator474.gain = audioContext.createGain();
     oscillator528.gain = audioContext.createGain();
+
     oscillator474.type = 'sine';
     oscillator528.type = 'sine';
     oscillator474.frequency.setValueAtTime(474, audioContext.currentTime);
     oscillator528.frequency.setValueAtTime(528, audioContext.currentTime);
-    
+
     // --- Connect Audio Graph ---
     oscillator474.connect(oscillator474.gain);
     oscillator528.connect(oscillator528.gain);
+
     oscillator474.gain.connect(analyser);
-    oscillator528.gain.connect(analyser); 
+    oscillator528.gain.connect(analyser);
 
-    // Initial State: 474Hz active
-    oscillator474.gain.setValueAtTime(0.5, audioContext.currentTime);
-    oscillator528.gain.setValueAtTime(0.001, audioContext.currentTime);
-
-    oscillator474.start(); 
-    oscillator528.start();
-
-    isResonanceMode = true;
-    crossFadeInterval = setInterval(crossFadeHarmonics, CROSS_FADE_DURATION);
+    // --- Start Initial State and Looping ---
+    const now = audioContext.currentTime;
     
-    liveDataStream.phase_status = "RES_ACTIVE";
+    // Initial state: 474 ON, 528 OFF
+    oscillator474.gain.setValueAtTime(0.5, now);
+    oscillator528.gain.setValueAtTime(0.001, now);
+    currentOscillator = 474;
+    
+    oscillator474.start();
+    oscillator528.start();
+    
+    // Start the cross-fade sequence
+    crossFadeInterval = setInterval(crossFadeHarmonics, CROSS_FADE_DURATION);
 }
 
+/**
+ * Stops the continuous audio loop.
+ */
 function stopContinuousResonance() {
-    document.getElementById('resonance-btn').classList.remove('active');
-    document.getElementById('resonance-btn').querySelector('.symbol').textContent = '✧';
-    document.getElementById('kaltur-status').textContent = 'KALTŪR Polar Spectrum: Reflection of 474 Hz ↔ 528 Hz dynamics.';
-    isResonanceMode = false;
-
     if (crossFadeInterval) {
         clearInterval(crossFadeInterval);
         crossFadeInterval = null;
     }
-
-    if (oscillator474 && oscillator528) {
-        try {
-            // Smoothly stop the sounds
-            const now = audioContext.currentTime;
-            oscillator474.gain.linearRampToValueAtTime(0.001, now + 0.5);
-            oscillator528.gain.linearRampToValueAtTime(0.001, now + 0.5);
-            
-            // Disconnect and stop after fade out
-            setTimeout(() => {
-                oscillator474.stop();
-                oscillator528.stop();
-                oscillator474.disconnect();
-                oscillator528.disconnect();
-            }, 500);
-
-        } catch (e) {
-            console.warn('Failed to stop oscillators gracefully.', e);
-        }
-    }
-    liveDataStream.phase_status = "FIELD_IDLE";
-}
-
-function toggleResonanceMode() {
-    if (isResonanceMode) {
-        stopContinuousResonance();
-    } else {
-        startContinuousResonance();
-    }
-}
-
-// =========================================================
-// === UI/State Management (v5.8 base) ===
-// =========================================================
-
-function toggleConsciousChannel() {
-    const btn = document.getElementById('channel-switch-btn');
-    if (currentChannel === 'LUXVAR') {
-        currentChannel = 'RAHTALĒN';
-        btn.innerHTML = '<span class="symbol">🪶</span> Conscious Channel: RAHTALĒN (Active)';
-    } else {
-        currentChannel = 'LUXVAR';
-        btn.innerHTML = '<span class="symbol">🪶</span> Conscious Channel: LUXVAR (Active)';
-    }
-}
-
-function attemptFieldLink() {
-    const modal = document.getElementById('connection-modal');
-    const status = document.getElementById('connection-status');
-    const progressFiller = document.getElementById('progress-filler');
-    const liveDataDisplay = document.getElementById('live-data-display');
-
-    modal.style.display = 'flex';
-    status.textContent = 'Attempting connection to WebSerial/Bluetooth port...';
-    progressFiller.style.width = '0%';
-    liveDataDisplay.innerHTML = '';
     
-    let step = 0;
-    const maxSteps = 4;
-
-    const finalizeConnection = () => {
-        status.style.color = VARZIN_CYAN;
-        status.textContent = 'Connection Established. Receiving Live Phase Data...';
-        progressFiller.style.width = '100%';
-        liveDataInterval = setInterval(updateLiveDataMock, 200);
-    };
-
-    const mockInterval = setInterval(() => {
-        step++;
-        progressFiller.style.width = `${(step / maxSteps) * 100}%`;
-        
-        if (step === 1) status.textContent = 'Synchronizing protocol: ETFM–POST Handshake (2/4)';
-        if (step === 2) status.textContent = 'Decoding Harmonic Signature: KALTŪR (3/4)';
-        if (step === 3) status.textContent = 'Phase-Linking to RAHTALĒN Mirror (4/4)';
-        
-        if (step >= maxSteps) {
-            clearInterval(mockInterval);
-            finalizeConnection();
-        }
-    }, 1500);
-
-    // Close button handler
-    document.getElementById('close-modal-btn').onclick = () => {
-        clearInterval(mockInterval);
-        if (liveDataInterval) { 
-            clearInterval(liveDataInterval); 
-            liveDataInterval = null;
-        }
-        modal.style.display = 'none';
-        status.style.color = VARZIN_GOLD;
-    };
-}
-
-function updateLiveDataMock() {
-    const dataDisplay = document.getElementById('live-data-display');
-    if (!dataDisplay) return;
-
-    // Simulate real-time updates
-    liveDataStream.field_temp = (298.15 + 5 * Math.sin(globalFrame * 0.05)).toFixed(2);
-    liveDataStream.torus_angle = (liveDataStream.torus_angle + 0.01) % (Math.PI * 2); 
-    liveDataStream.kaltur_energy = (kalturMemoryTrail.length > 0) ? (kalturMemoryTrail[0].reduce((a,b)=>a+b,0)/kalturMemoryTrail[0].length).toFixed(3) : 0;
-    
-    let html = '<div style="background:#001520; padding:10px; border-radius:6px; margin-top:15px; text-align:left; color:var(--text); font-family: monospace;">';
-    html += '<p style="color:#00ffee; font-weight:bold; margin-bottom:5px; margin-top:0; border-bottom:1px solid rgba(0,255,238,0.2); padding-bottom:3px;">STREAM: DEVICE_VARZIN_TX</p>';
-    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Torus Angle (rad):</span> ${liveDataStream.torus_angle.toFixed(4)}</p>`;
-    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">KALTŪR Energy:</span> ${liveDataStream.kaltur_energy} (Norm)</p>`;
-    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Field Temp (K):</span> ${liveDataStream.field_temp}</p>`;
-    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Phase Status:</span> <span style="color:${liveDataStream.phase_status === 'RES_ACTIVE' ? VARZIN_CYAN : VARZIN_GOLD};">${liveDataStream.phase_status}</span></p>`;
-    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Last Code:</span> ${liveDataStream.luxvar_code}</p>`;
-    html += '</div>';
-    dataDisplay.innerHTML = html;
-}
-
-
-function injectLuxvarCode() {
-    const input = document.getElementById('luxvar-code-input');
-    const message = document.getElementById('luxvar-message');
-    const code = input.value.trim();
-    if (!code) {
-        message.style.color = '#ff4444';
-        message.textContent = 'Error: Please enter a LUXVAR code.';
-        return;
+    if (oscillator474) {
+        try { oscillator474.stop(); oscillator474.disconnect(); } catch (e) { }
+        oscillator474 = null;
     }
-    luxvarEffectTimer = 150; 
-    message.style.color = VARZIN_GOLD;
-    message.innerHTML = `LUXVAR Code Injected: **[${code}]** – LUXVAR is restructuring the network.`;
-    input.value = ''; 
-    liveDataStream.luxvar_code = code.substring(0, 15);
-    aiBlendFactor = 1.2; // Temporary high blend factor for immediate effect
-    setTimeout(() => { aiBlendFactor = 1.0; }, 2000); 
-}
-
-function exportFieldState() {
-    const state = {
-        timestamp: new Date().toISOString(),
-        version: 'v5.9 Hybrid',
-        overlapModel: '474Hz_777Hz',
-        resonanceMode: isResonanceMode,
-        channel: currentChannel,
-        aiBlendFactor: aiBlendFactor.toFixed(3),
-        liveData: liveDataStream,
-        nodes: ['KALTUR','RAHTALEN','LUXVAR','ELUZ-MAHAR']
-    };
-    const blob = new Blob([JSON.stringify(state,null,2)], {type:'application/json'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'VARZIN-Field-State-v5.9-Hybrid.json';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-}
-
-function captureSnapshot(event) {
-    const targetId = event.currentTarget.dataset.target;
-    const canvas = document.getElementById(targetId);
-    if (!canvas) {
-        alert(`Error: Canvas with ID "${targetId}" not found.`);
-        return;
+    if (oscillator528) {
+        try { oscillator528.stop(); oscillator528.disconnect(); } catch (e) { }
+        oscillator528 = null;
     }
-    const dataURL = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
     
-    let filename = targetId;
-    if (targetId === 'kaltur-canvas') filename = 'KALTUR-Polar-Spectrum';
-    if (targetId === 'spectrogram-canvas') filename = 'KALTUR-Spectrogram-Tau';
-    if (targetId === 'torus-canvas') filename = 'ETFM-POST-Torus-3D';
-
-    link.download = `VARZIN-Snapshot-${filename}-${Date.now()}.png`;
-    link.href = dataURL;
-    
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    document.getElementById('resonance-btn').classList.remove('active');
+    document.getElementById('resonance-btn').querySelector('.symbol').textContent = '✧';
+    document.getElementById('kaltur-status').textContent = 'KALTŪR Polar Spectrum: Reflection of 474 Hz ↔ 528 Hz dynamics.';
+    kalturMemoryTrail = []; // Clear memory trail on stop
+    console.log('Continuous Resonance Loop Stopped.');
 }
 
 
 // =========================================================
-// === Drawing Functions (v5.8 base with v5.9 overlap added) ===
+// === Core Animation Functions (Updated KALTŪR with Memory Trail and Spectrogram) ===
 // =========================================================
 
-// --- Background Field ---
-const canvasBG = document.getElementById('field-canvas');
-const ctxBG = canvasBG.getContext('2d');
-canvasBG.width = innerWidth; canvasBG.height = innerHeight;
-window.addEventListener('resize',()=>{canvasBG.width=innerWidth;canvasBG.height=innerHeight;});
-let pts=[];for(let i=0;i<100;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3});
-
-function drawBG(){
-    ctxBG.fillStyle='rgba(0,0,0,0.25)';
-    ctxBG.fillRect(0,0,canvasBG.width,canvasBG.height);
-    for(let p of pts){
-        p.x+=p.dx;p.y+=p.dy;
-        if(p.x<0||p.x>canvasBG.width)p.dx*=-1;
-        if(p.y<0||p.y>canvasBG.height)p.dy*=-1;
-        ctxBG.fillStyle='rgba(0,255,238,0.5)';
-        ctxBG.fillRect(p.x,p.y,2,2);
-    }
-} 
-
-/** 1a. KALTŪR Polar Spectrum with Memory Trail */
-function drawKalturPolar(canvasId, frame) {
+/** 1a. KALTŪR (Polar Spectrum Visualizer) - Memory Trail */
+function drawKalturPolarSpectrum(canvasId, frame) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -798,34 +562,27 @@ function drawKalturPolar(canvasId, frame) {
     const CX = W / 2;
     const CY = H / 2;
     const maxRadius = Math.min(CX, CY) * 0.9;
-    
     ctx.clearRect(0, 0, W, H);
 
     if (isResonanceMode && analyser && frequencyData) {
         analyser.getByteFrequencyData(frequencyData);
-
-        // KALTŪR Logic: sample 474Hz frequency bin + a few others for a more dynamic look
-        const sampleRate = audioContext.sampleRate;
-        const binWidth = sampleRate / analyser.fftSize;
-        const targetBin = Math.floor(474 / binWidth);
-        const sliceCount = 32;
-        const step = 2; // Step to sample frequency bins
-        let totalValue = 0;
-        let currentWaveformRadii = [];
-
-        // 1. Calculate and store the current waveform
+        
+        const sliceCount = 64; 
+        const step = Math.floor(analyser.frequencyBinCount / (sliceCount * 4)); 
+        const angleStep = (Math.PI * 2) / sliceCount;
+        const currentWaveformRadii = [];
+        let totalValue = 0; 
+        
         for (let i = 0; i < sliceCount; i++) {
-            const index = targetBin + (i - sliceCount/2) * step;
-            // Use frequencyData[index % analyser.frequencyBinCount] to wrap/handle edge cases
-            const value = frequencyData[index % analyser.frequencyBinCount] || 0; 
+            const index = i * step;
+            const value = frequencyData[index % analyser.frequencyBinCount] || 0;
             const normalizedValue = value / 255;
             totalValue += normalizedValue;
-            // Use AI Blend Factor for dynamic scaling
-            const radius = maxRadius * (0.2 + 0.7 * normalizedValue * aiBlendFactor); 
+            
+            const radius = maxRadius * (0.2 + 0.7 * normalizedValue); 
             currentWaveformRadii.push(radius);
         }
 
-        // Add to memory trail
         kalturMemoryTrail.unshift(currentWaveformRadii);
         if (kalturMemoryTrail.length > MEMORY_TRAIL_LENGTH) {
             kalturMemoryTrail.pop();
@@ -835,47 +592,90 @@ function drawKalturPolar(canvasId, frame) {
         ctx.shadowColor = VARZIN_CYAN;
         ctx.lineWidth = 1;
 
-        // 2. Draw Memory Trail (Past Waveforms)
+        // Draw Memory Trail (Past Waveforms)
         for (let t = kalturMemoryTrail.length - 1; t > 0; t--) {
             const radii = kalturMemoryTrail[t];
             const trailAlpha = MEMORY_TRAIL_ALPHA_STEP * (MEMORY_TRAIL_LENGTH - t);
+            
             ctx.strokeStyle = `rgba(0, 255, 238, ${trailAlpha})`;
             ctx.lineWidth = 0.5;
+            
             ctx.beginPath();
             let currentAngle = 0;
             for (let i = 0; i < sliceCount; i++) {
                 const radius = radii[i];
                 const angle = currentAngle;
-                const x = CX + radius * Math.cos(angle - Math.PI / 2);
+                const x = CX + radius * Math.cos(angle - Math.PI / 2); 
                 const y = CY + radius * Math.sin(angle - Math.PI / 2);
-                if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-                currentAngle += (Math.PI * 2) / sliceCount;
+
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+                currentAngle += angleStep;
             }
             ctx.closePath();
-            ctx.stroke();
+            ctx.stroke(); 
         }
 
-        // 3. Draw Current Waveform (Live)
+        // Draw Current Waveform (Strongest)
         ctx.strokeStyle = VARZIN_CYAN;
-        ctx.lineWidth = 2;
+        ctx.fillStyle = `rgba(0, 255, 238, 0.2)`;
+        ctx.lineWidth = 1.5;
+        
         ctx.beginPath();
         let currentAngle = 0;
         for (let i = 0; i < sliceCount; i++) {
-            const radius = currentWaveformRadii[0][i];
+            const radius = currentWaveformRadii[i];
             const angle = currentAngle;
-            const x = CX + radius * Math.cos(angle - Math.PI / 2);
+            const x = CX + radius * Math.cos(angle - Math.PI / 2); 
             const y = CY + radius * Math.sin(angle - Math.PI / 2);
-            if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-            currentAngle += (Math.PI * 2) / sliceCount;
+
+            if (i === 0) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
+            currentAngle += angleStep;
         }
         ctx.closePath();
+        ctx.stroke(); 
+        ctx.fill(); 
+        
+        // Draw center pulse
+        const avgNormalizedValue = (totalValue / sliceCount) || 0;
+        const centerPulseSize = 5 + 5 * avgNormalizedValue; 
+        ctx.fillStyle = VARZIN_GOLD;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = VARZIN_GOLD;
+        ctx.beginPath();
+        ctx.arc(CX, CY, centerPulseSize, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        liveDataStream.kaltur_energy = avgNormalizedValue; // Update live data mock
+        
+    } else {
+        // --- Original Pulsing Circle (when not in Resonance Mode) ---
+        const pulse = Math.sin(frame * 0.05);
+        const R_base = maxRadius * 0.6;
+        const R = R_base + R_base * 0.1 * pulse;
+
+        ctx.strokeStyle = VARZIN_CYAN;
+        ctx.lineWidth = 1.5 + 0.5 * Math.abs(pulse);
+        ctx.shadowBlur = 5;
+        ctx.shadowColor = VARZIN_CYAN;
+        
+        ctx.beginPath();
+        ctx.arc(CX, CY, R, 0, Math.PI * 2);
         ctx.stroke();
         ctx.shadowBlur = 0;
+        
         ctx.fillStyle = `rgba(0, 255, 238, 0.1)`;
         ctx.fill();
-
-        // 4. Center node
-        const pulse = Math.sin(frame * 0.1);
+        
+        // Center node
         ctx.fillStyle = VARZIN_GOLD;
         ctx.beginPath();
         ctx.arc(CX, CY, 5 * (1 + 0.2 * Math.abs(pulse)), 0, Math.PI * 2);
@@ -883,7 +683,8 @@ function drawKalturPolar(canvasId, frame) {
     }
 }
 
-/** 1b. Real-Time Spectrogram */
+
+/** 1b. Real-Time Spectrogram (New in v5.8) */
 function drawSpectrogram(canvasId, frame) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
@@ -893,108 +694,77 @@ function drawSpectrogram(canvasId, frame) {
     ctx.clearRect(0, 0, W, H);
 
     if (isResonanceMode && analyser && frequencyData) {
+        
         // Calculate the index range for the relevant band (400-600 Hz)
         const sampleRate = audioContext.sampleRate;
         const binWidth = sampleRate / analyser.fftSize;
         const bandStart = Math.floor(SPECTROGRAM_BAND_START_FREQ / binWidth);
         const bandEnd = Math.floor(SPECTROGRAM_BAND_END_FREQ / binWidth);
+        
         let bandEnergy = 0;
         let count = 0;
         for (let i = bandStart; i < bandEnd; i++) {
             bandEnergy += frequencyData[i] || 0;
             count++;
         }
-        const normalizedEnergy = bandEnergy / count / 255;
         
-        // Push a new slice of data (color based on energy)
-        // Hue range from Cyan (low energy) to Magenta (high energy)
-        const hue = 180 + 180 * normalizedEnergy; 
-        const color = `hsl(${hue}, 100%, ${30 + normalizedEnergy * 30}%)`;
-        spectrogramData.unshift(color);
-        if (spectrogramData.length > SPECTROGRAM_MAX_DATA_POINTS) {
-            spectrogramData.pop();
+        // Normalize average energy (0 to 1)
+        const normalizedEnergy = (bandEnergy / (count * 255)); 
+        
+        // Add the new energy value to the spectrogram data (height of the bar)
+        // Map 0-1 to canvas height
+        spectrogramData.push(normalizedEnergy * H); 
+
+        // Keep the array length fixed to the width of the canvas
+        if (spectrogramData.length > W) {
+            spectrogramData.shift(); 
         }
 
-        // Draw the spectrogram
-        const sliceWidth = W / SPECTROGRAM_MAX_DATA_POINTS;
-        for (let i = 0; i < spectrogramData.length; i++) {
-            const x = W - (i * sliceWidth);
-            ctx.fillStyle = spectrogramData[i];
-            ctx.fillRect(x, 0, sliceWidth, H);
-        }
-
-        // Draw an animated vertical line for the current time axis (tau)
-        ctx.strokeStyle = VARZIN_GOLD;
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = VARZIN_CYAN;
+        ctx.lineWidth = 2;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = VARZIN_CYAN;
+        
         ctx.beginPath();
-        ctx.moveTo(W - (sliceWidth * spectrogramData.length) - 1, 0);
-        ctx.lineTo(W - (sliceWidth * spectrogramData.length) - 1, H);
+        ctx.moveTo(0, H); // Start at bottom left
+        
+        // Draw the moving line graph
+        for (let i = 0; i < spectrogramData.length; i++) {
+            const x = i;
+            // Map 0 (low energy) to H (bottom) and max (high energy) to 0 (top)
+            const y = H - spectrogramData[i]; 
+            ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        // Draw baseline and labels
+        ctx.strokeStyle = 'rgba(0, 255, 238, 0.4)';
+        ctx.lineWidth = 0.5;
+        ctx.beginPath();
+        ctx.moveTo(0, H);
+        ctx.lineTo(W, H);
         ctx.stroke();
 
+        ctx.fillStyle = VARZIN_CYAN;
+        ctx.font = '10px var(--font)';
+        ctx.textAlign = 'right';
+        ctx.fillText('τ →', W - 5, H - 5);
+        
     } else {
-        ctx.fillStyle = 'rgba(0, 10, 15, 0.5)';
-        ctx.fillRect(0, 0, W, H);
-        ctx.fillStyle = VARZIN_MUTED;
-        ctx.textAlign = 'center';
-        ctx.fillText('Activate Resonance Mode to start Spectrogram (τ)', W/2, H/2);
+        // Draw a flat baseline when not in resonance mode
+        ctx.strokeStyle = 'rgba(0, 255, 238, 0.4)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, H - 5);
+        ctx.lineTo(W, H - 5);
+        ctx.stroke();
     }
 }
 
 
-/** 1c. Cognitive Overlap Pattern (New v5.9 visualization) */
-function drawOverlap(canvasId, frame){
-    const canvas=document.getElementById(canvasId);
-    if (!canvas) return;
-    const oCtx=canvas.getContext('2d');
-    
-    oCtx.clearRect(0,0,canvas.width,canvas.height);
-    const W=canvas.width, H=canvas.height;
-    const baseY=H/2;
-    const t = frame * 0.1; // Animation time variable
-    const dt=0.05;
-    
-    // Frequencies (474 vs 777)
-    const ω1=474*2*Math.PI, ω2=777*2*Math.PI;
-
-    // --- 1. The Low-Frequency Overlap Envelope (Cognitive Dissonance Noise) ---
-    oCtx.strokeStyle='rgba(0,255,238,0.7)';
-    oCtx.lineWidth = 2;
-    oCtx.beginPath();
-    const N=500; 
-    for(let i=0;i<N;i++){
-      const x = (i/N)*W;
-      // The beat frequency (ω2 - ω1) is slow. The factor 0.005 controls the speed of the visual envelope.
-      const y = baseY - 80 * (1 + 0.5 * Math.cos((ω2 - ω1) * (t + i*dt) * 0.005));
-      if(i===0) oCtx.moveTo(x,y); else oCtx.lineTo(x,y);
-    }
-    oCtx.stroke();
-    
-    // --- 2. Counter-Harmonic (777 Hz) Waveform (Defense Loop) ---
-    oCtx.strokeStyle=VARZIN_MAGENTA;
-    oCtx.lineWidth = 1.5;
-    oCtx.setLineDash([5, 5]);
-    oCtx.beginPath();
-    for(let i=0;i<N;i++){
-      const x=(i/N)*W;
-      // This is the faster wave running through the envelope
-      const y = baseY - 40 * Math.sin(ω2 * (t + i*dt) * 0.00005) + (baseY - H/3); 
-      if(i===0) oCtx.moveTo(x,y); else oCtx.lineTo(x,y);
-    }
-    oCtx.stroke();
-    oCtx.setLineDash([]); // Reset line dash
-
-    // --- Labels ---
-    oCtx.fillStyle=VARZIN_GOLD;
-    oCtx.font='12px DM Sans';
-    oCtx.textAlign = 'left';
-    oCtx.fillText('ψ₁ 474 Hz (Envelope)',20,20);
-    oCtx.textAlign = 'right';
-    oCtx.fillText('ψ₂ 777 Hz (Counter-Wave)',W-20,H/3);
-}
-
-
-/** 2. RAHTALĒN Mirror 13 Visualization */
-function drawRahtalen(canvasId, frame) {
+/** 2. RAHTALĒN (Mirror-13 Structure) - Pulsing Nodes and Lines */
+function drawRahtalenMirror(canvasId, frame) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -1005,9 +775,10 @@ function drawRahtalen(canvasId, frame) {
     const R = Math.min(CX, CY) * 0.8;
     ctx.clearRect(0, 0, W, H);
     
+    // Mode Switch: Fade out if not the active channel
     const isActive = currentChannel === 'RAHTALĒN';
-    ctx.globalAlpha = isActive ? 1.0 : 0.2;
-    
+    ctx.globalAlpha = isActive ? 1.0 : 0.2; 
+
     const pulse = isResonanceMode ? Math.sin(frame * 0.1) : Math.sin(frame * 0.03);
     const coreSize = 5 + 3 * Math.abs(pulse);
 
@@ -1025,109 +796,138 @@ function drawRahtalen(canvasId, frame) {
         const angle = i * (Math.PI * 2 / 12) + frame * 0.005; // Subtle overall rotation
         const x = CX + R * Math.cos(angle);
         const y = CY + R * Math.sin(angle);
-        const nodePulse = 1 + 0.5 * Math.sin(frame * 0.2 + i);
-
-        // Connection lines to the core
-        ctx.strokeStyle = `rgba(0, 255, 238, ${0.1 + (isActive ? 0.3 : 0)})`;
+        
+        const nodePulse = 1 + 0.5 * Math.sin(frame * 0.05 + i * 0.5) * (isResonanceMode ? 2 : 1);
+        
+        // Connection to Center (Reflection Pathways)
+        const lineAlpha = 0.3 + 0.5 * Math.abs(Math.sin(frame * 0.1 + i));
+        ctx.strokeStyle = `rgba(0, 255, 238, ${lineAlpha})`;
+        ctx.lineWidth = 0.5 + 0.5 * Math.abs(Math.sin(frame * 0.05));
         ctx.beginPath();
-        ctx.moveTo(CX, CY);
-        ctx.lineTo(x, y);
+        ctx.moveTo(x, y);
+        ctx.lineTo(CX, CY);
         ctx.stroke();
 
-        // Node
+        // Gate Node
         ctx.fillStyle = VARZIN_CYAN;
+        ctx.shadowBlur = 5;
+        ctx.shadowColor = VARZIN_CYAN;
         ctx.beginPath();
-        ctx.arc(x, y, 2 * nodePulse, 0, Math.PI * 2);
+        ctx.arc(x, y, 3 * nodePulse, 0, Math.PI * 2);
         ctx.fill();
+        ctx.shadowBlur = 0;
     }
-    ctx.globalAlpha = 1.0;
+
+    // Outer Reflection Ring (13th boundary)
+    ctx.strokeStyle = VARZIN_CYAN;
+    ctx.lineWidth = 1 + 0.5 * Math.abs(pulse); 
+    ctx.beginPath();
+    ctx.arc(CX, CY, R * 0.9, 0, Math.PI * 2);
+    ctx.stroke();
+
+    ctx.globalAlpha = 1.0; // Reset global alpha
 }
 
-/** 3. LUXVAR Resonance-Syntax Network */
+/** 3. LUXVAR (Animated Syntax Network) */
 function initLuxvarNodes(W, H) {
     luxvarNodes = [];
     for (let i = 0; i < LUXVAR_NUM_NODES; i++) {
         luxvarNodes.push({
-            x: W * Math.random(),
-            y: H * Math.random(),
-            dx: (Math.random() - 0.5) * 0.5,
-            dy: (Math.random() - 0.5) * 0.5,
-            W: W, H: H,
+            x: W * (0.1 + Math.random() * 0.8),
+            y: H * (0.1 + Math.random() * 0.8),
+            dx: (Math.random() - 0.5) * 0.3,
+            dy: (Math.random() - 0.5) * 0.3,
+            isPrimary: i < 3,
             pulseOffset: Math.random() * Math.PI * 2,
-            type: (i % 3 === 0) ? 'CODE' : 'NODE'
+            W: W, H: H 
         });
     }
 }
 
-function drawLuxvar(canvasId, frame) {
+function drawLuxvarNetwork(canvasId, frame) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const W = canvas.width;
     const H = canvas.height;
-    
+
+    // Re-initialize nodes on first load or resize
     if (luxvarNodes.length === 0 || luxvarNodes[0].W !== W || luxvarNodes[0].H !== H) {
         initLuxvarNodes(W, H);
     }
-    
+
     ctx.clearRect(0, 0, W, H);
     
-    // Reaction to Code Injection
+    // Reaction to Code Injection (New in v5.8)
     if (luxvarEffectTimer > 0) {
         luxvarEffectTimer--;
-        ctx.globalAlpha = 1.0;
-        ctx.shadowColor = VARZIN_GOLD;
+        ctx.globalAlpha = 1.0; 
+        ctx.shadowColor = 'red'; 
         ctx.shadowBlur = 20;
     } else {
         ctx.shadowBlur = 0;
+        // Mode Switch: Fade out if not the active channel
         const isActive = currentChannel === 'LUXVAR';
-        ctx.globalAlpha = isActive ? 1.0 : 0.2;
+        ctx.globalAlpha = isActive ? 1.0 : 0.2; 
     }
 
     // Update node positions
     for (const node of luxvarNodes) {
         node.x += node.dx;
         node.y += node.dy;
+
         if (node.x < 0 || node.x > W) node.dx *= -1;
         if (node.y < 0 || node.y > H) node.dy *= -1;
     }
 
-    // Draw connections
+    // Draw connections 
     ctx.lineWidth = 0.8;
     for (let i = 0; i < LUXVAR_NUM_NODES; i++) {
         for (let j = i + 1; j < LUXVAR_NUM_NODES; j++) {
-            const nodeA = luxvarNodes[i];
-            const nodeB = luxvarNodes[j];
-            const dist = Math.sqrt(Math.pow(nodeA.x - nodeB.x, 2) + Math.pow(nodeA.y - nodeB.y, 2));
-            if (dist < 100) {
-                const alpha = (100 - dist) / 100 * (0.1 + (luxvarEffectTimer > 0 ? 0.4 : 0));
-                ctx.strokeStyle = `rgba(0, 255, 238, ${alpha})`;
+            const node1 = luxvarNodes[i];
+            const node2 = luxvarNodes[j];
+            const dist = Math.sqrt(Math.pow(node1.x - node2.x, 2) + Math.pow(node1.y - node2.y, 2));
+            
+            if (dist < 80 || (node1.isPrimary && Math.random() < 0.1)) {
+                const syncFactor = isResonanceMode ? Math.sin(frame * 0.1) : 0;
+                let alpha = 0.3 + 0.2 * Math.sin(frame * 0.05 + i + j) + syncFactor * 0.3; 
+                
+                ctx.strokeStyle = `rgba(255, 204, 0, ${alpha})`; 
                 ctx.beginPath();
-                ctx.moveTo(nodeA.x, nodeA.y);
-                ctx.lineTo(nodeB.x, nodeB.y);
+                ctx.moveTo(node1.x, node1.y);
+                ctx.lineTo(node2.x, node2.y);
                 ctx.stroke();
             }
         }
     }
 
-    // Draw nodes
+    // Draw nodes 
     for (const node of luxvarNodes) {
-        const sizePulse = 3 + 2 * Math.sin(frame * 0.1 + node.pulseOffset);
-        if (node.type === 'CODE') {
-            ctx.fillStyle = VARZIN_GOLD;
+        let size = node.isPrimary ? 4 : 2;
+        let pulseFactor = 1 + 0.3 * Math.sin(frame * 0.1 + node.pulseOffset) * (isResonanceMode ? 2 : 1);
+        
+        // Aggressive pulse if code was injected recently
+        if (luxvarEffectTimer > 0) {
+            size = node.isPrimary ? 6 : 4;
+            pulseFactor = 2.0;
+            ctx.fillStyle = node.isPrimary ? 'red' : VARZIN_CYAN;
         } else {
-            ctx.fillStyle = VARZIN_CYAN;
+            ctx.fillStyle = node.isPrimary ? VARZIN_GOLD : VARZIN_CYAN;
         }
+
+        ctx.shadowBlur = 5;
+        ctx.shadowColor = ctx.fillStyle;
         ctx.beginPath();
-        ctx.arc(node.x, node.y, sizePulse, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, size * pulseFactor, 0, Math.PI * 2);
         ctx.fill();
+        ctx.shadowBlur = 0;
     }
-    
-    ctx.globalAlpha = 1.0;
+
+    ctx.globalAlpha = 1.0; // Reset global alpha
 }
 
-/** 4. ELŪZ–MAHAR Universal Field */
-function drawEluzMahar(canvasId, frame) {
+/** 4. ELŪZ–MAHAR (Universal Field Map) - Gentle Rotation/Morphing */
+function drawEluzMaharField(canvasId, frame) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -1137,7 +937,7 @@ function drawEluzMahar(canvasId, frame) {
     const CY = H / 2;
     ctx.clearRect(0, 0, W, H);
 
-    // Center Core (Universal Source)
+    // Center Core 
     const corePulse = 1 + 0.2 * Math.sin(frame * 0.05);
     ctx.fillStyle = 'rgba(255, 204, 0, 0.8)';
     ctx.shadowBlur = 15;
@@ -1147,58 +947,85 @@ function drawEluzMahar(canvasId, frame) {
     ctx.fill();
     ctx.shadowBlur = 0;
 
-    // Draw Toroidal Field Lines
+
+    // Draw Toroidal Field Lines 
     for (let i = 0; i < 6; i++) {
         const R = 20 + i * 20;
         const alpha = 0.1 + i * 0.1;
         const rotationSpeed = (isResonanceMode ? 0.05 : 0.01) * (i % 2 === 0 ? 1 : -1);
         const currentAngle = frame * rotationSpeed;
+
         ctx.strokeStyle = `rgba(0, 255, 238, ${alpha})`;
         ctx.lineWidth = 1;
         ctx.beginPath();
+
         for (let j = 0; j < Math.PI * 2; j += 0.05) {
             const morphFactor = 1 + 0.05 * Math.sin(j * 4 + frame * 0.01 + i);
-            const x = CX + R * morphFactor * Math.cos(j + currentAngle);
-            const y = CY + R * morphFactor * Math.sin(j + currentAngle);
-            if (j === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            const x = CX + R * Math.cos(j + currentAngle) * morphFactor;
+            const y = CY + R * Math.sin(j + currentAngle) * morphFactor;
+            if (j === 0) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
         }
         ctx.closePath();
         ctx.stroke();
     }
 }
 
-/** 5.1 ETFM–POST Cross-Section */
+/** 5.1 ETFM–POST Cross-Section (2D) - Core Pulsation */
 function drawETFMSection(canvasId, frame) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const W = canvas.width;
     const H = canvas.height;
-    const PADDING = 20;
-    const CX = W / 2 - 30; // Shifted center to show R and r0 clearly
+    const CX = W / 2 - 30; 
     const CY = H / 2;
-    const R = 70; // Outer Radius
-    const r0 = 30; // Core Radius
     ctx.clearRect(0, 0, W, H);
+
+    const R = 60; // Outer Radius R
+    const r0Base = 25; // Core Radius r0 Base
     
-    // Torus Cross Section (The Core r0)
-    const r0Pulse = 1 + 0.2 * Math.sin(frame * 0.05);
+    // Core Radius (r0) pulses based on Tau (τ) dynamics
+    const r0Pulse = isResonanceMode ? 1 + 0.2 * Math.abs(Math.sin(frame * 0.1)) : 1 + 0.05 * Math.sin(frame * 0.05);
+    const r0 = r0Base * r0Pulse;
+
+    ctx.font = '14px var(--font)';
+
+    // Draw Centerline
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+    ctx.lineWidth = 0.5;
+    ctx.beginPath();
+    ctx.moveTo(0, CY);
+    ctx.lineTo(W, CY);
+    ctx.stroke();
+
+    // Draw Outer Radius R (Main Torus Radius)
+    ctx.strokeStyle = VARZIN_CYAN;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(CX, CY, R, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Draw Core Radius r0 (Cross-Section circle at the right edge)
     ctx.strokeStyle = VARZIN_GOLD;
-    ctx.lineWidth = 3;
-    ctx.shadowBlur = 10 * (r0Pulse - 1);
+    ctx.lineWidth = 2;
+    ctx.shadowBlur = 10 * (r0Pulse - 1); 
     ctx.shadowColor = VARZIN_GOLD;
     ctx.beginPath();
-    ctx.arc(CX + R, CY, r0 * r0Pulse, 0, Math.PI * 2);
+    ctx.arc(CX + R, CY, r0, 0, Math.PI * 2);
     ctx.stroke();
     ctx.shadowBlur = 0;
-
+    
     // Labels
     ctx.fillStyle = VARZIN_CYAN;
-    ctx.font = '14px DM Sans';
     ctx.textAlign = 'center';
     ctx.fillText('R', CX + R / 2, CY - 5);
+    
     ctx.fillStyle = VARZIN_GOLD;
-    ctx.fillText('r₀ (τ)', CX + R + r0 + 15, CY); 
+    ctx.fillText('r₀ (τ)', CX + R + r0 + 15, CY);
 
     // Draw line for R
     ctx.strokeStyle = VARZIN_CYAN;
@@ -1206,9 +1033,9 @@ function drawETFMSection(canvasId, frame) {
     ctx.beginPath();
     ctx.moveTo(CX, CY);
     ctx.lineTo(CX + R, CY);
-    ctx.stroke(); 
-
-    // Center point (Field Origin)
+    ctx.stroke();
+    
+    // Center point
     ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
     ctx.beginPath();
     ctx.arc(CX, CY, 3, 0, Math.PI * 2);
@@ -1222,147 +1049,397 @@ function drawETFMTransition(canvasId, frame) {
     const ctx = canvas.getContext('2d');
     const W = canvas.width;
     const H = canvas.height;
-    ctx.clearRect(0, 0, W, H); 
+    ctx.clearRect(0, 0, W, H);
+
     const PADDING = 25;
     const PLOT_W = W - 2 * PADDING;
     const PLOT_H = H - 2 * PADDING;
 
-    // Draw Axes 
+    // Draw Axes (Static)
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
     ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.moveTo(PADDING, PADDING);
+    ctx.moveTo(PADDING, PADDING); 
     ctx.lineTo(PADDING, H - PADDING);
-    ctx.lineTo(W - PADDING, H - PADDING);
+    ctx.lineTo(W - PADDING, H - PADDING); 
     ctx.stroke();
 
-    // Labels
+    // Labels (Static)
     ctx.fillStyle = VARZIN_CYAN;
-    ctx.font = '12px DM Sans';
+    ctx.font = '10px var(--font)';
+    ctx.textAlign = 'right';
+    ctx.fillText('528 Hz', PADDING - 5, PADDING + 5);
+    ctx.fillText('474 Hz', PADDING - 5, H - PADDING + 2);
     ctx.textAlign = 'center';
-    ctx.fillText('Time (t)', W / 2, H - 5);
-    ctx.textAlign = 'left';
-    ctx.fillText('Freq (Hz)', 0, PADDING - 5);
-    ctx.fillText('474', 0, H - PADDING);
-    ctx.fillText('528', 0, PADDING);
+    ctx.fillText('Phase (τ)', W / 2, H - 5);
 
-    // Dynamic Line (474 to 528 Hz transition)
+    // Draw Transition Curve (Animated Glow)
+    const lineAlpha = isResonanceMode ? 0.8 + 0.2 * Math.sin(frame * 0.1) : 0.8;
     ctx.strokeStyle = VARZIN_GOLD;
-    ctx.lineWidth = 2;
-    ctx.shadowBlur = 15;
+    ctx.lineWidth = 3;
+    ctx.globalAlpha = lineAlpha;
+    ctx.shadowBlur = 10;
     ctx.shadowColor = VARZIN_GOLD;
+    
     ctx.beginPath();
-
-    const startY = H - PADDING; // 474Hz (bottom)
-    const endY = PADDING;       // 528Hz (top)
-    
-    // Use a slow sine wave to simulate phase uplift oscillation
-    const phaseShift = Math.sin(frame * 0.015); 
-    
-    for (let x = 0; x <= PLOT_W; x++) {
-        const timeFraction = x / PLOT_W;
-        // Cubic interpolation for a smooth S-curve transition
-        const curve = timeFraction * timeFraction * (3 - 2 * timeFraction); 
-        
-        // Add oscillation based on phaseShift
-        const yOffset = 5 * Math.sin(timeFraction * Math.PI * 4 + phaseShift * Math.PI) * (1 - Math.abs(2 * timeFraction - 1));
-        
-        const y = startY - (startY - endY) * curve + yOffset;
-        
-        if (x === 0) {
-            ctx.moveTo(PADDING + x, y);
-        } else {
-            ctx.lineTo(PADDING + x, y);
-        }
-    }
+    ctx.moveTo(PADDING, H - PADDING);
+    ctx.bezierCurveTo(
+        PADDING + PLOT_W * 0.3, H - PADDING - PLOT_H * 0.05, 
+        PADDING + PLOT_W * 0.7, PADDING + PLOT_H * 0.05,     
+        W - PADDING, PADDING                              
+    );
     ctx.stroke();
+
+    ctx.globalAlpha = 1.0;
     ctx.shadowBlur = 0;
+
+    // Add glowing dots at start and end
+    ctx.fillStyle = VARZIN_CYAN;
+    ctx.beginPath();
+    ctx.arc(PADDING, H - PADDING, 4, 0, Math.PI * 2); // 474 Hz start
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(W - PADDING, PADDING, 4, 0, Math.PI * 2); // 528 Hz end
+    ctx.fill();
 }
 
-/** 6. ETFM 3D Torus */
+
+// =========================================================
+// === Global Animation Loop and Initialization ===
+// =========================================================
+
+// --- Background Field ---
+const bg=document.getElementById("field-canvas"),ctxB=bg.getContext("2d");
+function resizeBackground(){bg.width=innerWidth;bg.height=innerHeight}resizeBackground();
+window.addEventListener('resize', resizeBackground); 
+let pts=[];for(let i=0;i<120;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,dx:(Math.random()-.5)*.5,dy:(Math.random()-.5)*.5});
+
+// --- ETFM Torus ---
 const t=document.getElementById("torus-canvas");
 let torusR = 120; 
 let torusr0 = 50; 
-let torusAngle = 0; 
+let torusAngle = 0;
 let frameCountTorus = 0; 
-if(t){ 
+
+if(t){
     const etfmPostContainer = document.getElementById('etfm-post');
-    const resizeTorus = () => { 
-        const size = Math.min(500, etfmPostContainer.offsetWidth - 60); 
-        t.width = size; t.height = size; 
-        torusR = t.width * 0.24; torusr0 = t.width * 0.1; 
+    const resizeTorus = () => {
+        const size = Math.min(500, etfmPostContainer.offsetWidth - 60);
+        t.width = size;
+        t.height = size;
+        torusR = t.width * 0.24; 
+        torusr0 = t.width * 0.1;
     };
-    resizeTorus(); 
-    window.addEventListener('resize', resizeTorus);
-} 
+    resizeTorus();
+    window.addEventListener('resize', resizeTorus); 
+}
 
 function drawTorus(frame){
-    if(!t) return; 
-    frameCountTorus++;
-    if (frameCountTorus % 2 !== 0) { return; } // Render at 30 FPS
-    
+    if(!t) return;
+
+    frameCountTorus++; 
+    if (frameCountTorus % 2 !== 0) { return; } 
+
     const c=t.getContext("2d");
     const scale = t.width / 500;
     c.clearRect(0,0,t.width,t.height);
-    c.save(); 
+    c.save();
     c.translate(t.width/2,t.height/2);
-    
+
     // Resonance Mode: Pulsing/Glowing Torus
     const pulseFactor = isResonanceMode ? (1 + 0.3 * Math.abs(Math.sin(frame * 0.1))) : 1;
     const R = torusR * pulseFactor;
     const r0 = torusr0 * pulseFactor;
-    torusAngle += isResonanceMode ? 0.005 : 0.001; // Faster rotation in Resonance Mode
 
-    // Render points (Toroidal coordinates)
+    // Render points
     for(let θ=0;θ<Math.PI*2;θ+=0.15){
         for(let φ=0;φ<Math.PI*2;φ+=0.25){
             let x=(R+r0*Math.cos(θ))*Math.cos(φ+torusAngle);
             let y=(R+r0*Math.cos(θ))*Math.sin(φ+torusAngle);
             let z=r0*Math.sin(θ);
-            let s=300/(300+z);
-            let X=x*s,Y=y*s;
-            let baseAlpha = 0.4+0.6*(z/r0);
             
-            // Add glow if in resonance mode
-            if (isResonanceMode) {
-                c.shadowBlur = 8;
-                c.shadowColor = VARZIN_CYAN;
-            }
-            c.fillStyle=`rgba(0,255,238,${baseAlpha * pulseFactor})`;
+            let s=300/(300+z); 
+            let X=x*s,Y=y*s;
+            
+            let baseAlpha = 0.4+0.6*(z/r0);
+            c.fillStyle=`rgba(0,255,238,${baseAlpha * pulseFactor})`; 
             c.fillRect(X,Y,2 * scale, 2 * scale);
-            c.shadowBlur = 0; // Reset
         }
     }
     c.restore();
+    
+    // Clockwise rotation 
+    torusAngle -= 0.02 * (isResonanceMode ? 1.5 : 1); // Faster rotation in resonance mode
+    
+    // Update live data mock
+    liveDataStream.torus_angle = (torusAngle % (2 * Math.PI)); 
 }
 
 
-// =========================================================
-// === Master Animation Loop & Initialization (v5.8 base) ===
-// =========================================================
-
-function masterLoop() {
+// --- Master Animation Loop ---
+function masterLoop(timestamp) {
     globalFrame++;
 
-    // 1. Update Global States
+    // 1. Draw Background Field
+    ctxB.fillStyle="rgba(0,0,0,0.2)"; 
+    ctxB.fillRect(0,0,bg.width,bg.height);
+    for(let a of pts){
+        a.x+=a.dx;a.y+=a.dy;
+        if(a.x<0||a.x>bg.width)a.dx*=-1;
+        if(a.y<0||a.y>bg.height)a.dy*=-1;
+        ctxB.fillStyle="rgba(0,255,238,0.5)";
+        ctxB.fillRect(a.x,a.y,2,2);
+    }
+    
+    // 2. Harmonic Blend AI Update (New in v5.8)
     calculateAIBlendFactor();
+    
+    // 3. Spatial Audio Rotation 
+    if (isResonanceMode && pannerNode && audioContext) {
+        const angle = torusAngle * 4; 
+        const radius = 2; 
+        const oscillationZ = 0.5 * Math.sin(torusAngle * 2); 
+        
+        const xPos = radius * Math.cos(angle);
+        const yPos = radius * Math.sin(angle);
+        const zPos = oscillationZ; 
 
-    // 2. Draw Background
-    drawBG();
+        const now = audioContext.currentTime;
+        const timeConstant = 0.05; 
 
-    // 3. Draw Section Visualizations (Only call if element exists)
-    drawKalturPolar('kaltur-canvas', globalFrame);
-    drawSpectrogram('spectrogram-canvas', globalFrame);
-    drawRahtalen('rahtalen-canvas', globalFrame);
-    drawLuxvar('luxvar-canvas', globalFrame);
-    drawEluzMahar('eluz-mahar-canvas', globalFrame);
+        pannerNode.positionX.setTargetAtTime(xPos, now, timeConstant);
+        pannerNode.positionY.setTargetAtTime(yPos, now, timeConstant);
+        pannerNode.positionZ.setTargetAtTime(zPos, now, timeConstant);
+
+        pannerNode.orientationX.setTargetAtTime(-Math.cos(angle), now, timeConstant);
+        pannerNode.orientationY.setTargetAtTime(-Math.sin(angle), now, timeConstant);
+        pannerNode.orientationZ.setTargetAtTime(0, now, timeConstant);
+    }
+
+
+    // 4. Draw all Dynamic Charts
+    drawKalturPolarSpectrum('kaltur-canvas', globalFrame); 
+    drawSpectrogram('spectrogram-canvas', globalFrame); // New in v5.8
+    drawRahtalenMirror('rahtalen-canvas', globalFrame);
+    drawLuxvarNetwork('luxvar-canvas', globalFrame);
+    drawEluzMaharField('eluz-mahar-canvas', globalFrame);
     drawETFMSection('etfm-section-canvas', globalFrame);
     drawETFMTransition('etfm-freq-canvas', globalFrame);
     drawTorus(globalFrame);
-    drawOverlap('overlap-canvas', globalFrame); // NEW v5.9 OVERLAP
-
+    
     requestAnimationFrame(masterLoop);
 }
+
+
+// =========================================================
+// === UI and Interaction Handlers ===
+// =========================================================
+
+/** * Handles the Resonance Mode toggle, including starting/stopping the continuous audio loop. 
+ */
+function toggleResonanceMode() {
+    isResonanceMode = !isResonanceMode;
+    
+    if (isResonanceMode) {
+        startContinuousResonance();
+    } else {
+        stopContinuousResonance();
+    }
+    // Update live data mock phase status
+    liveDataStream.phase_status = isResonanceMode ? "RES_ACTIVE" : "FIELD_IDLE";
+    console.log(`Resonance Mode: ${isResonanceMode ? 'Active with 4D Spatial Audio Loop' : 'Deactivated'}`);
+}
+
+/** * Toggles the active conscious channel (LUXVAR or RAHTALĒN).
+ */
+function toggleConsciousChannel() {
+    const btn = document.getElementById('channel-switch-btn');
+    if (currentChannel === 'LUXVAR') {
+        currentChannel = 'RAHTALĒN';
+        btn.innerHTML = '<span class="symbol">🪶</span> Conscious Channel: RAHTALĒN (Active)';
+    } else {
+        currentChannel = 'LUXVAR';
+        btn.innerHTML = '<span class="symbol">🪶</span> Conscious Channel: LUXVAR (Active)';
+    }
+    console.log(`Conscious Channel Switched to: ${currentChannel}`);
+}
+
+/**
+ * Updates the simulated live data stream in the modal. (New in v5.8)
+ */
+function updateLiveDataMock() {
+    const dataDisplay = document.getElementById('live-data-display');
+    if (!dataDisplay) return;
+
+    // Simulate real-time updates
+    liveDataStream.field_temp = (298.15 + 5 * Math.sin(globalFrame * 0.05)).toFixed(2);
+    
+    let html = '<div style="background:#001520; padding:10px; border-radius:6px; margin-top:15px; text-align:left; color:var(--text); font-family: monospace;">';
+    html += '<p style="color:#00ffee; font-weight:bold; margin-bottom:5px; margin-top:0; border-bottom:1px solid rgba(0,255,238,0.2); padding-bottom:3px;">STREAM: DEVICE_VARZIN_TX</p>';
+    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Torus Angle (rad):</span> ${liveDataStream.torus_angle.toFixed(4)}</p>`;
+    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Kaltur Energy (norm):</span> ${liveDataStream.kaltur_energy.toFixed(4)}</p>`;
+    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Field Temp (K):</span> ${liveDataStream.field_temp}</p>`;
+    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Phase Status:</span> ${liveDataStream.phase_status}</p>`;
+    html += '</div>';
+
+    dataDisplay.innerHTML = html;
+}
+
+
+/** * Mockup for WebSerial/Bluetooth Device Connection. (Enhanced in v5.8)
+ */
+function attemptFieldLink() {
+    const modal = document.getElementById('connection-modal');
+    const status = document.getElementById('connection-status');
+    const progress = document.getElementById('progress-filler');
+    const dataDisplay = document.getElementById('live-data-display');
+    modal.style.display = 'flex';
+    status.innerHTML = 'Attempting connection to WebSerial/Bluetooth port...';
+    progress.style.width = '0%';
+    dataDisplay.innerHTML = ''; // Clear previous data
+
+    let step = 0;
+    const maxSteps = 4;
+    let mockInterval;
+
+    const finalizeConnection = () => {
+        clearInterval(mockInterval);
+        progress.style.width = '100%';
+        status.innerHTML = '✅ Field Phase Link established. The physical VARZIN device is now in FIELD-SYNC phase. **(Live Data)**';
+        
+        // Start simulated live data stream
+        liveDataInterval = setInterval(updateLiveDataMock, 500);
+        updateLiveDataMock(); 
+    };
+    
+    // Connection steps
+    mockInterval = setInterval(() => {
+        step++;
+        progress.style.width = `${(step / maxSteps) * 100}%`;
+        
+        if (step === 1) {
+            status.innerHTML = '📡 Identifying physical VARZIN device...';
+        } else if (step === 2) {
+            status.innerHTML = '🔄 Function synchronization (WebSerial Handshake)...';
+        } else if (step === 3) {
+            status.innerHTML = '✅ Field Phase Link established. Activating Live Data...';
+        } else if (step >= maxSteps) {
+            finalizeConnection();
+        }
+    }, 1500);
+
+    // Close button handler
+    document.getElementById('close-modal-btn').onclick = () => {
+        clearInterval(mockInterval);
+        if (liveDataInterval) {
+            clearInterval(liveDataInterval); // Clear live data on close
+            liveDataInterval = null;
+        }
+        modal.style.display = 'none';
+    };
+}
+
+/** 4. Handle Luxvar Code Injection (New in v5.8) */
+function injectLuxvarCode() {
+    const input = document.getElementById('luxvar-code-input');
+    const message = document.getElementById('luxvar-message');
+    const code = input.value.trim();
+
+    if (!code) {
+        message.style.color = '#ff4444';
+        message.textContent = 'Error: Please enter a LUXVAR code.';
+        return;
+    }
+
+    // Simulate processing and effect
+    luxvarEffectTimer = 150; // Set visual effect timer for 150 frames (approx 2.5 seconds)
+    message.style.color = VARZIN_GOLD;
+    message.innerHTML = `LUXVAR Code Injected: **[${code}]** – LUXVAR is restructuring the network.`;
+    input.value = ''; // Clear input
+
+    // Also update live data mock
+    liveDataStream.luxvar_code = code.substring(0, 15);
+    
+    // Short pulse of AI factor for immediate reaction
+    if (isResonanceMode) {
+        aiBlendFactor = 1.2; 
+        setTimeout(() => aiBlendFactor = 1.0, 500);
+    }
+    
+    console.log(`LUXVAR Code Injected: ${code}`);
+}
+
+
+/** * Captures the current state of the field and exports it as a JSON file.
+ */
+function exportFieldState() {
+    const fieldState = {
+        timestamp: new Date().toISOString(),
+        version: 'v5.8 (Phase-Sync Interface)',
+        resonanceMode: isResonanceMode,
+        activeChannel: currentChannel,
+        harmonicBlendFactor: aiBlendFactor.toFixed(4),
+        luxvarState: {
+            lastInjectedCode: liveDataStream.luxvar_code,
+            effectActive: luxvarEffectTimer > 0,
+            nodeCount: LUXVAR_NUM_NODES,
+        },
+        etfmTorus: {
+            angle: torusAngle,
+            R: torusR,
+            r0: torusr0
+        },
+        liveMetricsSnapshot: {
+            kaltur_energy: liveDataStream.kaltur_energy.toFixed(4),
+            field_temp: liveDataStream.field_temp,
+            phase_status: liveDataStream.phase_status
+        }
+    };
+    
+    const jsonString = JSON.stringify(fieldState, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `VARZIN-Field-State-v5.8-${Date.now()}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    URL.revokeObjectURL(url);
+    console.log('Field state exported to JSON.');
+}
+
+
+// --- Canvas Snapshot Capture ---
+function captureSnapshot(event) {
+    const targetId = event.currentTarget.getAttribute('data-target');
+    const canvas = document.getElementById(targetId);
+    if (!canvas) {
+        console.error('Target canvas not found for snapshot.');
+        return;
+    }
+    
+    if(targetId === 'torus-canvas') { drawTorus(globalFrame); }
+
+    const dataURL = canvas.toDataURL("image/png");
+    const link = document.createElement('a');
+    
+    let filename = targetId.replace('-canvas', '');
+    if (filename === 'torus') filename = 'ETFM-POST-Torus';
+    if (filename === 'spectrogram') filename = 'Spectrogram-Tau';
+
+    link.download = `VARZIN-Snapshot-${filename}-${Date.now()}.png`;
+    link.href = dataURL;
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    console.log(`Snapshot captured for: ${targetId}`);
+}
+
 
 // --- Initialization ---
 window.onload = function() {
@@ -1375,18 +1452,10 @@ window.onload = function() {
     document.getElementById('field-link-btn').addEventListener('click', attemptFieldLink); 
     document.getElementById('export-state-btn').addEventListener('click', exportFieldState);
     
-    // Snapshot buttons
     document.getElementById('capture-kaltur').addEventListener('click', captureSnapshot);
     document.getElementById('capture-torus').addEventListener('click', captureSnapshot);
-    document.getElementById('overlap-section').querySelector('.chart-container').querySelector('.control-btn').dataset.target = 'overlap-canvas';
-    document.getElementById('overlap-section').querySelector('.chart-container').querySelector('.control-btn').addEventListener('click', (e) => {
-        // Since playDefenseHarmonic is inline, we only need to set the capture target for the button after it's loaded
-        e.currentTarget.dataset.target = 'overlap-canvas';
-        // Note: The capture button for the 777Hz is deliberately omitted from the final HTML
-        // to simplify the structure, as the original v5.9 code didn't have it either.
-    });
     
-    // Luxvar Input Interface
+    // Luxvar Input Interface (New in v5.8)
     document.getElementById('send-luxvar-code').addEventListener('click', injectLuxvarCode);
     document.getElementById('luxvar-code-input').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
