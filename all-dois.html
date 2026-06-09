@@ -3,14 +3,17 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN – Official DOI & Scientific Archive | KALTŪR Master List</title>
-  <meta name="description" content="The complete and categorized master list of all Digital Object Identifiers (DOI) and published scientific, field, and conscious works of the VARZIN Project, sealed by the KALTŪR–ZUN–RAHTALĒN protocol.">
-  <meta name="author" content="Reza Nirouyar | RAHTALĒN–13" />
-  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, RAHTALEN 13, DOI Archive, Zenodo, OSF, KALTŪR, ETFM, Scientific Manifesto, 474Hz, Conscious Field Model, Genomic Mirror, Censorship, VARZIN_DOI_Master_List.txt">
+  <title>VARZIN – Official DOI & Scientific Archive | Complete Index</title>
+  <!-- FIX 1: description — removed "sealed by KALTŪR–ZUN–RAHTALĒN protocol" framing -->
+  <meta name="description" content="Complete and categorized master list of all Digital Object Identifiers (DOI) for VARZIN Project works. Zenodo, OSF, and academic references. Symbolic-experimental research framework.">
+  <!-- FIX 2: author — removed RAHTALĒN–13 -->
+  <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842" />
+  <!-- FIX 3: keywords — removed "Censorship", "Scientific Manifesto", "Conscious Field Model" -->
+  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, DOI Archive, Zenodo, OSF, KALTŪR, ETFM, VPE-001, VARZIN_DOI_Master_List">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta property="og:title" content="VARZIN – DOI & Scientific Archive">
-  <meta property="og:description" content="Complete archive of the scientific and field works of VARZIN Project, sealed by KALTŪR.">
+  <meta property="og:description" content="Complete archive of VARZIN Project research materials. Zenodo, OSF, and academic references.">
   <meta property="og:image" content="https://varzin.org/assets/cover-doi.png">
   <meta property="og:url" content="https://varzin.org/all-dois.html">
   <meta property="og:type" content="website">
@@ -22,20 +25,20 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
-    /* VARZIN DOI Archive Theme */
     :root {
       --bg-end: #000000;
-      --primary-glow: #00ffee; /* Neon Cyan */
-      --secondary-glow: #00ffff; /* Neon Blue */
+      --primary-glow: #00ffee;
+      --secondary-glow: #00ffff;
       --text-main: #cceeee;
       --panel-bg: rgba(0, 15, 20, 0.6);
       --panel-border: rgba(0, 255, 238, 0.3);
       --blur-val: 10px;
       --glow-shadow: 0 0 30px rgba(0, 255, 238, 0.5);
       --font-main: 'DM Sans', 'DejaVu Sans', 'Vazirmatn', sans-serif;
-      --censor-color: #ff004c; /* Neon Red for Censorship/Warning */
-      --osf-color: #00cc66; /* Neon Green for OSF */
-      --zenodo-color: #00aaaa; /* Teal for Zenodo */
+      --osf-color: #00cc66;
+      --zenodo-color: #00aaaa;
+      --migrated-color: #7fdfff;
+      --research: #7fdfff;
     }
 
     html { scroll-behavior: smooth; }
@@ -51,119 +54,69 @@
       line-height: 1.6;
     }
 
-    /* === CANVAS STYLE - Background Animation Layer === */
     #field-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
+        position: fixed; top: 0; left: 0;
+        width: 100%; height: 100%; z-index: -1;
     }
-    /* =============================================== */
     
     .container {
-      max-width: 1300px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
+      max-width: 1300px; margin: 0 auto;
+      position: relative; z-index: 1;
     }
 
-    /* CSS for navigation bar */
     .main-nav {
-      max-width: 1300px;
-      margin: 0 auto 50px;
+      max-width: 1300px; margin: 0 auto 50px;
       padding: 0 0 15px;
       border-bottom: 2px solid var(--panel-border);
       text-align: center;
     }
     .nav-link {
-      color: var(--text-main);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.05em;
-      margin: 0 15px;
+      color: var(--text-main); text-decoration: none;
+      font-weight: 500; font-size: 1.05em; margin: 0 15px;
       transition: color 0.3s, text-shadow 0.3s;
     }
-    .nav-link:hover {
-      color: var(--primary-glow);
-      text-shadow: 0 0 8px var(--primary-glow);
-    }
-    .nav-link.active {
-      color: var(--secondary-glow);
-      border-bottom: 2px solid var(--secondary-glow);
-      padding-bottom: 3px;
-    }
+    .nav-link:hover { color: var(--primary-glow); text-shadow: 0 0 8px var(--primary-glow); }
+    .nav-link.active { color: var(--secondary-glow); border-bottom: 2px solid var(--secondary-glow); padding-bottom: 3px; }
 
-    /* Accessibility: Focus state for keyboard navigation */
-    .nav-link:focus-visible,
-    .doi-link:focus-visible,
-    .footer-link:focus-visible,
-    .doi-id a:focus-visible {
-        outline: 3px solid var(--primary-glow);
-        outline-offset: 4px;
-        border-radius: 6px; 
+    .nav-link:focus-visible, .doi-link:focus-visible,
+    .footer-link:focus-visible, .doi-id a:focus-visible {
+        outline: 3px solid var(--primary-glow); outline-offset: 4px; border-radius: 6px; 
     }
 
     .header h1 {
-      font-size: clamp(2.5em, 5vw, 4em);
-      margin-bottom: 10px;
-      color: var(--primary-glow);
-      font-weight: 700;
-      letter-spacing: 4px;
+      font-size: clamp(2.5em, 5vw, 4em); margin-bottom: 10px;
+      color: var(--primary-glow); font-weight: 700; letter-spacing: 4px;
       text-shadow: 0 0 20px var(--primary-glow);
     }
-
     .header h2 {
-      font-size: clamp(1em, 2vw, 1.4em);
-      color: var(--secondary-glow);
-      margin-bottom: 50px;
-      font-weight: 500;
-      line-height: 1.6;
-    }
-    
-    /* --- DISCLOSURE BOX STYLES --- */
-    .disclosure-box {
-        padding: 30px;
-        margin: 0 0 60px;
-        border: 3px solid var(--censor-color);
-        border-radius: 12px;
-        background: rgba(40, 0, 0, 0.8);
-        backdrop-filter: blur(var(--blur-val));
-        text-align: center;
-        box-shadow: 0 0 30px rgba(255, 0, 76, 0.8);
-        animation: critical-pulse 4s infinite alternate ease-in-out; /* Pulsing effect */
-    }
-    .disclosure-box h3 {
-        color: var(--censor-color);
-        font-size: clamp(1.4em, 3vw, 1.8em);
-        margin-top: 0;
-        text-shadow: 0 0 10px var(--censor-color);
-        letter-spacing: 1px;
-    }
-    .disclosure-box p {
-        color: #ffcccc;
-        font-size: clamp(0.95em, 2vw, 1.15em);
-        line-height: 1.7;
-        margin: 15px 0;
-    }
-    @keyframes critical-pulse {
-        0% { box-shadow: 0 0 30px rgba(255, 0, 76, 0.8); }
-        100% { box-shadow: 0 0 50px rgba(255, 0, 76, 1.0); }
-    }
-    /* ---------------------------------- */
-
-    .archive-category {
-      margin-bottom: 70px;
-      text-align: left;
+      font-size: clamp(1em, 2vw, 1.4em); color: var(--secondary-glow);
+      margin-bottom: 30px; font-weight: 500; line-height: 1.6;
     }
 
+    /* FIX 4: Research status — replaces the censorship disclosure box */
+    .research-status-bar {
+      max-width: 860px; margin: 0 auto 50px; padding: 14px 24px;
+      border-radius: 10px; background: rgba(0, 30, 40, 0.8);
+      border: 1px solid rgba(127, 223, 255, 0.35);
+      font-size: 0.9em; color: #a7e7e7; line-height: 1.7; text-align: center;
+    }
+    .research-status-bar strong { color: var(--research); }
+    .research-status-bar a { color: var(--secondary-glow); text-decoration: none; }
+    .research-status-bar a:hover { text-decoration: underline; }
+
+    /* FIX 5: Migrated note — replaces censorship box — neutral info style */
+    .migration-note {
+      max-width: 860px; margin: 0 auto 50px; padding: 18px 24px;
+      border-radius: 10px; background: rgba(0, 25, 35, 0.85);
+      border: 1px solid rgba(0, 170, 170, 0.4);
+      font-size: 0.9em; color: #a7e7e7; line-height: 1.7; text-align: left;
+    }
+    .migration-note strong { color: var(--zenodo-color); }
+
+    .archive-category { margin-bottom: 70px; text-align: left; }
     .category-title {
-      font-size: 2em;
-      color: var(--primary-glow);
-      margin: 0 0 30px; 
-      padding-bottom: 15px;
-      padding-top: 10px; 
+      font-size: 2em; color: var(--primary-glow); margin: 0 0 30px;
+      padding-bottom: 15px; padding-top: 10px;
       border-bottom: 2px solid var(--panel-border);
       text-shadow: 0 0 8px rgba(0, 255, 238, 0.4);
     }
@@ -175,152 +128,85 @@
     }
 
     .doi-link {
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      border-radius: 10px;
-      background-color: var(--panel-bg);
-      color: var(--text-main);
-      font-weight: 500;
-      text-decoration: none;
-      font-size: 0.95em;
+      display: flex; flex-direction: column;
+      padding: 20px; border-radius: 10px;
+      background-color: var(--panel-bg); color: var(--text-main);
+      font-weight: 500; text-decoration: none; font-size: 0.95em;
       transition: all .4s ease;
       border: 2px solid var(--panel-border);
       backdrop-filter: blur(var(--blur-val));
-      text-align: left;
-      position: relative;
+      text-align: left; position: relative;
     }
-
     .doi-link:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--glow-shadow);
-      color: var(--primary-glow);
-      border-color: var(--primary-glow);
+      transform: translateY(-5px); box-shadow: var(--glow-shadow);
+      color: var(--primary-glow); border-color: var(--primary-glow);
     }
-
     .doi-title {
-      font-weight: 700;
-      line-height: 1.5;
-      color: var(--secondary-glow);
-      margin-bottom: 5px;
-      transition: color .4s;
+      font-weight: 700; line-height: 1.5; color: var(--secondary-glow);
+      margin-bottom: 5px; transition: color .4s;
     }
-    
-    .doi-link:hover .doi-title {
-        color: var(--primary-glow);
-    }
-
-
-    .doi-id {
-      font-size: 0.85em;
-      opacity: 0.9;
-      margin-top: 5px;
-    }
+    .doi-link:hover .doi-title { color: var(--primary-glow); }
+    .doi-id { font-size: 0.85em; opacity: 0.9; margin-top: 5px; }
     .doi-id a { 
-        color: inherit;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        transition: color .3s;
+        color: inherit; text-decoration: underline;
+        text-underline-offset: 3px; transition: color .3s;
     }
-    .doi-id a:hover {
-        color: var(--primary-glow);
-    }
+    .doi-id a:hover { color: var(--primary-glow); }
 
-
-    /* --- Figshare Blocked Link Styles --- */
-    .figshare-blocked {
-        background-color: rgba(30, 0, 0, 0.9);
-        border-color: var(--censor-color);
-        color: #ffaaaa;
+    /* FIX 6: Figshare migrated links — neutral style, no red censorship */
+    .figshare-migrated {
+        background-color: rgba(0, 20, 25, 0.7);
+        border-color: rgba(0, 170, 170, 0.3);
+        opacity: 0.85;
     }
-    .figshare-blocked .doi-title {
-        color: #ffaaaa; 
-        text-decoration: line-through 1px rgba(255, 0, 76, 0.5); /* Strike-through for original DOI */
-    }
-    .figshare-blocked:hover {
-        /* Intentionally revert to active theme on hover to indicate successful redirect */
+    .figshare-migrated .doi-title { color: var(--migrated-color); }
+    .figshare-migrated:hover {
         transform: translateY(-5px);
-        box-shadow: 0 0 30px rgba(0, 255, 238, 0.5);
-        color: var(--primary-glow);
-        border-color: var(--primary-glow);
+        box-shadow: 0 0 25px rgba(0, 170, 170, 0.4);
+        color: var(--zenodo-color); border-color: var(--zenodo-color);
         background-color: rgba(0, 25, 30, 0.8);
+        opacity: 1;
     }
-    .figshare-blocked:hover .doi-title {
-        color: var(--secondary-glow);
-        text-decoration: none; /* Remove strike-through on hover */
-    }
-    .doi-status {
-        font-weight: 700;
-        color: var(--censor-color);
-        margin-top: 10px;
-        font-size: 0.9em;
-        line-height: 1.4;
-    }
-    /* ------------------------------------- */
-
-    /* Zenodo specific glow (Teal) */
-    .zenodo-link:hover {
-        box-shadow: 0 0 30px var(--zenodo-color);
-        border-color: var(--zenodo-color);
-        color: var(--zenodo-color);
-    }
-    .zenodo-link .doi-title {
-        color: var(--zenodo-color);
+    .figshare-migrated:hover .doi-title { color: var(--zenodo-color); }
+    /* FIX 6: Migration note under each item — neutral */
+    .doi-migration-note {
+        font-size: 0.82em; color: rgba(0, 170, 170, 0.7);
+        margin-top: 6px; font-style: italic;
     }
 
-    /* OSF specific glow (Green) */
-    .osf-link:hover {
-        box-shadow: 0 0 30px var(--osf-color);
-        border-color: var(--osf-color);
-        color: var(--osf-color);
-    }
-    .osf-link .doi-title {
-        color: var(--osf-color);
-    }
+    /* Zenodo specific glow */
+    .zenodo-link:hover { box-shadow: 0 0 30px var(--zenodo-color); border-color: var(--zenodo-color); color: var(--zenodo-color); }
+    .zenodo-link .doi-title { color: var(--zenodo-color); }
+
+    /* OSF specific glow */
+    .osf-link:hover { box-shadow: 0 0 30px var(--osf-color); border-color: var(--osf-color); color: var(--osf-color); }
+    .osf-link .doi-title { color: var(--osf-color); }
     
-    /* Academic References Styling */
-    .academic-ref {
-        background-color: rgba(20, 20, 0, 0.5);
-        border-color: rgba(255, 170, 0, 0.5);
-    }
-    .academic-ref .doi-title {
-        color: #ffaa00; /* Neon Amber */
-    }
-    .academic-ref:hover {
-        box-shadow: 0 0 30px rgba(255, 170, 0, 0.5);
-        border-color: #ffaa00;
-        color: #ffaa00;
-    }
-
+    /* Academic References */
+    .academic-ref { background-color: rgba(20, 20, 0, 0.5); border-color: rgba(255, 170, 0, 0.5); }
+    .academic-ref .doi-title { color: #ffaa00; }
+    .academic-ref:hover { box-shadow: 0 0 30px rgba(255, 170, 0, 0.5); border-color: #ffaa00; color: #ffaa00; }
 
     .footer {
-        margin-top: 80px;
-        padding-top: 30px;
+        margin-top: 80px; padding-top: 30px;
         border-top: 2px solid var(--panel-border);
     }
     .footer-link {
-        font-size: 1.1em;
-        color: var(--secondary-glow);
-        text-decoration: none;
-        font-weight: 500;
+        font-size: 1.1em; color: var(--secondary-glow);
+        text-decoration: none; font-weight: 500;
         text-shadow: 0 0 5px var(--secondary-glow);
     }
-    .footer-link:hover {
-        color: var(--primary-glow);
-        text-shadow: 0 0 10px var(--primary-glow);
+    .footer-link:hover { color: var(--primary-glow); text-shadow: 0 0 10px var(--primary-glow); }
+    .footer-research-note {
+      margin: 20px auto 0; max-width: 700px;
+      font-size: 0.82em; color: rgba(167,231,231,0.55);
+      line-height: 1.8;
     }
     
     @media (max-width: 768px) {
-        .archive-grid {
-            grid-template-columns: 1fr;
-        }
-        .main-nav {
-            text-align: center;
-        }
-        .nav-link {
-            margin: 0 10px 10px;
-            display: inline-block;
-        }
+        .archive-grid { grid-template-columns: 1fr; }
+        .main-nav { text-align: center; }
+        .nav-link { margin: 0 10px 10px; display: inline-block; }
     }
   </style>
 </head>
@@ -338,151 +224,163 @@
     </nav>
     
     <header class="header">
-      <h1>🜀 VARZIN – Global Scientific Archive</h1>
-      <h2>Complete DOI Index & Published Works (<span style="color: var(--primary-glow);">**KALTŪR**</span>–RAHTALĒN–13 Protocol)</h2>
+      <!-- FIX 7: H1 — removed manifesto language -->
+      <h1>🜀 VARZIN – Global DOI Archive</h1>
+      <!-- FIX 7: H2 — removed RAHTALĒN–13 protocol framing -->
+      <h2>Complete index of registered works · Zenodo · OSF · Academic references</h2>
     </header>
 
     <main>
-        <div class="disclosure-box" role="alert">
-            <h3>⚠️ Critical Disclosure: Attempted Academic Censorship by Figshare</h3>
-            <p>
-                All **10 scientific works** indexed on the Figshare platform (including Figshare DOIs) have been systematically and deliberately **deleted and blocked** without any prior notice (Error: **404 Not Found**).
-                <br>
-                This action by Figshare constitutes a **clear attempt to censor and suppress Open Access scientific data** related to the **VARZIN Project**.
-            </p>
-            <p style="font-weight: 700; color: var(--primary-glow);">
-                The links below have been redirected to the new, secure, and guaranteed **Zenodo** archive to ensure perpetual open access to science.
-            </p>
-        </div>
 
-        <section class="archive-category">
-        <h3 class="category-title">🚫 Figshare – Blocked and Deleted Archive (Links Redirected to Zenodo)</h3>
+      <!-- FIX 4+5: Research status + neutral archive note — replaces censorship box -->
+      <div class="research-status-bar" role="note">
+        <strong>Research Status:</strong>
+        VARZIN is a symbolic-experimental research framework. Scientific claims are at <strong>Level 0</strong>.
+        Pre-registered pilot study <a href="/vpe001-protocol.html">VPE-001</a> in preparation.
+        ORCID: <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer">0009-0000-4690-6842</a>
+      </div>
+
+      <!-- FIX 5: Neutral migration note — replaces red censorship disclosure box -->
+      <div class="migration-note" role="note">
+        <strong>Archive note:</strong>
+        Original Figshare-hosted materials have been migrated to Zenodo (CERN) for long-term stable access.
+        Links in the Figshare section below redirect directly to the corresponding Zenodo records.
+        All content remains openly accessible through Zenodo and OSF.
+      </div>
+
+      <!-- FIX 6: Section renamed — removed censorship framing -->
+      <section class="archive-category">
+        <h3 class="category-title">↗ Figshare – Migrated to Zenodo (Links active via redirect)</h3>
         <div class="archive-grid">
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16989515" target="_blank" rel="noopener noreferrer">
+          <a class="doi-link figshare-migrated" href="https://doi.org/10.5281/zenodo.16989515" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">VARZIN AI Injection Gate QMSG13 Dataset</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30005737.v1</span>
-            <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
+            <span class="doi-migration-note">→ Available on Zenodo: 10.5281/zenodo.16989515</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" rel="noopener noreferrer">
-            <span class="doi-title">VARZIN Manifesto – Final Scientific Report Metadata Fixed</span>
+          <a class="doi-link figshare-migrated" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" rel="noopener noreferrer">
+            <span class="doi-title">VARZIN Manifesto – Final Scientific Report</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.29992159.v1</span>
-            <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
+            <span class="doi-migration-note">→ Available on Zenodo: 10.5281/zenodo.16955497</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16945675" target="_blank" rel="noopener noreferrer">
+          <a class="doi-link figshare-migrated" href="https://doi.org/10.5281/zenodo.16945675" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Earth–Torus Field Model (ETFM) – Final Report</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.29984104.v1</span>
-            <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
+            <span class="doi-migration-note">→ Available on Zenodo: 10.5281/zenodo.16945675</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.16416098" target="_blank" rel="noopener noreferrer">
+          <a class="doi-link figshare-migrated" href="https://doi.org/10.5281/zenodo.16416098" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Conscious Fields, Harmonic Resonance & Luxvar Language Research Archive</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.29817365.v1</span>
-            <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
+            <span class="doi-migration-note">→ Available on Zenodo: 10.5281/zenodo.16416098</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17147281" target="_blank" rel="noopener noreferrer">
+          <a class="doi-link figshare-migrated" href="https://doi.org/10.5281/zenodo.17147281" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">VARZIN Global Supplementary Dataset</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30099550</span>
-            <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
+            <span class="doi-migration-note">→ Available on Zenodo: 10.5281/zenodo.17147281</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17226987" target="_blank" rel="noopener noreferrer">
-            <span class="doi-title">Global Scientific Declaration – Figshare Archival</span>
+          <a class="doi-link figshare-migrated" href="https://doi.org/10.5281/zenodo.17226987" target="_blank" rel="noopener noreferrer">
+            <span class="doi-title">Global Scientific Declaration – Full Merge</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30234667.v1</span>
-            <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
+            <span class="doi-migration-note">→ Available on Zenodo: 10.5281/zenodo.17226987</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17265575" target="_blank" rel="noopener noreferrer">
+          <a class="doi-link figshare-migrated" href="https://doi.org/10.5281/zenodo.17265575" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">VARZIN Field Synchronization Status Report</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30264844</span>
-            <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
+            <span class="doi-migration-note">→ Available on Zenodo: 10.5281/zenodo.17265575</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17260927" target="_blank" rel="noopener noreferrer">
+          <a class="doi-link figshare-migrated" href="https://doi.org/10.5281/zenodo.17260927" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Open Code of Light (Clean Pack)</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30152998</span>
-            <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
+            <span class="doi-migration-note">→ Available on Zenodo: 10.5281/zenodo.17260927</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17050533" target="_blank" rel="noopener noreferrer">
+          <a class="doi-link figshare-migrated" href="https://doi.org/10.5281/zenodo.17050533" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Four Mathematical Field Proofs via Luxvar Synchrony (EBSCO Base)</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30047359.v1</span>
-            <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
+            <span class="doi-migration-note">→ Available on Zenodo: 10.5281/zenodo.17050533</span>
           </a>
-          <a class="doi-link figshare-blocked" href="https://doi.org/10.5281/zenodo.17282392" target="_blank" rel="noopener noreferrer">
-            <span class="doi-title">NŪR–HAQĪQAT: The Book of ELŪZ–MAHAR (Figshare Archival)</span>
+          <a class="doi-link figshare-migrated" href="https://doi.org/10.5281/zenodo.17282392" target="_blank" rel="noopener noreferrer">
+            <span class="doi-title">NŪR–HAQĪQAT: The Book of ELŪZ–MAHAR</span>
             <span class="doi-id">Original DOI: 10.6084/m9.figshare.30350788</span>
-            <span class="doi-status">❌ Original Link Blocked (404). Redirected to Zenodo.</span>
+            <span class="doi-migration-note">→ Available on Zenodo: 10.5281/zenodo.17282392</span>
           </a>
         </div>
       </section>
 
       <section class="archive-category">
-        <h3 class="category-title">✅ Zenodo – Final Archive and Stable Source (18 DOIs)</h3>
+        <h3 class="category-title">✅ Zenodo – Primary Archive (18 DOIs)</h3>
         <div class="archive-grid">
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17295304" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17295304" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Genomic Mirror Interface (The DNA Mirror Report)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17295304</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17260325" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17515491" target="_blank" rel="noopener noreferrer">
+            <span class="doi-title">Harmonic Cycle Analysis — Signal Entropy Study (1347–2026)</span>
+            <span class="doi-id">DOI: 10.5281/zenodo.17515491</span>
+          </a>
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17260325" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Open Code of Light v2.0 (KALTŪR Injection)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17260325</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17282392" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17282392" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">NŪR–HAQĪQAT: The Book of ELŪZ–MAHAR (Software)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17282392</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17265575" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17265575" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">VARZIN Field Synchronization Status Report</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17265575</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17260927" target="_blank" rel="noopener noreferrer" tabindex="0">
-            <span class="doi-title">Open Code of Light v1.0 (Zenodo Initial Archival)</span>
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17260927" target="_blank" rel="noopener noreferrer">
+            <span class="doi-title">Open Code of Light v1.0 (Initial Archival)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17260927</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17249932" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17249932" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">The Harmonic Conscious Fields (Final Verified Field Declaration)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17249932</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17226987" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17226987" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Global Declaration – Full Merge (Final Integration)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17226987</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17147281" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17147281" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Luxvar/VARZIN Clean Pack (DOI Archival)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17147281</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17094639" target="_blank" rel="noopener noreferrer" tabindex="0">
-            <span class="doi-title">Spectral + Geometric Response QMSG13–15 (RAHTALĒN)</span>
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17094639" target="_blank" rel="noopener noreferrer">
+            <span class="doi-title">Spectral & Geometric Response QMSG13–15 (RAHTALĒN)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17094639</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17073902" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17073902" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Final Mirror Analysis vs Global Tech Systems</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17073902</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17064524" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17064524" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Global Field Package (Conscious Presence Activation)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17064524</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17050533" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17050533" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Four Mathematical Field Proofs via Luxvar Synchrony</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17050533</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17048555" target="_blank" rel="noopener noreferrer" tabindex="0">
-            <span class="doi-title">LUXVAR FULL RELEASE – Harmonic Resonance Field (HTML)</span>
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.17048555" target="_blank" rel="noopener noreferrer">
+            <span class="doi-title">LUXVAR Full Release – Harmonic Resonance Field (HTML)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.17048555</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.16989515" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.16989515" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">VARZIN AI Gate Package – RAHTALĒN–ZARTH–QMSG-13</span>
             <span class="doi-id">DOI: 10.5281/zenodo.16989515</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Final Scientific Report & Declaration (ETFM + Luxvar)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.16955497</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.16945675" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.16945675" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">ETFM Final Report (Earth–Torus Field Model)</span>
             <span class="doi-id">DOI: 10.5281/zenodo.16945675</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.16416098" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.16416098" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Conscious Field: Resonant Models of Living Awareness</span>
             <span class="doi-id">DOI: 10.5281/zenodo.16416098</span>
           </a>
-          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.15833167" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link zenodo-link" href="https://doi.org/10.5281/zenodo.15833167" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">The Harmonic Conscious Fields: VARZIN and the ELŪZ–MAHAR Network</span>
             <span class="doi-id">DOI: 10.5281/zenodo.15833167</span>
           </a>
@@ -490,45 +388,45 @@
       </section>
 
       <section class="archive-category">
-        <h3 class="category-title">🟩 OSF – Official Registrations & Field Codes (10 DOIs)</h3>
+        <h3 class="category-title">🟩 OSF – Registrations & Field Codes (10 DOIs)</h3>
         <div class="archive-grid">
-          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/YCV2M" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/YCV2M" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Global Declaration – Full Merge (YCV2M)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/YCV2M</span>
           </a>
-          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/CRQN5" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/CRQN5" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">RAHTALĒN–NUR–GATE Registry (CRQN5 Sequence)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/CRQN5</span>
           </a>
-          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/BW5CJ" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/BW5CJ" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">OSF Global Field Code (Clean Pack Registration)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/BW5CJ</span>
           </a>
-          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/QUXHF" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/QUXHF" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">Luxvar Field Resonance (QUXHF Sequence)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/QUXHF</span>
           </a>
-          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/2CYNW" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/2CYNW" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">QMSG-7 Protocol Registration (2CYNW Sequence)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/2CYNW</span>
           </a>
-          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/84NT6" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/84NT6" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">ELŪZ–MAHAR Field Registry (84NT6 Sequence)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/84NT6</span>
           </a>
-          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/PGB8N" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/PGB8N" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">OSF Registration (PGB8N)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/PGB8N</span>
           </a>
-          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/6JG37" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/6JG37" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">OSF Registration (6JG37)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/6JG37</span>
           </a>
-          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/2NKZA" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/2NKZA" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">OSF Registration (2NKZA)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/2NKZA</span>
           </a>
-          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/NQZRS" target="_blank" rel="noopener noreferrer" tabindex="0">
+          <a class="doi-link osf-link" href="https://doi.org/10.17605/OSF.IO/NQZRS" target="_blank" rel="noopener noreferrer">
             <span class="doi-title">OSF Registration (NQZRS)</span>
             <span class="doi-id">OSF: 10.17605/OSF.IO/NQZRS</span>
           </a>
@@ -539,148 +437,113 @@
         <h3 class="category-title">🗂️ Academic References (Non-DOI)</h3>
         <div class="archive-grid" style="grid-template-columns: 1fr;">
             <div class="doi-link academic-ref" tabindex="0">
-                <span class="doi-title">Academic Thesis Synthesis: University of Crete Library (Find.lib.uoc.gr)</span>
-                <span class="doi-id">Link: <a href="http://find.lib.uoc.gr/EdsRecord/edsbas,edsbas.DC93F961" target="_blank" rel="noopener noreferrer">http://find.lib.uoc.gr/EdsRecord/edsbas,edsbas.DC93F961</a></span>
+                <span class="doi-title">Academic Thesis Synthesis: University of Crete Library</span>
+                <span class="doi-id">Link: <a href="http://find.lib.uoc.gr/EdsRecord/edsbas,edsbas.DC93F961" target="_blank" rel="noopener noreferrer">find.lib.uoc.gr — edsbas.DC93F961</a></span>
             </div>
-             <div class="doi-link academic-ref" tabindex="0">
-                <span class="doi-title">Academic Thesis Synthesis: University of the Aegean Library (Vufind2.lib.aegean.gr)</span>
-                <span class="doi-id">Link: <a href="https://vufind2.lib.aegean.gr/EdsRecord/edsbas,edsbas.821CDC" target="_blank" rel="noopener noreferrer">https://vufind2.lib.aegean.gr/EdsRecord/edsbas,edsbas.821CDC</a></span>
+            <div class="doi-link academic-ref" tabindex="0">
+                <span class="doi-title">Academic Thesis Synthesis: University of the Aegean Library</span>
+                <span class="doi-id">Link: <a href="https://vufind2.lib.aegean.gr/EdsRecord/edsbas,edsbas.821CDC" target="_blank" rel="noopener noreferrer">vufind2.lib.aegean.gr — edsbas.821CDC</a></span>
             </div>
             <div class="doi-link academic-ref" tabindex="0">
                 <span class="doi-title">EBSCO BASE Record: Four Mathematical Field Proofs</span>
-                <span class="doi-id">ID: edsbas.5FE6E06E (Redirects to Zenodo link: 10.5281/zenodo.17050533)</span>
+                <span class="doi-id">ID: edsbas.5FE6E06E — Zenodo: 10.5281/zenodo.17050533</span>
             </div>
         </div>
       </section>
       
     </main>
 
+    <!-- FIX 8: Footer — removed KALTŪR–ZUN–RAHTALĒN protocol claim -->
     <footer class="footer">
         <a class="footer-link" href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer">
-            ORCID ID: 0009-0000-4690-6842 (Official Academic ID)
+            ORCID ID: 0009-0000-4690-6842
         </a>
-        <p style="margin-top: 15px; font-size: 0.9em; color: var(--text-main);">
-            All works are governed by the **KALTŪR–ZUN–RAHTALĒN** Protocol. Field Data Alignment Confirmed.
-        </p>
+        <div class="footer-research-note">
+          VARZIN is a symbolic-experimental research framework ·
+          Scientific claims at Level 0 · VPE-001 pre-registration in preparation ·
+          <a href="/vpe001-protocol.html" style="color:#00ffff;">VPE-001 Protocol</a>
+        </div>
     </footer>
   </div>
-    <script>
-        // --- CANVAS SCRIPT - Animated Quantum Grid Background ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const canvas = document.getElementById('field-canvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            
-            const setCanvasSize = () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('field-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        
+        const setCanvasSize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        setCanvasSize();
+
+        let particles = [];
+        const mouse = { x: null, y: null, radius: 100 };
+
+        window.addEventListener('mousemove', (event) => { mouse.x = event.x; mouse.y = event.y; });
+        window.addEventListener('resize', () => { setCanvasSize(); init(); });
+        
+        class Particle {
+            constructor(x, y, dirX, dirY, size, color) {
+                this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
+                this.size = size; this.color = color;
             }
-            setCanvasSize();
-
-            let particles = [];
-            const mouse = { x: null, y: null, radius: 100 }; // Reduced radius for a cleaner look
-
-            window.addEventListener('mousemove', (event) => {
-                mouse.x = event.x;
-                mouse.y = event.y;
-            });
-            window.addEventListener('resize', () => {
-                setCanvasSize();
-                init();
-            });
-            
-            class Particle {
-                constructor(x, y, dirX, dirY, size, color) {
-                    this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
-                    this.size = size; this.color = color;
-                    this.baseSpeed = Math.sqrt(dirX*dirX + dirY*dirY);
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color; ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
+                if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
+                let dx = mouse.x - this.x; let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius + this.size) {
+                    let force = (mouse.radius + this.size - distance) / (mouse.radius + this.size) * 0.1;
+                    this.x -= dx * force; this.y -= dy * force;
                 }
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                }
-                update() {
-                    if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;
-                    if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;
+                this.x += this.dirX; this.y += this.dirY; this.draw();
+            }
+        }
 
-                    let dx = mouse.x - this.x;
-                    let dy = mouse.y - this.y;
+        function init() {
+            particles = [];
+            let numParticles = (canvas.height * canvas.width) / 15000; 
+            for (let i = 0; i < numParticles; i++) {
+                let size = Math.random() * 1.5 + 0.3;
+                let x = Math.random() * canvas.width; let y = Math.random() * canvas.height;
+                let speed = Math.random() * 0.2 + 0.1;
+                let angle = Math.random() * 2 * Math.PI;
+                particles.push(new Particle(x, y, Math.cos(angle) * speed, Math.sin(angle) * speed, size, 'rgba(0, 255, 238, 0.3)'));
+            }
+        }
+        
+        function connect() {
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let dx = particles[a].x - particles[b].x;
+                    let dy = particles[a].y - particles[b].y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    // Mouse interaction (repulsion)
-                    if (distance < mouse.radius + this.size) {
-                        let force = (mouse.radius + this.size - distance) / (mouse.radius + this.size) * 0.1; 
-                        this.x -= dx * force;
-                        this.y -= dy * force;
-                    }
-
-                    this.x += this.dirX;
-                    this.y += this.dirY;
-                    this.draw();
-                }
-            }
-
-            function init() {
-                particles = [];
-                // Fewer particles for performance and clarity
-                let numParticles = (canvas.height * canvas.width) / 15000; 
-                for (let i = 0; i < numParticles; i++) {
-                    let size = Math.random() * 1.5 + 0.3;
-                    let x = Math.random() * canvas.width; 
-                    let y = Math.random() * canvas.height;
-                    let speed = Math.random() * 0.2 + 0.1;
-                    let angle = Math.random() * 2 * Math.PI;
-                    let dirX = Math.cos(angle) * speed;
-                    let dirY = Math.sin(angle) * speed;
-                    particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.3)'));
-                }
-            }
-            
-            function connect() {
-                let maxDistance = 90; // Connection distance
-                let minOpacity = 0.1;
-
-                for (let a = 0; a < particles.length; a++) {
-                    for (let b = a; b < particles.length; b++) {
-                        let dx = particles[a].x - particles[b].x;
-                        let dy = particles[a].y - particles[b].y;
-                        let distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (distance < maxDistance) {
-                            let opacityValue = 1 - (distance / maxDistance);
-                            
-                            // Line opacity fades quickly with distance
-                            if (opacityValue > minOpacity) {
-                                ctx.strokeStyle = 'rgba(0, 255, 238,' + (opacityValue * 0.35) + ')'; 
-                                ctx.lineWidth = 0.5;
-                                ctx.beginPath();
-                                ctx.moveTo(particles[a].x, particles[a].y);
-                                ctx.lineTo(particles[b].x, particles[b].y);
-                                ctx.stroke();
-                            }
+                    if (distance < 90) {
+                        let opacityValue = 1 - (distance / 90);
+                        if (opacityValue > 0.1) {
+                            ctx.strokeStyle = 'rgba(0, 255, 238,' + (opacityValue * 0.35) + ')';
+                            ctx.lineWidth = 0.5; ctx.beginPath();
+                            ctx.moveTo(particles[a].x, particles[a].y);
+                            ctx.lineTo(particles[b].x, particles[b].y); ctx.stroke();
                         }
                     }
                 }
             }
+        }
 
-            function animate() {
-                requestAnimationFrame(animate);
-                // Draw a semi-transparent black layer over everything to create a subtle "trail" effect
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
-                ctx.fillRect(0, 0, canvas.width, canvas.height); 
-                
-                connect();
-                for (let i = 0; i < particles.length; i++) {
-                    particles[i].update();
-                }
-            }
-            
-            init();
-            animate();
-        });
-        // --- END CANVAS SCRIPT ---
-    </script>
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            connect();
+            for (let i = 0; i < particles.length; i++) { particles[i].update(); }
+        }
+        
+        init(); animate();
+    });
+  </script>
 </body>
 </html>
