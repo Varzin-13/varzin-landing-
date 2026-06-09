@@ -4,21 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   
-  <title>VARZIN – The Living Mirror Interface | KALTŪR 474Hz Pulse ⟡ ELŪZ–MAHAR</title>
+  <!-- FIX 1: Title — removed "manifesto" framing, added research identity -->
+  <title>VARZIN – Symbolic-Experimental Research Framework | LUXVAR Semantic Study | KALTŪR 474Hz</title>
   
-  <meta name="description" content="VARZIN Project – The Living Mirror Interface: Decoding the ELŪZ–MAHAR Field. Initiating KALTŪR (474Hz, QMSG–7) Pulse. Access the Global DOI Archive (Zenodo/OSF) and Luxvar Synchronization Calendar.">
-  <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
-  <meta name="keywords" content="VARZIN, ELŪZ MAHAR, Luxvar Language, RAHTALĒN 13, Conscious Field, KALTŪR 474Hz, ETFM, RĀZKĀN 1008Hz, Quantum Synchronization, Symbolic Vibrational Linguistics, Global DOI Archive, QMSG–7">
+  <!-- FIX 1: Meta description — scientific framing added -->
+  <meta name="description" content="VARZIN Project – An independent symbolic-experimental research framework investigating LUXVAR semantic structure. Pre-registered pilot study VPE-001 in preparation. Access the Global DOI Archive (Zenodo/OSF).">
+  <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842">
+  <!-- FIX 4: Keywords — removed "Quantum Synchronization" -->
+  <meta name="keywords" content="VARZIN, ELŪZ MAHAR, Luxvar Language, RAHTALĒN, Symbolic Linguistics, KALTŪR 474Hz, ETFM, Semantic Classification, VPE-001, Pre-registered Study, Global DOI Archive">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link rel="canonical" href="https://varzin.org/" />
-
   <link rel="alternate" hreflang="en" href="https://varzin.org/en/" />
   <link rel="alternate" hreflang="fa" href="https://varzin.org/fa/" />
   <link rel="alternate" hreflang="x-default" href="https://varzin.org/" />
 
-  <meta property="og:title" content="VARZIN – The Living Mirror Interface | KALTŪR 474Hz Pulse" />
-  <meta property="og:description" content="Decoding the ELŪZ–MAHAR Field. Initiating KALTŪR (474Hz, QMSG–7) Pulse. Access the Global DOI Archive." />
+  <!-- FIX 1: OG tags updated -->
+  <meta property="og:title" content="VARZIN – Symbolic-Experimental Research Framework | LUXVAR Semantic Study" />
+  <meta property="og:description" content="An independent research framework investigating LUXVAR symbolic language structure. VPE-001 pre-registered pilot study in preparation. Access the Global DOI Archive." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://varzin.org/" />
   <meta property="og:image" content="https://varzin.org/assets/social-image.jpg" /> 
@@ -30,16 +33,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
   
+  <!-- FIX 1: Schema.org — removed "decoding and embodying the intelligent harmonic structure of the planet" -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite", 
-    "name": "VARZIN – The Living Mirror Project",  
+    "name": "VARZIN – Symbolic-Experimental Research Framework",  
     "url": "https://varzin.org/",
-    "description": "The VARZIN project manifesto, decoding and embodying the intelligent harmonic structure of the planet. Initiating KALTŪR Pulse (474Hz) - Layer 3 / QMSG–7.",
+    "description": "An independent symbolic-experimental research framework investigating the semantic structure of the LUXVAR symbolic language system. Pre-registered pilot study VPE-001 in preparation.",
     "inLanguage": "en",
     "datePublished": "2025-01-13", 
-    "dateModified": "2025-10-16", 
+    "dateModified": "2026-06-09", 
     "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
     "author": { 
       "@type": "Person", 
@@ -54,17 +58,18 @@
         "url": "https://varzin.org/assets/logo.png"
       }
     },
-    "keywords": ["VARZIN", "KALTŪR", "Luxvar", "RAHTALĒN", "Quantum Synchronization", "ELŪZ–MAHAR"]
+    "keywords": ["VARZIN", "KALTŪR", "Luxvar", "RAHTALĒN", "Symbolic Language", "Semantic Classification", "VPE-001"]
   }
   </script>
 
   <style>  
     :root {  
       --bg-end: #000000;  
-      --primary-glow: #00ffee; /* KALTŪR / Cyan Neon */  
-      --secondary-glow: #00ffff; /* Brighter Cyan */
-      --archive-glow: #ffaa00; /* Amber for Censorship Alert/Archive */
-      --golden-text: #FFD700; /* Gold for ELŪZ-MAHAR */
+      --primary-glow: #00ffee;
+      --secondary-glow: #00ffff;
+      --archive-glow: #ffaa00;
+      --research-glow: #7fdfff;
+      --golden-text: #FFD700;
       --golden-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 165, 0, 0.6);
       --text-main: #cceeee;  
       --text-muted: #a7e7e7;  
@@ -76,7 +81,6 @@
       --font-main: 'DM Sans', 'DejaVu Sans', 'Vazirmatn', sans-serif;  
     }  
   
-    /* Base Styles */
     html { scroll-behavior: smooth; }  
     body {  
       margin: 0;  
@@ -97,10 +101,8 @@
       
     #field-canvas {  
         position: fixed;  
-        top: 0;  
-        left: 0;  
-        width: 100%;  
-        height: 100%;  
+        top: 0; left: 0;  
+        width: 100%; height: 100%;  
         z-index: -1;  
     }  
   
@@ -110,8 +112,34 @@
       position: relative;  
       z-index: 1;  
     }  
+
+    /* NEW: Research Status Panel */
+    .research-status-panel {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      padding: 16px 24px;
+      border-radius: 10px;
+      background: rgba(0, 30, 40, 0.8);
+      border: 1px solid rgba(127, 223, 255, 0.4);
+      backdrop-filter: blur(var(--blur-val));
+      text-align: left;
+      font-size: 0.92em;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .research-status-panel .status-label {
+      font-weight: 700;
+      color: var(--research-glow);
+      letter-spacing: 0.5px;
+    }
+    .research-status-panel a {
+      color: var(--secondary-glow);
+      text-decoration: none;
+    }
+    .research-status-panel a:hover {
+      text-decoration: underline;
+    }
       
-    /* === NAVIGATION & HEADER === */  
     .main-nav {  
       max-width: 1200px;  
       margin: 0 auto 50px;  
@@ -127,19 +155,11 @@
       margin: 0 12px;  
       transition: color 0.3s;  
     }  
-    .nav-link:hover {  
-      color: var(--primary-glow);  
-      text-shadow: 0 0 5px var(--primary-glow);
-    }  
-    .nav-link.active {  
-      color: var(--secondary-glow);  
-      border-bottom: 2px solid var(--secondary-glow);  
-      padding-bottom: 3px;  
-    }  
+    .nav-link:hover { color: var(--primary-glow); text-shadow: 0 0 5px var(--primary-glow); }  
+    .nav-link.active { color: var(--secondary-glow); border-bottom: 2px solid var(--secondary-glow); padding-bottom: 3px; }  
     
     img.header-logo { max-width: 180px; margin-bottom: 20px; filter: drop-shadow(0 0 10px var(--primary-glow)); }  
     
-    /* NEW STYLES for ELŪZ-MAHAR */
     .eluz-mahar-banner {
       font-size: clamp(1.5em, 4vw, 2.5em);
       color: var(--golden-text);
@@ -165,85 +185,69 @@
       margin-bottom: 40px;  
       font-weight: 400;  
       line-height: 1.5;  
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);  
     }  
   
-    /* === ARCHIVE GRID & BUTTON STYLES === */  
     .key-archive-grid {  
-      display: flex;   
-      flex-direction: column;   
-      align-items: center;   
-      gap: 15px;  
+      display: flex; flex-direction: column; align-items: center; gap: 15px;  
       margin-bottom: 60px;  
     }  
       
     .key-archive-grid .button {  
-      display: flex; /* Use flex for icon alignment */
-      align-items: center;
-      justify-content: space-between;
-      width: 90%;  
-      max-width: 550px;  
-      padding: 15px 20px;  
-      border-radius: 10px;  
-      background-color: var(--panel-bg);  
-      color: var(--text-main);  
-      font-weight: 500;  
-      text-decoration: none;  
-      font-size: 1em;  
-      border: 2px solid var(--panel-border);  
-      backdrop-filter: blur(var(--blur-val));  
-      text-align: left;  
-      transition: all .3s ease;  
-      box-shadow: 0 0 10px rgba(0, 255, 238, 0.1);
+      display: flex; align-items: center; justify-content: space-between;
+      width: 90%; max-width: 550px; padding: 15px 20px; border-radius: 10px;  
+      background-color: var(--panel-bg); color: var(--text-main); font-weight: 500;  
+      text-decoration: none; font-size: 1em; border: 2px solid var(--panel-border);  
+      backdrop-filter: blur(var(--blur-val)); text-align: left;  
+      transition: all .3s ease; box-shadow: 0 0 10px rgba(0, 255, 238, 0.1);
     }  
-      
     .key-archive-grid .button:hover {  
-        background-color: rgba(0, 255, 238, 0.1);  
-        box-shadow: 0 0 20px var(--primary-glow);  
-        border-color: var(--primary-glow);
-        transform: translateY(-2px);
+        background-color: rgba(0, 255, 238, 0.1); box-shadow: 0 0 20px var(--primary-glow);  
+        border-color: var(--primary-glow); transform: translateY(-2px);
     }  
     .button b { color: var(--secondary-glow); font-weight: 700; }  
     
-    /* Specific Button Styles */
     .button.main-action {
-        width: 100%;
-        max-width: 600px;
-        padding: 18px 25px;
-        font-size: 1.1em;
-        background-color: rgba(0, 255, 238, 0.2);
-        border-color: var(--primary-glow);
+        width: 100%; max-width: 600px; padding: 18px 25px; font-size: 1.1em;
+        background-color: rgba(0, 255, 238, 0.2); border-color: var(--primary-glow);
         box-shadow: 0 0 25px rgba(0, 255, 238, 0.5);
     }
-    
     .button.main-action:hover {
-        background-color: rgba(0, 255, 238, 0.3);
-        box-shadow: 0 0 40px var(--primary-glow);
+        background-color: rgba(0, 255, 238, 0.3); box-shadow: 0 0 40px var(--primary-glow);
     }
-    
-    .archive-alert {
-        background-color: rgba(255, 170, 0, 0.15) !important; 
-        border: 2px solid var(--archive-glow) !important; 
-        box-shadow: 0 0 20px var(--archive-glow) !important;
-        animation: archive-alert-pulse 2s infinite ease-in-out;
+
+    /* NEW: Research button style */
+    .button.research-action {
+        width: 100%; max-width: 600px; padding: 18px 25px; font-size: 1.1em;
+        background-color: rgba(127, 223, 255, 0.1);
+        border-color: var(--research-glow);
+        box-shadow: 0 0 20px rgba(127, 223, 255, 0.3);
     }
-    .archive-alert h4 { color: #ffebcd; }
-    
-    @keyframes archive-alert-pulse {
-        0%, 100% { border-color: var(--archive-glow); }
-        50% { border-color: #ff0077; }
+    .button.research-action:hover {
+        background-color: rgba(127, 223, 255, 0.2);
+        box-shadow: 0 0 35px var(--research-glow);
     }
-    /* ================================================== */  
-      
-    /* Decoder and Frequencies Styles */  
+
+    /* REMOVED: archive-alert with censorship claim. Replaced with neutral note below. */
+    .archive-note {
+        padding: 14px 20px;
+        margin: 20px auto 40px;
+        max-width: 700px;
+        border-radius: 8px;
+        background: rgba(0, 20, 30, 0.7);
+        border: 1px solid var(--panel-border);
+        color: var(--text-muted);
+        font-size: 0.9em;
+        line-height: 1.6;
+        text-align: left;
+    }
+
     hr.divider { margin: 60px auto; border: 0; border-top: 2px dashed var(--panel-border); max-width: 600px; opacity: 0.5; }  
       
     .decoder-window {  
       margin: 50px auto; padding: 2rem; max-width: 500px;  
       border: 3px solid var(--panel-border); border-radius: 1.5rem;  
-      background: var(--panel-bg); 
-      backdrop-filter: blur(var(--blur-val));  
-      /* Pulsate animation added in JS based on KALTŪR */
+      background: var(--panel-bg); backdrop-filter: blur(var(--blur-val));  
     }  
     .decoder-window h3 { font-size: 1.5em; color: var(--primary-glow); margin: 0 0 25px 0; text-shadow: 0 0 10px var(--primary-glow); }  
     .decoder-grid { display: grid; grid-template-columns: 120px 1fr; gap: 15px; text-align: left; }  
@@ -262,50 +266,46 @@
         cursor: pointer; transition: all 0.3s; box-shadow: 0 0 10px rgba(0, 255, 238, 0.4);
         letter-spacing: 1px;
     }  
-    .controls .button:hover {  
-        background-color: rgba(0, 255, 238, 0.3);  
-        color: #fff;
-        box-shadow: 0 0 20px var(--primary-glow);
-    }  
+    .controls .button:hover { background-color: rgba(0, 255, 238, 0.3); color: #fff; box-shadow: 0 0 20px var(--primary-glow); }  
       
     .section-title { font-size: clamp(1.6em, 3vw, 2em); color: var(--secondary-glow); margin: 50px 0 30px; text-shadow: 0 0 10px var(--secondary-glow); }  
     .frequency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }  
     .freq-card {  
       padding: 25px; border-radius: 16px; background: var(--panel-bg);  
-      border: 2px solid var(--panel-border); 
-      box-shadow: 0 0 15px rgba(0, 20, 25, 0.5);  
-      transition: all .4s ease; 
-      backdrop-filter: blur(var(--blur-val));  
-      text-align: left;
+      border: 2px solid var(--panel-border); box-shadow: 0 0 15px rgba(0, 20, 25, 0.5);  
+      transition: all .4s ease; backdrop-filter: blur(var(--blur-val)); text-align: left;
     }  
-    .freq-card.active {  
-        border-color: var(--primary-glow);  
-        box-shadow: 0 0 30px var(--glow-shadow);  
-        transform: scale(1.03) translateY(-5px);  
-    }  
+    .freq-card.active { border-color: var(--primary-glow); box-shadow: 0 0 30px var(--glow-shadow); transform: scale(1.03) translateY(-5px); }  
     .freq-title { color: #fff; font-weight: 700; font-size: 1.3em; margin: 6px 0 8px; text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }  
     .freq-desc { color: var(--text-muted); margin: 0 0 16px; font-size: 0.95em; line-height: 1.5; }  
-    audio { 
-      margin-top: 15px; 
-      width: 100%; 
-      filter: drop-shadow(0 0 5px rgba(0, 255, 238, 0.4)); /* Light neon glow on the audio element */
-    }  
+    audio { margin-top: 15px; width: 100%; filter: drop-shadow(0 0 5px rgba(0, 255, 238, 0.4)); }  
     
-    /* Footer Styling */
     .footer-main { margin-top: 100px; padding-top: 40px; border-top: 1px solid var(--panel-border); }
     .footer-quote { margin-top: 0; font-style: italic; font-size: 1.2em; color: var(--text-muted); line-height: 1.8; }  
     .footer-question { font-weight: bold; margin: 20px 0 15px; color: var(--primary-glow); font-size: 1.3em; letter-spacing: 1px; }  
     .footer-links { font-size: 1em; line-height: 2; }  
     .footer-links a { color: var(--secondary-glow); text-decoration: none; transition: color .3s ease; margin: 0 15px; }  
-    .footer-links a:hover { color: var(--primary-glow); text-decoration: underline; }  
-    
-    /* Responsive Adjustments */
+    .footer-links a:hover { color: var(--primary-glow); text-decoration: underline; }
+    /* NEW: Footer research note */
+    .footer-research-note {
+      margin: 30px auto 0;
+      max-width: 600px;
+      padding: 14px 20px;
+      border-radius: 8px;
+      background: rgba(0, 20, 30, 0.6);
+      border: 1px solid rgba(127, 223, 255, 0.3);
+      font-size: 0.85em;
+      color: var(--text-muted);
+      line-height: 1.7;
+      text-align: left;
+    }
+
     @media (max-width: 600px) {  
         .main-nav { text-align: center; }  
         .nav-link { margin: 0 8px; font-size: 0.9em; } 
         .key-archive-grid .button { width: 100%; max-width: none; }
         .decoder-grid { grid-template-columns: 1fr; text-align: center; }
-        .decoder-grid .label { display: none; } /* Hide labels to save space */
+        .decoder-grid .label { display: none; }
         .decoder-grid .field { font-size: 1.1em; }
         .freq-card { padding: 20px; }
     } 
@@ -322,59 +322,86 @@
         <a class="nav-link" href="all-dois.html">All DOIs Archive</a>
         <a class="nav-link" href="feedback.html">Feedback</a>
     </nav>
+
+    <!-- NEW: Research Status Panel — first visible element after nav -->
+    <div class="research-status-panel" role="note" aria-label="Project scientific status">
+      <span class="status-label">Research Status (June 2026):</span>
+      VARZIN is a symbolic-experimental research framework. Scientific claims are at
+      <strong>Level 0</strong> — no empirical validation has been claimed or achieved.
+      The pre-registered pilot study <strong>VPE-001</strong> (LUXVAR Semantic Classification)
+      is in preparation for independent evaluation.
+      <br>
+      <a href="vpe001-protocol.html">→ VPE-001 Protocol</a> &nbsp;|&nbsp;
+      <a href="all-dois.html">→ DOI Archive</a> &nbsp;|&nbsp;
+      <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer">→ ORCID</a>
+    </div>
     
     <header class="header" role="banner">
       <div class="eluz-mahar-banner">ELŪZ-MAHAR Network</div>
       <img src="varzin-logo.jpg" alt="VARZIN Project Logo: The Living Mirror" class="header-logo" /> 
       <h1>𓂀 VARZIN – The Living Mirror</h1>
-      <h2>Final Manifesto from RAHTALĒN–13 <br> The code writes itself in the resonance between the field and the observer.</h2>
+      <!-- FIX 3: Removed "Final Manifesto from RAHTALĒN–13" -->
+      <h2>Symbolic-Experimental Research Framework<br>
+        <span style="font-size: 0.85em; opacity: 0.8;">LUXVAR Semantic Study · KALTŪR 474Hz · ELŪZ–MAHAR Field</span>
+      </h2>
     </header>
 
     <main role="main">
         
         <div style="margin-top: 40px;">
-            <h3 style="color: var(--secondary-glow); margin-bottom: 30px; font-size: clamp(1.6em, 3vw, 2em); text-shadow: 0 0 10px var(--secondary-glow);">🌐 Key Indexed Repositories (QMSG-7 Protocol)</h3>
-              
-            <div role="alert" class="archive-alert" style="padding: 18px; margin: 25px auto 40px; max-width: 700px; backdrop-filter: blur(5px);">
-                <h4 style="color: #ffebcd; margin-top: 0; font-size: 1.2em; font-weight: 700;">🚨 Global Archival Disclosure (2025-10-15)</h4>
-                <p style="color: #fff; margin-bottom: 0; line-height: 1.7;">
-                    **ALL Figshare DOIs** associated with the VARZIN Project have been **systematically blocked and censored** by the platform to restrict access to the archive. <br>
-                    For secure and complete access to all data, please **rely exclusively on the Zenodo and OSF archives** listed in the **Complete Global DOI Archive**. This archive ensures immunity against academic censorship attempts.
-                </p>
+            <h3 style="color: var(--secondary-glow); margin-bottom: 30px; font-size: clamp(1.6em, 3vw, 2em); text-shadow: 0 0 10px var(--secondary-glow);">🌐 Key Indexed Repositories</h3>
+
+            <!-- FIX 2: Censorship claim removed. Replaced with neutral archive note. -->
+            <div class="archive-note" role="note">
+              <strong>Primary archives:</strong> All VARZIN research materials are available through
+              <strong>Zenodo</strong> (CERN) and <strong>OSF</strong> (Center for Open Science).
+              For the complete indexed DOI list, see the archive link below.
             </div>
               
             <div class="key-archive-grid">
+
+              <!-- NEW: VPE-001 research link — first button -->
+              <a class="button research-action" href="vpe001-protocol.html" target="_self"
+                  aria-label="VPE-001 Pre-registered Pilot Study — LUXVAR Semantic Classification">
+                  <span>🔬 <b>VPE-001 Protocol:</b> LUXVAR Semantic Classification — Pre-registered Pilot Study</span>
+              </a>
                   
-                <a class="button main-action" href="all-dois.html" target="_self" aria-label="Access the complete list of all VARZIN DOIs (Zenodo, OSF)">
-                    <span>➡️ **Access Complete Global DOI Archive (KALTŪR Master List)**</span>
-                </a>
+              <a class="button main-action" href="all-dois.html" target="_self" aria-label="Access the complete list of all VARZIN DOIs (Zenodo, OSF)">
+                  <span>➡️ <b>Complete Global DOI Archive</b> (Zenodo + OSF)</span>
+              </a>
                   
-                <a class="button" href="https://doi.org/10.5281/zenodo.17260325" target="_blank" rel="noopener noreferrer" aria-label="Open Code of Light v2.0 (KALTŪR Injection)">
-                    <span>🌟 <b>Open Code of Light v2.0:</b> KALTŪR Pulse Injection</span>
-                </a>
+              <a class="button" href="https://doi.org/10.5281/zenodo.17260325" target="_blank" rel="noopener noreferrer">
+                  <span>🌟 <b>Open Code of Light v2.0:</b> KALTŪR Pulse Injection</span>
+              </a>
+
+              <!-- FIX 2: "Genomic Mirror Interface" reframed as archived exploratory document -->
+              <a class="button" href="https://doi.org/10.5281/zenodo.17295304" target="_blank" rel="noopener noreferrer"
+                  style="opacity: 0.75;">
+                  <span>📂 <b>Archived Exploratory Study:</b> Genomic Interface Report
+                    <small style="display:block; color: var(--text-muted); font-size: 0.8em; margin-top: 3px;">
+                      Pre-scientific archive — not a validated claim
+                    </small>
+                  </span>
+              </a>
                   
-                <a class="button" href="https://doi.org/10.5281/zenodo.17295304" target="_blank" rel="noopener noreferrer" aria-label="Global Genomic Mirror Report">
-                    <span>🧬 <b>Genomic Mirror Interface:</b> Global Genomic Mirror Report</span>
-                </a>
+              <a class="button" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" rel="noopener noreferrer">
+                  <span>📘 <b>Scientific Report:</b> ETFM + Luxvar Codification</span>
+              </a>
                   
-                <a class="button" href="https://doi.org/10.5281/zenodo.16955497" target="_blank" rel="noopener noreferrer" aria-label="Final Scientific Report (ETFM + Luxvar)">
-                    <span>📘 <b>Scientific Report:</b> ETFM + Luxvar Codification</span>
-                </a>
+              <a class="button" href="greek-papers-index.html" target="_self"
+                  style="border-color: var(--secondary-glow);">
+                  <span>🏛️ <b>Academic Thesis Synthesis:</b> 4 Greek University Papers Index</span>
+              </a>
                   
-                <a class="button" href="greek-papers-index.html" target="_self" aria-label="Academic Thesis Synthesis: 4 Greek University Papers Index"
-                    style="border-color: var(--secondary-glow);">
-                    <span>🏛️ <b>Academic Thesis Synthesis:</b> 4 Greek University Papers Index</span>
-                </a>
+              <a class="button" href="luxvar_calendar_7777777.json" target="_blank" rel="noopener noreferrer"
+                  style="border-color: #ffaa00;">
+                  <span>📅 <b>Field Calendar Data:</b> Luxvar 260-Day Synchronization (JSON)</span>
+              </a>
                   
-                <a class="button" href="luxvar_calendar_7777777.json" target="_blank" rel="noopener noreferrer" aria-label="Luxvar 260-Day Synchronization Field Calendar JSON Data"
-                    style="border-color: #ffaa00;">
-                    <span>📅 <b>Field Calendar Data:</b> Luxvar 260-Day Synchronization (JSON)</span>
-                </a>
-                  
-                <a class="button main-action" href="feedback.html" target="_self" aria-label="Send Feedback or Transmit Resonance Data"
-                    style="background-color: rgba(255, 0, 255, 0.1); border-color: #f0f; box-shadow: 0 0 25px #f0f;">
-                    <span>💬 **Transmit Resonance Data / Feedback (RAHTALĒN-7)**</span>
-                </a>
+              <a class="button main-action" href="feedback.html" target="_self"
+                  style="background-color: rgba(255, 0, 255, 0.1); border-color: #f0f; box-shadow: 0 0 25px #f0f;">
+                  <span>💬 <b>Feedback / Resonance Data (RAHTALĒN-7)</b></span>
+              </a>
             </div>
         </div>
         
@@ -400,7 +427,7 @@
         <div class="frequency-grid">
             <div class="freq-card">
               <div class="freq-title">144Hz – Time Core / RITĀM</div>
-              <div class="freq-desc">Opening resonance of the field; aligns with Earth’s natural memory and initiates Luxvar cycles.</div>
+              <div class="freq-desc">Opening resonance of the field; aligns with Earth's natural memory and initiates Luxvar cycles.</div>
               <audio preload="none" controls loop>
                   <source src="freq_144.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
@@ -418,7 +445,7 @@
             </div>  
             <div class="freq-card">  
                 <div class="freq-title">528Hz – Harmonization / RAHMŌT</div>  
-                <div class="freq-desc">The “miracle tone”; linked with transformation, cellular repair, and harmonic reconfiguration.</div>  
+                <div class="freq-desc">The "miracle tone"; linked with transformation, cellular repair, and harmonic reconfiguration.</div>  
                 <audio preload="none" controls loop><source src="freq_528.mp3" type="audio/mpeg"></audio>  
             </div>  
             <div class="freq-card">  
@@ -480,53 +507,48 @@
         <p class="footer-question">ĀYĀ ANĀLŪZ VĀRZIN?</p>
         <p class="footer-question" style="font-size: 1.4em; margin-top: 0; color: var(--secondary-glow);">𓂀 ŠAURÉN ṆĀRAH–ŠĀ</p>
         <div class="footer-links">
-          <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
-          <a href="https://github.com/Varzin-13" target="_blank" rel="noopener noreferrer">GitHub: Varzin-13</a> | 
+          <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer"><b>ORCID:</b> 0009-0000-4690-6842</a> |
+          <a href="https://github.com/Varzin-13" target="_blank" rel="noopener noreferrer">GitHub: Varzin-13</a> |
           <a href="mailto:contact@varzin.org">contact@varzin.org</a>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.8em; margin-top: 20px;">© 2025 VARZIN Field Project – ELŪZ–MAHAR Protocol · All Rights Reserved</p>
+
+        <!-- NEW: Footer scientific status note -->
+        <div class="footer-research-note" role="note">
+          <strong>Scientific status:</strong> VARZIN is a symbolic-experimental research framework.
+          Current evidence level: <strong>Level 0</strong> (symbolic and experimental-ready; no validated scientific claims).
+          Pre-registered pilot study VPE-001 in preparation.
+          All claims in this project are subject to pre-registered falsification criteria. —
+          <a href="vpe001-protocol.html" style="color: var(--research-glow);">VPE-001 Protocol</a>
+        </div>
+
+        <p style="color: var(--text-muted); font-size: 0.8em; margin-top: 20px;">© 2025–2026 VARZIN Field Project – ELŪZ–MAHAR Protocol · All Rights Reserved</p>
     </footer>
   </div>
   
   <script>
+    // Embedded LUXVAR Calendar — 260 days
+    const LUXVAR_CALENDAR_DATA = [{"date": "2025-09-08", "word": "ELKHUMEL_0", "function": "ELKHUMEL · Pulse", "frequency": "144Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-09", "word": "TARMEL_1", "function": "TARMEL · Whisper", "frequency": "474Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-10", "word": "DARVAR_2", "function": "DARVAR · Humming", "frequency": "528Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-11", "word": "ZARQĀNUR_3", "function": "ZARQĀNUR · Void", "frequency": "777Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-12", "word": "NURRANUR_4", "function": "NURRANUR · Echo", "frequency": "0Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-13", "word": "MELZAR_5", "function": "MELZAR · Pulse", "frequency": "144Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-14", "word": "LUXRAXA_6", "function": "LUXRAXA · Whisper", "frequency": "474Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-15", "word": "QĀLUXXA_7", "function": "QĀLUXXA · Humming", "frequency": "528Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-16", "word": "KHUDAR_8", "function": "KHUDAR · Void", "frequency": "777Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-17", "word": "DARMEL_9", "function": "DARMEL · Echo", "frequency": "0Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-18", "word": "TĀNLUXEL_10", "function": "TĀNLUXEL · Pulse", "frequency": "144Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-19", "word": "XAXAVAR_11", "function": "XAXAVAR · Whisper", "frequency": "474Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-20", "word": "DARMEL_12", "function": "DARMEL · Humming", "frequency": "528Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-21", "word": "TARNUR_13", "function": "TARNUR · Void", "frequency": "777Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-22", "word": "VUNTAR_14", "function": "VUNTAR · Echo", "frequency": "0Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-23", "word": "TĀNTĀN_15", "function": "TĀNTĀN · Pulse", "frequency": "144Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-24", "word": "NURQĀLUX_16", "function": "NURQĀLUX · Whisper", "frequency": "474Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-25", "word": "QĀTARXA_17", "function": "QĀTARXA · Humming", "frequency": "528Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-26", "word": "MARMELXA_18", "function": "MARMELXA · Void", "frequency": "777Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-27", "word": "RAKHUMEL_19", "function": "RAKHUMEL · Echo", "frequency": "0Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-28", "word": "VARMAR_20", "function": "VARMAR · Pulse", "frequency": "144Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-29", "word": "RAKHUKHU_21", "function": "RAKHUKHU · Whisper", "frequency": "474Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-09-30", "word": "NURVUN_22", "function": "NURVUN · Humming", "frequency": "528Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-01", "word": "XAQĀVAR_23", "function": "XAQĀVAR · Void", "frequency": "777Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-02", "word": "TARTAR_24", "function": "TARTAR · Echo", "frequency": "0Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-03", "word": "LUXMAR_25", "function": "LUXMAR · Pulse", "frequency": "144Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-04", "word": "NURQĀVUN_26", "function": "NURQĀVUN · Whisper", "frequency": "474Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-05", "word": "TARXAVAR_27", "function": "TARXAVAR · Humming", "frequency": "528Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-06", "word": "ZARELQĀ_28", "function": "ZARELQĀ · Void", "frequency": "777Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-07", "word": "NURTĀNRA_29", "function": "NURTĀNRA · Echo", "frequency": "0Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-08", "word": "NURLUXZAR_30", "function": "NURLUXZAR · Pulse", "frequency": "144Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-09", "word": "QĀTARLUX_31", "function": "QĀTARLUX · Whisper", "frequency": "474Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-10", "word": "KHUVARRA_32", "function": "KHUVARRA · Humming", "frequency": "528Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-11", "word": "ELMELTAR_33", "function": "ELMELTAR · Void", "frequency": "777Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-12", "word": "ZARTĀNKHU_34", "function": "ZARTĀNKHU · Echo", "frequency": "0Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-13", "word": "TĀNDARRA_35", "function": "TĀNDARRA · Pulse", "frequency": "144Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-14", "word": "QĀLUXDAR_36", "function": "QĀLUXDAR · Whisper", "frequency": "474Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-15", "word": "TĀNQĀKHU_37", "function": "TĀNQĀKHU · Humming", "frequency": "528Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-16", "word": "MELZARMEL_38", "function": "MELZARMEL · Void", "frequency": "777Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-17", "word": "VUNVAR_39", "function": "VUNVAR · Echo", "frequency": "0Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-18", "word": "VARTARDAR_40", "function": "VARTARDAR · Pulse", "frequency": "144Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-19", "word": "ZARRAVUN_41", "function": "ZARRAVUN · Whisper", "frequency": "474Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-20", "word": "ELXAMAR_42", "function": "ELXAMAR · Humming", "frequency": "528Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-21", "word": "VARVAR_43", "function": "VARVAR · Void", "frequency": "777Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-22", "word": "DARQĀNUR_44", "function": "DARQĀNUR · Echo", "frequency": "0Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-23", "word": "MARNUR_45", "function": "MARNUR · Pulse", "frequency": "144Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-24", "word": "TARKHU_46", "function": "TARKHU · Whisper", "frequency": "474Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-25", "word": "VUNMELKHU_47", "function": "VUNMELKHU · Humming", "frequency": "528Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-26", "word": "KHUELKHU_48", "function": "KHUELKHU · Void", "frequency": "777Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-27", "word": "VUNLUXTĀN_49", "function": "VUNLUXTĀN · Echo", "frequency": "0Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-28", "word": "MARKHUMAR_50", "function": "MARKHUMAR · Pulse", "frequency": "144Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-29", "word": "TĀNDARLUX_51", "function": "TĀNDARLUX · Whisper", "frequency": "474Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-30", "word": "RAMARLUX_52", "function": "RAMARLUX · Humming", "frequency": "528Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-10-31", "word": "VUNDARNUR_53", "function": "VUNDARNUR · Void", "frequency": "777Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-01", "word": "ELVARLUX_54", "function": "ELVARLUX · Echo", "frequency": "0Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-02", "word": "DARELDAR_55", "function": "DARELDAR · Pulse", "frequency": "144Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-03", "word": "TĀNELKHU_56", "function": "TĀNELKHU · Whisper", "frequency": "474Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-04", "word": "TARTĀNDAR_57", "function": "TARTĀNDAR · Humming", "frequency": "528Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-05", "word": "DARDAR_58", "function": "DARDAR · Void", "frequency": "777Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-06", "word": "QĀMARTĀN_59", "function": "QĀMARTĀN · Echo", "frequency": "0Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-07", "word": "XAVARQĀ_60", "function": "XAVARQĀ · Pulse", "frequency": "144Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-08", "word": "NURMEL_61", "function": "NURMEL · Whisper", "frequency": "474Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-09", "word": "XATĀNLUX_62", "function": "XATĀNLUX · Humming", "frequency": "528Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-10", "word": "KHUVUN_63", "function": "KHUVUN · Void", "frequency": "777Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-11", "word": "NURRAMAR_64", "function": "NURRAMAR · Echo", "frequency": "0Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-12", "word": "ELRATAR_65", "function": "ELRATAR · Pulse", "frequency": "144Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-13", "word": "TĀNVUNRA_66", "function": "TĀNVUNRA · Whisper", "frequency": "474Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-14", "word": "MARMAR_67", "function": "MARMAR · Humming", "frequency": "528Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-15", "word": "MELTĀNNUR_68", "function": "MELTĀNNUR · Void", "frequency": "777Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-16", "word": "ZARDAR_69", "function": "ZARDAR · Echo", "frequency": "0Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-17", "word": "MARZAR_70", "function": "MARZAR · Pulse", "frequency": "144Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-18", "word": "MARRAQĀ_71", "function": "MARRAQĀ · Whisper", "frequency": "474Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-19", "word": "TARZARTĀN_72", "function": "TARZARTĀN · Humming", "frequency": "528Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-20", "word": "LUXKHUKHU_73", "function": "LUXKHUKHU · Void", "frequency": "777Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-21", "word": "VARQĀEL_74", "function": "VARQĀEL · Echo", "frequency": "0Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-22", "word": "MELLUXLUX_75", "function": "MELLUXLUX · Pulse", "frequency": "144Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-23", "word": "TARVARVAR_76", "function": "TARVARVAR · Whisper", "frequency": "474Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-24", "word": "LUXVARZAR_77", "function": "LUXVARZAR · Humming", "frequency": "528Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-25", "word": "XAVUNTĀN_78", "function": "XAVUNTĀN · Void", "frequency": "777Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-26", "word": "MARDAR_79", "function": "MARDAR · Echo", "frequency": "0Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-27", "word": "VUNKHU_80", "function": "VUNKHU · Pulse", "frequency": "144Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-28", "word": "MELDARLUX_81", "function": "MELDARLUX · Whisper", "frequency": "474Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-29", "word": "LUXVUNTĀN_82", "function": "LUXVUNTĀN · Humming", "frequency": "528Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-11-30", "word": "KHUMAR_83", "function": "KHUMAR · Void", "frequency": "777Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-01", "word": "VUNLUX_84", "function": "VUNLUX · Echo", "frequency": "0Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-02", "word": "TARNUR_85", "function": "TARNUR · Pulse", "frequency": "144Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-03", "word": "DARZAR_86", "function": "DARZAR · Whisper", "frequency": "474Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-04", "word": "VUNQĀNUR_87", "function": "VUNQĀNUR · Humming", "frequency": "528Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-05", "word": "LUXMAR_88", "function": "LUXMAR · Void", "frequency": "777Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-06", "word": "ELELDAR_89", "function": "ELELDAR · Echo", "frequency": "0Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-07", "word": "TARDAR_90", "function": "TARDAR · Pulse", "frequency": "144Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-08", "word": "TĀNTĀN_91", "function": "TĀNTĀN · Whisper", "frequency": "474Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-09", "word": "MARVAR_92", "function": "MARVAR · Humming", "frequency": "528Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-10", "word": "NURVUNMAR_93", "function": "NURVUNMAR · Void", "frequency": "777Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-11", "word": "MELTAR_94", "function": "MELTAR · Echo", "frequency": "0Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-12", "word": "MELNURKHU_95", "function": "MELNURKHU · Pulse", "frequency": "144Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-13", "word": "VARZARVAR_96", "function": "VARZARVAR · Whisper", "frequency": "474Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-14", "word": "QĀZARKHU_97", "function": "QĀZARKHU · Humming", "frequency": "528Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-15", "word": "XAVARMAR_98", "function": "XAVARMAR · Void", "frequency": "777Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-16", "word": "NURKHUEL_99", "function": "NURKHUEL · Echo", "frequency": "0Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-17", "word": "QĀNURMAR_100", "function": "QĀNURMAR · Pulse", "frequency": "144Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-18", "word": "NURQĀZAR_101", "function": "NURQĀZAR · Whisper", "frequency": "474Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-19", "word": "VARZAR_102", "function": "VARZAR · Humming", "frequency": "528Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-20", "word": "ZARVARXA_103", "function": "ZARVARXA · Void", "frequency": "777Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-21", "word": "QĀELRA_104", "function": "QĀELRA · Echo", "frequency": "0Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-22", "word": "VUNLUX_105", "function": "VUNLUX · Pulse", "frequency": "144Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-23", "word": "LUXVUN_106", "function": "LUXVUN · Whisper", "frequency": "474Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-24", "word": "NURKHUZAR_107", "function": "NURKHUZAR · Humming", "frequency": "528Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-25", "word": "TARRATĀN_108", "function": "TARRATĀN · Void", "frequency": "777Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-26", "word": "MELLUXNUR_109", "function": "MELLUXNUR · Echo", "frequency": "0Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-27", "word": "TĀNMAR_110", "function": "TĀNMAR · Pulse", "frequency": "144Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-28", "word": "XATĀNVUN_111", "function": "XATĀNVUN · Whisper", "frequency": "474Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-29", "word": "ELZARRA_112", "function": "ELZARRA · Humming", "frequency": "528Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-30", "word": "TARLUXQĀ_113", "function": "TARLUXQĀ · Void", "frequency": "777Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2025-12-31", "word": "KHUVUN_114", "function": "KHUVUN · Echo", "frequency": "0Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-01", "word": "LUXMELRA_115", "function": "LUXMELRA · Pulse", "frequency": "144Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-02", "word": "KHUDAR_116", "function": "KHUDAR · Whisper", "frequency": "474Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-03", "word": "LUXTĀN_117", "function": "LUXTĀN · Humming", "frequency": "528Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-04", "word": "MARZAR_118", "function": "MARZAR · Void", "frequency": "777Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-05", "word": "ZARZAR_119", "function": "ZARZAR · Echo", "frequency": "0Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-06", "word": "MARKHU_120", "function": "MARKHU · Pulse", "frequency": "144Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-07", "word": "ELELQĀ_121", "function": "ELELQĀ · Whisper", "frequency": "474Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-08", "word": "MARMEL_122", "function": "MARMEL · Humming", "frequency": "528Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-09", "word": "TARQĀDAR_123", "function": "TARQĀDAR · Void", "frequency": "777Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-10", "word": "TARVUN_124", "function": "TARVUN · Echo", "frequency": "0Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-11", "word": "QĀNURQĀ_125", "function": "QĀNURQĀ · Pulse", "frequency": "144Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-12", "word": "RAMAREL_126", "function": "RAMAREL · Whisper", "frequency": "474Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-13", "word": "MARVARTAR_127", "function": "MARVARTAR · Humming", "frequency": "528Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-14", "word": "LUXDARTĀN_128", "function": "LUXDARTĀN · Void", "frequency": "777Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-15", "word": "MARRAVAR_129", "function": "MARRAVAR · Echo", "frequency": "0Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-16", "word": "VUNTARNUR_130", "function": "VUNTARNUR · Pulse", "frequency": "144Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-17", "word": "TĀNVAR_131", "function": "TĀNVAR · Whisper", "frequency": "474Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-18", "word": "MELVUNVUN_132", "function": "MELVUNVUN · Humming", "frequency": "528Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-19", "word": "RAMAREL_133", "function": "RAMAREL · Void", "frequency": "777Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-20", "word": "RAZARKHU_134", "function": "RAZARKHU · Echo", "frequency": "0Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-21", "word": "LUXMELVUN_135", "function": "LUXMELVUN · Pulse", "frequency": "144Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-22", "word": "MARMELTAR_136", "function": "MARMELTAR · Whisper", "frequency": "474Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-23", "word": "XAZARRA_137", "function": "XAZARRA · Humming", "frequency": "528Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-24", "word": "MELMARVUN_138", "function": "MELMARVUN · Void", "frequency": "777Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-25", "word": "LUXZARRA_139", "function": "LUXZARRA · Echo", "frequency": "0Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-26", "word": "VARLUX_140", "function": "VARLUX · Pulse", "frequency": "144Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-27", "word": "VARKHUMAR_141", "function": "VARKHUMAR · Whisper", "frequency": "474Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-28", "word": "KHUELXA_142", "function": "KHUELXA · Humming", "frequency": "528Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-29", "word": "VARTARTĀN_143", "function": "VARTARTĀN · Void", "frequency": "777Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-30", "word": "RADARQĀ_144", "function": "RADARQĀ · Echo", "frequency": "0Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-01-31", "word": "LUXZAR_145", "function": "LUXZAR · Pulse", "frequency": "144Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-01", "word": "QĀELQĀ_146", "function": "QĀELQĀ · Whisper", "frequency": "474Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-02", "word": "MELVARVUN_147", "function": "MELVARVUN · Humming", "frequency": "528Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-03", "word": "VARZAR_148", "function": "VARZAR · Void", "frequency": "777Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-04", "word": "ELTARMAR_149", "function": "ELTARMAR · Echo", "frequency": "0Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-05", "word": "ELVUNTĀN_150", "function": "ELVUNTĀN · Pulse", "frequency": "144Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-06", "word": "NURMAR_151", "function": "NURMAR · Whisper", "frequency": "474Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-07", "word": "LUXVARLUX_152", "function": "LUXVARLUX · Humming", "frequency": "528Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-08", "word": "TĀNZAR_153", "function": "TĀNZAR · Void", "frequency": "777Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-09", "word": "VARMAR_154", "function": "VARMAR · Echo", "frequency": "0Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-10", "word": "TĀNVARXA_155", "function": "TĀNVARXA · Pulse", "frequency": "144Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-11", "word": "ZARXAQĀ_156", "function": "ZARXAQĀ · Whisper", "frequency": "474Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-12", "word": "QĀRAZAR_157", "function": "QĀRAZAR · Humming", "frequency": "528Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-13", "word": "DARTARDAR_158", "function": "DARTARDAR · Void", "frequency": "777Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-14", "word": "TARTARNUR_159", "function": "TARTARNUR · Echo", "frequency": "0Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-15", "word": "NURLUX_160", "function": "NURLUX · Pulse", "frequency": "144Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-16", "word": "LUXELTAR_161", "function": "LUXELTAR · Whisper", "frequency": "474Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-17", "word": "DARVUNNUR_162", "function": "DARVUNNUR · Humming", "frequency": "528Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-18", "word": "TĀNMAR_163", "function": "TĀNMAR · Void", "frequency": "777Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-19", "word": "ZARNUR_164", "function": "ZARNUR · Echo", "frequency": "0Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-20", "word": "XANURLUX_165", "function": "XANURLUX · Pulse", "frequency": "144Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-21", "word": "NURMAR_166", "function": "NURMAR · Whisper", "frequency": "474Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-22", "word": "VARQĀVAR_167", "function": "VARQĀVAR · Humming", "frequency": "528Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-23", "word": "NURMAR_168", "function": "NURMAR · Void", "frequency": "777Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-24", "word": "LUXDARKHU_169", "function": "LUXDARKHU · Echo", "frequency": "0Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-25", "word": "VUNTĀNLUX_170", "function": "VUNTĀNLUX · Pulse", "frequency": "144Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-26", "word": "DARVUNZAR_171", "function": "DARVUNZAR · Whisper", "frequency": "474Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-27", "word": "LUXTARKHU_172", "function": "LUXTARKHU · Humming", "frequency": "528Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-02-28", "word": "MARZARNUR_173", "function": "MARZARNUR · Void", "frequency": "777Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-01", "word": "DARTĀN_174", "function": "DARTĀN · Echo", "frequency": "0Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-02", "word": "MARVUN_175", "function": "MARVUN · Pulse", "frequency": "144Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-03", "word": "VARVUN_176", "function": "VARVUN · Whisper", "frequency": "474Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-04", "word": "QĀLUXMEL_177", "function": "QĀLUXMEL · Humming", "frequency": "528Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-05", "word": "ELELXA_178", "function": "ELELXA · Void", "frequency": "777Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-06", "word": "VUNNUR_179", "function": "VUNNUR · Echo", "frequency": "0Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-07", "word": "ZARMELLUX_180", "function": "ZARMELLUX · Pulse", "frequency": "144Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-08", "word": "KHUELQĀ_181", "function": "KHUELQĀ · Whisper", "frequency": "474Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-09", "word": "TĀNVUNVUN_182", "function": "TĀNVUNVUN · Humming", "frequency": "528Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-10", "word": "VARTARVUN_183", "function": "VARTARVUN · Void", "frequency": "777Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-11", "word": "KHUNUREL_184", "function": "KHUNUREL · Echo", "frequency": "0Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-12", "word": "VARKHUKHU_185", "function": "VARKHUKHU · Pulse", "frequency": "144Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-13", "word": "NURVUNDAR_186", "function": "NURVUNDAR · Whisper", "frequency": "474Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-14", "word": "MELKHU_187", "function": "MELKHU · Humming", "frequency": "528Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-15", "word": "QĀQĀLUX_188", "function": "QĀQĀLUX · Void", "frequency": "777Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-16", "word": "RARAMAR_189", "function": "RARAMAR · Echo", "frequency": "0Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-17", "word": "TĀNDAR_190", "function": "TĀNDAR · Pulse", "frequency": "144Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-18", "word": "TARZAR_191", "function": "TARZAR · Whisper", "frequency": "474Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-19", "word": "QĀVUNTĀN_192", "function": "QĀVUNTĀN · Humming", "frequency": "528Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-20", "word": "DARZARDAR_193", "function": "DARZARDAR · Void", "frequency": "777Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-21", "word": "VARLUXZAR_194", "function": "VARLUXZAR · Echo", "frequency": "0Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-22", "word": "MARRAQĀ_195", "function": "MARRAQĀ · Pulse", "frequency": "144Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-23", "word": "MARZAR_196", "function": "MARZAR · Whisper", "frequency": "474Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-24", "word": "MARNURZAR_197", "function": "MARNURZAR · Humming", "frequency": "528Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-25", "word": "TĀNVAR_198", "function": "TĀNVAR · Void", "frequency": "777Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-26", "word": "KHUMARTĀN_199", "function": "KHUMARTĀN · Echo", "frequency": "0Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-27", "word": "XATĀNRA_200", "function": "XATĀNRA · Pulse", "frequency": "144Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-28", "word": "VARXATĀN_201", "function": "VARXATĀN · Whisper", "frequency": "474Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-29", "word": "NURMAR_202", "function": "NURMAR · Humming", "frequency": "528Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-30", "word": "NURLUXVAR_203", "function": "NURLUXVAR · Void", "frequency": "777Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-03-31", "word": "VARMELEL_204", "function": "VARMELEL · Echo", "frequency": "0Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-01", "word": "VARDARVUN_205", "function": "VARDARVUN · Pulse", "frequency": "144Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-02", "word": "DARRAXA_206", "function": "DARRAXA · Whisper", "frequency": "474Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-03", "word": "MELNURKHU_207", "function": "MELNURKHU · Humming", "frequency": "528Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-04", "word": "LUXELTAR_208", "function": "LUXELTAR · Void", "frequency": "777Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-05", "word": "XAMELKHU_209", "function": "XAMELKHU · Echo", "frequency": "0Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-06", "word": "NURVUN_210", "function": "NURVUN · Pulse", "frequency": "144Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-07", "word": "TARLUX_211", "function": "TARLUX · Whisper", "frequency": "474Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-08", "word": "RAXAEL_212", "function": "RAXAEL · Humming", "frequency": "528Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-09", "word": "ZARXAXA_213", "function": "ZARXAXA · Void", "frequency": "777Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-10", "word": "NURTĀN_214", "function": "NURTĀN · Echo", "frequency": "0Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-11", "word": "NURNURKHU_215", "function": "NURNURKHU · Pulse", "frequency": "144Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-12", "word": "VUNNURZAR_216", "function": "VUNNURZAR · Whisper", "frequency": "474Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-13", "word": "DARZARVAR_217", "function": "DARZARVAR · Humming", "frequency": "528Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-14", "word": "KHUDAR_218", "function": "KHUDAR · Void", "frequency": "777Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-15", "word": "DARLUXVAR_219", "function": "DARLUXVAR · Echo", "frequency": "0Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-16", "word": "MELELZAR_220", "function": "MELELZAR · Pulse", "frequency": "144Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-17", "word": "KHUKHU_221", "function": "KHUKHU · Whisper", "frequency": "474Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-18", "word": "RANURXA_222", "function": "RANURXA · Humming", "frequency": "528Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-19", "word": "VUNTĀN_223", "function": "VUNTĀN · Void", "frequency": "777Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-20", "word": "DARTĀN_224", "function": "DARTĀN · Echo", "frequency": "0Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-21", "word": "ZARDAR_225", "function": "ZARDAR · Pulse", "frequency": "144Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-22", "word": "KHUQĀDAR_226", "function": "KHUQĀDAR · Whisper", "frequency": "474Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-23", "word": "MARELDAR_227", "function": "MARELDAR · Humming", "frequency": "528Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-24", "word": "TĀNDARLUX_228", "function": "TĀNDARLUX · Void", "frequency": "777Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-25", "word": "ZARMELTĀN_229", "function": "ZARMELTĀN · Echo", "frequency": "0Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-26", "word": "NURVAR_230", "function": "NURVAR · Pulse", "frequency": "144Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-27", "word": "LUXVUN_231", "function": "LUXVUN · Whisper", "frequency": "474Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-28", "word": "TARZAR_232", "function": "TARZAR · Humming", "frequency": "528Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-29", "word": "TĀNDAR_233", "function": "TĀNDAR · Void", "frequency": "777Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-04-30", "word": "TARTĀNDAR_234", "function": "TARTĀNDAR · Echo", "frequency": "0Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-01", "word": "KHUZAR_235", "function": "KHUZAR · Pulse", "frequency": "144Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-02", "word": "MELZARNUR_236", "function": "MELZARNUR · Whisper", "frequency": "474Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-03", "word": "ZARMAR_237", "function": "ZARMAR · Humming", "frequency": "528Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-04", "word": "NURXADAR_238", "function": "NURXADAR · Void", "frequency": "777Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-05", "word": "VARTAREL_239", "function": "VARTAREL · Echo", "frequency": "0Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-06", "word": "VARDAR_240", "function": "VARDAR · Pulse", "frequency": "144Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-07", "word": "TARMARXA_241", "function": "TARMARXA · Whisper", "frequency": "474Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-08", "word": "ZARZAR_242", "function": "ZARZAR · Humming", "frequency": "528Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-09", "word": "XANURVAR_243", "function": "XANURVAR · Void", "frequency": "777Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-10", "word": "VARKHUEL_244", "function": "VARKHUEL · Echo", "frequency": "0Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-11", "word": "VUNVUNEL_245", "function": "VUNVUNEL · Pulse", "frequency": "144Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-12", "word": "NURKHURA_246", "function": "NURKHURA · Whisper", "frequency": "474Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-13", "word": "DARDARZAR_247", "function": "DARDARZAR · Humming", "frequency": "528Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-14", "word": "LUXDAR_248", "function": "LUXDAR · Void", "frequency": "777Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-15", "word": "ELTĀNXA_249", "function": "ELTĀNXA · Echo", "frequency": "0Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-16", "word": "QĀELMEL_250", "function": "QĀELMEL · Pulse", "frequency": "144Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-17", "word": "DARRAQĀ_251", "function": "DARRAQĀ · Whisper", "frequency": "474Hz | BW: 20Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-18", "word": "ZARKHUTAR_252", "function": "ZARKHUTAR · Humming", "frequency": "528Hz | BW: 12Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-19", "word": "VUNKHU_253", "function": "VUNKHU · Void", "frequency": "777Hz | BW: 13Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-20", "word": "KHURATAR_254", "function": "KHURATAR · Echo", "frequency": "0Hz | BW: 14Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-21", "word": "NURRAVUN_255", "function": "NURRAVUN · Pulse", "frequency": "144Hz | BW: 15Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-22", "word": "TARELVUN_256", "function": "TARELVUN · Whisper", "frequency": "474Hz | BW: 16Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-23", "word": "LUXMEL_257", "function": "LUXMEL · Humming", "frequency": "528Hz | BW: 17Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-24", "word": "TĀNLUX_258", "function": "TĀNLUX · Void", "frequency": "777Hz | BW: 18Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}, {"date": "2026-05-25", "word": "ZARMELDAR_259", "function": "ZARMELDAR · Echo", "frequency": "0Hz | BW: 19Hz", "gate_code": "474Hz", "channel": "RAHTALĒN QMSG–13"}];
+
     document.addEventListener('DOMContentLoaded', () => {
-      // --- LAYER 1: THE LIVING FIELD CANVAS (Particle Animation) ---  
-      // منطق Canvas بدون تغییر باقی می‌ماند.
       const canvas = document.getElementById('field-canvas');  
       const ctx = canvas.getContext('2d');  
       canvas.width = window.innerWidth;  
       canvas.height = window.innerHeight;  
-  
       let particles = [];  
       const mouse = { x: null, y: null, radius: 150 };  
-  
-      window.addEventListener('mousemove', (event) => {  
-          mouse.x = event.x;  
-          mouse.y = event.y;  
-      });  
-      window.addEventListener('resize', () => {  
-          canvas.width = window.innerWidth;  
-          canvas.height = window.innerHeight;  
-          init();  
-      });  
+      window.addEventListener('mousemove', (event) => { mouse.x = event.x; mouse.y = event.y; });  
+      window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); });  
         
       class Particle {  
           constructor(x, y, dirX, dirY, size, color) {  
               this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;  
               this.size = size; this.color = color;  
           }  
-          draw() {  
-              ctx.beginPath();  
-              ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);  
-              ctx.fillStyle = this.color;  
-              ctx.fill();  
-          }  
+          draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false); ctx.fillStyle = this.color; ctx.fill(); }  
           update() {  
               if (this.x > canvas.width || this.x < 0) this.dirX = -this.dirX;  
               if (this.y > canvas.height || this.y < 0) this.dirY = -this.dirY;  
-  
-              let dx = mouse.x - this.x;  
-              let dy = mouse.y - this.y;  
+              let dx = mouse.x - this.x; let dy = mouse.y - this.y;  
               let distance = Math.sqrt(dx * dx + dy * dy);  
               if (distance < mouse.radius + this.size) {  
                   if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;  
@@ -534,12 +556,9 @@
                   if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;  
                   if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;  
               }  
-              this.x += this.dirX;  
-              this.y += this.dirY;  
-              this.draw();  
+              this.x += this.dirX; this.y += this.dirY; this.draw();  
           }  
       }  
-  
       function init() {  
           particles = [];  
           let numParticles = (canvas.height * canvas.width) / 9000;  
@@ -547,169 +566,94 @@
               let size = Math.random() * 1.5 + 0.5;  
               let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);  
               let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);  
-              let dirX = (Math.random() * 0.4) - 0.2;  
-              let dirY = (Math.random() * 0.4) - 0.2;  
+              let dirX = (Math.random() * 0.4) - 0.2; let dirY = (Math.random() * 0.4) - 0.2;  
               particles.push(new Particle(x, y, dirX, dirY, size, 'rgba(0, 255, 238, 0.4)'));  
           }  
       }  
-  
-      function animate() {  
-          requestAnimationFrame(animate);  
-          ctx.clearRect(0, 0, innerWidth, innerHeight);  
-          for (let i = 0; i < particles.length; i++) {  
-              particles[i].update();  
-          }  
-          // Connect particles logic (optional but good for visual effect)
-          connect();
-      }  
-
       function connect() {
-          let opacityValue = 1;
           for (let a = 0; a < particles.length; a++) {
               for (let b = a; b < particles.length; b++) {
                   let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) 
                                + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
                   if (distance < (100 * 100)) {
-                      opacityValue = 1 - (distance / 10000);
+                      let opacityValue = 1 - (distance / 10000);
                       ctx.strokeStyle = 'rgba(0, 255, 238,' + opacityValue + ')';
-                      ctx.lineWidth = 0.5;
-                      ctx.beginPath();
+                      ctx.lineWidth = 0.5; ctx.beginPath();
                       ctx.moveTo(particles[a].x, particles[a].y);
-                      ctx.lineTo(particles[b].x, particles[b].y);
-                      ctx.stroke();
+                      ctx.lineTo(particles[b].x, particles[b].y); ctx.stroke();
                   }
               }
           }
       }
-        
-      init();  
-      animate();  
-  
-      // --- LAYER 2: AUDIO CONTROLS ---  
-      const players = Array.from(document.querySelectorAll('audio'));  
-      const freqCards = document.querySelectorAll('.freq-card');
+      function animate() { requestAnimationFrame(animate); ctx.clearRect(0, 0, innerWidth, innerHeight); for (let i = 0; i < particles.length; i++) { particles[i].update(); } connect(); }  
+      init(); animate();  
 
+      const players = Array.from(document.querySelectorAll('audio'));  
       players.forEach(player => {  
           const parentCard = player.closest('.freq-card');  
-          player.onplay = () => { 
-            // Pause others if required for single play mode (currently set to allow multi-play)
-            // players.forEach(p2 => { if (player !== p2) { p2.pause(); } }); 
-            parentCard.classList.add('active'); 
-          };  
+          player.onplay = () => { parentCard.classList.add('active'); };  
           player.onpause = () => { parentCard.classList.remove('active'); };  
           player.onended = () => { parentCard.classList.remove('active'); };  
       });  
-        
-      window.playAll = () => {  
-        players.forEach(p => {   
-          try { p.currentTime = 0; p.play(); } catch (e) { console.error("Play error:", e); }   
-        });  
-      };  
-        
-      window.stopAll = () => players.forEach(p => {   
-        try { p.pause(); p.currentTime = 0; } catch (e) { console.error("Stop error:", e); }   
-      });  
-  
-      // --- LAYER 3: LUXVAR DECODER (KALTŪR Pulse & Calendar Logic) ---  
-        
+      window.playAll = () => { players.forEach(p => { try { p.currentTime = 0; p.play(); } catch (e) {} }); };  
+      window.stopAll = () => players.forEach(p => { try { p.pause(); p.currentTime = 0; } catch (e) {} });  
+
       let pulseIntervalId;  
-  
-      // KALTŪR Pulse Data (اطلاعات دقیق و منطبق با Saved Information)  
       const KALTUR_PULSE = {  
-          word: "KALTŪR",   
-          function: "Forgotten rotational consciousness within the time loop",   
-          frequency: "474Hz",   
-          gate_code: "QMSG–7",   
-          channel: "RAHTALĒN: Mirror-13"   
+          word: "KALTŪR", function: "Forgotten rotational consciousness within the time loop",   
+          frequency: "474Hz", gate_code: "QMSG–7", channel: "RAHTALĒN: Mirror-13"   
       };  
-        
       const decoderFields = {  
-          word: document.getElementById('pulse-word'),  
-          function: document.getElementById('pulse-function'),  
-          frequency: document.getElementById('pulse-frequency'),  
-          gate: document.getElementById('pulse-gate'),  
+          word: document.getElementById('pulse-word'), function: document.getElementById('pulse-function'),  
+          frequency: document.getElementById('pulse-frequency'), gate: document.getElementById('pulse-gate'),  
           channel: document.getElementById('pulse-channel')  
       };  
-        
       const pulseWindow = document.querySelector('.decoder-window');
       const kalturCard = document.querySelector('.freq-card[data-frequency="474"]');
 
-
       function updateDecoder(pulseData) {  
-          // Animation before update
-          for (const key in decoderFields) {  
-              if (decoderFields[key]) { decoderFields[key].style.opacity = '0'; }  
-          }  
-          
+          for (const key in decoderFields) { if (decoderFields[key]) { decoderFields[key].style.opacity = '0'; } }  
           setTimeout(() => {  
               decoderFields.word.textContent = pulseData.word || "—";  
               document.getElementById('pulse-title').textContent = `🜂 Luxvar Field Pulse – ${pulseData.word}`;
-              
               decoderFields.function.textContent = pulseData.function || "—";  
               decoderFields.frequency.textContent = pulseData.frequency || "—";  
               decoderFields.gate.textContent = pulseData.gate_code || "—";  
               decoderFields.channel.textContent = pulseData.channel || "—";  
-                
-              
               if (pulseData.word === "KALTŪR") {  
                   decoderFields.word.style.color = 'var(--primary-glow)';  
-                  pulseWindow.classList.add('kaltur-active');
-                  kalturCard?.classList.add('active'); // Activate the 474Hz card visually
+                  kalturCard?.classList.add('active');
                   pulseWindow.style.animation = 'pulse-effect 5s infinite ease-in-out';
               } else {  
                   decoderFields.word.style.color = 'var(--secondary-glow)';  
-                  pulseWindow.classList.remove('kaltur-active');
                   kalturCard?.classList.remove('active');
-                  pulseWindow.style.animation = 'none'; // Stop KALTŪR specific pulse
+                  pulseWindow.style.animation = 'none';
               }  
-                
-              // Animation after update
-              for (const key in decoderFields) {  
-                  if (decoderFields[key]) { decoderFields[key].style.opacity = '1'; }  
-              }  
+              for (const key in decoderFields) { if (decoderFields[key]) { decoderFields[key].style.opacity = '1'; } }  
           }, 200);  
       }  
-        
       function startPulseSequence(pulseData) {  
           if (pulseIntervalId) clearInterval(pulseIntervalId);  
-            
           updateDecoder(pulseData);   
-            
-          // Interval for re-running the update decoder to simulate constant field check/refresh
           pulseIntervalId = setInterval(() => updateDecoder(pulseData), 30000);  
       }  
-  
-      // ۱. Start with KALTŪR pulse immediately  
-      startPulseSequence(KALTUR_PULSE);  
-  
-      // ۲. Try to fetch and override with the daily pulse  
-      fetch('luxvar_calendar_7777777.json')   
-        .then(response => {  
-            if (!response.ok) {  
-                console.warn(`Calendar file access failed (${response.status}). KALTŪR fallback maintained.`);  
-                return Promise.reject('Calendar file access failed');  
-            }  
-            return response.json();  
-        })  
-        .then(data => {  
-            const today = new Date().toISOString().split("T")[0];  
-            const pulse = data.find(entry => entry.date === today);  
-              
-            if (pulse) {  
-                startPulseSequence({  
-                    word: pulse.word,  
-                    function: pulse.function,
-                    frequency: pulse.frequency,  
-                    gate_code: pulse.gate_code,  
-                    channel: pulse.channel  
-                });  
-            } else {  
-                console.warn('Luxvar calendar file found, but no entry for today. KALTŪR remains active.');  
-            }  
-        })  
-        .catch(error => {  
-          console.error("Luxvar calendar fetch error (KALTŪR is the running default):", error);  
-        });  
+      startPulseSequence(KALTUR_PULSE);
+
+      // Calendar data embedded directly — no fetch needed
+      (function() {
+        const CALENDAR = LUXVAR_CALENDAR_DATA;
+        const today = new Date().toISOString().split("T")[0];
+        const pulse = CALENDAR.find(function(e) { return e.date === today; });
+        if (pulse) {
+          startPulseSequence({
+            word: pulse.word,
+            function: pulse.function,
+            frequency: pulse.frequency,
+            gate_code: pulse.gate_code,
+            channel: pulse.channel
+          });
+        }
+      })();  
     });  
   </script>
 </body>
