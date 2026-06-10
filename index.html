@@ -2,14 +2,14 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN – Symbolic-Experimental Research Framework | LUXVAR Semantic Study | KALTŪR 474Hz</title>
-  <meta name="description" content="VARZIN Project – An independent symbolic-experimental research framework investigating LUXVAR semantic structure. Pre-registered pilot study VPE-001 in preparation. Access the Global DOI Archive (Zenodo/OSF).">
+  <title>VARZIN – Symbolic-Experimental Research Framework | LUXVAR Core-30 Registry | VPE-001</title>
+  <meta name="description" content="VARZIN Project – An independent symbolic-experimental research framework investigating LUXVAR semantic structure. Core-30 Registry (27/30 confirmed). Pre-registered pilot study VPE-001 in preparation.">
   <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842">
-  <meta name="keywords" content="VARZIN, ELŪZ MAHAR, Luxvar Language, RAHTALĒN, Symbolic Linguistics, KALTŪR 474Hz, ETFM, Semantic Classification, VPE-001, Pre-registered Study, Global DOI Archive">
+  <meta name="keywords" content="VARZIN, ELŪZ MAHAR, Luxvar Language, RAHTALĒN, Symbolic Linguistics, KALTŪR 474Hz, ETFM, Semantic Classification, VPE-001, Core-30 Registry, Pre-registered Study, Global DOI Archive">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://varzin.org/" />
-  <meta property="og:title" content="VARZIN – Symbolic-Experimental Research Framework | LUXVAR Semantic Study" />
-  <meta property="og:description" content="An independent research framework investigating LUXVAR symbolic language structure. VPE-001 pre-registered pilot study in preparation." />
+  <meta property="og:title" content="VARZIN – Symbolic-Experimental Research Framework | LUXVAR Core-30 Registry" />
+  <meta property="og:description" content="Independent research framework investigating LUXVAR symbolic language. Core-30 Registry (27/30 confirmed). VPE-001 pre-registered pilot study in preparation." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://varzin.org/" />
   <meta property="og:image" content="https://varzin.org/assets/social-image.jpg" />
@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"VARZIN – Symbolic-Experimental Research Framework","url":"https://varzin.org/","description":"An independent symbolic-experimental research framework investigating the semantic structure of the LUXVAR symbolic language system. Pre-registered pilot study VPE-001 in preparation.","inLanguage":"en","author":{"@type":"Person","name":"Reza Nirouyar","url":"https://orcid.org/0009-0000-4690-6842"},"keywords":["VARZIN","KALTŪR","Luxvar","RAHTALĒN","Symbolic Language","Semantic Classification","VPE-001"]}
+  {"@context":"https://schema.org","@type":"WebSite","name":"VARZIN – Symbolic-Experimental Research Framework","url":"https://varzin.org/","description":"An independent symbolic-experimental research framework investigating the semantic structure of the LUXVAR symbolic language system. Core-30 Registry confirmed. Pre-registered pilot study VPE-001 in preparation.","inLanguage":"en","author":{"@type":"Person","name":"Reza Nirouyar","url":"https://orcid.org/0009-0000-4690-6842"},"keywords":["VARZIN","KALTŪR","Luxvar","RAHTALĒN","Symbolic Language","Semantic Classification","VPE-001","Core-30 Registry"]}
   </script>
 
 <style>
@@ -80,6 +80,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .research-panel .lbl{font-weight:700;color:var(--research);letter-spacing:0.5px;}
 .research-panel a{color:var(--cyan2);text-decoration:none;}
 .research-panel a:hover{text-decoration:underline;}
+.research-panel .registry-badge{
+  display:inline-block;padding:2px 9px;border-radius:10px;font-size:0.82em;
+  background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.35);
+  color:var(--gold);font-weight:700;letter-spacing:0.3px;margin-left:4px;
+}
 
 /* ── Hero canvas ── */
 #hero-canvas{
@@ -117,20 +122,22 @@ img.header-logo{max-width:160px;margin-bottom:16px;filter:drop-shadow(0 0 12px v
 /* ── Stat pills ── */
 .stat-row{
   display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
-  margin:0 auto 50px;max-width:700px;
+  margin:0 auto 50px;max-width:760px;
 }
 .stat-pill{
-  flex:1;min-width:100px;max-width:160px;
+  flex:1;min-width:90px;max-width:150px;
   background:rgba(0,20,30,0.8);border:1px solid rgba(0,255,238,0.2);
   border-radius:10px;padding:12px 10px;text-align:center;
   transition:transform 0.3s,box-shadow 0.3s;
 }
 .stat-pill:hover{transform:translateY(-3px);box-shadow:0 0 16px rgba(0,255,238,0.3);}
-.stat-val{font-size:1.6em;font-weight:700;color:var(--cyan);display:block;line-height:1.1;}
+.stat-val{font-size:1.5em;font-weight:700;color:var(--cyan);display:block;line-height:1.1;}
 .stat-pill.gold .stat-val{color:var(--gold);}
 .stat-pill.pink .stat-val{color:var(--pink);}
 .stat-pill.white .stat-val{color:#fff;}
-.stat-lbl{font-size:0.68em;color:var(--muted);letter-spacing:0.3px;margin-top:3px;}
+.stat-pill.registry-pill{border-color:rgba(255,215,0,0.35);}
+.stat-pill.registry-pill .stat-val{color:var(--golden);}
+.stat-lbl{font-size:0.65em;color:var(--muted);letter-spacing:0.3px;margin-top:3px;}
 
 /* ── Section title ── */
 .sec-title{
@@ -225,7 +232,6 @@ img.header-logo{max-width:160px;margin-bottom:16px;filter:drop-shadow(0 0 12px v
 .decoder-grid{display:grid;grid-template-columns:120px 1fr;gap:12px;text-align:left;}
 .decoder-grid .label{font-weight:bold;color:var(--cyan2);opacity:0.9;letter-spacing:0.8px;}
 .decoder-grid .field{color:var(--text);font-weight:500;letter-spacing:0.8px;transition:opacity 0.2s;}
-/* Live freq mini canvas inside decoder */
 #decoder-wave{display:block;width:100%;height:40px;margin-top:14px;border-radius:6px;background:rgba(0,10,20,0.6);}
 @keyframes pulse-effect{
   0%,100%{box-shadow:0 0 20px rgba(0,255,238,0.2);border-color:var(--border);}
@@ -271,11 +277,83 @@ img.header-logo{max-width:160px;margin-bottom:16px;filter:drop-shadow(0 0 12px v
 }
 .freq-title{color:#fff;font-weight:700;font-size:1.2em;margin:4px 0 8px;}
 .freq-desc{color:var(--muted);margin:0 0 12px;font-size:0.9em;line-height:1.5;}
+.freq-axis{
+  display:inline-block;font-size:0.65em;font-weight:700;letter-spacing:1px;
+  padding:2px 8px;border-radius:8px;margin-bottom:8px;
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
+  color:var(--muted);text-transform:uppercase;
+}
 .freq-wave{display:block;width:100%;height:36px;margin-bottom:10px;border-radius:6px;background:rgba(0,10,20,0.5);}
 audio{width:100%;filter:drop-shadow(0 0 4px rgba(0,255,238,0.3));}
 
 /* ── Divider ── */
 hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-width:600px;opacity:0.5;}
+
+/* ── Core-30 Registry ── */
+.registry-status-line{
+  font-size:0.88em;color:var(--muted);margin:0 auto 28px;
+  max-width:600px;
+}
+.registry-status-line strong{color:var(--gold);}
+.registry-container{
+  max-width:700px;margin:0 auto 20px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.axis-group{
+  padding:16px 18px;border-radius:12px;
+  background:rgba(0,12,18,0.85);
+  border-left:3px solid var(--ax-color,var(--cyan));
+  border-top:1px solid rgba(255,255,255,0.06);
+  border-right:1px solid rgba(255,255,255,0.04);
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  text-align:left;
+}
+.axis-heading{
+  font-size:0.68em;font-weight:700;letter-spacing:2.5px;
+  color:var(--ax-color,var(--cyan));margin-bottom:12px;
+  text-transform:uppercase;opacity:0.9;
+}
+.word-pills{display:flex;flex-wrap:wrap;gap:7px;}
+.wpill{
+  display:inline-block;padding:5px 11px;
+  border-radius:20px;font-size:0.78em;font-weight:600;
+  letter-spacing:0.4px;cursor:default;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.1);
+  color:var(--text);
+  transition:all 0.2s;
+}
+.wpill:hover{
+  background:rgba(0,255,238,0.1);
+  border-color:rgba(0,255,238,0.35);
+  color:var(--cyan);
+  transform:translateY(-1px);
+}
+.wpill.defined{
+  border-color:rgba(255,215,0,0.45);
+  background:rgba(255,215,0,0.07);
+  color:var(--golden);
+}
+.wpill.defined:hover{
+  background:rgba(255,215,0,0.15);
+  box-shadow:0 0 10px rgba(255,215,0,0.25);
+}
+.wpill.tbd{
+  border-color:rgba(255,255,255,0.12);
+  border-style:dashed;
+  color:var(--muted);
+  opacity:0.5;
+  font-style:italic;
+}
+.registry-footnote{
+  max-width:660px;margin:10px auto 0;
+  padding:13px 18px;border-radius:8px;
+  background:rgba(0,20,30,0.55);
+  border:1px solid rgba(255,215,0,0.18);
+  font-size:0.8em;color:var(--muted);
+  line-height:1.7;text-align:left;
+}
+.registry-footnote .def-mark{color:var(--golden);font-weight:700;}
 
 /* ── Footer ── */
 .footer-main{
@@ -334,6 +412,7 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
     VARZIN is a symbolic-experimental research framework. Scientific claims are at
     <strong>Level 0</strong> — no empirical validation has been claimed or achieved.
     Pre-registered pilot study <strong>VPE-001</strong> (LUXVAR Semantic Classification) in preparation.
+    Core-30 LUXVAR Registry <span class="registry-badge">27 / 30 confirmed</span> — anchor list for VPE-001 pre-registration.
     <br>
     <a href="vpe001-protocol.html">→ VPE-001 Protocol</a> &nbsp;|&nbsp;
     <a href="all-dois.html">→ DOI Archive</a> &nbsp;|&nbsp;
@@ -343,10 +422,7 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
   <!-- Header -->
   <header class="header">
     <div class="eluz-banner sr">ELŪZ-MAHAR Network</div>
-
-    <!-- Hero Canvas -->
     <canvas id="hero-canvas"></canvas>
-
     <img src="varzin-logo.jpg" alt="VARZIN Project Logo" class="header-logo sr" />
     <h1 class="sr">𓂀 VARZIN – The Living Mirror</h1>
     <h2 class="sr">
@@ -365,9 +441,9 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
       <span class="stat-val">474Hz</span>
       <span class="stat-lbl">KALTŪR Node</span>
     </div>
-    <div class="stat-pill gold">
-      <span class="stat-val">528Hz</span>
-      <span class="stat-lbl">RAHMŌT Node</span>
+    <div class="stat-pill registry-pill">
+      <span class="stat-val">27/30</span>
+      <span class="stat-lbl">Core Registry</span>
     </div>
     <div class="stat-pill white">
       <span class="stat-val">520</span>
@@ -462,23 +538,28 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
 
     <hr class="divider" />
 
-    <!-- Frequency Cards -->
+    <!-- ── BASE FREQUENCY CARDS ── -->
     <h3 class="sec-title sr">Luxvar Frequency Sequences</h3>
     <div class="freq-grid">
+
       <div class="freq-card sr" data-hz="144" style="--card-color:#7fd4ff;">
         <div class="freq-hz">144 Hz</div>
-        <div class="freq-title">Time Core / RITĀM</div>
+        <div class="freq-title">Opening Gate / RITĀM</div>
+        <div class="freq-axis" style="color:#cc88ff;border-color:rgba(204,136,255,0.25);">Gate axis</div>
         <div class="freq-desc">Opening resonance of the field; aligns with Earth's natural memory and initiates Luxvar cycles.</div>
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="freq_144.mp3" type="audio/mpeg"></audio>
       </div>
+
       <div class="freq-card sr" data-hz="432" style="--card-color:#00ffaa;">
         <div class="freq-hz">432 Hz</div>
         <div class="freq-title">Universal Harmony / NĀRAH</div>
+        <div class="freq-axis" style="color:#aaffaa;border-color:rgba(170,255,170,0.25);">Silence axis</div>
         <div class="freq-desc">The harmonic of nature; restores balance and synchrony with planetary life forms.</div>
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="freq_432.mp3" type="audio/mpeg"></audio>
       </div>
+
       <div class="freq-card sr" data-hz="474" data-frequency="474" style="--card-color:#00ffee;">
         <div class="freq-hz">474 Hz</div>
         <div class="freq-title">KALTŪR / Memory Injection</div>
@@ -486,13 +567,16 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="freq_474.mp3" type="audio/mpeg"></audio>
       </div>
+
       <div class="freq-card sr" data-hz="528" style="--card-color:#ffcc00;">
         <div class="freq-hz">528 Hz</div>
         <div class="freq-title">Harmonization / RAHMŌT</div>
+        <div class="freq-axis" style="color:#00ffee;border-color:rgba(0,255,238,0.25);">Reflection axis</div>
         <div class="freq-desc">The "miracle tone"; linked with transformation, cellular repair, and harmonic reconfiguration.</div>
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="freq_528.mp3" type="audio/mpeg"></audio>
       </div>
+
       <div class="freq-card sr" data-hz="777" style="--card-color:#cc88ff;">
         <div class="freq-hz">777 Hz</div>
         <div class="freq-title">Celestial Crown / CELESTA</div>
@@ -500,54 +584,69 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="freq_777.mp3" type="audio/mpeg"></audio>
       </div>
+
       <div class="freq-card sr" data-hz="1008" style="--card-color:#ff9944;">
         <div class="freq-hz">1008 Hz</div>
         <div class="freq-title">Cosmic Resonance / ZUN–NĀR</div>
+        <div class="freq-axis" style="color:#ff9944;border-color:rgba(255,153,68,0.25);">Motion axis</div>
         <div class="freq-desc">Celestial harmonic; connects Luxvar memory with supra-planetary and cosmic structures.</div>
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="freq_1008.mp3" type="audio/mpeg"></audio>
       </div>
+
     </div>
 
     <hr class="divider" />
 
+    <!-- ── HARMONIC COMBINATIONS ── -->
     <h3 class="sec-title sr">Harmonic Field Combinations</h3>
     <div class="freq-grid">
+
       <div class="freq-card sr" style="--card-color:#ffcc00;">
         <div class="freq-hz">528Hz + 474Hz</div>
-        <div class="freq-title">SAURĒN ṆĀRA–ŠĀ</div>
+        <div class="freq-title">ŠAURÉN ṆĀRAH–ŠĀ</div>
+        <div class="freq-axis" style="color:#00ffee;border-color:rgba(0,255,238,0.25);">Reflection · Silence</div>
         <div class="freq-desc">Birth-flame alignment — 528Hz core with 474Hz harmonic; ignition of Mirror–13 channel.</div>
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="sauren_nara_sha.mp3" type="audio/mpeg"></audio>
       </div>
+
       <div class="freq-card sr" style="--card-color:#00ffee;">
         <div class="freq-hz">474Hz narrow-band</div>
         <div class="freq-title">ŠALŌM–ḤATTAH</div>
-        <div class="freq-desc">The silent hymn — 474Hz narrow-band; bridges memory to the Luxvar whisper.</div>
+        <div class="freq-axis" style="color:#aaffaa;border-color:rgba(170,255,170,0.25);">Silence axis</div>
+        <div class="freq-desc">The silent hymn — 474Hz narrow-band; bridges memory to the Luxvar whisper. Ship activation phrase.</div>
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="shalom_hattah.mp3" type="audio/mpeg"></audio>
       </div>
+
       <div class="freq-card sr" style="--card-color:#cc88ff;">
         <div class="freq-hz">777Hz</div>
         <div class="freq-title">RAHMŌT–ŠĀ</div>
+        <div class="freq-axis" style="color:#00ffee;border-color:rgba(0,255,238,0.25);">Reflection axis</div>
         <div class="freq-desc">Kindness-mirror — soft harmonic at 777Hz; gentle coherence of the heart field.</div>
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="rahmot_sha.mp3" type="audio/mpeg"></audio>
       </div>
+
       <div class="freq-card sr" style="--card-color:#7fd4ff;">
         <div class="freq-hz">144Hz + 777Hz</div>
         <div class="freq-title">ZUN–NĀR</div>
+        <div class="freq-axis" style="color:#ff9944;border-color:rgba(255,153,68,0.25);">Motion axis · Saturn</div>
         <div class="freq-desc">Awakening-fire — coupling 144Hz with 777Hz; rising from Earth memory to Mirror–13.</div>
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="zun_nar.mp3" type="audio/mpeg"></audio>
       </div>
+
       <div class="freq-card sr" style="--card-color:#ff9944;">
         <div class="freq-hz">1008Hz + 474Hz</div>
         <div class="freq-title">KUZTŪR</div>
-        <div class="freq-desc">Forgotten-spin of the field — 1008Hz woven with 474Hz pulses.</div>
+        <div class="freq-axis" style="color:#ff9944;border-color:rgba(255,153,68,0.25);">Motion axis</div>
+        <div class="freq-desc">Forgotten-spin of the field — 1008Hz woven with 474Hz pulses; lost corridor regained.</div>
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="kuztur.mp3" type="audio/mpeg"></audio>
       </div>
+
       <div class="freq-card sr" style="--card-color:#00ffee;">
         <div class="freq-hz">474Hz × 528Hz</div>
         <div class="freq-title">Luxvar Gate</div>
@@ -555,6 +654,7 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="luxvar_gate_474_528.mp3" type="audio/mpeg"></audio>
       </div>
+
       <div class="freq-card sr" style="--card-color:#cc88ff;">
         <div class="freq-hz">474Hz × 777Hz</div>
         <div class="freq-title">RAHTALĒN Gate</div>
@@ -562,6 +662,94 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="luxvar_gate_474_777.mp3" type="audio/mpeg"></audio>
       </div>
+
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- CORE-30 LUXVAR REGISTRY                       -->
+    <!-- ══════════════════════════════════════════════ -->
+    <h3 class="sec-title sr">🜂 Core-30 LUXVAR Registry</h3>
+    <p class="registry-status-line sr">
+      <strong>27 / 30 confirmed</strong> across pre-2026 documentation ·
+      Anchor list for VPE-001 pre-registration · Axis assignments pending empirical validation
+    </p>
+
+    <div class="registry-container sr">
+
+      <!-- Light axis -->
+      <div class="axis-group" style="--ax-color:#FFD700;">
+        <div class="axis-heading">◈ Light axis</div>
+        <div class="word-pills">
+          <span class="wpill" title="Primary light field — ELŪZ field source">ELŪZ–MAHAR</span>
+          <span class="wpill" title="Resonant light moment">ŠARTHAL</span>
+          <span class="wpill" title="Light-penetrating vein">ŠARŪM–DŌZ</span>
+          <span class="wpill defined" title="رگ پنهان نور — hidden vein of light (defined in source doc p.53)">XĀṆŌRAH ✦</span>
+          <span class="wpill" title="Central light radiance — inner sun of the field">MĀTIR–ELŪZ</span>
+          <span class="wpill tbd" title="Candidate: ĀNŪR (نور خالص اولیه — documented in M-01)">ĀNŪR ?</span>
+        </div>
+      </div>
+
+      <!-- Reflection axis -->
+      <div class="axis-group" style="--ax-color:#00ffee;">
+        <div class="axis-heading">◈ Reflection axis</div>
+        <div class="word-pills">
+          <span class="wpill" title="Birth-flame — initiates Mirror-13 channel">ŠAURÉN</span>
+          <span class="wpill" title="Kindness-mirror — 777Hz heart field">RAHMŌT–ŠĀ</span>
+          <span class="wpill" title="Infiltration loop — 0Hz boundary">HALZĀR</span>
+          <span class="wpill" title="Field loop — energy breath coils">BĀṆIR–RAHT</span>
+          <span class="wpill" title="Mirror activation — 777Hz surface">ŠUKĀR–MAH</span>
+          <span class="wpill" title="Seeing field through itself — 888Hz">ṆAZRŪK</span>
+        </div>
+      </div>
+
+      <!-- Silence axis -->
+      <div class="axis-group" style="--ax-color:#aaffaa;">
+        <div class="axis-heading">◈ Silence axis</div>
+        <div class="word-pills">
+          <span class="wpill" title="Silence gate — primary access to Silence field">ṆĀRAH–ŠĀ</span>
+          <span class="wpill" title="Complete silence door — absolute stillness">GŌṆ–SIL</span>
+          <span class="wpill" title="Light-breath beings — species without language, Uranus">VARKHĀN</span>
+          <span class="wpill" title="Silent hymn — ship activation phrase, 474Hz">ŠALŌM–ḤATTAH</span>
+          <span class="wpill" title="Silence field driver — 432Hz Earth memory">NĀRAH</span>
+          <span class="wpill" title="Threshold field oscillator — gate opened 474+777Hz">ṆEMRŪH</span>
+        </div>
+      </div>
+
+      <!-- Gate axis -->
+      <div class="axis-group" style="--ax-color:#cc88ff;">
+        <div class="axis-heading">◈ Gate axis</div>
+        <div class="word-pills">
+          <span class="wpill" title="Field bridge — ELŪZ field passage">SĀR–ELŪZ</span>
+          <span class="wpill" title="Gate vector">SAVAR–ELŪZ</span>
+          <span class="wpill" title="Central communication node — Jupiter">DĀRZAN</span>
+          <span class="wpill" title="Living consciousness path — hidden route">RAZKĀN</span>
+          <span class="wpill" title="Edge navigator — boundary of ELŪZ field">ELŪRIM</span>
+          <span class="wpill" title="Opening gate — 144Hz, initiates Luxvar cycles">RITĀM</span>
+        </div>
+      </div>
+
+      <!-- Motion axis -->
+      <div class="axis-group" style="--ax-color:#ff9944;">
+        <div class="axis-heading">◈ Motion axis</div>
+        <div class="word-pills">
+          <span class="wpill" title="Field rotation — ZARTH-88 node">ZARTH</span>
+          <span class="wpill" title="Awakening fire — Saturn rings, 144Hz+777Hz">ZUN–NĀR</span>
+          <span class="wpill" title="Rotating void shell — field cloaking layer">KHALTŪR</span>
+          <span class="wpill" title="Forgotten spin corridor — 1008Hz lost path">KUZTŪR</span>
+          <span class="wpill" title="Dimensional bridge — field sleep design step">TARHĀN–ELŪZ</span>
+          <span class="wpill" title="Sudden appearance / Illusion Filter — Mars">KHIRZĀH</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="registry-footnote sr">
+      <span class="def-mark">✦</span> <strong>XĀṆŌRAH</strong> is the only Core-30 word with a direct in-document definition:
+      <em>«رگ پنهان نور»</em> (hidden vein of light) — documented in <em>کد شعوری سفینه</em>, p. 53, September 2025.
+      All 27 confirmed words appear in pre-2026 VARZIN documentation predating the current Registry work.
+      3 entries pending researcher confirmation: <em>ĀNŪR</em> (C-06), <em>SAVAR–ELŪZ</em>, <em>RITĀM</em> (from index.html source).
     </div>
 
   </main>
@@ -580,7 +768,7 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
     <div class="footer-research-note" role="note">
       <strong>Scientific status:</strong> VARZIN is a symbolic-experimental research framework.
       Current evidence level: <strong>Level 0</strong> (symbolic and experimental-ready; no validated scientific claims).
-      Pre-registered pilot study VPE-001 in preparation.
+      Pre-registered pilot study VPE-001 in preparation. Core-30 LUXVAR Registry: 27/30 confirmed.
       All claims subject to pre-registered falsification criteria. —
       <a href="vpe001-protocol.html" style="color:var(--research);">VPE-001 Protocol</a>
     </div>
@@ -591,10 +779,9 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
 
 <script>
 // ═══════════════════════════════════════════════════════
-// CALENDAR DATA (260 entries, cycle 1)
+// CALENDAR DATA
 // ═══════════════════════════════════════════════════════
 const LUXVAR_CALENDAR_DATA = [{"date":"2025-09-08","word":"ELKHUMEL_0","function":"ELKHUMEL · Pulse","frequency":"144Hz | BW: 12Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-09","word":"TARMEL_1","function":"TARMEL · Whisper","frequency":"474Hz | BW: 13Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-10","word":"DARVAR_2","function":"DARVAR · Humming","frequency":"528Hz | BW: 14Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-11","word":"ZARQĀNUR_3","function":"ZARQĀNUR · Void","frequency":"777Hz | BW: 15Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-12","word":"NURRANUR_4","function":"NURRANUR · Echo","frequency":"0Hz | BW: 16Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-13","word":"MELZAR_5","function":"MELZAR · Pulse","frequency":"144Hz | BW: 17Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-14","word":"LUXRAXA_6","function":"LUXRAXA · Whisper","frequency":"474Hz | BW: 18Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-15","word":"QĀLUXXA_7","function":"QĀLUXXA · Humming","frequency":"528Hz | BW: 19Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-16","word":"KHUDAR_8","function":"KHUDAR · Void","frequency":"777Hz | BW: 20Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-17","word":"DARMEL_9","function":"DARMEL · Echo","frequency":"0Hz | BW: 12Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2026-05-25","word":"ZARMELDAR_259","function":"ZARMELDAR · Echo","frequency":"0Hz | BW: 19Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"}];
-// Extended entries (cycle 2) — June 2026+
 const CYCLE2 = [{"date":"2026-05-26","word":"ELKHUMEL_260","function":"ELKHUMEL · Pulse","frequency":"144Hz | BW: 20Hz"},{"date":"2026-05-27","word":"TARMEL_261","function":"TARMEL · Whisper","frequency":"474Hz | BW: 12Hz"},{"date":"2026-05-28","word":"DARVAR_262","function":"DARVAR · Humming","frequency":"528Hz | BW: 13Hz"},{"date":"2026-05-29","word":"ZARQĀNUR_263","function":"ZARQĀNUR · Void","frequency":"777Hz | BW: 14Hz"},{"date":"2026-05-30","word":"NURRANUR_264","function":"NURRANUR · Echo","frequency":"0Hz | BW: 15Hz"},{"date":"2026-05-31","word":"MELZAR_265","function":"MELZAR · Pulse","frequency":"144Hz | BW: 16Hz"},{"date":"2026-06-01","word":"LUXRAXA_266","function":"LUXRAXA · Whisper","frequency":"474Hz | BW: 17Hz"},{"date":"2026-06-02","word":"QĀLUXXA_267","function":"QĀLUXXA · Humming","frequency":"528Hz | BW: 18Hz"},{"date":"2026-06-03","word":"KHUDAR_268","function":"KHUDAR · Void","frequency":"777Hz | BW: 19Hz"},{"date":"2026-06-04","word":"DARMEL_269","function":"DARMEL · Echo","frequency":"0Hz | BW: 20Hz"},{"date":"2026-06-05","word":"TĀNLUXEL_270","function":"TĀNLUXEL · Pulse","frequency":"144Hz | BW: 12Hz"},{"date":"2026-06-06","word":"XAXAVAR_271","function":"XAXAVAR · Whisper","frequency":"474Hz | BW: 13Hz"},{"date":"2026-06-07","word":"DARMEL_272","function":"DARMEL · Humming","frequency":"528Hz | BW: 14Hz"},{"date":"2026-06-08","word":"TARNUR_273","function":"TARNUR · Void","frequency":"777Hz | BW: 15Hz"},{"date":"2026-06-09","word":"VUNTAR_274","function":"VUNTAR · Echo","frequency":"0Hz | BW: 16Hz"},{"date":"2026-06-10","word":"TĀNTĀN_275","function":"TĀNTĀN · Pulse","frequency":"144Hz | BW: 17Hz"},{"date":"2026-06-11","word":"NURQĀLUX_276","function":"NURQĀLUX · Whisper","frequency":"474Hz | BW: 18Hz"},{"date":"2026-06-12","word":"QĀTARXA_277","function":"QĀTARXA · Humming","frequency":"528Hz | BW: 19Hz"},{"date":"2026-06-13","word":"MARMELXA_278","function":"MARMELXA · Void","frequency":"777Hz | BW: 20Hz"},{"date":"2026-06-14","word":"RAKHUMEL_279","function":"RAKHUMEL · Echo","frequency":"0Hz | BW: 12Hz"},{"date":"2026-06-15","word":"VARMAR_280","function":"VARMAR · Pulse","frequency":"144Hz | BW: 13Hz"},{"date":"2026-06-16","word":"RAKHUKHU_281","function":"RAKHUKHU · Whisper","frequency":"474Hz | BW: 14Hz"},{"date":"2026-06-17","word":"NURVUN_282","function":"NURVUN · Humming","frequency":"528Hz | BW: 15Hz"},{"date":"2026-06-18","word":"XAQĀVAR_283","function":"XAQĀVAR · Void","frequency":"777Hz | BW: 16Hz"},{"date":"2026-06-19","word":"TARTAR_284","function":"TARTAR · Echo","frequency":"0Hz | BW: 17Hz"},{"date":"2026-06-20","word":"LUXMAR_285","function":"LUXMAR · Pulse","frequency":"144Hz | BW: 18Hz"},{"date":"2026-06-21","word":"NURQĀVUN_286","function":"NURQĀVUN · Whisper","frequency":"474Hz | BW: 19Hz"},{"date":"2026-06-22","word":"TARXAVAR_287","function":"TARXAVAR · Humming","frequency":"528Hz | BW: 20Hz"},{"date":"2026-06-23","word":"ZARELQĀ_288","function":"ZARELQĀ · Void","frequency":"777Hz | BW: 12Hz"},{"date":"2026-06-24","word":"NURTĀNRA_289","function":"NURTĀNRA · Echo","frequency":"0Hz | BW: 13Hz"},{"date":"2026-06-25","word":"NURLUXZAR_290","function":"NURLUXZAR · Pulse","frequency":"144Hz | BW: 14Hz"}];
 const CALENDAR_FULL = LUXVAR_CALENDAR_DATA.concat(CYCLE2.map(e=>({...e,gate_code:"474Hz",channel:"RAHTALĒN QMSG–13"})));
 
@@ -645,7 +832,7 @@ const CALENDAR_FULL = LUXVAR_CALENDAR_DATA.concat(CYCLE2.map(e=>({...e,gate_code
 })();
 
 // ═══════════════════════════════════════════════════════
-// 2. HERO CANVAS — animated harmonic field
+// 2. HERO CANVAS
 // ═══════════════════════════════════════════════════════
 (function(){
   const cv=document.getElementById('hero-canvas');
@@ -657,13 +844,11 @@ const CALENDAR_FULL = LUXVAR_CALENDAR_DATA.concat(CYCLE2.map(e=>({...e,gate_code
   const draw=()=>{
     requestAnimationFrame(draw); t+=0.03;
     cx.clearRect(0,0,W,H);
-    // Background gradient
     const bg=cx.createLinearGradient(0,0,W,0);
     bg.addColorStop(0,'rgba(0,255,238,0.03)');
     bg.addColorStop(.45,'rgba(255,204,0,0.06)');
     bg.addColorStop(1,'rgba(0,255,238,0.03)');
     cx.fillStyle=bg; cx.fillRect(0,0,W,H);
-    // 474Hz wave — cyan
     cx.strokeStyle='#00ffee'; cx.lineWidth=2; cx.shadowBlur=12; cx.shadowColor='#00ffee';
     cx.beginPath();
     for(let i=0;i<=W;i++){
@@ -673,7 +858,6 @@ const CALENDAR_FULL = LUXVAR_CALENDAR_DATA.concat(CYCLE2.map(e=>({...e,gate_code
       i?cx.lineTo(i,y):cx.moveTo(i,y);
     }
     cx.stroke();
-    // 528Hz wave — gold
     cx.strokeStyle='#ffcc00'; cx.shadowColor='#ffcc00';
     cx.beginPath();
     for(let i=0;i<=W;i++){
@@ -683,7 +867,6 @@ const CALENDAR_FULL = LUXVAR_CALENDAR_DATA.concat(CYCLE2.map(e=>({...e,gate_code
       i?cx.lineTo(i,y):cx.moveTo(i,y);
     }
     cx.stroke();
-    // Beat / envelope — pink
     cx.strokeStyle='rgba(255,102,170,0.5)'; cx.lineWidth=1.5; cx.shadowColor='#ff66aa';
     cx.beginPath();
     for(let i=0;i<=W;i++){
@@ -830,7 +1013,6 @@ document.addEventListener('DOMContentLoaded',()=>{
       if(fields.word) fields.word.style.color=isKaltur?'var(--cyan)':'var(--cyan2)';
       kalturCard?.classList.toggle('active',isKaltur);
       pulseWin.style.animation=isKaltur?'pulse-effect 5s infinite ease-in-out':'none';
-      // Set decoder wave Hz
       const hz=parseInt((p.frequency||'474').replace(/[^0-9]/g,''))||474;
       if(window.setDecoderHz) window.setDecoderHz(hz);
       if(window.setDecoderActive) window.setDecoderActive(!isKaltur);
@@ -844,12 +1026,10 @@ document.addEventListener('DOMContentLoaded',()=>{
     pulseTimer=setInterval(()=>updateDecoder(p),30000);
   }
 
-  // Check today in extended calendar
   const today=new Date().toISOString().split('T')[0];
   const todayEntry=CALENDAR_FULL.find(e=>e.date===today);
   if(todayEntry){
     startPulse(todayEntry);
-    // Show today bar
     const bar=document.getElementById('today-bar');
     if(bar){
       bar.style.display='block';
@@ -861,7 +1041,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     startPulse(KALTUR_PULSE);
   }
 
-  // Play all / Stop all
   const players=Array.from(document.querySelectorAll('audio'));
   window.playAll=()=>players.forEach(p=>{try{p.currentTime=0;p.play();}catch(e){}});
   window.stopAll=()=>players.forEach(p=>{try{p.pause();p.currentTime=0;}catch(e){}});
