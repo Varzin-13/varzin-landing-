@@ -1289,12 +1289,12 @@ function drawTorus(frame){
     const r0 = torusr0 * pulseFactor;
 
     // Combined rotation: auto-spin + mouse drag
-    const φBase = torusAngle + torusDragY * 0.008;
-    const tiltX  = torusDragX * 0.008;
+    const φBase = torusAngle + torusDragX * 0.008; // FIX: X drag → horizontal spin
+    const tiltX  = torusDragY * 0.008;                    // FIX: Y drag → tilt
 
     // Generate all surface points
     const points = [];
-    const θStep = 0.18, φStep = 0.22;
+    const θStep = 0.12, φStep = 0.14; // FIX: denser (arc_θ=6px, arc_φ=16.8px)
     for (let θ = 0; θ < Math.PI*2; θ += θStep) {
         for (let φ = 0; φ < Math.PI*2; φ += φStep) {
             // 3D position
@@ -1321,12 +1321,12 @@ function drawTorus(frame){
 
             // Color: hue based on φ position, brightness on lighting
             const hueShift = ((φ + φBase) % (Math.PI*2)) / (Math.PI*2);
-            const r = Math.round(0   + 100 * hueShift * light);
-            const g = Math.round(200 + 55  * light);
-            const bC = Math.round(200 + 55  * (1 - hueShift) * light);
+            const r  = Math.round(80  * hueShift * light);          // FIX: 0 in dark
+            const g  = Math.round(255 * light);                        // FIX: dark=0
+            const bC = Math.round(238 * (0.7 + 0.3*(1-hueShift)) * light); // FIX: dark=0
             const alpha = 0.15 + 0.65 * light * (isResonanceMode ? pulseFactor : 1);
 
-            const dotSize = (1.5 + 1.5 * light) * scale;
+            const dotSize = Math.max(0.8, (1.2 + 1.8 * light) * scale); // FIX: min 0.8px
             points.push({px, py, z: z1, r, g, bC, alpha, dotSize});
         }
     }
