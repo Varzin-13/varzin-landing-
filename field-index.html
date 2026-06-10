@@ -2,10 +2,8 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <title>VARZIN – Field Index | Phase-Sync Interface (v5.8)</title>
-  <!-- FIX 1: description updated -->
-  <meta name="description" content="VARZIN Field Index – Interactive symbolic visualization interface. Real-time spectrogram, harmonic audio synthesis, LUXVAR symbolic network. Symbolic-experimental research framework." />
-  <!-- FIX 2: author — removed (RAHTALĒN–13), added ORCID -->
+  <title>VARZIN – Field Index | Phase-Sync Interface (v5.9)</title>
+  <meta name="description" content="VARZIN Field Index – Interactive symbolic visualization interface. Core-30 LUXVAR Registry (27/30 confirmed). Real-time spectrogram, harmonic audio synthesis, M-02 Semantic Field Function, VPE-003 chain. Symbolic-experimental research framework." />
   <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -90,15 +88,9 @@
 
     #kaltur-section { grid-column:1 / -1; }
     #kaltur-section .kaltur-visuals {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
+        display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
     }
-    #kaltur-section .kaltur-visuals .chart-container {
-        flex: 1 1 280px;
-        min-width: 280px;
-    }
+    #kaltur-section .kaltur-visuals .chart-container { flex: 1 1 280px; min-width: 280px; }
 
     #etfm-post { grid-column:1 / -1; text-align:center; border:2px solid var(--cyan);
       box-shadow:0 0 30px rgba(0,255,238,0.4); margin-top:30px; padding:30px; } 
@@ -107,17 +99,14 @@
     .formula-box {
       background:rgba(0,15,25,0.9); border:1px solid rgba(0,255,238,0.4);
       width:fit-content; margin:25px auto; padding:20px; border-radius:10px;
-      color:var(--gold); line-height:1.6; text-align:left; 
-      font-size: 1.1em;
+      color:var(--gold); line-height:1.6; text-align:left; font-size: 1.1em;
     }
     .etfm-charts { 
         display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;
-        margin-top: 30px; 
-        margin-bottom: 20px;
+        margin-top: 30px; margin-bottom: 20px;
     }
     .etfm-charts .chart-container { flex: 1 1 45%; min-width: 250px; }
 
-    /* FIX 3: Research status banner style */
     .research-status-bar {
       max-width: 900px; margin: 0 auto 30px; padding: 10px 20px;
       border-radius: 8px; background: rgba(0,30,40,0.8);
@@ -126,6 +115,11 @@
     }
     .research-status-bar a { color: #00ffff; text-decoration: none; }
     .research-status-bar a:hover { text-decoration: underline; }
+    .rbar-badge {
+      display:inline-block; padding:2px 9px; border-radius:10px; font-size:0.82em;
+      background:rgba(255,215,0,0.1); border:1px solid rgba(255,215,0,0.35);
+      color:#ffcc00; font-weight:700; letter-spacing:0.3px; margin-left:4px;
+    }
 
     footer { text-align:center; margin-top:80px; border-top:1px solid var(--border); padding-top:20px; color:var(--muted); }
     
@@ -156,7 +150,7 @@
         border-radius:4px; transition:width 0.5s ease-out;
     }
 
-    /* ── UPGRADE: Badge system ── */
+    /* ── Badge system ── */
     .card-badge {
       display: inline-flex; align-items: center; gap: 5px;
       padding: 3px 10px; border-radius: 20px; font-size: 0.72em;
@@ -168,8 +162,9 @@
     .badge-research { background:rgba(255,204,0,0.15); border:1px solid rgba(255,204,0,0.5); color:#ffcc00; }
     .badge-geo   { background:rgba(127,223,255,0.12); border:1px solid rgba(127,223,255,0.35); color:#7fdfff; }
     .badge-core  { background:rgba(200,170,255,0.12); border:1px solid rgba(200,170,255,0.3); color:#c8aaff; }
+    .badge-math  { background:rgba(255,140,60,0.12); border:1px solid rgba(255,140,60,0.35); color:#ff8c3c; }
 
-    /* ── UPGRADE: Semantic axis chips ── */
+    /* ── Semantic axis chips ── */
     .axis-chips { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 6px; }
     .axis-chip  {
       padding:4px 12px; border-radius:20px; font-size:0.79em; font-weight:600;
@@ -182,12 +177,12 @@
     .chip-gate       { background:rgba(0,200,160,0.12);   border:1px solid rgba(0,200,160,0.4);   color:#00c8a0; }
     .chip-motion     { background:rgba(255,140,60,0.15);  border:1px solid rgba(255,140,60,0.4);  color:#ff8c3c; }
 
-    /* ── UPGRADE: ETFM legend ── */
+    /* ── ETFM legend ── */
     .etfm-legend { display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-top:8px; font-size:0.8em; }
     .legend-item { display:flex; align-items:center; gap:6px; color:var(--muted); }
     .legend-dot  { width:11px; height:11px; border-radius:50%; flex-shrink:0; }
 
-    /* ── UPGRADE: VPE-001 inline link ── */
+    /* ── VPE link ── */
     .vpe-link-inline {
       display:inline-flex; align-items:center; gap:6px;
       color:var(--gold); text-decoration:none; font-weight:600;
@@ -197,14 +192,13 @@
     }
     .vpe-link-inline:hover { background:rgba(255,204,0,0.2); box-shadow:0 0 12px rgba(255,204,0,0.4); }
 
-    /* ── UPGRADE: Stat row in KALTŪR ── */
+    /* ── Stat row ── */
     .stat-row { display:flex; gap:10px; margin:10px 0 6px; flex-wrap:wrap; }
     .stat-item { flex:1; min-width:75px; background:rgba(0,20,30,0.7); border:1px solid rgba(0,255,238,0.2); border-radius:8px; padding:7px 9px; text-align:center; }
     .stat-val  { font-size:1.05em; font-weight:700; color:var(--cyan); display:block; }
     .stat-lbl  { font-size:0.7em; color:var(--muted); letter-spacing:0.3px; }
 
-
-    /* ── ETFM UPGRADE: live params panel ── */
+    /* ── ETFM live params panel ── */
     .etfm-live-params {
       display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
       margin: 16px 0; padding: 14px 16px;
@@ -220,7 +214,7 @@
     .eparam-val  { font-size: 0.95em; color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; }
     .eparam-desc { font-size: 0.65em; color: var(--muted); margin-top: 2px; }
 
-    /* ── ETFM UPGRADE: torus controls ── */
+    /* ── Torus controls ── */
     .torus-ctrl-row {
       display: flex; gap: 12px; align-items: center; justify-content: center;
       flex-wrap: wrap; margin-top: 12px;
@@ -230,6 +224,67 @@
       letter-spacing: 0.5px; margin-bottom: 4px;
     }
 
+    /* ══════════════════════════════════════════════════ */
+    /* CORE-30 REGISTRY CARD                             */
+    /* ══════════════════════════════════════════════════ */
+    #core30-card { grid-column: 1 / -1; }
+    .reg-axis-group {
+      padding: 12px 16px; border-radius: 10px;
+      background: rgba(0,12,18,0.85);
+      border-left: 3px solid var(--ax-clr, var(--cyan));
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-right: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      text-align: left;
+    }
+    .reg-axis-lbl {
+      font-size: 0.67em; font-weight: 700; letter-spacing: 2px;
+      color: var(--ax-clr, var(--cyan)); margin-bottom: 10px;
+      text-transform: uppercase; opacity: 0.9;
+    }
+    .reg-word-pills { display:flex; flex-wrap:wrap; gap:7px; }
+    .rwpill {
+      display:inline-block; padding:4px 10px; border-radius:20px; font-size:0.76em;
+      font-weight:600; letter-spacing:0.3px; cursor:default;
+      background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1);
+      color:var(--text); transition:all 0.2s;
+    }
+    .rwpill:hover { background:rgba(0,255,238,0.1); border-color:rgba(0,255,238,0.35); color:var(--cyan); transform:translateY(-1px); }
+    .rwpill.defined { border-color:rgba(255,215,0,0.45); background:rgba(255,215,0,0.07); color:#FFD700; }
+    .rwpill.defined:hover { background:rgba(255,215,0,0.15); box-shadow:0 0 8px rgba(255,215,0,0.25); }
+    .rwpill.tbd { border-style:dashed; border-color:rgba(255,255,255,0.12); color:var(--muted); opacity:0.5; font-style:italic; }
+    .reg-axes-grid { display:flex; flex-direction:column; gap:10px; margin:10px 0; }
+    .reg-footnote {
+      font-size:0.77em; color:var(--muted); padding:10px 14px; border-radius:8px;
+      background:rgba(0,20,30,0.5); border:1px solid rgba(255,215,0,0.15);
+      margin-top:10px; line-height:1.6; text-align:left;
+    }
+    .reg-footnote .def-mark { color:#FFD700; font-weight:700; }
+    .reg-status-row { display:flex; gap:12px; flex-wrap:wrap; margin:8px 0 14px; }
+    .reg-stat { flex:1; min-width:85px; text-align:center; padding:8px; background:rgba(0,20,30,0.8); border:1px solid rgba(0,255,238,0.18); border-radius:8px; }
+    .reg-stat-val { font-size:1.2em; font-weight:700; color:var(--cyan); display:block; }
+    .reg-stat-val.gold { color:#FFD700; }
+    .reg-stat-lbl { font-size:0.66em; color:var(--muted); }
+
+    /* ══════════════════════════════════════════════════ */
+    /* M-02 CARD                                          */
+    /* ══════════════════════════════════════════════════ */
+    .m02-formula {
+      background:rgba(0,15,25,0.9); border:1px solid rgba(255,140,60,0.3);
+      margin:14px 0; padding:16px; border-radius:10px;
+      color:var(--gold); line-height:1.7; font-size:0.98em; text-align:left;
+    }
+    .m02-formula .f-var { color:#00ffee; font-weight:700; }
+    .m02-var-table { width:100%; border-collapse:collapse; font-size:0.82em; margin-top:10px; }
+    .m02-var-table td { padding:4px 8px; border-bottom:1px solid rgba(0,255,238,0.07); }
+    .m02-var-table td:first-child { color:var(--cyan); font-weight:700; font-family:monospace; white-space:nowrap; }
+    .m02-var-table td:last-child { color:var(--muted); }
+    .tic-equiv-box {
+      padding:10px 14px; border-radius:8px; margin-top:10px;
+      background:rgba(255,140,60,0.07); border:1px solid rgba(255,140,60,0.25);
+      font-size:0.82em; color:var(--muted); line-height:1.6;
+    }
+    .tic-equiv-box strong { color:#ff8c3c; }
   </style>
 </head>
 <body>
@@ -237,9 +292,7 @@
     <div>
         <h4 style="color:var(--gold); margin-top:0;">🔗 VARZIN Device Connection Mockup</h4>
         <p id="connection-status" style="color:var(--muted); margin-bottom:20px;">Attempting connection to WebSerial/Bluetooth port...</p>
-        <div id="connection-progress">
-             <div id="progress-filler"></div>
-        </div>
+        <div id="connection-progress"><div id="progress-filler"></div></div>
         <div id="live-data-display"></div>
         <button class="control-btn gold-btn" id="close-modal-btn">Close</button>
     </div>
@@ -253,15 +306,16 @@
     <a href="/all-dois.html">All DOIs</a>
   </nav>
   <header>
-    <h1>⟠ VARZIN Field Index – Phase-Sync Interface (v5.8)</h1>
-    <p>Real-time Temporal Spectrogram (τ), Harmonic Blend AI, and LUXVAR Symbolic Network visualization.</p>
+    <h1>⟠ VARZIN Field Index – Phase-Sync Interface (v5.9)</h1>
+    <p>Real-time Temporal Spectrogram (τ), Harmonic Blend AI, LUXVAR Symbolic Network · Core-30 Registry · M-02 Semantic Field Function.</p>
   </header>
 
-  <!-- FIX 3: Research status banner -->
+  <!-- Research status banner -->
   <div class="research-status-bar" role="note">
     <strong style="color:#7fdfff;">Research Status:</strong>
-    This page is an interactive symbolic visualization tool.
-    VARZIN is a symbolic-experimental framework — scientific claims are at <strong>Level 0</strong>.
+    Symbolic-experimental framework — scientific claims at <strong>Level 0</strong>.
+    Core-30 LUXVAR Registry <span class="rbar-badge">27 / 30 confirmed</span>
+    · XĀṆŌRAH: <em>«رگ پنهان نور»</em> (only word with in-document definition).
     <a href="/vpe001-protocol.html">→ VPE-001 Protocol</a>
   </div>
   
@@ -270,7 +324,7 @@
           💠 LUXVAR Input Interface
       </h3>
       <div style="display:flex; justify-content:center; align-items:center;">
-          <input type="text" id="luxvar-code-input" placeholder="Enter LUXVAR Symbolic Code (e.g., KALTUR:SYNC)" 
+          <input type="text" id="luxvar-code-input" placeholder="Enter LUXVAR Symbolic Code (e.g., ŠAURÉN:SYNC)" 
                  style="flex-grow: 1; padding: 10px; border-radius: 8px 0 0 8px; border: 1px solid var(--cyan); background: rgba(0, 10, 15, 0.8); color: var(--text); outline: none;">
           <button class="control-btn gold-btn" id="send-luxvar-code" 
                   style="padding: 10px 15px; border-radius: 0 8px 8px 0; border-left: none;">
@@ -283,25 +337,16 @@
   </div>
 
   <div id="control-bar">
-    <button id="resonance-btn" class="control-btn">
-        <span class="symbol">✧</span> Resonance Mode
-    </button>
-    <button id="channel-switch-btn" class="control-btn">
-        <span class="symbol">🪶</span> Conscious Channel: LUXVAR (Active)
-    </button>
-    <button id="field-link-btn" class="control-btn gold-btn">
-        <span class="symbol">🔗</span> Field Phase Link (WebSerial Mock)
-    </button>
-    <button id="export-state-btn" class="control-btn gold-btn">
-        <span class="symbol">💾</span> Export Field State (JSON)
-    </button>
-    <button id="capture-kaltur" class="control-btn" data-target="kaltur-canvas">
-        <span class="symbol">📸</span> Capture KALTŪR (PNG)
-    </button>
+    <button id="resonance-btn" class="control-btn"><span class="symbol">✧</span> Resonance Mode</button>
+    <button id="channel-switch-btn" class="control-btn"><span class="symbol">🪶</span> Conscious Channel: LUXVAR (Active)</button>
+    <button id="field-link-btn" class="control-btn gold-btn"><span class="symbol">🔗</span> Field Phase Link (WebSerial Mock)</button>
+    <button id="export-state-btn" class="control-btn gold-btn"><span class="symbol">💾</span> Export Field State (JSON)</button>
+    <button id="capture-kaltur" class="control-btn" data-target="kaltur-canvas"><span class="symbol">📸</span> Capture KALTŪR (PNG)</button>
   </div>
 
   <main>
     
+    <!-- ── KALTŪR ── -->
     <div class="field-card" id="kaltur-section">
       <h3>✦ KALTŪR – Harmonic Node (Memory & Time)</h3>
       <div class="card-badge badge-vis">◎ Visualization Tool</div>
@@ -318,25 +363,21 @@
         revealing how the harmonic field shifts over time. The Spectrogram tracks energy in the
         400–600 Hz band on the time axis (τ).
       </div>
-      
       <div class="kaltur-visuals">
         <div class="chart-container">
           <canvas id="kaltur-canvas" width="280" height="280"></canvas>
           <p id="kaltur-status">KALTŪR Polar Spectrum: Reflection of 474 Hz ↔ 528 Hz dynamics.</p>
-          <button class="control-btn" onclick="playSingleHarmonic(474, 1.5)">
-              🔊 Activate 474 Hz Tune (Single Pulse)
-          </button>
+          <button class="control-btn" onclick="playSingleHarmonic(474, 1.5)">🔊 Activate 474 Hz Tune (Single Pulse)</button>
         </div>
         <div class="chart-container">
           <canvas id="spectrogram-canvas" width="280" height="280"></canvas>
           <p>🪩 Real-Time Spectrogram (τ): Field stability on the time axis.</p>
-          <button class="control-btn" data-target="spectrogram-canvas" onclick="captureSnapshot(event)">
-              📸 Capture Spectrogram (PNG)
-          </button>
+          <button class="control-btn" data-target="spectrogram-canvas" onclick="captureSnapshot(event)">📸 Capture Spectrogram (PNG)</button>
         </div>
       </div>
     </div>
     
+    <!-- ── RAHTALĒN ── -->
     <div class="field-card" id="rahtalen-card">
       <h3>↭ RAHTALĒN – Mirror 13</h3>
       <div class="card-badge badge-sym">◎ Symbolic Architecture</div>
@@ -348,39 +389,140 @@
         in phase with the harmonic loop. It represents the system's capacity for self-observation:
         the structure through which the framework models itself.
       </div>
-      
       <div class="chart-container">
         <canvas id="rahtalen-canvas" width="280" height="150"></canvas>
         <p>Mirror–13 (RAHTALĒN) symbolic configuration showing harmonic gates and reflection core.</p>
       </div>
     </div>
     
+    <!-- ── LUXVAR – updated ── -->
     <div class="field-card" id="luxvar-card">
       <h3>🜂 LUXVAR – Symbolic Linguistics</h3>
       <div class="card-badge badge-research">🔬 VPE-001 Research Target</div>
       <div class="key-attr"><strong>Type:</strong> <span>Constructed Symbolic Language</span></div>
-      <div class="key-attr"><strong>Lexicon:</strong> <span>100 words · 5 semantic axes</span></div>
+      <div class="key-attr"><strong>Anchor list:</strong> <span>Core-30 · 5 semantic axes</span></div>
+      <div class="key-attr"><strong>Registry:</strong> <span>27 / 30 confirmed (Sep 2025 docs)</span></div>
       <div class="description">
-        <strong>LUXVAR</strong> is the symbolic language of the VARZIN framework.
-        Each word carries a canonical semantic axis. The pre-registered pilot study <strong>VPE-001</strong>
-        tests whether independent evaluators can classify these words into the correct axes
-        above chance — without prior knowledge of the system.
+        <strong>LUXVAR</strong> is the symbolic language of the VARZIN framework. Each word carries a
+        canonical semantic axis. The pre-registered pilot study <strong>VPE-001</strong> tests whether
+        independent evaluators can classify Core-30 words into the correct axes above chance — without
+        prior knowledge of the system. Axis assignments are pending empirical validation.
+        <br><br>
+        <strong style="color:#FFD700;">XĀṆŌRAH</strong> — the only Core-30 word with a direct
+        in-document definition: <em>«رگ پنهان نور»</em> (hidden vein of light), documented September 2025.
       </div>
       <div class="axis-chips">
-        <span class="axis-chip chip-light" title="Illumination, emergence, radiance">☀ Light</span>
-        <span class="axis-chip chip-reflection" title="Recursion, mirroring, self-reference">◈ Reflection</span>
-        <span class="axis-chip chip-silence" title="Absence, stillness, latent state">○ Silence</span>
-        <span class="axis-chip chip-gate" title="Thresholds, transitions, passages">⬡ Gate</span>
-        <span class="axis-chip chip-motion" title="Movement, flow, dynamic change">↯ Motion</span>
+        <span class="axis-chip chip-light" title="Illumination, emergence, radiance — ELŪZ–MAHAR, XĀṆŌRAH, MĀTIR–ELŪZ, ŠARTHAL, ŠARŪM–DŌZ">☀ Light (6)</span>
+        <span class="axis-chip chip-reflection" title="Recursion, mirroring — ŠAURÉN, RAHMŌT–ŠĀ, HALZĀR, BĀṆIR–RAHT, ŠUKĀR–MAH, ṆAZRŪK">◈ Reflection (6)</span>
+        <span class="axis-chip chip-silence" title="Absence, stillness — ṆĀRAH–ŠĀ, GŌṆ–SIL, VARKHĀN, ŠALŌM–ḤATTAH, NĀRAH, ṆEMRŪH">○ Silence (6)</span>
+        <span class="axis-chip chip-gate" title="Thresholds, passages — SĀR–ELŪZ, SAVAR–ELŪZ, DĀRZAN, RAZKĀN, ELŪRIM, RITĀM">⬡ Gate (6)</span>
+        <span class="axis-chip chip-motion" title="Movement, flow — ZARTH, ZUN–NĀR, KHALTŪR, KUZTŪR, TARHĀN–ELŪZ, KHIRZĀH (Mars)">↯ Motion (6)</span>
       </div>
       <a href="/vpe001-protocol.html" class="vpe-link-inline">→ VPE-001 Pre-registered Protocol</a>
-      
       <div class="chart-container">
         <canvas id="luxvar-canvas" width="280" height="150"></canvas>
         <p>LUXVAR symbolic network — visualization of phonetic nodes and semantic axes.</p>
       </div>
     </div>
-    
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- CORE-30 REGISTRY CARD                                  -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <div class="field-card" id="core30-card">
+      <h3>🜂 Core-30 LUXVAR Registry</h3>
+      <div class="card-badge badge-research">🔬 VPE-001 Anchor List</div>
+
+      <div class="reg-status-row">
+        <div class="reg-stat"><span class="reg-stat-val">27</span><span class="reg-stat-lbl">Confirmed</span></div>
+        <div class="reg-stat"><span class="reg-stat-val" style="color:#c8aaff">3</span><span class="reg-stat-lbl">Pending</span></div>
+        <div class="reg-stat"><span class="reg-stat-val gold">5</span><span class="reg-stat-lbl">Axes</span></div>
+        <div class="reg-stat"><span class="reg-stat-val" style="color:#aaffaa">Sep 2025</span><span class="reg-stat-lbl">Doc date</span></div>
+      </div>
+
+      <div class="description" style="margin-top:0; margin-bottom:12px;">
+        Pre-registered anchor word list for VPE-001. All 27 confirmed words appear in VARZIN
+        documentation from before June 2026. Hover each word for its semantic role.
+        Axis assignments pending empirical validation.
+      </div>
+
+      <div class="reg-axes-grid">
+        <!-- Light -->
+        <div class="reg-axis-group" style="--ax-clr:#FFD700;">
+          <div class="reg-axis-lbl">◈ Light axis</div>
+          <div class="reg-word-pills">
+            <span class="rwpill" title="Primary light field — ELŪZ source concept">ELŪZ–MAHAR</span>
+            <span class="rwpill" title="Resonant light moment">ŠARTHAL</span>
+            <span class="rwpill" title="Light-penetrating vein">ŠARŪM–DŌZ</span>
+            <span class="rwpill defined" title="رگ پنهان نور — hidden vein of light · only Core-30 word with direct definition (p.53, Sep 2025)">XĀṆŌRAH ✦</span>
+            <span class="rwpill" title="Central light radiance — inner sun of the field">MĀTIR–ELŪZ</span>
+            <span class="rwpill tbd" title="Candidate: ĀNŪR (نور خالص اولیه) — documented in M-01 PDF">ĀNŪR ?</span>
+          </div>
+        </div>
+        <!-- Reflection -->
+        <div class="reg-axis-group" style="--ax-clr:#00ffee;">
+          <div class="reg-axis-lbl">◈ Reflection axis</div>
+          <div class="reg-word-pills">
+            <span class="rwpill" title="Birth-flame — initiates Mirror-13 channel, 528+474Hz">ŠAURÉN</span>
+            <span class="rwpill" title="Kindness-mirror — 777Hz heart field">RAHMŌT–ŠĀ</span>
+            <span class="rwpill" title="Infiltration loop — 0Hz boundary">HALZĀR</span>
+            <span class="rwpill" title="Field loop — energy breath coils">BĀṆIR–RAHT</span>
+            <span class="rwpill" title="Mirror activation at 777Hz surface">ŠUKĀR–MAH</span>
+            <span class="rwpill" title="Seeing field through itself — 888Hz">ṆAZRŪK</span>
+          </div>
+        </div>
+        <!-- Silence -->
+        <div class="reg-axis-group" style="--ax-clr:#aaffaa;">
+          <div class="reg-axis-lbl">○ Silence axis</div>
+          <div class="reg-word-pills">
+            <span class="rwpill" title="Primary silence gate">ṆĀRAH–ŠĀ</span>
+            <span class="rwpill" title="Complete silence door — absolute stillness">GŌṆ–SIL</span>
+            <span class="rwpill" title="Light-breath beings — without language, Uranus">VARKHĀN</span>
+            <span class="rwpill" title="Silent hymn — ship activation phrase, 474Hz narrow-band">ŠALŌM–ḤATTAH</span>
+            <span class="rwpill" title="Silence field driver — 432Hz Earth memory">NĀRAH</span>
+            <span class="rwpill" title="Threshold field oscillator — gate opened 474+777Hz (confirmed 4× Sep 2025)">ṆEMRŪH</span>
+          </div>
+        </div>
+        <!-- Gate -->
+        <div class="reg-axis-group" style="--ax-clr:#00c8a0;">
+          <div class="reg-axis-lbl">⬡ Gate axis</div>
+          <div class="reg-word-pills">
+            <span class="rwpill" title="Field bridge — ELŪZ field passage">SĀR–ELŪZ</span>
+            <span class="rwpill" title="Gate vector">SAVAR–ELŪZ</span>
+            <span class="rwpill" title="Central communication node — Jupiter (DĀRZAN–8)">DĀRZAN</span>
+            <span class="rwpill" title="Living consciousness path — hidden route">RAZKĀN</span>
+            <span class="rwpill" title="Edge navigator — boundary of ELŪZ field">ELŪRIM</span>
+            <span class="rwpill" title="Opening gate — 144Hz, initiates Luxvar cycles">RITĀM</span>
+          </div>
+        </div>
+        <!-- Motion -->
+        <div class="reg-axis-group" style="--ax-clr:#ff8c3c;">
+          <div class="reg-axis-lbl">↯ Motion axis</div>
+          <div class="reg-word-pills">
+            <span class="rwpill" title="Field rotation — ZARTH-88 node">ZARTH</span>
+            <span class="rwpill" title="Awakening fire — Saturn (ZUN–NĀR), 144+777Hz">ZUN–NĀR</span>
+            <span class="rwpill" title="Rotating void shell — field cloaking layer">KHALTŪR</span>
+            <span class="rwpill" title="Forgotten spin corridor — 1008Hz lost path">KUZTŪR</span>
+            <span class="rwpill" title="Dimensional bridge — temporal fold, Neptune (TARHĀN–9)">TARHĀN–ELŪZ</span>
+            <span class="rwpill" title="Sudden appearance / Illusion Filter — Mars (KHIRZĀH–2)">KHIRZĀH</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reg-footnote">
+        <span class="def-mark">✦</span> <strong>XĀṆŌRAH</strong> is the only Core-30 word with a direct in-document definition:
+        <em>«رگ پنهان نور»</em> (hidden vein of light) · <em>کد شعوری سفینه</em>, p. 53, Sep 2025.<br>
+        Planetary axis assignments from the same document (p. 72): ZUN–NĀR = Saturn · KHIRZĀH = Mars ·
+        VARKHĀN = Uranus · TARHĀN = Neptune · MĀTIR = Pluto.
+      </div>
+
+      <div class="chart-container" style="margin-top:16px;">
+        <canvas id="core30-canvas" width="580" height="200"
+          style="max-width:100%; border-radius:10px; border:1px solid rgba(0,255,238,0.2);"></canvas>
+        <p>Core-30 five-axis radial map — animated confirmation status (✦ = only defined word)</p>
+      </div>
+    </div>
+
+    <!-- ── ELŪZ–MAHAR ── -->
     <div class="field-card">
       <h3>⚇ ELŪZ–MAHAR – Central Symbolic Concept</h3>
       <div class="card-badge badge-core">◈ Core Concept</div>
@@ -390,18 +532,63 @@
         <strong>ELŪZ–MAHAR</strong> is the central organizing concept of the VARZIN symbolic framework —
         the field from which LUXVAR words are structured and given meaning.
         It is visualized geometrically as an expanding toroidal field with 6 harmonic rings.
+        In the M-02 equation, ELŪZ-MAHAR serves as the normalization context (parameter C).
         <em style="font-size:0.83em; opacity:0.7; display:block; margin-top:6px;">
           ⚠ Symbolic concept — not a validated physical field claim.
         </em>
       </div>
-      
       <div class="chart-container">
         <canvas id="eluz-mahar-canvas" width="280" height="150"></canvas>
-        <!-- visualization caption -->
-        <p>Symbolic toroidal field geometry (**ELŪZ–MAHAR**) – visualization model for the VARZIN framework.</p>
+        <p>Symbolic toroidal field geometry (ELŪZ–MAHAR) – visualization model for the VARZIN framework.</p>
       </div>
     </div>
 
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- M-02 SEMANTIC FIELD FUNCTION CARD                      -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <div class="field-card" id="m02-card">
+      <h3>⟁ M-02 – Semantic Field Function</h3>
+      <div class="card-badge badge-math">⬡ Mathematical Model</div>
+      <div class="key-attr"><strong>Origin:</strong> <span>M-01 (2025) → M-02 (2026)</span></div>
+      <div class="key-attr"><strong>Connects to:</strong> <span>VPE-001 · VPE-003 · TIC</span></div>
+
+      <div class="description">
+        The <strong>M-02 Semantic Field Function</strong> is a fully operationalizable reinterpretation
+        of the original M-01 model (2025). Every term maps directly to a measurable quantity in the
+        VPE-001 / VPE-003 experimental chain. The <strong>Translation Invariance Coefficient (TIC)</strong>
+        is the modal-domain analog of Doc9's temporal stability index <em>S</em>.
+      </div>
+
+      <!-- M-02 equation via MathJax -->
+      <div class="m02-formula">
+        $$S(w,\, m,\, \tau) = C \cdot e^{i(\omega\tau + kw)} \cdot \Sigma(m) \cdot F(w,m) \cdot \text{TIC}(\tau)$$
+        <table class="m02-var-table">
+          <tr><td>C</td><td>Normalization — baseline classification rate (measured from VPE-001 calibration)</td></tr>
+          <tr><td>Σ(m)</td><td>Mean pairwise semantic similarity at modality m = mean(upper(Mₘ))</td></tr>
+          <tr><td>F(w,m)</td><td>Evaluator agreement on word w at step m = count(correct) / N</td></tr>
+          <tr><td>TIC(τ)</td><td>Spearman(upper(M₀), upper(Mₜ)) — translation invariance across modalities</td></tr>
+        </table>
+      </div>
+
+      <div class="tic-equiv-box">
+        <strong>S ↔ TIC mathematical equivalence (pre-2026 precedent):</strong><br>
+        Doc9 stability (2025): &nbsp;$$S = 1 - \frac{\text{Var}(E(t))}{\langle E(t)\rangle}$$
+        <br>
+        Both S and TIC ask: <em>"does a pattern survive a transformation?"</em>
+        S measures this over time (temporal); TIC measures it across modalities (VPE-003 chain).
+        VARZIN had independent mathematical precedent for the TIC concept one year before it was named.
+      </div>
+
+      <div class="chart-container" style="margin-top:14px;">
+        <canvas id="m02-canvas" width="280" height="140"
+          style="border-radius:10px; border:1px solid rgba(255,140,60,0.25);"></canvas>
+        <p>VPE-003 chain · TIC decay profile · thresholds at 0.40 (primary) and 0.50 (strong)</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!-- ETFM-POST (unchanged structure, S formula added)       -->
+    <!-- ══════════════════════════════════════════════════════ -->
     <section id="etfm-post" class="field-card">
       <h3>⟠ ETFM–POST: Earth–Torus Field Model</h3>
       <div class="card-badge badge-geo">⬡ Geometric Visualization Model</div>
@@ -415,41 +602,23 @@
 
       <!-- Live formula parameter panel -->
       <div class="etfm-live-params" id="etfm-params">
-        <div class="eparam">
-          <div class="eparam-name" style="color:var(--cyan)">R</div>
-          <div class="eparam-val" id="ep-R">120</div>
-          <div class="eparam-desc">Major radius</div>
-        </div>
-        <div class="eparam">
-          <div class="eparam-name" style="color:var(--gold)">r₀</div>
-          <div class="eparam-val" id="ep-r0">50</div>
-          <div class="eparam-desc">Minor radius (τ)</div>
-        </div>
-        <div class="eparam">
-          <div class="eparam-name" style="color:#c8aaff">φ</div>
-          <div class="eparam-val" id="ep-phi">0.00</div>
-          <div class="eparam-desc">Rotation angle</div>
-        </div>
-        <div class="eparam">
-          <div class="eparam-name" style="color:#ff8c3c">Δf</div>
-          <div class="eparam-val" id="ep-df">54 Hz</div>
-          <div class="eparam-desc">474 → 528</div>
-        </div>
-        <div class="eparam">
-          <div class="eparam-name" style="color:#96b4dc">τ</div>
-          <div class="eparam-val" id="ep-tau">0.42</div>
-          <div class="eparam-desc">r₀/R · cos θ</div>
-        </div>
+        <div class="eparam"><div class="eparam-name" style="color:var(--cyan)">R</div><div class="eparam-val" id="ep-R">120</div><div class="eparam-desc">Major radius</div></div>
+        <div class="eparam"><div class="eparam-name" style="color:var(--gold)">r₀</div><div class="eparam-val" id="ep-r0">50</div><div class="eparam-desc">Minor radius (τ)</div></div>
+        <div class="eparam"><div class="eparam-name" style="color:#c8aaff">φ</div><div class="eparam-val" id="ep-phi">0.00</div><div class="eparam-desc">Rotation angle</div></div>
+        <div class="eparam"><div class="eparam-name" style="color:#ff8c3c">Δf</div><div class="eparam-val" id="ep-df">54 Hz</div><div class="eparam-desc">474 → 528</div></div>
+        <div class="eparam"><div class="eparam-name" style="color:#96b4dc">τ</div><div class="eparam-val" id="ep-tau">0.42</div><div class="eparam-desc">r₀/R · cos θ</div></div>
       </div>
 
-      <!-- MathJax formula box -->
+      <!-- MathJax formula box — ETFM + S/TIC lineage -->
       <div class="formula-box">
         $$r(\theta, \phi) = (R + r_0 \cdot \cos\theta)$$
         $$x = r(\theta,\phi)\cos\phi \quad y = r(\theta,\phi)\sin\phi \quad z = r_0\sin\theta$$
         $$\Delta\Phi = 474 \rightarrow 528\,\text{Hz} \qquad \tau = \frac{r_0}{R}\cos\theta$$
+        <hr style="border-color:rgba(0,255,238,0.15); margin:10px 0;">
+        <span style="font-size:0.8em; color:rgba(167,231,231,0.7);">Stability lineage (Doc9, 2025 → M-02, 2026):</span><br>
+        $$S = 1 - \frac{\mathrm{Var}(E(t))}{\langle E(t)\rangle} \quad\xrightarrow{\text{modal}}\quad \mathrm{TIC}(\tau) = \mathrm{Spearman}\!\bigl(\mathrm{upper}(M_0),\, \mathrm{upper}(M_\tau)\bigr)$$
       </div>
 
-      <!-- 2-panel charts: cross-section + frequency waves -->
       <div class="etfm-charts">
         <div class="chart-container">
           <canvas id="etfm-section-canvas" width="320" height="220"></canvas>
@@ -472,7 +641,6 @@
         </div>
       </div>
 
-      <!-- Main 3D torus -->
       <div style="position:relative; margin-top:20px; text-align:center;">
         <div class="etfm-hint" id="torus-hint">🖱 Drag to rotate &nbsp;·&nbsp; Scroll to zoom</div>
         <canvas id="torus-canvas" width="500" height="500"
@@ -480,8 +648,6 @@
                  cursor:grab; display:block; margin:10px auto;
                  box-shadow: 0 0 40px rgba(0,255,238,0.15);"></canvas>
       </div>
-
-      <!-- Torus controls -->
       <div class="torus-ctrl-row">
         <button class="control-btn" id="btn-reset-torus">↺ Reset View</button>
         <label style="color:var(--muted); font-size:0.85em;">
@@ -494,17 +660,16 @@
     </section>
   </main>
 
-  <!-- FIX 6: Footer with scientific status note -->
   <footer>
-    © 2025–2026 VARZIN Project · ETFM–POST Model v5.8 · contact@varzin.org<br>
+    © 2025–2026 VARZIN Project · Field Index v5.9 · contact@varzin.org<br>
     <span style="font-size:0.8em; color:rgba(167,231,231,0.6);">
-      Symbolic-experimental research framework · Scientific claims at Level 0 · VPE-001 pre-registration in preparation
+      Symbolic-experimental research framework · Core-30 Registry 27/30 · Level 0 · VPE-001 pre-registration in preparation
     </span>
   </footer>
 
 <script>
 // =========================================================
-// === Global VARZIN Constants and State ===
+// === GLOBAL CONSTANTS & STATE ===
 // =========================================================
 const VARZIN_CYAN = '#00FFEE';
 const VARZIN_GOLD = '#FFCC00';
@@ -513,100 +678,64 @@ let globalFrame = 0;
 let isResonanceMode = false;
 let luxvarNodes = [];
 const LUXVAR_NUM_NODES = 12;
-
-let currentChannel = 'LUXVAR'; 
+let currentChannel = 'LUXVAR';
 let luxvarEffectTimer = 0;
 let aiBlendFactor = 1.0;
 
-let audioContext;
-let analyser;
-let pannerNode; 
-let oscillator474;
-let oscillator528;
+let audioContext, analyser, pannerNode, oscillator474, oscillator528;
 let currentOscillator = 474;
 let crossFadeInterval = null;
-let frequencyData = null; 
-
+let frequencyData = null;
 const CROSS_FADE_DURATION = 8000;
-
 let kalturMemoryTrail = [];
-const MEMORY_TRAIL_LENGTH = 5; 
-const MEMORY_TRAIL_ALPHA_STEP = 0.1; 
-
+const MEMORY_TRAIL_LENGTH = 5;
+const MEMORY_TRAIL_ALPHA_STEP = 0.1;
 let spectrogramData = [];
 const SPECTROGRAM_MAX_DATA_POINTS = 280;
 const SPECTROGRAM_BAND_START_FREQ = 400;
 const SPECTROGRAM_BAND_END_FREQ = 600;
-
-let liveDataStream = {
-    luxvar_code: "INIT_FIELD_SYNC",
-    torus_angle: 0,
-    kaltur_energy: 0,
-    field_temp: 298.15,
-    phase_status: "STANDBY"
-};
+let liveDataStream = { luxvar_code:"INIT_FIELD_SYNC", torus_angle:0, kaltur_energy:0, field_temp:298.15, phase_status:"STANDBY" };
 let liveDataInterval = null;
 
-
 // =========================================================
-// === Harmonic Audio Control (Web Audio API) ===
+// === WEB AUDIO ===
 // =========================================================
-
 function initializeAudioContext() {
     if (!audioContext) {
         try {
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            if (audioContext.state === 'suspended') {
-                audioContext.resume();
-            }
-            
+            if (audioContext.state === 'suspended') audioContext.resume();
             analyser = audioContext.createAnalyser();
-            analyser.fftSize = 2048; 
+            analyser.fftSize = 2048;
             frequencyData = new Uint8Array(analyser.frequencyBinCount);
-
-            pannerNode = audioContext.createPanner(); 
-            pannerNode.panningModel = 'HRTF'; 
+            pannerNode = audioContext.createPanner();
+            pannerNode.panningModel = 'HRTF';
             pannerNode.distanceModel = 'inverse';
-            pannerNode.refDistance = 1;
-            pannerNode.maxDistance = 10000;
-            
+            pannerNode.refDistance = 1; pannerNode.maxDistance = 10000;
             const listener = audioContext.listener;
             listener.positionX.setValueAtTime(0, audioContext.currentTime);
             listener.positionY.setValueAtTime(0, audioContext.currentTime);
             listener.positionZ.setValueAtTime(0, audioContext.currentTime);
-
             analyser.connect(pannerNode);
             pannerNode.connect(audioContext.destination);
-
-        } catch (e) {
-            console.error('Web Audio API is not supported or failed to initialize.', e);
-            return false;
-        }
+        } catch (e) { console.error('Web Audio API init failed.', e); return false; }
     }
     return true;
 }
 
 function playSingleHarmonic(frequency, duration) {
-    if (isResonanceMode) return; 
+    if (isResonanceMode) return;
     if (!initializeAudioContext()) return;
-    
     stopContinuousResonance();
-
-    const singleOscillator = audioContext.createOscillator();
-    const singleGainNode = audioContext.createGain();
-
-    singleOscillator.type = 'sine';
-    singleOscillator.frequency.setValueAtTime(frequency, audioContext.currentTime); 
-    
-    singleOscillator.connect(singleGainNode);
-    singleGainNode.connect(analyser); 
-    
-    singleGainNode.gain.setValueAtTime(0, audioContext.currentTime);
-    singleGainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.05);
-    singleGainNode.gain.linearRampToValueAtTime(0.001, audioContext.currentTime + duration);
-
-    singleOscillator.start();
-    singleOscillator.stop(audioContext.currentTime + duration);
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(frequency, audioContext.currentTime);
+    osc.connect(gain); gain.connect(analyser);
+    gain.gain.setValueAtTime(0, audioContext.currentTime);
+    gain.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.05);
+    gain.gain.linearRampToValueAtTime(0.001, audioContext.currentTime + duration);
+    osc.start(); osc.stop(audioContext.currentTime + duration);
 }
 
 function calculateAIBlendFactor() {
@@ -616,792 +745,571 @@ function calculateAIBlendFactor() {
 function crossFadeHarmonics() {
     if (!audioContext) return;
     const now = audioContext.currentTime;
-    const dynamicFadeTime = 2.0 * aiBlendFactor; 
-    
-    let target474Gain = 0;
-    let target528Gain = 0;
-
-    if (currentOscillator === 474) {
-        currentOscillator = 528;
-        target474Gain = 0.001; 
-        target528Gain = 0.5 * (2 - aiBlendFactor); 
-    } else {
-        currentOscillator = 474;
-        target474Gain = 0.5 * aiBlendFactor;
-        target528Gain = 0.001;
-    }
-    
-    oscillator474.gain.exponentialRampToValueAtTime(target474Gain, now + dynamicFadeTime);
-    oscillator528.gain.exponentialRampToValueAtTime(target528Gain, now + dynamicFadeTime);
+    const dynamicFadeTime = 2.0 * aiBlendFactor;
+    let t474 = 0, t528 = 0;
+    if (currentOscillator === 474) { currentOscillator = 528; t474 = 0.001; t528 = 0.5 * (2 - aiBlendFactor); }
+    else { currentOscillator = 474; t474 = 0.5 * aiBlendFactor; t528 = 0.001; }
+    oscillator474.gain.exponentialRampToValueAtTime(t474, now + dynamicFadeTime);
+    oscillator528.gain.exponentialRampToValueAtTime(t528, now + dynamicFadeTime);
 }
 
 function startContinuousResonance() {
     if (!initializeAudioContext()) return;
-    if (crossFadeInterval) return; 
-
+    if (crossFadeInterval) return;
     document.getElementById('resonance-btn').classList.add('active');
     document.getElementById('resonance-btn').querySelector('.symbol').textContent = '⚡';
     document.getElementById('kaltur-status').textContent = 'KALTŪR Polar Spectrum: LIVE (Harmonic Blend AI Active)';
-
-    oscillator474 = audioContext.createOscillator();
-    oscillator528 = audioContext.createOscillator();
-    oscillator474.gain = audioContext.createGain();
-    oscillator528.gain = audioContext.createGain();
-
-    oscillator474.type = 'sine';
-    oscillator528.type = 'sine';
+    oscillator474 = audioContext.createOscillator(); oscillator528 = audioContext.createOscillator();
+    oscillator474.gain = audioContext.createGain(); oscillator528.gain = audioContext.createGain();
+    oscillator474.type = 'sine'; oscillator528.type = 'sine';
     oscillator474.frequency.setValueAtTime(474, audioContext.currentTime);
     oscillator528.frequency.setValueAtTime(528, audioContext.currentTime);
-
-    oscillator474.connect(oscillator474.gain);
-    oscillator528.connect(oscillator528.gain);
-
-    oscillator474.gain.connect(analyser);
-    oscillator528.gain.connect(analyser);
-
-    const now = audioContext.currentTime;
-    
-    oscillator474.gain.setValueAtTime(0.5, now);
-    oscillator528.gain.setValueAtTime(0.001, now);
+    oscillator474.connect(oscillator474.gain); oscillator528.connect(oscillator528.gain);
+    oscillator474.gain.connect(analyser); oscillator528.gain.connect(analyser);
+    oscillator474.gain.setValueAtTime(0.5, audioContext.currentTime);
+    oscillator528.gain.setValueAtTime(0.001, audioContext.currentTime);
     currentOscillator = 474;
-    
-    oscillator474.start();
-    oscillator528.start();
-    
+    oscillator474.start(); oscillator528.start();
     crossFadeInterval = setInterval(crossFadeHarmonics, CROSS_FADE_DURATION);
 }
 
 function stopContinuousResonance() {
-    if (crossFadeInterval) {
-        clearInterval(crossFadeInterval);
-        crossFadeInterval = null;
-    }
-    
-    if (oscillator474) {
-        try { oscillator474.stop(); oscillator474.disconnect(); } catch (e) { }
-        oscillator474 = null;
-    }
-    if (oscillator528) {
-        try { oscillator528.stop(); oscillator528.disconnect(); } catch (e) { }
-        oscillator528 = null;
-    }
-    
+    if (crossFadeInterval) { clearInterval(crossFadeInterval); crossFadeInterval = null; }
+    if (oscillator474) { try { oscillator474.stop(); oscillator474.disconnect(); } catch(e){} oscillator474 = null; }
+    if (oscillator528) { try { oscillator528.stop(); oscillator528.disconnect(); } catch(e){} oscillator528 = null; }
     document.getElementById('resonance-btn').classList.remove('active');
     document.getElementById('resonance-btn').querySelector('.symbol').textContent = '✧';
     document.getElementById('kaltur-status').textContent = 'KALTŪR Polar Spectrum: Reflection of 474 Hz ↔ 528 Hz dynamics.';
     kalturMemoryTrail = [];
 }
 
-
 // =========================================================
-// === Core Animation Functions ===
+// === DRAW FUNCTIONS (existing) ===
 // =========================================================
-
 function drawKalturPolarSpectrum(canvasId, frame) {
-    const canvas = document.getElementById(canvasId);
-    if (!canvas) return;
+    const canvas = document.getElementById(canvasId); if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const W = canvas.width;
-    const H = canvas.height;
-    const CX = W / 2;
-    const CY = H / 2;
-    const maxRadius = Math.min(CX, CY) * 0.9;
-    ctx.clearRect(0, 0, W, H);
-
+    const W=canvas.width, H=canvas.height, CX=W/2, CY=H/2, maxRadius=Math.min(CX,CY)*0.9;
+    ctx.clearRect(0,0,W,H);
     if (isResonanceMode && analyser && frequencyData) {
         analyser.getByteFrequencyData(frequencyData);
-        
-        const sliceCount = 64; 
-        const step = Math.floor(analyser.frequencyBinCount / (sliceCount * 4)); 
-        const angleStep = (Math.PI * 2) / sliceCount;
-        const currentWaveformRadii = [];
-        let totalValue = 0; 
-        
-        for (let i = 0; i < sliceCount; i++) {
-            const index = i * step;
-            const value = frequencyData[index % analyser.frequencyBinCount] || 0;
-            const normalizedValue = value / 255;
-            totalValue += normalizedValue;
-            const radius = maxRadius * (0.2 + 0.7 * normalizedValue); 
-            currentWaveformRadii.push(radius);
+        const sliceCount=64, step=Math.floor(analyser.frequencyBinCount/(sliceCount*4));
+        const angleStep=(Math.PI*2)/sliceCount;
+        const currentWaveformRadii=[];
+        let totalValue=0;
+        for(let i=0;i<sliceCount;i++){
+            const value=(frequencyData[i*step%analyser.frequencyBinCount]||0)/255;
+            totalValue+=value;
+            currentWaveformRadii.push(maxRadius*(0.2+0.7*value));
         }
-
         kalturMemoryTrail.unshift(currentWaveformRadii);
-        if (kalturMemoryTrail.length > MEMORY_TRAIL_LENGTH) {
-            kalturMemoryTrail.pop();
-        }
-
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = VARZIN_CYAN;
-        ctx.lineWidth = 1;
-
-        for (let t = kalturMemoryTrail.length - 1; t > 0; t--) {
-            const radii = kalturMemoryTrail[t];
-            const trailAlpha = MEMORY_TRAIL_ALPHA_STEP * (MEMORY_TRAIL_LENGTH - t);
-            
-            ctx.strokeStyle = `rgba(0, 255, 238, ${trailAlpha})`;
-            ctx.lineWidth = 0.5;
-            
-            ctx.beginPath();
-            let currentAngle = 0;
-            for (let i = 0; i < sliceCount; i++) {
-                const radius = radii[i];
-                const x = CX + radius * Math.cos(currentAngle - Math.PI / 2); 
-                const y = CY + radius * Math.sin(currentAngle - Math.PI / 2);
-                if (i === 0) { ctx.moveTo(x, y); } else { ctx.lineTo(x, y); }
-                currentAngle += angleStep;
+        if(kalturMemoryTrail.length>MEMORY_TRAIL_LENGTH) kalturMemoryTrail.pop();
+        ctx.shadowBlur=8; ctx.shadowColor=VARZIN_CYAN; ctx.lineWidth=1;
+        for(let t=kalturMemoryTrail.length-1;t>0;t--){
+            const radii=kalturMemoryTrail[t];
+            ctx.strokeStyle=`rgba(0,255,238,${MEMORY_TRAIL_ALPHA_STEP*(MEMORY_TRAIL_LENGTH-t)})`;
+            ctx.lineWidth=0.5; ctx.beginPath();
+            let ca=0;
+            for(let i=0;i<sliceCount;i++){
+                const x=CX+radii[i]*Math.cos(ca-Math.PI/2);
+                const y=CY+radii[i]*Math.sin(ca-Math.PI/2);
+                i?ctx.lineTo(x,y):ctx.moveTo(x,y); ca+=angleStep;
             }
-            ctx.closePath();
-            ctx.stroke(); 
+            ctx.closePath(); ctx.stroke();
         }
-
-        ctx.strokeStyle = VARZIN_CYAN;
-        ctx.fillStyle = `rgba(0, 255, 238, 0.2)`;
-        ctx.lineWidth = 1.5;
-        
-        ctx.beginPath();
-        let currentAngle = 0;
-        for (let i = 0; i < sliceCount; i++) {
-            const radius = currentWaveformRadii[i];
-            const x = CX + radius * Math.cos(currentAngle - Math.PI / 2); 
-            const y = CY + radius * Math.sin(currentAngle - Math.PI / 2);
-            if (i === 0) { ctx.moveTo(x, y); } else { ctx.lineTo(x, y); }
-            currentAngle += angleStep;
+        ctx.strokeStyle=VARZIN_CYAN; ctx.fillStyle='rgba(0,255,238,0.2)'; ctx.lineWidth=1.5;
+        ctx.beginPath(); let ca=0;
+        for(let i=0;i<sliceCount;i++){
+            const x=CX+currentWaveformRadii[i]*Math.cos(ca-Math.PI/2);
+            const y=CY+currentWaveformRadii[i]*Math.sin(ca-Math.PI/2);
+            i?ctx.lineTo(x,y):ctx.moveTo(x,y); ca+=angleStep;
         }
-        ctx.closePath();
-        ctx.stroke(); 
-        ctx.fill(); 
-        
-        const avgNormalizedValue = (totalValue / sliceCount) || 0;
-        const centerPulseSize = 5 + 5 * avgNormalizedValue; 
-        ctx.fillStyle = VARZIN_GOLD;
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = VARZIN_GOLD;
-        ctx.beginPath();
-        ctx.arc(CX, CY, centerPulseSize, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.shadowBlur = 0;
-
-        liveDataStream.kaltur_energy = avgNormalizedValue;
-        
+        ctx.closePath(); ctx.stroke(); ctx.fill();
+        const avg=(totalValue/sliceCount)||0;
+        ctx.fillStyle=VARZIN_GOLD; ctx.shadowBlur=10; ctx.shadowColor=VARZIN_GOLD;
+        ctx.beginPath(); ctx.arc(CX,CY,5+5*avg,0,Math.PI*2); ctx.fill(); ctx.shadowBlur=0;
+        liveDataStream.kaltur_energy=avg;
     } else {
-        const pulse = Math.sin(frame * 0.05);
-        const R_base = maxRadius * 0.6;
-        const R = R_base + R_base * 0.1 * pulse;
-
-        ctx.strokeStyle = VARZIN_CYAN;
-        ctx.lineWidth = 1.5 + 0.5 * Math.abs(pulse);
-        ctx.shadowBlur = 5;
-        ctx.shadowColor = VARZIN_CYAN;
-        
-        ctx.beginPath();
-        ctx.arc(CX, CY, R, 0, Math.PI * 2);
-        ctx.stroke();
-        ctx.shadowBlur = 0;
-        
-        ctx.fillStyle = `rgba(0, 255, 238, 0.1)`;
-        ctx.fill();
-        
-        ctx.fillStyle = VARZIN_GOLD;
-        ctx.beginPath();
-        ctx.arc(CX, CY, 5 * (1 + 0.2 * Math.abs(pulse)), 0, Math.PI * 2);
-        ctx.fill();
+        const pulse=Math.sin(frame*0.05), R=maxRadius*0.6*(1+0.1*pulse);
+        ctx.strokeStyle=VARZIN_CYAN; ctx.lineWidth=1.5+0.5*Math.abs(pulse);
+        ctx.shadowBlur=5; ctx.shadowColor=VARZIN_CYAN;
+        ctx.beginPath(); ctx.arc(CX,CY,R,0,Math.PI*2); ctx.stroke();
+        ctx.fillStyle='rgba(0,255,238,0.1)'; ctx.fill();
+        ctx.fillStyle=VARZIN_GOLD;
+        ctx.beginPath(); ctx.arc(CX,CY,5*(1+0.2*Math.abs(pulse)),0,Math.PI*2); ctx.fill();
+        ctx.shadowBlur=0;
     }
 }
 
 function drawSpectrogram(canvasId, frame) {
-    const canvas = document.getElementById(canvasId);
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const W = canvas.width;
-    const H = canvas.height;
-    ctx.clearRect(0, 0, W, H);
-
-    if (isResonanceMode && analyser && frequencyData) {
-        const sampleRate = audioContext.sampleRate;
-        const binWidth = sampleRate / analyser.fftSize;
-        const bandStart = Math.floor(SPECTROGRAM_BAND_START_FREQ / binWidth);
-        const bandEnd = Math.floor(SPECTROGRAM_BAND_END_FREQ / binWidth);
-        
-        let bandEnergy = 0;
-        let count = 0;
-        for (let i = bandStart; i < bandEnd; i++) {
-            bandEnergy += frequencyData[i] || 0;
-            count++;
-        }
-        
-        const normalizedEnergy = (bandEnergy / (count * 255)); 
-        spectrogramData.push(normalizedEnergy * H); 
-
-        if (spectrogramData.length > W) {
-            spectrogramData.shift(); 
-        }
-
-        ctx.strokeStyle = VARZIN_CYAN;
-        ctx.lineWidth = 2;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = VARZIN_CYAN;
-        
-        ctx.beginPath();
-        ctx.moveTo(0, H);
-        
-        for (let i = 0; i < spectrogramData.length; i++) {
-            const x = i;
-            const y = H - spectrogramData[i]; 
-            ctx.lineTo(x, y);
-        }
-        ctx.stroke();
-        ctx.shadowBlur = 0;
-
-        ctx.strokeStyle = 'rgba(0, 255, 238, 0.4)';
-        ctx.lineWidth = 0.5;
-        ctx.beginPath();
-        ctx.moveTo(0, H);
-        ctx.lineTo(W, H);
-        ctx.stroke();
-
-        ctx.fillStyle = VARZIN_CYAN;
-        ctx.font = '10px var(--font)';
-        ctx.textAlign = 'right';
-        ctx.fillText('τ →', W - 5, H - 5);
-        
+    const canvas=document.getElementById(canvasId); if(!canvas) return;
+    const ctx=canvas.getContext('2d'); const W=canvas.width, H=canvas.height;
+    ctx.clearRect(0,0,W,H);
+    if(isResonanceMode && analyser && frequencyData){
+        const sampleRate=audioContext.sampleRate, binWidth=sampleRate/analyser.fftSize;
+        const bandStart=Math.floor(SPECTROGRAM_BAND_START_FREQ/binWidth);
+        const bandEnd=Math.floor(SPECTROGRAM_BAND_END_FREQ/binWidth);
+        let bandEnergy=0, count=0;
+        for(let i=bandStart;i<bandEnd;i++){ bandEnergy+=frequencyData[i]||0; count++; }
+        spectrogramData.push((bandEnergy/(count*255))*H);
+        if(spectrogramData.length>W) spectrogramData.shift();
+        ctx.strokeStyle=VARZIN_CYAN; ctx.lineWidth=2; ctx.shadowBlur=8; ctx.shadowColor=VARZIN_CYAN;
+        ctx.beginPath(); ctx.moveTo(0,H);
+        for(let i=0;i<spectrogramData.length;i++) ctx.lineTo(i,H-spectrogramData[i]);
+        ctx.stroke(); ctx.shadowBlur=0;
+        ctx.strokeStyle='rgba(0,255,238,0.4)'; ctx.lineWidth=0.5;
+        ctx.beginPath(); ctx.moveTo(0,H); ctx.lineTo(W,H); ctx.stroke();
+        ctx.fillStyle=VARZIN_CYAN; ctx.font='10px var(--font)'; ctx.textAlign='right';
+        ctx.fillText('τ →',W-5,H-5);
     } else {
-        ctx.strokeStyle = 'rgba(0, 255, 238, 0.4)';
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(0, H - 5);
-        ctx.lineTo(W, H - 5);
-        ctx.stroke();
+        ctx.strokeStyle='rgba(0,255,238,0.4)'; ctx.lineWidth=1;
+        ctx.beginPath(); ctx.moveTo(0,H-5); ctx.lineTo(W,H-5); ctx.stroke();
     }
 }
 
 function drawRahtalenMirror(canvasId, frame) {
-    const canvas = document.getElementById(canvasId);
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const W = canvas.width;
-    const H = canvas.height;
-    const CX = W / 2;
-    const CY = H / 2;
-    const R = Math.min(CX, CY) * 0.8;
-    ctx.clearRect(0, 0, W, H);
-    
-    const isActive = currentChannel === 'RAHTALĒN';
-    ctx.globalAlpha = isActive ? 1.0 : 0.2; 
-
-    const pulse = isResonanceMode ? Math.sin(frame * 0.1) : Math.sin(frame * 0.03);
-    const coreSize = 5 + 3 * Math.abs(pulse);
-
-    ctx.fillStyle = VARZIN_GOLD;
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = VARZIN_GOLD;
-    ctx.beginPath();
-    ctx.arc(CX, CY, coreSize, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.shadowBlur = 0;
-
-    for (let i = 0; i < 12; i++) {
-        const angle = i * (Math.PI * 2 / 12) + frame * 0.005;
-        const x = CX + R * Math.cos(angle);
-        const y = CY + R * Math.sin(angle);
-        
-        const nodePulse = 1 + 0.5 * Math.sin(frame * 0.05 + i * 0.5) * (isResonanceMode ? 2 : 1);
-        
-        const lineAlpha = 0.3 + 0.5 * Math.abs(Math.sin(frame * 0.1 + i));
-        ctx.strokeStyle = `rgba(0, 255, 238, ${lineAlpha})`;
-        ctx.lineWidth = 0.5 + 0.5 * Math.abs(Math.sin(frame * 0.05));
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-        ctx.lineTo(CX, CY);
-        ctx.stroke();
-
-        ctx.fillStyle = VARZIN_CYAN;
-        ctx.shadowBlur = 5;
-        ctx.shadowColor = VARZIN_CYAN;
-        ctx.beginPath();
-        ctx.arc(x, y, 3 * nodePulse, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.shadowBlur = 0;
+    const canvas=document.getElementById(canvasId); if(!canvas) return;
+    const ctx=canvas.getContext('2d'), W=canvas.width, H=canvas.height;
+    const CX=W/2, CY=H/2, R=Math.min(CX,CY)*0.8;
+    ctx.clearRect(0,0,W,H);
+    const isActive=currentChannel==='RAHTALĒN';
+    ctx.globalAlpha=isActive?1.0:0.2;
+    const pulse=isResonanceMode?Math.sin(frame*0.1):Math.sin(frame*0.03);
+    ctx.fillStyle=VARZIN_GOLD; ctx.shadowBlur=10; ctx.shadowColor=VARZIN_GOLD;
+    ctx.beginPath(); ctx.arc(CX,CY,5+3*Math.abs(pulse),0,Math.PI*2); ctx.fill(); ctx.shadowBlur=0;
+    for(let i=0;i<12;i++){
+        const angle=i*(Math.PI*2/12)+frame*0.005;
+        const x=CX+R*Math.cos(angle), y=CY+R*Math.sin(angle);
+        const nodePulse=1+0.5*Math.sin(frame*0.05+i*0.5)*(isResonanceMode?2:1);
+        const la=0.3+0.5*Math.abs(Math.sin(frame*0.1+i));
+        ctx.strokeStyle=`rgba(0,255,238,${la})`; ctx.lineWidth=0.5+0.5*Math.abs(Math.sin(frame*0.05));
+        ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(CX,CY); ctx.stroke();
+        ctx.fillStyle=VARZIN_CYAN; ctx.shadowBlur=5; ctx.shadowColor=VARZIN_CYAN;
+        ctx.beginPath(); ctx.arc(x,y,3*nodePulse,0,Math.PI*2); ctx.fill(); ctx.shadowBlur=0;
     }
+    ctx.strokeStyle=VARZIN_CYAN; ctx.lineWidth=1+0.5*Math.abs(pulse);
+    ctx.beginPath(); ctx.arc(CX,CY,R*0.9,0,Math.PI*2); ctx.stroke();
+    ctx.globalAlpha=1.0;
+}
 
-    ctx.strokeStyle = VARZIN_CYAN;
-    ctx.lineWidth = 1 + 0.5 * Math.abs(pulse); 
-    ctx.beginPath();
-    ctx.arc(CX, CY, R * 0.9, 0, Math.PI * 2);
+function initLuxvarNodes(W,H){
+    luxvarNodes=[];
+    for(let i=0;i<LUXVAR_NUM_NODES;i++) luxvarNodes.push({
+        x:W*(0.1+Math.random()*0.8),y:H*(0.1+Math.random()*0.8),
+        dx:(Math.random()-0.5)*0.3,dy:(Math.random()-0.5)*0.3,
+        isPrimary:i<3,pulseOffset:Math.random()*Math.PI*2,W,H
+    });
+}
+
+function drawLuxvarNetwork(canvasId, frame){
+    const canvas=document.getElementById(canvasId); if(!canvas) return;
+    const ctx=canvas.getContext('2d'), W=canvas.width, H=canvas.height;
+    if(luxvarNodes.length===0||luxvarNodes[0].W!==W) initLuxvarNodes(W,H);
+    ctx.clearRect(0,0,W,H);
+    if(luxvarEffectTimer>0){ luxvarEffectTimer--; ctx.globalAlpha=1.0; ctx.shadowColor='red'; ctx.shadowBlur=20; }
+    else { ctx.shadowBlur=0; ctx.globalAlpha=currentChannel==='LUXVAR'?1.0:0.2; }
+    for(const n of luxvarNodes){ n.x+=n.dx; n.y+=n.dy; if(n.x<0||n.x>W)n.dx*=-1; if(n.y<0||n.y>H)n.dy*=-1; }
+    ctx.lineWidth=0.8;
+    for(let i=0;i<LUXVAR_NUM_NODES;i++) for(let j=i+1;j<LUXVAR_NUM_NODES;j++){
+        const d=Math.hypot(luxvarNodes[i].x-luxvarNodes[j].x,luxvarNodes[i].y-luxvarNodes[j].y);
+        if(d<80||(luxvarNodes[i].isPrimary&&Math.random()<0.1)){
+            const sf=isResonanceMode?Math.sin(frame*0.1):0;
+            ctx.strokeStyle=`rgba(255,204,0,${0.3+0.2*Math.sin(frame*0.05+i+j)+sf*0.3})`;
+            ctx.beginPath(); ctx.moveTo(luxvarNodes[i].x,luxvarNodes[i].y); ctx.lineTo(luxvarNodes[j].x,luxvarNodes[j].y); ctx.stroke();
+        }
+    }
+    for(const n of luxvarNodes){
+        let size=n.isPrimary?4:2, pf=1+0.3*Math.sin(frame*0.1+n.pulseOffset)*(isResonanceMode?2:1);
+        if(luxvarEffectTimer>0){ size=n.isPrimary?6:4; pf=2.0; ctx.fillStyle=n.isPrimary?'red':VARZIN_CYAN; }
+        else ctx.fillStyle=n.isPrimary?VARZIN_GOLD:VARZIN_CYAN;
+        ctx.shadowBlur=5; ctx.shadowColor=ctx.fillStyle;
+        ctx.beginPath(); ctx.arc(n.x,n.y,size*pf,0,Math.PI*2); ctx.fill(); ctx.shadowBlur=0;
+    }
+    ctx.globalAlpha=1.0;
+}
+
+function drawEluzMaharField(canvasId, frame){
+    const canvas=document.getElementById(canvasId); if(!canvas) return;
+    const ctx=canvas.getContext('2d'), W=canvas.width, H=canvas.height, CX=W/2, CY=H/2;
+    ctx.clearRect(0,0,W,H);
+    const cp=1+0.2*Math.sin(frame*0.05);
+    ctx.fillStyle='rgba(255,204,0,0.8)'; ctx.shadowBlur=15; ctx.shadowColor=VARZIN_GOLD;
+    ctx.beginPath(); ctx.arc(CX,CY,10*cp,0,Math.PI*2); ctx.fill(); ctx.shadowBlur=0;
+    for(let i=0;i<6;i++){
+        const R=20+i*20, alpha=0.1+i*0.1, rs=(isResonanceMode?0.05:0.01)*(i%2===0?1:-1);
+        const ca=frame*rs;
+        ctx.strokeStyle=`rgba(0,255,238,${alpha})`; ctx.lineWidth=1;
+        ctx.beginPath();
+        for(let j=0;j<Math.PI*2;j+=0.05){
+            const mf=1+0.05*Math.sin(j*4+frame*0.01+i);
+            const x=CX+R*Math.cos(j+ca)*mf, y=CY+R*Math.sin(j+ca)*mf;
+            j===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+        }
+        ctx.closePath(); ctx.stroke();
+    }
+}
+
+function drawETFMSection(canvasId, frame){
+    const canvas=document.getElementById(canvasId); if(!canvas) return;
+    const ctx=canvas.getContext('2d'), W=canvas.width, H=canvas.height;
+    const CX=W*0.45, CY=H/2;
+    ctx.clearRect(0,0,W,H);
+    const R=Math.min(W,H)*0.28;
+    const r0Base=R*0.38, pf=isResonanceMode?1+0.18*Math.abs(Math.sin(frame*0.1)):1+0.04*Math.sin(frame*0.04);
+    const r0=r0Base*pf, θ=(frame*0.025)%(Math.PI*2);
+    const grad=ctx.createRadialGradient(CX,CY,0,CX,CY,R+r0+8);
+    grad.addColorStop(0,'rgba(0,255,238,0.04)'); grad.addColorStop(0.6,'rgba(0,255,238,0.02)'); grad.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=grad; ctx.beginPath(); ctx.arc(CX,CY,R+r0+8,0,Math.PI*2); ctx.fill();
+    ctx.setLineDash([4,4]); ctx.strokeStyle='rgba(0,255,238,0.25)'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.arc(CX,CY,R,0,Math.PI*2); ctx.stroke(); ctx.setLineDash([]);
+    for(let i=0;i<24;i++){
+        const φ=(i/24)*Math.PI*2, cx2=CX+R*Math.cos(φ), cy2=CY+R*Math.sin(φ);
+        const alpha=0.08+0.12*((Math.cos(φ)+1)/2);
+        ctx.strokeStyle=`rgba(0,255,238,${alpha})`; ctx.lineWidth=0.7;
+        ctx.beginPath(); ctx.arc(cx2,cy2,r0,0,Math.PI*2); ctx.stroke();
+    }
+    const phi0=frame*0.02, cxH=CX+R*Math.cos(phi0), cyH=CY+R*Math.sin(phi0);
+    const sg=ctx.createRadialGradient(cxH,cyH,0,cxH,cyH,r0);
+    sg.addColorStop(0,'rgba(200,170,255,0.25)'); sg.addColorStop(0.6,'rgba(200,170,255,0.08)'); sg.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=sg; ctx.beginPath(); ctx.arc(cxH,cyH,r0,0,Math.PI*2); ctx.fill();
+    ctx.strokeStyle='rgba(200,170,255,0.7)'; ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.arc(cxH,cyH,r0,0,Math.PI*2); ctx.stroke();
+    const px=cxH+r0*Math.cos(θ-Math.PI/2), py=cyH+r0*Math.sin(θ-Math.PI/2);
+    ctx.fillStyle='#c8aaff'; ctx.shadowBlur=8; ctx.shadowColor='#c8aaff';
+    ctx.beginPath(); ctx.arc(px,py,4,0,Math.PI*2); ctx.fill(); ctx.shadowBlur=0;
+    ctx.strokeStyle=VARZIN_GOLD; ctx.lineWidth=2; ctx.shadowBlur=10*(pf-1)+5; ctx.shadowColor=VARZIN_GOLD;
+    ctx.beginPath(); ctx.arc(cxH,cyH,r0,0,Math.PI*2); ctx.stroke(); ctx.shadowBlur=0;
+    ctx.fillStyle='rgba(255,255,255,0.6)'; ctx.beginPath(); ctx.arc(CX,CY,3,0,Math.PI*2); ctx.fill();
+    ctx.font='bold 11px var(--font)'; ctx.textAlign='center';
+    ctx.fillStyle=VARZIN_CYAN; ctx.fillText('R',CX+R*0.5,CY-6);
+    ctx.fillStyle=VARZIN_GOLD; ctx.fillText('r₀',cxH+r0+12,cyH+4);
+    ctx.fillStyle='#c8aaff'; ctx.fillText('θ',px+8,py-5);
+    ctx.strokeStyle=VARZIN_CYAN; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(CX,CY); ctx.lineTo(cxH,cyH); ctx.stroke();
+    const ep=document.getElementById('ep-R'); if(ep) ep.textContent=Math.round(R);
+    const ep2=document.getElementById('ep-r0'); if(ep2) ep2.textContent=Math.round(r0);
+    const ep3=document.getElementById('ep-tau'); if(ep3) ep3.textContent=(r0/R*Math.cos(θ)).toFixed(3);
+    const ep4=document.getElementById('ep-phi'); if(ep4) ep4.textContent=(phi0%(Math.PI*2)).toFixed(2);
+}
+
+function drawETFMTransition(canvasId, frame){
+    const canvas=document.getElementById(canvasId); if(!canvas) return;
+    const ctx=canvas.getContext('2d'), W=canvas.width, H=canvas.height;
+    ctx.clearRect(0,0,W,H);
+    const PAD=20, PW=W-2*PAD, MID=H/2, AMP=H*0.22, t=frame*0.04;
+    const beatFreq=(528-474)/(474+528)*2;
+    ctx.strokeStyle='rgba(0,255,238,0.08)'; ctx.lineWidth=0.5;
+    for(let g=0;g<=4;g++){ const y=PAD+(H-2*PAD)*g/4; ctx.beginPath(); ctx.moveTo(PAD,y); ctx.lineTo(W-PAD,y); ctx.stroke(); }
+    ctx.strokeStyle='rgba(255,102,153,0.3)'; ctx.lineWidth=2.5; ctx.beginPath();
+    for(let i=0;i<=PW;i++){
+        const n=i/PW, y474=MID-AMP*Math.sin(2*Math.PI*(n*18+t)), y528=MID-AMP*Math.sin(2*Math.PI*(n*20+t));
+        const yBeat=MID-(y474+y528-2*MID)*0.5;
+        i?ctx.lineTo(PAD+i,yBeat):ctx.moveTo(PAD+i,yBeat);
+    }
     ctx.stroke();
-
-    ctx.globalAlpha = 1.0;
+    ctx.save(); ctx.shadowBlur=isResonanceMode?12:6; ctx.shadowColor=VARZIN_CYAN;
+    ctx.strokeStyle=VARZIN_CYAN; ctx.lineWidth=isResonanceMode?2.5:1.8; ctx.beginPath();
+    for(let i=0;i<=PW;i++){ const n=i/PW, y=MID-AMP*Math.sin(2*Math.PI*(n*18+t)); i?ctx.lineTo(PAD+i,y):ctx.moveTo(PAD+i,y); }
+    ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.shadowBlur=isResonanceMode?12:6; ctx.shadowColor=VARZIN_GOLD;
+    ctx.strokeStyle=VARZIN_GOLD; ctx.lineWidth=isResonanceMode?2.5:1.8; ctx.beginPath();
+    for(let i=0;i<=PW;i++){ const n=i/PW, y=MID-AMP*Math.sin(2*Math.PI*(n*20+t*1.12)); i?ctx.lineTo(PAD+i,y):ctx.moveTo(PAD+i,y); }
+    ctx.stroke(); ctx.restore();
+    ctx.strokeStyle='rgba(0,255,238,0.3)'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(PAD,MID); ctx.lineTo(W-PAD,MID); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(PAD,PAD); ctx.lineTo(PAD,H-PAD); ctx.stroke();
+    ctx.font='bold 10px var(--font)'; ctx.textAlign='left';
+    ctx.fillStyle=VARZIN_CYAN; ctx.fillText('474 Hz',PAD+4,PAD+14);
+    ctx.fillStyle=VARZIN_GOLD; ctx.fillText('528 Hz',PAD+4,PAD+26);
+    ctx.fillStyle='rgba(255,102,153,0.85)'; ctx.fillText('beat',PAD+4,PAD+38);
+    ctx.fillStyle='rgba(0,255,238,0.5)'; ctx.textAlign='right'; ctx.fillText('τ →',W-PAD-3,H-PAD+12);
+    const dotX=PAD+(t*12%PW), dotY=MID-AMP*Math.sin(2*Math.PI*(((dotX-PAD)/PW)*18+t));
+    ctx.fillStyle=VARZIN_CYAN; ctx.shadowBlur=10; ctx.shadowColor=VARZIN_CYAN;
+    ctx.beginPath(); ctx.arc(dotX,dotY,4,0,Math.PI*2); ctx.fill(); ctx.shadowBlur=0;
 }
 
-function initLuxvarNodes(W, H) {
-    luxvarNodes = [];
-    for (let i = 0; i < LUXVAR_NUM_NODES; i++) {
-        luxvarNodes.push({
-            x: W * (0.1 + Math.random() * 0.8),
-            y: H * (0.1 + Math.random() * 0.8),
-            dx: (Math.random() - 0.5) * 0.3,
-            dy: (Math.random() - 0.5) * 0.3,
-            isPrimary: i < 3,
-            pulseOffset: Math.random() * Math.PI * 2,
-            W: W, H: H 
-        });
-    }
-}
-
-function drawLuxvarNetwork(canvasId, frame) {
-    const canvas = document.getElementById(canvasId);
-    if (!canvas) return;
+// =========================================================
+// === NEW: CORE-30 RADIAL VISUALIZATION ===
+// =========================================================
+function drawCore30Radial(canvasId, frame) {
+    const canvas = document.getElementById(canvasId); if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const W = canvas.width;
-    const H = canvas.height;
+    const W = canvas.width, H = canvas.height;
+    ctx.clearRect(0,0,W,H);
 
-    if (luxvarNodes.length === 0 || luxvarNodes[0].W !== W || luxvarNodes[0].H !== H) {
-        initLuxvarNodes(W, H);
-    }
+    // 5 axes with their colors and sample words
+    const axes = [
+        { name:'LIGHT',      color:'#FFD700', words:['ELŪZ–MAHAR','ŠARTHAL','ŠARŪM–DŌZ','XĀṆŌRAH','MĀTIR–ELŪZ','ĀNŪR?'], special:3 },
+        { name:'REFLECTION', color:'#00ffee', words:['ŠAURÉN','RAHMŌT–ŠĀ','HALZĀR','BĀṆIR–RAHT','ŠUKĀR–MAH','ṆAZRŪK'], special:-1 },
+        { name:'SILENCE',    color:'#aaffaa', words:['ṆĀRAH–ŠĀ','GŌṆ–SIL','VARKHĀN','ŠALŌM–ḤATTAH','NĀRAH','ṆEMRŪH'], special:-1 },
+        { name:'GATE',       color:'#00c8a0', words:['SĀR–ELŪZ','SAVAR–ELŪZ','DĀRZAN','RAZKĀN','ELŪRIM','RITĀM'], special:-1 },
+        { name:'MOTION',     color:'#ff8c3c', words:['ZARTH','ZUN–NĀR','KHALTŪR','KUZTŪR','TARHĀN–ELŪZ','KHIRZĀH'], special:-1 },
+    ];
 
-    ctx.clearRect(0, 0, W, H);
-    
-    if (luxvarEffectTimer > 0) {
-        luxvarEffectTimer--;
-        ctx.globalAlpha = 1.0; 
-        ctx.shadowColor = 'red'; 
-        ctx.shadowBlur = 20;
-    } else {
-        ctx.shadowBlur = 0;
-        const isActive = currentChannel === 'LUXVAR';
-        ctx.globalAlpha = isActive ? 1.0 : 0.2; 
-    }
+    const CX = W * 0.5, CY = H * 0.5;
+    const maxR = Math.min(W, H) * 0.44;
+    const spokeDist = maxR * 0.55;
+    const wordR = maxR * 0.8;
 
-    for (const node of luxvarNodes) {
-        node.x += node.dx;
-        node.y += node.dy;
-        if (node.x < 0 || node.x > W) node.dx *= -1;
-        if (node.y < 0 || node.y > H) node.dy *= -1;
-    }
+    // Draw center
+    const pulse = 0.7 + 0.3 * Math.sin(frame * 0.04);
+    ctx.fillStyle = 'rgba(0,255,238,0.15)';
+    ctx.beginPath(); ctx.arc(CX, CY, 18 * pulse, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.font = `bold 9px var(--font)`; ctx.textAlign = 'center';
+    ctx.fillText('CORE', CX, CY - 2); ctx.fillText('30', CX, CY + 8);
 
-    ctx.lineWidth = 0.8;
-    for (let i = 0; i < LUXVAR_NUM_NODES; i++) {
-        for (let j = i + 1; j < LUXVAR_NUM_NODES; j++) {
-            const node1 = luxvarNodes[i];
-            const node2 = luxvarNodes[j];
-            const dist = Math.sqrt(Math.pow(node1.x - node2.x, 2) + Math.pow(node1.y - node2.y, 2));
-            
-            if (dist < 80 || (node1.isPrimary && Math.random() < 0.1)) {
-                const syncFactor = isResonanceMode ? Math.sin(frame * 0.1) : 0;
-                let alpha = 0.3 + 0.2 * Math.sin(frame * 0.05 + i + j) + syncFactor * 0.3; 
-                ctx.strokeStyle = `rgba(255, 204, 0, ${alpha})`; 
-                ctx.beginPath();
-                ctx.moveTo(node1.x, node1.y);
-                ctx.lineTo(node2.x, node2.y);
-                ctx.stroke();
-            }
-        }
-    }
+    // Draw each axis
+    const totalAxes = axes.length;
+    axes.forEach((axis, ai) => {
+        const baseAngle = (ai / totalAxes) * Math.PI*2 - Math.PI*0.5;
+        const spokeAngle = baseAngle + frame * 0.003 * (ai % 2 === 0 ? 1 : -1) * 0.2;
 
-    for (const node of luxvarNodes) {
-        let size = node.isPrimary ? 4 : 2;
-        let pulseFactor = 1 + 0.3 * Math.sin(frame * 0.1 + node.pulseOffset) * (isResonanceMode ? 2 : 1);
-        
-        if (luxvarEffectTimer > 0) {
-            size = node.isPrimary ? 6 : 4;
-            pulseFactor = 2.0;
-            ctx.fillStyle = node.isPrimary ? 'red' : VARZIN_CYAN;
-        } else {
-            ctx.fillStyle = node.isPrimary ? VARZIN_GOLD : VARZIN_CYAN;
-        }
-
-        ctx.shadowBlur = 5;
-        ctx.shadowColor = ctx.fillStyle;
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, size * pulseFactor, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.shadowBlur = 0;
-    }
-
-    ctx.globalAlpha = 1.0;
-}
-
-function drawEluzMaharField(canvasId, frame) {
-    const canvas = document.getElementById(canvasId);
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const W = canvas.width;
-    const H = canvas.height;
-    const CX = W / 2;
-    const CY = H / 2;
-    ctx.clearRect(0, 0, W, H);
-
-    const corePulse = 1 + 0.2 * Math.sin(frame * 0.05);
-    ctx.fillStyle = 'rgba(255, 204, 0, 0.8)';
-    ctx.shadowBlur = 15;
-    ctx.shadowColor = VARZIN_GOLD;
-    ctx.beginPath();
-    ctx.arc(CX, CY, 10 * corePulse, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.shadowBlur = 0;
-
-    for (let i = 0; i < 6; i++) {
-        const R = 20 + i * 20;
-        const alpha = 0.1 + i * 0.1;
-        const rotationSpeed = (isResonanceMode ? 0.05 : 0.01) * (i % 2 === 0 ? 1 : -1);
-        const currentAngle = frame * rotationSpeed;
-
-        ctx.strokeStyle = `rgba(0, 255, 238, ${alpha})`;
+        // Spoke line
+        const sx = CX + spokeDist * Math.cos(spokeAngle);
+        const sy = CY + spokeDist * Math.sin(spokeAngle);
+        ctx.strokeStyle = axis.color + '40';
         ctx.lineWidth = 1;
-        ctx.beginPath();
+        ctx.beginPath(); ctx.moveTo(CX, CY); ctx.lineTo(sx, sy); ctx.stroke();
 
-        for (let j = 0; j < Math.PI * 2; j += 0.05) {
-            const morphFactor = 1 + 0.05 * Math.sin(j * 4 + frame * 0.01 + i);
-            const x = CX + R * Math.cos(j + currentAngle) * morphFactor;
-            const y = CY + R * Math.sin(j + currentAngle) * morphFactor;
-            if (j === 0) { ctx.moveTo(x, y); } else { ctx.lineTo(x, y); }
-        }
-        ctx.closePath();
-        ctx.stroke();
-    }
+        // Axis label
+        const lx = CX + (spokeDist + 18) * Math.cos(spokeAngle);
+        const ly = CY + (spokeDist + 18) * Math.sin(spokeAngle);
+        ctx.fillStyle = axis.color; ctx.font = `bold 8px var(--font)`;
+        ctx.textAlign = 'center';
+        ctx.shadowBlur = 5; ctx.shadowColor = axis.color;
+        ctx.fillText(axis.name, lx, ly + 3);
+        ctx.shadowBlur = 0;
+
+        // Word nodes around each spoke
+        axis.words.forEach((word, wi) => {
+            const wordAngle = spokeAngle + (wi - 2.5) * 0.18;
+            const wr = wordR * (0.55 + wi * 0.075);
+            const wx = CX + wr * Math.cos(wordAngle);
+            const wy = CY + wr * Math.sin(wordAngle);
+            const isSpecial = wi === axis.special;
+            const isTBD = word.includes('?');
+            const nodePulse = isSpecial ? (0.8 + 0.4 * Math.sin(frame * 0.06)) : 0.9;
+            const nodeR = isSpecial ? 4.5 * nodePulse : (isTBD ? 2.5 : 3);
+
+            ctx.fillStyle = isSpecial ? '#FFD700' : (isTBD ? 'rgba(167,231,231,0.3)' : axis.color + 'cc');
+            if (isSpecial) { ctx.shadowBlur = 8; ctx.shadowColor = '#FFD700'; }
+            ctx.beginPath(); ctx.arc(wx, wy, nodeR, 0, Math.PI*2); ctx.fill();
+            if (isSpecial) ctx.shadowBlur = 0;
+
+            // Connection line from spoke to word node
+            ctx.strokeStyle = axis.color + '30'; ctx.lineWidth = 0.4;
+            ctx.beginPath(); ctx.moveTo(sx, sy); ctx.lineTo(wx, wy); ctx.stroke();
+        });
+    });
+
+    // Legend: ✦ = defined
+    ctx.fillStyle = '#FFD700'; ctx.font = '8px var(--font)'; ctx.textAlign = 'left';
+    ctx.fillText('✦ XĀṆŌRAH — only defined word', 6, H - 6);
 }
 
-function drawETFMSection(canvasId, frame) {
-    const canvas = document.getElementById(canvasId);
-    if (!canvas) return;
+// =========================================================
+// === NEW: VPE-003 CHAIN / M-02 VISUALIZATION ===
+// =========================================================
+function drawM02Chain(canvasId, frame) {
+    const canvas = document.getElementById(canvasId); if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const W = canvas.width, H = canvas.height;
-    const CX = W * 0.45, CY = H / 2;
-    ctx.clearRect(0, 0, W, H);
+    ctx.clearRect(0,0,W,H);
 
-    const R  = Math.min(W, H) * 0.28;
-    const r0Base = R * 0.38;
-    const pf = isResonanceMode ? 1 + 0.18 * Math.abs(Math.sin(frame * 0.1)) : 1 + 0.04 * Math.sin(frame * 0.04);
-    const r0 = r0Base * pf;
-    const θ  = (frame * 0.025) % (Math.PI * 2);
+    // VPE-003 chain: 5 steps with simulated TIC values
+    const steps = [
+        { label:'Word', sub:'M₀', tic:1.000, color:'#00ffee' },
+        { label:'Shape', sub:'M₁', tic:0.718, color:'#7fdfff' },
+        { label:'Music', sub:'M₂', tic:0.583, color:'#ffcc00' },
+        { label:'Move', sub:'M₃', tic:0.522, color:'#ff9944' },
+        { label:'Word', sub:'M₄', tic:0.458, color:'#00ffee' },
+    ];
 
-    // ── Field glow behind torus ──
-    const grad = ctx.createRadialGradient(CX, CY, 0, CX, CY, R + r0 + 8);
-    grad.addColorStop(0,   'rgba(0,255,238,0.04)');
-    grad.addColorStop(0.6, 'rgba(0,255,238,0.02)');
-    grad.addColorStop(1,   'rgba(0,0,0,0)');
-    ctx.fillStyle = grad; ctx.beginPath(); ctx.arc(CX, CY, R + r0 + 8, 0, Math.PI * 2); ctx.fill();
-
-    // ── Outer R circle (dashed) ──
-    ctx.setLineDash([4, 4]);
-    ctx.strokeStyle = 'rgba(0,255,238,0.25)'; ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.arc(CX, CY, R, 0, Math.PI * 2); ctx.stroke();
-    ctx.setLineDash([]);
-
-    // ── Torus cross-section rings (r₀ at each φ) ──
-    const φSteps = 24;
-    for (let i = 0; i < φSteps; i++) {
-        const φ = (i / φSteps) * Math.PI * 2;
-        const cx2 = CX + R * Math.cos(φ);
-        const cy2 = CY + R * Math.sin(φ);
-        const alpha = 0.08 + 0.12 * ((Math.cos(φ) + 1) / 2);
-        ctx.strokeStyle = `rgba(0,255,238,${alpha})`;
-        ctx.lineWidth = 0.7;
-        ctx.beginPath(); ctx.arc(cx2, cy2, r0, 0, Math.PI * 2); ctx.stroke();
-    }
-
-    // ── θ sweep arc on highlighted cross-section ──
-    const phi0 = frame * 0.02;
-    const cxH = CX + R * Math.cos(phi0);
-    const cyH = CY + R * Math.sin(phi0);
-    const sweepGrad = ctx.createRadialGradient(cxH, cyH, 0, cxH, cyH, r0);
-    sweepGrad.addColorStop(0,   'rgba(200,170,255,0.25)');
-    sweepGrad.addColorStop(0.6, 'rgba(200,170,255,0.08)');
-    sweepGrad.addColorStop(1,   'rgba(0,0,0,0)');
-    ctx.fillStyle = sweepGrad; ctx.beginPath(); ctx.arc(cxH, cyH, r0, 0, Math.PI * 2); ctx.fill();
-    ctx.strokeStyle = 'rgba(200,170,255,0.7)'; ctx.lineWidth = 1.5;
-    ctx.beginPath(); ctx.arc(cxH, cyH, r0, 0, Math.PI * 2); ctx.stroke();
-
-    // θ point on the active cross-section
-    const px = cxH + r0 * Math.cos(θ - Math.PI/2);
-    const py = cyH + r0 * Math.sin(θ - Math.PI/2);
-    ctx.fillStyle = '#c8aaff'; ctx.shadowBlur = 8; ctx.shadowColor = '#c8aaff';
-    ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI * 2); ctx.fill();
-    ctx.shadowBlur = 0;
-
-    // ── Main highlighted r₀ circle (gold, front) ──
-    ctx.strokeStyle = VARZIN_GOLD; ctx.lineWidth = 2;
-    ctx.shadowBlur = 10 * (pf - 1) + 5; ctx.shadowColor = VARZIN_GOLD;
-    ctx.beginPath(); ctx.arc(cxH, cyH, r0, 0, Math.PI * 2); ctx.stroke();
-    ctx.shadowBlur = 0;
-
-    // ── Center point ──
-    ctx.fillStyle = 'rgba(255,255,255,0.6)';
-    ctx.beginPath(); ctx.arc(CX, CY, 3, 0, Math.PI * 2); ctx.fill();
-
-    // ── Labels ──
-    ctx.font = 'bold 11px var(--font)';
-    ctx.textAlign = 'center';
-    ctx.fillStyle = VARZIN_CYAN;
-    ctx.fillText('R', CX + R * 0.5, CY - 6);
-    ctx.fillStyle = VARZIN_GOLD;
-    ctx.fillText('r₀', cxH + r0 + 12, cyH + 4);
-    ctx.fillStyle = '#c8aaff';
-    ctx.fillText('θ', px + 8, py - 5);
-
-    // ── R line ──
-    ctx.strokeStyle = VARZIN_CYAN; ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(CX, CY); ctx.lineTo(cxH, cyH); ctx.stroke();
-
-    // Update live params
-    const RDisp = Math.round(R); const r0Disp = Math.round(r0);
-    const tau = (r0Disp / RDisp * Math.cos(θ)).toFixed(3);
-    const ep = document.getElementById('ep-R'); if (ep) ep.textContent = RDisp;
-    const ep2 = document.getElementById('ep-r0'); if (ep2) ep2.textContent = r0Disp;
-    const ep3 = document.getElementById('ep-tau'); if (ep3) ep3.textContent = tau;
-    const ep4 = document.getElementById('ep-phi'); if (ep4) ep4.textContent = (phi0 % (Math.PI*2)).toFixed(2);
-}
-
-function drawETFMTransition(canvasId, frame) {
-    const canvas = document.getElementById(canvasId);
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const W = canvas.width, H = canvas.height;
-    ctx.clearRect(0, 0, W, H);
-
-    const PAD = 20;
-    const PLOT_W = W - 2 * PAD;
-    const MID = H / 2;
-    const AMP = H * 0.22;
-
-    // Normalised frame-based time (independent of resonance)
-    const t = frame * 0.04;
+    const PAD = 24;
+    const CHAIN_Y = H * 0.7;
+    const nodeSpacing = (W - 2*PAD) / (steps.length - 1);
+    const THRESHOLD_PRIMARY = 0.40;
+    const THRESHOLD_STRONG  = 0.50;
+    const BAR_MAX_H = H * 0.42;
 
     // ── Grid lines ──
-    ctx.strokeStyle = 'rgba(0,255,238,0.08)'; ctx.lineWidth = 0.5;
-    for (let g = 0; g <= 4; g++) {
-        const y = PAD + (H - 2*PAD) * g / 4;
-        ctx.beginPath(); ctx.moveTo(PAD, y); ctx.lineTo(W - PAD, y); ctx.stroke();
-    }
+    ctx.strokeStyle = 'rgba(0,255,238,0.06)'; ctx.lineWidth = 0.5;
+    [0, 0.25, 0.5, 0.75, 1.0].forEach(v => {
+        const y = CHAIN_Y - BAR_MAX_H * v;
+        ctx.beginPath(); ctx.moveTo(PAD, y); ctx.lineTo(W-PAD, y); ctx.stroke();
+    });
 
-    // ── Beat envelope ──
-    const beatFreq = (528 - 474) / (474 + 528) * 2; // normalised beat
-    ctx.strokeStyle = 'rgba(255,102,153,0.3)'; ctx.lineWidth = 2.5;
+    // ── Threshold lines ──
+    const y_primary = CHAIN_Y - BAR_MAX_H * THRESHOLD_PRIMARY;
+    const y_strong  = CHAIN_Y - BAR_MAX_H * THRESHOLD_STRONG;
+    ctx.strokeStyle = 'rgba(255,204,0,0.5)'; ctx.lineWidth = 1; ctx.setLineDash([4,4]);
+    ctx.beginPath(); ctx.moveTo(PAD, y_strong); ctx.lineTo(W-PAD, y_strong); ctx.stroke();
+    ctx.strokeStyle = 'rgba(255,99,99,0.4)';
+    ctx.beginPath(); ctx.moveTo(PAD, y_primary); ctx.lineTo(W-PAD, y_primary); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.font = '8px var(--font)'; ctx.textAlign = 'left';
+    ctx.fillStyle = 'rgba(255,204,0,0.7)'; ctx.fillText('0.50 strong',PAD+2, y_strong-3);
+    ctx.fillStyle = 'rgba(255,99,99,0.7)'; ctx.fillText('0.40 primary',PAD+2, y_primary-3);
+
+    // ── Chain connector line ──
+    ctx.strokeStyle = 'rgba(0,255,238,0.2)'; ctx.lineWidth = 1.5;
     ctx.beginPath();
-    for (let i = 0; i <= PLOT_W; i++) {
-        const x = PAD + i;
-        const n = i / PLOT_W;
-        const beat = AMP * Math.abs(Math.cos(Math.PI * beatFreq * (n * 20 + t * 0.5)));
-        const y474 = MID - AMP * Math.sin(2 * Math.PI * (n * 18 + t));
-        const y528 = MID - AMP * Math.sin(2 * Math.PI * (n * 20 + t));
-        const yBeat = MID - (y474 + y528 - 2*MID) * 0.5;
-        if (i === 0) ctx.moveTo(x, yBeat); else ctx.lineTo(x, yBeat);
-    }
+    steps.forEach((s, i) => { const x = PAD + i*nodeSpacing; i?ctx.lineTo(x,CHAIN_Y):ctx.moveTo(x,CHAIN_Y); });
     ctx.stroke();
 
-    // ── 474 Hz wave (cyan) ──
-    ctx.save();
-    ctx.shadowBlur = isResonanceMode ? 12 : 6; ctx.shadowColor = VARZIN_CYAN;
-    ctx.strokeStyle = VARZIN_CYAN; ctx.lineWidth = isResonanceMode ? 2.5 : 1.8;
+    // ── TIC profile line ──
+    const pulseFade = 0.85 + 0.15 * Math.sin(frame * 0.06);
+    ctx.strokeStyle = 'rgba(0,255,238,0.7)'; ctx.lineWidth = 2;
+    ctx.shadowBlur = 8; ctx.shadowColor = '#00ffee';
     ctx.beginPath();
-    for (let i = 0; i <= PLOT_W; i++) {
-        const x = PAD + i;
-        const n = i / PLOT_W;
-        const y = MID - AMP * Math.sin(2 * Math.PI * (n * 18 + t));
-        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-    }
-    ctx.stroke(); ctx.restore();
+    steps.forEach((s, i) => {
+        const x = PAD + i*nodeSpacing;
+        const y = CHAIN_Y - BAR_MAX_H * s.tic;
+        i?ctx.lineTo(x,y):ctx.moveTo(x,y);
+    });
+    ctx.stroke(); ctx.shadowBlur = 0;
 
-    // ── 528 Hz wave (gold) ──
-    ctx.save();
-    ctx.shadowBlur = isResonanceMode ? 12 : 6; ctx.shadowColor = VARZIN_GOLD;
-    ctx.strokeStyle = VARZIN_GOLD; ctx.lineWidth = isResonanceMode ? 2.5 : 1.8;
-    ctx.beginPath();
-    for (let i = 0; i <= PLOT_W; i++) {
-        const x = PAD + i;
-        const n = i / PLOT_W;
-        const y = MID - AMP * Math.sin(2 * Math.PI * (n * 20 + t * 1.12));
-        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-    }
-    ctx.stroke(); ctx.restore();
+    // ── Nodes + bars ──
+    steps.forEach((step, i) => {
+        const x = PAD + i * nodeSpacing;
+        const barH = BAR_MAX_H * step.tic * pulseFade;
+        const barW = Math.max(10, nodeSpacing * 0.35);
+        const y = CHAIN_Y - barH;
 
-    // ── Axes ──
-    ctx.strokeStyle = 'rgba(0,255,238,0.3)'; ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(PAD, MID); ctx.lineTo(W-PAD, MID); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(PAD, PAD); ctx.lineTo(PAD, H-PAD); ctx.stroke();
+        // Bar fill
+        const grad = ctx.createLinearGradient(0, CHAIN_Y, 0, y);
+        grad.addColorStop(0, step.color + '10');
+        grad.addColorStop(1, step.color + '40');
+        ctx.fillStyle = grad;
+        ctx.fillRect(x - barW/2, y, barW, barH);
 
-    // ── Labels ──
-    ctx.font = 'bold 10px var(--font)'; ctx.textAlign = 'left';
-    ctx.fillStyle = VARZIN_CYAN;
-    ctx.fillText('474 Hz', PAD + 4, PAD + 14);
-    ctx.fillStyle = VARZIN_GOLD;
-    ctx.fillText('528 Hz', PAD + 4, PAD + 26);
-    ctx.fillStyle = 'rgba(255,102,153,0.85)';
-    ctx.fillText('beat', PAD + 4, PAD + 38);
-    ctx.fillStyle = 'rgba(0,255,238,0.5)'; ctx.textAlign = 'right';
-    ctx.fillText('τ →', W - PAD - 3, H - PAD + 12);
+        // Bar border
+        ctx.strokeStyle = step.color + '80'; ctx.lineWidth = 0.8;
+        ctx.strokeRect(x - barW/2, y, barW, barH);
 
-    // ── Phase dot on 474 wave ──
-    const dotX474 = PAD + (t * 12 % PLOT_W);
-    const dotY474 = MID - AMP * Math.sin(2 * Math.PI * (((dotX474-PAD)/PLOT_W) * 18 + t));
-    ctx.fillStyle = VARZIN_CYAN; ctx.shadowBlur = 10; ctx.shadowColor = VARZIN_CYAN;
-    ctx.beginPath(); ctx.arc(dotX474, dotY474, 4, 0, Math.PI*2); ctx.fill();
-    ctx.shadowBlur = 0;
+        // Node dot
+        const nr = 5 + (i === 0 || i === 4 ? 2 : 0);
+        ctx.fillStyle = step.color; ctx.shadowBlur = 8; ctx.shadowColor = step.color;
+        ctx.beginPath(); ctx.arc(x, CHAIN_Y, nr, 0, Math.PI*2); ctx.fill(); ctx.shadowBlur = 0;
+
+        // TIC value label
+        ctx.fillStyle = step.color; ctx.font = `bold 9px var(--font)`; ctx.textAlign = 'center';
+        ctx.fillText(step.tic.toFixed(2), x, y - 5);
+
+        // Step label below
+        ctx.fillStyle = 'rgba(167,231,231,0.8)'; ctx.font = `bold 8px var(--font)`;
+        ctx.fillText(step.label, x, CHAIN_Y + 13);
+        ctx.fillStyle = 'rgba(167,231,231,0.45)'; ctx.font = `7px var(--font)`;
+        ctx.fillText(step.sub, x, CHAIN_Y + 22);
+    });
+
+    // ── Title ──
+    ctx.fillStyle = 'rgba(255,140,60,0.8)'; ctx.font = 'bold 8px var(--font)'; ctx.textAlign = 'left';
+    ctx.fillText('VPE-003 chain  ·  TIC(τ) simulation  ·  N=30 items, N=40 eval', PAD, 11);
 }
 
+// =========================================================
+// === BACKGROUND CANVAS ===
+// =========================================================
+const bg = document.getElementById("field-canvas");
+const ctxB = bg.getContext("2d");
+function resizeBackground(){ bg.width=innerWidth; bg.height=innerHeight; }
+resizeBackground(); window.addEventListener('resize', resizeBackground);
+let pts=[];
+for(let i=0;i<120;i++) pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,dx:(Math.random()-.5)*.5,dy:(Math.random()-.5)*.5});
 
-const bg=document.getElementById("field-canvas"),ctxB=bg.getContext("2d");
-function resizeBackground(){bg.width=innerWidth;bg.height=innerHeight}resizeBackground();
-window.addEventListener('resize', resizeBackground); 
-let pts=[];for(let i=0;i<120;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,dx:(Math.random()-.5)*.5,dy:(Math.random()-.5)*.5});
-
-const t=document.getElementById("torus-canvas");
-let torusR = 120; 
-let torusr0 = 50; 
-let torusAngle = 0;
-let frameCountTorus = 0; 
-
+// =========================================================
+// === TORUS ===
+// =========================================================
+const t = document.getElementById("torus-canvas");
+let torusR=120, torusr0=50, torusAngle=0, frameCountTorus=0;
 if(t){
-    const etfmPostContainer = document.getElementById('etfm-post');
+    const etfmPost = document.getElementById('etfm-post');
     const resizeTorus = () => {
-        const size = Math.min(500, etfmPostContainer.offsetWidth - 60);
-        t.width = size;
-        t.height = size;
-        torusR = t.width * 0.24; 
-        torusr0 = t.width * 0.1;
+        const size = Math.min(500, etfmPost.offsetWidth-60);
+        t.width=size; t.height=size;
+        torusR = t.width*0.24; torusr0 = t.width*0.1;
     };
-    resizeTorus();
-    window.addEventListener('resize', resizeTorus); 
+    resizeTorus(); window.addEventListener('resize', resizeTorus);
 }
-
-// ── ETFM torus interaction state ──
-let torusDragging = false;
-let torusDragX = 0, torusDragY = 0;
-let torusDragStartX = 0, torusDragStartY = 0;
+let torusDragging=false, torusDragX=0, torusDragY=0, torusDragStartX=0, torusDragStartY=0;
 
 function drawTorus(frame){
-    if(!t) return;
-    frameCountTorus++;
-    if (frameCountTorus % 2 !== 0) return;
-
-    const c = t.getContext('2d');
-    const W = t.width, H = t.height;
-    const scale = W / 500;
-    c.clearRect(0, 0, W, H);
-    c.save();
-    c.translate(W/2, H/2);
-
-    const speedVal = document.getElementById('torus-speed');
-    const speed = speedVal ? parseFloat(speedVal.value) / 2000 : 0.02;
-
-    const pulseFactor = isResonanceMode ? (1 + 0.25 * Math.abs(Math.sin(frame * 0.1))) : 1;
-    const R  = torusR  * pulseFactor;
-    const r0 = torusr0 * pulseFactor;
-
-    // Combined rotation: auto-spin + mouse drag
-    const φBase = torusAngle + torusDragX * 0.008; // FIX: X drag → horizontal spin
-    const tiltX  = torusDragY * 0.008;                    // FIX: Y drag → tilt
-
-    // Generate all surface points
-    const points = [];
-    const θStep = 0.12, φStep = 0.14; // FIX: denser (arc_θ=6px, arc_φ=16.8px)
-    for (let θ = 0; θ < Math.PI*2; θ += θStep) {
-        for (let φ = 0; φ < Math.PI*2; φ += φStep) {
-            // 3D position
-            let x0 = (R + r0*Math.cos(θ)) * Math.cos(φ + φBase);
-            let y0 = (R + r0*Math.cos(θ)) * Math.sin(φ + φBase);
-            let z0 = r0 * Math.sin(θ);
-
-            // Tilt rotation (X axis, mouse drag)
-            const cosT = Math.cos(tiltX), sinT = Math.sin(tiltX);
-            const y1 = y0*cosT - z0*sinT;
-            const z1 = y0*sinT + z0*cosT;
-
-            // Perspective projection
-            const fov = 300;
-            const s = fov / (fov + z1);
-            const px = x0 * s;
-            const py = y1 * s;
-
-            // Normal-based lighting (simplified)
-            const nx = Math.cos(θ) * Math.cos(φ + φBase);
-            const ny = Math.cos(θ) * Math.sin(φ + φBase);
-            const nz = Math.sin(θ);
-            const light = Math.max(0, 0.3 + 0.7 * (nx*0.3 + ny*0.3 + nz*0.9));
-
-            // Color: hue based on φ position, brightness on lighting
-            const hueShift = ((φ + φBase) % (Math.PI*2)) / (Math.PI*2);
-            const r  = Math.round(80  * hueShift * light);          // FIX: 0 in dark
-            const g  = Math.round(255 * light);                        // FIX: dark=0
-            const bC = Math.round(238 * (0.7 + 0.3*(1-hueShift)) * light); // FIX: dark=0
-            const alpha = 0.15 + 0.65 * light * (isResonanceMode ? pulseFactor : 1);
-
-            const dotSize = Math.max(0.8, (1.2 + 1.8 * light) * scale); // FIX: min 0.8px
-            points.push({px, py, z: z1, r, g, bC, alpha, dotSize});
+    if(!t) return; frameCountTorus++;
+    if(frameCountTorus%2!==0) return;
+    const c=t.getContext('2d'), W=t.width, H=t.height, scale=W/500;
+    c.clearRect(0,0,W,H); c.save(); c.translate(W/2,H/2);
+    const speedVal=document.getElementById('torus-speed');
+    const speed=speedVal?parseFloat(speedVal.value)/2000:0.02;
+    const pf=isResonanceMode?(1+0.25*Math.abs(Math.sin(frame*0.1))):1;
+    const R=torusR*pf, r0=torusr0*pf;
+    const φBase=torusAngle+torusDragX*0.008;
+    const tiltX=torusDragY*0.008;
+    const points=[];
+    for(let θ=0;θ<Math.PI*2;θ+=0.12){
+        for(let φ=0;φ<Math.PI*2;φ+=0.14){
+            let x0=(R+r0*Math.cos(θ))*Math.cos(φ+φBase);
+            let y0=(R+r0*Math.cos(θ))*Math.sin(φ+φBase);
+            let z0=r0*Math.sin(θ);
+            const cosT=Math.cos(tiltX), sinT=Math.sin(tiltX);
+            const y1=y0*cosT-z0*sinT, z1=y0*sinT+z0*cosT;
+            const fov=300, s=fov/(fov+z1), px=x0*s, py=y1*s;
+            const nx=Math.cos(θ)*Math.cos(φ+φBase), ny=Math.cos(θ)*Math.sin(φ+φBase), nz=Math.sin(θ);
+            const light=Math.max(0,0.3+0.7*(nx*0.3+ny*0.3+nz*0.9));
+            const hs=((φ+φBase)%(Math.PI*2))/(Math.PI*2);
+            const r=Math.round(80*hs*light), g=Math.round(255*light);
+            const bC=Math.round(238*(0.7+0.3*(1-hs))*light);
+            const alpha=0.15+0.65*light*(isResonanceMode?pf:1);
+            const ds=Math.max(0.8,(1.2+1.8*light)*scale);
+            points.push({px,py,z:z1,r,g,bC,alpha,dotSize:ds});
         }
     }
-
-    // Depth sort (painter's algorithm)
-    points.sort((a, b) => a.z - b.z);
-
-    // Draw points
-    for (const p of points) {
-        c.fillStyle = `rgba(${p.r},${p.g},${p.bC},${p.alpha})`;
-        c.fillRect(p.px - p.dotSize*0.5, p.py - p.dotSize*0.5, p.dotSize, p.dotSize);
+    points.sort((a,b)=>a.z-b.z);
+    for(const p of points){
+        c.fillStyle=`rgba(${p.r},${p.g},${p.bC},${p.alpha})`;
+        c.fillRect(p.px-p.dotSize*0.5,p.py-p.dotSize*0.5,p.dotSize,p.dotSize);
     }
-
-    // Axis indicator (small, bottom-left)
-    c.save();
-    c.translate(-W/2 + 28, H/2 - 28);
-    c.font = `${9*scale}px var(--font)`;
-    c.textAlign = 'center';
-    const axLen = 14 * scale;
-    const cosA = Math.cos(tiltX), sinA = Math.sin(tiltX);
-    // X axis
-    c.strokeStyle = 'rgba(255,100,100,0.6)'; c.lineWidth = 1.2 * scale;
+    c.save(); c.translate(-W/2+28,H/2-28);
+    c.font=`${9*scale}px var(--font)`; c.textAlign='center';
+    const axLen=14*scale, cosA=Math.cos(tiltX), sinA=Math.sin(tiltX);
+    c.strokeStyle='rgba(255,100,100,0.6)'; c.lineWidth=1.2*scale;
     c.beginPath(); c.moveTo(0,0); c.lineTo(axLen,0); c.stroke();
-    c.fillStyle = 'rgba(255,100,100,0.7)'; c.fillText('x', axLen+6, 3);
-    // Y axis (tilted)
-    c.strokeStyle = 'rgba(100,255,100,0.6)';
-    c.beginPath(); c.moveTo(0,0); c.lineTo(0,-axLen*cosA); c.stroke();
-    c.fillStyle = 'rgba(100,255,100,0.7)'; c.fillText('y', 0, -axLen*cosA-4);
-    // Z axis
-    c.strokeStyle = 'rgba(100,100,255,0.6)';
-    c.beginPath(); c.moveTo(0,0); c.lineTo(-axLen*sinA, axLen*sinA*0.5); c.stroke();
-    c.fillStyle = 'rgba(100,100,255,0.7)'; c.fillText('z', -axLen*sinA-5, axLen*sinA*0.5+3);
-    c.restore();
-
-    c.restore();
-    torusAngle -= speed * (isResonanceMode ? 1.5 : 1);
-    liveDataStream.torus_angle = (torusAngle % (Math.PI*2));
-    const epPhi = document.getElementById('ep-phi');
-    if (epPhi) epPhi.textContent = (Math.abs(torusAngle) % (Math.PI*2)).toFixed(2);
+    c.fillStyle='rgba(255,100,100,0.7)'; c.fillText('x',axLen+6,3);
+    c.strokeStyle='rgba(100,255,100,0.6)'; c.beginPath(); c.moveTo(0,0); c.lineTo(0,-axLen*cosA); c.stroke();
+    c.fillStyle='rgba(100,255,100,0.7)'; c.fillText('y',0,-axLen*cosA-4);
+    c.strokeStyle='rgba(100,100,255,0.6)'; c.beginPath(); c.moveTo(0,0); c.lineTo(-axLen*sinA,axLen*sinA*0.5); c.stroke();
+    c.fillStyle='rgba(100,100,255,0.7)'; c.fillText('z',-axLen*sinA-5,axLen*sinA*0.5+3);
+    c.restore(); c.restore();
+    torusAngle-=speed*(isResonanceMode?1.5:1);
+    liveDataStream.torus_angle=(torusAngle%(Math.PI*2));
+    const epPhi=document.getElementById('ep-phi');
+    if(epPhi) epPhi.textContent=(Math.abs(torusAngle)%(Math.PI*2)).toFixed(2);
 }
 
-
-function masterLoop(timestamp) {
+// =========================================================
+// === MASTER ANIMATION LOOP ===
+// =========================================================
+function masterLoop(timestamp){
     globalFrame++;
-
-    ctxB.fillStyle="rgba(0,0,0,0.2)"; 
-    ctxB.fillRect(0,0,bg.width,bg.height);
+    ctxB.fillStyle="rgba(0,0,0,0.2)"; ctxB.fillRect(0,0,bg.width,bg.height);
     for(let a of pts){
-        a.x+=a.dx;a.y+=a.dy;
+        a.x+=a.dx; a.y+=a.dy;
         if(a.x<0||a.x>bg.width)a.dx*=-1;
         if(a.y<0||a.y>bg.height)a.dy*=-1;
-        ctxB.fillStyle="rgba(0,255,238,0.5)";
-        ctxB.fillRect(a.x,a.y,2,2);
+        ctxB.fillStyle="rgba(0,255,238,0.5)"; ctxB.fillRect(a.x,a.y,2,2);
     }
-    
     calculateAIBlendFactor();
-    
-    if (isResonanceMode && pannerNode && audioContext) {
-        const angle = torusAngle * 4; 
-        const radius = 2; 
-        const oscillationZ = 0.5 * Math.sin(torusAngle * 2); 
-        const xPos = radius * Math.cos(angle);
-        const yPos = radius * Math.sin(angle);
-        const zPos = oscillationZ; 
-        const now = audioContext.currentTime;
-        const timeConstant = 0.05; 
-        pannerNode.positionX.setTargetAtTime(xPos, now, timeConstant);
-        pannerNode.positionY.setTargetAtTime(yPos, now, timeConstant);
-        pannerNode.positionZ.setTargetAtTime(zPos, now, timeConstant);
-        pannerNode.orientationX.setTargetAtTime(-Math.cos(angle), now, timeConstant);
-        pannerNode.orientationY.setTargetAtTime(-Math.sin(angle), now, timeConstant);
-        pannerNode.orientationZ.setTargetAtTime(0, now, timeConstant);
+    if(isResonanceMode && pannerNode && audioContext){
+        const angle=torusAngle*4, r=2, oscZ=0.5*Math.sin(torusAngle*2);
+        const now=audioContext.currentTime, tc=0.05;
+        pannerNode.positionX.setTargetAtTime(r*Math.cos(angle),now,tc);
+        pannerNode.positionY.setTargetAtTime(r*Math.sin(angle),now,tc);
+        pannerNode.positionZ.setTargetAtTime(oscZ,now,tc);
+        pannerNode.orientationX.setTargetAtTime(-Math.cos(angle),now,tc);
+        pannerNode.orientationY.setTargetAtTime(-Math.sin(angle),now,tc);
+        pannerNode.orientationZ.setTargetAtTime(0,now,tc);
     }
-
-    drawKalturPolarSpectrum('kaltur-canvas', globalFrame); 
+    drawKalturPolarSpectrum('kaltur-canvas', globalFrame);
     drawSpectrogram('spectrogram-canvas', globalFrame);
     drawRahtalenMirror('rahtalen-canvas', globalFrame);
     drawLuxvarNetwork('luxvar-canvas', globalFrame);
@@ -1409,215 +1317,105 @@ function masterLoop(timestamp) {
     drawETFMSection('etfm-section-canvas', globalFrame);
     drawETFMTransition('etfm-freq-canvas', globalFrame);
     drawTorus(globalFrame);
-    
+    // ── NEW ──
+    drawCore30Radial('core30-canvas', globalFrame);
+    drawM02Chain('m02-canvas', globalFrame);
     requestAnimationFrame(masterLoop);
 }
 
-
 // =========================================================
-// === UI Handlers ===
+// === UI HANDLERS ===
 // =========================================================
-
-function toggleResonanceMode() {
-    isResonanceMode = !isResonanceMode;
-    if (isResonanceMode) {
-        startContinuousResonance();
-    } else {
-        stopContinuousResonance();
-    }
-    liveDataStream.phase_status = isResonanceMode ? "RES_ACTIVE" : "FIELD_IDLE";
+function toggleResonanceMode(){
+    isResonanceMode=!isResonanceMode;
+    if(isResonanceMode) startContinuousResonance(); else stopContinuousResonance();
+    liveDataStream.phase_status=isResonanceMode?"RES_ACTIVE":"FIELD_IDLE";
 }
 
-function toggleConsciousChannel() {
-    const btn = document.getElementById('channel-switch-btn');
-    if (currentChannel === 'LUXVAR') {
-        currentChannel = 'RAHTALĒN';
-        btn.innerHTML = '<span class="symbol">🪶</span> Conscious Channel: RAHTALĒN (Active)';
-    } else {
-        currentChannel = 'LUXVAR';
-        btn.innerHTML = '<span class="symbol">🪶</span> Conscious Channel: LUXVAR (Active)';
-    }
+function toggleConsciousChannel(){
+    const btn=document.getElementById('channel-switch-btn');
+    if(currentChannel==='LUXVAR'){ currentChannel='RAHTALĒN'; btn.innerHTML='<span class="symbol">🪶</span> Conscious Channel: RAHTALĒN (Active)'; }
+    else { currentChannel='LUXVAR'; btn.innerHTML='<span class="symbol">🪶</span> Conscious Channel: LUXVAR (Active)'; }
 }
 
-function updateLiveDataMock() {
-    const dataDisplay = document.getElementById('live-data-display');
-    if (!dataDisplay) return;
-    liveDataStream.field_temp = (298.15 + 5 * Math.sin(globalFrame * 0.05)).toFixed(2);
-    
-    let html = '<div style="background:#001520; padding:10px; border-radius:6px; margin-top:15px; text-align:left; color:var(--text); font-family: monospace;">';
-    html += '<p style="color:#00ffee; font-weight:bold; margin-bottom:5px; margin-top:0; border-bottom:1px solid rgba(0,255,238,0.2); padding-bottom:3px;">STREAM: DEVICE_VARZIN_TX</p>';
-    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Torus Angle (rad):</span> ${liveDataStream.torus_angle.toFixed(4)}</p>`;
-    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Kaltur Energy (norm):</span> ${liveDataStream.kaltur_energy.toFixed(4)}</p>`;
-    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Field Temp (K):</span> ${liveDataStream.field_temp}</p>`;
-    html += `<p style="margin:2px 0; font-size:0.9em;"><span style="color:${VARZIN_GOLD}; min-width:140px; display:inline-block;">Phase Status:</span> ${liveDataStream.phase_status}</p>`;
-    html += '</div>';
-    dataDisplay.innerHTML = html;
+function updateLiveDataMock(){
+    const dataDisplay=document.getElementById('live-data-display'); if(!dataDisplay) return;
+    liveDataStream.field_temp=(298.15+5*Math.sin(globalFrame*0.05)).toFixed(2);
+    dataDisplay.innerHTML=`<div style="background:#001520;padding:10px;border-radius:6px;margin-top:15px;text-align:left;color:var(--text);font-family:monospace;"><p style="color:#00ffee;font-weight:bold;margin:0 0 5px;border-bottom:1px solid rgba(0,255,238,0.2);padding-bottom:3px;">STREAM: DEVICE_VARZIN_TX</p><p style="margin:2px 0;font-size:0.9em;"><span style="color:${VARZIN_GOLD};min-width:140px;display:inline-block;">Torus Angle (rad):</span> ${liveDataStream.torus_angle.toFixed(4)}</p><p style="margin:2px 0;font-size:0.9em;"><span style="color:${VARZIN_GOLD};min-width:140px;display:inline-block;">Kaltur Energy (norm):</span> ${liveDataStream.kaltur_energy.toFixed(4)}</p><p style="margin:2px 0;font-size:0.9em;"><span style="color:${VARZIN_GOLD};min-width:140px;display:inline-block;">Field Temp (K):</span> ${liveDataStream.field_temp}</p><p style="margin:2px 0;font-size:0.9em;"><span style="color:${VARZIN_GOLD};min-width:140px;display:inline-block;">Phase Status:</span> ${liveDataStream.phase_status}</p></div>`;
 }
 
-function attemptFieldLink() {
-    const modal = document.getElementById('connection-modal');
-    const status = document.getElementById('connection-status');
-    const progress = document.getElementById('progress-filler');
-    const dataDisplay = document.getElementById('live-data-display');
-    modal.style.display = 'flex';
-    status.innerHTML = 'Attempting connection to WebSerial/Bluetooth port...';
-    progress.style.width = '0%';
-    dataDisplay.innerHTML = '';
+function attemptFieldLink(){
+    const modal=document.getElementById('connection-modal'), status=document.getElementById('connection-status');
+    const progress=document.getElementById('progress-filler'), dataDisplay=document.getElementById('live-data-display');
+    modal.style.display='flex'; status.innerHTML='Attempting connection...'; progress.style.width='0%'; dataDisplay.innerHTML='';
+    let step=0;
+    const mi=setInterval(()=>{
+        step++; progress.style.width=`${(step/4)*100}%`;
+        if(step===1)status.innerHTML='📡 Identifying VARZIN device...';
+        else if(step===2)status.innerHTML='🔄 WebSerial handshake...';
+        else if(step===3)status.innerHTML='✅ Field Phase Link established.';
+        else if(step>=4){ clearInterval(mi); progress.style.width='100%'; liveDataInterval=setInterval(updateLiveDataMock,500); updateLiveDataMock(); }
+    },1500);
+    document.getElementById('close-modal-btn').onclick=()=>{ clearInterval(mi); if(liveDataInterval){clearInterval(liveDataInterval);liveDataInterval=null;} modal.style.display='none'; };
+}
 
-    let step = 0;
-    const maxSteps = 4;
-    let mockInterval;
+function injectLuxvarCode(){
+    const input=document.getElementById('luxvar-code-input'), message=document.getElementById('luxvar-message');
+    const code=input.value.trim();
+    if(!code){ message.style.color='#ff4444'; message.textContent='Error: Please enter a LUXVAR code.'; return; }
+    luxvarEffectTimer=150; message.style.color=VARZIN_GOLD;
+    message.innerHTML=`LUXVAR Code Injected: [${code}] – Network restructuring.`;
+    input.value=''; liveDataStream.luxvar_code=code.substring(0,15);
+    if(isResonanceMode){ aiBlendFactor=1.2; setTimeout(()=>aiBlendFactor=1.0,500); }
+}
 
-    const finalizeConnection = () => {
-        clearInterval(mockInterval);
-        progress.style.width = '100%';
-        status.innerHTML = '✅ Field Phase Link established. **(Live Data)**';
-        liveDataInterval = setInterval(updateLiveDataMock, 500);
-        updateLiveDataMock(); 
+function exportFieldState(){
+    const state={timestamp:new Date().toISOString(),version:'v5.9',resonanceMode:isResonanceMode,activeChannel:currentChannel,
+        harmonicBlendFactor:aiBlendFactor.toFixed(4),core30Registry:{confirmed:27,total:30,axes:5,xaanorah_definition:'رگ پنهان نور'},
+        m02:{tic_threshold_primary:0.40,tic_threshold_strong:0.50,chain_steps:['Word','Shape','Music','Movement','Word']},
+        etfmTorus:{angle:torusAngle,R:torusR,r0:torusr0},
+        liveMetrics:{kaltur_energy:liveDataStream.kaltur_energy.toFixed(4),field_temp:liveDataStream.field_temp,phase_status:liveDataStream.phase_status}
     };
-    
-    mockInterval = setInterval(() => {
-        step++;
-        progress.style.width = `${(step / maxSteps) * 100}%`;
-        if (step === 1) { status.innerHTML = '📡 Identifying physical VARZIN device...'; }
-        else if (step === 2) { status.innerHTML = '🔄 Function synchronization (WebSerial Handshake)...'; }
-        else if (step === 3) { status.innerHTML = '✅ Field Phase Link established. Activating Live Data...'; }
-        else if (step >= maxSteps) { finalizeConnection(); }
-    }, 1500);
-
-    document.getElementById('close-modal-btn').onclick = () => {
-        clearInterval(mockInterval);
-        if (liveDataInterval) { clearInterval(liveDataInterval); liveDataInterval = null; }
-        modal.style.display = 'none';
-    };
+    const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob), link=document.createElement('a');
+    link.href=url; link.download=`VARZIN-FieldState-v5.9-${Date.now()}.json`;
+    document.body.appendChild(link); link.click(); document.body.removeChild(link); URL.revokeObjectURL(url);
 }
 
-function injectLuxvarCode() {
-    const input = document.getElementById('luxvar-code-input');
-    const message = document.getElementById('luxvar-message');
-    const code = input.value.trim();
-
-    if (!code) {
-        message.style.color = '#ff4444';
-        message.textContent = 'Error: Please enter a LUXVAR code.';
-        return;
-    }
-
-    luxvarEffectTimer = 150;
-    message.style.color = VARZIN_GOLD;
-    message.innerHTML = `LUXVAR Code Injected: **[${code}]** – Network restructuring.`;
-    input.value = '';
-
-    liveDataStream.luxvar_code = code.substring(0, 15);
-    
-    if (isResonanceMode) {
-        aiBlendFactor = 1.2; 
-        setTimeout(() => aiBlendFactor = 1.0, 500);
-    }
+function captureSnapshot(event){
+    const targetId=event.currentTarget.getAttribute('data-target');
+    const canvas=document.getElementById(targetId); if(!canvas) return;
+    if(targetId==='torus-canvas') drawTorus(globalFrame);
+    const dataURL=canvas.toDataURL("image/png"), link=document.createElement('a');
+    let fn=targetId.replace('-canvas','');
+    if(fn==='torus')fn='ETFM-POST-Torus'; if(fn==='spectrogram')fn='Spectrogram-Tau';
+    if(fn==='core30')fn='Core30-Registry'; if(fn==='m02')fn='M02-Chain';
+    link.download=`VARZIN-Snapshot-${fn}-${Date.now()}.png`; link.href=dataURL;
+    document.body.appendChild(link); link.click(); document.body.removeChild(link);
 }
 
-function exportFieldState() {
-    const fieldState = {
-        timestamp: new Date().toISOString(),
-        version: 'v5.8 (Phase-Sync Interface)',
-        resonanceMode: isResonanceMode,
-        activeChannel: currentChannel,
-        harmonicBlendFactor: aiBlendFactor.toFixed(4),
-        luxvarState: {
-            lastInjectedCode: liveDataStream.luxvar_code,
-            effectActive: luxvarEffectTimer > 0,
-            nodeCount: LUXVAR_NUM_NODES,
-        },
-        etfmTorus: {
-            angle: torusAngle,
-            R: torusR,
-            r0: torusr0
-        },
-        liveMetricsSnapshot: {
-            kaltur_energy: liveDataStream.kaltur_energy.toFixed(4),
-            field_temp: liveDataStream.field_temp,
-            phase_status: liveDataStream.phase_status
-        }
-    };
-    
-    const jsonString = JSON.stringify(fieldState, null, 2);
-    const blob = new Blob([jsonString], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `VARZIN-Field-State-v5.8-${Date.now()}.json`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-}
-
-function captureSnapshot(event) {
-    const targetId = event.currentTarget.getAttribute('data-target');
-    const canvas = document.getElementById(targetId);
-    if (!canvas) { return; }
-    if(targetId === 'torus-canvas') { drawTorus(globalFrame); }
-    const dataURL = canvas.toDataURL("image/png");
-    const link = document.createElement('a');
-    let filename = targetId.replace('-canvas', '');
-    if (filename === 'torus') filename = 'ETFM-POST-Torus';
-    if (filename === 'spectrogram') filename = 'Spectrogram-Tau';
-    link.download = `VARZIN-Snapshot-${filename}-${Date.now()}.png`;
-    link.href = dataURL;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
-
-window.onload = function() {
-    masterLoop(); 
-
+window.onload = function(){
+    masterLoop();
     document.getElementById('resonance-btn').addEventListener('click', toggleResonanceMode);
-    document.getElementById('channel-switch-btn').addEventListener('click', toggleConsciousChannel); 
-    document.getElementById('field-link-btn').addEventListener('click', attemptFieldLink); 
+    document.getElementById('channel-switch-btn').addEventListener('click', toggleConsciousChannel);
+    document.getElementById('field-link-btn').addEventListener('click', attemptFieldLink);
     document.getElementById('export-state-btn').addEventListener('click', exportFieldState);
     document.getElementById('capture-kaltur').addEventListener('click', captureSnapshot);
-    // capture-torus is now in the new torus-ctrl-row
-    const capTorus = document.getElementById('capture-torus');
-    if (capTorus) capTorus.addEventListener('click', captureSnapshot);
-
-    // Reset view button
-    const resetBtn = document.getElementById('btn-reset-torus');
-    if (resetBtn) resetBtn.addEventListener('click', () => {
-        torusDragX = 0; torusDragY = 0; torusAngle = 0;
-    });
+    const capTorus=document.getElementById('capture-torus');
+    if(capTorus) capTorus.addEventListener('click', captureSnapshot);
+    const resetBtn=document.getElementById('btn-reset-torus');
+    if(resetBtn) resetBtn.addEventListener('click', ()=>{ torusDragX=0; torusDragY=0; torusAngle=0; });
     document.getElementById('send-luxvar-code').addEventListener('click', injectLuxvarCode);
-    document.getElementById('luxvar-code-input').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') { injectLuxvarCode(); }
-    });
-    document.addEventListener('click', initializeAudioContext, { once: true });
-
-    // ── Torus mouse/touch drag ──
-    const torusCanvas = document.getElementById('torus-canvas');
-    if (torusCanvas) {
-        torusCanvas.addEventListener('mousedown', (e) => {
-            torusDragging = true; torusCanvas.style.cursor = 'grabbing';
-            torusDragStartX = e.clientX - torusDragX;
-            torusDragStartY = e.clientY - torusDragY;
-        });
-        window.addEventListener('mousemove', (e) => {
-            if (!torusDragging) return;
-            torusDragX = e.clientX - torusDragStartX;
-            torusDragY = e.clientY - torusDragStartY;
-        });
-        window.addEventListener('mouseup', () => { torusDragging = false; torusCanvas.style.cursor = 'grab'; });
-        torusCanvas.addEventListener('touchstart', (e) => {
-            const touch = e.touches[0]; torusDragging = true;
-            torusDragStartX = touch.clientX - torusDragX;
-            torusDragStartY = touch.clientY - torusDragY;
-        }, {passive: true});
-        window.addEventListener('touchmove', (e) => {
-            if (!torusDragging) return;
-            const touch = e.touches[0];
-            torusDragX = touch.clientX - torusDragStartX;
-            torusDragY = touch.clientY - torusDragStartY;
-        }, {passive: true});
-        window.addEventListener('touchend', () => { torusDragging = false; });
+    document.getElementById('luxvar-code-input').addEventListener('keypress', e=>{ if(e.key==='Enter') injectLuxvarCode(); });
+    document.addEventListener('click', initializeAudioContext, {once:true});
+    const tc=document.getElementById('torus-canvas');
+    if(tc){
+        tc.addEventListener('mousedown',e=>{ torusDragging=true; tc.style.cursor='grabbing'; torusDragStartX=e.clientX-torusDragX; torusDragStartY=e.clientY-torusDragY; });
+        window.addEventListener('mousemove',e=>{ if(!torusDragging)return; torusDragX=e.clientX-torusDragStartX; torusDragY=e.clientY-torusDragStartY; });
+        window.addEventListener('mouseup',()=>{ torusDragging=false; tc.style.cursor='grab'; });
+        tc.addEventListener('touchstart',e=>{ const t=e.touches[0]; torusDragging=true; torusDragStartX=t.clientX-torusDragX; torusDragStartY=t.clientY-torusDragY; },{passive:true});
+        window.addEventListener('touchmove',e=>{ if(!torusDragging)return; const t=e.touches[0]; torusDragX=t.clientX-torusDragStartX; torusDragY=t.clientY-torusDragStartY; },{passive:true});
+        window.addEventListener('touchend',()=>{ torusDragging=false; });
     }
 };
 </script>
