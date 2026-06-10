@@ -203,6 +203,33 @@
     .stat-val  { font-size:1.05em; font-weight:700; color:var(--cyan); display:block; }
     .stat-lbl  { font-size:0.7em; color:var(--muted); letter-spacing:0.3px; }
 
+
+    /* ── ETFM UPGRADE: live params panel ── */
+    .etfm-live-params {
+      display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+      margin: 16px 0; padding: 14px 16px;
+      background: rgba(0,15,25,0.85); border: 1px solid rgba(0,255,238,0.2);
+      border-radius: 12px;
+    }
+    .eparam {
+      flex: 1; min-width: 60px; text-align: center;
+      padding: 8px 6px; background: rgba(0,20,30,0.7);
+      border: 1px solid rgba(0,255,238,0.15); border-radius: 8px;
+    }
+    .eparam-name { font-size: 1.3em; font-weight: 700; line-height: 1.2; }
+    .eparam-val  { font-size: 0.95em; color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .eparam-desc { font-size: 0.65em; color: var(--muted); margin-top: 2px; }
+
+    /* ── ETFM UPGRADE: torus controls ── */
+    .torus-ctrl-row {
+      display: flex; gap: 12px; align-items: center; justify-content: center;
+      flex-wrap: wrap; margin-top: 12px;
+    }
+    .etfm-hint {
+      font-size: 0.78em; color: rgba(167,231,231,0.55);
+      letter-spacing: 0.5px; margin-bottom: 4px;
+    }
+
   </style>
 </head>
 <body>
@@ -377,46 +404,94 @@
 
     <section id="etfm-post" class="field-card">
       <h3>⟠ ETFM–POST: Earth–Torus Field Model</h3>
-      <!-- FIX 5: Removed "planetary consciousness density" -->
-      <div class="card-badge badge-geo">⬡ Geometric Model</div>
+      <div class="card-badge badge-geo">⬡ Geometric Visualization Model</div>
       <p>
-        <strong>ETFM</strong> (Earth–Torus Field Model) models a toroidal geometry with two radii:
-        the major radius <strong style="color:var(--cyan)">R</strong> (outer torus ring)
-        and the minor radius <strong style="color:var(--gold)">r₀</strong> (cross-section tube),
-        applied to harmonic resonance parameters (474–528 Hz). The interactive 3D torus below
-        rotates in real-time. Symbolic-experimental visualization — not a validated geophysical claim.
+        <strong>ETFM</strong> models a toroidal geometry using two radii —
+        <strong style="color:var(--cyan)">R</strong> (major, outer ring) and
+        <strong style="color:var(--gold)">r₀</strong> (minor, cross-section tube) —
+        applied to the 474→528 Hz harmonic transition. Drag the torus to rotate.
+        Symbolic-experimental visualization; not a validated geophysical claim.
       </p>
-      <div class="formula-box">
-        $$r(\theta, \phi) = (R + r_0 \cdot \cos\theta)$$
-        $$x = r(\theta, \phi) \cdot \cos\phi \quad y = r(\theta, \phi) \cdot \sin\phi \quad z = r_0 \cdot \sin\theta$$
-        $$\Delta\Phi = 474 \rightarrow 528 \text{ Hz} \quad \lambda = c / f \quad \tau = (r_0 / R) \cdot \cos(\theta)$$
+
+      <!-- Live formula parameter panel -->
+      <div class="etfm-live-params" id="etfm-params">
+        <div class="eparam">
+          <div class="eparam-name" style="color:var(--cyan)">R</div>
+          <div class="eparam-val" id="ep-R">120</div>
+          <div class="eparam-desc">Major radius</div>
+        </div>
+        <div class="eparam">
+          <div class="eparam-name" style="color:var(--gold)">r₀</div>
+          <div class="eparam-val" id="ep-r0">50</div>
+          <div class="eparam-desc">Minor radius (τ)</div>
+        </div>
+        <div class="eparam">
+          <div class="eparam-name" style="color:#c8aaff">φ</div>
+          <div class="eparam-val" id="ep-phi">0.00</div>
+          <div class="eparam-desc">Rotation angle</div>
+        </div>
+        <div class="eparam">
+          <div class="eparam-name" style="color:#ff8c3c">Δf</div>
+          <div class="eparam-val" id="ep-df">54 Hz</div>
+          <div class="eparam-desc">474 → 528</div>
+        </div>
+        <div class="eparam">
+          <div class="eparam-name" style="color:#96b4dc">τ</div>
+          <div class="eparam-val" id="ep-tau">0.42</div>
+          <div class="eparam-desc">r₀/R · cos θ</div>
+        </div>
       </div>
-      
+
+      <!-- MathJax formula box -->
+      <div class="formula-box">
+        $$r(	heta, \phi) = (R + r_0 \cdot \cos	heta)$$
+        $$x = r(	heta,\phi)\cos\phi \quad y = r(	heta,\phi)\sin\phi \quad z = r_0\sin	heta$$
+        $$\Delta\Phi = 474 
+ightarrow 528\,	ext{Hz} \qquad 	au = rac{r_0}{R}\cos	heta$$
+      </div>
+
+      <!-- 2-panel charts: cross-section + frequency waves -->
       <div class="etfm-charts">
         <div class="chart-container">
-          <canvas id="etfm-section-canvas" width="300" height="200"></canvas>
-          <p>Cross-section: outer radius R and core tube r₀ (τ).</p>
+          <canvas id="etfm-section-canvas" width="320" height="220"></canvas>
+          <p>Toroidal cross-section with animated θ sweep</p>
           <div class="etfm-legend">
-            <div class="legend-item"><div class="legend-dot" style="background:#00ffee; box-shadow:0 0 5px #00ffee;"></div> R — major radius</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#ffcc00; box-shadow:0 0 5px #ffcc00;"></div> r₀ — minor radius (τ)</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#00ffee;box-shadow:0 0 5px #00ffee"></div>R — outer ring</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#ffcc00;box-shadow:0 0 5px #ffcc00"></div>r₀ — tube radius</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#c8aaff;box-shadow:0 0 5px #c8aaff"></div>θ sweep</div>
           </div>
-          <button class="control-btn" onclick="playSingleHarmonic(528, 1.5)">
-            🔊 Activate 528 Hz Tune (Single Pulse)
-          </button>
+          <button class="control-btn" onclick="playSingleHarmonic(528, 1.5)">🔊 528 Hz pulse</button>
         </div>
-
         <div class="chart-container">
-          <canvas id="etfm-freq-canvas" width="300" height="200"></canvas>
-          <p>Harmonic frequency transition (474 → 528 Hz) indicating resonance parameter shift.</p>
+          <canvas id="etfm-freq-canvas" width="320" height="220"></canvas>
+          <p>474 Hz ↔ 528 Hz wave interference · beat pattern</p>
+          <div class="etfm-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#00ffee;box-shadow:0 0 4px #00ffee"></div>474 Hz (KALTŪR)</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#ffcc00;box-shadow:0 0 4px #ffcc00"></div>528 Hz (RAHMŌT)</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#ff6699;box-shadow:0 0 4px #f66"></div>Beat pattern</div>
+          </div>
         </div>
       </div>
-      
-      <canvas id="torus-canvas" width="500" height="500"
-        style="margin-top:10px; border:1px solid rgba(0,255,238,0.3); border-radius:12px;"></canvas>
-      <p style="margin-top:15px; font-size:0.9em;">Interactive visualization of the harmonic torus (**ETFM**–POST).</p>
-      <button id="capture-torus" class="control-btn" data-target="torus-canvas">
-          <span class="symbol">📸</span> Capture ETFM-POST (PNG)
-      </button>
+
+      <!-- Main 3D torus -->
+      <div style="position:relative; margin-top:20px; text-align:center;">
+        <div class="etfm-hint" id="torus-hint">🖱 Drag to rotate &nbsp;·&nbsp; Scroll to zoom</div>
+        <canvas id="torus-canvas" width="500" height="500"
+          style="border:1px solid rgba(0,255,238,0.3); border-radius:16px;
+                 cursor:grab; display:block; margin:10px auto;
+                 box-shadow: 0 0 40px rgba(0,255,238,0.15);"></canvas>
+      </div>
+
+      <!-- Torus controls -->
+      <div class="torus-ctrl-row">
+        <button class="control-btn" id="btn-reset-torus">↺ Reset View</button>
+        <label style="color:var(--muted); font-size:0.85em;">
+          Speed:
+          <input type="range" id="torus-speed" min="0" max="100" value="40"
+                 style="width:90px; vertical-align:middle; accent-color:var(--cyan);">
+        </label>
+        <button class="control-btn" id="capture-torus" data-target="torus-canvas">📸 Capture PNG</button>
+      </div>
     </section>
   </main>
 
@@ -991,122 +1066,180 @@ function drawETFMSection(canvasId, frame) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const W = canvas.width;
-    const H = canvas.height;
-    const CX = W / 2 - 30; 
-    const CY = H / 2;
+    const W = canvas.width, H = canvas.height;
+    const CX = W * 0.45, CY = H / 2;
     ctx.clearRect(0, 0, W, H);
 
-    const R = 60;
-    const r0Base = 25;
-    
-    const r0Pulse = isResonanceMode ? 1 + 0.2 * Math.abs(Math.sin(frame * 0.1)) : 1 + 0.05 * Math.sin(frame * 0.05);
-    const r0 = r0Base * r0Pulse;
+    const R  = Math.min(W, H) * 0.28;
+    const r0Base = R * 0.38;
+    const pf = isResonanceMode ? 1 + 0.18 * Math.abs(Math.sin(frame * 0.1)) : 1 + 0.04 * Math.sin(frame * 0.04);
+    const r0 = r0Base * pf;
+    const θ  = (frame * 0.025) % (Math.PI * 2);
 
-    ctx.font = '14px var(--font)';
+    // ── Field glow behind torus ──
+    const grad = ctx.createRadialGradient(CX, CY, 0, CX, CY, R + r0 + 8);
+    grad.addColorStop(0,   'rgba(0,255,238,0.04)');
+    grad.addColorStop(0.6, 'rgba(0,255,238,0.02)');
+    grad.addColorStop(1,   'rgba(0,0,0,0)');
+    ctx.fillStyle = grad; ctx.beginPath(); ctx.arc(CX, CY, R + r0 + 8, 0, Math.PI * 2); ctx.fill();
 
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-    ctx.lineWidth = 0.5;
-    ctx.beginPath();
-    ctx.moveTo(0, CY);
-    ctx.lineTo(W, CY);
-    ctx.stroke();
+    // ── Outer R circle (dashed) ──
+    ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = 'rgba(0,255,238,0.25)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.arc(CX, CY, R, 0, Math.PI * 2); ctx.stroke();
+    ctx.setLineDash([]);
 
-    ctx.strokeStyle = VARZIN_CYAN;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.arc(CX, CY, R, 0, Math.PI * 2);
-    ctx.stroke();
+    // ── Torus cross-section rings (r₀ at each φ) ──
+    const φSteps = 24;
+    for (let i = 0; i < φSteps; i++) {
+        const φ = (i / φSteps) * Math.PI * 2;
+        const cx2 = CX + R * Math.cos(φ);
+        const cy2 = CY + R * Math.sin(φ);
+        const alpha = 0.08 + 0.12 * ((Math.cos(φ) + 1) / 2);
+        ctx.strokeStyle = `rgba(0,255,238,${alpha})`;
+        ctx.lineWidth = 0.7;
+        ctx.beginPath(); ctx.arc(cx2, cy2, r0, 0, Math.PI * 2); ctx.stroke();
+    }
 
-    ctx.strokeStyle = VARZIN_GOLD;
-    ctx.lineWidth = 2;
-    ctx.shadowBlur = 10 * (r0Pulse - 1); 
-    ctx.shadowColor = VARZIN_GOLD;
-    ctx.beginPath();
-    ctx.arc(CX + R, CY, r0, 0, Math.PI * 2);
-    ctx.stroke();
+    // ── θ sweep arc on highlighted cross-section ──
+    const phi0 = frame * 0.02;
+    const cxH = CX + R * Math.cos(phi0);
+    const cyH = CY + R * Math.sin(phi0);
+    const sweepGrad = ctx.createRadialGradient(cxH, cyH, 0, cxH, cyH, r0);
+    sweepGrad.addColorStop(0,   'rgba(200,170,255,0.25)');
+    sweepGrad.addColorStop(0.6, 'rgba(200,170,255,0.08)');
+    sweepGrad.addColorStop(1,   'rgba(0,0,0,0)');
+    ctx.fillStyle = sweepGrad; ctx.beginPath(); ctx.arc(cxH, cyH, r0, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = 'rgba(200,170,255,0.7)'; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(cxH, cyH, r0, 0, Math.PI * 2); ctx.stroke();
+
+    // θ point on the active cross-section
+    const px = cxH + r0 * Math.cos(θ - Math.PI/2);
+    const py = cyH + r0 * Math.sin(θ - Math.PI/2);
+    ctx.fillStyle = '#c8aaff'; ctx.shadowBlur = 8; ctx.shadowColor = '#c8aaff';
+    ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI * 2); ctx.fill();
     ctx.shadowBlur = 0;
-    
-    ctx.fillStyle = VARZIN_CYAN;
-    ctx.textAlign = 'center';
-    ctx.fillText('R', CX + R / 2, CY - 5);
-    
-    ctx.fillStyle = VARZIN_GOLD;
-    ctx.fillText('r₀ (τ)', CX + R + r0 + 15, CY);
 
-    ctx.strokeStyle = VARZIN_CYAN;
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(CX, CY);
-    ctx.lineTo(CX + R, CY);
-    ctx.stroke();
-    
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-    ctx.beginPath();
-    ctx.arc(CX, CY, 3, 0, Math.PI * 2);
-    ctx.fill();
+    // ── Main highlighted r₀ circle (gold, front) ──
+    ctx.strokeStyle = VARZIN_GOLD; ctx.lineWidth = 2;
+    ctx.shadowBlur = 10 * (pf - 1) + 5; ctx.shadowColor = VARZIN_GOLD;
+    ctx.beginPath(); ctx.arc(cxH, cyH, r0, 0, Math.PI * 2); ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // ── Center point ──
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    ctx.beginPath(); ctx.arc(CX, CY, 3, 0, Math.PI * 2); ctx.fill();
+
+    // ── Labels ──
+    ctx.font = 'bold 11px var(--font)';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = VARZIN_CYAN;
+    ctx.fillText('R', CX + R * 0.5, CY - 6);
+    ctx.fillStyle = VARZIN_GOLD;
+    ctx.fillText('r₀', cxH + r0 + 12, cyH + 4);
+    ctx.fillStyle = '#c8aaff';
+    ctx.fillText('θ', px + 8, py - 5);
+
+    // ── R line ──
+    ctx.strokeStyle = VARZIN_CYAN; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(CX, CY); ctx.lineTo(cxH, cyH); ctx.stroke();
+
+    // Update live params
+    const RDisp = Math.round(R); const r0Disp = Math.round(r0);
+    const tau = (r0Disp / RDisp * Math.cos(θ)).toFixed(3);
+    const ep = document.getElementById('ep-R'); if (ep) ep.textContent = RDisp;
+    const ep2 = document.getElementById('ep-r0'); if (ep2) ep2.textContent = r0Disp;
+    const ep3 = document.getElementById('ep-tau'); if (ep3) ep3.textContent = tau;
+    const ep4 = document.getElementById('ep-phi'); if (ep4) ep4.textContent = (phi0 % (Math.PI*2)).toFixed(2);
 }
 
 function drawETFMTransition(canvasId, frame) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const W = canvas.width;
-    const H = canvas.height;
+    const W = canvas.width, H = canvas.height;
     ctx.clearRect(0, 0, W, H);
 
-    const PADDING = 25;
-    const PLOT_W = W - 2 * PADDING;
-    const PLOT_H = H - 2 * PADDING;
+    const PAD = 20;
+    const PLOT_W = W - 2 * PAD;
+    const MID = H / 2;
+    const AMP = H * 0.22;
 
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
-    ctx.lineWidth = 1;
+    // Normalised frame-based time (independent of resonance)
+    const t = frame * 0.04;
+
+    // ── Grid lines ──
+    ctx.strokeStyle = 'rgba(0,255,238,0.08)'; ctx.lineWidth = 0.5;
+    for (let g = 0; g <= 4; g++) {
+        const y = PAD + (H - 2*PAD) * g / 4;
+        ctx.beginPath(); ctx.moveTo(PAD, y); ctx.lineTo(W - PAD, y); ctx.stroke();
+    }
+
+    // ── Beat envelope ──
+    const beatFreq = (528 - 474) / (474 + 528) * 2; // normalised beat
+    ctx.strokeStyle = 'rgba(255,102,153,0.3)'; ctx.lineWidth = 2.5;
     ctx.beginPath();
-    ctx.moveTo(PADDING, PADDING); 
-    ctx.lineTo(PADDING, H - PADDING);
-    ctx.lineTo(W - PADDING, H - PADDING); 
+    for (let i = 0; i <= PLOT_W; i++) {
+        const x = PAD + i;
+        const n = i / PLOT_W;
+        const beat = AMP * Math.abs(Math.cos(Math.PI * beatFreq * (n * 20 + t * 0.5)));
+        const y474 = MID - AMP * Math.sin(2 * Math.PI * (n * 18 + t));
+        const y528 = MID - AMP * Math.sin(2 * Math.PI * (n * 20 + t));
+        const yBeat = MID - (y474 + y528 - 2*MID) * 0.5;
+        if (i === 0) ctx.moveTo(x, yBeat); else ctx.lineTo(x, yBeat);
+    }
     ctx.stroke();
 
+    // ── 474 Hz wave (cyan) ──
+    ctx.save();
+    ctx.shadowBlur = isResonanceMode ? 12 : 6; ctx.shadowColor = VARZIN_CYAN;
+    ctx.strokeStyle = VARZIN_CYAN; ctx.lineWidth = isResonanceMode ? 2.5 : 1.8;
+    ctx.beginPath();
+    for (let i = 0; i <= PLOT_W; i++) {
+        const x = PAD + i;
+        const n = i / PLOT_W;
+        const y = MID - AMP * Math.sin(2 * Math.PI * (n * 18 + t));
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke(); ctx.restore();
+
+    // ── 528 Hz wave (gold) ──
+    ctx.save();
+    ctx.shadowBlur = isResonanceMode ? 12 : 6; ctx.shadowColor = VARZIN_GOLD;
+    ctx.strokeStyle = VARZIN_GOLD; ctx.lineWidth = isResonanceMode ? 2.5 : 1.8;
+    ctx.beginPath();
+    for (let i = 0; i <= PLOT_W; i++) {
+        const x = PAD + i;
+        const n = i / PLOT_W;
+        const y = MID - AMP * Math.sin(2 * Math.PI * (n * 20 + t * 1.12));
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke(); ctx.restore();
+
+    // ── Axes ──
+    ctx.strokeStyle = 'rgba(0,255,238,0.3)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(PAD, MID); ctx.lineTo(W-PAD, MID); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(PAD, PAD); ctx.lineTo(PAD, H-PAD); ctx.stroke();
+
+    // ── Labels ──
+    ctx.font = 'bold 10px var(--font)'; ctx.textAlign = 'left';
     ctx.fillStyle = VARZIN_CYAN;
-    ctx.font = '10px var(--font)';
-    ctx.textAlign = 'right';
-    ctx.fillText('528 Hz', PADDING - 5, PADDING + 5);
-    ctx.fillText('474 Hz', PADDING - 5, H - PADDING + 2);
-    ctx.textAlign = 'center';
-    ctx.fillText('Phase (τ)', W / 2, H - 5);
+    ctx.fillText('474 Hz', PAD + 4, PAD + 14);
+    ctx.fillStyle = VARZIN_GOLD;
+    ctx.fillText('528 Hz', PAD + 4, PAD + 26);
+    ctx.fillStyle = 'rgba(255,102,153,0.85)';
+    ctx.fillText('beat', PAD + 4, PAD + 38);
+    ctx.fillStyle = 'rgba(0,255,238,0.5)'; ctx.textAlign = 'right';
+    ctx.fillText('τ →', W - PAD - 3, H - PAD + 12);
 
-    const lineAlpha = isResonanceMode ? 0.8 + 0.2 * Math.sin(frame * 0.1) : 0.8;
-    ctx.strokeStyle = VARZIN_GOLD;
-    ctx.lineWidth = 3;
-    ctx.globalAlpha = lineAlpha;
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = VARZIN_GOLD;
-    
-    ctx.beginPath();
-    ctx.moveTo(PADDING, H - PADDING);
-    ctx.bezierCurveTo(
-        PADDING + PLOT_W * 0.3, H - PADDING - PLOT_H * 0.05, 
-        PADDING + PLOT_W * 0.7, PADDING + PLOT_H * 0.05,     
-        W - PADDING, PADDING                              
-    );
-    ctx.stroke();
-
-    ctx.globalAlpha = 1.0;
+    // ── Phase dot on 474 wave ──
+    const dotX474 = PAD + (t * 12 % PLOT_W);
+    const dotY474 = MID - AMP * Math.sin(2 * Math.PI * (((dotX474-PAD)/PLOT_W) * 18 + t));
+    ctx.fillStyle = VARZIN_CYAN; ctx.shadowBlur = 10; ctx.shadowColor = VARZIN_CYAN;
+    ctx.beginPath(); ctx.arc(dotX474, dotY474, 4, 0, Math.PI*2); ctx.fill();
     ctx.shadowBlur = 0;
-
-    ctx.fillStyle = VARZIN_CYAN;
-    ctx.beginPath();
-    ctx.arc(PADDING, H - PADDING, 4, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(W - PADDING, PADDING, 4, 0, Math.PI * 2);
-    ctx.fill();
 }
 
-
-// =========================================================
-// === Global Animation Loop ===
-// =========================================================
 
 const bg=document.getElementById("field-canvas"),ctxB=bg.getContext("2d");
 function resizeBackground(){bg.width=innerWidth;bg.height=innerHeight}resizeBackground();
@@ -1132,36 +1265,108 @@ if(t){
     window.addEventListener('resize', resizeTorus); 
 }
 
+// ── ETFM torus interaction state ──
+let torusDragging = false;
+let torusDragX = 0, torusDragY = 0;
+let torusDragStartX = 0, torusDragStartY = 0;
+
 function drawTorus(frame){
     if(!t) return;
-    frameCountTorus++; 
-    if (frameCountTorus % 2 !== 0) { return; } 
+    frameCountTorus++;
+    if (frameCountTorus % 2 !== 0) return;
 
-    const c=t.getContext("2d");
-    const scale = t.width / 500;
-    c.clearRect(0,0,t.width,t.height);
+    const c = t.getContext('2d');
+    const W = t.width, H = t.height;
+    const scale = W / 500;
+    c.clearRect(0, 0, W, H);
     c.save();
-    c.translate(t.width/2,t.height/2);
+    c.translate(W/2, H/2);
 
-    const pulseFactor = isResonanceMode ? (1 + 0.3 * Math.abs(Math.sin(frame * 0.1))) : 1;
-    const R = torusR * pulseFactor;
+    const speedVal = document.getElementById('torus-speed');
+    const speed = speedVal ? parseFloat(speedVal.value) / 2000 : 0.02;
+
+    const pulseFactor = isResonanceMode ? (1 + 0.25 * Math.abs(Math.sin(frame * 0.1))) : 1;
+    const R  = torusR  * pulseFactor;
     const r0 = torusr0 * pulseFactor;
 
-    for(let θ=0;θ<Math.PI*2;θ+=0.15){
-        for(let φ=0;φ<Math.PI*2;φ+=0.25){
-            let x=(R+r0*Math.cos(θ))*Math.cos(φ+torusAngle);
-            let y=(R+r0*Math.cos(θ))*Math.sin(φ+torusAngle);
-            let z=r0*Math.sin(θ);
-            let s=300/(300+z); 
-            let X=x*s,Y=y*s;
-            let baseAlpha = 0.4+0.6*(z/r0);
-            c.fillStyle=`rgba(0,255,238,${baseAlpha * pulseFactor})`; 
-            c.fillRect(X,Y,2 * scale, 2 * scale);
+    // Combined rotation: auto-spin + mouse drag
+    const φBase = torusAngle + torusDragY * 0.008;
+    const tiltX  = torusDragX * 0.008;
+
+    // Generate all surface points
+    const points = [];
+    const θStep = 0.18, φStep = 0.22;
+    for (let θ = 0; θ < Math.PI*2; θ += θStep) {
+        for (let φ = 0; φ < Math.PI*2; φ += φStep) {
+            // 3D position
+            let x0 = (R + r0*Math.cos(θ)) * Math.cos(φ + φBase);
+            let y0 = (R + r0*Math.cos(θ)) * Math.sin(φ + φBase);
+            let z0 = r0 * Math.sin(θ);
+
+            // Tilt rotation (X axis, mouse drag)
+            const cosT = Math.cos(tiltX), sinT = Math.sin(tiltX);
+            const y1 = y0*cosT - z0*sinT;
+            const z1 = y0*sinT + z0*cosT;
+
+            // Perspective projection
+            const fov = 300;
+            const s = fov / (fov + z1);
+            const px = x0 * s;
+            const py = y1 * s;
+
+            // Normal-based lighting (simplified)
+            const nx = Math.cos(θ) * Math.cos(φ + φBase);
+            const ny = Math.cos(θ) * Math.sin(φ + φBase);
+            const nz = Math.sin(θ);
+            const light = Math.max(0, 0.3 + 0.7 * (nx*0.3 + ny*0.3 + nz*0.9));
+
+            // Color: hue based on φ position, brightness on lighting
+            const hueShift = ((φ + φBase) % (Math.PI*2)) / (Math.PI*2);
+            const r = Math.round(0   + 100 * hueShift * light);
+            const g = Math.round(200 + 55  * light);
+            const bC = Math.round(200 + 55  * (1 - hueShift) * light);
+            const alpha = 0.15 + 0.65 * light * (isResonanceMode ? pulseFactor : 1);
+
+            const dotSize = (1.5 + 1.5 * light) * scale;
+            points.push({px, py, z: z1, r, g, bC, alpha, dotSize});
         }
     }
+
+    // Depth sort (painter's algorithm)
+    points.sort((a, b) => a.z - b.z);
+
+    // Draw points
+    for (const p of points) {
+        c.fillStyle = `rgba(${p.r},${p.g},${p.bC},${p.alpha})`;
+        c.fillRect(p.px - p.dotSize*0.5, p.py - p.dotSize*0.5, p.dotSize, p.dotSize);
+    }
+
+    // Axis indicator (small, bottom-left)
+    c.save();
+    c.translate(-W/2 + 28, H/2 - 28);
+    c.font = `${9*scale}px var(--font)`;
+    c.textAlign = 'center';
+    const axLen = 14 * scale;
+    const cosA = Math.cos(tiltX), sinA = Math.sin(tiltX);
+    // X axis
+    c.strokeStyle = 'rgba(255,100,100,0.6)'; c.lineWidth = 1.2 * scale;
+    c.beginPath(); c.moveTo(0,0); c.lineTo(axLen,0); c.stroke();
+    c.fillStyle = 'rgba(255,100,100,0.7)'; c.fillText('x', axLen+6, 3);
+    // Y axis (tilted)
+    c.strokeStyle = 'rgba(100,255,100,0.6)';
+    c.beginPath(); c.moveTo(0,0); c.lineTo(0,-axLen*cosA); c.stroke();
+    c.fillStyle = 'rgba(100,255,100,0.7)'; c.fillText('y', 0, -axLen*cosA-4);
+    // Z axis
+    c.strokeStyle = 'rgba(100,100,255,0.6)';
+    c.beginPath(); c.moveTo(0,0); c.lineTo(-axLen*sinA, axLen*sinA*0.5); c.stroke();
+    c.fillStyle = 'rgba(100,100,255,0.7)'; c.fillText('z', -axLen*sinA-5, axLen*sinA*0.5+3);
     c.restore();
-    torusAngle -= 0.02 * (isResonanceMode ? 1.5 : 1);
-    liveDataStream.torus_angle = (torusAngle % (2 * Math.PI)); 
+
+    c.restore();
+    torusAngle -= speed * (isResonanceMode ? 1.5 : 1);
+    liveDataStream.torus_angle = (torusAngle % (Math.PI*2));
+    const epPhi = document.getElementById('ep-phi');
+    if (epPhi) epPhi.textContent = (Math.abs(torusAngle) % (Math.PI*2)).toFixed(2);
 }
 
 
@@ -1373,12 +1578,48 @@ window.onload = function() {
     document.getElementById('field-link-btn').addEventListener('click', attemptFieldLink); 
     document.getElementById('export-state-btn').addEventListener('click', exportFieldState);
     document.getElementById('capture-kaltur').addEventListener('click', captureSnapshot);
-    document.getElementById('capture-torus').addEventListener('click', captureSnapshot);
+    // capture-torus is now in the new torus-ctrl-row
+    const capTorus = document.getElementById('capture-torus');
+    if (capTorus) capTorus.addEventListener('click', captureSnapshot);
+
+    // Reset view button
+    const resetBtn = document.getElementById('btn-reset-torus');
+    if (resetBtn) resetBtn.addEventListener('click', () => {
+        torusDragX = 0; torusDragY = 0; torusAngle = 0;
+    });
     document.getElementById('send-luxvar-code').addEventListener('click', injectLuxvarCode);
     document.getElementById('luxvar-code-input').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') { injectLuxvarCode(); }
     });
     document.addEventListener('click', initializeAudioContext, { once: true });
+
+    // ── Torus mouse/touch drag ──
+    const torusCanvas = document.getElementById('torus-canvas');
+    if (torusCanvas) {
+        torusCanvas.addEventListener('mousedown', (e) => {
+            torusDragging = true; torusCanvas.style.cursor = 'grabbing';
+            torusDragStartX = e.clientX - torusDragX;
+            torusDragStartY = e.clientY - torusDragY;
+        });
+        window.addEventListener('mousemove', (e) => {
+            if (!torusDragging) return;
+            torusDragX = e.clientX - torusDragStartX;
+            torusDragY = e.clientY - torusDragStartY;
+        });
+        window.addEventListener('mouseup', () => { torusDragging = false; torusCanvas.style.cursor = 'grab'; });
+        torusCanvas.addEventListener('touchstart', (e) => {
+            const touch = e.touches[0]; torusDragging = true;
+            torusDragStartX = touch.clientX - torusDragX;
+            torusDragStartY = touch.clientY - torusDragY;
+        }, {passive: true});
+        window.addEventListener('touchmove', (e) => {
+            if (!torusDragging) return;
+            const touch = e.touches[0];
+            torusDragX = touch.clientX - torusDragStartX;
+            torusDragY = touch.clientY - torusDragStartY;
+        }, {passive: true});
+        window.addEventListener('touchend', () => { torusDragging = false; });
+    }
 };
 </script>
 </body>
