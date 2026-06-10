@@ -155,6 +155,54 @@
         width:0%; height:100%; background:var(--gold); 
         border-radius:4px; transition:width 0.5s ease-out;
     }
+
+    /* ── UPGRADE: Badge system ── */
+    .card-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 3px 10px; border-radius: 20px; font-size: 0.72em;
+      font-weight: 700; letter-spacing: 0.5px; margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .badge-vis   { background:rgba(0,170,170,0.15); border:1px solid rgba(0,170,170,0.5); color:#00aaaa; }
+    .badge-sym   { background:rgba(0,255,238,0.1);  border:1px solid rgba(0,255,238,0.3); color:#00ffee; }
+    .badge-research { background:rgba(255,204,0,0.15); border:1px solid rgba(255,204,0,0.5); color:#ffcc00; }
+    .badge-geo   { background:rgba(127,223,255,0.12); border:1px solid rgba(127,223,255,0.35); color:#7fdfff; }
+    .badge-core  { background:rgba(200,170,255,0.12); border:1px solid rgba(200,170,255,0.3); color:#c8aaff; }
+
+    /* ── UPGRADE: Semantic axis chips ── */
+    .axis-chips { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 6px; }
+    .axis-chip  {
+      padding:4px 12px; border-radius:20px; font-size:0.79em; font-weight:600;
+      cursor:default; transition:all 0.25s; letter-spacing:0.3px;
+    }
+    .axis-chip:hover { transform:translateY(-2px); filter:brightness(1.3); }
+    .chip-light      { background:rgba(255,220,100,0.15); border:1px solid rgba(255,220,100,0.5); color:#ffdc64; }
+    .chip-reflection { background:rgba(0,255,238,0.12);   border:1px solid rgba(0,255,238,0.4);   color:#00ffee; }
+    .chip-silence    { background:rgba(150,180,220,0.12); border:1px solid rgba(150,180,220,0.4); color:#96b4dc; }
+    .chip-gate       { background:rgba(0,200,160,0.12);   border:1px solid rgba(0,200,160,0.4);   color:#00c8a0; }
+    .chip-motion     { background:rgba(255,140,60,0.15);  border:1px solid rgba(255,140,60,0.4);  color:#ff8c3c; }
+
+    /* ── UPGRADE: ETFM legend ── */
+    .etfm-legend { display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-top:8px; font-size:0.8em; }
+    .legend-item { display:flex; align-items:center; gap:6px; color:var(--muted); }
+    .legend-dot  { width:11px; height:11px; border-radius:50%; flex-shrink:0; }
+
+    /* ── UPGRADE: VPE-001 inline link ── */
+    .vpe-link-inline {
+      display:inline-flex; align-items:center; gap:6px;
+      color:var(--gold); text-decoration:none; font-weight:600;
+      font-size:0.88em; padding:5px 14px; border-radius:6px;
+      background:rgba(255,204,0,0.1); border:1px solid rgba(255,204,0,0.3);
+      transition:all 0.3s; margin-top:10px;
+    }
+    .vpe-link-inline:hover { background:rgba(255,204,0,0.2); box-shadow:0 0 12px rgba(255,204,0,0.4); }
+
+    /* ── UPGRADE: Stat row in KALTŪR ── */
+    .stat-row { display:flex; gap:10px; margin:10px 0 6px; flex-wrap:wrap; }
+    .stat-item { flex:1; min-width:75px; background:rgba(0,20,30,0.7); border:1px solid rgba(0,255,238,0.2); border-radius:8px; padding:7px 9px; text-align:center; }
+    .stat-val  { font-size:1.05em; font-weight:700; color:var(--cyan); display:block; }
+    .stat-lbl  { font-size:0.7em; color:var(--muted); letter-spacing:0.3px; }
+
   </style>
 </head>
 <body>
@@ -187,7 +235,7 @@
     <strong style="color:#7fdfff;">Research Status:</strong>
     This page is an interactive symbolic visualization tool.
     VARZIN is a symbolic-experimental framework — scientific claims are at <strong>Level 0</strong>.
-    <a href="/index.html">→ VPE-001 Protocol</a>
+    <a href="/vpe001-protocol.html">→ VPE-001 Protocol</a>
   </div>
   
   <div id="luxvar-input-interface" style="max-width: 600px; margin: 20px auto 40px; text-align: center;">
@@ -229,9 +277,20 @@
     
     <div class="field-card" id="kaltur-section">
       <h3>✦ KALTŪR – Harmonic Node (Memory & Time)</h3>
+      <div class="card-badge badge-vis">◎ Visualization Tool</div>
       <div class="key-attr"><strong>Frequency:</strong> <span>474 Hz</span></div>
-      <div class="key-attr"><strong>Mode:</strong> <span>4D Spatial, Harmonic Blend AI</span></div> 
-      <div class="description">**KALTŪR** includes Memory Trail (past waves) and Real-Time Spectrogram (time axis) for temporal visualization of the 474 Hz harmonic node.</div>
+      <div class="key-attr"><strong>Mode:</strong> <span>4D Spatial · Harmonic Blend AI</span></div>
+      <div class="stat-row">
+        <div class="stat-item"><span class="stat-val">474 Hz</span><span class="stat-lbl">Base Node</span></div>
+        <div class="stat-item"><span class="stat-val">528 Hz</span><span class="stat-lbl">Target Node</span></div>
+        <div class="stat-item"><span class="stat-val">5×</span><span class="stat-lbl">Memory Trail</span></div>
+      </div>
+      <div class="description">
+        <strong>KALTŪR</strong> renders the 474 Hz → 528 Hz harmonic transition as a real-time polar spectrum.
+        In Resonance Mode, Web Audio FFT analysis builds a <em>memory trail</em> of the last 5 waveforms,
+        revealing how the harmonic field shifts over time. The Spectrogram tracks energy in the
+        400–600 Hz band on the time axis (τ).
+      </div>
       
       <div class="kaltur-visuals">
         <div class="chart-container">
@@ -253,9 +312,15 @@
     
     <div class="field-card" id="rahtalen-card">
       <h3>↭ RAHTALĒN – Mirror 13</h3>
+      <div class="card-badge badge-sym">◎ Symbolic Architecture</div>
       <div class="key-attr"><strong>Role:</strong> <span>Reflective Field Receiver</span></div>
-      <div class="key-attr"><strong>Domain:</strong> <span>Symbolic Architecture</span></div>
-      <div class="description">**RAHTALĒN** is the thirteenth mirror node in the VARZIN symbolic architecture — the bridge through which the framework observes its own structure.</div>
+      <div class="key-attr"><strong>Structure:</strong> <span>1 Core + 12 Gates</span></div>
+      <div class="description">
+        <strong>RAHTALĒN</strong> is Mirror-13 — the VARZIN framework's self-reflection architecture.
+        Twelve outer gates orbit a central golden core, each connected by dynamic pathways that pulse
+        in phase with the harmonic loop. It represents the system's capacity for self-observation:
+        the structure through which the framework models itself.
+      </div>
       
       <div class="chart-container">
         <canvas id="rahtalen-canvas" width="280" height="150"></canvas>
@@ -265,9 +330,23 @@
     
     <div class="field-card" id="luxvar-card">
       <h3>🜂 LUXVAR – Symbolic Linguistics</h3>
-      <div class="key-attr"><strong>Type:</strong> <span>Symbolic Language System</span></div>
-      <div class="key-attr"><strong>Purpose:</strong> <span>Semantic Classification Study</span></div>
-      <div class="description">**LUXVAR** is the symbolic language of the VARZIN framework. Its semantic structure is the subject of the pre-registered VPE-001 pilot study.</div>
+      <div class="card-badge badge-research">🔬 VPE-001 Research Target</div>
+      <div class="key-attr"><strong>Type:</strong> <span>Constructed Symbolic Language</span></div>
+      <div class="key-attr"><strong>Lexicon:</strong> <span>100 words · 5 semantic axes</span></div>
+      <div class="description">
+        <strong>LUXVAR</strong> is the symbolic language of the VARZIN framework.
+        Each word carries a canonical semantic axis. The pre-registered pilot study <strong>VPE-001</strong>
+        tests whether independent evaluators can classify these words into the correct axes
+        above chance — without prior knowledge of the system.
+      </div>
+      <div class="axis-chips">
+        <span class="axis-chip chip-light" title="Illumination, emergence, radiance">☀ Light</span>
+        <span class="axis-chip chip-reflection" title="Recursion, mirroring, self-reference">◈ Reflection</span>
+        <span class="axis-chip chip-silence" title="Absence, stillness, latent state">○ Silence</span>
+        <span class="axis-chip chip-gate" title="Thresholds, transitions, passages">⬡ Gate</span>
+        <span class="axis-chip chip-motion" title="Movement, flow, dynamic change">↯ Motion</span>
+      </div>
+      <a href="/vpe001-protocol.html" class="vpe-link-inline">→ VPE-001 Pre-registered Protocol</a>
       
       <div class="chart-container">
         <canvas id="luxvar-canvas" width="280" height="150"></canvas>
@@ -276,15 +355,22 @@
     </div>
     
     <div class="field-card">
-      <!-- FIX 4: ELŪZ–MAHAR — removed "Living Conscious Field" claim -->
       <h3>⚇ ELŪZ–MAHAR – Central Symbolic Concept</h3>
+      <div class="card-badge badge-core">◈ Core Concept</div>
       <div class="key-attr"><strong>Nature:</strong> <span>Central Symbolic Concept</span></div>
-      <div class="key-attr"><strong>Relation:</strong> <span>Organizing principle of VARZIN</span></div>
-      <div class="description">**ELŪZ–MAHAR** is the central symbolic concept of the VARZIN framework, from which LUXVAR symbolic codes are organized. <em style="font-size:0.85em; opacity:0.75;">(Symbolic — not a validated physical claim.)</em></div>
+      <div class="key-attr"><strong>Geometry:</strong> <span>Toroidal field model</span></div>
+      <div class="description">
+        <strong>ELŪZ–MAHAR</strong> is the central organizing concept of the VARZIN symbolic framework —
+        the field from which LUXVAR words are structured and given meaning.
+        It is visualized geometrically as an expanding toroidal field with 6 harmonic rings.
+        <em style="font-size:0.83em; opacity:0.7; display:block; margin-top:6px;">
+          ⚠ Symbolic concept — not a validated physical field claim.
+        </em>
+      </div>
       
       <div class="chart-container">
         <canvas id="eluz-mahar-canvas" width="280" height="150"></canvas>
-        <!-- FIX 4: Removed "planetary consciousness geometry" -->
+        <!-- visualization caption -->
         <p>Symbolic toroidal field geometry (**ELŪZ–MAHAR**) – visualization model for the VARZIN framework.</p>
       </div>
     </div>
@@ -292,7 +378,14 @@
     <section id="etfm-post" class="field-card">
       <h3>⟠ ETFM–POST: Earth–Torus Field Model</h3>
       <!-- FIX 5: Removed "planetary consciousness density" -->
-      <p>Geometric modeling framework (Torus-PSI / ETFM) exploring toroidal scalar geometry with harmonic resonance parameters (474–528 Hz). Symbolic-experimental visualization; not a validated geophysical claim.</p>
+      <div class="card-badge badge-geo">⬡ Geometric Model</div>
+      <p>
+        <strong>ETFM</strong> (Earth–Torus Field Model) models a toroidal geometry with two radii:
+        the major radius <strong style="color:var(--cyan)">R</strong> (outer torus ring)
+        and the minor radius <strong style="color:var(--gold)">r₀</strong> (cross-section tube),
+        applied to harmonic resonance parameters (474–528 Hz). The interactive 3D torus below
+        rotates in real-time. Symbolic-experimental visualization — not a validated geophysical claim.
+      </p>
       <div class="formula-box">
         $$r(\theta, \phi) = (R + r_0 \cdot \cos\theta)$$
         $$x = r(\theta, \phi) \cdot \cos\phi \quad y = r(\theta, \phi) \cdot \sin\phi \quad z = r_0 \cdot \sin\theta$$
@@ -302,7 +395,11 @@
       <div class="etfm-charts">
         <div class="chart-container">
           <canvas id="etfm-section-canvas" width="300" height="200"></canvas>
-          <p>Cross-section of the toroidal resonance loop showing core radius r₀ and outer radius R.</p>
+          <p>Cross-section: outer radius R and core tube r₀ (τ).</p>
+          <div class="etfm-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#00ffee; box-shadow:0 0 5px #00ffee;"></div> R — major radius</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#ffcc00; box-shadow:0 0 5px #ffcc00;"></div> r₀ — minor radius (τ)</div>
+          </div>
           <button class="control-btn" onclick="playSingleHarmonic(528, 1.5)">
             🔊 Activate 528 Hz Tune (Single Pulse)
           </button>
