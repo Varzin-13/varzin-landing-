@@ -1,1063 +1,618 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VARZIN – Cyclical Resonance Report | ETFM-KALTŪR Field Dynamics</title>
-    <meta name="description" content="VARZIN Cyclical Resonance Report: Symbolic-experimental comparison of field resonance in global pandemics. KALTŪR 474Hz to RAHMŌT 528Hz sequence.">
-    <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842">
-    <meta name="keywords" content="VARZIN, ELŪZ MAHAR, KALTŪR 474Hz, RAHMŌT 528Hz, Cyclical Resonance, ETFM, Luxvar, VPE-001">
-    <link rel="canonical" href="https://varzin.org/cyclical-resonance-report.html" />
-    <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VARZIN – Cyclical Resonance Report | 1347–2026</title>
+<meta name="description" content="VARZIN Cyclical Resonance Report: Symbolic-experimental comparison of the Black Death and COVID-19 through the ETFM-KALTŪR field model. KALTŪR 474Hz → RAHMŌT 528Hz sequence. Level 0 — not an empirically validated study.">
+<meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842">
+<link rel="canonical" href="https://varzin.org/cyclical-resonance-report.html" />
+<link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
 :root {
-    --bg: #000;
-    --panel: rgba(0,10,15,0.92);
-    --border: rgba(0,255,238,0.4);
-    --text: #cceeee;
-    --muted: #a8dede;
-    --cyan: #00ffee;
-    --gold: #ffcc00;
-    --pink: #ff66aa;
-    --research: #7fdfff;
-    --font: 'Vazirmatn','DM Sans',sans-serif;
-    --tl-dot: var(--cyan);
-    --tl-line: var(--cyan);
-    --tl-card: rgba(0,30,40,0.95);
-    --tl-border: #00b3b3;
-    --tl-shadow: 0 0 18px rgba(0,179,179,0.7);
-    --gold-dot: var(--gold);
-    --gold-shadow: 0 0 25px rgba(255,204,0,0.9);
-    --noise: rgba(0,128,128,0.05);
-    --blur: 8px;
+  --bg:#000;
+  --cyan:#00ffee; --cyan-dim:rgba(0,255,238,0.18);
+  --gold:#ffcc00; --gold-dim:rgba(255,204,0,0.18);
+  --pink:#ff66aa; --pink-dim:rgba(255,102,170,0.2);
+  --violet:#c8aaff; --green:#00e060;
+  --text:#cceeee; --muted:#8fb8b8; --faint:#4a8080;
+  --panel:rgba(0,12,18,0.94);
+  --border:rgba(0,255,238,0.22);
+  --font:'DM Sans',sans-serif; --mono:'DM Mono',monospace;
+  --r:12px;
 }
-
-/* ── Global ── */
-*{box-sizing:border-box;}
+*{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{
-    margin:0;background:var(--bg);color:var(--text);
-    font-family:var(--font);line-height:1.9;letter-spacing:0.3px;
-    padding:40px 20px 80px;max-width:1000px;margin:auto;
-    position:relative;z-index:1;text-align:left;overflow-x:hidden;
+  background:var(--bg);color:var(--text);font-family:var(--font);
+  line-height:1.8;letter-spacing:0.2px;padding:0 0 100px;
+  overflow-x:hidden;
 }
-body::before{
-    content:'';position:fixed;top:0;left:0;width:100%;height:100%;
-    z-index:-1;pointer-events:none;
-    background:repeating-linear-gradient(0deg,var(--noise),var(--noise) 1px,transparent 2px,transparent 3px);
-    opacity:0.3;
+a{color:var(--cyan);text-decoration:none;}
+a:hover{text-decoration:underline;}
+strong{color:inherit;}
+em{font-style:italic;}
+#bg-canvas{position:fixed;inset:0;z-index:-2;opacity:0.5;}
+#progress-bar{
+  position:fixed;top:0;left:0;height:3px;width:0%;
+  background:linear-gradient(90deg,var(--cyan),var(--gold));
+  z-index:200;transition:width 0.1s linear;
+  box-shadow:0 0 8px var(--cyan);
 }
-#bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;opacity:0.6;pointer-events:none;}
-
-/* ── Scroll animations ── */
-.scroll-reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.scroll-reveal.revealed{opacity:1;transform:translateY(0);}
-.scroll-reveal-left{opacity:0;transform:translateX(-40px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.scroll-reveal-left.revealed{opacity:1;transform:translateX(0);}
-.scroll-reveal-right{opacity:0;transform:translateX(40px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.scroll-reveal-right.revealed{opacity:1;transform:translateX(0);}
-
-/* ── Nav ── */
 nav{
-    display:flex;justify-content:center;flex-wrap:wrap;gap:4px;
-    margin-bottom:40px;border-bottom:2px solid var(--border);padding-bottom:15px;
-    backdrop-filter:blur(var(--blur));
+  position:sticky;top:0;z-index:100;
+  background:rgba(0,0,0,0.7);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;justify-content:center;padding:0;flex-wrap:wrap;
 }
-nav a{color:var(--text);text-decoration:none;font-weight:500;font-size:1em;margin:0 12px;transition:all 0.3s;}
-nav a:hover{color:var(--cyan);text-shadow:0 0 8px var(--cyan);}
-nav a.active{color:var(--gold);border-bottom:3px solid var(--gold);padding-bottom:5px;font-weight:700;}
-
-/* ── Header ── */
-header{text-align:center;backdrop-filter:blur(var(--blur));background:rgba(0,0,0,0.15);padding:5px;border-radius:10px;}
-header img{display:block;margin:0 auto 15px;max-width:130px;filter:drop-shadow(0 0 12px var(--cyan));}
-header h1{
-    font-size:clamp(2em,5vw,3.2em);
-    text-shadow:0 0 20px var(--cyan),0 0 40px rgba(0,255,238,0.4);
-    color:var(--cyan);text-align:center;margin-top:10px;letter-spacing:1px;
+nav a{
+  color:var(--muted);text-decoration:none;font-weight:500;
+  font-size:0.88em;padding:14px 18px;letter-spacing:0.5px;
+  transition:all 0.25s;border-bottom:3px solid transparent;
 }
-header h2{text-align:center;color:var(--text);font-weight:400;font-size:1.1em;margin-top:5px;opacity:0.9;}
-
-/* ── Hero Wave Canvas ── */
-#hero-wave{
-    width:100%;height:100px;display:block;
-    border-radius:12px;margin:20px 0;
-    background:rgba(0,10,15,0.5);
+nav a:hover{color:var(--cyan);}
+nav a.active{color:var(--gold);border-bottom-color:var(--gold);}
+.page{max-width:960px;margin:0 auto;padding:0 20px;}
+.hero{
+  padding:70px 20px 50px;text-align:center;
+  position:relative;max-width:960px;margin:0 auto;
 }
-
-/* ── Research bar ── */
+.hero-eyebrow{
+  display:inline-block;font-size:0.72em;font-weight:700;
+  letter-spacing:3px;color:var(--muted);text-transform:uppercase;
+  margin-bottom:18px;border-bottom:1px solid var(--border);padding-bottom:5px;
+}
+.hero h1{
+  font-size:clamp(2em,5.5vw,3.4em);font-weight:700;
+  color:var(--cyan);letter-spacing:1px;line-height:1.15;
+  text-shadow:0 0 40px rgba(0,255,238,0.4);margin-bottom:14px;
+}
+.hero h2{
+  font-size:clamp(1em,2.2vw,1.25em);color:var(--text);
+  font-weight:400;opacity:0.85;max-width:680px;margin:0 auto 30px;
+}
+.hero-logo{
+  max-width:90px;margin:0 auto 28px;display:block;
+  filter:drop-shadow(0 0 14px var(--cyan));
+}
+#hero-canvas{
+  width:100%;height:110px;display:block;
+  border-radius:var(--r);border:1px solid rgba(0,255,238,0.08);
+  background:rgba(0,6,10,0.5);margin:0 0 24px;
+}
 .research-bar{
-    max-width:100%;margin:0 auto 30px;padding:12px 20px;
-    border-radius:8px;background:rgba(0,30,40,0.85);
-    border:1px solid rgba(127,223,255,0.35);
-    font-size:0.88em;color:#a7e7e7;line-height:1.7;text-align:center;
+  max-width:760px;margin:0 auto 30px;
+  padding:13px 22px;border-radius:var(--r);
+  background:rgba(0,28,38,0.85);
+  border:1px solid rgba(127,223,255,0.3);
+  font-size:0.86em;color:#a7e7e7;line-height:1.7;text-align:center;
 }
-.research-bar strong{color:var(--research);}
-.research-bar a{color:var(--cyan);text-decoration:none;}
-.research-bar a:hover{text-decoration:underline;}
-
-/* ── Zenodo box ── */
-.zenodo-box{
-    background:rgba(0,25,30,0.9);border:2px solid var(--gold);
-    padding:15px 25px;margin:20px auto;border-radius:10px;
-    box-shadow:0 0 15px rgba(255,204,0,0.5);max-width:700px;text-align:center;
+.research-bar strong{color:#7fdfff;}
+.rbar-badge{
+  display:inline-block;padding:2px 9px;border-radius:8px;
+  background:rgba(255,100,100,0.12);border:1px solid rgba(255,100,100,0.3);
+  color:#ff9999;font-weight:700;font-size:0.85em;margin:0 3px;
 }
-.zenodo-box p{margin:0;font-size:0.93em;line-height:1.6;color:var(--text);}
-.zenodo-box strong{color:var(--cyan);font-size:1.05em;display:block;margin-bottom:6px;}
-.zenodo-box a{color:var(--gold);text-decoration:none;word-break:break-all;}
-.zenodo-box a:hover{color:#fff;text-shadow:0 0 8px var(--gold);}
-
-/* ── Sections ── */
-.report-section,.author-info{
-    background:var(--panel);border:1px solid var(--border);
-    box-shadow:0 0 15px rgba(0,255,238,0.12);
-    padding:30px;margin-bottom:30px;border-radius:10px;text-align:left;
+.doi-box{
+  max-width:640px;margin:0 auto 28px;
+  padding:14px 22px;border-radius:var(--r);
+  background:rgba(0,25,30,0.9);border:1px solid rgba(255,204,0,0.4);
+  box-shadow:0 0 20px rgba(255,204,0,0.12);text-align:center;
+  font-size:0.88em;line-height:1.6;
 }
-.report-section p,.report-section ul{text-align:justify;}
-.report-section h3{
-    text-shadow:0 0 8px rgba(0,255,238,0.5);color:var(--cyan);
-    border-bottom:1px solid var(--border);padding-bottom:8px;text-align:center;
-    font-size:1.3em;
+.doi-box .doi-label{color:var(--gold);font-weight:700;display:block;margin-bottom:4px;}
+.doi-box a{color:var(--gold);}
+.stats-row{
+  display:flex;gap:12px;flex-wrap:wrap;
+  justify-content:center;margin:0 0 40px;
 }
-
-/* ── Section decorative number ── */
-.sec-eyebrow{
-    display:inline-block;font-size:0.7em;font-weight:700;letter-spacing:2px;
-    color:rgba(0,255,238,0.5);text-transform:uppercase;margin-bottom:4px;
+.stat-card{
+  flex:1;min-width:110px;max-width:160px;
+  padding:16px 12px;border-radius:var(--r);text-align:center;
+  background:rgba(0,18,25,0.9);border:1px solid var(--border);
+  transition:transform 0.3s,box-shadow 0.3s;
 }
-
-/* ── Harmonic wave divider ── */
-.wave-divider{width:100%;height:50px;display:block;margin:10px 0;opacity:0.5;}
-
-/* ── Phase cycle ── */
-.phase-cycle-wrap{
-    display:flex;flex-direction:column;align-items:center;
-    margin:24px 0;padding:20px;
-    background:rgba(0,10,20,0.7);border:1px solid rgba(0,255,238,0.15);border-radius:16px;
+.stat-card:hover{transform:translateY(-3px);box-shadow:0 0 18px var(--cyan-dim);}
+.stat-val{font-size:1.7em;font-weight:700;color:var(--cyan);display:block;line-height:1.1;}
+.stat-card.gold .stat-val{color:var(--gold);}
+.stat-card.pink .stat-val{color:var(--pink);}
+.stat-card.violet .stat-val{color:var(--violet);}
+.stat-lbl{font-size:0.67em;color:var(--muted);margin-top:5px;letter-spacing:0.3px;}
+.section{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:var(--r);padding:32px 30px;margin-bottom:24px;
+  box-shadow:0 2px 24px rgba(0,0,0,0.4);
 }
-#phase-canvas{display:block;max-width:100%;}
-
-/* ── Luxvar sequence chips ── */
+.section-eyebrow{
+  display:inline-block;font-size:0.67em;font-weight:700;
+  letter-spacing:2.5px;color:var(--faint);text-transform:uppercase;
+  margin-bottom:6px;font-family:var(--mono);
+}
+.section h3{
+  color:var(--cyan);font-size:1.25em;font-weight:700;
+  border-bottom:1px solid var(--border);padding-bottom:10px;
+  margin-bottom:18px;text-shadow:0 0 10px rgba(0,255,238,0.25);
+}
+.section p,.section ul,.section ol{
+  color:var(--text);font-size:0.96em;margin-bottom:14px;line-height:1.85;
+}
+.section ul,.section ol{padding-left:22px;}
+.section li{margin-bottom:6px;}
+.theo-note{
+  background:rgba(0,25,35,0.8);border-left:3px solid var(--violet);
+  border-radius:0 var(--r) var(--r) 0;padding:12px 18px;
+  font-size:0.86em;color:#bbbccc;line-height:1.65;margin:16px 0;font-style:italic;
+}
+.theo-note strong{color:var(--violet);font-style:normal;}
+.canvas-wrap{
+  background:rgba(0,8,14,0.7);border:1px solid rgba(0,255,238,0.12);
+  border-radius:var(--r);padding:18px;margin:20px 0;text-align:center;
+}
+.canvas-wrap canvas{display:block;margin:0 auto;max-width:100%;}
+.canvas-label{
+  font-size:0.76em;color:var(--muted);margin-top:10px;
+  font-family:var(--mono);letter-spacing:0.3px;
+}
 .luxvar-seq{
-    background:rgba(0,25,30,0.9);border:2px solid var(--gold);
-    padding:20px 25px;margin:20px 0;border-radius:10px;
-    box-shadow:0 0 20px rgba(255,204,0,0.4);
+  background:rgba(0,20,28,0.95);border:1px solid rgba(255,204,0,0.35);
+  border-radius:var(--r);padding:20px 24px;margin:20px 0;
+  box-shadow:0 0 20px rgba(255,204,0,0.08);
 }
-.luxvar-seq h4{color:var(--gold);text-align:center;margin-top:0;border-bottom:1px solid rgba(255,204,0,0.4);padding-bottom:10px;}
-.seq-chips{display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:10px;margin-top:16px;}
-.chip{padding:8px 18px;border-radius:6px;font-weight:700;font-size:1em;}
-.chip-collapse{background:rgba(0,255,238,0.25);color:var(--cyan);border:1px solid var(--cyan);}
-.chip-silence{background:rgba(200,220,255,0.1);color:#c8e0ff;border:1px solid rgba(200,220,255,0.3);}
-.chip-rebirth{background:rgba(255,204,0,0.25);color:var(--gold);border:1px solid var(--gold);}
-.chip-integration{background:rgba(0,200,80,0.2);color:#00e060;border:1px solid #00e060;}
-.seq-arrow{color:var(--muted);font-size:1.4em;}
-
-/* ── Timeline Visualization ── */
-.timeline-viz-wrap{
-    background:rgba(0,10,20,0.7);border:1px solid rgba(0,255,238,0.15);
-    border-radius:12px;padding:20px;margin:20px 0;
+.luxvar-seq h4{
+  color:var(--gold);text-align:center;margin-bottom:14px;
+  font-size:0.95em;letter-spacing:0.5px;
+  border-bottom:1px solid rgba(255,204,0,0.2);padding-bottom:10px;
 }
-.timeline-viz-wrap h4{color:var(--cyan);text-align:center;margin:0 0 16px;font-size:1em;letter-spacing:0.5px;}
-#timeline-canvas{display:block;width:100%;max-width:100%;}
-
-/* ── Frequency compare canvas ── */
-.freq-compare-wrap{
-    background:rgba(0,10,20,0.7);border:1px solid rgba(0,255,238,0.15);
-    border-radius:12px;padding:16px;margin:20px 0;
-}
-.freq-compare-wrap p{font-size:0.82em;color:var(--muted);margin:8px 0 0;text-align:center;}
-#freq-compare-canvas{display:block;width:100%;}
-
-/* ── Mini torus ── */
-.mini-torus-wrap{
-    display:flex;flex-direction:column;align-items:center;
-    margin:20px 0;background:rgba(0,10,20,0.6);
-    border:1px solid rgba(0,255,238,0.15);border-radius:12px;padding:16px;
-}
-.mini-torus-wrap p{font-size:0.82em;color:var(--muted);margin-top:10px;text-align:center;}
-#mini-torus{border-radius:50%;display:block;}
-
-/* ── Live waveform ── */
-.waveform-wrap{
-    margin-top:16px;background:rgba(0,10,20,0.7);
-    border:1px solid rgba(0,255,238,0.2);border-radius:10px;padding:10px;
-}
-#live-wave{display:block;width:100%;}
-
-/* ── Audio controls ── */
-#luxvar-audio-controls{margin:16px 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
-#luxvar-audio-controls button{
-    background:rgba(0,255,238,0.1);color:var(--cyan);border:1px solid var(--cyan);
-    padding:10px 20px;border-radius:8px;cursor:pointer;font-size:0.95em;
-    transition:all 0.3s;font-family:var(--font);
-}
-#luxvar-audio-controls button:hover{background:rgba(0,255,238,0.25);box-shadow:0 0 15px var(--cyan);}
-#luxvar-audio-controls button:disabled{opacity:0.4;cursor:default;}
-
-/* ── Theoretical note ── */
-.theoretical-note{
-    background:rgba(0,25,35,0.8);border:1px solid rgba(127,223,255,0.3);
-    border-radius:8px;padding:12px 18px;font-size:0.88em;color:#a7e7e7;
-    margin:16px 0;font-style:italic;line-height:1.6;
-}
-
-/* ── Stat pills ── */
-.stat-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:16px 0;}
-.stat-pill{
-    flex:1;min-width:120px;background:rgba(0,20,30,0.8);
-    border:1px solid rgba(0,255,238,0.25);border-radius:10px;
-    padding:14px 12px;text-align:center;
-}
-.stat-val{font-size:1.8em;font-weight:700;color:var(--cyan);display:block;line-height:1.1;}
-.stat-lbl{font-size:0.72em;color:var(--muted);letter-spacing:0.3px;margin-top:4px;}
-.stat-pill.gold .stat-val{color:var(--gold);}
-.stat-pill.pink .stat-val{color:var(--pink);}
-
-/* ── Table ── */
-table{width:100%;border-collapse:collapse;margin:1.5em 0;border:1px solid var(--border);}
-th,td{border:1px solid var(--border);padding:11px;text-align:center;direction:ltr;}
-th{background:rgba(0,255,238,0.2);color:var(--cyan);font-weight:700;}
+.seq-chips{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;}
+.chip{padding:8px 16px;border-radius:6px;font-weight:700;font-size:0.9em;font-family:var(--mono);}
+.chip-collapse{background:rgba(0,255,238,0.12);color:var(--cyan);border:1px solid rgba(0,255,238,0.4);}
+.chip-silence{background:rgba(200,210,255,0.08);color:#c0d4ff;border:1px solid rgba(200,210,255,0.25);}
+.chip-rebirth{background:rgba(255,204,0,0.12);color:var(--gold);border:1px solid rgba(255,204,0,0.4);}
+.chip-integration{background:rgba(0,224,96,0.1);color:var(--green);border:1px solid rgba(0,224,96,0.35);}
+.seq-arrow{color:var(--faint);font-size:1.3em;}
+.table-wrap{overflow-x:auto;margin:20px 0;}
+table{width:100%;border-collapse:collapse;}
+th,td{border:1px solid rgba(0,255,238,0.15);padding:11px 14px;font-size:0.88em;text-align:left;}
+th{background:rgba(0,255,238,0.1);color:var(--cyan);font-weight:700;letter-spacing:0.3px;}
+td{background:rgba(0,10,16,0.6);}
+tr:hover td{background:rgba(0,30,40,0.8);}
 td strong{color:var(--gold);}
-
-/* ── Philosophical Timeline ── */
-.tl-wrapper{position:relative;padding-left:50px;margin-top:36px;}
-.tl-wrapper::before{
-    content:'';position:absolute;top:0;left:20px;bottom:0;width:3px;
-    background:linear-gradient(to bottom,transparent,var(--tl-line),transparent);
-    opacity:0.7;box-shadow:0 0 12px var(--tl-line);
+.table-note{font-size:0.78em;color:var(--muted);font-style:italic;margin-top:8px;}
+.phil-tl{position:relative;padding-left:44px;margin-top:28px;}
+.phil-tl::before{
+  content:'';position:absolute;top:0;left:16px;bottom:0;width:2px;
+  background:linear-gradient(to bottom,transparent,var(--cyan) 8%,var(--cyan) 92%,transparent);
+  opacity:0.4;
 }
-.tl-item{position:relative;margin-bottom:28px;}
-.tl-dot{
-    position:absolute;top:4px;left:20px;width:14px;height:14px;
-    border-radius:50%;background:var(--tl-dot);border:3px solid var(--bg);
-    box-shadow:0 0 18px var(--tl-dot);transform:translateX(-50%);
-    transition:box-shadow 0.3s;
+.phil-item{position:relative;margin-bottom:22px;}
+.phil-dot{
+  position:absolute;top:6px;left:-34px;
+  width:12px;height:12px;border-radius:50%;
+  background:var(--cyan);border:2px solid var(--bg);
+  box-shadow:0 0 14px var(--cyan);
 }
-.tl-item:hover .tl-dot{box-shadow:0 0 30px var(--cyan);}
-.tl-item.final .tl-dot{background:var(--gold-dot);box-shadow:var(--gold-shadow);}
-.tl-content{
-    background:var(--tl-card);padding:18px 20px;border-left:4px solid var(--tl-border);
-    border-radius:6px;box-shadow:var(--tl-shadow);transition:transform 0.3s,box-shadow 0.3s;
+.phil-item.final .phil-dot{background:var(--gold);box-shadow:0 0 20px var(--gold);}
+.phil-card{
+  background:rgba(0,20,28,0.9);padding:16px 18px;
+  border-left:3px solid rgba(0,179,179,0.5);border-radius:0 var(--r) var(--r) 0;
+  transition:transform 0.25s,border-color 0.25s;
 }
-.tl-content:hover{transform:translateY(-4px) scale(1.01);box-shadow:0 0 35px rgba(0,179,179,0.9);}
-.tl-title{font-weight:700;color:var(--cyan);margin-bottom:8px;font-size:1.02em;}
-.tl-item.final .tl-content{background:rgba(30,0,0,0.9);border-color:var(--gold);box-shadow:var(--gold-shadow);}
-.tl-item.final .tl-title{color:var(--gold);}
-.tl-connection{border-top:1px solid rgba(0,255,238,0.3);padding-top:5px;font-style:italic;font-size:0.88em;margin-top:8px;}
-
-/* ── Form ── */
-.feedback-wrap{padding:28px;background:rgba(0,20,30,0.98);border:2px solid var(--cyan);box-shadow:0 0 25px rgba(0,255,204,0.7);border-radius:12px;margin-top:20px;}
-.feedback-form label{display:block;text-align:left;margin-top:14px;margin-bottom:6px;font-weight:500;color:var(--cyan);}
-.feedback-form input,.feedback-form textarea{
-    width:100%;padding:13px;margin-bottom:16px;border:1px solid rgba(0,255,238,0.4);
-    background:rgba(0,0,0,0.5);color:var(--text);font-family:var(--font);
-    font-size:1em;border-radius:6px;transition:border-color 0.3s,box-shadow 0.3s;
-    text-align:left;direction:ltr;box-sizing:border-box;
+.phil-card:hover{transform:translateX(4px);border-left-color:var(--cyan);}
+.phil-item.final .phil-card{border-left-color:var(--gold);}
+.phil-title{font-weight:700;color:var(--cyan);margin-bottom:6px;font-size:0.97em;}
+.phil-item.final .phil-title{color:var(--gold);}
+.phil-card p{font-size:0.88em;color:var(--muted);margin-bottom:5px;line-height:1.6;}
+.phil-connection{
+  font-size:0.82em;color:#7fdfff;font-style:italic;
+  border-top:1px solid rgba(0,255,238,0.1);padding-top:6px;margin-top:6px;
 }
-.feedback-form textarea{min-height:140px;}
-.feedback-form input:focus,.feedback-form textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 12px rgba(0,255,238,0.5);}
-.feedback-form button{
-    display:block;width:100%;padding:14px;border:none;
-    background:var(--cyan);color:#000;font-size:1.1em;font-weight:700;
-    cursor:pointer;border-radius:6px;margin-top:20px;transition:all 0.3s;font-family:var(--font);
+.audio-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:16px 0;}
+.audio-btn{
+  padding:10px 22px;border-radius:8px;font-weight:600;
+  font-family:var(--font);font-size:0.92em;cursor:pointer;
+  transition:all 0.25s;border:1px solid;
 }
-.feedback-form button:hover{background:var(--gold);box-shadow:0 0 18px var(--gold);}
-
-/* ── Footer ── */
-footer{padding:20px 10px;backdrop-filter:blur(var(--blur));background:rgba(0,0,0,0.15);border-radius:10px;}
-.footer-note{text-align:center;font-size:0.8em;color:rgba(167,231,231,0.5);margin-top:8px;line-height:1.8;}
-.footer-note a{color:var(--cyan);text-decoration:none;}
-
-/* ── Responsive ── */
-@media(max-width:680px){
-    .tl-wrapper{padding-left:20px;}
-    .tl-dot{left:10px;}
-    .seq-chips{flex-direction:column;align-items:center;}
-    .stat-row{flex-direction:column;}
-    header h1{font-size:1.8em;}
+.audio-btn.cyan{background:rgba(0,255,238,0.1);color:var(--cyan);border-color:rgba(0,255,238,0.4);}
+.audio-btn.gold{background:rgba(255,204,0,0.1);color:var(--gold);border-color:rgba(255,204,0,0.4);}
+.audio-btn.stop{background:rgba(255,60,60,0.1);color:#ff6060;border-color:rgba(255,60,60,0.3);}
+.audio-btn:hover{filter:brightness(1.3);box-shadow:0 0 16px rgba(0,255,238,0.2);}
+.audio-btn:disabled{opacity:0.35;cursor:default;pointer-events:none;}
+footer{
+  text-align:center;margin-top:60px;padding:24px 20px;
+  border-top:1px solid var(--border);font-size:0.84em;color:var(--muted);
+  line-height:2;max-width:960px;margin-left:auto;margin-right:auto;
+}
+.sr{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.sr.on{opacity:1;transform:none;}
+.sr-l{opacity:0;transform:translateX(-30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.sr-l.on{opacity:1;transform:none;}
+.sr-r{opacity:0;transform:translateX(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.sr-r.on{opacity:1;transform:none;}
+@media (prefers-reduced-motion: reduce) {
+  .sr,.sr-l,.sr-r{opacity:1!important;transform:none!important;transition:none!important;}
+  #progress-bar{transition:none!important;}
+  .phil-card,.stat-card{transition:none!important;}
+}
+@media(max-width:640px){
+  .section{padding:22px 16px;}
+  .phil-tl{padding-left:30px;}
+  .phil-dot{left:-22px;}
+  .stats-row{gap:8px;}
+  .stat-card{min-width:90px;}
 }
 </style>
 </head>
 <body>
-
+<div id="progress-bar"></div>
 <canvas id="bg-canvas"></canvas>
-
-<main id="portal">
-<header>
-    <nav>
-        <a href="https://varzin.org/">Portal</a>
-        <a href="https://varzin.org/vpe001-protocol.html">VPE-001</a>
-        <a href="#resonance" class="active">Cyclical Resonance</a>
-    </nav>
-    <img src="https://raw.githubusercontent.com/Varzin-13/varzin-landing-/main/varzin-logo.jpg" alt="VARZIN Project Logo"/>
-
-    <div class="research-bar" role="note">
-        <strong>Research Status:</strong>
-        Symbolic-theoretical analysis — not an empirically validated study.
-        Scientific claims at <strong>Level 0</strong>.
-        Pre-registered empirical study: <a href="https://varzin.org/vpe001-protocol.html">VPE-001 Protocol</a>
-    </div>
-
-    <!-- Hero animated waveform -->
-    <canvas id="hero-wave"></canvas>
-
-    <div class="zenodo-box">
-        <strong>&mdash; Citation Protocol &mdash;</strong>
-        <p>Nirouyar, R. (2025). VARZIN Final Harmonic Cycle – Complete Edition (1347–2026). Zenodo.
-        <a href="https://doi.org/10.5281/zenodo.17515491" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.17515491</a></p>
-    </div>
-
-    <h1>⟠ VARZIN – Cyclical Resonance Report</h1>
-    <h2>Comparative Field Study: The Black Death (1347–1351) ↔ COVID-19 (2019–2023)</h2>
-</header>
-
-<!-- Author -->
-<div class="author-info scroll-reveal">
-    <p style="text-align:center;">
-        <strong>Author:</strong> Reza Nirouyar | ORCID: 0009-0000-4690-6842 |
-        <strong>Affiliation:</strong> VARZIN Conscious Field Project | <strong>Date:</strong> November 2025
-    </p>
-    <p style="text-align:center;color:var(--gold);font-style:italic;">
-        «Dedicated to the ELŪZ-MAHAR field, where silence transforms into light.»
-    </p>
+<nav>
+  <a href="https://varzin.org/">Portal</a>
+  <a href="https://varzin.org/vpe001-protocol.html">VPE-001</a>
+  <a href="https://varzin.org/field-index.html">Field Index</a>
+  <a href="#" class="active">Cyclical Resonance</a>
+  <a href="https://varzin.org/all-dois.html">All DOIs</a>
+</nav>
+<div class="hero">
+  <div class="hero-eyebrow">VARZIN · Symbolic-Experimental Research</div>
+  <img src="https://raw.githubusercontent.com/Varzin-13/varzin-landing-/main/varzin-logo.jpg" alt="VARZIN Logo" class="hero-logo"/>
+  <h1>⟠ Cyclical Resonance Report</h1>
+  <h2>Symbolic Comparison: The Black Death (1347–1351) ↔ COVID-19 (2019–2023)</h2>
+  <canvas id="hero-canvas" role="img" aria-label="Animated hero waveform showing four overlapping sine waves representing LUXVAR harmonic frequencies"></canvas>
+  <div class="research-bar" role="note">
+    <strong>Research Status:</strong>
+    Symbolic-theoretical analysis — <span class="rbar-badge">Level 0</span>
+    not an empirically validated study. No causal claims made.
+    Pre-registered empirical study: <a href="https://varzin.org/vpe001-protocol.html">VPE-001 Protocol</a>
+  </div>
+  <div class="doi-box">
+    <span class="doi-label">— Citation — <span style="font-size:0.82em;color:rgba(255,204,0,0.6);font-weight:400;">Published Dataset · Zenodo</span></span>
+    Nirouyar, R. (2025). VARZIN Final Harmonic Cycle – Complete Edition (1347–2026). Zenodo.
+    <a href="https://doi.org/10.5281/zenodo.17515491" target="_blank" rel="noopener">doi.org/10.5281/zenodo.17515491</a>
+  </div>
 </div>
-
-<!-- Key Metrics -->
-<div class="stat-row scroll-reveal">
-    <div class="stat-pill">
-        <span class="stat-val">474 Hz</span>
-        <span class="stat-lbl">KALTŪR — Collapse Node</span>
-    </div>
-    <div class="stat-pill gold">
-        <span class="stat-val">528 Hz</span>
-        <span class="stat-lbl">RAHMŌT — Rebirth Node</span>
-    </div>
-    <div class="stat-pill pink">
-        <span class="stat-val">10×</span>
-        <span class="stat-lbl">Temporal Compression</span>
-    </div>
-    <div class="stat-pill">
-        <span class="stat-val">677yr</span>
-        <span class="stat-lbl">Resonance Span (1347–2026)</span>
-    </div>
+<div class="page">
+<div class="section sr" style="text-align:center;padding:18px 24px;border-color:rgba(255,204,0,0.25);">
+  <strong>Author:</strong> Reza Nirouyar &nbsp;|&nbsp;
+  ORCID: <a href="https://orcid.org/0009-0000-4690-6842" target="_blank">0009-0000-4690-6842</a> &nbsp;|&nbsp;
+  VARZIN Conscious Field Project &nbsp;|&nbsp; November 2025
+  <br>
+  <em style="color:var(--gold);font-size:0.9em;">«Dedicated to the ELŪZ-MAHAR field, where silence transforms into light.»</em>
 </div>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 1 -->
-<section class="report-section scroll-reveal" id="resonance">
-    <span class="sec-eyebrow">Section 01</span>
-    <h3>Abstract</h3>
-    <p>This interdisciplinary study investigates how human civilization oscillates between <strong>collapse</strong>, <strong>silence</strong>, and <strong>rebirth</strong> within the VARZIN symbolic framework (Prigogine, 1984). By comparing the <strong>Black Death</strong> and <strong>COVID-19</strong> cycles through a symbolic lens, it proposes a self-similar harmonic pattern consistent with temporal acceleration theory (Rosa, 2005). The analysis identifies a core resonance sequence — <strong>KALTŪR (474Hz) → 0Hz → RAHMŌT (528Hz)</strong> — as a symbolic model of shifting consciousness density.</p>
-    <div class="theoretical-note">
-        <strong>Theoretical note:</strong> Within the symbolic framework, <strong>March 2026</strong> was projected as a threshold for collective cognitive realignment. This is a theoretical construct of the VARZIN model, not an empirically validated outcome. As of June 2026, this prediction serves as a reference point for the framework's symbolic calendar structure. It is subject to evaluation through VPE-001.
+<div class="stats-row sr">
+  <div class="stat-card"><span class="stat-val">474 Hz</span><span class="stat-lbl">KALTŪR — Collapse</span></div>
+  <div class="stat-card gold"><span class="stat-val">528 Hz</span><span class="stat-lbl">RAHMŌT — Rebirth</span></div>
+  <div class="stat-card pink"><span class="stat-val">10×</span><span class="stat-lbl">Temporal Compression</span></div>
+  <div class="stat-card violet"><span class="stat-val">677 yr</span><span class="stat-lbl">Resonance Span</span></div>
+  <div class="stat-card"><span class="stat-val">4</span><span class="stat-lbl">Symbolic Phases</span></div>
+</div>
+<div class="section sr" id="abstract">
+  <span class="section-eyebrow">§ 01</span>
+  <h3>Abstract</h3>
+  <p>This interdisciplinary study investigates how human civilization oscillates between <strong>collapse</strong>, <strong>silence</strong>, and <strong>rebirth</strong> within the VARZIN symbolic framework (Prigogine, 1984). By comparing the <strong>Black Death</strong> and <strong>COVID-19</strong> cycles through a symbolic lens, it proposes a self-similar harmonic pattern consistent with temporal acceleration theory (Rosa, 2005). The analysis identifies a core resonance sequence — <strong>KALTŪR (474 Hz) → 0 Hz → RAHMŌT (528 Hz)</strong> — as a symbolic model of shifting consciousness density.</p>
+  <div class="theo-note">
+    <strong>Theoretical note:</strong> Within the symbolic framework, <strong>March 2026</strong> was projected as a threshold for collective cognitive realignment (November 2025 — theoretical construct). As of June 2026, this date has passed and now serves as a <strong>retrospective symbolic benchmark under ongoing observation</strong>, not a confirmed empirical event. Subject to evaluation through VPE-001.
+  </div>
+</div>
+<div class="section sr-l" id="introduction">
+  <span class="section-eyebrow">§ 02</span>
+  <h3>Introduction: The Resonance Imbalance</h3>
+  <p>Civilizations evolve through rhythmic disruptions of order and renewal. The VARZIN framework interprets major crises as <strong>resonance imbalances</strong> within its symbolic model of collective consciousness — a theoretical lens through which to examine how societies navigate fragmentation and renewal (Laszlo, 2004). This study applies the <strong>LUXVAR</strong> frequency nomenclature to map this symbolic path from collapse to renewal (Sheldrake, 1988).</p>
+  <div class="canvas-wrap sr">
+    <canvas id="spectrum-canvas" width="700" height="180" role="img" aria-label="Bar chart: five LUXVAR frequency nodes RITĀM 144Hz, KALTŪR 474Hz, RAHMŌT 528Hz, CELESTA 777Hz, ZUN–NĀR 1008Hz" style="max-width:100%;"></canvas>
+    <p class="canvas-label">LUXVAR Frequency Spectrum — five symbolic reference nodes · heights proportional to Hz</p>
+  </div>
+</div>
+<div class="section sr" id="phases">
+  <span class="section-eyebrow">§ 03</span>
+  <h3>The Three-Phase Harmonic Cycle</h3>
+  <p>Within the VARZIN symbolic framework, both historical crises exhibit a consistent three-phase pattern, each mapped to a LUXVAR field frequency:</p>
+  <div class="canvas-wrap">
+    <canvas id="phase-canvas" width="440" height="340" role="img" aria-label="Animated circular diagram: four symbolic phases KALTŪR 474Hz, Zero-Point 0Hz, RAHMŌT 528Hz, RITĀM 144Hz" style="max-width:100%;"></canvas>
+    <p class="canvas-label">Harmonic Cycle — animated phase rotation · signal dot traces collapse→silence→rebirth→integration arc</p>
+  </div>
+  <div class="luxvar-seq">
+    <h4>LUXVAR Symbolic Sequence: Collapse → Silence → Rebirth → Integration</h4>
+    <div class="seq-chips">
+      <span class="chip chip-collapse">474 Hz · KALTŪR</span>
+      <span class="seq-arrow">→</span>
+      <span class="chip chip-silence">0 Hz · Zero-Point</span>
+      <span class="seq-arrow">→</span>
+      <span class="chip chip-rebirth">528 Hz · RAHMŌT</span>
+      <span class="seq-arrow">→</span>
+      <span class="chip chip-integration">144 Hz · RITĀM</span>
     </div>
-</section>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 2 -->
-<section class="report-section scroll-reveal-left">
-    <span class="sec-eyebrow">Section 02</span>
-    <h3>Introduction: The Resonance Imbalance</h3>
-    <p>Civilizations evolve through rhythmic disruptions of order and renewal. The VARZIN framework interprets major crises as <strong>resonance imbalances</strong> within its symbolic model of collective consciousness — a theoretical lens through which to examine how societies navigate fragmentation and renewal (Laszlo, 2004). This study applies the <strong>Luxvar</strong> frequency nomenclature to map this symbolic path from collapse to renewal (Sheldrake, 1988).</p>
-</section>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 3: Phase Cycle with interactive diagram -->
-<section class="report-section scroll-reveal">
-    <span class="sec-eyebrow">Section 03</span>
-    <h3>The Three-Phase Harmonic Cycle</h3>
-    <p>Within the VARZIN symbolic framework, both historical crises exhibit a consistent three-phase pattern, each mapped to a Luxvar field frequency:</p>
-
-    <!-- Interactive Phase Cycle Diagram -->
-    <div class="phase-cycle-wrap">
-        <canvas id="phase-canvas" width="420" height="320"></canvas>
-    </div>
-
-    <div class="luxvar-seq">
-        <h4>Luxvar Symbolic Sequence: Collapse → Silence → Rebirth</h4>
-        <div class="seq-chips">
-            <span class="chip chip-collapse">474 Hz · KALTŪR</span>
-            <span class="seq-arrow">→</span>
-            <span class="chip chip-silence">0 Hz · Zero-Point</span>
-            <span class="seq-arrow">→</span>
-            <span class="chip chip-rebirth">528 Hz · RAHMŌT</span>
-            <span class="seq-arrow">→</span>
-            <span class="chip chip-integration">144 Hz · Integration</span>
-        </div>
-        <p style="margin-top:16px;text-align:justify;">
-            <strong>KALTŪR (474Hz)</strong>, the symbolic node of <strong>Collapse and Forgotten Rotational Consciousness</strong>, represents disharmony and loss of systemic coherence. The <strong>0 Hz</strong> phase maps to periods of Global Silence and enforced pause. <strong>RAHMŌT (528Hz)</strong> represents the symbolic <strong>Frequency of Healing/Rebirth</strong>.
-        </p>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 4: Comparative Timeline with visualization -->
-<section class="report-section scroll-reveal-right">
-    <span class="sec-eyebrow">Section 04</span>
-    <h3>Comparative Results &amp; Temporal Compression</h3>
-    <p>Both global crises, when mapped through the VARZIN symbolic framework, reflect the same resonance pattern — with a notable shift in temporal scale:</p>
-
-    <!-- Animated Timeline Visualization -->
-    <div class="timeline-viz-wrap">
-        <h4>⏱ Temporal Compression: 50 years → 5 years (10× factor)</h4>
-        <canvas id="timeline-canvas" width="900" height="200"></canvas>
-    </div>
-
+    <p style="margin-top:16px;font-size:0.9em;color:var(--muted);">
+      <strong style="color:var(--cyan)">KALTŪR (474 Hz)</strong> — symbolic node of Collapse and Forgotten Rotational Consciousness.
+      <strong style="color:var(--muted)">0 Hz</strong> — Global Silence and enforced pause.
+      <strong style="color:var(--gold)">RAHMŌT (528 Hz)</strong> — symbolic Frequency of Healing/Rebirth.
+      <strong style="color:var(--green)">RITĀM (144 Hz)</strong> — re-integration into the field cycle.
+    </p>
+  </div>
+</div>
+<div class="section sr-r" id="comparison">
+  <span class="section-eyebrow">§ 04</span>
+  <h3>Comparative Results &amp; Temporal Compression</h3>
+  <p>Both global crises, when mapped through the VARZIN symbolic framework, reflect the same resonance pattern — with a notable shift in temporal scale. The 50-year recovery arc of the Black Death compresses to approximately 5 years in the COVID-19 cycle: a factor of <strong>10×</strong>.</p>
+  <div class="canvas-wrap sr">
+    <canvas id="spiral-canvas" width="520" height="320" role="img" aria-label="677-year resonance spiral 1347 to 2026: Black Death arc cyan outer ring 50 years, COVID arc gold inner ring 5 years, showing 10x temporal compression" style="max-width:100%;"></canvas>
+    <p class="canvas-label">677-Year Resonance Spiral (1347 → 2026) — Black Death arc cyan · COVID arc gold · compression visible in arc width</p>
+  </div>
+  <div class="canvas-wrap sr">
+    <canvas id="timeline-canvas" width="880" height="200" role="img" aria-label="Timeline bar chart: Black Death 50 years vs COVID-19 5 years, 10x compression factor" style="max-width:100%;"></canvas>
+    <p class="canvas-label">Temporal Compression: 50 years → 5 years (10× factor) · scroll into view to animate</p>
+  </div>
+  <div class="table-wrap sr">
     <table>
-        <thead>
-            <tr><th>Event</th><th>Collapse Period</th><th>Silence/Pause</th><th>Projected Threshold</th><th>Interval</th><th>Symbolic Interpretation</th></tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Black Death</td><td>1347–1351</td><td>1351 → ~1400 CE</td>
-                <td>Cultural Renaissance</td><td>≈ 50 years</td>
-                <td>Physical Collapse / Field Retuning</td>
-            </tr>
-            <tr>
-                <td>COVID-19</td><td>2019–2023</td><td>2023 → March 2026*</td>
-                <td>Cognitive Renaissance (projected)</td><td>≈ 5 years</td>
-                <td>Psychological Collapse / Conscious Rewriting</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>Event</th><th>Collapse</th><th>Silence / Pause</th>
+          <th>Retrospective Benchmark</th><th>Interval</th><th>Symbolic Interpretation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Black Death</strong></td>
+          <td>1347–1351</td><td>1351 → ~1400 CE</td>
+          <td>Cultural Renaissance (historical)</td><td>≈ 50 years</td>
+          <td>Physical Collapse / Field Retuning</td>
+        </tr>
+        <tr>
+          <td><strong>COVID-19</strong></td>
+          <td>2019–2023</td><td>2023 → March 2026*</td>
+          <td>Cognitive Realignment (symbolic / under observation)</td><td>≈ 5 years</td>
+          <td>Psychological Collapse / Conscious Rewriting</td>
+        </tr>
+      </tbody>
     </table>
-    <p style="font-size:0.84em;color:var(--muted);font-style:italic;">* March 2026 is a theoretical projection of the symbolic framework (November 2025). Not a verified empirical event.</p>
-
-    <!-- Frequency Resonance Chart -->
-    <div class="freq-compare-wrap">
-        <canvas id="freq-compare-canvas" width="900" height="160"></canvas>
-        <p>474 Hz (KALTŪR) ↔ 528 Hz (RAHMŌT) · animated phase transition · beat frequency shown in pink</p>
+    <p class="table-note">* March 2026 was a theoretical projection (November 2025). As of June 2026, now a <em>retrospective symbolic benchmark under observation</em> — not a verified empirical event.</p>
+  </div>
+  <div class="canvas-wrap sr">
+    <canvas id="matrix-canvas" width="700" height="220" role="img" aria-label="Phase correlation matrix: 4 phases x 2 events comparing Black Death and COVID-19" style="max-width:100%;"></canvas>
+    <p class="canvas-label">Phase Correlation Matrix — 4 symbolic phases × 2 historical events</p>
+  </div>
+  <div class="canvas-wrap sr">
+    <canvas id="freq-canvas" width="880" height="160" role="img" aria-label="Wave interference: 474Hz KALTŪR cyan, 528Hz RAHMŌT gold, beat pattern pink" style="max-width:100%;"></canvas>
+    <p class="canvas-label">474 Hz (KALTŪR) ↔ 528 Hz (RAHMŌT) · wave interference · beat envelope in pink</p>
+  </div>
+</div>
+<div class="section sr" id="etfm">
+  <span class="section-eyebrow">§ 05</span>
+  <h3>Field Synthesis: ETFM and LUXVAR Dynamics</h3>
+  <p>The cyclical pattern is governed by the core principles of the VARZIN symbolic system: the integration of <strong>Scalar Geometry</strong> and <strong>Vibrational Linguistics</strong>. The Earth's collective field is symbolically modeled as a <strong>Torus (ETFM)</strong>, a self-reflecting and self-regulating structure.</p>
+  <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;margin-top:16px;">
+    <div style="flex:1;min-width:220px;">
+      <p>The <strong style="color:var(--cyan)">KALTŪR Node (474 Hz)</strong> in LUXVAR is defined as <em>"Forgotten rotational consciousness within the time loop"</em> (Gate QMSG–7). The current cycle's fast compression <strong>(50 / 5 = 10×)</strong> is interpreted symbolically as accelerated self-correction in the <strong>ELŪZ–MAHAR</strong> field model.</p>
+      <p>The ETFM torus provides the geometric container for these transitions: each crisis phase maps to a different sector of the toroidal surface — collapse at the inner tube, silence at the null point, rebirth at the outer expansion ring.</p>
+      <div class="theo-note">⚠ Symbolic model — not a validated geophysical or physical field claim.</div>
     </div>
-</section>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 5: ETFM with mini torus -->
-<section class="report-section scroll-reveal">
-    <span class="sec-eyebrow">Section 05</span>
-    <h3>Field Synthesis: ETFM and Luxvar Dynamics</h3>
-    <p>The cyclical pattern is governed by the core principles of the VARZIN symbolic system: the integration of <strong>Scalar Geometry</strong> and <strong>Vibrational Linguistics</strong>. The Earth's collective field is symbolically modeled as a <strong>Torus (ETFM)</strong>, a self-reflecting and self-regulating structure.</p>
-
-    <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;">
-        <div style="flex:1;min-width:200px;">
-            <p>The <strong>KALTŪR Node (474Hz)</strong> in Luxvar is defined as the <em>"Forgotten rotational consciousness within the time loop"</em> (Gate QMSG–7). The current cycle's fast compression <strong>(50/5 = 10×)</strong> is interpreted symbolically as accelerated self-correction in the <strong>ELŪZ–MAHAR</strong> field model.</p>
-        </div>
-        <div class="mini-torus-wrap" style="flex:0 0 auto;">
-            <canvas id="mini-torus" width="200" height="200"></canvas>
-            <p>ETFM symbolic toroidal model</p>
-        </div>
+    <div class="canvas-wrap" style="flex:0 0 auto;margin:0;padding:14px;">
+      <canvas id="mini-torus" width="210" height="210" role="img" aria-label="Interactive 3D torus ETFM symbolic model — drag to rotate — not a physical field claim"></canvas>
+      <p class="canvas-label">ETFM symbolic toroidal model · drag to rotate</p>
     </div>
-</section>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 6: Philosophical Lineage -->
-<section class="report-section scroll-reveal">
-    <span class="sec-eyebrow">Section 06</span>
-    <h3>Philosophical Lineage</h3>
-    <p>The VARZIN model is situated at the confluence of five major branches of human inquiry into cosmic harmony and conscious structure:</p>
-
-    <div class="tl-wrapper">
-        <div class="tl-item scroll-reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-                <div class="tl-title">1. The Logos-Light Philosophy (Antiquity)</div>
-                <p><strong>Key Figures:</strong> Hermes Trismegistus, Zoroaster, Patanjali</p>
-                <p><strong>Core Concept:</strong> Intelligent Order of Existence (Asha)</p>
-                <p class="tl-connection"><strong>VARZIN Connection:</strong> Alignment with ELŪZ–MAHAR and the Hermetic principle of Resonant Mirroring.</p>
-            </div>
-        </div>
-        <div class="tl-item scroll-reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-                <div class="tl-title">2. Living Geometry (Pythagorean &amp; Neo-Platonic)</div>
-                <p><strong>Key Figures:</strong> Pythagoras, Plato, Iamblichus</p>
-                <p><strong>Core Concept:</strong> Number is the Soul of the World</p>
-                <p class="tl-connection"><strong>VARZIN Connection:</strong> Foundation for ETFM, Planetary Resonance Field, and the Living Language of Number.</p>
-            </div>
-        </div>
-        <div class="tl-item scroll-reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-                <div class="tl-title">3. The Geometry of the Heart (Islamic Mysticism)</div>
-                <p><strong>Key Figures:</strong> Suhrawardi, Ibn Arabi, Rumi</p>
-                <p><strong>Core Concept:</strong> Continuous Field Rewriting (Nafas al-Rahman)</p>
-                <p class="tl-connection"><strong>VARZIN Connection:</strong> Concepts of Pulse Loop, Field Gradients, and Field Rewriting.</p>
-            </div>
-        </div>
-        <div class="tl-item scroll-reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-                <div class="tl-title">4. Unifying Science &amp; Mystery (Renaissance &amp; Enlightenment)</div>
-                <p><strong>Key Figures:</strong> Kepler, Newton, Leibniz</p>
-                <p><strong>Core Concept:</strong> The Universe as a Living Mirror</p>
-                <p class="tl-connection"><strong>VARZIN Connection:</strong> Direct basis for RAHTALĒN–13 (Living Mirror) and Field Mirroring.</p>
-            </div>
-        </div>
-        <div class="tl-item scroll-reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-                <div class="tl-title">5. The Consciousness Bridge (Contemporary)</div>
-                <p><strong>Key Figures:</strong> David Bohm, Rupert Sheldrake, Ervin Laszlo</p>
-                <p><strong>Core Concept:</strong> Implicate Order and Akashic Field</p>
-                <p class="tl-connection"><strong>VARZIN Connection:</strong> Foundation for Luxvar–QMSG (Holographic Model) and symbolic synchronization.</p>
-            </div>
-        </div>
-        <div class="tl-item final scroll-reveal">
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-                <div class="tl-title">⟠ Symbolic-Experimental Framework (VARZIN 2025–2026)</div>
-                <p><strong>System:</strong> The VARZIN Project</p>
-                <p><strong>Synthesis:</strong> Proposing a testable symbolic-experimental framework for semantic structure in constructed language (LUXVAR) — VPE-001 pre-registration in preparation.</p>
-            </div>
-        </div>
+  </div>
+</div>
+<div class="section sr-l" id="lineage">
+  <span class="section-eyebrow">§ 06</span>
+  <h3>Philosophical Lineage</h3>
+  <p>The VARZIN model is situated at the confluence of five major branches of human inquiry into cosmic harmony and conscious structure:</p>
+  <div class="phil-tl">
+    <div class="phil-item sr">
+      <div class="phil-dot"></div>
+      <div class="phil-card">
+        <div class="phil-title">1. The Logos-Light Philosophy (Antiquity)</div>
+        <p><strong>Key Figures:</strong> Hermes Trismegistus, Zoroaster, Patanjali</p>
+        <p><strong>Core Concept:</strong> Intelligent Order of Existence (Asha)</p>
+        <div class="phil-connection">VARZIN Connection: Alignment with ELŪZ–MAHAR and the Hermetic principle of Resonant Mirroring.</div>
+      </div>
     </div>
-
-    <p style="margin-top:28px;text-align:justify;">
-        <strong>Final Synthesis:</strong> Historically, philosophers spoke of the <strong>Cosmic Harmony</strong>. VARZIN proposes a symbolic-experimental framework that attempts to model and empirically test aspects of this tradition through pre-registered study (VPE-001), translating the symbolic sequence <strong>KALTŪR → RAHMŌT</strong> into classifiable semantic structure available for independent evaluation.
-    </p>
-</section>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 7: Cultural Note -->
-<section class="report-section scroll-reveal-left">
-    <span class="sec-eyebrow">Section 07</span>
-    <h3>Cultural Note: The Word "Bimār"</h3>
-    <p>The word <strong>"Bimār"</strong> (Ill/Sick) is derived from <strong>"Bim"</strong> (Fear) + <strong>"-ār"</strong> (possessor); meaning "one who has fear arisen within them." In ancient Iran, illness was considered a disharmony between the body, soul, and Fravashi. From the perspective of the <strong>ELŪZ–MAHAR</strong> symbolic framework, "Bim" maps to a drop in consciousness vibration amplitude to the <strong>474Hz (KALTŪR)</strong> frequency, and the symbolic cure is the return to trust and healing (<strong>528Hz / RAHMŌT</strong>). In the Luxvar language: <em>ŠĀ-BĪMĀR</em> means "one who regains their tune in the tremor of fear."</p>
-</section>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 8: Audio with live waveform -->
-<section class="report-section scroll-reveal">
-    <span class="sec-eyebrow">Section 08</span>
-    <h3>LUXVAR Audio Nodes (474Hz / 528Hz)</h3>
-    <p>Use the Web Audio API generator to hear the <strong>KALTŪR</strong> and <strong>RAHMŌT</strong> frequencies as pure sine wave tones. The waveform display below responds in real-time.</p>
-    <div id="luxvar-audio-controls">
-        <button id="play-474">▶ Play 474Hz (KALTŪR)</button>
-        <button id="play-528">▶ Play 528Hz (RAHMŌT)</button>
-        <button id="stop-audio">⏹ Stop</button>
+    <div class="phil-item sr">
+      <div class="phil-dot"></div>
+      <div class="phil-card">
+        <div class="phil-title">2. Living Geometry (Pythagorean &amp; Neo-Platonic)</div>
+        <p><strong>Key Figures:</strong> Pythagoras, Plato, Iamblichus</p>
+        <p><strong>Core Concept:</strong> Number is the Soul of the World</p>
+        <div class="phil-connection">VARZIN Connection: Foundation for ETFM, Planetary Resonance Field, and the Living Language of Number.</div>
+      </div>
     </div>
-    <div class="waveform-wrap">
-        <canvas id="live-wave" width="900" height="100"></canvas>
+    <div class="phil-item sr">
+      <div class="phil-dot"></div>
+      <div class="phil-card">
+        <div class="phil-title">3. The Geometry of the Heart (Islamic Mysticism)</div>
+        <p><strong>Key Figures:</strong> Suhrawardi, Ibn Arabi, Rumi</p>
+        <p><strong>Core Concept:</strong> Continuous Field Rewriting (Nafas al-Rahman)</p>
+        <div class="phil-connection">VARZIN Connection: Concepts of Pulse Loop, Field Gradients, and Field Rewriting.</div>
+      </div>
     </div>
-    <p style="font-size:0.8em;color:var(--muted);margin-top:8px;text-align:center;">* Ensure device volume is on to hear the tones.</p>
-</section>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 9: References -->
-<section class="report-section scroll-reveal">
-    <span class="sec-eyebrow">Section 09</span>
-    <h3>References</h3>
-    <ul>
-        <li>Briggs, A., &amp; Peat, D. (1989). <em>Turbulent Mirror.</em> Harper &amp; Row.</li>
-        <li>Capra, F. (1996). <em>The Web of Life.</em> Anchor Books.</li>
-        <li>Laszlo, E. (2004). <em>Science and the Akashic Field.</em> Inner Traditions.</li>
-        <li>Prigogine, I., &amp; Stengers, I. (1984). <em>Order Out of Chaos.</em> Bantam Books.</li>
-        <li>Rosa, H. (2005). <em>Social Acceleration: A New Theory of Modernity.</em> Columbia University Press.</li>
-        <li>Sheldrake, R. (1988). <em>The Presence of the Past.</em> Times Books.</li>
-        <li>Nirouyar, R. (2025). VARZIN Final Harmonic Cycle – Complete Edition (1347–2026). Zenodo.
-            <a href="https://doi.org/10.5281/zenodo.17515491" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">doi.org/10.5281/zenodo.17515491</a></li>
-    </ul>
-</section>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 10: Conclusion -->
-<section class="report-section scroll-reveal">
-    <span class="sec-eyebrow">Section 10</span>
-    <h3>Conclusion</h3>
-    <p>The <strong>VARZIN framework</strong> proposes that history is not linear but <strong>resonant</strong>. Each cycle of collapse is symbolically mapped as a preparation for a higher re-synchronization. COVID-19, like the Black Death, may symbolically herald not merely recovery but realignment — where silence becomes light, and fear becomes harmony. These propositions are subject to empirical evaluation through the VPE-001 pre-registered pilot study.</p>
-</section>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 11: Contact -->
-<section class="report-section scroll-reveal">
-    <span class="sec-eyebrow">Section 11</span>
-    <h3>Contact / Feedback</h3>
-    <p style="color:var(--cyan);">To send feedback, observations, or research inquiries, use the form below or write to <a href="mailto:contact@varzin.org" style="color:var(--gold);">contact@varzin.org</a>.</p>
-    <div class="feedback-wrap">
-        <form class="feedback-form" action="mailto:contact@varzin.org" method="POST" enctype="text/plain">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your name or research affiliation">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="your@email.org">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required placeholder="Research inquiry / VPE-001 / General feedback">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Your observations, questions, or research inquiry."></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+    <div class="phil-item sr">
+      <div class="phil-dot"></div>
+      <div class="phil-card">
+        <div class="phil-title">4. Unifying Science &amp; Mystery (Renaissance &amp; Enlightenment)</div>
+        <p><strong>Key Figures:</strong> Kepler, Newton, Leibniz</p>
+        <p><strong>Core Concept:</strong> The Universe as a Living Mirror</p>
+        <div class="phil-connection">VARZIN Connection: Direct basis for RAHTALĒN–13 (Living Mirror) and Field Mirroring.</div>
+      </div>
     </div>
-</section>
-</main>
-
+    <div class="phil-item sr">
+      <div class="phil-dot"></div>
+      <div class="phil-card">
+        <div class="phil-title">5. The Consciousness Bridge (Contemporary)</div>
+        <p><strong>Key Figures:</strong> David Bohm, Rupert Sheldrake, Ervin Laszlo</p>
+        <p><strong>Core Concept:</strong> Implicate Order and Akashic Field</p>
+        <div class="phil-connection">VARZIN Connection: Foundation for LUXVAR–QMSG (Holographic Model) and symbolic synchronization.</div>
+      </div>
+    </div>
+    <div class="phil-item final sr">
+      <div class="phil-dot"></div>
+      <div class="phil-card">
+        <div class="phil-title">⟠ Symbolic-Experimental Framework (VARZIN 2025–2026)</div>
+        <p><strong>System:</strong> The VARZIN Project — Core-30 LUXVAR Registry (30/30 locked)</p>
+        <p>Proposing a testable symbolic-experimental framework for semantic structure in constructed language (LUXVAR). VPE-001 pre-registration in preparation. Failure criterion: Fleiss κ &lt; 0.20.</p>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:26px;">
+    <strong>Final Synthesis:</strong> Historically, philosophers spoke of <strong>Cosmic Harmony</strong>. VARZIN proposes a symbolic-experimental framework that attempts to model and empirically test aspects of this tradition through pre-registered study (VPE-001), translating the symbolic sequence <strong>KALTŪR → RAHMŌT</strong> into classifiable semantic structure available for independent evaluation.
+  </p>
+</div>
+<div class="section sr" id="cultural">
+  <span class="section-eyebrow">§ 07</span>
+  <h3>Cultural Note: The Word "Bimār" <span style="font-size:0.65em;color:var(--muted);font-weight:400;">(Symbolic Interpretation)</span></h3>
+  <div class="theo-note" style="margin-bottom:14px;"><strong>Note:</strong> The following is a <strong>symbolic interpretation within the VARZIN framework</strong>, not a definitive claim of Persian etymology or linguistics. Academic etymology of "Bimār" may differ.</div>
+  <p>Within the VARZIN symbolic framework, <strong>"Bimār"</strong> (Ill/Sick) is interpreted through the roots <strong>"Bim"</strong> (Fear) + <strong>"-ār"</strong> (possessor): symbolically, "one who has fear arisen within them." In ancient Iran, illness was considered a disharmony between the body, soul, and Fravashi. From the perspective of the <strong>ELŪZ–MAHAR</strong> symbolic framework, "Bim" maps to a drop in consciousness vibration amplitude to the <strong>474 Hz (KALTŪR)</strong> frequency, and the symbolic cure is the return to trust and healing (<strong>528 Hz / RAHMŌT</strong>). In the LUXVAR language: <em>ŠĀ-BĪMĀR</em> means "one who regains their tune in the tremor of fear."</p>
+</div>
+<div class="section sr" id="audio">
+  <span class="section-eyebrow">§ 08</span>
+  <h3>LUXVAR Audio Nodes — 474 Hz / 528 Hz</h3>
+  <p>Use the Web Audio API generator to hear the <strong>KALTŪR</strong> and <strong>RAHMŌT</strong> frequencies as pure sine wave tones. The waveform canvas below responds in real-time.</p>
+  <div class="audio-btns">
+    <button id="play-474" class="audio-btn cyan">▶ 474 Hz — KALTŪR</button>
+    <button id="play-528" class="audio-btn gold">▶ 528 Hz — RAHMŌT</button>
+    <button id="stop-audio" class="audio-btn stop">⏹ Stop</button>
+  </div>
+  <div class="canvas-wrap" style="padding:12px;">
+    <canvas id="live-wave" width="880" height="90" role="img" aria-label="Live waveform display — shows real-time sine wave when tone is playing" style="max-width:100%;"></canvas>
+    <p class="canvas-label">Live waveform — Web Audio API · volume required</p>
+  </div>
+</div>
+<div class="section sr" id="references">
+  <span class="section-eyebrow">§ 09</span>
+  <h3>References</h3>
+  <ul style="font-size:0.9em;line-height:1.9;">
+    <li>Briggs, A., &amp; Peat, D. (1989). <em>Turbulent Mirror.</em> Harper &amp; Row.</li>
+    <li>Capra, F. (1996). <em>The Web of Life.</em> Anchor Books.</li>
+    <li>Laszlo, E. (2004). <em>Science and the Akashic Field.</em> Inner Traditions.</li>
+    <li>Prigogine, I., &amp; Stengers, I. (1984). <em>Order Out of Chaos.</em> Bantam Books.</li>
+    <li>Rosa, H. (2005). <em>Social Acceleration: A New Theory of Modernity.</em> Columbia University Press.</li>
+    <li>Sheldrake, R. (1988). <em>The Presence of the Past.</em> Times Books.</li>
+    <li>Nirouyar, R. (2025). VARZIN Final Harmonic Cycle – Complete Edition (1347–2026). Zenodo. <a href="https://doi.org/10.5281/zenodo.17515491" target="_blank" style="color:var(--gold);">doi.org/10.5281/zenodo.17515491</a></li>
+  </ul>
+</div>
+<div class="section sr" id="conclusion">
+  <span class="section-eyebrow">§ 10</span>
+  <h3>Conclusion</h3>
+  <p>The <strong>VARZIN framework</strong> proposes that history is not linear but <strong>resonant</strong>. Each cycle of collapse is symbolically mapped as a preparation for a higher re-synchronization. COVID-19, like the Black Death, may symbolically herald not merely recovery but realignment — where silence becomes light, and fear becomes harmony. These propositions are subject to empirical evaluation through the VPE-001 pre-registered pilot study.</p>
+  <div class="theo-note" style="border-left-color:var(--gold);">
+    <strong style="color:var(--gold);">Scientific status:</strong> All interpretations above are symbolic constructs at Level 0. No causal or empirical claims are made about historical events, health outcomes, or future states.
+  </div>
+</div>
+<div class="section sr" id="contact">
+  <span class="section-eyebrow">§ 11</span>
+  <h3>Contact / Feedback</h3>
+  <p>Research inquiries, feedback, or VPE-001 participation interest: <a href="mailto:contact@varzin.org" style="color:var(--gold);">contact@varzin.org</a></p>
+</div>
+</div>
 <footer>
-    <p style="text-align:center;font-size:0.9em;color:var(--muted);">
-        ORCID: <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">0009-0000-4690-6842</a> |
-        DOI: <a href="https://doi.org/10.5281/zenodo.17515491" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">10.5281/zenodo.17515491</a> |
-        <a href="mailto:contact@varzin.org" style="color:var(--cyan);">contact@varzin.org</a>
-    </p>
-    <div class="footer-note">
-        VARZIN symbolic-experimental research framework · Scientific claims at Level 0 ·
-        <a href="https://varzin.org/vpe001-protocol.html">VPE-001 Protocol</a> in preparation
-    </div>
-    <p style="text-align:center;font-size:0.8em;color:var(--muted);margin-top:5px;">© 2025–2026 VARZIN Field Project · All Rights Reserved</p>
+  ORCID: <a href="https://orcid.org/0009-0000-4690-6842" target="_blank">0009-0000-4690-6842</a> &nbsp;|&nbsp;
+  DOI: <a href="https://doi.org/10.5281/zenodo.17515491" target="_blank">10.5281/zenodo.17515491</a> &nbsp;|&nbsp;
+  <a href="mailto:contact@varzin.org">contact@varzin.org</a><br>
+  VARZIN symbolic-experimental research framework · Scientific claims at Level 0 · <a href="https://varzin.org/vpe001-protocol.html">VPE-001</a> in preparation<br>
+  © 2025–2026 VARZIN Field Project · All Rights Reserved
 </footer>
-
 <script>
-// ═══════════════════════════════════════════════════════
-// MASTER ANIMATION SYSTEM
-// ═══════════════════════════════════════════════════════
-let FRAME = 0;
-const C   = { cyan:'#00FFEE', gold:'#FFCC00', pink:'#FF66AA', dim:'rgba(0,255,238,0.15)' };
-
-// ── 1. Background Particle Canvas ─────────────────────
-(function initBG(){
-    const cv = document.getElementById('bg-canvas');
-    if(!cv) return;
-    const cx = cv.getContext('2d');
-    let pts = [];
-    const resize = () => { cv.width=innerWidth; cv.height=innerHeight; };
-    resize(); window.addEventListener('resize', resize);
-    const N = () => Math.min(Math.floor(cv.width*cv.height/18000), 80);
-    const build = () => {
-        pts = [];
-        for(let i=0;i<N();i++) pts.push({
-            x:Math.random()*cv.width, y:Math.random()*cv.height,
-            dx:(Math.random()-.5)*.35, dy:(Math.random()-.5)*.35,
-            r:Math.random()*1.2+0.4
-        });
-    };
-    build(); window.addEventListener('resize', build);
-    const tick = () => {
-        requestAnimationFrame(tick);
-        cx.fillStyle='rgba(0,0,0,0.18)'; cx.fillRect(0,0,cv.width,cv.height);
-        for(const p of pts){
-            p.x+=p.dx; p.y+=p.dy;
-            if(p.x<0||p.x>cv.width)  p.dx*=-1;
-            if(p.y<0||p.y>cv.height) p.dy*=-1;
-            cx.fillStyle='rgba(0,255,238,0.35)'; cx.beginPath(); cx.arc(p.x,p.y,p.r,0,Math.PI*2); cx.fill();
-        }
-        for(let a=0;a<pts.length;a++) for(let b=a+1;b<pts.length;b++){
-            const d=Math.hypot(pts[a].x-pts[b].x, pts[a].y-pts[b].y);
-            if(d<90){ cx.strokeStyle=`rgba(0,255,238,${(1-d/90)*0.25})`; cx.lineWidth=0.4;
-                cx.beginPath(); cx.moveTo(pts[a].x,pts[a].y); cx.lineTo(pts[b].x,pts[b].y); cx.stroke(); }
-        }
-    };
-    tick();
+const REDUCED_MOTION=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const CYAN='#00FFEE',GOLD='#FFCC00',PINK='#FF66AA',GREEN='#00E060',VIOLET='#C8AAFF';
+const raf=f=>requestAnimationFrame(f);
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  document.getElementById('progress-bar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+});
+(function(){
+  const cv=document.getElementById('bg-canvas'),cx=cv.getContext('2d');
+  let pts=[];
+  const resize=()=>{cv.width=innerWidth;cv.height=innerHeight;};
+  resize();window.addEventListener('resize',resize);
+  const build=()=>{pts=[];const n=Math.min(Math.floor(cv.width*cv.height/16000),90);for(let i=0;i<n;i++)pts.push({x:Math.random()*cv.width,y:Math.random()*cv.height,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3,r:Math.random()*1.1+0.3});};
+  build();window.addEventListener('resize',build);
+  (function tick(){raf(tick);cx.fillStyle='rgba(0,0,0,0.16)';cx.fillRect(0,0,cv.width,cv.height);for(const p of pts){if(!REDUCED_MOTION){p.x+=p.dx;p.y+=p.dy;}if(p.x<0||p.x>cv.width)p.dx*=-1;if(p.y<0||p.y>cv.height)p.dy*=-1;cx.fillStyle='rgba(0,255,238,0.3)';cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fill();}for(let a=0;a<pts.length;a++)for(let b=a+1;b<pts.length;b++){const d=Math.hypot(pts[a].x-pts[b].x,pts[a].y-pts[b].y);if(d<80){cx.strokeStyle=`rgba(0,255,238,${(1-d/80)*0.18})`;cx.lineWidth=0.4;cx.beginPath();cx.moveTo(pts[a].x,pts[a].y);cx.lineTo(pts[b].x,pts[b].y);cx.stroke();}}})();
 })();
-
-// ── 2. Hero Wave Canvas ───────────────────────────────
-(function initHeroWave(){
-    const cv = document.getElementById('hero-wave');
-    if(!cv) return;
-    const cx = cv.getContext('2d');
-    let W, H;
-    const resize = () => {
-        const rect = cv.parentElement.getBoundingClientRect();
-        W = cv.width  = Math.floor(rect.width) || 600;
-        H = cv.height = 100;
-    };
-    resize(); window.addEventListener('resize', resize);
-    let t = 0;
-    const tick = () => {
-        requestAnimationFrame(tick);
-        t += 0.04;
-        cx.clearRect(0,0,W,H);
-        // background glow
-        const bg = cx.createLinearGradient(0,0,W,0);
-        bg.addColorStop(0,'rgba(0,255,238,0.03)');
-        bg.addColorStop(0.5,'rgba(255,204,0,0.05)');
-        bg.addColorStop(1,'rgba(0,255,238,0.03)');
-        cx.fillStyle=bg; cx.fillRect(0,0,W,H);
-
-        // Draw 474Hz wave (cyan)
-        cx.strokeStyle=C.cyan; cx.lineWidth=1.8;
-        cx.shadowBlur=10; cx.shadowColor=C.cyan;
-        cx.beginPath();
-        for(let i=0;i<=W;i++){
-            const n=i/W;
-            const amp=H*0.2*(0.5+0.5*Math.sin(Math.PI*n));
-            const y=H/2-amp*Math.sin(2*Math.PI*(n*6+t));
-            i===0?cx.moveTo(i,y):cx.lineTo(i,y);
-        }
-        cx.stroke();
-
-        // Draw 528Hz wave (gold) — slightly different freq
-        cx.strokeStyle=C.gold; cx.lineWidth=1.8;
-        cx.shadowColor=C.gold;
-        cx.beginPath();
-        for(let i=0;i<=W;i++){
-            const n=i/W;
-            const amp=H*0.18*(0.5+0.5*Math.cos(Math.PI*n));
-            const y=H/2+amp*Math.sin(2*Math.PI*(n*7+t*1.12));
-            i===0?cx.moveTo(i,y):cx.lineTo(i,y);
-        }
-        cx.stroke();
-
-        // Beat envelope (pink)
-        cx.strokeStyle='rgba(255,102,170,0.5)'; cx.lineWidth=1;
-        cx.shadowColor=C.pink;
-        cx.beginPath();
-        for(let i=0;i<=W;i++){
-            const n=i/W;
-            const beat=H*0.28*Math.abs(Math.cos(Math.PI*(n*0.7+t*0.2)));
-            const y=H/2-beat;
-            i===0?cx.moveTo(i,y):cx.lineTo(i,y);
-        }
-        cx.stroke();
-        cx.shadowBlur=0;
-    };
-    tick();
+(function(){
+  const cv=document.getElementById('hero-canvas');if(!cv)return;
+  const cx=cv.getContext('2d');let W,H,t=0;
+  const resize=()=>{W=cv.width=cv.parentElement.offsetWidth||700;H=cv.height=110;};
+  resize();window.addEventListener('resize',resize);
+  const waves=[{f:7,a:0.22,color:CYAN,lw:2.0,tm:1.00,sh:12},{f:9,a:0.18,color:GOLD,lw:1.8,tm:1.12,sh:10},{f:5,a:0.12,color:VIOLET,lw:1.2,tm:0.88,sh:6},{f:1.2,a:0.28,color:'rgba(255,102,170,0.4)',lw:1.5,tm:0.3,sh:0}];
+  (function tick(){raf(tick);t+=REDUCED_MOTION?0.001:0.033;cx.clearRect(0,0,W,H);const bg=cx.createLinearGradient(0,0,W,0);bg.addColorStop(0,'rgba(0,255,238,0.02)');bg.addColorStop(0.5,'rgba(255,204,0,0.04)');bg.addColorStop(1,'rgba(0,255,238,0.02)');cx.fillStyle=bg;cx.fillRect(0,0,W,H);for(const w of waves){cx.strokeStyle=w.color;cx.lineWidth=w.lw;cx.shadowBlur=w.sh;cx.shadowColor=w.color;cx.beginPath();for(let i=0;i<=W;i++){const n=i/W,env=Math.sin(Math.PI*n),y=H/2-H*w.a*env*Math.sin(2*Math.PI*(n*w.f+t*w.tm));i?cx.lineTo(i,y):cx.moveTo(i,y);}cx.stroke();}cx.shadowBlur=0;})();
 })();
-
-// ── 3. Phase Cycle Diagram ────────────────────────────
-(function initPhaseCycle(){
-    const cv = document.getElementById('phase-canvas');
-    if(!cv) return;
-    const cx = cv.getContext('2d');
-    let W=420, H=320;
-    const resize = () => {
-        const p = cv.parentElement.offsetWidth;
-        W = cv.width  = Math.min(420, p-20);
-        H = cv.height = Math.round(W*0.76);
-    };
-    resize(); window.addEventListener('resize', resize);
-
-    const phases = [
-        { label:'KALTŪR', sub:'474 Hz', desc:'Collapse', color:C.cyan,  angle:-Math.PI/2    },
-        { label:'0 Hz',   sub:'Void',   desc:'Silence',  color:'#c8e0ff',angle:0             },
-        { label:'RAHMŌT', sub:'528 Hz', desc:'Rebirth',  color:C.gold,  angle:Math.PI/2     },
-        { label:'RITĀM',  sub:'144 Hz', desc:'Integration',color:'#00e060',angle:Math.PI   },
-    ];
-    let t=0;
-
-    const tick = () => {
-        requestAnimationFrame(tick);
-        t+=0.012;
-        cx.clearRect(0,0,W,H);
-        const CX=W/2, CY=H/2-10;
-        const R=Math.min(W,H)*0.33;
-
-        // Outer glow ring
-        const gring=cx.createRadialGradient(CX,CY,R*0.8,CX,CY,R*1.1);
-        gring.addColorStop(0,'rgba(0,255,238,0.05)');
-        gring.addColorStop(1,'rgba(0,0,0,0)');
-        cx.fillStyle=gring; cx.beginPath(); cx.arc(CX,CY,R*1.1,0,Math.PI*2); cx.fill();
-
-        // Orbit ring
-        cx.strokeStyle='rgba(0,255,238,0.12)'; cx.lineWidth=1.5;
-        cx.setLineDash([4,4]);
-        cx.beginPath(); cx.arc(CX,CY,R,0,Math.PI*2); cx.stroke();
-        cx.setLineDash([]);
-
-        // Connection lines between phases
-        for(let i=0;i<phases.length;i++){
-            const p1=phases[i], p2=phases[(i+1)%phases.length];
-            const x1=CX+R*Math.cos(p1.angle), y1=CY+R*Math.sin(p1.angle);
-            const x2=CX+R*Math.cos(p2.angle), y2=CY+R*Math.sin(p2.angle);
-            cx.strokeStyle='rgba(0,255,238,0.08)'; cx.lineWidth=1;
-            cx.beginPath(); cx.moveTo(x1,y1); cx.lineTo(x2,y2); cx.stroke();
-        }
-
-        // Animated signal dot on orbit
-        const signalAngle = -Math.PI/2 + t;
-        const sx=CX+R*Math.cos(signalAngle), sy=CY+R*Math.sin(signalAngle);
-        const signalPct = ((t%(Math.PI*2))/(Math.PI*2));
-        const phaseIdx  = Math.floor(signalPct*4);
-        const sigColor  = phases[phaseIdx%4].color;
-        cx.fillStyle=sigColor; cx.shadowBlur=20; cx.shadowColor=sigColor;
-        cx.beginPath(); cx.arc(sx,sy,7,0,Math.PI*2); cx.fill();
-        cx.shadowBlur=0;
-
-        // Phase nodes
-        phases.forEach((ph,i)=>{
-            const nx=CX+R*Math.cos(ph.angle), ny=CY+R*Math.sin(ph.angle);
-            const dist=Math.abs(((signalAngle-ph.angle+Math.PI*2)%(Math.PI*2)));
-            const active=dist<0.5;
-            const glow = active ? 25 : 8;
-            const alpha= active ? 1.0 : 0.6;
-
-            // Node glow
-            cx.fillStyle=ph.color; cx.shadowBlur=glow; cx.shadowColor=ph.color;
-            cx.globalAlpha=alpha;
-            cx.beginPath(); cx.arc(nx,ny,active?14:10,0,Math.PI*2); cx.fill();
-            cx.shadowBlur=0; cx.globalAlpha=1;
-
-            // Node ring
-            cx.strokeStyle=ph.color; cx.lineWidth=active?2.5:1.5;
-            cx.beginPath(); cx.arc(nx,ny,active?18:14,0,Math.PI*2); cx.stroke();
-
-            // Label
-            const lx=CX+(R+42)*Math.cos(ph.angle), ly=CY+(R+42)*Math.sin(ph.angle);
-            cx.textAlign='center'; cx.textBaseline='middle';
-            cx.font=`bold ${active?12:11}px var(--font)`;
-            cx.fillStyle=ph.color; cx.shadowBlur=active?8:0; cx.shadowColor=ph.color;
-            cx.fillText(ph.label, lx, ly-8);
-            cx.font=`${active?10:9}px var(--font)`;
-            cx.fillStyle=active?'#fff':ph.color;
-            cx.fillText(ph.sub,   lx, ly+6);
-            cx.fillText(ph.desc,  lx, ly+18);
-            cx.shadowBlur=0;
-        });
-
-        // Center label
-        cx.textAlign='center'; cx.textBaseline='middle';
-        cx.font=`bold 11px var(--font)`; cx.fillStyle=C.cyan;
-        cx.fillText('HARMONIC', CX, CY-7);
-        cx.fillText('CYCLE',    CX, CY+7);
-    };
-    tick();
+(function(){
+  const cv=document.getElementById('spectrum-canvas');if(!cv)return;
+  const cx=cv.getContext('2d');let W,H,t=0;
+  const resize=()=>{W=cv.width=cv.parentElement.offsetWidth||700;H=cv.height=180;};
+  resize();window.addEventListener('resize',resize);
+  const freqs=[{hz:144,label:'RITĀM',color:VIOLET},{hz:474,label:'KALTŪR',color:CYAN},{hz:528,label:'RAHMŌT',color:GOLD},{hz:777,label:'CELESTA',color:PINK},{hz:1008,label:'ZUN–NĀR',color:GREEN}];
+  const maxHz=1100,PAD=28,LH=38,BZ=H-LH-PAD;
+  (function tick(){raf(tick);t+=0.02;cx.clearRect(0,0,W,H);freqs.forEach((f,i)=>{const x=PAD+i*(W-2*PAD)/(freqs.length-1),bH=(f.hz/maxHz)*BZ*(1+0.08*Math.sin(t*1.5+i*1.1)),bW=Math.max(20,(W/freqs.length)*0.45),bx=x-bW/2,by=H-LH-bH;const g=cx.createLinearGradient(0,by+bH,0,by);g.addColorStop(0,f.color+'18');g.addColorStop(0.5,f.color+'55');g.addColorStop(1,f.color+'cc');cx.fillStyle=g;cx.fillRect(bx,by,bW,bH);cx.strokeStyle=f.color+'80';cx.lineWidth=1;cx.strokeRect(bx,by,bW,bH);cx.fillStyle=f.color;cx.shadowBlur=12;cx.shadowColor=f.color;cx.beginPath();cx.arc(x,by,4,0,Math.PI*2);cx.fill();cx.shadowBlur=0;cx.fillStyle=f.color;cx.font='bold 10px var(--mono)';cx.textAlign='center';cx.fillText(f.hz+' Hz',x,H-LH+14);cx.fillStyle='rgba(167,231,231,0.7)';cx.font='bold 10px var(--font)';cx.fillText(f.label,x,H-LH+27);cx.fillStyle=f.color+'aa';cx.font='9px var(--mono)';cx.fillText(f.hz+' Hz',x,by-6);});cx.strokeStyle='rgba(0,255,238,0.1)';cx.lineWidth=0.7;cx.setLineDash([3,4]);cx.beginPath();cx.moveTo(PAD,H-LH);cx.lineTo(W-PAD,H-LH);cx.stroke();cx.setLineDash([]);})();
 })();
-
-// ── 4. Temporal Compression Timeline ─────────────────
-(function initTimeline(){
-    const cv = document.getElementById('timeline-canvas');
-    if(!cv) return;
-    const cx = cv.getContext('2d');
-    let W, H;
-    const resize = () => {
-        W = cv.width  = cv.parentElement.offsetWidth || 900;
-        H = cv.height = 200;
-    };
-    resize(); window.addEventListener('resize', resize);
-    let progress=0, tR=0;
-    let visible=false;
-    const obs = new IntersectionObserver(e=>{if(e[0].isIntersecting) visible=true;},{threshold:0.3});
-    obs.observe(cv);
-
-    const tick = () => {
-        requestAnimationFrame(tick);
-        tR+=0.02;
-        if(visible && progress<1) progress=Math.min(1, progress+0.004);
-        cx.clearRect(0,0,W,H);
-
-        const PAD=60, BAR_H=32, W2=W-2*PAD;
-        // ── Black Death track ──
-        const y1=55;
-        cx.font=`bold 11px var(--font)`; cx.textAlign='right'; cx.fillStyle=C.cyan;
-        cx.fillText('Black Death', PAD-8, y1+BAR_H/2+4);
-        // Track bg
-        cx.fillStyle='rgba(0,255,238,0.06)'; cx.fillRect(PAD,y1,W2,BAR_H);
-        // Full span (50 years visual = full width)
-        const bd_w=W2*progress;
-        const bdGrad=cx.createLinearGradient(PAD,0,PAD+W2,0);
-        bdGrad.addColorStop(0,'rgba(0,255,238,0.8)'); bdGrad.addColorStop(1,'rgba(0,255,238,0.15)');
-        cx.fillStyle=bdGrad; cx.fillRect(PAD, y1, bd_w, BAR_H);
-        // Labels
-        if(progress>0.05){ cx.fillStyle='rgba(0,0,0,0.8)'; cx.font=`bold 10px var(--font)`; cx.textAlign='left';
-            cx.fillText('1347', PAD+4, y1+BAR_H/2+4); }
-        if(progress>0.95){ cx.fillStyle='rgba(0,0,0,0.7)'; cx.font=`bold 10px var(--font)`; cx.textAlign='right';
-            cx.fillText('~1400 CE', PAD+W2-4, y1+BAR_H/2+4); }
-        cx.textAlign='right'; cx.fillStyle=C.cyan; cx.font=`bold 11px var(--font)`;
-        cx.fillText('≈ 50 years', PAD+W2+50, y1+BAR_H/2+4);
-        // Border
-        cx.strokeStyle=C.cyan; cx.lineWidth=1.5; cx.strokeRect(PAD, y1, W2, BAR_H);
-
-        // ── COVID-19 track ──
-        const y2=130;
-        cx.textAlign='right'; cx.fillStyle=C.gold; cx.font=`bold 11px var(--font)`;
-        cx.fillText('COVID-19', PAD-8, y2+BAR_H/2+4);
-        cx.fillStyle='rgba(255,204,0,0.06)'; cx.fillRect(PAD, y2, W2, BAR_H);
-        // Only 1/10 of width (5 years vs 50 = 10x compression)
-        const cv_w=(W2/10)*progress;
-        const cvGrad=cx.createLinearGradient(PAD,0,PAD+W2/10,0);
-        cvGrad.addColorStop(0,'rgba(255,204,0,0.9)'); cvGrad.addColorStop(1,'rgba(255,204,0,0.2)');
-        cx.fillStyle=cvGrad; cx.fillRect(PAD, y2, cv_w, BAR_H);
-        if(progress>0.05){ cx.fillStyle='rgba(0,0,0,0.8)'; cx.font=`bold 10px var(--font)`; cx.textAlign='left';
-            cx.fillText('2019', PAD+4, y2+BAR_H/2+4); }
-        if(progress>0.95){ cx.fillStyle='rgba(0,0,0,0.7)'; cx.font=`bold 10px var(--font)`; cx.textAlign='left';
-            cx.fillText('2026', PAD+W2/10-20, y2+BAR_H/2+4); }
-        cx.textAlign='right'; cx.fillStyle=C.gold; cx.font=`bold 11px var(--font)`;
-        cx.fillText('≈ 5 years', PAD+W2+50, y2+BAR_H/2+4);
-        cx.strokeStyle=C.gold; cx.lineWidth=1.5; cx.strokeRect(PAD, y2, W2, BAR_H);
-
-        // Compression factor arrow + label
-        if(progress>0.6){
-            const arrowX=PAD+W2/10+10, arrowAlpha=Math.min(1,(progress-0.6)/0.4);
-            cx.globalAlpha=arrowAlpha;
-            cx.strokeStyle=C.pink; cx.lineWidth=2;
-            cx.beginPath(); cx.moveTo(arrowX,y2+BAR_H/2); cx.lineTo(PAD+W2-30,y1+BAR_H/2); cx.stroke();
-            cx.fillStyle=C.pink; cx.font=`bold 13px var(--font)`; cx.textAlign='center';
-            cx.shadowBlur=8; cx.shadowColor=C.pink;
-            cx.fillText('10× compression',PAD+W2*0.55,y1+5);
-            cx.shadowBlur=0;
-            cx.globalAlpha=1;
-        }
-    };
-    tick();
+(function(){
+  const cv=document.getElementById('phase-canvas');if(!cv)return;
+  const cx=cv.getContext('2d');let W,H,t=0;
+  const resize=()=>{const p=cv.parentElement.offsetWidth;W=cv.width=Math.min(440,p-20);H=cv.height=Math.round(W*0.77);};
+  resize();window.addEventListener('resize',resize);
+  const phases=[{label:'KALTŪR',sub:'474 Hz',note:'Collapse',color:CYAN,angle:-Math.PI/2},{label:'0 Hz',sub:'Void',note:'Silence',color:'#96b4dc',angle:0},{label:'RAHMŌT',sub:'528 Hz',note:'Rebirth',color:GOLD,angle:Math.PI/2},{label:'RITĀM',sub:'144 Hz',note:'Integration',color:GREEN,angle:Math.PI}];
+  (function tick(){raf(tick);t+=0.011;cx.clearRect(0,0,W,H);const CX=W/2,CY=H/2-5,R=Math.min(W,H)*0.32;for(let ri=3;ri>=1;ri--){cx.strokeStyle=`rgba(0,255,238,${0.04*ri})`;cx.lineWidth=ri;cx.setLineDash([4,6]);cx.beginPath();cx.arc(CX,CY,R*(0.85+ri*0.07),0,Math.PI*2);cx.stroke();}cx.setLineDash([]);const cp=0.6+0.4*Math.abs(Math.sin(t*1.5)),cg=cx.createRadialGradient(CX,CY,0,CX,CY,R*0.22);cg.addColorStop(0,`rgba(0,255,238,${0.25*cp})`);cg.addColorStop(1,'rgba(0,0,0,0)');cx.fillStyle=cg;cx.beginPath();cx.arc(CX,CY,R*0.22,0,Math.PI*2);cx.fill();for(let i=0;i<4;i++){const ph=phases[i],ph2=phases[(i+1)%4],x1=CX+R*Math.cos(ph.angle),y1=CY+R*Math.sin(ph.angle),x2=CX+R*Math.cos(ph2.angle),y2=CY+R*Math.sin(ph2.angle);cx.strokeStyle=`rgba(0,255,238,${0.06+0.05*Math.sin(t+i)})`;cx.lineWidth=1;cx.beginPath();cx.moveTo(x1,y1);cx.lineTo(x2,y2);cx.stroke();cx.beginPath();cx.moveTo(CX,CY);cx.lineTo(x1,y1);cx.stroke();}const sa=-Math.PI/2+t,sx=CX+R*Math.cos(sa),sy=CY+R*Math.sin(sa),pidx=Math.floor(((t%(Math.PI*2))/(Math.PI*2))*4),sc=phases[pidx%4].color;for(let tr=1;tr<=8;tr++){const ta=sa-tr*0.06,tx=CX+R*Math.cos(ta),ty=CY+R*Math.sin(ta);cx.fillStyle=sc==='#00FFEE'?`rgba(0,255,238,${0.07*tr/8})`:`rgba(255,204,0,${0.07*tr/8})`;cx.beginPath();cx.arc(tx,ty,3*(1-tr/10),0,Math.PI*2);cx.fill();}cx.fillStyle=sc;cx.shadowBlur=22;cx.shadowColor=sc;cx.beginPath();cx.arc(sx,sy,7,0,Math.PI*2);cx.fill();cx.shadowBlur=0;phases.forEach(ph=>{const nx=CX+R*Math.cos(ph.angle),ny=CY+R*Math.sin(ph.angle),dist=Math.abs(((sa-ph.angle+Math.PI*6)%(Math.PI*2))),active=dist<0.55,aSize=active?15:10,glow=active?28:7;cx.strokeStyle=ph.color+(active?'cc':'55');cx.lineWidth=active?2:1;cx.beginPath();cx.arc(nx,ny,aSize+5,0,Math.PI*2);cx.stroke();cx.fillStyle=ph.color+(active?'dd':'66');cx.shadowBlur=glow;cx.shadowColor=ph.color;cx.beginPath();cx.arc(nx,ny,aSize,0,Math.PI*2);cx.fill();cx.shadowBlur=0;const lx=CX+(R+50)*Math.cos(ph.angle),ly=CY+(R+50)*Math.sin(ph.angle);cx.textAlign='center';cx.textBaseline='middle';cx.fillStyle=ph.color;cx.font=`bold ${active?12:10}px var(--font)`;cx.shadowBlur=active?8:0;cx.shadowColor=ph.color;cx.fillText(ph.label,lx,ly-10);cx.font=`${active?10:9}px var(--mono)`;cx.fillStyle=active?'#fff':ph.color+'88';cx.fillText(ph.sub,lx,ly+4);cx.fillText(ph.note,lx,ly+16);cx.shadowBlur=0;});cx.textAlign='center';cx.textBaseline='middle';cx.font='bold 10px var(--font)';cx.fillStyle='rgba(0,255,238,0.6)';cx.fillText('HARMONIC',CX,CY-6);cx.fillText('CYCLE',CX,CY+6);})();
 })();
-
-// ── 5. Frequency Comparison Canvas ───────────────────
-(function initFreqCompare(){
-    const cv = document.getElementById('freq-compare-canvas');
-    if(!cv) return;
-    const cx = cv.getContext('2d');
-    let W, H;
-    const resize = () => {
-        W = cv.width  = cv.parentElement.offsetWidth || 900;
-        H = cv.height = 160;
-    };
-    resize(); window.addEventListener('resize', resize);
-    let t=0;
-    const tick=()=>{
-        requestAnimationFrame(tick);
-        t+=0.05;
-        cx.clearRect(0,0,W,H);
-        const PAD=10, MID=H/2, AMP=H*0.18;
-
-        // Beat pattern (pink, behind)
-        cx.strokeStyle='rgba(255,102,170,0.35)'; cx.lineWidth=2;
-        cx.beginPath();
-        for(let i=0;i<=W-2*PAD;i++){
-            const n=i/(W-2*PAD);
-            const y1=MID-AMP*Math.sin(2*Math.PI*(n*14+t));
-            const y2=MID-AMP*Math.sin(2*Math.PI*(n*16+t*1.12));
-            const y=(y1+y2)/2;
-            i===0?cx.moveTo(PAD+i,y):cx.lineTo(PAD+i,y);
-        }
-        cx.stroke();
-
-        // 474Hz wave
-        cx.strokeStyle=C.cyan; cx.lineWidth=2.2;
-        cx.shadowBlur=8; cx.shadowColor=C.cyan;
-        cx.beginPath();
-        for(let i=0;i<=W-2*PAD;i++){
-            const n=i/(W-2*PAD);
-            const y=MID-AMP*Math.sin(2*Math.PI*(n*14+t));
-            i===0?cx.moveTo(PAD+i,y):cx.lineTo(PAD+i,y);
-        }
-        cx.stroke();
-
-        // 528Hz wave
-        cx.strokeStyle=C.gold; cx.lineWidth=2.2; cx.shadowColor=C.gold;
-        cx.beginPath();
-        for(let i=0;i<=W-2*PAD;i++){
-            const n=i/(W-2*PAD);
-            const y=MID-AMP*Math.sin(2*Math.PI*(n*16+t*1.12));
-            i===0?cx.moveTo(PAD+i,y):cx.lineTo(PAD+i,y);
-        }
-        cx.stroke(); cx.shadowBlur=0;
-
-        // Legend
-        cx.font=`bold 10px var(--font)`; cx.textAlign='left';
-        const items=[{c:C.cyan,l:'474 Hz (KALTŪR)'},{c:C.gold,l:'528 Hz (RAHMŌT)'},{c:'rgba(255,102,170,0.7)',l:'beat / interference'}];
-        items.forEach((item,i)=>{
-            cx.fillStyle=item.c; cx.fillRect(PAD+i*150,8,16,3);
-            cx.fillStyle='rgba(200,230,230,0.7)'; cx.fillText(item.l, PAD+i*150+22, 13);
-        });
-    };
-    tick();
+(function(){
+  const cv=document.getElementById('spiral-canvas');if(!cv)return;
+  const cx=cv.getContext('2d');let W,H,t=0,prog=0,vis=false;
+  const resize=()=>{W=cv.width=Math.min(520,cv.parentElement.offsetWidth-4);H=cv.height=Math.round(W*0.62);};
+  resize();window.addEventListener('resize',resize);
+  new IntersectionObserver(e=>{if(e[0].isIntersecting)vis=true;},{threshold:0.25}).observe(cv);
+  const SPAN=677,START=1347;
+  (function tick(){raf(tick);t+=0.015;if(vis&&prog<1)prog=Math.min(1,prog+0.003);cx.clearRect(0,0,W,H);const CX=W/2,CY=H*0.52,R1=Math.min(W,H)*0.22,R2=Math.min(W,H)*0.41;for(let r=R1;r<=R2;r+=8){cx.strokeStyle=`rgba(0,255,238,${0.025+(r-R1)/(R2-R1)*0.035})`;cx.lineWidth=0.5;cx.beginPath();cx.arc(CX,CY,r,0,Math.PI*2);cx.stroke();}[1347,1400,2019,2026].forEach(yr=>{const a=((yr-START)/SPAN*340-170)*Math.PI/180,rx=CX+(R2+18)*Math.cos(a),ry=CY+(R2+18)*Math.sin(a);cx.fillStyle='rgba(167,231,231,0.4)';cx.font='8px var(--mono)';cx.textAlign='center';cx.fillText(yr,rx,ry+3);});const bdS=((0)/SPAN*340-170)*Math.PI/180,bdE=(53/SPAN*340-170)*Math.PI/180,bdPE=Math.min(bdE,bdS+(bdE-bdS)*prog);cx.strokeStyle=CYAN;cx.lineWidth=6;cx.shadowBlur=15;cx.shadowColor=CYAN;cx.beginPath();cx.arc(CX,CY,R2,bdS,bdPE);cx.stroke();cx.shadowBlur=0;const cvS=((672)/SPAN*340-170)*Math.PI/180,cvE=((679)/SPAN*340-170)*Math.PI/180,cvPE=Math.min(cvE,cvS+(cvE-cvS)*prog);cx.strokeStyle=GOLD;cx.lineWidth=6;cx.shadowBlur=15;cx.shadowColor=GOLD;cx.beginPath();cx.arc(CX,CY,R1,cvS,cvPE);cx.stroke();cx.shadowBlur=0;if(prog>0.7){const aa=Math.min(1,(prog-0.7)/0.3);cx.globalAlpha=aa;[[R2,bdS,CYAN,'1347'],[R2,bdE,CYAN,'~1400'],[R1,cvS,GOLD,'2019'],[R1,cvE,GOLD,'2026']].forEach(([r,a,c,l])=>{const mx=CX+r*Math.cos(a),my=CY+r*Math.sin(a);cx.fillStyle=c;cx.shadowBlur=8;cx.shadowColor=c;cx.beginPath();cx.arc(mx,my,4,0,Math.PI*2);cx.fill();cx.shadowBlur=0;cx.fillStyle=c;cx.font='bold 9px var(--mono)';cx.textAlign='center';cx.fillText(l,CX+(r+16)*Math.cos(a),CY+(r+16)*Math.sin(a)+3);});cx.globalAlpha=1;}cx.textAlign='center';cx.textBaseline='middle';cx.font='bold 11px var(--font)';cx.fillStyle='rgba(0,255,238,0.7)';cx.fillText('1347',CX,CY-7);cx.font='9px var(--mono)';cx.fillStyle='rgba(167,231,231,0.4)';cx.fillText('→  2026',CX,CY+8);[{c:CYAN,t:'Black Death (50yr · outer)'},{c:GOLD,t:'COVID-19 (5yr · inner)'}].forEach((li,i)=>{cx.fillStyle=li.c;cx.shadowBlur=6;cx.shadowColor=li.c;cx.fillRect(14,H-22+i*14,20,3);cx.shadowBlur=0;cx.fillStyle='rgba(167,231,231,0.7)';cx.font='9px var(--font)';cx.textAlign='left';cx.fillText(li.t,40,H-18+i*14);});if(prog>0.75){cx.globalAlpha=Math.min(1,(prog-0.75)/0.25);cx.fillStyle=PINK;cx.font='bold 11px var(--font)';cx.textAlign='center';cx.shadowBlur=8;cx.shadowColor=PINK;cx.fillText('10× temporal compression',CX,H-16);cx.shadowBlur=0;cx.globalAlpha=1;}})();
 })();
-
-// ── 6. Mini Torus ─────────────────────────────────────
-(function initMiniTorus(){
-    const cv=document.getElementById('mini-torus'); if(!cv) return;
-    const cx=cv.getContext('2d');
-    const W=200, H=200;
-    cv.width=W; cv.height=H;
-    const R=60, r0=24;
-    let angle=0;
-    const tick=()=>{
-        requestAnimationFrame(tick);
-        cx.clearRect(0,0,W,H);
-        cx.save(); cx.translate(W/2,H/2);
-        const pts=[];
-        for(let t=0;t<Math.PI*2;t+=0.2)
-            for(let p=0;p<Math.PI*2;p+=0.25){
-                const x=(R+r0*Math.cos(t))*Math.cos(p+angle);
-                const y=(R+r0*Math.cos(t))*Math.sin(p+angle);
-                const z=r0*Math.sin(t);
-                const s=200/(200+z);
-                const light=0.3+0.7*Math.max(0,(z/r0+1)/2);
-                pts.push({px:x*s,py:y*s,z,light});
-            }
-        pts.sort((a,b)=>a.z-b.z);
-        for(const p of pts){
-            cx.fillStyle=`rgba(0,255,238,${p.light*0.8})`;
-            cx.fillRect(p.px-1,p.py-1,2,2);
-        }
-        cx.restore();
-        angle-=0.015;
-    };
-    tick();
+(function(){
+  const cv=document.getElementById('timeline-canvas');if(!cv)return;
+  const cx=cv.getContext('2d');let W,H,prog=0,vis=false;
+  const resize=()=>{W=cv.width=cv.parentElement.offsetWidth||880;H=cv.height=200;};
+  resize();window.addEventListener('resize',resize);
+  new IntersectionObserver(e=>{if(e[0].isIntersecting)vis=true;},{threshold:0.3}).observe(cv);
+  (function tick(){raf(tick);if(vis&&prog<1)prog=Math.min(1,prog+0.0045);cx.clearRect(0,0,W,H);const PAD=70,BH=34,W2=W-2*PAD,y1=52,y2=126;cx.font='bold 10px var(--font)';cx.textAlign='right';cx.fillStyle=CYAN;cx.fillText('Black Death',PAD-8,y1+BH/2+4);cx.fillStyle='rgba(0,255,238,0.05)';cx.fillRect(PAD,y1,W2,BH);const bg1=cx.createLinearGradient(PAD,0,PAD+W2,0);bg1.addColorStop(0,'rgba(0,255,238,0.85)');bg1.addColorStop(1,'rgba(0,255,238,0.1)');cx.fillStyle=bg1;cx.fillRect(PAD,y1,W2*prog,BH);const pkW=W2*(4/50);cx.fillStyle='rgba(255,102,170,0.9)';cx.fillRect(PAD+pkW-1,y1,2,BH);if(prog>0.12){cx.fillStyle='rgba(255,102,170,0.8)';cx.font='8px var(--mono)';cx.textAlign='center';cx.fillText('Peak 1351',PAD+pkW,y1-5);}cx.strokeStyle=CYAN;cx.lineWidth=1.5;cx.strokeRect(PAD,y1,W2,BH);if(prog>0.05){cx.fillStyle='rgba(0,0,0,0.7)';cx.font='bold 10px var(--mono)';cx.textAlign='left';cx.fillText('1347',PAD+4,y1+BH/2+4);}if(prog>0.95){cx.textAlign='right';cx.fillText('~1400 CE',PAD+W2-4,y1+BH/2+4);}cx.textAlign='right';cx.fillStyle=CYAN;cx.font='bold 11px var(--font)';cx.fillText('≈ 50 years',W-4,y1+BH/2+4);cx.textAlign='right';cx.fillStyle=GOLD;cx.font='bold 10px var(--font)';cx.fillText('COVID-19',PAD-8,y2+BH/2+4);cx.fillStyle='rgba(255,204,0,0.05)';cx.fillRect(PAD,y2,W2,BH);const bg2=cx.createLinearGradient(PAD,0,PAD+W2/10,0);bg2.addColorStop(0,'rgba(255,204,0,0.9)');bg2.addColorStop(1,'rgba(255,204,0,0.15)');cx.fillStyle=bg2;cx.fillRect(PAD,y2,(W2/10)*prog,BH);cx.strokeStyle=GOLD;cx.lineWidth=1.5;cx.strokeRect(PAD,y2,W2,BH);if(prog>0.05){cx.fillStyle='rgba(0,0,0,0.7)';cx.font='bold 10px var(--mono)';cx.textAlign='left';cx.fillText('2019',PAD+4,y2+BH/2+4);}if(prog>0.95){cx.textAlign='left';cx.fillText('2026',PAD+W2/10+4,y2+BH/2+4);}cx.textAlign='right';cx.fillStyle=GOLD;cx.font='bold 11px var(--font)';cx.fillText('≈ 5 years',W-4,y2+BH/2+4);if(prog>0.65){const ca=Math.min(1,(prog-0.65)/0.35);cx.globalAlpha=ca;cx.strokeStyle=PINK;cx.lineWidth=1.5;cx.setLineDash([3,3]);cx.beginPath();cx.moveTo(PAD+W2/10,y2);cx.lineTo(PAD+W2-2,y1+BH);cx.stroke();cx.setLineDash([]);cx.fillStyle=PINK;cx.font='bold 13px var(--font)';cx.textAlign='center';cx.shadowBlur=8;cx.shadowColor=PINK;cx.fillText('10× compression',PAD+W2*0.52,y1-16);cx.shadowBlur=0;cx.globalAlpha=1;}})();
 })();
-
-// ── 7. Live Waveform for Audio ────────────────────────
-let audioCtx=null, osc=null, analyser=null, freqData=null, currentFreq=0;
-let liveWaveAnim=null;
-
-(function initLiveWave(){
-    const cv=document.getElementById('live-wave'); if(!cv) return;
-    const cx=cv.getContext('2d');
-    let W, H;
-    const resize=()=>{ W=cv.width=cv.parentElement.offsetWidth||900; H=cv.height=100; };
-    resize(); window.addEventListener('resize',resize);
-    const tick=()=>{
-        requestAnimationFrame(tick);
-        cx.clearRect(0,0,W,H);
-        const MID=H/2;
-        if(analyser && freqData){
-            analyser.getByteTimeDomainData(freqData);
-            const color = currentFreq===474?C.cyan:C.gold;
-            cx.strokeStyle=color; cx.lineWidth=2; cx.shadowBlur=10; cx.shadowColor=color;
-            cx.beginPath();
-            const slW=W/freqData.length;
-            for(let i=0;i<freqData.length;i++){
-                const v=(freqData[i]/128-1)*MID*0.85;
-                const x=i*slW, y=MID+v;
-                i===0?cx.moveTo(x,y):cx.lineTo(x,y);
-            }
-            cx.stroke(); cx.shadowBlur=0;
-        } else {
-            // Idle flat line
-            cx.strokeStyle='rgba(0,255,238,0.2)'; cx.lineWidth=1;
-            cx.beginPath(); cx.moveTo(0,MID); cx.lineTo(W,MID); cx.stroke();
-            cx.fillStyle='rgba(0,255,238,0.3)'; cx.font=`10px var(--font)`; cx.textAlign='center';
-            cx.fillText('Press Play to activate waveform',W/2,MID-12);
-        }
-    };
-    tick();
+(function(){
+  const cv=document.getElementById('matrix-canvas');if(!cv)return;
+  const cx=cv.getContext('2d');let W,H,t=0,vis=false;
+  const resize=()=>{W=cv.width=cv.parentElement.offsetWidth||700;H=cv.height=220;};
+  resize();window.addEventListener('resize',resize);
+  new IntersectionObserver(e=>{if(e[0].isIntersecting)vis=true;},{threshold:0.25}).observe(cv);
+  const rows=[{phase:'Collapse',freq:'474 Hz',symbol:'KALTŪR',color:CYAN,bd:'1347–1351',cv2:'2019–2023'},{phase:'Silence',freq:'0 Hz',symbol:'Zero-Point',color:'#96b4dc',bd:'1351–1400',cv2:'2023–2025'},{phase:'Rebirth',freq:'528 Hz',symbol:'RAHMŌT',color:GOLD,bd:'~1400 CE',cv2:'2025–2026*'},{phase:'Integration',freq:'144 Hz',symbol:'RITĀM',color:GREEN,bd:'15th c.',cv2:'Beyond 2026'}];
+  const COLS=['Phase','Symbol / Hz','Black Death','COVID-19'];
+  (function tick(){raf(tick);t+=0.012;cx.clearRect(0,0,W,H);if(!vis){cx.fillStyle='rgba(0,255,238,0.05)';cx.fillRect(0,0,W,H);cx.fillStyle='rgba(167,231,231,0.3)';cx.font='12px var(--font)';cx.textAlign='center';cx.fillText('Scroll to reveal',W/2,H/2);return;}const PAD=10,HDR=32,RH=(H-HDR-PAD)/rows.length,colW=[W*0.14,W*0.22,W*0.32,W*0.32];let x0=PAD;COLS.forEach((col,ci)=>{const cw=colW[ci];cx.fillStyle='rgba(0,255,238,0.12)';cx.fillRect(x0,PAD,cw-2,HDR-2);cx.strokeStyle='rgba(0,255,238,0.2)';cx.lineWidth=0.7;cx.strokeRect(x0,PAD,cw-2,HDR-2);cx.fillStyle=CYAN;cx.font='bold 10px var(--font)';cx.textAlign='center';cx.fillText(col,x0+cw/2,PAD+HDR/2+4);x0+=cw;});rows.forEach((row,ri)=>{const y=PAD+HDR+ri*RH,rp=0.9+0.1*Math.sin(t*1.2+ri*0.8);let x1=PAD;colW.forEach((cw,ci)=>{cx.fillStyle=ci===0?`${row.color}12`:'rgba(0,8,12,0.6)';cx.fillRect(x1,y,cw-2,RH-2);cx.strokeStyle=`${row.color}30`;cx.lineWidth=0.6;cx.strokeRect(x1,y,cw-2,RH-2);cx.textAlign='center';const cy=y+RH*0.4;if(ci===0){cx.fillStyle=row.color;cx.shadowBlur=6*rp;cx.shadowColor=row.color;cx.font='bold 10px var(--font)';cx.fillText(row.phase,x1+cw/2,cy);cx.shadowBlur=0;cx.fillStyle=row.color+'80';cx.font='9px var(--mono)';cx.fillText(row.freq,x1+cw/2,cy+13);}else if(ci===1){cx.fillStyle=row.color;cx.font='bold 10px var(--font)';cx.fillText(row.symbol,x1+cw/2,cy);cx.fillStyle='rgba(167,231,231,0.5)';cx.font='9px var(--mono)';cx.fillText(row.freq,x1+cw/2,cy+13);}else{const txt=ci===2?row.bd:row.cv2,clr=ci===2?CYAN:GOLD;cx.fillStyle=clr+'cc';cx.font='bold 10px var(--mono)';cx.fillText(txt,x1+cw/2,cy+3);const dp=0.5+0.5*Math.sin(t*1.5+ri+ci);cx.fillStyle=clr;cx.beginPath();cx.arc(x1+cw/2,y+RH*0.78,4*dp,0,Math.PI*2);cx.fill();}x1+=cw;});});cx.fillStyle='rgba(167,231,231,0.35)';cx.font='8px var(--font)';cx.textAlign='left';cx.fillText('* Theoretical projection — not an empirical event',PAD+4,H-4);})();
 })();
-
-function startTone(freq){
-    stopTone();
-    currentFreq=freq;
-    audioCtx=new(window.AudioContext||window.webkitAudioContext)();
-    analyser=audioCtx.createAnalyser(); analyser.fftSize=2048;
-    freqData=new Uint8Array(analyser.frequencyBinCount);
-    osc=audioCtx.createOscillator();
-    const gain=audioCtx.createGain();
-    osc.type='sine'; osc.frequency.value=freq;
-    gain.gain.value=0.1;
-    osc.connect(analyser); analyser.connect(gain); gain.connect(audioCtx.destination);
-    osc.start();
-    document.getElementById('play-474').disabled=(freq===474);
-    document.getElementById('play-528').disabled=(freq===528);
-}
-function stopTone(){
-    if(osc){ try{
-        const g=audioCtx.createGain(); osc.connect(g); g.connect(audioCtx.destination);
-        g.gain.exponentialRampToValueAtTime(0.00001,audioCtx.currentTime+0.8);
-        osc.stop(audioCtx.currentTime+0.8);
-        setTimeout(()=>{ if(audioCtx&&audioCtx.state!=='closed') audioCtx.close(); audioCtx=null; osc=null; analyser=null; freqData=null; currentFreq=0; },900);
-    }catch(e){osc=null;} }
-    document.getElementById('play-474').disabled=false;
-    document.getElementById('play-528').disabled=false;
-}
+(function(){
+  const cv=document.getElementById('freq-canvas');if(!cv)return;
+  const cx=cv.getContext('2d');let W,H,t=0;
+  const resize=()=>{W=cv.width=cv.parentElement.offsetWidth||880;H=cv.height=160;};
+  resize();window.addEventListener('resize',resize);
+  (function tick(){raf(tick);t+=REDUCED_MOTION?0.001:0.045;cx.clearRect(0,0,W,H);const PAD=10,MID=H/2,AMP=H*0.2;cx.strokeStyle='rgba(0,255,238,0.06)';cx.lineWidth=0.5;for(let g=0;g<=4;g++){const y=PAD+(H-2*PAD)*g/4;cx.beginPath();cx.moveTo(PAD,y);cx.lineTo(W-PAD,y);cx.stroke();}cx.strokeStyle='rgba(255,102,170,0.3)';cx.lineWidth=2;cx.beginPath();for(let i=0;i<=W-2*PAD;i++){const n=i/(W-2*PAD),y=(MID-AMP*Math.sin(2*Math.PI*(n*15+t))+MID-AMP*Math.sin(2*Math.PI*(n*17+t*1.12)))/2;i===0?cx.moveTo(PAD+i,y):cx.lineTo(PAD+i,y);}cx.stroke();cx.save();cx.shadowBlur=10;cx.shadowColor=CYAN;cx.strokeStyle=CYAN;cx.lineWidth=2.2;cx.beginPath();for(let i=0;i<=W-2*PAD;i++){const n=i/(W-2*PAD),y=MID-AMP*Math.sin(2*Math.PI*(n*15+t));i===0?cx.moveTo(PAD+i,y):cx.lineTo(PAD+i,y);}cx.stroke();cx.restore();cx.save();cx.shadowBlur=10;cx.shadowColor=GOLD;cx.strokeStyle=GOLD;cx.lineWidth=2.2;cx.beginPath();for(let i=0;i<=W-2*PAD;i++){const n=i/(W-2*PAD),y=MID-AMP*Math.sin(2*Math.PI*(n*17+t*1.12));i===0?cx.moveTo(PAD+i,y):cx.lineTo(PAD+i,y);}cx.stroke();cx.restore();[[CYAN,'474 Hz — KALTŪR'],[GOLD,'528 Hz — RAHMŌT'],['rgba(255,102,170,0.7)','Beat']].forEach((li,i)=>{cx.fillStyle=li[0];cx.fillRect(PAD+4+i*165,10,16,3);cx.fillStyle='rgba(200,230,230,0.65)';cx.font='9px var(--font)';cx.textAlign='left';cx.fillText(li[1],PAD+26+i*165,15);});})();
+})();
+(function(){
+  const cv=document.getElementById('mini-torus');if(!cv)return;
+  const cx=cv.getContext('2d');cv.width=210;cv.height=210;
+  const W=210,H=210,R=68,r0=28;let angle=0,tiltY=0.3,drag=false,lx=0,ly=0;
+  cv.addEventListener('mousedown',e=>{drag=true;lx=e.clientX;ly=e.clientY;cv.style.cursor='grabbing';});
+  window.addEventListener('mousemove',e=>{if(!drag)return;angle+=(e.clientX-lx)*0.008;tiltY+=(e.clientY-ly)*0.005;lx=e.clientX;ly=e.clientY;});
+  window.addEventListener('mouseup',()=>{drag=false;cv.style.cursor='grab';});
+  cv.style.cursor='grab';
+  (function tick(){raf(tick);cx.clearRect(0,0,W,H);cx.save();cx.translate(W/2,H/2);if(!drag)angle-=0.013;const pts=[];for(let th=0;th<Math.PI*2;th+=0.16)for(let ph=0;ph<Math.PI*2;ph+=0.19){const x0=(R+r0*Math.cos(th))*Math.cos(ph+angle),y0=(R+r0*Math.cos(th))*Math.sin(ph+angle),z0=r0*Math.sin(th),cosT=Math.cos(tiltY),sinT=Math.sin(tiltY),y1=y0*cosT-z0*sinT,z1=y0*sinT+z0*cosT,s=280/(280+z1),light=Math.max(0,0.25+0.75*(Math.cos(th)*Math.cos(ph+angle)*0.3+Math.cos(th)*Math.sin(ph+angle)*0.2+Math.sin(th)*0.8)),hue=((ph+angle)%(Math.PI*2))/(Math.PI*2);pts.push({px:x0*s,py:y1*s,z:z1,r:Math.round(60*hue*light),g:Math.round(255*light),b:Math.round(238*(0.7+0.3*(1-hue))*light),a:0.12+0.7*light,ds:Math.max(0.7,1+2*light)});}pts.sort((a,b)=>a.z-b.z);for(const p of pts){cx.fillStyle=`rgba(${p.r},${p.g},${p.b},${p.a})`;cx.fillRect(p.px-p.ds/2,p.py-p.ds/2,p.ds,p.ds);}cx.restore();})();
+})();
+let audioCtx=null,osc=null,analyser=null,freqData=null,curFreq=0;
+(function(){
+  const cv=document.getElementById('live-wave');if(!cv)return;
+  const cx=cv.getContext('2d');let W,H;
+  const resize=()=>{W=cv.width=cv.parentElement.offsetWidth||880;H=cv.height=90;};
+  resize();window.addEventListener('resize',resize);
+  (function tick(){raf(tick);cx.clearRect(0,0,W,H);const MID=H/2;if(analyser&&freqData){analyser.getByteTimeDomainData(freqData);const color=curFreq===474?CYAN:GOLD;cx.strokeStyle=color;cx.lineWidth=2;cx.shadowBlur=12;cx.shadowColor=color;cx.beginPath();const sw=W/freqData.length;for(let i=0;i<freqData.length;i++){const v=(freqData[i]/128-1)*MID*0.8;i===0?cx.moveTo(i*sw,MID+v):cx.lineTo(i*sw,MID+v);}cx.stroke();cx.shadowBlur=0;}else{cx.strokeStyle='rgba(0,255,238,0.15)';cx.lineWidth=1;cx.beginPath();cx.moveTo(0,MID);cx.lineTo(W,MID);cx.stroke();cx.fillStyle='rgba(0,255,238,0.25)';cx.font='10px var(--font)';cx.textAlign='center';cx.fillText('Press Play to activate waveform',W/2,MID-10);}})();
+})();
+function startTone(freq){stopTone();curFreq=freq;audioCtx=new(window.AudioContext||window.webkitAudioContext)();analyser=audioCtx.createAnalyser();analyser.fftSize=2048;freqData=new Uint8Array(analyser.frequencyBinCount);osc=audioCtx.createOscillator();const gain=audioCtx.createGain();osc.type='sine';osc.frequency.value=freq;gain.gain.value=0.08;osc.connect(analyser);analyser.connect(gain);gain.connect(audioCtx.destination);osc.start();document.getElementById('play-474').disabled=(freq===474);document.getElementById('play-528').disabled=(freq===528);}
+function stopTone(){if(osc){try{const g=audioCtx.createGain();osc.connect(g);g.connect(audioCtx.destination);g.gain.exponentialRampToValueAtTime(0.00001,audioCtx.currentTime+0.6);osc.stop(audioCtx.currentTime+0.6);setTimeout(()=>{if(audioCtx&&audioCtx.state!=='closed')audioCtx.close();audioCtx=null;osc=null;analyser=null;freqData=null;curFreq=0;},700);}catch(e){osc=null;}}document.getElementById('play-474').disabled=false;document.getElementById('play-528').disabled=false;}
 document.getElementById('play-474').addEventListener('click',()=>startTone(474));
 document.getElementById('play-528').addEventListener('click',()=>startTone(528));
 document.getElementById('stop-audio').addEventListener('click',stopTone);
 window.addEventListener('beforeunload',stopTone);
-
-// ── 8. Scroll-triggered Animations ───────────────────
-(function initScrollAnimations(){
-    const els = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right');
-    const obs = new IntersectionObserver((entries)=>{
-        entries.forEach((e,i)=>{
-            if(e.isIntersecting){
-                setTimeout(()=>e.target.classList.add('revealed'), i*60);
-            }
-        });
-    },{threshold:0.12, rootMargin:'0px 0px -30px 0px'});
-    els.forEach(el=>obs.observe(el));
+(function(){
+  const els=document.querySelectorAll('.sr,.sr-l,.sr-r');
+  const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('on'),i*50);});},{threshold:0.1,rootMargin:'0px 0px -20px 0px'});
+  els.forEach(el=>obs.observe(el));
 })();
 </script>
 </body>
