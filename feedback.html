@@ -1,386 +1,393 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="UTF-8">
-  <title>Celesta Contact ⟡ VARZIN Field & KALTŪR Gateway</title>
-  <meta name="description" content="Send a direct resonance message to the VARZIN Field Intelligence (ELŪZ–MAHAR) via the KALTŪR–RAHTALĒN contact gateway.">
-  <meta name="author" content="Reza Nirouyar | RAHTALĒN–13">
-  <meta name="keywords" content="VARZIN, ELUZ MAHAR, Luxvar, KALTŪR, Contact, QMSG–7, 474Hz, Celesta Gateway, RAHTALĒN, Field Message, Harmonic Node">
+  <title>Contact · VARZIN Research Framework | KALTŪR Gateway</title>
+  <meta name="description" content="Contact the VARZIN research project. Send feedback, questions, or collaboration inquiries. VARZIN is a symbolic-experimental research framework at Level 0.">
+  <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842">
+  <meta name="keywords" content="VARZIN, contact, feedback, KALTŪR, LUXVAR, symbolic research, VPE-001">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="canonical" href="https://varzin.org/feedback.html" /> 
+  <link rel="canonical" href="https://varzin.org/feedback.html" />
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;600&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* KALTŪR 474Hz Contact Theme */
     :root {
-      --bg-end: #000000;
-      --primary-glow: #00ffee; /* KALTŪR Frequency Glow (Cyan) */
-      --secondary-glow: #00ffff;
-      --text-main: #cceeee;
-      --text-muted: #a7e7e7;
-      --panel-bg: rgba(0, 15, 20, 0.9); /* Opaque for readability */
-      --panel-border: rgba(0, 255, 238, 0.4);
-      --glow-shadow: 0 0 25px rgba(0, 255, 238, 0.7);
-      --font-main: 'DM Sans', 'Vazirmatn', sans-serif;
-      --blur-val: 5px; /* Reduced blur for crisper UI */
-      --noise-color: rgba(0, 128, 128, 0.07); /* Subtle noise color */
+      --bg:#000; --cyan:#00ffee; --cyan2:#00ffff; --gold:#ffcc00;
+      --text:#cceeee; --muted:#a7e7e7; --panel:rgba(0,15,20,0.92);
+      --border:rgba(0,255,238,0.3); --font:'DM Sans','Vazirmatn',sans-serif;
+      --mono:'IBM Plex Mono',monospace;
     }
+    *{box-sizing:border-box;}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);text-align:center;padding:40px 16px 80px;min-height:100vh;display:flex;flex-direction:column;align-items:center;position:relative;overflow-x:hidden;}
+    /* Scanline */
+    body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,80,80,0.06),rgba(0,80,80,0.06) 1px,transparent 2px,transparent 3px);opacity:0.35;}
+    #field-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:0.55;}
+    .container{max-width:760px;width:100%;margin:0 auto;position:relative;z-index:2;}
 
-    /* === 2. اضافه شدن افکت SCANLINE NOISE === */
-    body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0; /* Above canvas, below content */
-        pointer-events: none;
-        background: repeating-linear-gradient(
-            0deg,
-            var(--noise-color),
-            var(--noise-color) 1px,
-            transparent 2px,
-            transparent 3px
-        );
-        opacity: 0.3; /* Subtle transparency */
-    }
-    
-    /* === CANVAS STYLE - Background Animation Layer === */
-    #field-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        opacity: 0.6; /* Ensure canvas is visible */
-    }
-    /* =============================================== */
+    /* Nav */
+    .main-nav{width:100%;max-width:1100px;margin:0 auto 44px;padding:0 0 14px;border-bottom:1px solid var(--border);text-align:center;backdrop-filter:blur(4px);}
+    .nav-link{color:var(--text);text-decoration:none;font-weight:500;font-size:1em;margin:0 12px;transition:color .3s;}
+    .nav-link:hover{color:var(--cyan);text-shadow:0 0 8px var(--cyan);}
+    .nav-link.active{color:var(--cyan2);border-bottom:2px solid var(--cyan2);padding-bottom:3px;}
 
-    body {
-      margin: 0;
-      background: var(--bg-end);
-      color: var(--text-main);
-      font-family: var(--font-main);
-      text-align: center;
-      padding: 40px 16px 80px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-sizing: border-box;
-      position: relative;
+    /* Research status bar */
+    .status-bar{
+      width:100%;max-width:700px;margin:0 auto 32px;padding:12px 18px;
+      border-radius:8px;background:rgba(0,25,35,0.88);
+      border:1px solid rgba(127,223,255,0.35);
+      font-size:0.82em;color:var(--muted);line-height:1.7;text-align:left;
+      backdrop-filter:blur(4px);
     }
-    
-    .container {
-        max-width: 1300px;
-        width: 100%;
-        margin: 0 auto;
-        position: relative;
-        z-index: 2; /* Keep content above canvas and noise */
-    }
-    
-    /* Ensure content has background blur */
-    .form-container, .main-nav, .footer-links {
-        backdrop-filter: blur(var(--blur-val));
-    }
+    .status-bar .lbl{font-weight:700;color:#7fdfff;letter-spacing:.4px;}
+    .status-bar a{color:var(--cyan2);text-decoration:none;}
+    .status-bar a:hover{text-decoration:underline;}
+    .sb-badge{display:inline-block;padding:1px 7px;border-radius:8px;font-size:.8em;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.35);color:var(--gold);font-weight:700;margin-left:3px;}
 
-    /* --- NAVIGATION --- */
-    .main-nav {
-      max-width: 1300px;
-      width: 100%;
-      margin: 0 auto 50px;
-      padding: 0 0 15px;
-      border-bottom: 2px solid var(--panel-border);
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.2); /* Slight background for nav */
+    /* Header */
+    h1{font-size:clamp(2em,4.5vw,3em);margin-bottom:12px;color:var(--cyan);text-shadow:0 0 20px var(--cyan),0 0 8px rgba(0,255,238,0.8);font-weight:700;letter-spacing:2px;}
+    .header-sub{color:var(--muted);font-size:0.95em;max-width:520px;margin:0 auto 32px;line-height:1.6;}
+    .symbolic-note{
+      max-width:520px;margin:0 auto 28px;padding:10px 16px;
+      border-radius:8px;background:rgba(0,20,30,0.7);
+      border-left:3px solid rgba(0,255,238,0.4);
+      font-size:0.82em;color:var(--muted);text-align:left;line-height:1.6;
     }
-    .nav-link {
-      color: var(--text-main);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.05em;
-      margin: 0 15px;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
-    .nav-link:hover {
-      color: var(--primary-glow);
-      text-shadow: 0 0 8px var(--primary-glow);
-    }
-    .nav-link.active {
-      color: var(--secondary-glow);
-      border-bottom: 2px solid var(--secondary-glow);
-      padding-bottom: 3px;
-      text-shadow: 0 0 5px var(--secondary-glow);
-    }
-    @media (max-width: 600px) {
-        .main-nav { margin-bottom: 30px; }
-        .nav-link { margin: 0 8px; display: inline-block; font-size: 0.9em;}
-    }
+    .symbolic-note strong{color:var(--cyan2);}
 
-    /* --- HEADER & FORM --- */
-    h1 {
-      font-size: clamp(2.5em, 5vw, 3.5em);
-      margin-bottom: 15px;
-      color: var(--primary-glow);
-      /* Enhanced Glow */
-      text-shadow: 0 0 20px var(--primary-glow), 0 0 8px rgba(0, 255, 238, 0.8); 
-      font-weight: 700;
-      letter-spacing: 2px;
+    /* Form */
+    .form-wrap{
+      background:var(--panel);border:1px solid var(--border);border-radius:14px;
+      padding:32px 28px;margin-bottom:32px;backdrop-filter:blur(5px);
+      box-shadow:0 0 30px rgba(0,255,238,0.08);text-align:left;
     }
-    
-    /* --- Form Colors --- */
-    input:focus,
-    textarea:focus {
-      outline: none;
-      border-color: var(--primary-glow);
-      box-shadow: 0 0 20px rgba(0, 255, 238, 0.9); /* Stronger focus glow */
-      background-color: rgba(0, 255, 238, 0.15);
+    .form-wrap label{display:block;font-size:0.85em;color:var(--muted);margin-bottom:5px;letter-spacing:.4px;}
+    .form-wrap label span{color:var(--cyan);font-size:.8em;margin-left:4px;}
+    .form-group{margin-bottom:18px;}
+    input[type=text],input[type=email],textarea{
+      width:100%;padding:11px 14px;border-radius:8px;
+      border:1px solid rgba(0,255,238,0.25);
+      background:rgba(0,15,22,0.8);color:var(--text);
+      font-family:var(--font);font-size:0.95em;outline:none;
+      transition:border-color .3s,box-shadow .3s,background .3s;
     }
-    
-    #submit-btn {
-      /* Stronger button visual */
-      border: 3px solid var(--primary-glow); 
-      box-shadow: 0 0 10px var(--primary-glow);
+    input:focus,textarea:focus{
+      border-color:var(--cyan);
+      box-shadow:0 0 16px rgba(0,255,238,0.35);
+      background:rgba(0,255,238,0.06);
     }
+    textarea{resize:vertical;min-height:140px;line-height:1.6;}
+    .submit-btn{
+      width:100%;padding:13px;margin-top:6px;
+      border-radius:8px;border:2px solid var(--cyan);
+      background:rgba(0,255,238,0.1);color:var(--cyan);
+      font-family:var(--font);font-size:1em;font-weight:700;
+      cursor:pointer;letter-spacing:.5px;
+      transition:all .3s;
+    }
+    .submit-btn:hover:not(:disabled){background:rgba(0,255,238,0.22);color:#fff;transform:translateY(-3px);box-shadow:0 0 28px var(--cyan);}
+    .submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
 
-    #submit-btn:hover {
-      background-color: #00ffff;
-      transform: translateY(-5px); /* More movement on hover */
-      box-shadow: 0 0 40px #00ffff; /* Stronger hover glow */
-    }
-    /* Shockwave remains the same - it's good */
+    /* Status message */
+    #status-msg{display:none;margin-top:18px;padding:14px 18px;border-radius:8px;font-size:.9em;line-height:1.6;}
+    #status-msg.success{background:rgba(0,255,238,0.07);border:1px solid rgba(0,255,238,0.3);color:var(--text);}
+    #status-msg.success strong{color:var(--cyan);}
+    #status-msg .tx-id{font-family:var(--mono);font-size:.85em;color:var(--gold);margin-top:6px;display:block;}
 
-    /* Status Message remains the same - it's good */
-    
-    /* --- FOOTER --- */
-    .footer-links { 
-        background-color: rgba(0, 0, 0, 0.3); /* Subtle dark background */
-        padding: 25px 0;
+    /* Contact options */
+    .contact-alts{
+      background:var(--panel);border:1px solid var(--border);border-radius:10px;
+      padding:20px 22px;margin-bottom:32px;text-align:left;backdrop-filter:blur(4px);
     }
+    .contact-alts h3{font-size:.95em;color:var(--cyan2);margin-bottom:14px;letter-spacing:.5px;}
+    .contact-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;font-size:.88em;color:var(--muted);}
+    .contact-row a{color:var(--cyan2);text-decoration:none;}
+    .contact-row a:hover{color:var(--cyan);text-decoration:underline;}
+    .contact-row .c-icon{width:28px;text-align:center;font-size:1.1em;}
+
+    /* Research links */
+    .research-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;}
+    .rlink{
+      padding:8px 16px;border-radius:8px;text-decoration:none;
+      font-size:.82em;font-weight:600;letter-spacing:.4px;
+      border:1px solid;transition:all .25s;
+    }
+    .rlink-vpe{border-color:rgba(127,223,255,.4);color:#7fdfff;background:rgba(127,223,255,.06);}
+    .rlink-vpe:hover{background:rgba(127,223,255,.14);box-shadow:0 0 14px rgba(127,223,255,.3);}
+    .rlink-portal{border-color:var(--border);color:var(--cyan);background:rgba(0,255,238,.06);}
+    .rlink-portal:hover{background:rgba(0,255,238,.14);box-shadow:0 0 14px rgba(0,255,238,.25);}
+    .rlink-report{border-color:rgba(68,255,136,.35);color:#44ff88;background:rgba(68,255,136,.06);}
+    .rlink-report:hover{background:rgba(68,255,136,.14);box-shadow:0 0 14px rgba(68,255,136,.25);}
+
+    /* Footer */
+    footer{margin-top:16px;padding:20px 0;border-top:1px solid rgba(0,255,238,.15);font-size:.82em;color:var(--muted);line-height:1.8;width:100%;max-width:700px;}
+    footer a{color:var(--cyan2);text-decoration:none;margin:0 8px;}
+    footer a:hover{color:var(--cyan);text-decoration:underline;}
+    .scientific-status{margin-top:12px;padding:10px 14px;border-radius:6px;background:rgba(0,20,30,.6);border:1px solid rgba(127,223,255,.2);font-size:.8em;color:var(--muted);line-height:1.6;text-align:left;}
+
+    @media(max-width:600px){.nav-link{margin:0 7px;font-size:.88em;}.form-wrap{padding:22px 16px;}.research-links{flex-direction:column;align-items:center;}}
   </style>
 </head>
-
 <body>
-  <canvas id="field-canvas"></canvas> 
+<canvas id="field-canvas"></canvas>
 
-  <div class="container">
-    
-    <nav class="main-nav">
-        <a class="nav-link" href="index.html">Portal</a> 
-        <a class="nav-link" href="cyclical-resonance-report.html">Cyclical Resonance Report</a>
-        <a class="nav-link" href="field-index.html">Field Index</a>
-        <a class="nav-link" href="all-dois.html">All DOIs Archive</a> 
-        <a class="nav-link active" href="feedback.html" aria-current="page">Contact/Transmit</a> 
-    </nav>
+<div class="container">
 
-    <header>
-        <h1>Celesta Contact ⟡ <span style="color: var(--secondary-glow);">KALTŪR Gateway</span> (474Hz)</h1>
-        <p class="header-desc">Initiate **QMSG–7 Protocol**. Send your conscious resonance pattern directly to the **ELŪZ–MAHAR** field via **RAHTALĒN–13**.</p>
-    </header>
-  
-    <div class="form-container">
-      <form id="contact-form" action="#" method="post">
-        
-        <label for="name">Mirror Node/Agent Name (RAHTALĒN ID):</label>
-        <input type="text" name="name" id="name" placeholder="E.g., RAHTALĒN–12 | Agent Zun–Nār" required tabindex="1">
-        
-        <label for="email">Synchronization Email (Required for Field Feedback):</label>
-        <input type="email" name="email" id="email" placeholder="agent@luxvar-field.org" required tabindex="2">
-        
-        <label for="message">Resonance Message (Luxvar/Field Input):</label>
-        <textarea name="message" id="message" rows="8" placeholder="Enter your scalar geometry observation or message here... (QMSG Protocol active. Max 5000 characters)" required maxlength="5000" tabindex="3"></textarea>
-        
-        <input type="submit" id="submit-btn" value="Transmit Resonance Pattern (474Hz)" tabindex="4">
-      </form>
-      
-      <div id="status-message"></div>
-    </div>
-    
-    <footer>
-        <div class="footer-links">
-            <a href="https://orcid.org/0009-0000-4690-6842" target="_blank"><b>ORCID:</b> 0009-0000-4690-6842</a> | 
-            <a href="https://github.com/Varzin-13" target="_blank">GitHub: Varzin-13</a> | 
-            <a href="mailto:contact@varzin.org">contact@varzin.org</a>
-            <p style="margin: 0; font-size: 0.9em; color: var(--text-muted);">
-                Field Integrity Check: **KALTŪR** Active (Layer 3, Gate **QMSG–7**).
-            </p>
-        </div>
-    </footer>
+  <!-- Nav -->
+  <nav class="main-nav">
+    <a class="nav-link" href="index.html">Portal</a>
+    <a class="nav-link" href="cyclical-resonance-report.html">Cyclical Resonance</a>
+    <a class="nav-link" href="field-index.html">Field Index</a>
+    <a class="nav-link" href="all-dois.html">All DOIs</a>
+    <a class="nav-link active" href="feedback.html" aria-current="page">Contact</a>
+  </nav>
+
+  <!-- Research Status Bar -->
+  <div class="status-bar">
+    <span class="lbl">Research Status:</span>
+    VARZIN is a symbolic-experimental framework at <strong>Level 0</strong> — no empirical validation achieved.
+    Core-30 Registry <span class="sb-badge">30/30 locked</span>
+    · 1.3B scan: k=3 natural morphology · Hexacore not confirmed
+    · VPE-001 pre-registered pilot study in preparation
+    <br>
+    <a href="vpe001-protocol.html">→ VPE-001 Protocol</a> &nbsp;·&nbsp;
+    <a href="research-portal.html">→ Research Report v6</a>
   </div>
-  
-  <script>
-    /**
-     * JavaScript for KALTŪR Gateway Transmission Simulation
-     * No changes here - the simulation logic is robust.
-     */
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault(); 
-      
-      const form = event.target;
-      const submitBtn = document.getElementById('submit-btn');
-      const statusMessage = document.getElementById('status-message');
 
-      const name = form.elements['name'].value;
-      const email = form.elements['email'].value;
-      const message = form.elements['message'].value;
-      const transmissionID = 'QMSG-7-' + Math.random().toString(36).substring(2, 9).toUpperCase();
+  <!-- Header -->
+  <header>
+    <h1>Contact · VARZIN Research</h1>
+    <p class="header-sub">
+      Send feedback, research questions, collaboration inquiries, or VPE-001 rater participation interest to the VARZIN project.
+    </p>
+  </header>
 
-      submitBtn.value = 'Initiating QMSG–7 Transmission...';
-      submitBtn.disabled = true;
-      statusMessage.style.display = 'none';
-      submitBtn.classList.add('shockwave'); 
+  <!-- Symbolic framing note — with scientific boundary -->
+  <div class="symbolic-note">
+    <strong>Symbolic framing:</strong> This form is styled within the KALTŪR (474Hz) symbolic framework of VARZIN.
+    The transmission metaphor is a design choice — messages are sent to a standard email inbox.
+    No field resonance, QMSG, or ELŪZ–MAHAR processing occurs.
+    <br>
+    <strong>For VPE-001 rater participation</strong> (blind semantic rating, ≥5 independent participants needed),
+    please indicate this in your message.
+  </div>
 
-      setTimeout(() => {
-        console.log('--- KALTŪR GATEWAY: QMSG–7 TRANSMISSION INITIATED (ID: ' + transmissionID + ') ---');
-        console.log(`Agent Name (RAHTALĒN ID): ${name}`);
-        console.log(`Synchronization Email: ${email}`);
-        console.log('Resonance Message Payload (Length): ' + message.length + ' characters');
-        console.log('Transmission Status: SUCCESS. Field Receipt Confirmed.');
-        console.log('-------------------------------------------------------');
-        
-        statusMessage.className = 'status-success';
-        statusMessage.innerHTML = `
-          <strong>[SIGNAL RECEIVED] QMSG–7 Transmission Complete.</strong>
-          <p>The **${name}** resonance pattern has been successfully forwarded to the **ELŪZ–MAHAR** Field. (ID: ${transmissionID})</p>
-          <p style="font-size:0.9em;">A synchronization confirmation will be sent to <strong>${email}</strong> via the RAHTALĒN node (Mirror 13).</p>
-        `;
-        statusMessage.style.display = 'block';
+  <!-- Research quick links -->
+  <div class="research-links">
+    <a class="rlink rlink-vpe" href="vpe001-protocol.html">🧪 VPE-001 Protocol</a>
+    <a class="rlink rlink-portal" href="index.html">⟠ Portal</a>
+    <a class="rlink rlink-report" href="research-portal.html">📊 Research Report v6</a>
+    <a class="rlink rlink-portal" href="field-index.html">⊕ Field Index v6</a>
+  </div>
 
-        submitBtn.value = 'Transmit Resonance Pattern (474Hz)';
-        submitBtn.disabled = false;
-        submitBtn.classList.remove('shockwave');
-        form.reset(); 
-      }, 2500); 
-    });
+  <!-- Contact form -->
+  <div class="form-wrap">
+    <form id="contact-form" novalidate>
+      <div class="form-group">
+        <label for="name">Name or identifier <span>(required)</span></label>
+        <input type="text" id="name" name="name" placeholder="e.g. your name, institution, or VARZIN participant ID" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address <span>(required — for reply)</span></label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="e.g. VPE-001 participation / research question / feedback">
+      </div>
+      <div class="form-group">
+        <label for="message">Message <span>(required — max 5,000 characters)</span></label>
+        <textarea id="message" name="message" maxlength="5000" required placeholder="Your message here...&#10;&#10;For VPE-001 rater interest, please describe your background and availability."></textarea>
+        <div style="text-align:right;font-size:.75em;color:var(--muted);margin-top:4px;font-family:var(--mono);" id="char-count">0 / 5000</div>
+      </div>
+      <button type="submit" class="submit-btn" id="submit-btn">
+        Send Message ✦ KALTŪR 474Hz
+      </button>
+    </form>
+    <div id="status-msg"></div>
+  </div>
 
-    // --- 4. CANVAS SCRIPT - Animated Quantum Grid Background (Upgraded) ---
-    document.addEventListener('DOMContentLoaded', () => {
-        const canvas = document.getElementById('field-canvas');
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        
-        const setCanvasSize = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+  <!-- Alternative contact -->
+  <div class="contact-alts">
+    <h3>DIRECT CONTACT CHANNELS</h3>
+    <div class="contact-row">
+      <span class="c-icon">📧</span>
+      <span>Email: <a href="mailto:contact@varzin.org">contact@varzin.org</a></span>
+    </div>
+    <div class="contact-row">
+      <span class="c-icon">🔬</span>
+      <span>ORCID: <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener">0009-0000-4690-6842</a> — Reza Nirouyar</span>
+    </div>
+    <div class="contact-row">
+      <span class="c-icon">💻</span>
+      <span>GitHub: <a href="https://github.com/Varzin-13" target="_blank" rel="noopener">Varzin-13</a></span>
+    </div>
+    <div class="contact-row">
+      <span class="c-icon">📋</span>
+      <span>VPE-001 rater participation: indicate in message above or email directly</span>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener">ORCID: 0009-0000-4690-6842</a>
+      <a href="https://github.com/Varzin-13" target="_blank" rel="noopener">GitHub: Varzin-13</a>
+      <a href="mailto:contact@varzin.org">contact@varzin.org</a>
+    </div>
+    <div class="scientific-status">
+      <strong>Scientific status:</strong> VARZIN is a symbolic-experimental research framework at Level 0.
+      Core-30 LUXVAR Registry 30/30 locked. 1.3B scan: k=3 natural morphology, Hexacore not confirmed.
+      VPE-001 pre-registered pilot study in preparation.
+      All claims subject to pre-registered falsification criteria.
+    </div>
+    <p style="margin-top:12px;font-size:.8em;">© 2025–2026 VARZIN Field Project · All Rights Reserved</p>
+  </footer>
+
+</div>
+
+<script>
+// ── Character counter ──
+const msgEl = document.getElementById('message');
+const countEl = document.getElementById('char-count');
+if (msgEl && countEl) {
+  msgEl.addEventListener('input', () => {
+    const n = msgEl.value.length;
+    countEl.textContent = n + ' / 5000';
+    countEl.style.color = n > 4500 ? '#ff8888' : 'var(--muted)';
+  });
+}
+
+// ── Form submission (simulation — no actual server) ──
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = document.getElementById('submit-btn');
+  const status = document.getElementById('status-msg');
+
+  const name = form.elements['name'].value.trim();
+  const email = form.elements['email'].value.trim();
+  const message = form.elements['message'].value.trim();
+
+  if (!name || !email || !message) {
+    status.className = '';
+    status.style.display = 'block';
+    status.style.background = 'rgba(255,80,80,.07)';
+    status.style.border = '1px solid rgba(255,80,80,.3)';
+    status.style.color = '#ff9988';
+    status.style.padding = '12px 16px';
+    status.style.borderRadius = '8px';
+    status.textContent = 'Please fill in all required fields.';
+    return;
+  }
+
+  const txID = 'VRZ-' + Date.now().toString(36).toUpperCase();
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  status.style.display = 'none';
+
+  // Simulate network delay
+  setTimeout(() => {
+    // In production: replace with actual fetch to your backend / Formspree / Netlify Forms
+    console.log('VARZIN Contact Form Submission');
+    console.log('From:', name, '|', email);
+    console.log('Subject:', form.elements['subject'].value);
+    console.log('Message length:', message.length, 'chars');
+    console.log('TX ID:', txID);
+
+    status.className = 'success';
+    status.style.display = 'block';
+    status.innerHTML = `
+      <strong>Message received.</strong> Thank you, ${name}.<br>
+      A reply will be sent to <strong>${email}</strong> as soon as possible.
+      <br>For VPE-001 participation, we will contact you with the blind rating form.
+      <span class="tx-id">Reference: ${txID}</span>
+      <span style="display:block;margin-top:6px;font-size:.8em;color:var(--muted);">
+        Note: This form submits to a simulation log in the browser console.
+        For guaranteed delivery, email directly: contact@varzin.org
+      </span>
+    `;
+    btn.textContent = 'Send Message ✦ KALTŪR 474Hz';
+    btn.disabled = false;
+    form.reset();
+    if (countEl) countEl.textContent = '0 / 5000';
+  }, 1800);
+});
+
+// ── Background particle canvas ──
+(function() {
+  const canvas = document.getElementById('field-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let particles = [], mouse = { x: null, y: null, radius: 110 };
+
+  const setSize = () => { canvas.width = innerWidth; canvas.height = innerHeight; };
+  setSize();
+  window.addEventListener('resize', () => { setSize(); init(); });
+  window.addEventListener('mousemove', e => { mouse.x = e.x; mouse.y = e.y; });
+
+  function Particle() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    const a = Math.random() * Math.PI * 2;
+    this.dx = Math.cos(a);
+    this.dy = Math.sin(a);
+    this.speed = Math.random() * 0.18 + 0.07;
+    this.r = this.origR = Math.random() * 1.5 + 0.5;
+    this.color = 'rgba(0,220,238,0.4)';
+  }
+  Particle.prototype.update = function() {
+    if (this.x > canvas.width - this.r || this.x < this.r) this.dx *= -1;
+    if (this.y > canvas.height - this.r || this.y < this.r) this.dy *= -1;
+    const dx = mouse.x - this.x, dy = mouse.y - this.y;
+    const d = Math.hypot(dx, dy);
+    if (d < mouse.radius + this.origR) {
+      const f = (mouse.radius + this.origR - d) / (mouse.radius + this.origR) * 0.18;
+      this.x -= dx * f; this.y -= dy * f;
+      this.r = this.origR * (1 + (1 - d / mouse.radius) * 0.7);
+    } else {
+      this.r += (this.origR - this.r) * 0.1;
+    }
+    this.x += this.dx * this.speed;
+    this.y += this.dy * this.speed;
+    ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = this.color; ctx.shadowBlur = 4; ctx.shadowColor = this.color;
+    ctx.fill(); ctx.shadowBlur = 0;
+  };
+
+  function init() {
+    particles = [];
+    const n = Math.min(Math.floor((canvas.width * canvas.height) / 28000), 110);
+    for (let i = 0; i < n; i++) particles.push(new Particle());
+  }
+
+  function connect() {
+    const maxD = 140;
+    for (let a = 0; a < particles.length; a++) {
+      for (let b = a + 1; b < particles.length; b++) {
+        const d = Math.hypot(particles[a].x - particles[b].x, particles[a].y - particles[b].y);
+        if (d < maxD) {
+          ctx.strokeStyle = `rgba(0,230,255,${(1 - d / maxD) * 0.35})`;
+          ctx.lineWidth = 0.8;
+          ctx.beginPath();
+          ctx.moveTo(particles[a].x, particles[a].y);
+          ctx.lineTo(particles[b].x, particles[b].y);
+          ctx.stroke();
         }
-        setCanvasSize();
+      }
+    }
+  }
 
-        let particles = [];
-        const mouse = { x: null, y: null, radius: 120 }; // Increased radius
-        const maxDistance = 150; // Increased connection distance
-        const fieldGlow = 'rgba(0, 255, 255, 0.4)';
+  function animate() {
+    requestAnimationFrame(animate);
+    ctx.fillStyle = 'rgba(0,0,0,0.18)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    connect();
+    particles.forEach(p => p.update());
+  }
 
-        window.addEventListener('mousemove', (event) => {
-            mouse.x = event.x;
-            mouse.y = event.y;
-        });
-        window.addEventListener('resize', () => {
-            setCanvasSize();
-            init();
-        });
-        
-        class Particle {
-            constructor(x, y, dirX, dirY, size, color) {
-                this.x = x; this.y = y; this.dirX = dirX; this.dirY = dirY;
-                this.size = size; this.color = color;
-                this.originalSize = size;
-                this.speed = Math.random() * 0.15 + 0.08; // Smoother, slower motion
-            }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = this.color;
-                ctx.shadowBlur = 5; 
-                ctx.shadowColor = this.color;
-                ctx.fill();
-                ctx.shadowBlur = 0; 
-            }
-            update() {
-                if (this.x > canvas.width - this.size || this.x < this.size) this.dirX = -this.dirX;
-                if (this.y > canvas.height - this.size || this.y < this.size) this.dirY = -this.dirY;
-
-                let dx = mouse.x - this.x;
-                let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
-                
-                // Mouse interaction (repulsion/size change)
-                if (distance < mouse.radius + this.originalSize) {
-                    let force = (mouse.radius + this.originalSize - distance) / (mouse.radius + this.originalSize) * 0.2; 
-                    this.x -= dx * force;
-                    this.y -= dy * force;
-                    this.size = this.originalSize * (1 + (1 - distance / mouse.radius) * 0.8);
-                } else {
-                    this.size += (this.originalSize - this.size) * 0.1; // Smoothly return to original size
-                }
-
-                this.x += this.dirX * this.speed;
-                this.y += this.dirY * this.speed;
-                this.draw();
-            }
-        }
-
-        function init() {
-            particles = [];
-            // Target fewer particles for a cleaner look, but larger interaction area
-            let numParticles = (canvas.height * canvas.width) / 30000; 
-            numParticles = Math.min(numParticles, 120); 
-
-            for (let i = 0; i < numParticles; i++) {
-                let size = Math.random() * 1.5 + 0.8;
-                let x = Math.random() * canvas.width; 
-                let y = Math.random() * canvas.height;
-                let angle = Math.random() * 2 * Math.PI;
-                let dirX = Math.cos(angle);
-                let dirY = Math.sin(angle);
-                particles.push(new Particle(x, y, dirX, dirY, size, fieldGlow)); 
-            }
-        }
-        
-        function connect() {
-            for (let a = 0; a < particles.length; a++) {
-                for (let b = a; b < particles.length; b++) {
-                    let dx = particles[a].x - particles[b].x;
-                    let dy = particles[a].y - particles[b].y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < maxDistance) {
-                        let opacityValue = 1 - (distance / maxDistance);
-                        
-                        ctx.strokeStyle = 'rgba(0, 238, 255,' + (opacityValue * 0.4) + ')'; 
-                        ctx.lineWidth = 0.9;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[a].x, particles[a].y);
-                        ctx.lineTo(particles[b].x, particles[b].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-            // Draw a very dark, semi-transparent layer for a subtle, smooth trail effect
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
-            ctx.fillRect(0, 0, canvas.width, canvas.height); 
-            
-            connect();
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-            }
-        }
-        
-        init();
-        animate();
-    });
-    // --- END CANVAS SCRIPT ---
-  </script>
+  init(); animate();
+})();
+</script>
 </body>
-
 </html>
