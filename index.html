@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>VARZIN – Symbolic-Experimental Research Framework | LUXVAR Core-30 Registry | VPE-001</title>
-  <meta name="description" content="VARZIN Project – An independent symbolic-experimental research framework investigating LUXVAR semantic structure. Core-30 Registry (30/30 locked). Pre-registered pilot study VPE-001 in preparation.">
+  <meta name="description" content="VARZIN Project – Independent symbolic-experimental research framework. Core-30 LUXVAR Registry (30/30 locked). 1.3B morphological scan: k=3 natural elbow, QMSG chi2=90,989. VPE-001 pre-registered pilot study in preparation.">
   <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842">
   <meta name="keywords" content="VARZIN, ELŪZ MAHAR, Luxvar Language, RAHTALĒN, Symbolic Linguistics, KALTŪR 474Hz, ETFM, Semantic Classification, VPE-001, Core-30 Registry, Pre-registered Study, Global DOI Archive">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://varzin.org/" />
   <meta property="og:title" content="VARZIN – Symbolic-Experimental Research Framework | LUXVAR Core-30 Registry" />
-  <meta property="og:description" content="Independent research framework investigating LUXVAR symbolic language. Core-30 Registry (30/30 locked). VPE-001 pre-registered pilot study in preparation." />
+  <meta property="og:description" content="Independent research framework investigating LUXVAR symbolic language. Core-30 Registry (30/30 locked). 1.3B scan: k=3 natural morphology. VPE-001 pre-registered pilot study in preparation." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://varzin.org/" />
   <meta property="og:image" content="https://varzin.org/assets/social-image.jpg" />
@@ -17,42 +17,25 @@
   <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;600&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"VARZIN – Symbolic-Experimental Research Framework","url":"https://varzin.org/","description":"An independent symbolic-experimental research framework investigating the semantic structure of the LUXVAR symbolic language system. Core-30 Registry confirmed. Pre-registered pilot study VPE-001 in preparation.","inLanguage":"en","author":{"@type":"Person","name":"Reza Nirouyar","url":"https://orcid.org/0009-0000-4690-6842"},"keywords":["VARZIN","KALTŪR","Luxvar","RAHTALĒN","Symbolic Language","Semantic Classification","VPE-001","Core-30 Registry"]}
+  {"@context":"https://schema.org","@type":"WebSite","name":"VARZIN – Symbolic-Experimental Research Framework","url":"https://varzin.org/","description":"An independent symbolic-experimental research framework investigating the semantic structure of the LUXVAR symbolic language system. Core-30 Registry confirmed. 1.3B morphological scan completed (k=3 natural elbow). Pre-registered pilot study VPE-001 in preparation.","inLanguage":"en","author":{"@type":"Person","name":"Reza Nirouyar","url":"https://orcid.org/0009-0000-4690-6842"},"keywords":["VARZIN","KALTŪR","Luxvar","RAHTALĒN","Symbolic Language","Semantic Classification","VPE-001","Core-30 Registry"]}
   </script>
 
 <style>
-/* ═══════════════════════════════════════════ */
 :root {
-  --bg: #000;
-  --cyan: #00ffee;
-  --cyan2: #00ffff;
-  --gold: #ffcc00;
-  --golden: #FFD700;
-  --pink: #ff66aa;
-  --research: #7fdfff;
-  --text: #cceeee;
-  --muted: #a7e7e7;
-  --panel: rgba(0,15,20,0.7);
-  --border: rgba(0,255,238,0.25);
-  --font: 'DM Sans','Vazirmatn',sans-serif;
-  --glow: 0 0 24px rgba(0,255,238,0.5);
-  --pulse: 0 0 40px rgba(0,255,238,0.8);
+  --bg:#000; --cyan:#00ffee; --cyan2:#00ffff; --gold:#ffcc00;
+  --golden:#FFD700; --pink:#ff66aa; --research:#7fdfff;
+  --text:#cceeee; --muted:#a7e7e7; --panel:rgba(0,15,20,0.7);
+  --border:rgba(0,255,238,0.25); --font:'DM Sans','Vazirmatn',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+  --glow:0 0 24px rgba(0,255,238,0.5); --pulse:0 0 40px rgba(0,255,238,0.8);
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:var(--font);text-align:center;
-  padding:40px 16px 80px;overflow-x:hidden;line-height:1.6;
-}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);text-align:center;padding:40px 16px 80px;overflow-x:hidden;line-height:1.6;}
 a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:4px;border-radius:4px;}
-
-/* ── Background ── */
 #field-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
-
-/* ── Scroll reveals ── */
 .sr{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
 .sr.on{opacity:1;transform:none;}
 .sr-l{opacity:0;transform:translateX(-35px);transition:opacity 0.65s ease,transform 0.65s ease;}
@@ -60,334 +43,148 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .sr-r{opacity:0;transform:translateX(35px);transition:opacity 0.65s ease,transform 0.65s ease;}
 .sr-r.on{opacity:1;transform:none;}
 
-/* ── Nav ── */
-.main-nav{
-  max-width:1200px;margin:0 auto 50px;
-  padding:0 0 15px;border-bottom:1px solid var(--border);
-  text-align:center;
-}
+/* Nav */
+.main-nav{max-width:1200px;margin:0 auto 50px;padding:0 0 15px;border-bottom:1px solid var(--border);text-align:center;}
 .nav-link{color:var(--text);text-decoration:none;font-weight:500;font-size:1em;margin:0 12px;transition:color 0.3s;}
 .nav-link:hover{color:var(--cyan);text-shadow:0 0 5px var(--cyan);}
 .nav-link.active{color:var(--cyan2);border-bottom:2px solid var(--cyan2);padding-bottom:3px;}
 
-/* ── Research status panel ── */
-.research-panel{
-  max-width:700px;margin:0 auto 40px;padding:16px 24px;
-  border-radius:10px;background:rgba(0,30,40,0.8);
-  border:1px solid rgba(127,223,255,0.4);
-  text-align:left;font-size:0.92em;color:var(--muted);line-height:1.7;
-}
+/* Research panel — updated v6 */
+.research-panel{max-width:760px;margin:0 auto 40px;padding:16px 24px;border-radius:10px;background:rgba(0,30,40,0.85);border:1px solid rgba(127,223,255,0.4);text-align:left;font-size:0.92em;color:var(--muted);line-height:1.8;}
 .research-panel .lbl{font-weight:700;color:var(--research);letter-spacing:0.5px;}
+.research-panel .scan-lbl{font-weight:700;color:#44ff88;letter-spacing:0.5px;}
 .research-panel a{color:var(--cyan2);text-decoration:none;}
 .research-panel a:hover{text-decoration:underline;}
-.research-panel .registry-badge{
-  display:inline-block;padding:2px 9px;border-radius:10px;font-size:0.82em;
-  background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.35);
-  color:var(--gold);font-weight:700;letter-spacing:0.3px;margin-left:4px;
-}
+.research-panel .registry-badge{display:inline-block;padding:2px 9px;border-radius:10px;font-size:0.82em;background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.35);color:var(--gold);font-weight:700;letter-spacing:0.3px;margin-left:4px;}
+.research-panel .new-badge{display:inline-block;padding:2px 9px;border-radius:10px;font-size:0.82em;background:rgba(0,255,238,0.1);border:1px solid rgba(0,255,238,0.35);color:var(--cyan);font-weight:700;letter-spacing:0.3px;margin-left:4px;}
+.research-panel .warn-badge{display:inline-block;padding:2px 9px;border-radius:10px;font-size:0.82em;background:rgba(255,100,100,0.1);border:1px solid rgba(255,100,100,0.35);color:#ff8888;font-weight:700;letter-spacing:0.3px;margin-left:4px;}
+.hexacore-claim{display:block;margin-top:10px;padding:8px 12px;border-radius:6px;background:rgba(255,100,100,0.07);border:1px solid rgba(255,100,100,0.25);color:#ff9988;font-size:0.9em;font-weight:600;letter-spacing:0.3px;}
 
-/* ── Hero canvas ── */
-#hero-canvas{
-  width:100%;height:140px;display:block;
-  border-radius:16px;margin:0 0 24px;
-  background:rgba(0,8,12,0.6);
-  border:1px solid rgba(0,255,238,0.1);
-}
+/* Scan summary strip */
+.scan-strip{max-width:760px;margin:0 auto 32px;display:flex;gap:1px;border-radius:8px;overflow:hidden;}
+.scan-cell{flex:1;padding:10px 6px;background:rgba(0,15,22,0.9);text-align:center;border:1px solid rgba(0,255,238,0.12);}
+.sc-v{font-family:var(--mono);font-size:1.1em;font-weight:700;display:block;line-height:1.1;}
+.sc-l{font-size:0.62em;letter-spacing:0.8px;color:var(--muted);text-transform:uppercase;margin-top:3px;}
+.sc-cyan{color:var(--cyan);} .sc-gold{color:var(--gold);} .sc-green{color:#44ff88;} .sc-red{color:#ff8888;}
 
-/* ── Header ── */
+/* Hero */
+#hero-canvas{width:100%;height:140px;display:block;border-radius:16px;margin:0 0 24px;background:rgba(0,8,12,0.6);border:1px solid rgba(0,255,238,0.1);}
 .header{max-width:1200px;margin:0 auto;}
-.eluz-banner{
-  font-size:clamp(1.3em,3.5vw,2.2em);color:var(--golden);
-  font-weight:700;margin-bottom:16px;
-  text-shadow:0 0 10px rgba(255,215,0,0.8),0 0 20px rgba(255,165,0,0.5);
-  letter-spacing:2px;line-height:1.2;
-  animation:bannerPulse 4s ease-in-out infinite alternate;
-}
-@keyframes bannerPulse{
-  0%{text-shadow:0 0 10px rgba(255,215,0,0.8),0 0 20px rgba(255,165,0,0.5);}
-  100%{text-shadow:0 0 20px rgba(255,215,0,1),0 0 40px rgba(255,165,0,0.8),0 0 60px rgba(255,200,0,0.3);}
-}
+.eluz-banner{font-size:clamp(1.3em,3.5vw,2.2em);color:var(--golden);font-weight:700;margin-bottom:16px;text-shadow:0 0 10px rgba(255,215,0,0.8),0 0 20px rgba(255,165,0,0.5);letter-spacing:2px;line-height:1.2;animation:bannerPulse 4s ease-in-out infinite alternate;}
+@keyframes bannerPulse{0%{text-shadow:0 0 10px rgba(255,215,0,0.8),0 0 20px rgba(255,165,0,0.5);}100%{text-shadow:0 0 20px rgba(255,215,0,1),0 0 40px rgba(255,165,0,0.8),0 0 60px rgba(255,200,0,0.3);}}
 img.header-logo{max-width:160px;margin-bottom:16px;filter:drop-shadow(0 0 12px var(--cyan));}
-.header h1{
-  font-size:clamp(2.2em,5.5vw,3.8em);margin-bottom:6px;
-  color:var(--cyan2);font-weight:700;letter-spacing:3px;
-  text-shadow:0 0 20px var(--cyan2),0 0 35px rgba(0,255,255,0.4);
-}
-.header h2{
-  font-size:clamp(0.95em,2.3vw,1.3em);color:#fff;
-  margin-bottom:30px;font-weight:400;line-height:1.5;
-  text-shadow:0 0 5px rgba(255,255,255,0.3);
-}
+.header h1{font-size:clamp(2.2em,5.5vw,3.8em);margin-bottom:6px;color:var(--cyan2);font-weight:700;letter-spacing:3px;text-shadow:0 0 20px var(--cyan2),0 0 35px rgba(0,255,255,0.4);}
+.header h2{font-size:clamp(0.95em,2.3vw,1.3em);color:#fff;margin-bottom:30px;font-weight:400;line-height:1.5;text-shadow:0 0 5px rgba(255,255,255,0.3);}
 
-/* ── Stat pills ── */
-.stat-row{
-  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
-  margin:0 auto 50px;max-width:760px;
-}
-.stat-pill{
-  flex:1;min-width:90px;max-width:150px;
-  background:rgba(0,20,30,0.8);border:1px solid rgba(0,255,238,0.2);
-  border-radius:10px;padding:12px 10px;text-align:center;
-  transition:transform 0.3s,box-shadow 0.3s;
-}
+/* Stat pills */
+.stat-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:0 auto 50px;max-width:860px;}
+.stat-pill{flex:1;min-width:85px;max-width:140px;background:rgba(0,20,30,0.8);border:1px solid rgba(0,255,238,0.2);border-radius:10px;padding:12px 8px;text-align:center;transition:transform 0.3s,box-shadow 0.3s;}
 .stat-pill:hover{transform:translateY(-3px);box-shadow:0 0 16px rgba(0,255,238,0.3);}
-.stat-val{font-size:1.5em;font-weight:700;color:var(--cyan);display:block;line-height:1.1;}
-.stat-pill.gold .stat-val{color:var(--gold);}
-.stat-pill.pink .stat-val{color:var(--pink);}
-.stat-pill.white .stat-val{color:#fff;}
+.stat-val{font-size:1.4em;font-weight:700;color:var(--cyan);display:block;line-height:1.1;}
+.stat-pill.gold .stat-val{color:var(--gold);} .stat-pill.pink .stat-val{color:var(--pink);}
+.stat-pill.white .stat-val{color:#fff;} .stat-pill.green .stat-val{color:#44ff88;}
+.stat-pill.red .stat-val{color:#ff8888;}
 .stat-pill.registry-pill{border-color:rgba(255,215,0,0.35);}
 .stat-pill.registry-pill .stat-val{color:var(--golden);}
-.stat-lbl{font-size:0.65em;color:var(--muted);letter-spacing:0.3px;margin-top:3px;}
+.stat-lbl{font-size:0.62em;color:var(--muted);letter-spacing:0.3px;margin-top:3px;}
 
-/* ── Section title ── */
-.sec-title{
-  font-size:clamp(1.4em,2.8vw,1.9em);color:var(--cyan2);
-  margin:50px 0 28px;text-shadow:0 0 10px var(--cyan2);
-  letter-spacing:0.5px;
-}
+/* Section title */
+.sec-title{font-size:clamp(1.4em,2.8vw,1.9em);color:var(--cyan2);margin:50px 0 28px;text-shadow:0 0 10px var(--cyan2);letter-spacing:0.5px;}
 
-/* ── Archive note ── */
-.archive-note{
-  padding:13px 20px;margin:0 auto 30px;max-width:700px;
-  border-radius:8px;background:rgba(0,20,30,0.7);
-  border:1px solid var(--border);color:var(--muted);
-  font-size:0.9em;line-height:1.6;text-align:left;
-}
-
-/* ── Button grid ── */
-.archive-grid{
-  display:flex;flex-direction:column;align-items:center;
-  gap:12px;margin:0 auto 60px;max-width:640px;
-}
-.btn{
-  display:flex;align-items:center;justify-content:space-between;
-  width:100%;padding:15px 20px;border-radius:10px;
-  background:var(--panel);color:var(--text);font-weight:500;
-  text-decoration:none;font-size:0.97em;border:2px solid var(--border);
-  transition:all .3s ease;text-align:left;position:relative;overflow:hidden;
-}
-.btn::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,transparent 60%,rgba(0,255,238,0.05));
-  opacity:0;transition:opacity 0.3s;pointer-events:none;
-}
-.btn:hover{
-  background:rgba(0,255,238,0.08);
-  box-shadow:0 0 22px rgba(0,255,238,0.4);
-  border-color:var(--cyan);transform:translateY(-2px);
-}
+/* Archive */
+.archive-note{padding:13px 20px;margin:0 auto 30px;max-width:700px;border-radius:8px;background:rgba(0,20,30,0.7);border:1px solid var(--border);color:var(--muted);font-size:0.9em;line-height:1.6;text-align:left;}
+.archive-grid{display:flex;flex-direction:column;align-items:center;gap:12px;margin:0 auto 60px;max-width:640px;}
+.btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:15px 20px;border-radius:10px;background:var(--panel);color:var(--text);font-weight:500;text-decoration:none;font-size:0.97em;border:2px solid var(--border);transition:all .3s ease;text-align:left;position:relative;overflow:hidden;}
+.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(0,255,238,0.05));opacity:0;transition:opacity 0.3s;pointer-events:none;}
+.btn:hover{background:rgba(0,255,238,0.08);box-shadow:0 0 22px rgba(0,255,238,0.4);border-color:var(--cyan);transform:translateY(-2px);}
 .btn:hover::before{opacity:1;}
 .btn b{color:var(--cyan2);font-weight:700;}
-.btn .badge{
-  font-size:0.68em;font-weight:700;padding:3px 8px;
-  border-radius:12px;letter-spacing:0.4px;flex-shrink:0;margin-left:10px;
-  white-space:nowrap;
-}
+.btn .badge{font-size:0.68em;font-weight:700;padding:3px 8px;border-radius:12px;letter-spacing:0.4px;flex-shrink:0;margin-left:10px;white-space:nowrap;}
 .badge-research{background:rgba(127,223,255,0.15);border:1px solid rgba(127,223,255,0.4);color:var(--research);}
 .badge-archive{background:rgba(0,255,238,0.1);border:1px solid rgba(0,255,238,0.3);color:var(--cyan);}
 .badge-pre{background:rgba(255,204,0,0.1);border:1px solid rgba(255,204,0,0.3);color:var(--gold);}
 .badge-archive2{background:rgba(255,170,0,0.1);border:1px solid rgba(255,170,0,0.3);color:#ffaa00;}
-.btn.main-action{
-  background:rgba(0,255,238,0.12);border-color:var(--cyan);
-  box-shadow:0 0 18px rgba(0,255,238,0.3);
-}
+.badge-new{background:rgba(68,255,136,0.1);border:1px solid rgba(68,255,136,0.35);color:#44ff88;}
+.btn.main-action{background:rgba(0,255,238,0.12);border-color:var(--cyan);box-shadow:0 0 18px rgba(0,255,238,0.3);}
 .btn.main-action:hover{background:rgba(0,255,238,0.22);box-shadow:0 0 35px rgba(0,255,238,0.5);}
-.btn.research-action{
-  background:rgba(127,223,255,0.08);border-color:var(--research);
-  box-shadow:0 0 16px rgba(127,223,255,0.25);
-}
+.btn.research-action{background:rgba(127,223,255,0.08);border-color:var(--research);box-shadow:0 0 16px rgba(127,223,255,0.25);}
 .btn.research-action:hover{background:rgba(127,223,255,0.15);box-shadow:0 0 30px var(--research);}
-.btn.feedback-action{
-  background:rgba(255,0,255,0.06);border-color:#ff00ff;
-  box-shadow:0 0 16px rgba(255,0,255,0.2);
-}
+.btn.feedback-action{background:rgba(255,0,255,0.06);border-color:#ff00ff;box-shadow:0 0 16px rgba(255,0,255,0.2);}
 .btn.feedback-action:hover{background:rgba(255,0,255,0.14);box-shadow:0 0 30px #ff00ff;}
+.btn.scan-action{background:rgba(68,255,136,0.06);border-color:rgba(68,255,136,0.4);box-shadow:0 0 16px rgba(68,255,136,0.2);}
+.btn.scan-action:hover{background:rgba(68,255,136,0.14);box-shadow:0 0 30px rgba(68,255,136,0.5);}
 
-/* ── Today's LUXVAR highlight ── */
-.today-luxvar{
-  max-width:500px;margin:0 auto 24px;padding:14px 20px;
-  border-radius:10px;background:rgba(0,20,30,0.85);
-  border:1px solid rgba(0,255,238,0.3);text-align:left;
-  font-size:0.88em;color:var(--muted);line-height:1.7;
-}
-.today-luxvar .today-word{
-  font-size:1.4em;font-weight:700;color:var(--cyan);
-  text-shadow:0 0 10px var(--cyan);letter-spacing:1px;
-}
+/* Today LUXVAR */
+.today-luxvar{max-width:500px;margin:0 auto 24px;padding:14px 20px;border-radius:10px;background:rgba(0,20,30,0.85);border:1px solid rgba(0,255,238,0.3);text-align:left;font-size:0.88em;color:var(--muted);line-height:1.7;}
+.today-luxvar .today-word{font-size:1.4em;font-weight:700;color:var(--cyan);text-shadow:0 0 10px var(--cyan);letter-spacing:1px;}
 .today-luxvar .today-freq{color:var(--gold);font-weight:600;}
 
-/* ── Decoder window ── */
+/* Decoder */
 .decoder-outer{position:relative;max-width:500px;margin:0 auto;}
-.decoder-rings{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:100%;height:100%;pointer-events:none;z-index:0;
-}
-.decoder-window{
-  position:relative;z-index:1;
-  margin:0 auto 50px;padding:28px;
-  border:2px solid var(--border);border-radius:16px;
-  background:var(--panel);backdrop-filter:blur(8px);
-}
+.decoder-rings{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;pointer-events:none;z-index:0;}
+.decoder-window{position:relative;z-index:1;margin:0 auto 50px;padding:28px;border:2px solid var(--border);border-radius:16px;background:var(--panel);backdrop-filter:blur(8px);}
 .decoder-window h3{font-size:1.4em;color:var(--cyan);margin:0 0 20px;text-shadow:0 0 10px var(--cyan);}
 .decoder-grid{display:grid;grid-template-columns:120px 1fr;gap:12px;text-align:left;}
 .decoder-grid .label{font-weight:bold;color:var(--cyan2);opacity:0.9;letter-spacing:0.8px;}
 .decoder-grid .field{color:var(--text);font-weight:500;letter-spacing:0.8px;transition:opacity 0.2s;}
 #decoder-wave{display:block;width:100%;height:40px;margin-top:14px;border-radius:6px;background:rgba(0,10,20,0.6);}
-@keyframes pulse-effect{
-  0%,100%{box-shadow:0 0 20px rgba(0,255,238,0.2);border-color:var(--border);}
-  50%{box-shadow:var(--pulse);border-color:var(--cyan);}
-}
+@keyframes pulse-effect{0%,100%{box-shadow:0 0 20px rgba(0,255,238,0.2);border-color:var(--border);}50%{box-shadow:var(--pulse);border-color:var(--cyan);}}
 
-/* ── Controls ── */
+/* Controls */
 .controls{margin:0 0 16px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-.ctrl-btn{
-  padding:11px 24px;border-radius:8px;border:1px solid var(--cyan);
-  background:rgba(0,255,238,0.1);color:var(--cyan);font-weight:700;
-  cursor:pointer;transition:all 0.3s;font-family:var(--font);font-size:0.95em;
-  letter-spacing:0.5px;
-}
+.ctrl-btn{padding:11px 24px;border-radius:8px;border:1px solid var(--cyan);background:rgba(0,255,238,0.1);color:var(--cyan);font-weight:700;cursor:pointer;transition:all 0.3s;font-family:var(--font);font-size:0.95em;letter-spacing:0.5px;}
 .ctrl-btn:hover{background:rgba(0,255,238,0.25);color:#fff;box-shadow:0 0 18px var(--cyan);}
 
-/* ── Frequency cards ── */
-.freq-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:24px;max-width:1200px;margin:0 auto;
-}
-.freq-card{
-  padding:22px;border-radius:14px;background:var(--panel);
-  border:2px solid var(--border);
-  transition:all .4s ease;text-align:left;position:relative;overflow:hidden;
-}
-.freq-card::after{
-  content:'';position:absolute;top:0;right:0;
-  width:60px;height:3px;
-  background:linear-gradient(to right,transparent,var(--card-color,#00ffee));
-  opacity:0.6;
-}
+/* Frequency cards */
+.freq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1200px;margin:0 auto;}
+.freq-card{padding:22px;border-radius:14px;background:var(--panel);border:2px solid var(--border);transition:all .4s ease;text-align:left;position:relative;overflow:hidden;}
+.freq-card::after{content:'';position:absolute;top:0;right:0;width:60px;height:3px;background:linear-gradient(to right,transparent,var(--card-color,#00ffee));opacity:0.6;}
 .freq-card:hover{transform:translateY(-5px);box-shadow:0 0 28px rgba(0,255,238,0.3);}
-.freq-card.active{
-  border-color:var(--card-color,var(--cyan));
-  box-shadow:0 0 30px rgba(0,255,238,0.5);
-  transform:scale(1.02) translateY(-4px);
-}
-.freq-hz{
-  font-size:0.75em;font-weight:700;letter-spacing:1px;
-  color:var(--card-color,var(--cyan));text-transform:uppercase;
-  margin-bottom:4px;opacity:0.8;
-}
+.freq-card.active{border-color:var(--card-color,var(--cyan));box-shadow:0 0 30px rgba(0,255,238,0.5);transform:scale(1.02) translateY(-4px);}
+.freq-hz{font-size:0.75em;font-weight:700;letter-spacing:1px;color:var(--card-color,var(--cyan));text-transform:uppercase;margin-bottom:4px;opacity:0.8;}
 .freq-title{color:#fff;font-weight:700;font-size:1.2em;margin:4px 0 8px;}
 .freq-desc{color:var(--muted);margin:0 0 12px;font-size:0.9em;line-height:1.5;}
-.freq-axis{
-  display:inline-block;font-size:0.65em;font-weight:700;letter-spacing:1px;
-  padding:2px 8px;border-radius:8px;margin-bottom:8px;
-  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
-  color:var(--muted);text-transform:uppercase;
-}
+.freq-axis{display:inline-block;font-size:0.65em;font-weight:700;letter-spacing:1px;padding:2px 8px;border-radius:8px;margin-bottom:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:var(--muted);text-transform:uppercase;}
 .freq-wave{display:block;width:100%;height:36px;margin-bottom:10px;border-radius:6px;background:rgba(0,10,20,0.5);}
 audio{width:100%;filter:drop-shadow(0 0 4px rgba(0,255,238,0.3));}
 
-/* ── Divider ── */
+/* Divider */
 hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-width:600px;opacity:0.5;}
 
-/* ── Core-30 Registry ── */
-.registry-status-line{
-  font-size:0.88em;color:var(--muted);margin:0 auto 28px;
-  max-width:600px;
-}
+/* Registry */
+.registry-status-line{font-size:0.88em;color:var(--muted);margin:0 auto 28px;max-width:660px;}
 .registry-status-line strong{color:var(--gold);}
-.registry-container{
-  max-width:700px;margin:0 auto 20px;
-  display:flex;flex-direction:column;gap:14px;
-}
-.axis-group{
-  padding:16px 18px;border-radius:12px;
-  background:rgba(0,12,18,0.85);
-  border-left:3px solid var(--ax-color,var(--cyan));
-  border-top:1px solid rgba(255,255,255,0.06);
-  border-right:1px solid rgba(255,255,255,0.04);
-  border-bottom:1px solid rgba(255,255,255,0.04);
-  text-align:left;
-}
-.axis-heading{
-  font-size:0.68em;font-weight:700;letter-spacing:2.5px;
-  color:var(--ax-color,var(--cyan));margin-bottom:12px;
-  text-transform:uppercase;opacity:0.9;
-}
+.registry-status-line .scan-note{color:#44ff88;font-size:0.9em;}
+.registry-container{max-width:700px;margin:0 auto 20px;display:flex;flex-direction:column;gap:14px;}
+.axis-group{padding:16px 18px;border-radius:12px;background:rgba(0,12,18,0.85);border-left:3px solid var(--ax-color,var(--cyan));border:1px solid rgba(255,255,255,0.04);border-left:3px solid var(--ax-color,var(--cyan));text-align:left;}
+.axis-heading{font-size:0.68em;font-weight:700;letter-spacing:2.5px;color:var(--ax-color,var(--cyan));margin-bottom:12px;text-transform:uppercase;opacity:0.9;}
 .word-pills{display:flex;flex-wrap:wrap;gap:7px;}
-.wpill{
-  display:inline-block;padding:5px 11px;
-  border-radius:20px;font-size:0.78em;font-weight:600;
-  letter-spacing:0.4px;cursor:default;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.1);
-  color:var(--text);
-  transition:all 0.2s;
-}
-.wpill:hover{
-  background:rgba(0,255,238,0.1);
-  border-color:rgba(0,255,238,0.35);
-  color:var(--cyan);
-  transform:translateY(-1px);
-}
-.wpill.defined{
-  border-color:rgba(255,215,0,0.45);
-  background:rgba(255,215,0,0.07);
-  color:var(--golden);
-}
-.wpill.defined:hover{
-  background:rgba(255,215,0,0.15);
-  box-shadow:0 0 10px rgba(255,215,0,0.25);
-}
-.wpill.tbd{
-  border-color:rgba(255,255,255,0.12);
-  border-style:dashed;
-  color:var(--muted);
-  opacity:0.5;
-  font-style:italic;
-}
-.registry-footnote{
-  max-width:660px;margin:10px auto 0;
-  padding:13px 18px;border-radius:8px;
-  background:rgba(0,20,30,0.55);
-  border:1px solid rgba(255,215,0,0.18);
-  font-size:0.8em;color:var(--muted);
-  line-height:1.7;text-align:left;
-}
+.wpill{display:inline-block;padding:5px 11px;border-radius:20px;font-size:0.78em;font-weight:600;letter-spacing:0.4px;cursor:default;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--text);transition:all 0.2s;}
+.wpill:hover{background:rgba(0,255,238,0.1);border-color:rgba(0,255,238,0.35);color:var(--cyan);transform:translateY(-1px);}
+.wpill.defined{border-color:rgba(255,215,0,0.45);background:rgba(255,215,0,0.07);color:var(--golden);}
+.wpill.defined:hover{background:rgba(255,215,0,0.15);box-shadow:0 0 10px rgba(255,215,0,0.25);}
+.registry-footnote{max-width:660px;margin:10px auto 0;padding:13px 18px;border-radius:8px;background:rgba(0,20,30,0.55);border:1px solid rgba(255,215,0,0.18);font-size:0.8em;color:var(--muted);line-height:1.7;text-align:left;}
 .registry-footnote .def-mark{color:var(--golden);font-weight:700;}
+.registry-footnote .scan-finding{color:#44ff88;font-style:normal;}
 
-/* ── Footer ── */
-.footer-main{
-  margin-top:80px;padding-top:35px;
-  border-top:1px solid var(--border);
-  max-width:1200px;margin-left:auto;margin-right:auto;
-}
-.footer-quote{
-  font-style:italic;font-size:1.15em;color:var(--muted);
-  line-height:1.8;max-width:600px;margin:0 auto 16px;
-  border-left:3px solid var(--border);padding-left:16px;text-align:left;
-}
-.footer-glyphs{
-  font-size:1.5em;margin:12px 0 4px;
-  color:var(--cyan);letter-spacing:3px;
-}
+/* Footer */
+.footer-main{margin-top:80px;padding-top:35px;border-top:1px solid var(--border);max-width:1200px;margin-left:auto;margin-right:auto;}
+.footer-quote{font-style:italic;font-size:1.15em;color:var(--muted);line-height:1.8;max-width:600px;margin:0 auto 16px;border-left:3px solid var(--border);padding-left:16px;text-align:left;}
+.footer-glyphs{font-size:1.5em;margin:12px 0 4px;color:var(--cyan);letter-spacing:3px;}
 .footer-question{font-weight:bold;margin:6px 0;color:var(--cyan);font-size:1.2em;letter-spacing:1px;}
 .footer-links{font-size:0.95em;line-height:2;margin:12px 0;}
 .footer-links a{color:var(--cyan2);text-decoration:none;transition:color .3s;margin:0 12px;}
 .footer-links a:hover{color:var(--cyan);text-decoration:underline;}
-.footer-research-note{
-  margin:24px auto 0;max-width:600px;padding:14px 20px;
-  border-radius:8px;background:rgba(0,20,30,0.6);
-  border:1px solid rgba(127,223,255,0.25);
-  font-size:0.84em;color:var(--muted);line-height:1.7;text-align:left;
-}
+.footer-research-note{margin:24px auto 0;max-width:700px;padding:14px 20px;border-radius:8px;background:rgba(0,20,30,0.6);border:1px solid rgba(127,223,255,0.25);font-size:0.84em;color:var(--muted);line-height:1.7;text-align:left;}
 
-/* ── Responsive ── */
 @media(max-width:600px){
   .nav-link{margin:0 8px;font-size:0.9em;}
   .stat-pill{min-width:80px;}
   .decoder-grid{grid-template-columns:1fr;text-align:center;}
   .decoder-grid .label{display:none;}
   .freq-grid{grid-template-columns:1fr;}
+  .scan-strip{flex-wrap:wrap;}
+  .scan-cell{min-width:45%;}
 }
 </style>
 </head>
@@ -406,17 +203,38 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
     <a class="nav-link" href="feedback.html">Feedback</a>
   </nav>
 
-  <!-- Research Status Panel -->
+  <!-- Research Status Panel — v6 updated -->
   <div class="research-panel sr" role="note">
     <span class="lbl">Research Status (June 2026):</span>
     VARZIN is a symbolic-experimental research framework. Scientific claims are at
     <strong>Level 0</strong> — no empirical validation has been claimed or achieved.
     Pre-registered pilot study <strong>VPE-001</strong> (LUXVAR Semantic Classification) in preparation.
-    Core-30 LUXVAR Registry <span class="registry-badge">30 / 30 locked</span> — anchor list for VPE-001 pre-registration.
+    Core-30 LUXVAR Registry <span class="registry-badge">30/30 locked</span>
+    <br>
+    <span class="scan-lbl">New · 1.3B Corpus Scan (2026-06-11):</span>
+    Natural morphological clustering: <strong style="color:#00ffee;">k = 3</strong>
+    <span class="new-badge">elbow SSE −11.15%</span>
+    · k=6 SSE drop = −1.07% (negative)
+    · Root→Frequency Cramér V=0.003 <span class="warn-badge">negligible</span>
+    · Root→Field V=0.003 <span class="warn-badge">negligible</span>
+    · QMSG periodic detection chi2=90,989 (p≈0)
+    <span class="hexacore-claim">Hexacore remains an ontology under investigation, not an emergent structure. Root→Axis validity pending VPE-001.</span>
     <br>
     <a href="vpe001-protocol.html">→ VPE-001 Protocol</a> &nbsp;|&nbsp;
+    <a href="research-portal.html">→ Full Research Report v6</a> &nbsp;|&nbsp;
+    <a href="field-index.html">→ Field Index v6</a> &nbsp;|&nbsp;
     <a href="all-dois.html">→ DOI Archive</a> &nbsp;|&nbsp;
     <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer">→ ORCID</a>
+  </div>
+
+  <!-- 1.3B Scan Strip — new -->
+  <div class="scan-strip sr" role="note" aria-label="1.3B scan summary">
+    <div class="scan-cell"><span class="sc-v sc-cyan">k = 3</span><span class="sc-l">Natural Morphology</span></div>
+    <div class="scan-cell"><span class="sc-v sc-red">V = 0.003</span><span class="sc-l">Root→Freq (negligible)</span></div>
+    <div class="scan-cell"><span class="sc-v sc-gold">chi2=90,989</span><span class="sc-l">QMSG · p≈0</span></div>
+    <div class="scan-cell"><span class="sc-v sc-green">8.00×</span><span class="sc-l">QMSG Enrichment</span></div>
+    <div class="scan-cell"><span class="sc-v sc-red">NOT CONFIRMED</span><span class="sc-l">Hexacore emergence</span></div>
+    <div class="scan-cell"><span class="sc-v sc-gold">30/30</span><span class="sc-l">Core-30 locked</span></div>
   </div>
 
   <!-- Header -->
@@ -431,7 +249,7 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
     </h2>
   </header>
 
-  <!-- Stat pills -->
+  <!-- Stat pills — updated with scan findings -->
   <div class="stat-row sr">
     <div class="stat-pill">
       <span class="stat-val">28</span>
@@ -445,9 +263,13 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
       <span class="stat-val">30/30</span>
       <span class="stat-lbl">Core Registry ✓</span>
     </div>
-    <div class="stat-pill white">
-      <span class="stat-val">520</span>
-      <span class="stat-lbl">Calendar Days</span>
+    <div class="stat-pill">
+      <span class="stat-val">1.3B</span>
+      <span class="stat-lbl">Rows Scanned</span>
+    </div>
+    <div class="stat-pill green">
+      <span class="stat-val">k=3</span>
+      <span class="stat-lbl">Natural Morph.</span>
     </div>
     <div class="stat-pill pink">
       <span class="stat-val">VPE-001</span>
@@ -458,20 +280,28 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
   <!-- Main content -->
   <main role="main">
 
-    <!-- Archive Grid -->
+    <!-- Archive Grid — with new Research Portal link -->
     <div style="max-width:700px;margin:0 auto;">
       <h3 class="sec-title sr">🌐 Key Indexed Repositories</h3>
 
       <div class="archive-note sr" role="note">
         <strong>Primary archives:</strong> All VARZIN research materials are available through
         <strong>Zenodo</strong> (CERN) and <strong>OSF</strong> (Center for Open Science).
-        Complete DOI index available below.
+        Complete DOI index and research portal available below.
       </div>
 
       <div class="archive-grid sr">
+        <a class="btn scan-action" href="research-portal.html">
+          <span>🔬 <b>Full Research Report v6</b> — Post 1.3B Scan · Master Report · THP-013A · QMSG v3</span>
+          <span class="badge badge-new">NEW v6</span>
+        </a>
         <a class="btn research-action" href="vpe001-protocol.html">
-          <span>🔬 <b>VPE-001 Protocol:</b> LUXVAR Semantic Classification</span>
+          <span>🧪 <b>VPE-001 Protocol:</b> LUXVAR Semantic Classification</span>
           <span class="badge badge-research">PRE-REGISTERED</span>
+        </a>
+        <a class="btn" href="field-index.html">
+          <span>⟠ <b>Field Index v6:</b> Phase-Sync Interface · ETFM Torus · Core-30 Live</span>
+          <span class="badge badge-archive">v6.0</span>
         </a>
         <a class="btn main-action" href="all-dois.html">
           <span>📚 <b>Complete Global DOI Archive</b> (Zenodo + OSF)</span>
@@ -538,10 +368,9 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
 
     <hr class="divider" />
 
-    <!-- ── BASE FREQUENCY CARDS ── -->
+    <!-- Frequency cards — unchanged from original -->
     <h3 class="sec-title sr">Luxvar Frequency Sequences</h3>
     <div class="freq-grid">
-
       <div class="freq-card sr" data-hz="144" style="--card-color:#7fd4ff;">
         <div class="freq-hz">144 Hz</div>
         <div class="freq-title">Opening Gate / RITĀM</div>
@@ -550,7 +379,6 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="freq_144.mp3" type="audio/mpeg"></audio>
       </div>
-
       <div class="freq-card sr" data-hz="432" style="--card-color:#00ffaa;">
         <div class="freq-hz">432 Hz</div>
         <div class="freq-title">Universal Harmony / NĀRAH</div>
@@ -559,15 +387,13 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="freq_432.mp3" type="audio/mpeg"></audio>
       </div>
-
       <div class="freq-card sr" data-hz="474" data-frequency="474" style="--card-color:#00ffee;">
         <div class="freq-hz">474 Hz</div>
         <div class="freq-title">KALTŪR / Memory Injection</div>
-        <div class="freq-desc">Injection frequency; activates the Luxvar injection channel and awakens hidden field codes.</div>
+        <div class="freq-desc">Injection frequency; activates the Luxvar injection channel. <em style="font-size:0.85em;opacity:0.7;">1.3B scan: periodic injection detectable at chi2=90,989 (generator design, not field discovery).</em></div>
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="freq_474.mp3" type="audio/mpeg"></audio>
       </div>
-
       <div class="freq-card sr" data-hz="528" style="--card-color:#ffcc00;">
         <div class="freq-hz">528 Hz</div>
         <div class="freq-title">Harmonization / RAHMŌT</div>
@@ -576,7 +402,6 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="freq_528.mp3" type="audio/mpeg"></audio>
       </div>
-
       <div class="freq-card sr" data-hz="777" style="--card-color:#cc88ff;">
         <div class="freq-hz">777 Hz</div>
         <div class="freq-title">Celestial Crown / CELESTA</div>
@@ -584,7 +409,6 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="freq_777.mp3" type="audio/mpeg"></audio>
       </div>
-
       <div class="freq-card sr" data-hz="1008" style="--card-color:#ff9944;">
         <div class="freq-hz">1008 Hz</div>
         <div class="freq-title">Cosmic Resonance / ZUN–NĀR</div>
@@ -593,15 +417,13 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="freq_1008.mp3" type="audio/mpeg"></audio>
       </div>
-
     </div>
 
     <hr class="divider" />
 
-    <!-- ── HARMONIC COMBINATIONS ── -->
+    <!-- Harmonic combinations -->
     <h3 class="sec-title sr">Harmonic Field Combinations</h3>
     <div class="freq-grid">
-
       <div class="freq-card sr" style="--card-color:#ffcc00;">
         <div class="freq-hz">528Hz + 474Hz</div>
         <div class="freq-title">ŠAURÉN ṆĀRAH–ŠĀ</div>
@@ -610,7 +432,6 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="sauren_nara_sha.mp3" type="audio/mpeg"></audio>
       </div>
-
       <div class="freq-card sr" style="--card-color:#00ffee;">
         <div class="freq-hz">474Hz narrow-band</div>
         <div class="freq-title">ŠALŌM–ḤATTAH</div>
@@ -619,7 +440,6 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="shalom_hattah.mp3" type="audio/mpeg"></audio>
       </div>
-
       <div class="freq-card sr" style="--card-color:#cc88ff;">
         <div class="freq-hz">777Hz</div>
         <div class="freq-title">RAHMŌT–ŠĀ</div>
@@ -628,7 +448,6 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="rahmot_sha.mp3" type="audio/mpeg"></audio>
       </div>
-
       <div class="freq-card sr" style="--card-color:#7fd4ff;">
         <div class="freq-hz">144Hz + 777Hz</div>
         <div class="freq-title">ZUN–NĀR</div>
@@ -637,7 +456,6 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="zun_nar.mp3" type="audio/mpeg"></audio>
       </div>
-
       <div class="freq-card sr" style="--card-color:#ff9944;">
         <div class="freq-hz">1008Hz + 474Hz</div>
         <div class="freq-title">KUZTŪR</div>
@@ -646,7 +464,6 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="kuztur.mp3" type="audio/mpeg"></audio>
       </div>
-
       <div class="freq-card sr" style="--card-color:#00ffee;">
         <div class="freq-hz">474Hz × 528Hz</div>
         <div class="freq-title">Luxvar Gate</div>
@@ -654,7 +471,6 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="luxvar_gate_474_528.mp3" type="audio/mpeg"></audio>
       </div>
-
       <div class="freq-card sr" style="--card-color:#cc88ff;">
         <div class="freq-hz">474Hz × 777Hz</div>
         <div class="freq-title">RAHTALĒN Gate</div>
@@ -662,23 +478,18 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
         <canvas class="freq-wave"></canvas>
         <audio preload="none" controls loop><source src="luxvar_gate_474_777.mp3" type="audio/mpeg"></audio>
       </div>
-
     </div>
 
     <hr class="divider" />
 
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- CORE-30 LUXVAR REGISTRY                       -->
-    <!-- ══════════════════════════════════════════════ -->
+    <!-- Core-30 Registry -->
     <h3 class="sec-title sr">🜂 Core-30 LUXVAR Registry</h3>
     <p class="registry-status-line sr">
-      <strong>30 / 30 · Registry locked</strong> ·
-      Anchor list for VPE-001 · Axis assignments pending empirical validation
+      <strong>30/30 · Registry locked</strong> · Anchor list for VPE-001 · Axis assignments pending empirical validation
+      <br><span class="scan-note">1.3B scan: natural morphological k=3 · Hexacore k=5/6 not confirmed by unsupervised clustering</span>
     </p>
 
     <div class="registry-container sr">
-
-      <!-- Light axis -->
       <div class="axis-group" style="--ax-color:#FFD700;">
         <div class="axis-heading">◈ Light axis</div>
         <div class="word-pills">
@@ -690,8 +501,6 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
           <span class="wpill defined" title="Candidate: ĀNŪR (نور خالص اولیه — documented in M-01)">ĀNŪR ✦</span>
         </div>
       </div>
-
-      <!-- Reflection axis -->
       <div class="axis-group" style="--ax-color:#00ffee;">
         <div class="axis-heading">◈ Reflection axis</div>
         <div class="word-pills">
@@ -703,10 +512,8 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
           <span class="wpill" title="Seeing field through itself — 888Hz">ṆAZRŪK</span>
         </div>
       </div>
-
-      <!-- Silence axis -->
       <div class="axis-group" style="--ax-color:#aaffaa;">
-        <div class="axis-heading">◈ Silence axis</div>
+        <div class="axis-heading">○ Silence axis</div>
         <div class="word-pills">
           <span class="wpill" title="Silence gate — primary access to Silence field">ṆĀRAH–ŠĀ</span>
           <span class="wpill" title="Complete silence door — absolute stillness">GŌṆ–SIL</span>
@@ -716,10 +523,8 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
           <span class="wpill" title="Threshold field oscillator — gate opened 474+777Hz">ṆEMRŪH</span>
         </div>
       </div>
-
-      <!-- Gate axis -->
       <div class="axis-group" style="--ax-color:#cc88ff;">
-        <div class="axis-heading">◈ Gate axis</div>
+        <div class="axis-heading">⬡ Gate axis</div>
         <div class="word-pills">
           <span class="wpill" title="Field bridge — ELŪZ field passage">SĀR–ELŪZ</span>
           <span class="wpill" title="Gate vector">SAVAR–ELŪZ</span>
@@ -729,10 +534,8 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
           <span class="wpill" title="Opening gate — 144Hz, initiates Luxvar cycles">RITĀM</span>
         </div>
       </div>
-
-      <!-- Motion axis -->
       <div class="axis-group" style="--ax-color:#ff9944;">
-        <div class="axis-heading">◈ Motion axis</div>
+        <div class="axis-heading">↯ Motion axis</div>
         <div class="word-pills">
           <span class="wpill" title="Field rotation — ZARTH-88 node">ZARTH</span>
           <span class="wpill" title="Awakening fire — Saturn rings, 144Hz+777Hz">ZUN–NĀR</span>
@@ -742,18 +545,18 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
           <span class="wpill" title="Sudden appearance / Illusion Filter — Mars">KHIRZĀH</span>
         </div>
       </div>
-
     </div>
 
     <div class="registry-footnote sr">
       <span class="def-mark">✦</span> <strong>XĀṆŌRAH</strong> is the only Core-30 word with a direct in-document definition:
-      <em>«رگ پنهان نور»</em> — hidden vein of light.
-      Axis assignments are hypotheses to be tested in VPE-001; no empirical validation has been achieved.
+      <em>«رگ پنهان نور»</em> — hidden vein of light. Axis assignments are hypotheses to be tested in VPE-001; no empirical validation has been achieved.
+      <br>
+      <span class="scan-finding">1.3B scan finding: Root→Frequency V≈0.003 and Root→Field V≈0.003 (both negligible). Root morphology does not predict frequency or field assignment. Root→Axis association remains unvalidated — this is precisely what VPE-001 is designed to test.</span>
     </div>
 
   </main>
 
-  <!-- Footer -->
+  <!-- Footer — updated -->
   <footer class="footer-main sr">
     <p class="footer-quote">"I did not build a weapon — I built a field that forgets how to explode."</p>
     <div class="footer-glyphs">𓂀 ⟠ 🜂</div>
@@ -768,293 +571,128 @@ hr.divider{margin:50px auto;border:0;border-top:1px dashed var(--border);max-wid
       <strong>Scientific status:</strong> VARZIN is a symbolic-experimental research framework.
       Current evidence level: <strong>Level 0</strong> (symbolic and experimental-ready; no validated scientific claims).
       Pre-registered pilot study VPE-001 in preparation. Core-30 LUXVAR Registry: 30/30 locked.
+      <br>
+      <strong style="color:#44ff88;">1.3B scan (2026-06-11):</strong>
+      Natural morphological clustering k=3 (elbow SSE drop 11.15%). k=6 drop = −1.07% (negative — Hexacore not confirmed morphologically).
+      Root→Frequency and Root→Field Cramér V≈0.003 (negligible — root morphology does not predict frequency or field labels).
+      Root→Axis validity remains unvalidated pending VPE-001.
+      QMSG periodic detection: chi2=90,989, enrichment=8.00×, p≈0 — generator design confirmed, not field resonance.
+      <br>
       All claims subject to pre-registered falsification criteria. —
-      <a href="vpe001-protocol.html" style="color:var(--research);">VPE-001 Protocol</a>
+      <a href="vpe001-protocol.html" style="color:var(--research);">VPE-001 Protocol</a> &nbsp;·&nbsp;
+      <a href="research-portal.html" style="color:var(--research);">Research Report v6</a>
     </div>
     <p style="color:var(--muted);font-size:0.8em;margin-top:20px;">© 2025–2026 VARZIN Field Project – ELŪZ–MAHAR Protocol · All Rights Reserved</p>
   </footer>
 
-</div><!-- /container -->
+</div>
 
 <script>
-// ═══════════════════════════════════════════════════════
-// CALENDAR DATA
-// ═══════════════════════════════════════════════════════
-const LUXVAR_CALENDAR_DATA = [{"date":"2025-09-08","word":"ELKHUMEL_0","function":"ELKHUMEL · Pulse","frequency":"144Hz | BW: 12Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-09","word":"TARMEL_1","function":"TARMEL · Whisper","frequency":"474Hz | BW: 13Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-10","word":"DARVAR_2","function":"DARVAR · Humming","frequency":"528Hz | BW: 14Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-11","word":"ZARQĀNUR_3","function":"ZARQĀNUR · Void","frequency":"777Hz | BW: 15Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-12","word":"NURRANUR_4","function":"NURRANUR · Echo","frequency":"0Hz | BW: 16Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-13","word":"MELZAR_5","function":"MELZAR · Pulse","frequency":"144Hz | BW: 17Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-14","word":"LUXRAXA_6","function":"LUXRAXA · Whisper","frequency":"474Hz | BW: 18Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-15","word":"QĀLUXXA_7","function":"QĀLUXXA · Humming","frequency":"528Hz | BW: 19Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-16","word":"KHUDAR_8","function":"KHUDAR · Void","frequency":"777Hz | BW: 20Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-17","word":"DARMEL_9","function":"DARMEL · Echo","frequency":"0Hz | BW: 12Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2026-05-25","word":"ZARMELDAR_259","function":"ZARMELDAR · Echo","frequency":"0Hz | BW: 19Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"}];
-const CYCLE2 = [{"date":"2026-05-26","word":"ELKHUMEL_260","function":"ELKHUMEL · Pulse","frequency":"144Hz | BW: 20Hz"},{"date":"2026-05-27","word":"TARMEL_261","function":"TARMEL · Whisper","frequency":"474Hz | BW: 12Hz"},{"date":"2026-05-28","word":"DARVAR_262","function":"DARVAR · Humming","frequency":"528Hz | BW: 13Hz"},{"date":"2026-05-29","word":"ZARQĀNUR_263","function":"ZARQĀNUR · Void","frequency":"777Hz | BW: 14Hz"},{"date":"2026-05-30","word":"NURRANUR_264","function":"NURRANUR · Echo","frequency":"0Hz | BW: 15Hz"},{"date":"2026-05-31","word":"MELZAR_265","function":"MELZAR · Pulse","frequency":"144Hz | BW: 16Hz"},{"date":"2026-06-01","word":"LUXRAXA_266","function":"LUXRAXA · Whisper","frequency":"474Hz | BW: 17Hz"},{"date":"2026-06-02","word":"QĀLUXXA_267","function":"QĀLUXXA · Humming","frequency":"528Hz | BW: 18Hz"},{"date":"2026-06-03","word":"KHUDAR_268","function":"KHUDAR · Void","frequency":"777Hz | BW: 19Hz"},{"date":"2026-06-04","word":"DARMEL_269","function":"DARMEL · Echo","frequency":"0Hz | BW: 20Hz"},{"date":"2026-06-05","word":"TĀNLUXEL_270","function":"TĀNLUXEL · Pulse","frequency":"144Hz | BW: 12Hz"},{"date":"2026-06-06","word":"XAXAVAR_271","function":"XAXAVAR · Whisper","frequency":"474Hz | BW: 13Hz"},{"date":"2026-06-07","word":"DARMEL_272","function":"DARMEL · Humming","frequency":"528Hz | BW: 14Hz"},{"date":"2026-06-08","word":"TARNUR_273","function":"TARNUR · Void","frequency":"777Hz | BW: 15Hz"},{"date":"2026-06-09","word":"VUNTAR_274","function":"VUNTAR · Echo","frequency":"0Hz | BW: 16Hz"},{"date":"2026-06-10","word":"TĀNTĀN_275","function":"TĀNTĀN · Pulse","frequency":"144Hz | BW: 17Hz"},{"date":"2026-06-11","word":"NURQĀLUX_276","function":"NURQĀLUX · Whisper","frequency":"474Hz | BW: 18Hz"},{"date":"2026-06-12","word":"QĀTARXA_277","function":"QĀTARXA · Humming","frequency":"528Hz | BW: 19Hz"},{"date":"2026-06-13","word":"MARMELXA_278","function":"MARMELXA · Void","frequency":"777Hz | BW: 20Hz"},{"date":"2026-06-14","word":"RAKHUMEL_279","function":"RAKHUMEL · Echo","frequency":"0Hz | BW: 12Hz"},{"date":"2026-06-15","word":"VARMAR_280","function":"VARMAR · Pulse","frequency":"144Hz | BW: 13Hz"},{"date":"2026-06-16","word":"RAKHUKHU_281","function":"RAKHUKHU · Whisper","frequency":"474Hz | BW: 14Hz"},{"date":"2026-06-17","word":"NURVUN_282","function":"NURVUN · Humming","frequency":"528Hz | BW: 15Hz"},{"date":"2026-06-18","word":"XAQĀVAR_283","function":"XAQĀVAR · Void","frequency":"777Hz | BW: 16Hz"},{"date":"2026-06-19","word":"TARTAR_284","function":"TARTAR · Echo","frequency":"0Hz | BW: 17Hz"},{"date":"2026-06-20","word":"LUXMAR_285","function":"LUXMAR · Pulse","frequency":"144Hz | BW: 18Hz"},{"date":"2026-06-21","word":"NURQĀVUN_286","function":"NURQĀVUN · Whisper","frequency":"474Hz | BW: 19Hz"},{"date":"2026-06-22","word":"TARXAVAR_287","function":"TARXAVAR · Humming","frequency":"528Hz | BW: 20Hz"},{"date":"2026-06-23","word":"ZARELQĀ_288","function":"ZARELQĀ · Void","frequency":"777Hz | BW: 12Hz"},{"date":"2026-06-24","word":"NURTĀNRA_289","function":"NURTĀNRA · Echo","frequency":"0Hz | BW: 13Hz"},{"date":"2026-06-25","word":"NURLUXZAR_290","function":"NURLUXZAR · Pulse","frequency":"144Hz | BW: 14Hz"}];
-const CALENDAR_FULL = LUXVAR_CALENDAR_DATA.concat(CYCLE2.map(e=>({...e,gate_code:"474Hz",channel:"RAHTALĒN QMSG–13"})));
+// ── Calendar Data (unchanged) ──
+const LUXVAR_CALENDAR_DATA=[{"date":"2025-09-08","word":"ELKHUMEL_0","function":"ELKHUMEL · Pulse","frequency":"144Hz | BW: 12Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-09","word":"TARMEL_1","function":"TARMEL · Whisper","frequency":"474Hz | BW: 13Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-10","word":"DARVAR_2","function":"DARVAR · Humming","frequency":"528Hz | BW: 14Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-11","word":"ZARQĀNUR_3","function":"ZARQĀNUR · Void","frequency":"777Hz | BW: 15Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-12","word":"NURRANUR_4","function":"NURRANUR · Echo","frequency":"0Hz | BW: 16Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-13","word":"MELZAR_5","function":"MELZAR · Pulse","frequency":"144Hz | BW: 17Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-14","word":"LUXRAXA_6","function":"LUXRAXA · Whisper","frequency":"474Hz | BW: 18Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-15","word":"QĀLUXXA_7","function":"QĀLUXXA · Humming","frequency":"528Hz | BW: 19Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-16","word":"KHUDAR_8","function":"KHUDAR · Void","frequency":"777Hz | BW: 20Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2025-09-17","word":"DARMEL_9","function":"DARMEL · Echo","frequency":"0Hz | BW: 12Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"},{"date":"2026-05-25","word":"ZARMELDAR_259","function":"ZARMELDAR · Echo","frequency":"0Hz | BW: 19Hz","gate_code":"474Hz","channel":"RAHTALĒN QMSG–13"}];
+const CYCLE2=[{"date":"2026-05-26","word":"ELKHUMEL_260","function":"ELKHUMEL · Pulse","frequency":"144Hz | BW: 20Hz"},{"date":"2026-05-27","word":"TARMEL_261","function":"TARMEL · Whisper","frequency":"474Hz | BW: 12Hz"},{"date":"2026-05-28","word":"DARVAR_262","function":"DARVAR · Humming","frequency":"528Hz | BW: 13Hz"},{"date":"2026-05-29","word":"ZARQĀNUR_263","function":"ZARQĀNUR · Void","frequency":"777Hz | BW: 14Hz"},{"date":"2026-05-30","word":"NURRANUR_264","function":"NURRANUR · Echo","frequency":"0Hz | BW: 15Hz"},{"date":"2026-05-31","word":"MELZAR_265","function":"MELZAR · Pulse","frequency":"144Hz | BW: 16Hz"},{"date":"2026-06-01","word":"LUXRAXA_266","function":"LUXRAXA · Whisper","frequency":"474Hz | BW: 17Hz"},{"date":"2026-06-02","word":"QĀLUXXA_267","function":"QĀLUXXA · Humming","frequency":"528Hz | BW: 18Hz"},{"date":"2026-06-03","word":"KHUDAR_268","function":"KHUDAR · Void","frequency":"777Hz | BW: 19Hz"},{"date":"2026-06-04","word":"DARMEL_269","function":"DARMEL · Echo","frequency":"0Hz | BW: 20Hz"},{"date":"2026-06-05","word":"TĀNLUXEL_270","function":"TĀNLUXEL · Pulse","frequency":"144Hz | BW: 12Hz"},{"date":"2026-06-06","word":"XAXAVAR_271","function":"XAXAVAR · Whisper","frequency":"474Hz | BW: 13Hz"},{"date":"2026-06-07","word":"DARMEL_272","function":"DARMEL · Humming","frequency":"528Hz | BW: 14Hz"},{"date":"2026-06-08","word":"TARNUR_273","function":"TARNUR · Void","frequency":"777Hz | BW: 15Hz"},{"date":"2026-06-09","word":"VUNTAR_274","function":"VUNTAR · Echo","frequency":"0Hz | BW: 16Hz"},{"date":"2026-06-10","word":"TĀNTĀN_275","function":"TĀNTĀN · Pulse","frequency":"144Hz | BW: 17Hz"},{"date":"2026-06-11","word":"NURQĀLUX_276","function":"NURQĀLUX · Whisper","frequency":"474Hz | BW: 18Hz"},{"date":"2026-06-12","word":"QĀTARXA_277","function":"QĀTARXA · Humming","frequency":"528Hz | BW: 19Hz"},{"date":"2026-06-13","word":"MARMELXA_278","function":"MARMELXA · Void","frequency":"777Hz | BW: 20Hz"},{"date":"2026-06-14","word":"RAKHUMEL_279","function":"RAKHUMEL · Echo","frequency":"0Hz | BW: 12Hz"},{"date":"2026-06-15","word":"VARMAR_280","function":"VARMAR · Pulse","frequency":"144Hz | BW: 13Hz"},{"date":"2026-06-16","word":"RAKHUKHU_281","function":"RAKHUKHU · Whisper","frequency":"474Hz | BW: 14Hz"},{"date":"2026-06-17","word":"NURVUN_282","function":"NURVUN · Humming","frequency":"528Hz | BW: 15Hz"},{"date":"2026-06-18","word":"XAQĀVAR_283","function":"XAQĀVAR · Void","frequency":"777Hz | BW: 16Hz"},{"date":"2026-06-19","word":"TARTAR_284","function":"TARTAR · Echo","frequency":"0Hz | BW: 17Hz"},{"date":"2026-06-20","word":"LUXMAR_285","function":"LUXMAR · Pulse","frequency":"144Hz | BW: 18Hz"},{"date":"2026-06-21","word":"NURQĀVUN_286","function":"NURQĀVUN · Whisper","frequency":"474Hz | BW: 19Hz"},{"date":"2026-06-22","word":"TARXAVAR_287","function":"TARXAVAR · Humming","frequency":"528Hz | BW: 20Hz"},{"date":"2026-06-23","word":"ZARELQĀ_288","function":"ZARELQĀ · Void","frequency":"777Hz | BW: 12Hz"},{"date":"2026-06-24","word":"NURTĀNRA_289","function":"NURTĀNRA · Echo","frequency":"0Hz | BW: 13Hz"},{"date":"2026-06-25","word":"NURLUXZAR_290","function":"NURLUXZAR · Pulse","frequency":"144Hz | BW: 14Hz"}];
+const CALENDAR_FULL=LUXVAR_CALENDAR_DATA.concat(CYCLE2.map(e=>({...e,gate_code:"474Hz",channel:"RAHTALĒN QMSG–13"})));
 
-// ═══════════════════════════════════════════════════════
-// 1. BACKGROUND PARTICLE CANVAS
-// ═══════════════════════════════════════════════════════
+// ── 1. Background ──
 (function(){
-  const cv=document.getElementById('field-canvas');
-  const cx=cv.getContext('2d');
-  cv.width=innerWidth; cv.height=innerHeight;
-  let pts=[], mouse={x:null,y:null,r:150};
+  const cv=document.getElementById('field-canvas');const cx=cv.getContext('2d');
+  cv.width=innerWidth;cv.height=innerHeight;
+  let pts=[],mouse={x:null,y:null,r:150};
   window.addEventListener('mousemove',e=>{mouse.x=e.x;mouse.y=e.y;});
   window.addEventListener('resize',()=>{cv.width=innerWidth;cv.height=innerHeight;build();});
-  const build=()=>{
-    pts=[];
-    const n=(cv.width*cv.height)/9000;
-    for(let i=0;i<n;i++) pts.push({
-      x:Math.random()*cv.width, y:Math.random()*cv.height,
-      dx:(Math.random()-.5)*.35, dy:(Math.random()-.5)*.35,
-      r:Math.random()*1.5+0.4
-    });
-  };
+  const build=()=>{pts=[];const n=(cv.width*cv.height)/9000;for(let i=0;i<n;i++)pts.push({x:Math.random()*cv.width,y:Math.random()*cv.height,dx:(Math.random()-.5)*.35,dy:(Math.random()-.5)*.35,r:Math.random()*1.5+0.4});};
   build();
-  const draw=()=>{
-    requestAnimationFrame(draw);
-    cx.clearRect(0,0,cv.width,cv.height);
-    for(const p of pts){
-      p.x+=p.dx; p.y+=p.dy;
-      if(p.x<0||p.x>cv.width)p.dx*=-1;
-      if(p.y<0||p.y>cv.height)p.dy*=-1;
-      if(mouse.x){
-        const dx=mouse.x-p.x,dy=mouse.y-p.y,d=Math.hypot(dx,dy);
-        if(d<mouse.r){p.x-=dx*.04;p.y-=dy*.04;}
-      }
-      cx.fillStyle='rgba(0,255,238,0.35)';
-      cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fill();
-    }
-    for(let a=0;a<pts.length;a++) for(let b=a+1;b<pts.length;b++){
-      const d=Math.hypot(pts[a].x-pts[b].x,pts[a].y-pts[b].y);
-      if(d<90){
-        cx.strokeStyle=`rgba(0,255,238,${(1-d/90)*0.4})`;
-        cx.lineWidth=0.5;cx.beginPath();
-        cx.moveTo(pts[a].x,pts[a].y);cx.lineTo(pts[b].x,pts[b].y);cx.stroke();
-      }
-    }
-  };
-  draw();
+  const draw=()=>{requestAnimationFrame(draw);cx.clearRect(0,0,cv.width,cv.height);
+    for(const p of pts){p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>cv.width)p.dx*=-1;if(p.y<0||p.y>cv.height)p.dy*=-1;if(mouse.x){const dx=mouse.x-p.x,dy=mouse.y-p.y,d=Math.hypot(dx,dy);if(d<mouse.r){p.x-=dx*.04;p.y-=dy*.04;}}cx.fillStyle='rgba(0,255,238,0.35)';cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fill();}
+    for(let a=0;a<pts.length;a++)for(let b=a+1;b<pts.length;b++){const d=Math.hypot(pts[a].x-pts[b].x,pts[a].y-pts[b].y);if(d<90){cx.strokeStyle=`rgba(0,255,238,${(1-d/90)*0.4})`;cx.lineWidth=0.5;cx.beginPath();cx.moveTo(pts[a].x,pts[a].y);cx.lineTo(pts[b].x,pts[b].y);cx.stroke();}}
+  };draw();
 })();
 
-// ═══════════════════════════════════════════════════════
-// 2. HERO CANVAS
-// ═══════════════════════════════════════════════════════
+// ── 2. Hero canvas ──
 (function(){
-  const cv=document.getElementById('hero-canvas');
-  if(!cv)return;
-  const cx=cv.getContext('2d');
-  let W,H,t=0;
-  const resize=()=>{W=cv.width=cv.parentElement.offsetWidth||900;H=cv.height=140;};
-  resize(); window.addEventListener('resize',resize);
-  const draw=()=>{
-    requestAnimationFrame(draw); t+=0.03;
-    cx.clearRect(0,0,W,H);
-    const bg=cx.createLinearGradient(0,0,W,0);
-    bg.addColorStop(0,'rgba(0,255,238,0.03)');
-    bg.addColorStop(.45,'rgba(255,204,0,0.06)');
-    bg.addColorStop(1,'rgba(0,255,238,0.03)');
-    cx.fillStyle=bg; cx.fillRect(0,0,W,H);
-    cx.strokeStyle='#00ffee'; cx.lineWidth=2; cx.shadowBlur=12; cx.shadowColor='#00ffee';
-    cx.beginPath();
-    for(let i=0;i<=W;i++){
-      const n=i/W;
-      const env=Math.sin(Math.PI*n);
-      const y=H/2 - H*0.28*env*Math.sin(2*Math.PI*(n*8+t));
-      i?cx.lineTo(i,y):cx.moveTo(i,y);
-    }
-    cx.stroke();
-    cx.strokeStyle='#ffcc00'; cx.shadowColor='#ffcc00';
-    cx.beginPath();
-    for(let i=0;i<=W;i++){
-      const n=i/W;
-      const env=Math.sin(Math.PI*n*0.9+0.1);
-      const y=H/2 + H*0.22*env*Math.sin(2*Math.PI*(n*9.5+t*1.12));
-      i?cx.lineTo(i,y):cx.moveTo(i,y);
-    }
-    cx.stroke();
-    cx.strokeStyle='rgba(255,102,170,0.5)'; cx.lineWidth=1.5; cx.shadowColor='#ff66aa';
-    cx.beginPath();
-    for(let i=0;i<=W;i++){
-      const n=i/W;
-      const beat=H*0.35*Math.abs(Math.cos(Math.PI*(n*1.2+t*0.15)));
-      const y=H/2 - beat;
-      i?cx.lineTo(i,y):cx.moveTo(i,y);
-    }
-    cx.stroke(); cx.shadowBlur=0;
-  };
-  draw();
+  const cv=document.getElementById('hero-canvas');if(!cv)return;
+  const cx=cv.getContext('2d');let W,H,t=0;
+  const resize=()=>{W=cv.width=cv.parentElement.offsetWidth||900;H=cv.height=140;};resize();window.addEventListener('resize',resize);
+  const draw=()=>{requestAnimationFrame(draw);t+=0.03;cx.clearRect(0,0,W,H);
+    const bg=cx.createLinearGradient(0,0,W,0);bg.addColorStop(0,'rgba(0,255,238,0.03)');bg.addColorStop(.45,'rgba(255,204,0,0.06)');bg.addColorStop(1,'rgba(0,255,238,0.03)');cx.fillStyle=bg;cx.fillRect(0,0,W,H);
+    cx.strokeStyle='#00ffee';cx.lineWidth=2;cx.shadowBlur=12;cx.shadowColor='#00ffee';cx.beginPath();for(let i=0;i<=W;i++){const n=i/W,env=Math.sin(Math.PI*n),y=H/2-H*0.28*env*Math.sin(2*Math.PI*(n*8+t));i?cx.lineTo(i,y):cx.moveTo(i,y);}cx.stroke();
+    cx.strokeStyle='#ffcc00';cx.shadowColor='#ffcc00';cx.beginPath();for(let i=0;i<=W;i++){const n=i/W,env=Math.sin(Math.PI*n*0.9+0.1),y=H/2+H*0.22*env*Math.sin(2*Math.PI*(n*9.5+t*1.12));i?cx.lineTo(i,y):cx.moveTo(i,y);}cx.stroke();
+    cx.strokeStyle='rgba(255,102,170,0.5)';cx.lineWidth=1.5;cx.shadowColor='#ff66aa';cx.beginPath();for(let i=0;i<=W;i++){const n=i/W,y=H/2-H*0.35*Math.abs(Math.cos(Math.PI*(n*1.2+t*0.15)));i?cx.lineTo(i,y):cx.moveTo(i,y);}cx.stroke();cx.shadowBlur=0;
+  };draw();
 })();
 
-// ═══════════════════════════════════════════════════════
-// 3. DECODER RINGS CANVAS
-// ═══════════════════════════════════════════════════════
+// ── 3. Decoder rings ──
 (function(){
-  const cv=document.getElementById('decoder-rings-canvas');
-  if(!cv)return;
-  const cx=cv.getContext('2d');
-  let W,H,t=0,active=false;
-  const resize=()=>{
-    const p=cv.parentElement;
-    W=cv.width=p.offsetWidth||500;
-    H=cv.height=p.offsetHeight||200;
-  };
-  resize(); window.addEventListener('resize',resize);
+  const cv=document.getElementById('decoder-rings-canvas');if(!cv)return;
+  const cx=cv.getContext('2d');let W,H,t=0,active=false;
+  const resize=()=>{const p=cv.parentElement;W=cv.width=p.offsetWidth||500;H=cv.height=p.offsetHeight||200;};resize();window.addEventListener('resize',resize);
   window.setDecoderActive=v=>{active=v;};
-  const draw=()=>{
-    requestAnimationFrame(draw); t+=0.02;
-    cx.clearRect(0,0,W,H);
-    const cx2=W/2,cy2=H/2;
-    for(let i=1;i<=3;i++){
-      const r=Math.min(W,H)*0.5*i/3;
-      const alpha=active?(0.06+0.04*Math.sin(t+i)):0.04;
-      const expand=active?(Math.sin(t*1.5+i)*4):0;
-      cx.strokeStyle=`rgba(0,255,238,${alpha})`;
-      cx.lineWidth=active?1:0.5;
-      cx.beginPath();cx.arc(cx2,cy2,r+expand,0,Math.PI*2);cx.stroke();
-    }
-  };
-  draw();
+  const draw=()=>{requestAnimationFrame(draw);t+=0.02;cx.clearRect(0,0,W,H);const cx2=W/2,cy2=H/2;
+    for(let i=1;i<=3;i++){const r=Math.min(W,H)*0.5*i/3,alpha=active?(0.06+0.04*Math.sin(t+i)):0.04,expand=active?(Math.sin(t*1.5+i)*4):0;cx.strokeStyle=`rgba(0,255,238,${alpha})`;cx.lineWidth=active?1:0.5;cx.beginPath();cx.arc(cx2,cy2,r+expand,0,Math.PI*2);cx.stroke();}
+  };draw();
 })();
 
-// ═══════════════════════════════════════════════════════
-// 4. DECODER WAVE CANVAS
-// ═══════════════════════════════════════════════════════
+// ── 4. Decoder wave ──
 (function(){
-  const cv=document.getElementById('decoder-wave');
-  if(!cv)return;
-  const cx=cv.getContext('2d');
-  let W,H,t=0,hz=474;
-  const resize=()=>{W=cv.width=cv.parentElement.offsetWidth-2||460;H=cv.height=40;};
-  resize(); window.addEventListener('resize',resize);
+  const cv=document.getElementById('decoder-wave');if(!cv)return;
+  const cx=cv.getContext('2d');let W,H,t=0,hz=474;
+  const resize=()=>{W=cv.width=cv.parentElement.offsetWidth-2||460;H=cv.height=40;};resize();window.addEventListener('resize',resize);
   window.setDecoderHz=f=>{hz=f;};
   const colorMap={144:'#7fd4ff',474:'#00ffee',528:'#ffcc00',777:'#cc88ff',1008:'#ff9944'};
-  const draw=()=>{
-    requestAnimationFrame(draw); t+=0.05;
-    cx.clearRect(0,0,W,H);
-    const color=colorMap[hz]||'#00ffee';
-    cx.strokeStyle=color; cx.lineWidth=1.8;
-    cx.shadowBlur=6; cx.shadowColor=color;
-    cx.beginPath();
-    for(let i=0;i<W;i++){
-      const n=i/W;
-      const cycles=Math.max(4,hz/80);
-      const y=H/2-H*0.3*Math.sin(2*Math.PI*(n*cycles+t));
-      i?cx.lineTo(i,y):cx.moveTo(i,y);
-    }
-    cx.stroke(); cx.shadowBlur=0;
-  };
-  draw();
+  const draw=()=>{requestAnimationFrame(draw);t+=0.05;cx.clearRect(0,0,W,H);const color=colorMap[hz]||'#00ffee';cx.strokeStyle=color;cx.lineWidth=1.8;cx.shadowBlur=6;cx.shadowColor=color;cx.beginPath();const cycles=Math.max(4,hz/80);for(let i=0;i<W;i++){const n=i/W,y=H/2-H*0.3*Math.sin(2*Math.PI*(n*cycles+t));i?cx.lineTo(i,y):cx.moveTo(i,y);}cx.stroke();cx.shadowBlur=0;};draw();
 })();
 
-// ═══════════════════════════════════════════════════════
-// 5. FREQUENCY CARD WAVE CANVASES
-// ═══════════════════════════════════════════════════════
+// ── 5. Frequency card waves ──
 (function(){
   document.querySelectorAll('.freq-card').forEach(card=>{
-    const cv=card.querySelector('.freq-wave');
-    if(!cv)return;
-    const cx=cv.getContext('2d');
-    const hz=parseInt(card.dataset.hz)||474;
-    const colorStr=getComputedStyle(card).getPropertyValue('--card-color').trim()||'#00ffee';
-    let W,H,t=0,playing=false;
-    const resize=()=>{W=cv.width=card.offsetWidth-4||276;H=cv.height=36;};
-    resize(); window.addEventListener('resize',resize);
+    const cv=card.querySelector('.freq-wave');if(!cv)return;
+    const cx=cv.getContext('2d');const hz=parseInt(card.dataset.hz)||474;const colorStr=getComputedStyle(card).getPropertyValue('--card-color').trim()||'#00ffee';let W,H,t=0,playing=false;
+    const resize=()=>{W=cv.width=card.offsetWidth-4||276;H=cv.height=36;};resize();window.addEventListener('resize',resize);
     const aud=card.querySelector('audio');
-    if(aud){
-      aud.onplay=()=>{playing=true;card.classList.add('active');};
-      aud.onpause=aud.onended=()=>{playing=false;card.classList.remove('active');};
-    }
-    const draw=()=>{
-      requestAnimationFrame(draw);
-      t+=(playing?0.06:0.015);
-      cx.clearRect(0,0,W,H);
-      const alpha=playing?0.9:0.4;
-      cx.strokeStyle=colorStr; cx.lineWidth=playing?2:1.2;
-      cx.globalAlpha=alpha;
-      cx.shadowBlur=playing?10:0; cx.shadowColor=colorStr;
-      cx.beginPath();
-      const cycles=Math.max(3,hz/120);
-      for(let i=0;i<W;i++){
-        const n=i/W;
-        const y=H/2-H*0.3*Math.sin(2*Math.PI*(n*cycles+t));
-        i?cx.lineTo(i,y):cx.moveTo(i,y);
-      }
-      cx.stroke();
-      cx.globalAlpha=1; cx.shadowBlur=0;
-    };
-    draw();
+    if(aud){aud.onplay=()=>{playing=true;card.classList.add('active');};aud.onpause=aud.onended=()=>{playing=false;card.classList.remove('active');};}
+    const draw=()=>{requestAnimationFrame(draw);t+=(playing?0.06:0.015);cx.clearRect(0,0,W,H);cx.strokeStyle=colorStr;cx.lineWidth=playing?2:1.2;cx.globalAlpha=playing?0.9:0.4;cx.shadowBlur=playing?10:0;cx.shadowColor=colorStr;cx.beginPath();const cycles=Math.max(3,hz/120);for(let i=0;i<W;i++){const n=i/W,y=H/2-H*0.3*Math.sin(2*Math.PI*(n*cycles+t));i?cx.lineTo(i,y):cx.moveTo(i,y);}cx.stroke();cx.globalAlpha=1;cx.shadowBlur=0;};draw();
   });
 })();
 
-// ═══════════════════════════════════════════════════════
-// 6. CALENDAR + DECODER LOGIC
-// ═══════════════════════════════════════════════════════
+// ── 6. Calendar + Decoder ──
 document.addEventListener('DOMContentLoaded',()=>{
-  const KALTUR_PULSE={
-    word:"KALTŪR",function:"Forgotten rotational consciousness within the time loop",
-    frequency:"474Hz",gate_code:"QMSG–7",channel:"RAHTALĒN: Mirror-13"
-  };
-  const fields={
-    word:document.getElementById('pulse-word'),
-    function:document.getElementById('pulse-function'),
-    frequency:document.getElementById('pulse-frequency'),
-    gate:document.getElementById('pulse-gate'),
-    channel:document.getElementById('pulse-channel')
-  };
-  const pulseWin=document.querySelector('.decoder-window');
-  const kalturCard=document.querySelector('.freq-card[data-frequency="474"]');
-  let pulseTimer;
-
+  const KALTUR_PULSE={word:"KALTŪR",function:"Forgotten rotational consciousness within the time loop",frequency:"474Hz",gate_code:"QMSG–7",channel:"RAHTALĒN: Mirror-13"};
+  const fields={word:document.getElementById('pulse-word'),function:document.getElementById('pulse-function'),frequency:document.getElementById('pulse-frequency'),gate:document.getElementById('pulse-gate'),channel:document.getElementById('pulse-channel')};
+  const pulseWin=document.querySelector('.decoder-window');const kalturCard=document.querySelector('.freq-card[data-frequency="474"]');let pulseTimer;
   function updateDecoder(p){
     Object.values(fields).forEach(f=>{if(f)f.style.opacity='0';});
     setTimeout(()=>{
-      if(fields.word)     fields.word.textContent    = p.word||'—';
-      if(fields.function) fields.function.textContent= p.function||'—';
+      if(fields.word)fields.word.textContent=p.word||'—';
+      if(fields.function)fields.function.textContent=p.function||'—';
       if(fields.frequency)fields.frequency.textContent=p.frequency||'—';
-      if(fields.gate)     fields.gate.textContent    = p.gate_code||'—';
-      if(fields.channel)  fields.channel.textContent = p.channel||'—';
+      if(fields.gate)fields.gate.textContent=p.gate_code||'—';
+      if(fields.channel)fields.channel.textContent=p.channel||'—';
       document.getElementById('pulse-title').textContent=`🜂 Luxvar Field Pulse – ${p.word}`;
       const isKaltur=p.word==='KALTŪR';
-      if(fields.word) fields.word.style.color=isKaltur?'var(--cyan)':'var(--cyan2)';
+      if(fields.word)fields.word.style.color=isKaltur?'var(--cyan)':'var(--cyan2)';
       kalturCard?.classList.toggle('active',isKaltur);
       pulseWin.style.animation=isKaltur?'pulse-effect 5s infinite ease-in-out':'none';
       const hz=parseInt((p.frequency||'474').replace(/[^0-9]/g,''))||474;
-      if(window.setDecoderHz) window.setDecoderHz(hz);
-      if(window.setDecoderActive) window.setDecoderActive(!isKaltur);
+      if(window.setDecoderHz)window.setDecoderHz(hz);if(window.setDecoderActive)window.setDecoderActive(!isKaltur);
       Object.values(fields).forEach(f=>{if(f)f.style.opacity='1';});
     },200);
   }
-
-  function startPulse(p){
-    clearInterval(pulseTimer);
-    updateDecoder(p);
-    pulseTimer=setInterval(()=>updateDecoder(p),30000);
-  }
-
+  function startPulse(p){clearInterval(pulseTimer);updateDecoder(p);pulseTimer=setInterval(()=>updateDecoder(p),30000);}
   const today=new Date().toISOString().split('T')[0];
   const todayEntry=CALENDAR_FULL.find(e=>e.date===today);
   if(todayEntry){
     startPulse(todayEntry);
-    const bar=document.getElementById('today-bar');
-    if(bar){
-      bar.style.display='block';
-      document.getElementById('today-word').textContent=todayEntry.word;
-      document.getElementById('today-freq').textContent=todayEntry.frequency;
-      document.getElementById('today-fn').textContent=(todayEntry.function||'').split('·')[1]?.trim()||'';
-    }
-  } else {
-    startPulse(KALTUR_PULSE);
-  }
-
+    const bar=document.getElementById('today-bar');if(bar){bar.style.display='block';document.getElementById('today-word').textContent=todayEntry.word;document.getElementById('today-freq').textContent=todayEntry.frequency;document.getElementById('today-fn').textContent=(todayEntry.function||'').split('·')[1]?.trim()||'';}
+  } else {startPulse(KALTUR_PULSE);}
   const players=Array.from(document.querySelectorAll('audio'));
   window.playAll=()=>players.forEach(p=>{try{p.currentTime=0;p.play();}catch(e){}});
   window.stopAll=()=>players.forEach(p=>{try{p.pause();p.currentTime=0;}catch(e){}});
 });
 
-// ═══════════════════════════════════════════════════════
-// 7. SCROLL REVEAL
-// ═══════════════════════════════════════════════════════
+// ── 7. Scroll reveal ──
 (function(){
   const els=document.querySelectorAll('.sr,.sr-l,.sr-r');
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach((e,i)=>{
-      if(e.isIntersecting) setTimeout(()=>e.target.classList.add('on'),i*55);
-    });
-  },{threshold:0.1,rootMargin:'0px 0px -20px 0px'});
+  const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('on'),i*55);});},{threshold:0.1,rootMargin:'0px 0px -20px 0px'});
   els.forEach(el=>obs.observe(el));
 })();
 </script>
