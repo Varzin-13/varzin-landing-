@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>VARZIN – Field Index | Phase-Sync Interface (v6.0)</title>
-  <meta name="description" content="VARZIN Field Index v6.0 – Post 1.3B scan. Core-30 LUXVAR Registry (30/30). k=3 morphological elbow. QMSG periodic detection chi2=90,989. Root-frequency Cramér V=0.003. Symbolic-experimental Level 0." />
+  <meta name="description" content="VARZIN Field Index v6.0 – Post 1.3B scan. Core-30 LUXVAR Registry (30/30). k=3 morphological elbow. QMSG periodic detection chi2=90,981. Root-frequency Cramér V=0.003. Symbolic-experimental Level 0." />
   <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -181,6 +181,7 @@
   <a href="/cyclical-resonance-report.html">Cyclical Resonance</a>
   <a href="#" class="active">Field Index</a>
   <a href="/all-dois.html">All DOIs</a>
+  <a href="/master-report-v3.html" style="color:#44ff88;">Master Report v3</a>
 </nav>
 
 <header>
@@ -200,7 +201,7 @@
   <span class="rbar-new">elbow SSE −11.15%</span>
   · k=6 SSE drop = −1.07% (negative — Hexacore not confirmed morphologically)
   · Root→Frequency Cramér V=0.003 <span class="rbar-warn">negligible</span>
-  · QMSG periodic detection chi2=90,989 <span class="rbar-badge">p≈0</span>
+  · QMSG periodic detection chi2=90,981 <span class="rbar-badge">p≈0</span>
   <br>
   <strong style="color:#ff8888;">Hexacore remains an ontology under investigation, not an emergent structure.</strong>
   &nbsp;·&nbsp;
@@ -214,7 +215,7 @@
   <div class="kpi-cell"><span class="kpi-val kv-cyan">k = 3</span><span class="kpi-lbl">Natural Morphology · 1.3B scan</span></div>
   <div class="kpi-cell"><span class="kpi-val kv-green">8.00×</span><span class="kpi-lbl">QMSG Enrichment · interval 100k</span></div>
   <div class="kpi-cell"><span class="kpi-val kv-red">V=0.003</span><span class="kpi-lbl">Root→Frequency (negligible)</span></div>
-  <div class="kpi-cell"><span class="kpi-val kv-gold">chi2=90,989</span><span class="kpi-lbl">Periodic detection · p≈0</span></div>
+  <div class="kpi-cell"><span class="kpi-val kv-gold">chi2=90,981</span><span class="kpi-lbl">Periodic detection · p≈0</span></div>
   <div class="kpi-cell"><span class="kpi-val kv-cyan">30/30</span><span class="kpi-lbl">Core-30 locked · Sep 2025</span></div>
 </div>
 
@@ -254,7 +255,7 @@
     </div>
     <div class="scan-cell ok">
       <div class="sc-label">Q2 — QMSG Periodic Detection</div>
-      <div class="sc-val" style="color:var(--cyan)">chi2 = 90,989</div>
+      <div class="sc-val" style="color:var(--cyan)">chi2 = 90,981</div>
       <div class="sc-body">Interval 100,000: on_cycle=12,999, on_474=12,999, rate_on=1.000, enrichment=8.00×, p≈0. All 8 candidates Bonferroni-significant (α=0.00625). Rank-1 correctly identified blind.</div>
     </div>
     <div class="scan-cell warn">
@@ -267,6 +268,22 @@
       <div class="sc-val" style="color:var(--red)">NOT CONFIRMED</div>
       <div class="sc-body">Unsupervised morphological clustering does not produce Hexacore (k=5/6). Natural structure is k=3. Hexacore remains an ontology under investigation, not an emergent structure.</div>
     </div>
+    <div class="scan-cell info">
+      <div class="sc-label">Q8 — Morphology Prediction (Core-30)</div>
+      <div class="sc-val" style="color:#ffcc00">acc = 0.40</div>
+      <div class="sc-body">k-NN leave-one-out on 30 Core-30 words: acc=0.40, p=0.633, z=−0.206. <strong style="color:#ff8888;">Not significant.</strong> Morphology alone does not predict semantic axis above chance at N=30.</div>
+    </div>
+    <div class="scan-cell ok">
+      <div class="sc-label">Q9/Q10 — Graph Topology Tests</div>
+      <div class="sc-val" style="color:var(--green)">Δ = +0.833</div>
+      <div class="sc-body">Clean graph (no axis labels): acc=0.000, p=1.000. Leakage graph (axis-labelled): acc=0.833, z=6.504, p≈0. <strong style="color:#44ff88;">Leakage confirmed.</strong> Axes not recoverable from blind topology — VPE-001 is the only non-circular test.</div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0 0;padding:10px 14px;border-radius:6px;background:rgba(255,68,68,0.07);border:1px solid rgba(255,68,68,0.25);font-family:var(--mono);font-size:0.78em;color:#ff9988;line-height:1.7;">
+    <strong>Q13 — Computational Verdict:</strong>
+    SEMANTIC AXES NOT COMPUTATIONALLY CONFIRMED — VPE-001 REQUIRED<br>
+    Graph clean acc=0.000 · Leakage acc=0.833 · Δ=+0.833 · Morphology p=0.633 (ns) · Hexacore k=3 not k=5/6
   </div>
 
   <!-- Elbow chart -->
@@ -289,7 +306,7 @@
   <!-- QMSG interval chart -->
   <div style="margin-top:20px">
     <div style="font-family:var(--mono);font-size:0.78em;color:var(--muted);margin-bottom:10px;letter-spacing:1px;">QMSG BLIND INTERVAL DETECTION — 1.3B ROWS (ALL BONFERRONI-SIGNIFICANT)</div>
-    <div class="interval-row"><span class="ibar-lbl">100,000 ★</span><div class="ibar-track"><div class="ibar-fill" style="width:100%;background:var(--gold);"></div></div><span class="ibar-stat">chi2=90,989 · enrich=8.00× · rate=1.000</span><span class="ibar-mark"> ← TRUE</span></div>
+    <div class="interval-row"><span class="ibar-lbl">100,000 ★</span><div class="ibar-track"><div class="ibar-fill" style="width:100%;background:var(--gold);"></div></div><span class="ibar-stat">chi2=90,981 · enrich=8.00× · rate=1.000</span><span class="ibar-mark"> ← TRUE</span></div>
     <div class="interval-row"><span class="ibar-lbl">200,000</span><div class="ibar-track"><div class="ibar-fill" style="width:50%;background:var(--green);"></div></div><span class="ibar-stat">chi2=45,491 · enrich=8.00× (multiple)</span></div>
     <div class="interval-row"><span class="ibar-lbl">50,000</span><div class="ibar-track"><div class="ibar-fill" style="width:49%;background:var(--cyan);"></div></div><span class="ibar-stat">chi2=44,911 · enrich=4.48×</span></div>
     <div class="interval-row"><span class="ibar-lbl">500,000</span><div class="ibar-track"><div class="ibar-fill" style="width:20%;background:var(--green);"></div></div><span class="ibar-stat">chi2=18,192 · enrich=8.00× (multiple)</span></div>
@@ -311,7 +328,7 @@
   <div class="card-badge badge-vis">◎ Visualization Tool</div>
   <div class="key-attr"><strong>Frequency:</strong><span>474 Hz</span></div>
   <div class="key-attr"><strong>Mode:</strong><span>4D Spatial · Harmonic Blend AI</span></div>
-  <div class="key-attr"><strong>1.3B scan:</strong><span>chi2=90,989 · enrichment 8.00× at interval 100k</span></div>
+  <div class="key-attr"><strong>1.3B scan:</strong><span>chi2=90,981 · enrichment 8.00× at interval 100k</span></div>
   <div class="stat-row">
     <div class="stat-item"><span class="stat-val">474 Hz</span><span class="stat-lbl">Base Node</span></div>
     <div class="stat-item"><span class="stat-val">528 Hz</span><span class="stat-lbl">Target Node</span></div>
@@ -322,7 +339,7 @@
     <strong>KALTŪR</strong> renders the 474 Hz → 528 Hz harmonic transition as a real-time polar spectrum.
     In Resonance Mode, Web Audio FFT analysis builds a <em>memory trail</em> of the last 5 waveforms.
     The 1.3B scan confirmed that KALTUR injection (474 Hz periodic markers) is detectable with
-    chi2=90,989 and enrichment=8.00× at injection interval 100,000 — a generator design property,
+    chi2=90,981 and enrichment=8.00× at injection interval 100,000 — a generator design property,
     not a field discovery.
     <em style="display:block;margin-top:6px;font-size:0.88em;opacity:0.7;">⚠ Synthetic corpus analysis only. No physical resonance claim.</em>
   </div>
@@ -529,7 +546,7 @@
   © 2025–2026 VARZIN Project · Field Index <strong>v6.0</strong> · Reza Nirouyar · ORCID: 0009-0000-4690-6842<br>
   <span style="font-size:0.8em;color:rgba(167,231,231,0.6);">
     Symbolic-experimental framework · Core-30 30/30 · Level 0 · Pre-Empirical · VPE-001 pending<br>
-    1.3B scan: k=3 morphological elbow · Root-Frequency V=0.003 · QMSG chi2=90,989 · Hexacore NOT confirmed by morphology
+    1.3B scan: k=3 natural elbow · V=0.003 · QMSG chi2=90,981 · Hexacore NOT confirmed · morph acc=0.40 p=0.633 ns · graph clean=0.000 · leakage Δ=+0.833 · VPE-001 required
   </span>
 </footer>
 
@@ -881,7 +898,7 @@ function masterLoop(){
 // ── ELBOW CHART (static) ──
 function buildElbowChart(){
   const row=document.getElementById('elbowRow');if(!row)return;
-  const drops=[{k:3,v:11.15,best:true},{k:4,v:10.82,best:false},{k:5,v:6.92,best:false},{k:6,v:-1.07,no:true},{k:7,v:5.44,best:false},{k:8,v:8.34,best:false}];
+  const drops=[{k:3,v:9.70,best:true},{k:4,v:9.29,best:false},{k:5,v:5.33,best:false},{k:6,v:3.36,no:false},{k:7,v:3.07,best:false},{k:8,v:5.71,best:false}]; // actual v2 scan: k=3 best SSE elbow
   const max=12;
   drops.forEach(d=>{
     const div=document.createElement('div');
@@ -908,7 +925,7 @@ function updateLiveDataMock(){
     <p><span style="color:${VARZIN_GOLD};display:inline-block;min-width:150px">Kaltur Energy:</span>${liveDataStream.kaltur_energy.toFixed(4)}</p>
     <p><span style="color:${VARZIN_GOLD};display:inline-block;min-width:150px">Field Temp (K):</span>${liveDataStream.field_temp}</p>
     <p><span style="color:${VARZIN_GOLD};display:inline-block;min-width:150px">Phase Status:</span>${liveDataStream.phase_status}</p>
-    <p style="color:rgba(68,255,136,0.6);margin-top:6px;font-size:0.9em;">1.3B scan: k=3 · QMSG chi2=90,989 · V=0.003 · Synthetic only</p>
+    <p style="color:rgba(68,255,136,0.6);margin-top:6px;font-size:0.9em;">1.3B scan: k=3 · QMSG chi2=90,981 · V=0.003 · Synthetic only</p>
   </div>`;
 }
 function attemptFieldLink(){
@@ -940,7 +957,7 @@ function exportFieldState(){
     scan_1_3B:{
       natural_k:3,elbow_k3_drop:11.15,k6_drop:-1.07,hexacore_k6_confirmed:false,
       root_frequency_cramers_v:0.0033,root_field_cramers_v:0.0033,
-      qmsg_chi2:90989,qmsg_enrichment:8.0,qmsg_interval:100000,
+      qmsg_chi2:90981,qmsg_enrichment:8.0,qmsg_interval:100000,
       qmsg_p:'approx_zero',note:'Synthetic corpus only. No physical field claim.'
     },
     m02:{tic_primary:0.40,tic_strong:0.50,data:'synthetic_simulation'},
