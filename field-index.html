@@ -925,7 +925,14 @@ const t=document.getElementById('torus-canvas');
 let torusR=120,torusr0=50,torusAngle=0,torusFr=0,torusDragging=false,torusDX=0,torusDY=0,torusSX=0,torusSY=0;
 if(t){
   const ep=document.getElementById('etfm-post');
-  const rz=()=>{const s=Math.min(500,ep?ep.offsetWidth-60:440);t.width=s;t.height=s;torusR=s*0.24;torusr0=s*0.1;};rz();window.addEventListener('resize',rz);
+  const rz=()=>{
+    const w=ep?ep.offsetWidth:500;
+    const s=Math.min(500,Math.max(280,w-60));
+    t.width=s;t.height=s;torusR=s*0.24;torusr0=s*0.1;
+  };
+  rz();
+  setTimeout(rz,100);
+  window.addEventListener('resize',()=>setTimeout(rz,50));
   t.addEventListener('mousedown',e=>{torusDragging=true;t.style.cursor='grabbing';torusSX=e.clientX-torusDX;torusSY=e.clientY-torusDY;});
   window.addEventListener('mousemove',e=>{if(!torusDragging)return;torusDX=e.clientX-torusSX;torusDY=e.clientY-torusSY;});
   window.addEventListener('mouseup',()=>{torusDragging=false;t.style.cursor='grab';});
@@ -1077,6 +1084,8 @@ function captureSnapshot(event){
 window.onload=function(){
   buildElbowChart();
   masterLoop();
+  // Retry canvas draws after layout settles
+  setTimeout(buildElbowChart, 200);
   document.getElementById('resonance-btn').addEventListener('click',toggleResonanceMode);
   document.getElementById('channel-switch-btn').addEventListener('click',toggleConsciousChannel);
   document.getElementById('field-link-btn').addEventListener('click',attemptFieldLink);
