@@ -1665,6 +1665,6 @@ function loop(){
 // INIT STATIC CHARTS ON LOAD
 // ══════════════════════════════════════════════════════════
 function drawAllCharts(){
-  try{drawCompression();}catch(e){}
-  try{drawKBChart();}catch(e){}
-  try{dr
+  const fns=[
+    ['drawCompression',drawCompression],
+    ['drawKBChart',dr
