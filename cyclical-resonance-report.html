@@ -409,7 +409,7 @@ footer{
         </table>
         <div class="chart-wrap" style="margin-top:16px">
           <div class="chart-title">Compression Trajectory VIS vs Node Count</div>
-          <canvas id="compressionChart" height="180"></canvas>
+          <canvas id="compressionChart" width="400" height="180"></canvas>
         </div>
       </div>
     </div>
@@ -436,13 +436,13 @@ footer{
     <div>
       <div class="chart-wrap">
         <div class="chart-title">Knowledge Base Role Distribution</div>
-        <canvas id="kbChart" height="200"></canvas>
+        <canvas id="kbChart" width="360" height="200"></canvas>
       </div>
     </div>
     <div>
       <div class="chart-wrap">
         <div class="chart-title">Core-30 Radial Axis Map</div>
-        <canvas id="core30Canvas" height="200"></canvas>
+        <canvas id="core30Canvas" width="360" height="200"></canvas>
       </div>
     </div>
   </div>
@@ -479,11 +479,11 @@ footer{
   <div class="two" style="margin-top:24px;">
     <div class="chart-wrap">
       <div class="chart-title">ETFM Cross-Section — θ sweep</div>
-      <canvas id="etfm-section" height="180"></canvas>
+      <canvas id="etfm-section" width="400" height="180"></canvas>
     </div>
     <div class="chart-wrap">
       <div class="chart-title">474 Hz ↔ 528 Hz Wave Interference</div>
-      <canvas id="etfm-freq" height="180"></canvas>
+      <canvas id="etfm-freq" width="400" height="180"></canvas>
     </div>
   </div>
 </div>
@@ -517,7 +517,7 @@ F(w) = α·GC(w) + β·RD(w) + γ·MP(w)
     </div>
     <div class="chart-wrap">
       <div class="chart-title">VPE-003 Chain — TIC(τ) decay profile (SYNTHETIC SIMULATION)</div>
-      <canvas id="m02-canvas" height="280"></canvas>
+      <canvas id="m02-canvas" width="320" height="280"></canvas>
       <p style="font-size:10px;color:var(--red);margin-top:8px;">⚠ Simulated data — not human experimental results</p>
     </div>
   </div>
@@ -567,7 +567,7 @@ F(w) = α·GC(w) + β·RD(w) + γ·MP(w)
     <div>
       <div class="chart-wrap">
         <div class="chart-title">VIS Under Controlled Damage</div>
-        <canvas id="failureChart" height="220"></canvas>
+        <canvas id="failureChart" width="380" height="220"></canvas>
       </div>
     </div>
   </div>
@@ -585,7 +585,7 @@ F(w) = α·GC(w) + β·RD(w) + γ·MP(w)
     <div>
       <div class="chart-wrap">
         <div class="chart-title">VIS Comparison — Reference Topologies</div>
-        <canvas id="benchChart" height="260"></canvas>
+        <canvas id="benchChart" width="380" height="260"></canvas>
       </div>
     </div>
     <div>
@@ -639,7 +639,7 @@ F(w) = α·GC(w) + β·RD(w) + γ·MP(w)
   <div class="two">
     <div class="chart-wrap">
       <div class="chart-title">Morphology Elbow — Full 1.3B Scan (k=3 confirmed)</div>
-      <canvas id="silChart" height="220"></canvas>
+      <canvas id="silChart" width="400" height="220"></canvas>
     </div>
     <div>
       <div class="fblock" style="height:100%">
@@ -839,7 +839,7 @@ Q12 Leakage delta:      Δ=+0.833             <span class="ok">confirmed</span>
   <div class="two">
     <div class="chart-wrap">
       <div class="chart-title">Multi-Interval Blind Test — chi2 per Interval per ARM</div>
-      <canvas id="qmsgChart" height="280"></canvas>
+      <canvas id="qmsgChart" width="400" height="280"></canvas>
     </div>
     <div>
       <!-- ARM1 -->
@@ -908,7 +908,7 @@ QIS      = IS × IG              <span class="c">// qualified</span>
     </div>
     <div class="chart-wrap">
       <div class="chart-title">Metric Correlation with VIS (150 graphs)</div>
-      <canvas id="corrChart" height="220"></canvas>
+      <canvas id="corrChart" width="320" height="220"></canvas>
     </div>
   </div>
 </div>
@@ -995,7 +995,7 @@ Seed:       130,474,528 (fixed)
     <div>
       <div class="chart-wrap">
         <div class="chart-title">Project Status by Layer</div>
-        <canvas id="statusChart" height="320"></canvas>
+        <canvas id="statusChart" width="380" height="320"></canvas>
       </div>
     </div>
   </div>
@@ -1314,7 +1314,7 @@ function drawTorus(frame){
 // ══════════════════════════════════════════════════════════
 function drawETFMSection(frame){
   const c=document.getElementById('etfm-section'); if(!c)return;
-  c.width=c.parentElement?Math.max(c.parentElement.offsetWidth-36,280):400; c.height=180;
+  c.width=c.width||400; c.height=180;
   const ctx=c.getContext('2d'),W=c.width,H=c.height,CX=W*.45,CY=H/2;
   ctx.clearRect(0,0,W,H);
   const R=Math.min(W,H)*.28,r0=R*.38*(1+.04*Math.sin(frame*.04));
@@ -1343,7 +1343,7 @@ function drawETFMSection(frame){
 
 function drawETFMFreq(frame){
   const c=document.getElementById('etfm-freq'); if(!c)return;
-  c.width=c.parentElement?Math.max(c.parentElement.offsetWidth-36,280):400; c.height=180;
+  c.width=c.width||400; c.height=180;
   const ctx=c.getContext('2d'),W=c.width,H=c.height;
   ctx.clearRect(0,0,W,H);
   const PAD=20,PW=W-2*PAD,MID=H/2,AMP=H*.2,t=frame*.04;
@@ -1369,7 +1369,7 @@ function drawETFMFreq(frame){
 // ══════════════════════════════════════════════════════════
 function drawCompression(){
   const c=document.getElementById('compressionChart');if(!c)return;
-  c.width=Math.max(c.offsetWidth||c.parentElement&&c.parentElement.offsetWidth-36||400,280);c.height=180;
+  c.width=c.width||400;c.height=180;
   const ctx=c.getContext('2d'),W=c.width,H=c.height;
   const pts3=[[6,.787],[7,.774],[8,.772],[9,.772],[10,.773],[11,.780],[13,.767],[15,.762],[20,.755],[25,.748],[30,.741]];
   const padL=42,padB=28,padT=14,padR=14,chartW=W-padL-padR,chartH=H-padB-padT;
@@ -1396,7 +1396,7 @@ function drawCompression(){
 
 function drawKBChart(){
   const c=document.getElementById('kbChart');if(!c)return;
-  c.width=Math.max(c.offsetWidth||c.parentElement&&c.parentElement.offsetWidth-36||360,280);c.height=200;
+  c.width=c.width||400;c.height=200;
   const ctx=c.getContext('2d'),W=c.width,H=c.height;
   const data=[['Light',1443,'#e0aa00'],['Motion',1356,'#cc6622'],['Mirror',616,'#8855cc'],['Gate',17,'#1aaa4a'],['Silence',3,'#dd3322'],['Refl.',2,'#dd3322']];
   const bW=(W-60)/data.length,max=1500,padB=30;
@@ -1416,7 +1416,7 @@ function drawKBChart(){
 
 function drawCore30Canvas(){
   const c=document.getElementById('core30Canvas');if(!c)return;
-  c.width=Math.max(c.offsetWidth||c.parentElement&&c.parentElement.offsetWidth-36||360,280);c.height=200;
+  c.width=c.width||400;c.height=200;
   const ctx=c.getContext('2d'),W=c.width,H=c.height,CX=W/2,CY=H/2,R=Math.min(W,H)*.4;
   ctx.clearRect(0,0,W,H);
   const axes=[
@@ -1450,7 +1450,7 @@ function drawCore30Canvas(){
 
 function drawSilChart(){
   const c=document.getElementById('silChart');if(!c)return;
-  c.width=Math.max(c.offsetWidth||c.parentElement&&c.parentElement.offsetWidth-36||400,280);c.height=220;
+  c.width=c.width||400;c.height=220;
   const ctx=c.getContext('2d'),W=c.width,H=c.height;
   // 1.3B scan: SSE drop analysis (not silhouette — elbow at k=3)
 const data={2:.4062,3:.3609,4:.3260,5:.2942,6:.2972,7:.2840,8:.2583,9:.2400,10:.2300,11:.2250}; // adjusted for 1.3B k=3 elbow
@@ -1481,7 +1481,7 @@ const data={2:.4062,3:.3609,4:.3260,5:.2942,6:.2972,7:.2840,8:.2583,9:.2400,10:.
 
 function drawQMSGChart(){
   const c=document.getElementById('qmsgChart');if(!c)return;
-  c.width=Math.max(c.offsetWidth||c.parentElement&&c.parentElement.offsetWidth-36||400,280);c.height=300;
+  c.width=c.width||400;c.height=300;
   const ctx=c.getContext('2d'),W=c.width,H=c.height;
   // 1.3B scan data - 8 intervals, single-arm view (ARM2 only since ARM1/ARM3 N/A for full scan)
   const data=[
@@ -1533,7 +1533,7 @@ function drawQMSGChart(){
 
 function drawFailureChart(){
   const c=document.getElementById('failureChart');if(!c)return;
-  c.width=Math.max(c.offsetWidth||c.parentElement&&c.parentElement.offsetWidth-36||380,280);c.height=220;
+  c.width=c.width||400;c.height=220;
   const ctx=c.getContext('2d'),W=c.width,H=c.height;
   const data=[['Baseline','#1aaa4a',.741],['Rm mirror','#dd3322',.599],['Rm macro','#dd3322',.462],['Rm gate','#cc6622',.621],['Rm QMSG','#e0aa00',.662],['Weak 50%','#cc6622',.679],['Weak 80%','#dd3322',.562]];
   const rowH=(H-20)/data.length,maxV=.80,minV=.35;
@@ -1550,7 +1550,7 @@ function drawFailureChart(){
 
 function drawBenchChart(){
   const c=document.getElementById('benchChart');if(!c)return;
-  c.width=Math.max(c.offsetWidth||c.parentElement&&c.parentElement.offsetWidth-36||380,280);c.height=260;
+  c.width=c.width||400;c.height=260;
   const ctx=c.getContext('2d'),W=c.width,H=c.height;
   const data=[['Core-6','#1aaa4a',.787],['Core-30','#00d4e8',.741],['Mirror-H4','#8855cc',.724],['ScaleFree','#7a9aaa',.586],['LUXVAR Full','#e0aa00',.508],['Star_6','#dd3322',.295],['Random μ','#dd3322',.362]].sort((a,b)=>b[2]-a[2]);
   const rowH=(H-10)/data.length;
@@ -1564,7 +1564,7 @@ function drawBenchChart(){
 
 function drawCorrChart(){
   const c=document.getElementById('corrChart');if(!c)return;
-  c.width=Math.max(c.offsetWidth||c.parentElement&&c.parentElement.offsetWidth-36||320,280);c.height=220;
+  c.width=c.width||400;c.height=220;
   const ctx=c.getContext('2d'),W=c.width,H=c.height;
   const data=[['QC',.998,'#dd3322'],['TC',.998,'#dd3322'],['avg_degree',.721,'#e0aa00'],['RD',.721,'#e0aa00'],['clustering',.636,'#cc6622'],['MSI',-.687,'#8855cc'],['avg_path_len',-.644,'#8855cc']].sort((a,b)=>Math.abs(b[1])-Math.abs(a[1]));
   const rowH=(H-20)/data.length;
@@ -1581,7 +1581,7 @@ function drawCorrChart(){
 
 function drawStatusChart(){
   const c=document.getElementById('statusChart');if(!c)return;
-  c.width=Math.max(c.offsetWidth||c.parentElement&&c.parentElement.offsetWidth-36||380,280);c.height=320;
+  c.width=c.width||400;c.height=320;
   const ctx=c.getContext('2d'),W=c.width,H=c.height;
   const layers=[
     ['Morphological Structure (013A)',100,'#1aaa4a','PROVEN'],
@@ -1609,7 +1609,7 @@ function drawStatusChart(){
 
 function drawM02Canvas(){
   const c=document.getElementById('m02-canvas');if(!c)return;
-  c.width=Math.max(c.offsetWidth||c.parentElement&&c.parentElement.offsetWidth-36||320,280);c.height=280;
+  c.width=c.width||400;c.height=280;
   const ctx=c.getContext('2d'),W=c.width,H=c.height;
   const steps=[{l:'Word',s:'M₀',tic:1.0,col:'#00d4e8'},{l:'Shape',s:'M₁',tic:.718,col:'#7fdfff'},{l:'Music',s:'M₂',tic:.583,col:'#e0aa00'},{l:'Move',s:'M₃',tic:.522,col:'#ff9944'},{l:'Word',s:'M₄',tic:.458,col:'#00d4e8'}];
   const PAD=22,CHAIN_Y=H*.7,maxR=(H*.7-PAD),sp=(W-2*PAD)/(steps.length-1);
@@ -1646,4 +1646,25 @@ const navLinks=document.querySelectorAll('.nav-a');
 window.addEventListener('scroll',()=>{
   let cur='';
   document.querySelectorAll('[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});
-  navLin
+  navLinks.forEach(l=>{l.classList.toggle('active',l.getAttribute('href')==='#'+cur);});
+},{passive:true});
+
+// ══════════════════════════════════════════════════════════
+// MASTER ANIMATION LOOP
+// ══════════════════════════════════════════════════════════
+let frame=0;
+function loop(){
+  frame++;
+  drawTorus(frame);
+  drawETFMSection(frame);
+  drawETFMFreq(frame);
+  requestAnimationFrame(loop);
+}
+
+// ══════════════════════════════════════════════════════════
+// INIT STATIC CHARTS ON LOAD
+// ══════════════════════════════════════════════════════════
+function drawAllCharts(){
+  try{drawCompression();}catch(e){}
+  try{drawKBChart();}catch(e){}
+  try{dr
