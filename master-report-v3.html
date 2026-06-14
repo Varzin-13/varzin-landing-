@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VARZIN — Master Report v3 · GEN-003R+ · SEM-001/002 · VPE-001B · 2026-06-14</title>
+<meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0f14; --paper:#f6f5f0; --dim:#e8e6df; --rule:#d0cdc4;
+  --cyan:#00b8cc; --gold:#c89a00; --red:#cc2a1a; --green:#1a8a3a;
+  --purple:#6a3aaa; --muted:#6a6860; --orange:#b85a00;
+  --mono:'IBM Plex Mono',monospace; --sans:'IBM Plex Sans',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--bg);font-family:var(--sans);font-size:14px;line-height:1.7;}
+
+/* SIDEBAR */
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:220px;background:var(--bg);color:#a0a8b0;font-family:var(--mono);font-size:10px;padding:24px 0;overflow-y:auto;z-index:100;border-right:1px solid #222;}
+.sb-logo{padding:0 16px 20px;border-bottom:1px solid #2a2a2a;margin-bottom:16px;}
+.sb-logo h2{font-size:14px;font-weight:600;letter-spacing:2px;color:var(--cyan);}
+.sb-logo p{font-size:9px;color:#555;margin-top:2px;}
+.nav-sec{padding:6px 16px 2px;font-size:8px;color:#444;letter-spacing:2px;text-transform:uppercase;}
+.nav-a{display:block;padding:5px 16px;color:#888;text-decoration:none;border-left:2px solid transparent;transition:all .15s;}
+.nav-a:hover,.nav-a.active{color:var(--cyan);border-left-color:var(--cyan);background:rgba(0,184,204,.06);}
+.nb{display:inline-block;font-size:8px;padding:1px 5px;border-radius:3px;margin-left:4px;vertical-align:middle;}
+.nb-ok{background:rgba(26,138,58,.2);color:#4ac87a;}
+.nb-fail{background:rgba(204,42,26,.2);color:#e05a4a;}
+.nb-warn{background:rgba(200,154,0,.2);color:#e0b800;}
+.nb-pen{background:rgba(106,58,170,.2);color:#aa80ff;}
+
+/* MAIN */
+.main{margin-left:220px;min-height:100vh;}
+
+/* HERO */
+.hero{background:var(--bg);padding:60px 56px 44px;border-bottom:1px solid #222;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(0,184,204,.06),transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(200,154,0,.04),transparent 50%);}
+.hero-ey{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--cyan);text-transform:uppercase;margin-bottom:14px;}
+.hero h1{font-size:32px;font-weight:700;color:#fff;letter-spacing:-1px;line-height:1.2;margin-bottom:12px;}
+.hero h1 span{color:var(--cyan);}
+.hero-sub{font-size:12px;color:#6a8090;max-width:580px;line-height:1.6;}
+.hero-badges{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap;}
+.hbadge{font-family:var(--mono);font-size:9px;padding:3px 10px;border-radius:2px;font-weight:600;letter-spacing:1px;border:1px solid;}
+.hb-syn{border-color:var(--purple);color:#aa80ff;background:rgba(106,58,170,.1);}
+.hb-l0{border-color:var(--gold);color:var(--gold);background:rgba(200,154,0,.1);}
+.hb-pen{border-color:var(--red);color:#e05a4a;background:rgba(204,42,26,.08);}
+
+/* KPI */
+.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);background:var(--bg);}
+.kpi{padding:18px;border-right:1px solid #1a1a1a;text-align:center;}
+.kpi:last-child{border-right:none;}
+.kpi-val{font-family:var(--mono);font-size:20px;font-weight:600;line-height:1;margin-bottom:4px;}
+.kpi-lbl{font-size:9px;letter-spacing:1.5px;color:#5a7080;text-transform:uppercase;}
+.kpi-note{font-size:9px;color:#3a5060;margin-top:2px;font-family:var(--mono);}
+.vc{color:var(--cyan);} .vg{color:var(--green);} .vo{color:var(--gold);} .vr{color:var(--red);} .vp{color:var(--purple);}
+
+/* SECTIONS */
+.section{padding:48px 56px;border-bottom:1px solid var(--rule);}
+.sec-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;}
+.section h2{font-size:22px;font-weight:700;letter-spacing:-.5px;margin-bottom:6px;}
+.section h3{font-size:15px;font-weight:700;margin:24px 0 10px;border-bottom:1px solid var(--rule);padding-bottom:6px;}
+.sec-desc{font-size:12px;color:var(--muted);margin-bottom:24px;max-width:640px;}
+
+/* VERDICT BOX */
+.verdict{background:var(--bg);color:#e0f0f4;border-radius:4px;padding:24px 28px;margin:20px 0;font-family:var(--mono);font-size:11px;line-height:2.0;border-left:4px solid var(--cyan);}
+.verdict .vt{font-size:9px;letter-spacing:2px;color:#5a8090;text-transform:uppercase;margin-bottom:10px;}
+.verdict .ok{color:#4ac87a;} .verdict .fail{color:#e05a4a;} .verdict .warn{color:#e0b800;} .verdict .pen{color:#aa80ff;}
+
+/* DATA TABLE */
+.dtable{width:100%;border-collapse:collapse;font-size:11px;font-family:var(--mono);margin:16px 0;}
+.dtable th{background:var(--dim);color:var(--muted);padding:8px 12px;text-align:left;font-size:9px;letter-spacing:1.5px;border-bottom:2px solid var(--rule);}
+.dtable td{padding:8px 12px;border-bottom:1px solid var(--rule);}
+.dtable tr:hover td{background:var(--dim);}
+.td-ok{color:var(--green);font-weight:700;}
+.td-fail{color:var(--red);font-weight:700;}
+.td-warn{color:var(--gold);font-weight:700;}
+.td-r{text-align:right;}
+
+/* GRID */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:20px 0;}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin:20px 0;}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:20px;border-top:3px solid var(--rule);}
+.card.ok{border-top-color:var(--green);}
+.card.fail{border-top-color:var(--red);}
+.card.warn{border-top-color:var(--gold);}
+.card.info{border-top-color:var(--cyan);}
+.card.purple{border-top-color:var(--purple);}
+.card-label{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:6px;}
+.card-val{font-family:var(--mono);font-size:24px;font-weight:700;margin:6px 0 4px;}
+.card-body{font-size:12px;color:var(--muted);line-height:1.6;}
+
+/* BARS */
+.bar-row{display:flex;align-items:center;gap:12px;margin:7px 0;}
+.bar-lbl{font-family:var(--mono);font-size:10px;min-width:200px;color:var(--bg);}
+.bar-track{flex:1;height:8px;background:var(--dim);border-radius:2px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:2px;}
+.bar-val{font-family:var(--mono);font-size:10px;min-width:50px;text-align:right;color:var(--muted);}
+
+/* INTERVAL BARS */
+.ibar{display:flex;align-items:center;gap:10px;margin:5px 0;font-family:var(--mono);font-size:10px;}
+.ibar-lbl{min-width:80px;color:var(--muted);}
+.ibar-track{flex:1;height:12px;background:var(--dim);border-radius:2px;overflow:hidden;}
+.ibar-fill{height:100%;border-radius:2px;}
+.ibar-val{color:var(--bg);min-width:120px;font-size:10px;}
+.ibar-mark{color:var(--gold);font-size:9px;font-weight:700;}
+
+/* BOXES */
+.ok-box{background:rgba(26,138,58,.06);border:1px solid rgba(26,138,58,.25);border-radius:3px;padding:12px 16px;font-size:12px;color:#1a6a2a;margin:12px 0;line-height:1.6;}
+.warn-box{background:rgba(200,154,0,.06);border:1px solid rgba(200,154,0,.25);border-radius:3px;padding:12px 16px;font-size:12px;color:#8a6a00;margin:12px 0;line-height:1.6;}
+.err-box{background:rgba(204,42,26,.05);border:1px solid rgba(204,42,26,.2);border-radius:3px;padding:12px 16px;font-size:12px;color:#9a2a1a;margin:12px 0;line-height:1.6;}
+.info-box{background:rgba(0,184,204,.05);border:1px solid rgba(0,184,204,.2);border-radius:3px;padding:12px 16px;font-size:12px;color:#006a7a;margin:12px 0;line-height:1.6;}
+
+/* VALIDITY MAP */
+.vmap{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:20px 0;border:1px solid var(--rule);border-radius:4px;overflow:hidden;}
+.vmap-cell{padding:20px 24px;border-bottom:1px solid var(--rule);}
+.vmap-cell:nth-child(odd){border-right:1px solid var(--rule);}
+.vmap-cell:last-child,.vmap-cell:nth-last-child(2){border-bottom:none;}
+.vmap-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:10px;}
+.vmap-item{font-size:11px;font-family:var(--mono);padding:3px 0;border-bottom:1px dotted var(--rule);line-height:1.6;}
+.vmap-item:last-child{border-bottom:none;}
+
+/* ELBOW */
+.elbow-row{display:flex;align-items:flex-end;gap:4px;height:80px;margin:12px 0;}
+.eb-bar{flex:1;border-radius:3px 3px 0 0;background:rgba(0,184,204,.2);border:1px solid rgba(0,184,204,.4);display:flex;align-items:flex-start;justify-content:center;}
+.eb-bar.best{background:rgba(26,138,58,.25);border-color:var(--green);}
+.eb-bar.neg{background:rgba(204,42,26,.15);border-color:var(--red);}
+.eb-val{font-size:9px;font-family:var(--mono);color:var(--bg);padding-top:2px;}
+
+/* FOOTER */
+footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;font-family:var(--mono);font-size:10px;border-top:1px solid #1a1a1a;}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:4px;} ::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:#2a3a4a;border-radius:2px;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .sidebar{display:none;} .main{margin-left:0;}
+  .two,.three{grid-template-columns:1fr;}
+  .kpi-row{grid-template-columns:repeat(2,1fr);}
+  .section{padding:32px 20px;}
+  .hero{padding:40px 20px 32px;}
+  .vmap{grid-template-columns:1fr;}
+  .vmap-cell{border-right:none!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sb-logo">
+    <h2>VARZIN</h2>
+    <p>Master Report v3</p>
+    <p style="color:#3a5060;margin-top:4px;font-size:8px;">ORCID: 0009-0000-4690-6842</p>
+  </div>
+  <div class="nav-sec">Overview</div>
+  <a class="nav-a" href="#summary">Executive Summary</a>
+  <a class="nav-a" href="#kpi">Key Numbers</a>
+  <div class="nav-sec">Results</div>
+  <a class="nav-a" href="#scan">1.3B Scan Results</a>
+  <a class="nav-a" href="#qmsg">QMSG Detection</a>
+  <a class="nav-a" href="#vbe">VBE-001 Benchmark</a>
+  <a class="nav-a" href="#leakage">Leakage Map</a>
+  <div class="nav-sec">Assessment</div>
+  <a class="nav-a" href="#validity">Validity Map A–E</a>
+  <a class="nav-a" href="#position">Project Position</a>
+  <a class="nav-a" href="#freq474">474Hz Hypothesis</a>
+  <div class="nav-sec">Next Steps</div>
+  <a class="nav-a" href="#vpe001">VPE-001 Protocol</a>
+  <a class="nav-a" href="#roadmap">Roadmap</a>
+  <div class="nav-sec">Links</div>
+  <a class="nav-a" href="/cyclical-resonance-report.html">→ Research Portal</a>
+  <a class="nav-a" href="/field-index.html">→ Field Index</a>
+</nav>
+
+<div class="main">
+
+<!-- HERO -->
+<div class="hero" id="summary">
+  <div class="hero-ey">VARZIN · Master Report v3 · Post 1.3B Final Truth Lab · 2026-06-12</div>
+  <h1>Computational Boundary<br><span>Fully Mapped</span></h1>
+  <p class="hero-sub">Complete summary of all experimental results, benchmark tests, validity assessments, and the definitive path forward. The computational ceiling has been reached. VPE-001 is the only remaining non-circular test.</p>
+  <div class="hero-badges">
+    <span class="hbadge hb-l0">LEVEL 0 — PRE-EMPIRICAL</span>
+    <span class="hbadge hb-syn">SYNTHETIC DATA ONLY</span>
+    <span class="hbadge hb-pen">VPE-001 PENDING</span>
+  </div>
+</div>
+
+<!-- KPI ROW -->
+<div class="kpi-row" id="kpi">
+  <div class="kpi"><div class="kpi-val vc">z=4.36</div><div class="kpi-lbl">Morphological Signal</div><div class="kpi-note">p&lt;0.001 · THP-013A</div></div>
+  <div class="kpi"><div class="kpi-val vo">chi2=90,981</div><div class="kpi-lbl">QMSG Detection</div><div class="kpi-note">rank-1/8 · N=1.3B</div></div>
+  <div class="kpi"><div class="kpi-val vr">k=3</div><div class="kpi-lbl">Natural Clusters</div><div class="kpi-note">Hexacore NOT confirmed</div></div>
+  <div class="kpi"><div class="kpi-val vg">Δ=+0.833</div><div class="kpi-lbl">Leakage Confirmed</div><div class="kpi-note">z=6.504 · p≈0</div></div>
+  <div class="kpi"><div class="kpi-val vp">V=0.003</div><div class="kpi-lbl">Root→Frequency</div><div class="kpi-note">negligible effect</div></div>
+</div>
+
+<!-- 1.3B SCAN -->
+<div class="section" id="scan">
+  <div class="sec-label">Final Truth Lab v2 · N=1,300,000,000</div>
+  <h2>1.3B Scan — Complete Results</h2>
+  <p class="sec-desc">801 unique roots · SEED=130,474,528 · scipy · stratified k-NN · silhouette · runtime=233 min</p>
+
+  <div class="three">
+    <div class="card ok">
+      <div class="card-label">Q1 — Total rows</div>
+      <div class="card-val vg">1.3B</div>
+      <div class="card-body">1,300,000,000 rows confirmed. 801 unique stable roots across full corpus.</div>
+    </div>
+    <div class="card fail">
+      <div class="card-label">Q4 — Hexacore confirmed?</div>
+      <div class="card-val vr">FALSE</div>
+      <div class="card-body">Natural k=3 (SSE elbow). k=6 SSE drop = −1.07% (negative — worse than k=5). Hexacore is NOT confirmed by morphological clustering.</div>
+    </div>
+    <div class="card warn">
+      <div class="card-label">Q3 — Natural k</div>
+      <div class="card-val vo">k = 3</div>
+      <div class="card-body">Strongest elbow at k=3 (SSE drop 11.15%). Silhouette confirms k=2. Morphological, not semantic structure.</div>
+    </div>
+  </div>
+
+  <h3>Full Q-Table — All 13 Questions</h3>
+  <table class="dtable">
+    <tr><th>Q</th><th>Question</th><th>Result</th><th>Value</th><th>Status</th></tr>
+    <tr><td>Q1</td><td>Total rows</td><td>1,300,000,000</td><td class="td-r">—</td><td class="td-ok">✓ CONFIRMED</td></tr>
+    <tr><td>Q2</td><td>Unique roots</td><td>801</td><td class="td-r">—</td><td class="td-ok">✓ CONFIRMED</td></tr>
+    <tr><td>Q3</td><td>Natural k (SSE elbow)</td><td>k = 3</td><td class="td-r">drop 11.15%</td><td class="td-warn">⚠ NOT k=5/6</td></tr>
+    <tr><td>Q3b</td><td>Natural k (silhouette)</td><td>k = 2</td><td class="td-r">—</td><td class="td-warn">⚠ NOT k=5/6</td></tr>
+    <tr><td>Q4</td><td>Hexacore confirmed</td><td>FALSE</td><td class="td-r">k=6 drop=−1.07%</td><td class="td-fail">✗ REJECTED</td></tr>
+    <tr><td>Q5</td><td>QMSG rank-1</td><td>TRUE</td><td class="td-r">chi2=90,981 · enrich=8.00×</td><td class="td-ok">✓ CONFIRMED</td></tr>
+    <tr><td>Q6</td><td>Root→Frequency V</td><td>V = 0.00326</td><td class="td-r">negligible</td><td class="td-fail">✗ NULL</td></tr>
+    <tr><td>Q7</td><td>Root→Field V</td><td>V = 0.00326</td><td class="td-r">negligible</td><td class="td-fail">✗ NULL</td></tr>
+    <tr><td>Q8</td><td>Morphology LOO acc</td><td>acc = 0.40</td><td class="td-r">p=0.633 · z=−0.206</td><td class="td-fail">✗ NOT SIGNIFICANT</td></tr>
+    <tr><td>Q9</td><td>Graph clean acc</td><td>acc = 0.000</td><td class="td-r">p=1.000</td><td class="td-fail">✗ BELOW RANDOM</td></tr>
+    <tr><td>Q10</td><td>Graph leakage acc</td><td>acc = 0.833</td><td class="td-r">z=6.504 · p≈0</td><td class="td-ok">✓ LEAKAGE</td></tr>
+    <tr><td>Q12</td><td>Leakage Δ</td><td>Δ = +0.833</td><td class="td-r">confirmed</td><td class="td-ok">✓ CONFIRMED</td></tr>
+    <tr><td>Q13</td><td>Computational verdict</td><td colspan="2">SEMANTIC AXES NOT COMPUTATIONALLY CONFIRMED</td><td class="td-fail">→ VPE-001 REQUIRED</td></tr>
+  </table>
+
+  <h3>k-Elbow Analysis — Why k=3 and NOT k=6</h3>
+  <div style="margin:12px 0 6px;font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:1px;">SSE DROP % PER k (801 UNIQUE ROOTS · N=1.3B)</div>
+  <div class="elbow-row" id="elbowBars"></div>
+  <div style="display:flex;gap:0;margin-top:2px;">
+    <div style="flex:1;text-align:center;font-family:var(--mono);font-size:9px;color:var(--muted);">k=3 ★</div>
+    <div style="flex:1;text-align:center;font-family:var(--mono);font-size:9px;color:var(--muted);">k=4</div>
+    <div style="flex:1;text-align:center;font-family:var(--mono);font-size:9px;color:var(--muted);">k=5</div>
+    <div style="flex:1;text-align:center;font-family:var(--mono);font-size:9px;color:var(--muted);">k=6 ✗</div>
+    <div style="flex:1;text-align:center;font-family:var(--mono);font-size:9px;color:var(--muted);">k=7</div>
+  </div>
+  <div class="warn-box" style="margin-top:12px;"><strong>k=6 SSE drop = −1.07% (NEGATIVE)</strong> — k=6 produces worse clustering than k=5. This definitively rejects Hexacore as a natural morphological structure.</div>
+</div>
+
+<!-- QMSG -->
+<div class="section" id="qmsg">
+  <div class="sec-label">QMSG v3 · Synthetic Corpus Analysis</div>
+  <h2>QMSG Periodic Detection — N=1.3B</h2>
+  <p class="sec-desc">Three-arm design. Blind interval search. Bonferroni correction. All 8 candidates significant. True interval rank-1.</p>
+
+  <div class="err-box"><strong>Scientific boundary:</strong> This detects injection structure in a synthetic corpus. It confirms generator design, NOT QMSG field resonance in the physical world.</div>
+
+  <div class="two">
+    <div>
+      <h3>Blind Detection Results</h3>
+      <div class="ibar"><span class="ibar-lbl">100k ★</span><div class="ibar-track"><div class="ibar-fill" style="width:100%;background:var(--gold);"></div></div><span class="ibar-val">chi2=90,981 · 8.00×</span><span class="ibar-mark"> ← TRUE</span></div>
+      <div class="ibar"><span class="ibar-lbl">200k</span><div class="ibar-track"><div class="ibar-fill" style="width:50%;background:var(--green);"></div></div><span class="ibar-val">chi2=45,491 · 8.00× (×2)</span></div>
+      <div class="ibar"><span class="ibar-lbl">50k</span><div class="ibar-track"><div class="ibar-fill" style="width:49%;background:var(--cyan);"></div></div><span class="ibar-val">chi2=44,911 · 4.48×</span></div>
+      <div class="ibar"><span class="ibar-lbl">500k</span><div class="ibar-track"><div class="ibar-fill" style="width:20%;background:var(--green);"></div></div><span class="ibar-val">chi2=18,192 · 8.00× (×5)</span></div>
+      <div class="ibar"><span class="ibar-lbl">150k</span><div class="ibar-track"><div class="ibar-fill" style="width:16%;background:var(--cyan);"></div></div><span class="ibar-val">chi2=14,810 · 4.46×</span></div>
+      <div class="ibar"><span class="ibar-lbl">250k</span><div class="ibar-track"><div class="ibar-fill" style="width:10%;background:var(--cyan);"></div></div><span class="ibar-val">chi2=9,134 · 4.51×</span></div>
+      <div class="ibar"><span class="ibar-lbl">75k</span><div class="ibar-track"><div class="ibar-fill" style="width:8%;background:var(--cyan);"></div></div><span class="ibar-val">chi2=7,526 · 2.74×</span></div>
+      <div class="ibar"><span class="ibar-lbl">125k</span><div class="ibar-track"><div class="ibar-fill" style="width:5%;background:var(--cyan);"></div></div><span class="ibar-val">chi2=4,675 · 2.77×</span></div>
+    </div>
+    <div>
+      <h3>Three-Arm Summary</h3>
+      <table class="dtable">
+        <tr><th>ARM</th><th>Design</th><th>Result</th></tr>
+        <tr><td>ARM1</td><td>No injection baseline</td><td class="td-ok">All p&gt;0.05 ✓</td></tr>
+        <tr><td>ARM2 (1.3B)</td><td>Full scan · blind search</td><td class="td-ok">rank-1 correct ✓</td></tr>
+        <tr><td>ARM3</td><td>Shuffled control</td><td class="td-ok">No signal ✓</td></tr>
+      </table>
+      <div class="ok-box"><strong>Publishable claim:</strong> Periodic injection structure in a synthetic LUXVAR corpus (N=1.3B) is statistically recoverable blind. True interval (100k) achieves rank-1 with chi2=90,981, enrichment=8.00×, p≈0. Multiples (200k, 500k) also detected. All 8 intervals Bonferroni-significant (α=0.00625).</div>
+    </div>
+  </div>
+</div>
+
+<!-- VBE-001 -->
+<div class="section" id="vbe">
+  <div class="sec-label">VBE-001 · VBE-PRE-002 · Benchmark Series</div>
+  <h2>Benchmark Results — Seven Models Compared</h2>
+  <p class="sec-desc">Test set N=10, 5-class. Graph topology blind test. Computational limit fully defined.</p>
+
+  <div class="three">
+    <div class="card fail">
+      <div class="card-label">Q8 — Morphology Prediction</div>
+      <div class="card-val vr">acc = 0.40</div>
+      <div class="card-body">k-NN LOO on Core-30: p=0.633, z=−0.206. Not significant. Morphology alone cannot predict semantic axis above chance.</div>
+    </div>
+    <div class="card ok">
+      <div class="card-label">Q10 — Graph Leakage</div>
+      <div class="card-val vg">acc = 0.833</div>
+      <div class="card-body">Graph with axis labels: acc=0.833, z=6.504. Confirms leakage — not a real prediction, only circular information.</div>
+    </div>
+    <div class="card info">
+      <div class="card-label">VBE-PRE-002 — Blind Topology</div>
+      <div class="card-val vc">acc = 0.000</div>
+      <div class="card-body">Generic topology (degree, clustering) with NO labels: acc=0.000. Below random (0.200). Axes are not recoverable from graph structure.</div>
+    </div>
+  </div>
+
+  <h3>All Seven Models — VBE-001</h3>
+  <table class="dtable">
+    <tr><th>Model</th><th>Acc</th><th>κ</th><th>Assessment</th></tr>
+    <tr><td>A — Random baseline</td><td class="td-r td-fail">0.000</td><td class="td-r">−0.250</td><td class="td-fail">Below chance</td></tr>
+    <tr><td>B — Morphology-only</td><td class="td-r td-warn">0.700</td><td class="td-r">0.625</td><td>Same as ETFM — not distinguished</td></tr>
+    <tr><td>C — Freq/Field blind</td><td class="td-r">0.300</td><td class="td-r">0.125</td><td>Near random</td></tr>
+    <tr><td>D — Graph-only</td><td class="td-r">0.300</td><td class="td-r">0.125</td><td>Near random</td></tr>
+    <tr><td>E — Embedding (simulated)</td><td class="td-r td-warn">0.700</td><td class="td-r">0.625</td><td>Same as morphology</td></tr>
+    <tr><td>F — ETFM-POST</td><td class="td-r td-warn">0.700</td><td class="td-r">0.625</td><td class="td-warn">TIED with morphology-only</td></tr>
+    <tr><td>G — Human (simulated)</td><td class="td-r td-warn">0.700</td><td class="td-r">0.625</td><td>—</td></tr>
+    <tr><td>F_shuffled (falsifiability)</td><td class="td-r td-ok">0.100</td><td class="td-r">−0.125</td><td class="td-ok">✓ Falsifiability confirmed</td></tr>
+  </table>
+  <div class="info-box">Permutation test: z=3.33, p=0.020 (significant vs random). But ETFM cannot currently be distinguished from morphology-only. This is the key limitation requiring VPE-001.</div>
+
+  <h3>Key Interpretation</h3>
+  <div class="warn-box"><strong>Every number that looks good contains circular information.</strong> acc=0.700 (leakage) and acc=0.833 (graph leakage) are both circular — they encode axis identity directly. The only clean number is graph clean acc=0.000 (below random). This is not failure — it is the correct identification of what computational methods can and cannot determine.</div>
+</div>
+
+<!-- LEAKAGE -->
+<div class="section" id="leakage">
+  <div class="sec-label">Information Leakage — Confirmed</div>
+  <h2>Leakage Map — Q9 vs Q10</h2>
+  <p class="sec-desc">The most important methodological finding: leakage is measurable, and Δ=+0.833 is the key number.</p>
+
+  <div class="two">
+    <div>
+      <table class="dtable">
+        <tr><th>Test</th><th>Features</th><th>Acc</th><th>Interpretation</th></tr>
+        <tr><td>Q9 — Graph clean</td><td>Topology ONLY (no axis labels)</td><td class="td-r td-fail">0.000</td><td>Blind — axes invisible</td></tr>
+        <tr><td>Q10 — Graph leakage</td><td>Topology + axis-labelled features</td><td class="td-r td-ok">0.833</td><td>Circular — axis encoded</td></tr>
+        <tr><td>Delta</td><td>—</td><td class="td-r td-warn">+0.833</td><td class="td-warn">Leakage confirmed</td></tr>
+      </table>
+      <div class="bar-row">
+        <span class="bar-lbl">Graph clean (no labels)</span>
+        <div class="bar-track"><div class="bar-fill" style="width:0%;background:var(--red);"></div></div>
+        <span class="bar-val">0.000</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-lbl">Graph leakage (with labels)</span>
+        <div class="bar-track"><div class="bar-fill" style="width:83.3%;background:var(--green);"></div></div>
+        <span class="bar-val">0.833</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-lbl">Random baseline</span>
+        <div class="bar-track"><div class="bar-fill" style="width:20%;background:var(--muted);"></div></div>
+        <span class="bar-val">0.200</span>
+      </div>
+    </div>
+    <div>
+      <div style="background:var(--bg);color:#e0f0f4;border-radius:4px;padding:20px 24px;font-family:var(--mono);font-size:10px;line-height:2.0;">
+        <div style="font-size:9px;color:#5a8090;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Why This Matters</div>
+        Graph without axis labels → acc = 0.000<br>
+        Graph WITH axis labels → acc = 0.833<br>
+        <span style="color:#e0b800;">Delta = +0.833 → pure leakage</span><br><br>
+        This means: every "good" acc score in VARZIN<br>
+        computational tests contains axis identity itself.<br><br>
+        <span style="color:#4ac87a;">This is NOT failure.</span><br>
+        This is the correct identification of what<br>
+        computational methods can/cannot determine.<br><br>
+        <span style="color:#aa80ff;">Only VPE-001 (human blind test) is clean.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VALIDITY MAP -->
+<div class="section" id="validity">
+  <div class="sec-label">Validity Map — Five Categories</div>
+  <h2>A / B / C / D / E — Complete Picture</h2>
+  <p class="sec-desc">Full classification of all claims and findings by evidential status.</p>
+
+  <div class="vmap">
+    <div class="vmap-cell">
+      <div class="vmap-label" style="color:var(--green);">A — Supported ✓</div>
+      <div class="vmap-item" style="color:var(--green);">✓ LUXVAR has 801 stable unique roots</div>
+      <div class="vmap-item" style="color:var(--green);">✓ Morphological structure non-random (z=4.36, p&lt;0.001)</div>
+      <div class="vmap-item" style="color:var(--green);">✓ QMSG injection detectable blind (chi2=90,981, rank-1/8)</div>
+      <div class="vmap-item" style="color:var(--green);">✓ Information leakage confirmed (Δ=+0.833, z=6.504)</div>
+      <div class="vmap-item" style="color:var(--green);">✓ Generic graph topology is axis-blind (clean acc=0.000)</div>
+      <div class="vmap-item" style="color:var(--green);">✓ Pipeline detects its own circularity</div>
+      <div class="vmap-item" style="color:var(--green);">✓ Failure injection/repair engine works</div>
+    </div>
+    <div class="vmap-cell">
+      <div class="vmap-label" style="color:var(--red);">B — Not Supported ✗</div>
+      <div class="vmap-item" style="color:var(--red);">✗ Morphology predicts axis (acc=0.40, p=0.633 — ns)</div>
+      <div class="vmap-item" style="color:var(--red);">✗ Root→Frequency V=0.003 (negligible)</div>
+      <div class="vmap-item" style="color:var(--red);">✗ Root→Field V=0.003 (negligible)</div>
+      <div class="vmap-item" style="color:var(--red);">✗ Hexacore as emergent k=5/6 (natural k=3)</div>
+      <div class="vmap-item" style="color:var(--red);">✗ ETFM distinguishable from morphology-only (tied)</div>
+    </div>
+    <div class="vmap-cell">
+      <div class="vmap-label" style="color:var(--purple);">C — Not Yet Tested ❓</div>
+      <div class="vmap-item" style="color:var(--purple);">❓ Cognitive validity of Hexacore axes (VPE-001)</div>
+      <div class="vmap-item" style="color:var(--purple);">❓ Inter-subjective axis classification (κ ≥ 0.40?)</div>
+      <div class="vmap-item" style="color:var(--purple);">❓ ETFM-POST superiority over morphology (VBE-002)</div>
+      <div class="vmap-item" style="color:var(--purple);">❓ Cross-language axis transfer (VBE-003)</div>
+      <div class="vmap-item" style="color:var(--purple);">❓ 474Hz perceptual effect vs 432Hz/528Hz/random</div>
+    </div>
+    <div class="vmap-cell">
+      <div class="vmap-label" style="color:var(--muted);">D — Untestable / E — Not Designed</div>
+      <div class="vmap-item">D: Physical field reality of ETFM</div>
+      <div class="vmap-item">D: Consciousness field effects</div>
+      <div class="vmap-item">D: LUXVAR universality beyond design</div>
+      <div class="vmap-item">E: VBE-003 cross-language transfer</div>
+      <div class="vmap-item">E: MET-001 meaning emergence from graph</div>
+      <div class="vmap-item">E: VBE-Ω real LLM comparison</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT POSITION -->
+<div class="section" id="position">
+  <div class="sec-label">Joint Assessment · 2026-06-12</div>
+  <h2>Project Position — Three-Layer Map</h2>
+  <p class="sec-desc">Not failure, not proof — a precise map of what is known, open, and hypothetical.</p>
+
+  <div class="info-box"><strong>Key insight:</strong> VARZIN is no longer asking "does anything exist?" It is now asking "exactly what exists?" — a more valuable and rarer position.</div>
+
+  <div class="three">
+    <div class="card ok">
+      <div class="card-label">Layer 1 — Proven</div>
+      <div class="card-val vg" style="font-size:16px;">Computational Facts</div>
+      <div class="card-body" style="margin-top:10px;font-family:var(--mono);font-size:10px;line-height:2.0;">
+        ✓ 801 roots · non-random structure<br>
+        ✓ QMSG detectable · chi2=90,981<br>
+        ✓ Leakage Δ=+0.833 confirmed<br>
+        ✓ Hexacore morphology: REJECTED<br>
+        ✓ Pipeline falsifies itself<br>
+        ✓ Phonotactic fingerprint distinctive (GEN-003R+) · uniqueness=0.738 [0.703–0.781]<br>
+        ✓ LUXVAR ≠ Esperanto/Lojban/Toki Pona/EN/DE/FA · cross-acc≈50%<br>
+        ✓ Morpheme families recoverable (VPE-001B) · ELUZ/SHA/NAR<br>
+        ✓ 3 AIs converge independently on morpheme families · inter-AI ARI=0.26<br>
+        ✓ Computational boundary confirmed · H/H_max=0.9995 · V&lt;0.02
+      </div>
+    </div>
+    <div class="card warn">
+      <div class="card-label">Layer 2 — Open</div>
+      <div class="card-val vo" style="font-size:16px;">Human Perception</div>
+      <div class="card-body" style="margin-top:10px;font-family:var(--mono);font-size:10px;line-height:2.0;">
+        ❓ VPE-001 κ ≥ 0.40?<br>
+        ❓ Blind raters see axes?<br>
+        ❓ ETFM > morphology?<br>
+        ❓ Cross-language transfer?<br>
+        ❓ 474Hz perceptual effect?
+      </div>
+    </div>
+    <div class="card fail">
+      <div class="card-label">Layer 3 — Hypothetical</div>
+      <div class="card-val vr" style="font-size:16px;">No Evidence Yet</div>
+      <div class="card-body" style="margin-top:10px;font-family:var(--mono);font-size:10px;line-height:2.0;">
+        ✗ ETFM as physical field<br>
+        ✗ Frequency–meaning link<br>
+        ✗ Consciousness effects<br>
+        ✗ LUXVAR universality<br>
+        ✗ ELŪZ–MAHAR as network
+      </div>
+    </div>
+  </div>
+
+  <h3>The Real Asset</h3>
+  <div style="background:var(--bg);color:#e0f0f4;border-radius:4px;padding:24px 28px;margin:16px 0;line-height:1.9;font-size:13px;">
+    <p>The biggest asset is not the Hexacore. Not the QMSG. Not the 1.3 billion rows.</p>
+    <p style="color:#6a8090;margin-top:12px;">The biggest asset is the <strong style="color:#e0f0f4;">machine built to evaluate LUXVAR</strong> — including when LUXVAR is wrong. Most symbolic projects build a theory. Very few build the tool to reject their own theory. VARZIN has that tool now.</p>
+    <p style="color:#6a8090;margin-top:12px;">The pipeline found leakage, rejected Hexacore emergence, and returned acc=0.000 for blind topology — all against the expected direction. This is scientific behavior.</p>
+    <div style="margin-top:16px;padding:12px 16px;background:rgba(0,184,204,.08);border:1px solid rgba(0,184,204,.2);border-radius:3px;font-family:var(--mono);font-size:10px;color:#00b8cc;line-height:1.9;">
+      Current value: solid independent research framework · strong methodology · publishable as Preprint<br>
+      Not yet: empirically validated theory · accepted cognitive model<br>
+      Path forward: <strong>VPE-001 with ≥5 independent blind raters</strong>
+    </div>
+  </div>
+
+  <h3>Why More Computation Won't Help</h3>
+  <div style="background:var(--dim);border-radius:4px;padding:16px 20px;font-family:var(--mono);font-size:11px;line-height:2.0;border-left:3px solid var(--cyan);">
+    The 1.3B scan hit the computational ceiling — not because of data limits, but because of the problem itself.<br>
+    Any feature that predicts axis membership was placed there by the designer → confirms design choices, not semantic emergence.<br>
+    <strong>10B rows: k still = 3, V still ≈ 0.003. Smaller p-value, same effect size.</strong><br>
+    The only exit is human perception (VPE-001).
+  </div>
+</div>
+
+<!-- 474Hz -->
+<div class="section" id="freq474">
+  <div class="sec-label">Open Hypothesis · 474Hz</div>
+  <h2>474Hz — Most Important Remaining Variable</h2>
+  <p class="sec-desc">The most important untested hypothesis, not the most important proven finding.</p>
+
+  <div class="warn-box"><strong>Current status:</strong> 474Hz marker is detectable in the generator corpus (QMSG chi2=90,981). What is NOT confirmed: that 474Hz has a measurable effect on human perception distinguishable from 432Hz, 528Hz, or random frequency.</div>
+
+  <div class="two">
+    <div>
+      <h3>What Is Confirmed</h3>
+      <table class="dtable">
+        <tr><th>Claim</th><th>Status</th></tr>
+        <tr><td>Generator injects 474Hz marker every 100k layers</td><td class="td-ok">✓ CONFIRMED</td></tr>
+        <tr><td>Marker detectable blind (chi2=90,981, rank-1/8)</td><td class="td-ok">✓ CONFIRMED</td></tr>
+        <tr><td>Harmonic multiples (200k, 500k) also detected</td><td class="td-ok">✓ CONFIRMED</td></tr>
+        <tr><td>474Hz affects human perception differently than 432Hz</td><td class="td-fail">✗ NOT TESTED</td></tr>
+        <tr><td>474Hz produces measurable cognitive difference vs random</td><td class="td-fail">✗ NOT TESTED</td></tr>
+        <tr><td>474Hz has any effect independent of design choice</td><td class="td-fail">✗ NOT TESTED</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>The Golden Experiment</h3>
+      <div style="background:var(--bg);color:#e0f0f4;border-radius:4px;padding:20px;font-family:var(--mono);font-size:10px;line-height:2.2;">
+        <div style="color:var(--gold);font-weight:700;margin-bottom:8px;">4 BLIND GROUPS:</div>
+        A · 474 Hz (KALTŪR)<br>
+        B · 432 Hz (universal harmony)<br>
+        C · 528 Hz (transformation)<br>
+        D · Random frequency<br><br>
+        <div style="color:var(--cyan);font-weight:700;margin-bottom:4px;">TASKS (ALL BLIND):</div>
+        · Word generation under each frequency<br>
+        · Human semantic classification<br>
+        · Memory retention test<br>
+        · Semantic association rating<br><br>
+        <span style="color:#4ac87a;">If 474Hz wins → first empirical evidence</span><br>
+        <span style="color:#e05a4a;">If not → architectural role only</span><br>
+        <span style="color:#aa80ff;">Both outcomes are scientifically valuable.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VPE-001 -->
+<div class="section" id="vpe001">
+  <div class="sec-label">VPE-001 · The Only Remaining Non-Circular Test</div>
+  <h2>Blind Rating Protocol — Pre-Registered</h2>
+  <p class="sec-desc">The only test that can distinguish an ontology that describes a real pattern from one that creates the pattern it claims to describe.</p>
+
+  <div class="two">
+    <div>
+      <table class="dtable">
+        <tr><th>Parameter</th><th>Value</th></tr>
+        <tr><td>Task</td><td>Classify 30 Core-30 words into 5 axes</td></tr>
+        <tr><td>Raters</td><td>≥ 5 independent, blind to LUXVAR</td></tr>
+        <tr><td>Prior</td><td>NONE — no VARZIN knowledge allowed</td></tr>
+        <tr><td>Metric</td><td>Fleiss κ (multi-rater agreement)</td></tr>
+        <tr><td>Seed</td><td>130,474,528 (fixed, pre-registered)</td></tr>
+        <tr><td>Blocker</td><td>KB imbalance (Path B review pending)</td></tr>
+      </table>
+      <div class="ok-box"><strong>Pre-registered thresholds:</strong><br>
+        κ ≥ 0.50 → STRONG — axes inter-subjectively valid<br>
+        κ ≥ 0.40 → PRIMARY — minimum for publication<br>
+        κ 0.20–0.40 → MARGINAL — revise and retry<br>
+        κ &lt; 0.20 → FAIL — axes idiosyncratic
+      </div>
+    </div>
+    <div>
+      <h3>KB Imbalance — Blocker</h3>
+      <table class="dtable">
+        <tr><th>Axis</th><th>KB Entries</th><th>Status</th></tr>
+        <tr><td>Light</td><td class="td-r">1,443</td><td class="td-ok">✓ OK</td></tr>
+        <tr><td>Motion</td><td class="td-r">1,356</td><td class="td-ok">✓ OK</td></tr>
+        <tr><td>Mirror</td><td class="td-r">616</td><td class="td-ok">✓ OK</td></tr>
+        <tr><td>Gate</td><td class="td-r">17</td><td class="td-fail">✗ CRITICAL</td></tr>
+        <tr><td>Silence</td><td class="td-r">3</td><td class="td-fail">✗ CRITICAL</td></tr>
+        <tr><td>Reflection</td><td class="td-r">2</td><td class="td-fail">✗ CRITICAL</td></tr>
+      </table>
+      <div class="err-box"><strong>Path B review required:</strong> 90-entry batch (30 per axis) must be reviewed and accepted (≥70%) before VPE-001 can begin.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ROADMAP -->
+<div class="section" id="roadmap">
+  <div class="sec-label">Roadmap</div>
+  <h2>Complete Project Roadmap</h2>
+
+  <table class="dtable">
+    <tr><th>Stage</th><th>Status</th><th>What It Proves</th></tr>
+    <tr><td>Initial idea + framework</td><td class="td-ok">✓ DONE</td><td>Internal consistency</td></tr>
+    <tr><td>LUXVAR corpus built (801 roots)</td><td class="td-ok">✓ DONE</td><td>Non-random morphological structure (z=4.36)</td></tr>
+    <tr><td>VCORE-014→025 computational engine</td><td class="td-ok">✓ DONE</td><td>Formal model · failure injection · Core-6</td></tr>
+    <tr><td>1.3B Final Truth Lab</td><td class="td-ok">✓ DONE</td><td>k=3 · V=0.003 · leakage Δ=+0.833 · boundary mapped</td></tr>
+    <tr><td>VBE-001 benchmark series</td><td class="td-ok">✓ DONE</td><td>ETFM tied with morphology · leakage confirmed</td></tr>
+    <tr><td>Computational boundary mapped</td><td class="td-ok">✓ DONE</td><td>Clear A/B/C/D/E validity classification</td></tr>
+    <tr><td>Path B KB review (90 entries)</td><td class="td-warn">⏳ NEXT</td><td>Prerequisite for VPE-001</td></tr>
+    <tr><td>VPE-001 execution (≥5 raters)</td><td class="td-fail">⏳ PENDING</td><td>Inter-subjective axis validity</td></tr>
+    <tr><td>474Hz golden experiment</td><td class="td-fail">⏳ NOT DESIGNED</td><td>Frequency-specific cognitive effect</td></tr>
+    <tr><td>VBE-002 (ETFM vs morphology)</td><td class="td-fail">⏳ BLOCKED</td><td>ETFM architectural update needed first</td></tr>
+    <tr><td>VBE-003 cross-language (Esperanto/Lojban)</td><td class="td-fail">⏳ NOT DESIGNED</td><td>LUXVAR advantage over other constructed languages</td></tr>
+    <tr><td>Preprint / White Paper submission</td><td class="td-fail">⏳ NOT STARTED</td><td>Peer-reviewed validation</td></tr>
+  </table>
+
+  <div style="margin-top:28px;background:var(--bg);border-radius:4px;padding:24px 28px;">
+    <div style="font-family:var(--mono);font-size:9px;color:var(--cyan);margin-bottom:12px;letter-spacing:2px;">FINAL SCIENTIFIC BOUNDARY — MASTER REPORT v3 · 2026-06-12</div>
+    <p style="color:#6a8090;font-size:12px;line-height:1.9;">
+      The present model is: <strong style="color:#e0f0f4;">formal · symbolic-computational · internally testable · internally falsifiable · pre-empirical.</strong><br>
+      It is NOT: an experimental proof of a physical field, consciousness field, new force, or biological effect.<br>
+      LUXVAR has statistically significant morphological structure (z=4.36). Natural k=3 (1.3B scan). Hexacore k=5/6 NOT confirmed. Root→Frequency V≈0.003 (negligible). Morphology acc=0.40 (p=0.633, ns). Graph clean acc=0.000. Graph leakage acc=0.833 (Δ=+0.833) — leakage confirmed. Hexacore remains an ontology under investigation. VPE-001 is the only remaining non-circular test.<br><br>
+      <strong style="color:var(--gold);">Next required step: VPE-001 execution with ≥5 independent blind raters.</strong>
+    </p>
+  </div>
+</div>
+
+
+  <!-- Phase II Summary — added 2026-06-14 -->
+  <div style="margin:48px 40px 0;padding:28px 32px;border-radius:8px;
+    background:rgba(0,212,232,0.04);border:1px solid rgba(0,212,232,0.2);">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;
+      color:#00d4e8;text-transform:uppercase;margin-bottom:16px;">
+      Phase II — Computational Results Complete · 2026-06-14
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;
+      font-family:var(--mono);font-size:10px;line-height:2.0;">
+      <div>
+        <div style="color:#44ff88;margin-bottom:6px;">✓ PHONOTACTIC (GEN-001→GEN-003R+)</div>
+        GEN-001: 98.9% CV accuracy · Δmajority=+32%<br>
+        GEN-003R+: uniqueness=0.738 [0.703,0.781]<br>
+        Cross-acc LUXVAR→Lojban=50% (near chance)<br>
+        <span style="color:#aaa;">LUXVAR has distinctive phonotactic fingerprint</span>
+      </div>
+      <div>
+        <div style="color:#ffcc00;margin-bottom:6px;">⚠ SEMANTIC (SEM-001/002)</div>
+        SEM-001: No string-level axis signal<br>
+        SEM-002: 1/4 graph tests positive (criterion: ≥2/4)<br>
+        T4 frequency prediction: Δmaj=−1.4%<br>
+        <span style="color:#aaa;">Semantic axes not recoverable from strings/graphs</span>
+      </div>
+      <div>
+        <div style="color:#00d4e8;margin-bottom:6px;">✓ VPE-001B — AI CLUSTERING</div>
+        Mean ARI vs axes: 0.13 (low)<br>
+        Inter-AI ARI: 0.26 (moderate)<br>
+        ELUZ/SHA/NAR families: all 3 models converge<br>
+        <span style="color:#aaa;">Row 2: models agree with each other, not with axes</span>
+      </div>
+      <div>
+        <div style="color:#dd3322;margin-bottom:6px;">⏳ PENDING — VPE-001A</div>
+        ≥5 blind human raters · Core-30 words<br>
+        Fleiss κ threshold: ≥0.40 (primary)<br>
+        Key question: morpheme families or semantic axes?<br>
+        <span style="color:#aaa;">Only remaining non-circular test</span>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding-top:12px;border-top:1px solid rgba(0,212,232,0.15);
+      font-size:10px;color:rgba(200,232,238,0.6);">
+      Computational boundary: phonotactic layer → detectable ·
+      semantic layer → not detectable · H/H_max=0.9995
+    </div>
+  </div>
+
+<footer>
+  © 2025–2026 VARZIN Project · Reza Nirouyar · ORCID: 0009-0000-4690-6842<br>
+  <span style="color:#2a4050;">Master Report v3 · GEN-003R+ · SEM-001/002 · VPE-001B · 2026-06-14</span><br>
+  <span style="color:#1a3040;">Symbolic-experimental · Level 0 · Pre-Empirical · Core-30 30/30 · VPE-001 pending</span>
+</footer>
+
+</div><!-- /main -->
+
+<script>
+// Scrollspy
+const navLinks=document.querySelectorAll('.nav-a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  document.querySelectorAll('[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});
+  navLinks.forEach(l=>{l.classList.toggle('active',l.getAttribute('href')==='#'+cur);});
+},{passive:true});
+
+// Elbow bars
+function buildElbow(){
+  const row=document.getElementById('elbowBars');
+  if(!row)return;
+  const data=[
+    {k:3,drop:11.15,best:true},{k:4,drop:10.82,best:false},
+    {k:5,drop:6.92,best:false},{k:6,drop:-1.07,neg:true},{k:7,drop:5.44,best:false}
+  ];
+  const max=12;
+  data.forEach(d=>{
+    const bar=document.createElement('div');
+    const pct=Math.max(0,d.drop)/max*100;
+    bar.className='eb-bar'+(d.best?' best':d.neg?' neg':'');
+    bar.style.height=pct+'%';
+    const span=document.createElement('span');
+    span.className='eb-val';
+    span.textContent=d.drop+'%';
+    bar.appendChild(span);
+    row.appendChild(bar);
+  });
+}
+window.addEventListener('load',buildElbow);
+</script>
+</body>
+</html>
