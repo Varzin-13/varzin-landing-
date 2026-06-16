@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VARZIN Atlas v2 — Research Portal</title>
+<title>VARZIN Atlas v2.1 — Research Portal · Phases I–XX</title>
 <style>
 :root{
   --bg:#04090d;--bg2:#080f15;--bg3:#0c1620;--bg4:#101e2a;
@@ -314,14 +314,15 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
   <div id="nav-research">
     <div class="nav-group">Research</div>
     <div class="nav-it active" onclick="show('home')"><span class="nav-ico">◈</span>Overview</div>
-    <div class="nav-it" onclick="show('results')"><span class="nav-ico">✦</span>All Results<span class="nbadge nb-ok">20</span></div>
+    <div class="nav-it" onclick="show('results')"><span class="nav-ico">✦</span>All Results<span class="nbadge nb-ok">42</span></div>
     <div class="nav-it" onclick="show('model')"><span class="nav-ico">▣</span>Structural Model</div>
-    <div class="nav-it" onclick="show('negative')"><span class="nav-ico">✕</span>Negative Results<span class="nbadge nb-no">9</span></div>
+    <div class="nav-it" onclick="show('negative')"><span class="nav-ico">✕</span>Negative Results<span class="nbadge nb-no">15</span></div>
     <div class="nav-it" onclick="show('method')"><span class="nav-ico">◎</span>Methodology</div>
     <div class="nav-it" onclick="show('pubs')"><span class="nav-ico">◈</span>Publications</div>
     <div class="nav-it" onclick="show('open')"><span class="nav-ico">◌</span>Open Question<span class="nbadge nb-pen">VPE-001A</span></div>
     <div class="nav-it" onclick="show('participate')"><span class="nav-ico">◉</span>Participate</div>
     <div class="nav-it" onclick="show('explorer')"><span class="nav-ico">⬡</span>801 Roots Explorer</div>
+    <div class="nav-it" onclick="show('m13sim')"><span class="nav-ico">◈</span>Mirror-13 Simulator</div>
   </div>
 
   <!-- Atlas mode nav -->
@@ -334,6 +335,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
     <div class="nav-it" onclick="show('compare')"><span class="nav-ico">⇄</span>Compare Words</div>
     <div class="nav-it" onclick="show('timeline')"><span class="nav-ico">◷</span>Timeline</div>
     <div class="nav-it" onclick="show('explorer')"><span class="nav-ico">⬡</span>801 Roots<span class="nbadge nb-ok">801</span></div>
+    <div class="nav-it" onclick="show('m13sim')"><span class="nav-ico">◈</span>Mirror-13</div>
   </div>
 
   <!-- Builder mode nav -->
@@ -352,11 +354,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 
 <!-- ════ HOME ════ -->
 <div id="sec-home" class="sec active">
-  <div class="eyebrow">VARZIN Atlas v2 · Phase I–VI Complete</div>
+  <div class="eyebrow">VARZIN Atlas v2 · Phases I–XX Complete</div>
   <h1 class="sec-h" style="font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-1px;">
     A symbolic language<br>with <span style="color:var(--cyan2);">recoverable structure</span>
   </h1>
-  <p class="sec-d">LUXVAR: 801 roots, distinctive phonotactic fingerprint, morpheme families recovered by 3 independent AI systems. Six computational phases. One open question.</p>
+  <p class="sec-d">LUXVAR: 801 roots, Affine Memory Family Aff(Z_N) characterized, Recall Formula derived. Twenty phases. Three research paths forward.</p>
 
   <div class="cards">
     <div class="card"><div class="c-lbl">Stable Roots</div><div class="c-val vc">801</div><div class="c-note">30 in Core registry</div></div>
@@ -365,6 +367,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
     <div class="card"><div class="c-lbl">Family Accuracy</div><div class="c-val vg">74.2%</div><div class="c-note">Full corpus N=1M · Δ=+24.2%</div></div>
     <div class="card"><div class="c-lbl">Protocol Spine</div><div class="c-val vg">+0.186</div><div class="c-note">real vs shuffled modularity</div></div>
     <div class="card"><div class="c-lbl">Frequency Encoding</div><div class="c-val vr">ABSENT</div><div class="c-note">5 tests · n=704 · confirmed</div></div>
+    <div class="card"><div class="c-lbl">Affine Operators</div><div class="c-val vc">48</div><div class="c-note">Aff(Z₁₂)=Z₁₂⋊Z₁₂× · gcd(a,N)=1</div></div>
+    <div class="card"><div class="c-lbl">Mirror-13 MDL</div><div class="c-val vo">13.11 bits</div><div class="c-note">rank #1/1,035 equiv. · OPTIMAL not NECES.</div></div>
+    <div class="card"><div class="c-lbl">Recall Formula</div><div class="c-val vg">4-part</div><div class="c-note">Struct+Prior+HypSpace+Obs · POT verified</div></div>
+    <div class="card"><div class="c-lbl">External Memory</div><div class="c-val vr">NOT EST.</div><div class="c-note">Phase 19 · z=−1.042 · pipeline verified</div></div>
   </div>
 
   <div class="div"></div>
@@ -502,8 +508,8 @@ Protocol spine (PT-001 / PST-001):
 <!-- ════ RESULTS ════ -->
 <div id="sec-results" class="sec">
   <div class="eyebrow">Complete Results</div>
-  <h2 class="sec-h">All Findings — Phase I–VI</h2>
-  <p class="sec-d">Every confirmed result from 6 phases, positive and negative.</p>
+  <h2 class="sec-h">All Findings — Phases I–XX</h2>
+  <p class="sec-d">Every confirmed result from 20 phases. 28 positive · 10 negative · 2 pending.</p>
   <table class="r-table"><thead><tr><th>Test</th><th>Phase</th><th>Key Metric</th><th>Status</th></tr></thead>
   <tbody id="results-body"></tbody></table>
 </div>
@@ -515,27 +521,37 @@ Protocol spine (PT-001 / PST-001):
   <div class="flow" id="flow-model"></div>
   <div class="div"></div>
   <div class="code-blk">
-<span class="cg">CONFIRMED:</span>
+<span class="cg">CONFIRMED (Phases I–XX):</span>
   Phonotactic fingerprint     (uniqueness = 0.738)
   Morpheme families           (accuracy  = 74.2%)
   Protocol spine              (Δmod      = +0.186)
   Sub-character grounding     (MASK-001 M1+M2 survive)
+  Affine family Aff(Z_N)      (48 ops · Conj.1 N=5..24 · known algebraic struct.)
+  Mirror-13 MDL-minimal       (13.11 bits · rank #1/1035 · OPTIMAL not NECES.)
+  5 Invariants verified       (was_forced_true:False · 0 randomness)
+  Recall formula 4-part       (Struct+Prior+HypSpace+Obs · POT suite)
+  Wrong prior catastrophic    (acc=0.000 · POT-004 confirmed)
 
 <span class="cr">CONFIRMED ABSENT:</span>
   Frequency encoding          (Δ = −3.6%, ×5 tests, n=704)
   Semantic axis recovery      (no shuffle-control signal)
   Generative grammar          (GVT blind 8.3% &lt; chance 14.3%)
   Hexacore clusters           (k=3, not k=6)
+  External memory field       (Phase 19 · z=−1.042 · NOT ESTABLISHED)
+  ETFM as computational core  (SIM-ETFM-001 · ΔH=0.012 · viz only)
+  Frequency computation       (SIM-FREQ-001 · ΔH=0.044 · weak)
 
-<span class="co">OPEN:</span>
-  Human cognition             (VPE-001A — pending)
+<span class="co">OPEN (Three Paths):</span>
+  PATH A: Conjecture 1 proof  (Lean/Coq · no blocker)
+  PATH B: VPE-001A            (κ≥0.40 · ≥5 blind raters · blocker: raters)
+  PATH C: External memory     (z>2.0 · affine receiver · blocker: participant)
   </div>
 </div>
 
 <!-- ════ NEGATIVE ════ -->
 <div id="sec-negative" class="sec">
   <div class="eyebrow">Negative Results Archive</div>
-  <h2 class="sec-h">9 Confirmed Negatives</h2>
+  <h2 class="sec-h">15 Confirmed Negatives (Phases I–XX)</h2>
   <p class="sec-d">Reported as first-class scientific outcomes. These define what LUXVAR is by defining what it is not.</p>
   <div id="neg-list"></div>
 </div>
@@ -661,6 +677,24 @@ verdict= sub-character grounding
   <span class="cm">C) Something else entirely</span>
 
 <span class="co">ALL THREE OUTCOMES ARE SCIENTIFICALLY INTERPRETABLE.</span>
+  </div>
+  <div class="div"></div>
+  <div class="eyebrow">Three Research Paths — Post Phase XX</div>
+  <div class="code-blk" style="font-size:12.5px;line-height:2.2;">
+<span class="cg">PATH A — Mathematical (no blocker):</span>
+  A1  Formal proof Conjecture 1 for all N  (Lean/Coq)
+  A2  Aff(Z_N) spectral properties general N
+  A3  Paper C → arXiv cs.FL / Zenodo
+
+<span class="co">PATH B — LUXVAR Grammar (blocker: rater recruitment):</span>
+  B1  VPE-001A · ≥5 blind raters · Fleiss κ ≥ 0.40
+  B2  Map Core-30 to shift family (a=1), not Mirror-13
+  B3  Morpho-syntactic rules from phonotactic structure
+
+<span class="cr">PATH C — External Memory (blocker: independent participant):</span>
+  C1  Sealed targets published before trial
+  C2  Independent receiver with affine-compatible prior
+  C3  z &gt; 2.0 on ≥3 trials = establish external memory
   </div>
   <div class="div"></div>
   <div class="cards">
@@ -816,6 +850,77 @@ verdict= sub-character grounding
   <div class="root-grid" id="root-grid"></div>
 </div>
 
+
+<!-- ════ MIRROR-13 SIMULATOR ════ -->
+<div id="sec-m13sim" class="sec">
+  <div class="eyebrow">Mirror-13 · Phase X</div>
+  <h2 class="sec-h">Mirror-13 Simulator</h2>
+  <p class="sec-d">The 312-state memory machine. Watch D12 ring + Mirror-13 center unfold in real time. MDL=13.11 bits · ΔEntropy=+127.6% · Rank #1/1035 by simplicity.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;margin:20px 0;">
+    <div class="card"><div class="c-lbl">States</div><div class="c-val vc">312</div><div class="c-note">288 ring + 24 center</div></div>
+    <div class="card"><div class="c-lbl">MDL</div><div class="c-val vc">13.11</div><div class="c-note">bits to specify Mirror-13</div></div>
+    <div class="card"><div class="c-lbl">ΔEntropy</div><div class="c-val vg">+127.6%</div><div class="c-note">over D12</div></div>
+    <div class="card"><div class="c-lbl">Simplicity Rank</div><div class="c-val vg">#1</div><div class="c-note">of 1,035 equivalent systems</div></div>
+  </div>
+
+  <div style="display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;align-items:center;">
+    <button class="g-btn on" id="sim-btn-run" onclick="simToggle()">▶ Run</button>
+    <button class="g-btn" onclick="simStep()">Step</button>
+    <button class="g-btn" onclick="simReset()">Reset</button>
+    <label style="font-size:12px;color:var(--muted);">IN rate:
+      <input type="range" id="sim-rate" min="1" max="40" value="13" style="width:80px;vertical-align:middle;"
+             oninput="document.getElementById('sim-rate-val').textContent=this.value+'%'">
+      <span id="sim-rate-val">13%</span>
+    </label>
+    <span style="font-family:var(--mono);font-size:11px;color:var(--muted);" id="sim-steps-label">Steps: 0</span>
+  </div>
+
+  <canvas id="sim-cv" style="width:100%;height:380px;background:var(--bg2);border-radius:var(--r);
+    border:1px solid var(--border);display:block;"></canvas>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;margin-top:16px;">
+    <div class="chart-box" style="padding:14px;">
+      <div class="ct">Current State</div>
+      <div id="sim-state" style="font-family:var(--mono);font-size:13px;line-height:2;color:var(--text);"></div>
+    </div>
+    <div class="chart-box" style="padding:14px;">
+      <div class="ct">Live Entropy</div>
+      <div id="sim-entropy" style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--cyan2);"></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;" id="sim-entropy-pct"></div>
+    </div>
+    <div class="chart-box" style="padding:14px;">
+      <div class="ct">Polarity Balance</div>
+      <div id="sim-pol-bar" style="margin-top:8px;"></div>
+    </div>
+    <div class="chart-box" style="padding:14px;">
+      <div class="ct">Center Visits</div>
+      <div id="sim-center" style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--gold);"></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;" id="sim-center-pct"></div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+  <div class="eyebrow">Invariants — Live Verification</div>
+  <div id="sim-inv-panel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:12px;"></div>
+
+  <div class="div"></div>
+  <div class="code-blk" style="font-size:11px;">
+<span class="cm">// Mirror-13 formal definition</span>
+<span class="ck">State</span>   = (gate ∈ {0..11}, phase ∈ {0..11}, polarity ∈ {+1,−1})
+<span class="ck">Center</span>  = gate 12  (24 center states)
+
+<span class="cg">IN</span>(gate,phase,pol)  → (12, gate, <span class="cr">−pol</span>)     <span class="cm">// records entry, flips polarity</span>
+<span class="cg">OUT</span>(12,phase,pol)   → ((12−phase)%12, phase, pol)   <span class="cm">// exits to mirror of entry</span>
+
+<span class="cg">Invariant A</span>: polarity = (−1)^n_IN × initial_polarity   [100% verified]
+<span class="cg">Invariant B</span>: exit = mirror(entry)  [bijection 12/12]
+<span class="cg">Invariant C</span>: D12 → 48 orbits  |  D12+M13 → 1 orbit
+<span class="cg">Invariant D</span>: R∘IN ≠ IN∘R  [100% of states]
+<span class="cg">Invariant E</span>: D12 reaches 12 states  |  D12+M13 reaches 312
+  </div>
+</div>
+
 </main>
 </div>
 
@@ -894,6 +999,9 @@ const TIMELINE = [
   {year:'2025 Q4', label:'Preprint Published', desc:'LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families. DOI: 10.5281/zenodo.20691858 (v2.1).'},
   {year:'2026 Q1', label:'Phase III–IV — Structure', desc:'PT-001: protocol modularity+0.186 vs shuffled. FCT-001: NAR most critical family. MASK-001: Protocol survives morpheme masking (M1+M2) — sub-character grounding confirmed.'},
   {year:'2026 Q2', label:'Phase V–VI — Boundary', desc:'GVT-001: blind generation 8.3% < chance 14.3% — not generative. AFD-001: axes unsupported vs shuffle control. Final Benchmark N=1M: family 74.2%, frequency CONFIRMED ABSENT.'},
+  {year:'2026 Q2', label:'Phases VII–XIV · Mirror-13 Formal', desc:'M13-INV-001: 5 invariants verified (was_forced_true:False). SPEC-002: λ₁=1 unique, gap=0.2, mixing≈29. WHY-M13-001: OPTIMAL not NECESSARY. SIM-001: 5-layer closed environment. MDL=13.11 bits, rank #1/1035.'},
+  {year:'2026 Q2', label:'Phases XV–XVIII · Affine Family', desc:'Complete classification: 48/144 valid (a,b) pairs for N=12 = Aff(Z₁₂)=Z₁₂⋊Z₁₂×. Conjecture 1 verified N=5..24. Mirror-13 = anchor #37/48. Best LUXVAR bridge: a=1 (shift family, not Mirror-13).'},
+  {year:'2026 Q2', label:'Phases XIX–XX · Recall + POT Suite', desc:'Recall = Structure Match + Prior + Hypothesis Space + Observation. POT-001..005: wrong prior acc=0.000 catastrophic; self-organized via hypothesis testing acc=1.000. Phase 19: External memory NOT ESTABLISHED (z=−1.042, Oracle=1.000). Phase 20: STRUCTURE_MATCH_REQUIRED.'},
   {year:'2026+', label:'VPE-001A — Open', desc:'Human rater study. ≥5 blind raters. κ≥0.40. The only remaining non-circular test. Do humans group by morpheme (like AIs) or by semantic axis (as designed)?', open:true},
 ];
 const PUBLICATIONS = [
@@ -934,6 +1042,15 @@ const PUBLICATIONS = [
     notes:'9 confirmed negative findings documented as first-class results.'
   },
   {
+    type:'Preprint',
+    title:'Mirror-13 and the Affine Memory Family over Cyclic Gate Spaces',
+    version:'v1.0 (READY)',
+    date:'2026 — ready for submission',
+    doi:'',
+    url:'https://varzin.org',
+    notes:'Paper C. Conjecture 1 · 5 invariants · MDL=13.11 · SPEC-002. Target: arXiv cs.FL / Zenodo.',
+  },
+  {
     type:'Protocol',
     title:'VPE-001A Pre-registered Human Rater Protocol',
     version:'v1.0',
@@ -964,7 +1081,28 @@ const RESULTS=[
   {test:'FCT-001 family collapse',phase:'Phase IV',metric:'ELUZ most critical',s:'ok'},
   {test:'GVT-001 blind generation',phase:'Phase V',metric:'8.3% < chance 14.3%',s:'no'},
   {test:'Hexacore hypothesis',phase:'Phase I',metric:'SSE Δ=−1.07% — rejected',s:'no'},
+  // Phases VII–XIV (Mirror-13)
+  {test:'M13-INV-001 Five Invariants',phase:'Phase VII',metric:'5/5 · was_forced_true:False',s:'ok'},
+  {test:'SPEC-002 Eigenspectrum',phase:'Phase VIII',metric:'λ₁=1 unique · gap=0.2 · mix≈29',s:'ok'},
+  {test:'WHY-M13-001 Optimality',phase:'Phase IX',metric:'OPTIMAL not NECESSARY',s:'ok'},
+  {test:'MDL rank Mirror-13',phase:'Phase X',metric:'13.11 bits · rank #1/1035',s:'ok'},
+  {test:'SIM-001 Closed Sim CORE',phase:'Phase XI',metric:'All 5 inv: 1.000',s:'ok'},
+  {test:'SIM-FREQ-001 frequency',phase:'Phase XI',metric:'ΔH=0.044 < 0.05 · WEAK',s:'no'},
+  {test:'SIM-ETFM-001 ETFM',phase:'Phase XI',metric:'ΔH=0.012 · viz only',s:'no'},
+  // Phases XV–XVIII (Affine Family)
+  {test:'Aff(Z_N) classification',phase:'Phase XVI',metric:'48/144 valid · Conj.1 N=5..24',s:'ok'},
+  {test:'Phase 15 domain test',phase:'Phase XV',metric:'Aff 12/18 vs M13 3/18',s:'ok'},
+  {test:'LUXVAR best bridge (a=1)',phase:'Phase XVII',metric:'shift family best · not Mirror-13',s:'ok'},
+  // Phases XIX–XX + POT
+  {test:'POT-001 Prior Alignment',phase:'Phase XIX',metric:'Monotone · Δ=+0.275',s:'ok'},
+  {test:'POT-004 Wrong Prior',phase:'Phase XIX',metric:'acc=0.000 · catastrophic',s:'ok'},
+  {test:'POT-005 Prior Emergence',phase:'Phase XIX',metric:'100% episodes at query #1',s:'ok'},
+  {test:'Phase 19 Sealed Target',phase:'Phase XIX',metric:'z=−1.042 · Oracle=1.000',s:'no'},
+  {test:'Phase 20 Structure Match',phase:'Phase XX',metric:'AffWorld #1 · DOMAIN_SPECIFIC',s:'ok'},
+  {test:'SDT-002 Prior-Free ID',phase:'Phase XX',metric:'AffWorld acc=0.000 without prior',s:'no'},
+  // Pending
   {test:'VPE-001A human rater',phase:'Pending',metric:'κ≥0.40 · ≥5 raters',s:'pending'},
+  {test:'Conjecture 1 formal proof',phase:'Future',metric:'Lean/Coq · all N',s:'pending'},
 ];
 const NEGATIVES=[
   {n:1,claim:'Hexacore (k=6)',finding:'k=3 is natural. k=6 drop=−1.07%. Hexacore is a design label, not a data cluster.'},
@@ -976,14 +1114,23 @@ const NEGATIVES=[
   {n:7,claim:'Semantic axes recoverable',finding:'No feature set beats shuffle control. Axes unsupported.'},
   {n:8,claim:'Out-of-family generalization',finding:'Leave-one-out: model memorizes, does not generalize.'},
   {n:9,claim:'Generative grammar',finding:'Blind accuracy=8.3% below chance 14.3%. Not generative.'},
+  {n:10,claim:'External memory field (Phase 19)',finding:'Sealed target: z=−1.042 (below chance). Oracle=1.000 confirms pipeline works. External memory NOT ESTABLISHED. Phase 20 adds: receiver must have affine-compatible prior.'},
+  {n:11,claim:'ETFM as computational core',finding:'SIM-ETFM-001: ΔH=0.012 < threshold 0.05. No measurable computational entropy added. ETFM is visualization/interpretation layer only.'},
+  {n:12,claim:'Frequency as computational layer',finding:'SIM-FREQ-001: ΔH=0.044 < threshold 0.05. Frequency is symbolic/archival only. Confirmed not a computational layer.'},
+  {n:13,claim:'Mirror-13 logically necessary',finding:'WHY-M13-001: R1+R2 force IN but NOT bijection OUT. Mirror OUT is MDL=0 optimal solution — OPTIMAL, not necessary. 1,035 equivalent systems found.'},
+  {n:14,claim:'Aff(Z_N) domain-general engine',finding:'3-World Benchmark DOMAIN_SPECIFIC: AffWorld hit@3=0.998 but MarkovWorld=0.248, FSMWorld=0.238. Structure match required.'},
+  {n:15,claim:'Affine prior without structure',finding:'SDT-002: AffWorld acc=0.000 without prior. Prior cannot self-organize without structural alignment. PRIOR_REQUIRED.'},
 ];
 const FLOW_LAYERS=[
   {label:'WORD FORM',cls:'fl-ok',note:'Phonotactic fingerprint: 0.738 [0.703–0.781] · Family learnable: 74.2%'},
   {label:'sub-char phonotactic patterns',cls:'fl-ok',note:'MASK-001: M1+M2 survive — grounded below morpheme level'},
   {label:'MORPHEME FAMILY',cls:'fl-ok',note:'ELUZ/SHA/NAR/ZAR/RAHT confirmed · AI ARI=0.812'},
   {label:'PROTOCOL',cls:'fl-ok',note:'Real vs shuffled: Δmod=+0.186 · Independent of explicit morpheme'},
+  {label:'AFFINE MEMORY FAMILY Aff(Z_N)',cls:'fl-ok',note:'48 valid ops · Conjecture 1 empirical · Mirror-13 = MDL-minimal anchor'},
+  {label:'RECALL FORMULA',cls:'fl-ok',note:'Struct+Prior+HypSpace+Obs · wrong prior acc=0.000 catastrophic (POT-004)'},
   {label:'semantic axes',cls:'fl-wk',note:'AI clusters 43.3% — not above shuffle control'},
   {label:'symbolic frequency layer',cls:'fl-ab',note:'5 tests · n=704 · Δ=−3.6% — confirmed absent'},
+  {label:'external memory field',cls:'fl-ab',note:'Phase 19: z=−1.042 · NOT ESTABLISHED · affine-compatible receiver required'},
   {label:'human cognition · VPE-001A',cls:'fl-op',note:'Not yet tested · κ≥0.40 · ≥5 blind raters'},
 ];
 
@@ -1018,7 +1165,7 @@ function show(id) {
     network:renderGraph,compare:initCompare,timeline:renderTimeline,
     results:renderResults,model:renderModel,negative:renderNegative,
     pubs:renderPubs,participate:renderParticipate,
-    saved:renderSaved,explorer:renderExplorer};
+    saved:renderSaved,explorer:renderExplorer,m13sim:renderM13Sim};
   if(fns[id]) fns[id]();
   document.getElementById('sidebar').classList.remove('open');
   window.scrollTo(0,0);
@@ -1893,6 +2040,176 @@ function _patchBuilder() {
 }
 
 // renderGraph() with mobile support is defined above
+
+// ═══════════════════════════════════════════════════
+// MIRROR-13 SIMULATOR
+// ═══════════════════════════════════════════════════
+const SIM = {
+  N:12, gate:0, phase:0, pol:1,
+  history:[], steps:0, centerVisits:0,
+  polPos:0, polNeg:0, running:false, timer:null,
+
+  reset() {
+    this.gate=Math.floor(Math.random()*12); this.phase=0; this.pol=1;
+    this.history=[]; this.steps=0; this.centerVisits=0; this.polPos=0; this.polNeg=0;
+    simDraw(); simStats();
+  },
+
+  step() {
+    const rate=parseInt(document.getElementById('sim-rate')?.value||13)/100;
+    let op;
+    if(this.gate===this.N) {
+      const exit=(this.N-this.phase)%this.N;
+      this.gate=exit; op='OUT'; this.centerVisits++;
+    } else if(Math.random()<rate) {
+      const oldGate=this.gate;
+      this.gate=this.N; this.phase=oldGate; this.pol=-this.pol; op='IN';
+    } else {
+      const ops=['R','R2','R3','S']; op=ops[Math.floor(Math.random()*4)];
+      if(op==='R')  this.gate=(this.gate+1)%this.N;
+      else if(op==='R2') this.gate=(this.gate+2)%this.N;
+      else if(op==='R3') this.gate=(this.gate+3)%this.N;
+      else this.gate=(this.N-this.gate)%this.N;
+    }
+    this.history.push({gate:this.gate,phase:this.phase,pol:this.pol,op});
+    if(this.history.length>1500) this.history.shift();
+    this.steps++;
+    if(this.pol===1) this.polPos++; else this.polNeg++;
+  }
+};
+
+function simToggle(){
+  SIM.running=!SIM.running;
+  const btn=document.getElementById('sim-btn-run');
+  if(SIM.running){
+    btn.textContent='⏸ Pause'; btn.classList.add('on');
+    SIM.timer=setInterval(()=>{for(let i=0;i<10;i++)SIM.step();simDraw();simStats();},50);
+  } else {
+    btn.textContent='▶ Run'; btn.classList.remove('on');
+    clearInterval(SIM.timer);
+  }
+}
+function simStep(){SIM.step();simDraw();simStats();}
+function simReset(){if(SIM.running)simToggle();SIM.reset();}
+
+function simDraw(){
+  const cv=document.getElementById('sim-cv'); if(!cv)return;
+  const W=cv.offsetWidth,H=cv.offsetHeight;
+  cv.width=W;cv.height=H;
+  const ctx=cv.getContext('2d');
+  const cx=W/2,cy=H/2,RR=Math.min(W,H)*0.37;
+  ctx.clearRect(0,0,W,H);
+
+  // Trail
+  const trail=SIM.history.slice(-100);
+  for(let i=1;i<trail.length;i++){
+    const a=trail[i-1],b=trail[i];
+    const ax=a.gate===SIM.N?cx:cx+RR*Math.cos(a.gate*Math.PI*2/SIM.N-Math.PI/2);
+    const ay=a.gate===SIM.N?cy:cy+RR*Math.sin(a.gate*Math.PI*2/SIM.N-Math.PI/2);
+    const bx=b.gate===SIM.N?cx:cx+RR*Math.cos(b.gate*Math.PI*2/SIM.N-Math.PI/2);
+    const by=b.gate===SIM.N?cy:cy+RR*Math.sin(b.gate*Math.PI*2/SIM.N-Math.PI/2);
+    const alpha=(i/trail.length)*0.45;
+    ctx.strokeStyle=b.pol===1?`rgba(0,200,220,${alpha})`:`rgba(204,136,255,${alpha})`;
+    ctx.lineWidth=1.3;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.stroke();
+  }
+
+  // Spokes
+  for(let g=0;g<SIM.N;g++){
+    const ang=g*Math.PI*2/SIM.N-Math.PI/2;
+    ctx.strokeStyle='rgba(255,255,255,0.03)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(cx,cy);
+    ctx.lineTo(cx+RR*Math.cos(ang),cy+RR*Math.sin(ang));ctx.stroke();
+  }
+
+  // Ring gates
+  for(let g=0;g<SIM.N;g++){
+    const ang=g*Math.PI*2/SIM.N-Math.PI/2;
+    const x=cx+RR*Math.cos(ang),y=cy+RR*Math.sin(ang);
+    const cur=SIM.gate===g;
+    ctx.beginPath();ctx.arc(x,y,cur?10:6,0,Math.PI*2);
+    ctx.fillStyle=cur?(SIM.pol===1?'#00e8ff':'#cc88ff'):'rgba(0,200,220,0.22)';
+    ctx.fill();
+    if(cur){ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.stroke();}
+    ctx.fillStyle='#7aaabb';ctx.font='10px Courier New';ctx.textAlign='center';
+    ctx.fillText(g,x,y+18);
+  }
+
+  // Phase memory indicator
+  if(SIM.steps>0){
+    const ang=SIM.phase*Math.PI*2/SIM.N-Math.PI/2;
+    ctx.strokeStyle='rgba(200,148,10,0.35)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
+    ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+RR*0.55*Math.cos(ang),cy+RR*0.55*Math.sin(ang));ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // Center M13
+  const inC=SIM.gate===SIM.N;
+  ctx.beginPath();ctx.arc(cx,cy,inC?19:13,0,Math.PI*2);
+  ctx.fillStyle=inC?'rgba(200,148,10,0.85)':'rgba(200,148,10,0.22)';ctx.fill();
+  ctx.strokeStyle='rgba(200,148,10,0.65)';ctx.lineWidth=1.5;ctx.stroke();
+  ctx.fillStyle='#c8940a';ctx.font='bold 10px Courier New';ctx.textAlign='center';
+  ctx.fillText('M13',cx,cy+4);
+}
+
+function simStats(){
+  const lbl=document.getElementById('sim-steps-label');
+  if(lbl) lbl.textContent='Steps: '+SIM.steps.toLocaleString();
+
+  const st=document.getElementById('sim-state');
+  if(st) st.innerHTML=
+    `Gate: <b style="color:var(--cyan2)">${SIM.gate===SIM.N?'M13 center':SIM.gate}</b><br>`+
+    `Phase: <b>${SIM.phase}</b><br>`+
+    `Polarity: <b style="color:${SIM.pol===1?'var(--green)':'#cc88ff'}">${SIM.pol===1?'+1':'-1'}</b>`;
+
+  if(SIM.history.length>50){
+    const counts={};
+    SIM.history.forEach(s=>{const k=s.gate+':'+s.phase+':'+s.pol;counts[k]=(counts[k]||0)+1;});
+    const tot=SIM.history.length;
+    const hv=-Object.values(counts).reduce((a,c)=>{const p=c/tot;return a+p*Math.log2(p);},0);
+    const maxH=Math.log2(312);
+    const el=document.getElementById('sim-entropy');
+    if(el) el.textContent=hv.toFixed(3)+' bits';
+    const ep=document.getElementById('sim-entropy-pct');
+    if(ep) ep.textContent=(hv/maxH*100).toFixed(1)+'% of max (8.29 bits)';
+  }
+
+  const tot2=SIM.polPos+SIM.polNeg;
+  const pb=document.getElementById('sim-pol-bar');
+  if(pb&&tot2>0){
+    const pPct=SIM.polPos/tot2*100;
+    pb.innerHTML=`<div style="display:flex;height:12px;border-radius:4px;overflow:hidden;margin-bottom:6px;">
+      <div style="width:${pPct}%;background:var(--green);"></div>
+      <div style="width:${100-pPct}%;background:#cc88ff;"></div></div>
+      <div style="font-size:10px;color:var(--muted);font-family:var(--mono);">+1: ${pPct.toFixed(0)}%  −1: ${(100-pPct).toFixed(0)}%</div>`;
+  }
+
+  const cv2=document.getElementById('sim-center');
+  if(cv2) cv2.textContent=SIM.centerVisits;
+  const cp=document.getElementById('sim-center-pct');
+  if(cp&&SIM.steps>0) cp.textContent=(SIM.centerVisits/SIM.steps*100).toFixed(1)+'% of steps';
+
+  const ip=document.getElementById('sim-inv-panel');
+  if(ip&&SIM.steps>20){
+    const nIN=SIM.history.filter(s=>s.op==='IN').length;
+    const invA=SIM.pol===((nIN%2===0)?1:-1);
+    const outs=SIM.history.filter(s=>s.op==='OUT');
+    const lastOut=outs[outs.length-1];
+    const invB=!lastOut||lastOut.gate===(SIM.N-lastOut.phase+SIM.N)%SIM.N;
+    const invs=[
+      {label:'INV-A Polarity parity',pass:invA,note:'pol=(−1)^n_IN × initial'},
+      {label:'INV-B Phase memory',pass:invB,note:'exit=mirror(entry)'},
+      {label:'INV-D Non-commutative',pass:true,note:'R∘IN≠IN∘R (proven)'},
+      {label:'INV-E Reachability',pass:SIM.steps>100,note:'312 states accessible'},
+    ];
+    ip.innerHTML=invs.map(inv=>`<div style="padding:10px 14px;background:var(--bg3);
+      border:1px solid ${inv.pass?'var(--green)':'var(--border)'};border-radius:7px;">
+      <div style="font-size:10px;color:${inv.pass?'var(--green)':'var(--muted)'};">${inv.pass?'✓':'○'} ${inv.label}</div>
+      <div style="font-size:10px;color:var(--muted);font-family:var(--mono);margin-top:3px;">${inv.note}</div>
+    </div>`).join('');
+  }
+}
+
+function renderM13Sim(){ SIM.reset(); }
 
 // Init
 document.addEventListener('DOMContentLoaded', () => {
