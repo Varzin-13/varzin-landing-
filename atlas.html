@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VARZIN Atlas v2 — Research Portal</title>
+<title>VARZIN Atlas v2.1 — Research Portal · Phases I–XX</title>
 <style>
 :root{
   --bg:#04090d;--bg2:#080f15;--bg3:#0c1620;--bg4:#101e2a;
@@ -314,14 +314,15 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
   <div id="nav-research">
     <div class="nav-group">Research</div>
     <div class="nav-it active" onclick="show('home')"><span class="nav-ico">◈</span>Overview</div>
-    <div class="nav-it" onclick="show('results')"><span class="nav-ico">✦</span>All Results<span class="nbadge nb-ok">20</span></div>
+    <div class="nav-it" onclick="show('results')"><span class="nav-ico">✦</span>All Results<span class="nbadge nb-ok">42</span></div>
     <div class="nav-it" onclick="show('model')"><span class="nav-ico">▣</span>Structural Model</div>
-    <div class="nav-it" onclick="show('negative')"><span class="nav-ico">✕</span>Negative Results<span class="nbadge nb-no">9</span></div>
+    <div class="nav-it" onclick="show('negative')"><span class="nav-ico">✕</span>Negative Results<span class="nbadge nb-no">15</span></div>
     <div class="nav-it" onclick="show('method')"><span class="nav-ico">◎</span>Methodology</div>
     <div class="nav-it" onclick="show('pubs')"><span class="nav-ico">◈</span>Publications</div>
     <div class="nav-it" onclick="show('open')"><span class="nav-ico">◌</span>Open Question<span class="nbadge nb-pen">VPE-001A</span></div>
     <div class="nav-it" onclick="show('participate')"><span class="nav-ico">◉</span>Participate</div>
     <div class="nav-it" onclick="show('explorer')"><span class="nav-ico">⬡</span>801 Roots Explorer</div>
+    <div class="nav-it" onclick="show('m13sim')"><span class="nav-ico">◈</span>Mirror-13 Simulator</div>
   </div>
 
   <!-- Atlas mode nav -->
@@ -334,6 +335,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
     <div class="nav-it" onclick="show('compare')"><span class="nav-ico">⇄</span>Compare Words</div>
     <div class="nav-it" onclick="show('timeline')"><span class="nav-ico">◷</span>Timeline</div>
     <div class="nav-it" onclick="show('explorer')"><span class="nav-ico">⬡</span>801 Roots<span class="nbadge nb-ok">801</span></div>
+    <div class="nav-it" onclick="show('m13sim')"><span class="nav-ico">◈</span>Mirror-13</div>
   </div>
 
   <!-- Builder mode nav -->
@@ -352,11 +354,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 
 <!-- ════ HOME ════ -->
 <div id="sec-home" class="sec active">
-  <div class="eyebrow">VARZIN Atlas v2 · Phase I–VI Complete</div>
+  <div class="eyebrow">VARZIN Atlas v2 · Phases I–XX Complete</div>
   <h1 class="sec-h" style="font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-1px;">
     A symbolic language<br>with <span style="color:var(--cyan2);">recoverable structure</span>
   </h1>
-  <p class="sec-d">LUXVAR: 801 roots, distinctive phonotactic fingerprint, morpheme families recovered by 3 independent AI systems. Six computational phases. One open question.</p>
+  <p class="sec-d">LUXVAR: 801 roots, Affine Memory Family Aff(Z_N) characterized, Recall Formula derived. Twenty phases. Three research paths forward.</p>
 
   <div class="cards">
     <div class="card"><div class="c-lbl">Stable Roots</div><div class="c-val vc">801</div><div class="c-note">30 in Core registry</div></div>
@@ -365,6 +367,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
     <div class="card"><div class="c-lbl">Family Accuracy</div><div class="c-val vg">74.2%</div><div class="c-note">Full corpus N=1M · Δ=+24.2%</div></div>
     <div class="card"><div class="c-lbl">Protocol Spine</div><div class="c-val vg">+0.186</div><div class="c-note">real vs shuffled modularity</div></div>
     <div class="card"><div class="c-lbl">Frequency Encoding</div><div class="c-val vr">ABSENT</div><div class="c-note">5 tests · n=704 · confirmed</div></div>
+    <div class="card"><div class="c-lbl">Affine Operators</div><div class="c-val vc">48</div><div class="c-note">Aff(Z₁₂)=Z₁₂⋊Z₁₂× · gcd(a,N)=1</div></div>
+    <div class="card"><div class="c-lbl">Mirror-13 MDL</div><div class="c-val vo">13.11 bits</div><div class="c-note">rank #1/1,035 equiv. · OPTIMAL not NECES.</div></div>
+    <div class="card"><div class="c-lbl">Recall Formula</div><div class="c-val vg">4-part</div><div class="c-note">Struct+Prior+HypSpace+Obs · POT verified</div></div>
+    <div class="card"><div class="c-lbl">External Memory</div><div class="c-val vr">NOT EST.</div><div class="c-note">Phase 19 · z=−1.042 · pipeline verified</div></div>
   </div>
 
   <div class="div"></div>
@@ -392,8 +398,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
   <div class="eyebrow">LUXVAR Dictionary</div>
   <h2 class="sec-h">Core-30 Registry</h2>
   <div class="disclaimer">
-    <strong>Frequency values (144–1008 Hz) are historical symbolic labels</strong> — not empirically recoverable features.
-    5 independent tests (n=704) confirmed frequency encoding is absent. Preserved as original design ontology.
+    <strong>Frequency values (144–1008 Hz) are historical symbolic design labels</strong> — confirmed not recoverable from word form, family, or protocol context (5 independent computational tests, n=704, all negative). They are preserved as part of the original ontological design and appear in word metadata for archival purposes only. No causal or empirical claims are made about these frequencies.
   </div>
   <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">
     Showing Core-30 (30/801 roots). Full corpus: <a href="https://doi.org/10.5281/zenodo.20691858" target="_blank" style="color:var(--cyan);">Preprint dataset</a>
@@ -445,7 +450,8 @@ Mean ARI vs designed axes = 0.146  <span class="cm">// much lower</span>
 <div id="sec-network" class="sec">
   <div class="eyebrow">Word Network</div>
   <h2 class="sec-h">Graph View</h2>
-  <p class="sec-d">Word→Family→Protocol ontology graph. Click any word node to explore.</p>
+  <p class="sec-d">Word→Family→Protocol ontology graph. Three layers. Click any word to explore.</p>
+  <div style="font-size:11px;color:var(--muted);margin-bottom:10px;">Engine: Canvas (optimized for 30 nodes). For 800+ nodes: <a href="https://js.cytoscape.org" target="_blank" style="color:var(--cyan);">Cytoscape.js</a> or <a href="https://www.sigmajs.org" target="_blank" style="color:var(--cyan);">Sigma.js</a> recommended.</div>
   <div class="graph-bar">
     <button class="g-btn on" id="g-onto" onclick="gMode('onto')">Ontology</button>
     <button class="g-btn" id="g-phon" onclick="gMode('phon')">Phonotactic</button>
@@ -502,8 +508,8 @@ Protocol spine (PT-001 / PST-001):
 <!-- ════ RESULTS ════ -->
 <div id="sec-results" class="sec">
   <div class="eyebrow">Complete Results</div>
-  <h2 class="sec-h">All Findings — Phase I–VI</h2>
-  <p class="sec-d">Every confirmed result from 6 phases, positive and negative.</p>
+  <h2 class="sec-h">All Findings — Phases I–XX</h2>
+  <p class="sec-d">Every confirmed result from 20 phases. 28 positive · 10 negative · 2 pending.</p>
   <table class="r-table"><thead><tr><th>Test</th><th>Phase</th><th>Key Metric</th><th>Status</th></tr></thead>
   <tbody id="results-body"></tbody></table>
 </div>
@@ -515,27 +521,37 @@ Protocol spine (PT-001 / PST-001):
   <div class="flow" id="flow-model"></div>
   <div class="div"></div>
   <div class="code-blk">
-<span class="cg">CONFIRMED:</span>
+<span class="cg">CONFIRMED (Phases I–XX):</span>
   Phonotactic fingerprint     (uniqueness = 0.738)
   Morpheme families           (accuracy  = 74.2%)
   Protocol spine              (Δmod      = +0.186)
   Sub-character grounding     (MASK-001 M1+M2 survive)
+  Affine family Aff(Z_N)      (48 ops · Conj.1 N=5..24 · known algebraic struct.)
+  Mirror-13 MDL-minimal       (13.11 bits · rank #1/1035 · OPTIMAL not NECES.)
+  5 Invariants verified       (was_forced_true:False · 0 randomness)
+  Recall formula 4-part       (Struct+Prior+HypSpace+Obs · POT suite)
+  Wrong prior catastrophic    (acc=0.000 · POT-004 confirmed)
 
 <span class="cr">CONFIRMED ABSENT:</span>
   Frequency encoding          (Δ = −3.6%, ×5 tests, n=704)
   Semantic axis recovery      (no shuffle-control signal)
   Generative grammar          (GVT blind 8.3% &lt; chance 14.3%)
   Hexacore clusters           (k=3, not k=6)
+  External memory field       (Phase 19 · z=−1.042 · NOT ESTABLISHED)
+  ETFM as computational core  (SIM-ETFM-001 · ΔH=0.012 · viz only)
+  Frequency computation       (SIM-FREQ-001 · ΔH=0.044 · weak)
 
-<span class="co">OPEN:</span>
-  Human cognition             (VPE-001A — pending)
+<span class="co">OPEN (Three Paths):</span>
+  PATH A: Conjecture 1 proof  (Lean/Coq · no blocker)
+  PATH B: VPE-001A            (κ≥0.40 · ≥5 blind raters · blocker: raters)
+  PATH C: External memory     (z>2.0 · affine receiver · blocker: participant)
   </div>
 </div>
 
 <!-- ════ NEGATIVE ════ -->
 <div id="sec-negative" class="sec">
   <div class="eyebrow">Negative Results Archive</div>
-  <h2 class="sec-h">9 Confirmed Negatives</h2>
+  <h2 class="sec-h">15 Confirmed Negatives (Phases I–XX)</h2>
   <p class="sec-d">Reported as first-class scientific outcomes. These define what LUXVAR is by defining what it is not.</p>
   <div id="neg-list"></div>
 </div>
@@ -603,6 +619,23 @@ scoring  = ARI vs families
       </div>
     </div>
     <div class="m-card">
+      <div class="m-title">Data Architecture (Current)</div>
+      <div class="code-blk" style="font-size:10.5px;">
+<span class="cm"># Current: single-file (portability)</span>
+varzin-atlas-v2.html
+  └── inline JS data
+
+<span class="cm"># Production target:</span>
+/data/
+  words.json        <span class="cg">← Core-30</span>
+  roots_full.json   <span class="cg">← 801 roots</span>
+  results.json
+  timeline.json
+  publications.json
+      </div>
+      <div style="font-size:12px;color:var(--text2);">Migrating to external JSON enables CDN caching, API updates, and dataset versioning without HTML edits.</div>
+    </div>
+    <div class="m-card">
       <div class="m-title">MASK-001 Protocol</div>
       <div class="code-blk" style="font-size:10.5px;">
 M1: ELUZ → R1, SHA → R2, NAR → R3
@@ -644,6 +677,24 @@ verdict= sub-character grounding
   <span class="cm">C) Something else entirely</span>
 
 <span class="co">ALL THREE OUTCOMES ARE SCIENTIFICALLY INTERPRETABLE.</span>
+  </div>
+  <div class="div"></div>
+  <div class="eyebrow">Three Research Paths — Post Phase XX</div>
+  <div class="code-blk" style="font-size:12.5px;line-height:2.2;">
+<span class="cg">PATH A — Mathematical (no blocker):</span>
+  A1  Formal proof Conjecture 1 for all N  (Lean/Coq)
+  A2  Aff(Z_N) spectral properties general N
+  A3  Paper C → arXiv cs.FL / Zenodo
+
+<span class="co">PATH B — LUXVAR Grammar (blocker: rater recruitment):</span>
+  B1  VPE-001A · ≥5 blind raters · Fleiss κ ≥ 0.40
+  B2  Map Core-30 to shift family (a=1), not Mirror-13
+  B3  Morpho-syntactic rules from phonotactic structure
+
+<span class="cr">PATH C — External Memory (blocker: independent participant):</span>
+  C1  Sealed targets published before trial
+  C2  Independent receiver with affine-compatible prior
+  C3  z &gt; 2.0 on ≥3 trials = establish external memory
   </div>
   <div class="div"></div>
   <div class="cards">
@@ -695,6 +746,7 @@ verdict= sub-character grounding
   <div class="eyebrow">Builder Mode</div>
   <h2 class="sec-h">Create a LUXVAR Word</h2>
   <p class="sec-d">Design a new word, assign its family and protocol, and generate its symbolic card — entirely local, no API key required.</p>
+  <div style="background:rgba(74,106,120,.12);border:1px solid rgba(74,106,120,.3);border-radius:6px;padding:9px 14px;margin-bottom:16px;font-size:11.5px;color:var(--muted);line-height:1.7;"><strong style="color:var(--text2);">Scientific note:</strong> Frequency values assigned here are <em>symbolic design labels</em> from the original LUXVAR ontology. Computational analysis confirmed they are not encoded in word structure (5 tests, n=704). Builder output is creative/archival, not empirical.</div>
   <div class="builder-grid">
     <div class="b-panel">
       <div style="font-size:11px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:14px;">Word Definition</div>
@@ -762,12 +814,19 @@ verdict= sub-character grounding
 <!-- ════ 801 ROOTS EXPLORER ════ -->
 <div id="sec-explorer" class="sec">
   <div class="eyebrow">Full Registry</div>
-  <h2 class="sec-h">801 Root Explorer</h2>
+  <h2 class="sec-h">801 Root Explorer <span style="font-size:14px;font-weight:400;color:var(--gold);font-family:var(--mono);">[DEMO]</span></h2>
+  <div style="background:rgba(200,148,10,.08);border:1px solid rgba(200,148,10,.25);border-radius:7px;
+       padding:11px 16px;margin-bottom:14px;font-size:12px;color:rgba(200,148,10,.9);line-height:1.7;">
+    <strong>Synthetic expansion — demo only.</strong>
+    The 30 Core words (★) are the verified research registry.
+    The remaining 771 entries are algorithmically generated phonotactic extensions for preview purposes.
+    <strong>To replace with real data:</strong> import <code>roots_full.json</code> using the button below.
+    No empirical claims are made about synthetic roots.
+  </div>
   <div class="explorer-info">
     The full LUXVAR corpus contains <strong>801 stable roots</strong> across 6 semantic fields.
-    The 30 Core words are the locked research registry. The remaining roots extend the system.
-    <br><strong>Load:</strong> paste or import a JSON/CSV root list below, or explore the Core-30 extended family patterns.
-    <br><strong>Note:</strong> Frequency values are historical symbolic labels — not empirically recoverable features.
+    <br><strong>Load real data:</strong> import a JSON/CSV root list below to replace synthetic entries.
+    <br><strong>Frequency note:</strong> values shown are historical symbolic labels — not empirically recoverable.
   </div>
   <div class="explorer-search">
     <input class="dict-inp" id="exp-search" placeholder="Search root, family, axis…" oninput="filterExplorer()" style="flex:1;min-width:140px;">
@@ -789,6 +848,77 @@ verdict= sub-character grounding
   </div>
   <div class="explorer-stats" id="exp-stats"></div>
   <div class="root-grid" id="root-grid"></div>
+</div>
+
+
+<!-- ════ MIRROR-13 SIMULATOR ════ -->
+<div id="sec-m13sim" class="sec">
+  <div class="eyebrow">Mirror-13 · Phase X</div>
+  <h2 class="sec-h">Mirror-13 Simulator</h2>
+  <p class="sec-d">The 312-state memory machine. Watch D12 ring + Mirror-13 center unfold in real time. MDL=13.11 bits · ΔEntropy=+127.6% · Rank #1/1035 by simplicity.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;margin:20px 0;">
+    <div class="card"><div class="c-lbl">States</div><div class="c-val vc">312</div><div class="c-note">288 ring + 24 center</div></div>
+    <div class="card"><div class="c-lbl">MDL</div><div class="c-val vc">13.11</div><div class="c-note">bits to specify Mirror-13</div></div>
+    <div class="card"><div class="c-lbl">ΔEntropy</div><div class="c-val vg">+127.6%</div><div class="c-note">over D12</div></div>
+    <div class="card"><div class="c-lbl">Simplicity Rank</div><div class="c-val vg">#1</div><div class="c-note">of 1,035 equivalent systems</div></div>
+  </div>
+
+  <div style="display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;align-items:center;">
+    <button class="g-btn on" id="sim-btn-run" onclick="simToggle()">▶ Run</button>
+    <button class="g-btn" onclick="simStep()">Step</button>
+    <button class="g-btn" onclick="simReset()">Reset</button>
+    <label style="font-size:12px;color:var(--muted);">IN rate:
+      <input type="range" id="sim-rate" min="1" max="40" value="13" style="width:80px;vertical-align:middle;"
+             oninput="document.getElementById('sim-rate-val').textContent=this.value+'%'">
+      <span id="sim-rate-val">13%</span>
+    </label>
+    <span style="font-family:var(--mono);font-size:11px;color:var(--muted);" id="sim-steps-label">Steps: 0</span>
+  </div>
+
+  <canvas id="sim-cv" style="width:100%;height:380px;background:var(--bg2);border-radius:var(--r);
+    border:1px solid var(--border);display:block;"></canvas>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;margin-top:16px;">
+    <div class="chart-box" style="padding:14px;">
+      <div class="ct">Current State</div>
+      <div id="sim-state" style="font-family:var(--mono);font-size:13px;line-height:2;color:var(--text);"></div>
+    </div>
+    <div class="chart-box" style="padding:14px;">
+      <div class="ct">Live Entropy</div>
+      <div id="sim-entropy" style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--cyan2);"></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;" id="sim-entropy-pct"></div>
+    </div>
+    <div class="chart-box" style="padding:14px;">
+      <div class="ct">Polarity Balance</div>
+      <div id="sim-pol-bar" style="margin-top:8px;"></div>
+    </div>
+    <div class="chart-box" style="padding:14px;">
+      <div class="ct">Center Visits</div>
+      <div id="sim-center" style="font-family:var(--mono);font-size:22px;font-weight:700;color:var(--gold);"></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;" id="sim-center-pct"></div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+  <div class="eyebrow">Invariants — Live Verification</div>
+  <div id="sim-inv-panel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:12px;"></div>
+
+  <div class="div"></div>
+  <div class="code-blk" style="font-size:11px;">
+<span class="cm">// Mirror-13 formal definition</span>
+<span class="ck">State</span>   = (gate ∈ {0..11}, phase ∈ {0..11}, polarity ∈ {+1,−1})
+<span class="ck">Center</span>  = gate 12  (24 center states)
+
+<span class="cg">IN</span>(gate,phase,pol)  → (12, gate, <span class="cr">−pol</span>)     <span class="cm">// records entry, flips polarity</span>
+<span class="cg">OUT</span>(12,phase,pol)   → ((12−phase)%12, phase, pol)   <span class="cm">// exits to mirror of entry</span>
+
+<span class="cg">Invariant A</span>: polarity = (−1)^n_IN × initial_polarity   [100% verified]
+<span class="cg">Invariant B</span>: exit = mirror(entry)  [bijection 12/12]
+<span class="cg">Invariant C</span>: D12 → 48 orbits  |  D12+M13 → 1 orbit
+<span class="cg">Invariant D</span>: R∘IN ≠ IN∘R  [100% of states]
+<span class="cg">Invariant E</span>: D12 reaches 12 states  |  D12+M13 reaches 312
+  </div>
 </div>
 
 </main>
@@ -814,6 +944,17 @@ verdict= sub-character grounding
   </div>
 </div>
 <script>
+// ═══════════════════════════════════════════════════
+// GLOBAL SANITIZER — use esc() for all user/imported data in innerHTML
+// ═══════════════════════════════════════════════════
+function esc(s){return String(s??'').replace(/[<>&"']/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));}
+
+// ═══════════════════════════════════════════════════
+// DATA — currently inline for single-file portability
+// For production: replace with fetch('/data/words.json')
+// Architecture: /data/words.json, results.json,
+//               timeline.json, publications.json
+// ═══════════════════════════════════════════════════
 const FC={ELUZ:"#00c8e0",SHA:"#cc88ff",NAR:"#66aacc",ZAR:"#ee9944",RAHT:"#ee6688",SAR:"#44cc88",OTHER:"#446655"};
 const FM={ELUZ:"Light · Source",SHA:"Reflection · Mirror",NAR:"Silence · Ground",ZAR:"Motion · Force",RAHT:"Compassion · Anchor",SAR:"Gate · Threshold",OTHER:"Peripheral"};
 const FP={ELUZ:"ELUZ_PROTO",SHA:"SHA_PROTO",NAR:"NAR_PROTO",ZAR:"MOTION_PROTO",RAHT:"GATE_PROTO",SAR:"GATE_PROTO",OTHER:"—"};
@@ -858,6 +999,9 @@ const TIMELINE = [
   {year:'2025 Q4', label:'Preprint Published', desc:'LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families. DOI: 10.5281/zenodo.20691858 (v2.1).'},
   {year:'2026 Q1', label:'Phase III–IV — Structure', desc:'PT-001: protocol modularity+0.186 vs shuffled. FCT-001: NAR most critical family. MASK-001: Protocol survives morpheme masking (M1+M2) — sub-character grounding confirmed.'},
   {year:'2026 Q2', label:'Phase V–VI — Boundary', desc:'GVT-001: blind generation 8.3% < chance 14.3% — not generative. AFD-001: axes unsupported vs shuffle control. Final Benchmark N=1M: family 74.2%, frequency CONFIRMED ABSENT.'},
+  {year:'2026 Q2', label:'Phases VII–XIV · Mirror-13 Formal', desc:'M13-INV-001: 5 invariants verified (was_forced_true:False). SPEC-002: λ₁=1 unique, gap=0.2, mixing≈29. WHY-M13-001: OPTIMAL not NECESSARY. SIM-001: 5-layer closed environment. MDL=13.11 bits, rank #1/1035.'},
+  {year:'2026 Q2', label:'Phases XV–XVIII · Affine Family', desc:'Complete classification: 48/144 valid (a,b) pairs for N=12 = Aff(Z₁₂)=Z₁₂⋊Z₁₂×. Conjecture 1 verified N=5..24. Mirror-13 = anchor #37/48. Best LUXVAR bridge: a=1 (shift family, not Mirror-13).'},
+  {year:'2026 Q2', label:'Phases XIX–XX · Recall + POT Suite', desc:'Recall = Structure Match + Prior + Hypothesis Space + Observation. POT-001..005: wrong prior acc=0.000 catastrophic; self-organized via hypothesis testing acc=1.000. Phase 19: External memory NOT ESTABLISHED (z=−1.042, Oracle=1.000). Phase 20: STRUCTURE_MATCH_REQUIRED.'},
   {year:'2026+', label:'VPE-001A — Open', desc:'Human rater study. ≥5 blind raters. κ≥0.40. The only remaining non-circular test. Do humans group by morpheme (like AIs) or by semantic axis (as designed)?', open:true},
 ];
 const PUBLICATIONS = [
@@ -898,6 +1042,15 @@ const PUBLICATIONS = [
     notes:'9 confirmed negative findings documented as first-class results.'
   },
   {
+    type:'Preprint',
+    title:'Mirror-13 and the Affine Memory Family over Cyclic Gate Spaces',
+    version:'v1.0 (READY)',
+    date:'2026 — ready for submission',
+    doi:'',
+    url:'https://varzin.org',
+    notes:'Paper C. Conjecture 1 · 5 invariants · MDL=13.11 · SPEC-002. Target: arXiv cs.FL / Zenodo.',
+  },
+  {
     type:'Protocol',
     title:'VPE-001A Pre-registered Human Rater Protocol',
     version:'v1.0',
@@ -928,7 +1081,28 @@ const RESULTS=[
   {test:'FCT-001 family collapse',phase:'Phase IV',metric:'ELUZ most critical',s:'ok'},
   {test:'GVT-001 blind generation',phase:'Phase V',metric:'8.3% < chance 14.3%',s:'no'},
   {test:'Hexacore hypothesis',phase:'Phase I',metric:'SSE Δ=−1.07% — rejected',s:'no'},
+  // Phases VII–XIV (Mirror-13)
+  {test:'M13-INV-001 Five Invariants',phase:'Phase VII',metric:'5/5 · was_forced_true:False',s:'ok'},
+  {test:'SPEC-002 Eigenspectrum',phase:'Phase VIII',metric:'λ₁=1 unique · gap=0.2 · mix≈29',s:'ok'},
+  {test:'WHY-M13-001 Optimality',phase:'Phase IX',metric:'OPTIMAL not NECESSARY',s:'ok'},
+  {test:'MDL rank Mirror-13',phase:'Phase X',metric:'13.11 bits · rank #1/1035',s:'ok'},
+  {test:'SIM-001 Closed Sim CORE',phase:'Phase XI',metric:'All 5 inv: 1.000',s:'ok'},
+  {test:'SIM-FREQ-001 frequency',phase:'Phase XI',metric:'ΔH=0.044 < 0.05 · WEAK',s:'no'},
+  {test:'SIM-ETFM-001 ETFM',phase:'Phase XI',metric:'ΔH=0.012 · viz only',s:'no'},
+  // Phases XV–XVIII (Affine Family)
+  {test:'Aff(Z_N) classification',phase:'Phase XVI',metric:'48/144 valid · Conj.1 N=5..24',s:'ok'},
+  {test:'Phase 15 domain test',phase:'Phase XV',metric:'Aff 12/18 vs M13 3/18',s:'ok'},
+  {test:'LUXVAR best bridge (a=1)',phase:'Phase XVII',metric:'shift family best · not Mirror-13',s:'ok'},
+  // Phases XIX–XX + POT
+  {test:'POT-001 Prior Alignment',phase:'Phase XIX',metric:'Monotone · Δ=+0.275',s:'ok'},
+  {test:'POT-004 Wrong Prior',phase:'Phase XIX',metric:'acc=0.000 · catastrophic',s:'ok'},
+  {test:'POT-005 Prior Emergence',phase:'Phase XIX',metric:'100% episodes at query #1',s:'ok'},
+  {test:'Phase 19 Sealed Target',phase:'Phase XIX',metric:'z=−1.042 · Oracle=1.000',s:'no'},
+  {test:'Phase 20 Structure Match',phase:'Phase XX',metric:'AffWorld #1 · DOMAIN_SPECIFIC',s:'ok'},
+  {test:'SDT-002 Prior-Free ID',phase:'Phase XX',metric:'AffWorld acc=0.000 without prior',s:'no'},
+  // Pending
   {test:'VPE-001A human rater',phase:'Pending',metric:'κ≥0.40 · ≥5 raters',s:'pending'},
+  {test:'Conjecture 1 formal proof',phase:'Future',metric:'Lean/Coq · all N',s:'pending'},
 ];
 const NEGATIVES=[
   {n:1,claim:'Hexacore (k=6)',finding:'k=3 is natural. k=6 drop=−1.07%. Hexacore is a design label, not a data cluster.'},
@@ -940,14 +1114,23 @@ const NEGATIVES=[
   {n:7,claim:'Semantic axes recoverable',finding:'No feature set beats shuffle control. Axes unsupported.'},
   {n:8,claim:'Out-of-family generalization',finding:'Leave-one-out: model memorizes, does not generalize.'},
   {n:9,claim:'Generative grammar',finding:'Blind accuracy=8.3% below chance 14.3%. Not generative.'},
+  {n:10,claim:'External memory field (Phase 19)',finding:'Sealed target: z=−1.042 (below chance). Oracle=1.000 confirms pipeline works. External memory NOT ESTABLISHED. Phase 20 adds: receiver must have affine-compatible prior.'},
+  {n:11,claim:'ETFM as computational core',finding:'SIM-ETFM-001: ΔH=0.012 < threshold 0.05. No measurable computational entropy added. ETFM is visualization/interpretation layer only.'},
+  {n:12,claim:'Frequency as computational layer',finding:'SIM-FREQ-001: ΔH=0.044 < threshold 0.05. Frequency is symbolic/archival only. Confirmed not a computational layer.'},
+  {n:13,claim:'Mirror-13 logically necessary',finding:'WHY-M13-001: R1+R2 force IN but NOT bijection OUT. Mirror OUT is MDL=0 optimal solution — OPTIMAL, not necessary. 1,035 equivalent systems found.'},
+  {n:14,claim:'Aff(Z_N) domain-general engine',finding:'3-World Benchmark DOMAIN_SPECIFIC: AffWorld hit@3=0.998 but MarkovWorld=0.248, FSMWorld=0.238. Structure match required.'},
+  {n:15,claim:'Affine prior without structure',finding:'SDT-002: AffWorld acc=0.000 without prior. Prior cannot self-organize without structural alignment. PRIOR_REQUIRED.'},
 ];
 const FLOW_LAYERS=[
   {label:'WORD FORM',cls:'fl-ok',note:'Phonotactic fingerprint: 0.738 [0.703–0.781] · Family learnable: 74.2%'},
   {label:'sub-char phonotactic patterns',cls:'fl-ok',note:'MASK-001: M1+M2 survive — grounded below morpheme level'},
   {label:'MORPHEME FAMILY',cls:'fl-ok',note:'ELUZ/SHA/NAR/ZAR/RAHT confirmed · AI ARI=0.812'},
   {label:'PROTOCOL',cls:'fl-ok',note:'Real vs shuffled: Δmod=+0.186 · Independent of explicit morpheme'},
+  {label:'AFFINE MEMORY FAMILY Aff(Z_N)',cls:'fl-ok',note:'48 valid ops · Conjecture 1 empirical · Mirror-13 = MDL-minimal anchor'},
+  {label:'RECALL FORMULA',cls:'fl-ok',note:'Struct+Prior+HypSpace+Obs · wrong prior acc=0.000 catastrophic (POT-004)'},
   {label:'semantic axes',cls:'fl-wk',note:'AI clusters 43.3% — not above shuffle control'},
   {label:'symbolic frequency layer',cls:'fl-ab',note:'5 tests · n=704 · Δ=−3.6% — confirmed absent'},
+  {label:'external memory field',cls:'fl-ab',note:'Phase 19: z=−1.042 · NOT ESTABLISHED · affine-compatible receiver required'},
   {label:'human cognition · VPE-001A',cls:'fl-op',note:'Not yet tested · κ≥0.40 · ≥5 blind raters'},
 ];
 
@@ -982,7 +1165,7 @@ function show(id) {
     network:renderGraph,compare:initCompare,timeline:renderTimeline,
     results:renderResults,model:renderModel,negative:renderNegative,
     pubs:renderPubs,participate:renderParticipate,
-    saved:renderSaved,explorer:renderExplorer};
+    saved:renderSaved,explorer:renderExplorer,m13sim:renderM13Sim};
   if(fns[id]) fns[id]();
   document.getElementById('sidebar').classList.remove('open');
   window.scrollTo(0,0);
@@ -1057,7 +1240,11 @@ function renderDict() {
       <div class="d-ai">${w.ai?'<span style="color:var(--green);">✓</span>':'<span style="color:var(--muted);">~</span>'}</div>
     </div>`).join('');
 }
-function hi(t,q){if(!q)return t;return t.replace(new RegExp(q,'gi'),m=>`<span class="hl">${m}</span>`);}
+function hi(t,q){
+  if(!q) return esc(t);
+  const safeQ=q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  return esc(t).replace(new RegExp(safeQ,'gi'),m=>`<span class="hl">${m}</span>`);
+}
 function setFilt(f,el){currentFilt=f;document.querySelectorAll('.pill').forEach(p=>p.classList.remove('on'));el.classList.add('on');renderDict();}
 function filterDict(){renderDict();}
 
@@ -1315,9 +1502,9 @@ const SYMBOLIC_CORPUS = {
     meanings: [
       "carries the first light before it is named",
       "opens the field where awareness enters form",
-      "the injected tone that precedes all reflection",
-      "holds the axis between source and manifestation",
-      "transmits luminance through the morphemic gate",
+      "the initiating morpheme that precedes all reflection",
+      "holds the structural axis between source and manifestation",
+      "transmits pattern through the ELUZ morphemic gate",
     ],
     resonance: [
       "wherein light is neither seen nor hidden",
@@ -1480,10 +1667,13 @@ function buildSystemNote(word, fam, proto, analysis) {
 }
 
 function generateCard(){
-  const word   = document.getElementById('b-word').value.trim().toUpperCase();
+  const word   = document.getElementById('b-word').value.trim().toUpperCase()
+    .replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));
   const fam    = document.getElementById('b-fam').value;
-  const proto  = document.getElementById('b-proto').value;
-  const meaning= document.getElementById('b-meaning').value.trim();
+  const proto = (document.getElementById('b-proto').value||'').replace(/[<>&"']/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));
+  const _rawMeaning = document.getElementById('b-meaning').value.trim();
+  const meaning = _rawMeaning.replace(/[<>&"']/g,
+    c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));
   if(!word){ alert('Enter a word name first.'); return; }
 
   const col  = fam ? FC[fam] : 'var(--cyan)';
@@ -1514,341 +1704,4 @@ function generateCard(){
       <div style="font-size:10px;color:var(--muted);font-family:var(--mono);
            padding:6px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
            margin:4px 0;letter-spacing:.5px;">
-        ${structure} · vowel ratio ${vowelPct}% · ${analysis.len} chars
-      </div>
-      <div class="wc-ai">${systemNote}</div>`;
-  }, 420);
-}
-function exportCard(){
-  const word=document.getElementById('b-word').value.trim()||'LUXVAR';
-  const card=document.getElementById('word-card');
-  const blob=new Blob(['VARZIN LUXVAR Word Card\n'+word+'\n\n'+(card.innerText||'')
-    +'\n\nVARZIN Project · varzin.org\nDOI: 10.5281/zenodo.20691858'],{type:'text/plain'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=word+'_card.txt';a.click();
-}
-function copyCardText(){navigator.clipboard.writeText(document.getElementById('word-card').innerText||'').then(()=>alert('Copied!'));}
-
-// Exports
-function exportJSON(){
-  const data={meta:{title:'LUXVAR Core-30',version:'1.0',doi:'10.5281/zenodo.20691858',
-    note:'Frequency values are historical symbolic labels, not empirically recoverable.'},
-    words:WORDS.map(w=>({...w,protocol:FP[w.fam],family_meaning:FM[w.fam]}))};
-  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='LUXVAR_Core30.json';a.click();
-}
-function exportCSV(){
-  const rows=[['Word','Family','Axis','Frequency_Hz','Protocol','AI_Recovered','Meaning'],
-    ...WORDS.map(w=>[w.w,w.fam,w.axis,w.freq,FP[w.fam],w.ai?1:0,'"'+w.meaning.replace(/"/g,"'")+'"'])];
-  const blob=new Blob([rows.map(r=>r.join(',')).join('\n')],{type:'text/csv'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='LUXVAR_Core30.csv';a.click();
-}
-function downloadWordList(){
-  const txt='LUXVAR Core-30 — VPE-001A Word List\nVARZIN Project · varzin.org · DOI: 10.5281/zenodo.20691858\n\n'
-    +'Instructions:\nGroup these 30 words into 2-8 groups.\nUse sound, spelling, or any pattern.\nGive each group a name in 1-2 words.\n\n'
-    +WORDS.map(w=>w.w).join('\n');
-  const blob=new Blob([txt],{type:'text/plain'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='LUXVAR_Core30_VPE001A.txt';a.click();
-}
-function copyCitation(){
-  navigator.clipboard.writeText('Nirouyar, R. (2026). LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families (v2.1). Zenodo. https://doi.org/10.5281/zenodo.20691858').then(()=>alert('Citation copied!'));
-}
-
-
-// ═══════════════════════════════════════════════════
-// SAVED CARDS (localStorage)
-// ═══════════════════════════════════════════════════
-const CARDS_KEY = 'varzin_saved_cards';
-
-function loadSavedCards() {
-  try { return JSON.parse(localStorage.getItem(CARDS_KEY) || '[]'); }
-  catch { return []; }
-}
-function saveSavedCards(cards) {
-  try { localStorage.setItem(CARDS_KEY, JSON.stringify(cards)); }
-  catch(e) { console.warn('localStorage unavailable:', e); }
-}
-function updateSavedCount() {
-  const n = loadSavedCards().length;
-  const el = document.getElementById('saved-count');
-  if (el) el.textContent = n;
-}
-
-function saveCurrentCard() {
-  const word = document.getElementById('b-word').value.trim().toUpperCase();
-  if (!word) { alert('Generate a card first.'); return; }
-  const fam   = document.getElementById('b-fam').value;
-  const proto = document.getElementById('b-proto').value;
-  const cardEl= document.getElementById('word-card');
-  const text  = cardEl.innerText || cardEl.textContent || '';
-  if (text.includes('Enter a word') || text.includes('Generating')) {
-    alert('Generate a card first.'); return;
-  }
-  const cards = loadSavedCards();
-  if (cards.find(c => c.word === word)) {
-    if (!confirm(`"${word}" already saved. Replace?`)) return;
-    const idx = cards.findIndex(c => c.word === word);
-    cards.splice(idx, 1);
-  }
-  cards.unshift({
-    word, fam, proto,
-    text: text.trim(),
-    saved: new Date().toISOString().slice(0,10)
-  });
-  saveSavedCards(cards);
-  updateSavedCount();
-  alert(`✓ "${word}" saved to your collection.`);
-}
-
-function deleteCard(word) {
-  const cards = loadSavedCards().filter(c => c.word !== word);
-  saveSavedCards(cards);
-  updateSavedCount();
-  renderSaved();
-}
-
-function renderSaved() {
-  const cards = loadSavedCards();
-  const container = document.getElementById('saved-grid-container');
-  if (!container) return;
-  if (cards.length === 0) {
-    container.innerHTML = '<div class="saved-empty">No saved cards yet.<br>Generate a word in Builder Mode and save it.</div>';
-    return;
-  }
-  container.innerHTML = `<div class="saved-grid">${cards.map(c => `
-    <div class="saved-card">
-      <button class="sc-del" onclick="deleteCard('${c.word}')" title="Delete">✕</button>
-      <div class="sc-word" style="color:${FC[c.fam]||'var(--cyan2)'};">${c.word}</div>
-      <div class="sc-fam" style="background:${FC[c.fam]||'var(--cyan)'}22;color:${FC[c.fam]||'var(--cyan)'};">${c.fam||'?'}</div>
-      <div class="sc-meaning">${c.text.split('\n').slice(2,4).join(' ').slice(0,120)}…</div>
-      <div style="font-size:10px;color:var(--muted);font-family:var(--mono);margin-top:6px;">${c.saved} · ${c.proto||'—'}</div>
-    </div>`).join('')}</div>`;
-}
-
-function exportAllCards() {
-  const cards = loadSavedCards();
-  if (!cards.length) { alert('No saved cards.'); return; }
-  const blob = new Blob([JSON.stringify({
-    source: 'VARZIN Atlas v2 · varzin.org',
-    doi: '10.5281/zenodo.20691858',
-    exported: new Date().toISOString().slice(0,10),
-    cards
-  }, null, 2)], {type:'application/json'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'VARZIN_saved_cards.json'; a.click();
-}
-
-function exportAllCardsTXT() {
-  const cards = loadSavedCards();
-  if (!cards.length) { alert('No saved cards.'); return; }
-  const txt = 'VARZIN Atlas — Saved Word Cards\nDOI: 10.5281/zenodo.20691858\n\n'
-    + cards.map(c => `═══ ${c.word} (${c.fam})\n${c.text}\n`).join('\n');
-  const blob = new Blob([txt], {type:'text/plain'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'VARZIN_saved_cards.txt'; a.click();
-}
-
-function clearAllCards() {
-  if (!loadSavedCards().length) { alert('Nothing to clear.'); return; }
-  if (confirm('Delete all saved cards? This cannot be undone.')) {
-    saveSavedCards([]);
-    updateSavedCount();
-    renderSaved();
-  }
-}
-
-// ═══════════════════════════════════════════════════
-// 801 ROOTS EXPLORER
-// ═══════════════════════════════════════════════════
-let explorerRoots = null; // lazy-loaded
-
-function getExplorerRoots() {
-  if (explorerRoots) return explorerRoots;
-  // Generate extended root list from Core-30 + systematic extensions
-  const roots = [...WORDS.map(w => ({w:w.w, fam:w.fam, axis:w.axis, freq:w.freq, core:true}))];
-  // Systematic phonotactic extensions per family
-  const EXTS = {
-    ELUZ:  ['ELUZAR','ELUZAN','ELURIM-SHA','MATIR-ELUZAN','SAR-ELUZAN','SAVAR-ELUZAN','TARHAN-ELUZIM','ELUZ-MAHAR-ZAR','ELUZAN','ELUZ-RIM'],
-    SHA:   ['SHAUR-NAR','SHAR-ELUZ','SHAURIM','SHA-MAHAR','SHAUR-ZAR','SHAURAN','SHA-RIM','SHARUK','SHAR-DOZ','SHAUR-RAHT'],
-    NAR:   ['NARUK','NAR-ELUZ','NARIM','NAR-SHA','ZUN-NARIM','NARAH-ZAR','NAR-MAHAR','NARUM','NARHAN','NAR-SAR'],
-    ZAR:   ['ZARHAN','ZAR-ELUZ','ZARIM','ZARTHAUZ','ZARTHAAN','DAR-ZANIM','RAZ-KANIM','ZAR-NAR','ZARTH-SHA','ZARTHIN'],
-    RAHT:  ['RAHT-ELUZ','RAHTAN','RAHMOT-ELUZ','BANIR-RAHTIM','RAHT-SHA','RAHTUN','RAHTIM','BAN-RAHTUN'],
-    SAR:   ['SAR-NARIM','SAVAR-NARIM','SARTHAL-ELUZ','SAR-SHA','SAVAR-SHA','SAR-RAHT','SARHAN','SARUM','SAR-ZAR','SARTAN'],
-    OTHER: ['XANORAH-SHA','ANUR-ELUZ','HALZAR-NAR','GON-SILAR','VARKHANUM','RITAM-ZAR','KHALTUR-SHA','KUZTUR-NAR','KHIRZAH-ELUZ','ANUR-SHA'],
-  };
-  const AXES = {ELUZ:'LIGHT',SHA:'REFLECTION',NAR:'SILENCE',ZAR:'MOTION',RAHT:'REFLECTION',SAR:'GATE',OTHER:'MOTION'};
-  const FREQS = {ELUZ:[474,777,528],SHA:[474,432,528],NAR:[432,474,528],ZAR:[528,777,474],RAHT:[474,528,432],SAR:[144,474,528],OTHER:[777,528,474]};
-  let idx = 0;
-  for (const [fam, words] of Object.entries(EXTS)) {
-    words.forEach(w => {
-      const freqList = FREQS[fam];
-      roots.push({w, fam, axis:AXES[fam], freq:freqList[idx%freqList.length], core:false});
-      idx++;
-    });
-  }
-  // Fill to 801 with systematic patterns
-  const PREFIXES = ['MAT','SAR','ZUN','DAR','BAN','TAR','SHAR','KHA','VAR','NEM'];
-  const SUFFIXES = {ELUZ:['ELUZ','ELUZIM','ELUZAN'],SHA:['SHA','SHAUR','SHAURIM'],NAR:['NAR','NARIM','NARUK'],
-    ZAR:['ZARTH','ZARIM','ZARHAN'],RAHT:['RAHT','RAHTAN','RAHTIM'],SAR:['SAR','SARIM','SARTAN'],OTHER:['AN','IM','UK']};
-  const famList = ['ELUZ','SHA','NAR','ZAR','RAHT','SAR','OTHER'];
-  while (roots.length < 801) {
-    const fam = famList[roots.length % famList.length];
-    const pre = PREFIXES[roots.length % PREFIXES.length];
-    const sufList = SUFFIXES[fam];
-    const suf = sufList[Math.floor(roots.length/7) % sufList.length];
-    const word = `${pre}-${suf}`;
-    if (!roots.find(r=>r.w===word)) {
-      roots.push({w:word, fam, axis:AXES[fam], freq:FREQS[fam][0], core:false});
-    } else {
-      roots.push({w:`${pre}${roots.length}-${suf}`, fam, axis:AXES[fam], freq:FREQS[fam][0], core:false});
-    }
-  }
-  explorerRoots = roots.slice(0, 801);
-  return explorerRoots;
-}
-
-function renderExplorer() {
-  const roots = getExplorerRoots();
-  const q = (document.getElementById('exp-search')?.value || '').toLowerCase();
-  const fam = document.getElementById('exp-fam')?.value || '';
-  const filtered = roots.filter(r => {
-    const mq = !q || r.w.toLowerCase().includes(q) || r.fam.toLowerCase().includes(q) || r.axis.toLowerCase().includes(q);
-    const mf = !fam || r.fam === fam;
-    return mq && mf;
-  });
-  const stats = document.getElementById('exp-stats');
-  if (stats) stats.textContent = `Showing ${filtered.length} / 801 roots  ·  Core-30: ${filtered.filter(r=>r.core).length}  ·  Extended: ${filtered.filter(r=>!r.core).length}`;
-  const grid = document.getElementById('root-grid');
-  if (!grid) return;
-  // Show max 200 for performance
-  const display = filtered.slice(0, 200);
-  grid.innerHTML = display.map(r => `
-    <div class="root-chip" onclick="${r.core?"openWord('"+r.w+"')":'void(0)'}" title="${r.axis} · ${r.freq}Hz">
-      <span style="color:${r.core?FC[r.fam]:'var(--text2)'};">${r.w}${r.core?'<sup style="font-size:8px;color:var(--cyan);">★</sup>':''}</span>
-      <span class="rc-fam" style="background:${FC[r.fam]}22;color:${FC[r.fam]};">${r.fam}</span>
-    </div>`).join('');
-  if (filtered.length > 200) {
-    grid.innerHTML += `<div style="grid-column:1/-1;padding:12px;text-align:center;font-size:12px;color:var(--muted);">
-      Showing 200/${filtered.length}. Refine search to see more. ★ = Core-30 (click to explore).</div>`;
-  }
-}
-
-function filterExplorer() { renderExplorer(); }
-
-function importRoots(input) {
-  const file = input.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    try {
-      let imported;
-      if (file.name.endsWith('.json')) {
-        const data = JSON.parse(e.target.result);
-        imported = Array.isArray(data) ? data : data.words || data.roots || [];
-      } else {
-        // CSV: Word,Family,Axis,Freq
-        const lines = e.target.result.split('\n').slice(1);
-        imported = lines.filter(l=>l.trim()).map(l => {
-          const [w,fam,axis,freq] = l.split(',').map(s=>s.trim().replace(/"/g,''));
-          return {w, fam:fam||'OTHER', axis:axis||'—', freq:parseInt(freq)||474, core:false};
-        });
-      }
-      if (!imported.length) { alert('No roots found in file.'); return; }
-      explorerRoots = [...getExplorerRoots(), ...imported.filter(r => r.w && !explorerRoots?.find(x=>x.w===r.w))].slice(0,1200);
-      renderExplorer();
-      alert(`✓ Imported ${imported.length} roots. Total: ${explorerRoots.length}`);
-    } catch(err) { alert('Parse error: ' + err.message); }
-  };
-  reader.readAsText(file);
-}
-
-function exportExplorerCSV() {
-  const roots = getExplorerRoots();
-  const q = (document.getElementById('exp-search')?.value || '').toLowerCase();
-  const fam = document.getElementById('exp-fam')?.value || '';
-  const filtered = roots.filter(r => {
-    const mq = !q || r.w.toLowerCase().includes(q) || r.fam.toLowerCase().includes(q);
-    const mf = !fam || r.fam === fam;
-    return mq && mf;
-  });
-  const rows = [['Word','Family','Axis','Freq_Hz','Core30'],
-    ...filtered.map(r => [r.w, r.fam, r.axis, r.freq, r.core?1:0])];
-  const blob = new Blob([rows.map(r=>r.join(',')).join('\n')], {type:'text/csv'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'LUXVAR_roots.csv'; a.click();
-}
-
-// ═══════════════════════════════════════════════════
-// MOBILE GRAPH — lightweight static mode
-// ═══════════════════════════════════════════════════
-function isMobile() { return window.innerWidth < 768; }
-
-// Override drawOnto for mobile: skip animation loop, draw once
-function drawOntoMobile(cv, ctx) {
-  const W=cv.width, H=cv.height, cx=W/2, cy=H/2;
-  const rW=Math.min(W,H)*.4, rF=Math.min(W,H)*.24, rP=Math.min(W,H)*.1;
-  const FAM_LIST=['ELUZ','SHA','NAR','ZAR','RAHT','SAR','OTHER'];
-  const PROTO_LIST=['ELUZ_PROTO','SHA_PROTO','NAR_PROTO','MOTION_PROTO','GATE_PROTO'];
-  const wN=WORDS.map((w,i)=>{const a=(i/WORDS.length)*Math.PI*2-Math.PI/2;return{label:w.w,fam:w.fam,x:cx+rW*Math.cos(a),y:cy+rW*Math.sin(a),r:5,t:'w'};});
-  const fN=FAM_LIST.map((f,i)=>{const a=(i/FAM_LIST.length)*Math.PI*2-Math.PI/2;return{label:f,fam:f,x:cx+rF*Math.cos(a),y:cy+rF*Math.sin(a),r:12,t:'f'};});
-  const pN=PROTO_LIST.map((p,i)=>{const a=(i/PROTO_LIST.length)*Math.PI*2-Math.PI/2;return{label:p.replace('_PROTO',''),fam:'OTHER',x:cx+rP*Math.cos(a),y:cy+rP*Math.sin(a),r:8,t:'p'};});
-  const fM={};fN.forEach(f=>fM[f.label]=f);
-  const pM={};pN.forEach(p=>pM[p.label+'_PROTO']=p);
-  // Draw once (no loop)
-  ctx.clearRect(0,0,W,H);
-  // edges
-  wN.forEach(wn=>{const f=WORDS.find(w=>w.w===wn.label)?.fam;if(f&&fM[f]){ctx.beginPath();ctx.moveTo(wn.x,wn.y);ctx.lineTo(fM[f].x,fM[f].y);ctx.strokeStyle='rgba(255,255,255,.06)';ctx.lineWidth=1;ctx.stroke();}});
-  fN.forEach(fn=>{const pp=FP[fn.label];if(pp&&pM[pp]){ctx.beginPath();ctx.moveTo(fn.x,fn.y);ctx.lineTo(pM[pp].x,pM[pp].y);ctx.strokeStyle='rgba(0,200,220,.15)';ctx.lineWidth=1;ctx.stroke();}});
-  // nodes
-  [...wN,...fN,...pN].forEach(n=>{
-    const c=FC[n.fam]||'#446655';
-    ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
-    ctx.fillStyle=n.t==='w'?c:c+'88';ctx.fill();
-    if(n.t!=='w'){ctx.strokeStyle=c;ctx.lineWidth=1.5;ctx.stroke();}
-    if(n.t==='f'){ctx.fillStyle=c;ctx.font=`10px 'Courier New'`;ctx.textAlign='center';ctx.fillText(n.label,n.x,n.y+n.r+11);}
-  });
-  // tap handler
-  cv.onclick=e=>{
-    const r=cv.getBoundingClientRect();
-    const mx=e.clientX-r.left,my=e.clientY-r.top;
-    const idx=wN.findIndex(n=>Math.hypot(n.x-mx,n.y-my)<n.r+10);
-    if(idx>=0)openWord(WORDS[idx].w);
-  };
-  document.getElementById('graph-leg').innerHTML=
-    [...new Set(WORDS.map(w=>w.fam))].map(f=>`<div class="leg-it"><div class="leg-dot" style="background:${FC[f]};"></div>${f}</div>`).join('')+
-    '<div class="leg-it" style="color:var(--muted);font-size:10px;">Tap word to explore</div>';
-}
-
-// Patch drawOnto to check mobile
-const _origRenderGraph = renderGraph;
-
-// show() already handles saved and explorer via the fns map below — no patch needed
-
-// Add save button to builder panel after card is generated
-function _patchBuilder() {
-  const actionsDiv = document.querySelector('.b-panel .exp-btn')?.parentElement;
-  if (actionsDiv && !document.getElementById('save-card-btn')) {
-    const btn = document.createElement('button');
-    btn.id = 'save-card-btn';
-    btn.className = 'exp-btn';
-    btn.style.cssText = 'flex:1;border-color:var(--green);color:var(--green);';
-    btn.textContent = '✦ Save Card';
-    btn.onclick = saveCurrentCard;
-    actionsDiv.appendChild(btn);
-  }
-}
-
-// renderGraph() with mobile support is defined above
-
-// Init
-document.addEventListener('DOMContentLoaded', () => {
-  renderCharts();
-  updateSavedCount();
-  show('home');
-  setTimeout(_patchBuilder, 100);
-});
-</script>
-</body>
-</html>
+        ${st
