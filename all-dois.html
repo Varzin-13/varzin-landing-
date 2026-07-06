@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>VARZIN &#x2013; DOI Archive Status</title>
+  <meta name="description" content="VARZIN Project DOI archive status following an independent adversarial audit (July 2026). Records under voluntary withdrawal; one preprint retained.">
+  <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://varzin.org/all-dois.html" />
+  <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;600&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-end:#000; --primary-glow:#00ffee; --secondary-glow:#00ffff;
+      --text-main:#cceeee; --panel-bg:rgba(0,15,20,0.6);
+      --panel-border:rgba(0,255,238,0.3); --blur-val:10px;
+      --font-main:'DM Sans','Vazirmatn',sans-serif;
+      --mono:'IBM Plex Mono',monospace;
+      --warn:#d8a800; --warn-dim:rgba(216,168,0,.08);
+    }
+    html{scroll-behavior:smooth;}
+    body{margin:0;background:var(--bg-end);color:var(--text-main);font-family:var(--font-main);text-align:center;padding:40px 16px 80px;overflow-x:hidden;min-height:100vh;line-height:1.7;}
+    #field-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
+    .container{max-width:900px;margin:0 auto;position:relative;z-index:1;text-align:left;}
+    .main-nav{max-width:900px;margin:0 auto 50px;padding:0 0 15px;border-bottom:2px solid var(--panel-border);text-align:center;}
+    .nav-link{color:var(--text-main);text-decoration:none;font-weight:500;font-size:1.05em;margin:0 15px;}
+    .nav-link:hover{color:var(--primary-glow);}
+    .header{text-align:center;}
+    .header h1{font-size:clamp(2em,4.5vw,3.2em);margin-bottom:10px;color:var(--primary-glow);font-weight:700;letter-spacing:3px;text-shadow:0 0 20px var(--primary-glow);}
+    .header h2{font-size:1.1em;color:var(--secondary-glow);margin-bottom:30px;font-weight:500;}
+    .status-panel{background:var(--warn-dim);border:1px solid rgba(216,168,0,.35);border-radius:10px;padding:24px 28px;margin-bottom:36px;font-size:0.95em;line-height:1.9;}
+    .status-panel strong{color:var(--warn);}
+    .status-panel a{color:var(--primary-glow);}
+    .kept-panel{background:rgba(0,255,238,.05);border:1px solid var(--panel-border);border-radius:10px;padding:24px 28px;margin-bottom:24px;}
+    .kept-panel h3{color:var(--primary-glow);margin:0 0 12px;font-size:1.1em;}
+    .kept-panel .note{color:var(--warn);font-size:0.88em;margin-top:8px;}
+    .withdrawn-table{width:100%;border-collapse:collapse;font-size:0.85em;margin-top:10px;}
+    .withdrawn-table th{text-align:left;padding:8px 10px;color:#7fa0a8;font-size:0.8em;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--panel-border);}
+    .withdrawn-table td{padding:7px 10px;border-bottom:1px solid rgba(0,255,238,.08);color:#9ac0c8;}
+    .withdrawn-table tr:hover td{background:rgba(0,255,238,.03);}
+    details{background:var(--panel-bg);border:1px solid var(--panel-border);border-radius:8px;padding:16px 20px;margin-bottom:16px;}
+    summary{cursor:pointer;font-weight:600;color:var(--primary-glow);}
+    .footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--panel-border);text-align:center;font-family:var(--mono);font-size:0.8em;color:#5a8090;}
+    .footer a{color:#7fa0a8;}
+  </style>
+</head>
+<body>
+<canvas id="field-canvas"></canvas>
+<div class="container">
+
+  <nav class="main-nav">
+    <a class="nav-link" href="index.html">Portal</a>
+    <a class="nav-link" href="cyclical-resonance-report.html">Cyclical Resonance</a>
+    <a class="nav-link" href="field-index.html">Field Index</a>
+    <a class="nav-link" href="master-report-v3.html">Master Report v3</a>
+  </nav>
+
+  <header class="header">
+    <h1>&#x1F740; VARZIN &#x2013; DOI Archive Status</h1>
+    <h2>Updated following independent adversarial audit &middot; July 2026</h2>
+  </header>
+
+  <div class="status-panel">
+    <strong>Status update (July 2026):</strong> Following an independent, multi-stage adversarial audit of the VARZIN computational core (see <strong>VARZIN-COMPUTATIONAL-AUDIT-CLOSURE-v1</strong>) and a broader review of how these records were produced, the author has requested voluntary withdrawal of the 29 records previously listed on this page (19 Zenodo, 10 OSF) via each platform's formal withdrawal process. Withdrawn records are retained by Zenodo/OSF as "tombstone" pages showing the original citation metadata and the reason for withdrawal &mdash; they are not erased from the scholarly record, only marked as retracted by the author's own request. This page will be updated with the final tombstone links once each platform confirms processing.
+  </div>
+
+  <div class="kept-panel">
+    <h3>What remains active</h3>
+    <p>One preprint is retained, as its core claims (LUXVAR phonotactic structure and morpheme-family statistics) were independently re-verified and are not affected by the audit finding above:</p>
+    <p><a href="https://doi.org/10.5281/zenodo.20691858" target="_blank" style="color:var(--primary-glow);">10.5281/zenodo.20691858</a> &mdash; "LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families"</p>
+    <p class="note">Note: within this same paper, the phonotactic/morphemic findings are solidly established; the "AI-recoverable" claim in the title (inter-model ARI=0.812) remains preliminary and is the specific subject of the computational-core audit above &mdash; see the Results table on the <a href="cyclical-resonance-report.html" style="color:var(--primary-glow);">Cyclical Resonance report</a> for full status.</p>
+  </div>
+
+  <details>
+    <summary>Records under withdrawal request (29 total) &mdash; click to expand</summary>
+    <table class="withdrawn-table">
+      <tr><th>Platform</th><th>Original DOI</th><th>Status</th></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.15833167</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.16416098</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.16945675</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.16955497</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.16989515</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17048555</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17050533</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17064524</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17073902</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17094639</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17147281</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17226987</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17249932</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17260325</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17260927</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17265575</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17282392</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17295304</td><td>Withdrawal requested</td></tr>
+      <tr><td>Zenodo</td><td>10.5281/zenodo.17515491</td><td>Withdrawal requested</td></tr>
+      <tr><td>OSF</td><td>10.17605/OSF.IO/YCV2M</td><td>Withdrawal requested</td></tr>
+      <tr><td>OSF</td><td>10.17605/OSF.IO/CRQN5</td><td>Withdrawal requested</td></tr>
+      <tr><td>OSF</td><td>10.17605/OSF.IO/BW5CJ</td><td>Withdrawal requested</td></tr>
+      <tr><td>OSF</td><td>10.17605/OSF.IO/QUXHF</td><td>Withdrawal requested</td></tr>
+      <tr><td>OSF</td><td>10.17605/OSF.IO/2CYNW</td><td>Withdrawal requested</td></tr>
+      <tr><td>OSF</td><td>10.17605/OSF.IO/84NT6</td><td>Withdrawal requested</td></tr>
+      <tr><td>OSF</td><td>10.17605/OSF.IO/PGB8N</td><td>Withdrawal requested</td></tr>
+      <tr><td>OSF</td><td>10.17605/OSF.IO/6JG37</td><td>Withdrawal requested</td></tr>
+      <tr><td>OSF</td><td>10.17605/OSF.IO/2NKZA</td><td>Withdrawal requested</td></tr>
+      <tr><td>OSF</td><td>10.17605/OSF.IO/NQZRS</td><td>Withdrawal requested</td></tr>
+    </table>
+  </details>
+
+  <div class="footer">
+    ORCID: <a href="https://orcid.org/0009-0000-4690-6842" target="_blank">0009-0000-4690-6842</a>
+    &middot; See also: VARZIN-P1-Closure-v2, VARZIN-COMPUTATIONAL-AUDIT-CLOSURE-v1
+  </div>
+
+</div>
+<script>
+const canvas=document.getElementById('field-canvas'),ctx=canvas.getContext('2d');
+function resize(){canvas.width=innerWidth;canvas.height=innerHeight;}resize();window.addEventListener('resize',resize);
+let pts=[];for(let i=0;i<70;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3});
+(function loop(){
+  ctx.fillStyle='rgba(0,0,0,.15)';ctx.fillRect(0,0,canvas.width,canvas.height);
+  for(const p of pts){p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>canvas.width)p.dx*=-1;if(p.y<0||p.y>canvas.height)p.dy*=-1;ctx.fillStyle='rgba(0,200,220,.3)';ctx.fillRect(p.x,p.y,1.5,1.5);}
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
