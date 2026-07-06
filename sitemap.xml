@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://varzin.org/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://varzin.org/cyclical-resonance-report.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://varzin.org/field-index.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://varzin.org/atlas.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://varzin.org/master-report-v3.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://varzin.org/vpe001-protocol.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://varzin.org/luxvar-birth-intro.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://varzin.org/all-dois.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://varzin.org/feedback.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+</urlset>
