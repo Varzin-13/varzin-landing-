@@ -1,0 +1,2369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
+>
+
+<title>VARZIN — Affine Systems & Constructed Symbolic Structures</title>
+
+<meta
+  name="description"
+  content="VARZIN is a self-auditing research program studying finite-state affine systems and the constructed symbolic lexicon LUXVAR. This page separates proved mathematics, conditional computational results, open empirical tests, negative findings, and archived hypotheses."
+>
+
+<meta name="author" content="Reza Nirouyar">
+<meta name="theme-color" content="#07111f">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta
+  property="og:title"
+  content="VARZIN — Affine Systems & Constructed Symbolic Structures"
+>
+<meta
+  property="og:description"
+  content="Proved mathematics, conditional computational results, LUXVAR research, adversarial audit findings, and open empirical tests."
+>
+
+<style>
+:root {
+  --bg: #06101d;
+  --bg-soft: #091827;
+  --surface: rgba(14, 30, 47, 0.86);
+  --surface-strong: #10243a;
+  --surface-light: #17304a;
+  --text: #edf6ff;
+  --muted: #9fb3c8;
+  --faint: #6f879e;
+  --line: rgba(159, 198, 227, 0.16);
+
+  --cyan: #53d8fb;
+  --blue: #6f8cff;
+  --violet: #a981ff;
+  --green: #61dfa5;
+  --yellow: #f4cf68;
+  --orange: #ff9c64;
+  --red: #ff7082;
+
+  --proved: #61dfa5;
+  --conditional: #f4cf68;
+  --open: #53d8fb;
+  --negative: #ff7082;
+  --archived: #a9b3c0;
+
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+  --radius-sm: 10px;
+  --radius: 18px;
+  --radius-lg: 28px;
+  --container: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--text);
+  background:
+    radial-gradient(
+      circle at 20% 0%,
+      rgba(83, 216, 251, 0.10),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(169, 129, 255, 0.09),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #06101d 0%,
+      #071321 45%,
+      #050c16 100%
+    );
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.65;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  opacity: 0.22;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    );
+  background-size: 36px 36px;
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
+  -webkit-mask-image:
+    linear-gradient(to bottom, black, transparent 92%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+code,
+pre,
+.formula,
+.mono {
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    Menlo,
+    monospace;
+}
+
+.container {
+  width: min(calc(100% - 36px), var(--container));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+  padding: 10px 14px;
+  color: #04111b;
+  background: var(--cyan);
+  border-radius: 8px;
+  transform: translateY(-160%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Header */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--line);
+  background: rgba(6, 16, 29, 0.84);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.nav-shell {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(83, 216, 251, 0.45);
+  border-radius: 50%;
+  color: var(--cyan);
+  background: rgba(83, 216, 251, 0.07);
+  box-shadow: 0 0 24px rgba(83, 216, 251, 0.13);
+}
+
+.brand-mark::before {
+  content: "V";
+  font-size: 0.92rem;
+  font-weight: 900;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-links a {
+  padding: 9px 11px;
+  color: var(--muted);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.055);
+  outline: none;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-button {
+  display: none;
+  width: 42px;
+  height: 42px;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Shared components */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--cyan);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 24px;
+  height: 1px;
+  content: "";
+  background: currentColor;
+}
+
+.section {
+  padding: 92px 0;
+  border-top: 1px solid rgba(159, 198, 227, 0.08);
+}
+
+.section-soft {
+  background: rgba(10, 24, 39, 0.42);
+}
+
+.section-heading {
+  max-width: 790px;
+  margin-bottom: 38px;
+}
+
+.section-heading h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 4.5vw, 3.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  padding: 5px 9px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.69rem;
+  font-weight: 850;
+  letter-spacing: 0.095em;
+  text-transform: uppercase;
+}
+
+.status::before {
+  width: 6px;
+  height: 6px;
+  content: "";
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.status-proved {
+  color: var(--proved);
+  background: rgba(97, 223, 165, 0.065);
+}
+
+.status-conditional {
+  color: var(--conditional);
+  background: rgba(244, 207, 104, 0.065);
+}
+
+.status-open {
+  color: var(--open);
+  background: rgba(83, 216, 251, 0.065);
+}
+
+.status-negative {
+  color: var(--negative);
+  background: rgba(255, 112, 130, 0.065);
+}
+
+.status-archived {
+  color: var(--archived);
+  background: rgba(169, 179, 192, 0.055);
+}
+
+.button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.035);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  border-color: rgba(83, 216, 251, 0.45);
+  background: rgba(83, 216, 251, 0.08);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.button-primary {
+  color: #04111a;
+  border-color: transparent;
+  background:
+    linear-gradient(135deg, var(--cyan), #94ecff);
+  font-weight: 800;
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+  background:
+    linear-gradient(135deg, #75e3ff, #b6f3ff);
+}
+
+.grid-2,
+.grid-3,
+.metrics-grid,
+.status-grid,
+.roadmap-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.028),
+      transparent
+    ),
+    var(--surface);
+  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.15);
+}
+
+.card::after {
+  position: absolute;
+  right: -50px;
+  bottom: -70px;
+  width: 160px;
+  height: 160px;
+  pointer-events: none;
+  content: "";
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(83, 216, 251, 0.08),
+      transparent 68%
+    );
+}
+
+.card h3 {
+  margin: 13px 0 8px;
+  font-size: 1.18rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card ul {
+  color: var(--muted);
+}
+
+.note {
+  padding: 18px 20px;
+  border-left: 3px solid var(--cyan);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--muted);
+  background: rgba(83, 216, 251, 0.055);
+}
+
+.warning {
+  border-left-color: var(--yellow);
+  background: rgba(244, 207, 104, 0.055);
+}
+
+.negative-note {
+  border-left-color: var(--red);
+  background: rgba(255, 112, 130, 0.055);
+}
+
+/* Hero */
+
+.hero {
+  position: relative;
+  padding: 96px 0 68px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(300px, 0.75fr);
+  align-items: center;
+  gap: 52px;
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(3.15rem, 8.5vw, 7.3rem);
+  line-height: 0.92;
+  letter-spacing: -0.072em;
+}
+
+.hero h1 span {
+  display: block;
+  color: transparent;
+  background:
+    linear-gradient(
+      100deg,
+      var(--cyan),
+      #e5f8ff 52%,
+      var(--violet)
+    );
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.hero-lead {
+  max-width: 760px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 30px;
+}
+
+.hero-panel {
+  padding: 24px;
+  border: 1px solid rgba(83, 216, 251, 0.24);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(83, 216, 251, 0.11),
+      transparent 42%
+    ),
+    rgba(9, 24, 39, 0.86);
+  box-shadow: var(--shadow);
+}
+
+.hero-panel h2 {
+  margin: 14px 0 8px;
+  font-size: 1.2rem;
+}
+
+.hero-panel ul {
+  display: grid;
+  gap: 11px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-panel li {
+  display: grid;
+  grid-template-columns: 17px 1fr;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.hero-panel li::before {
+  content: "◇";
+  color: var(--cyan);
+}
+
+/* Metrics */
+
+.metrics-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-top: 52px;
+}
+
+.metric {
+  min-height: 188px;
+  display: flex;
+  flex-direction: column;
+  padding: 19px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(12, 28, 44, 0.75);
+}
+
+.metric-value {
+  margin: 18px 0 5px;
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.metric-label {
+  font-weight: 750;
+}
+
+.metric-detail {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.81rem;
+}
+
+/* Formula */
+
+.formula-card {
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #071522;
+}
+
+.formula-card h3 {
+  margin: 14px 0 16px;
+}
+
+.formula {
+  overflow-x: auto;
+  padding: 18px;
+  border: 1px solid rgba(83, 216, 251, 0.13);
+  border-radius: 12px;
+  color: #d8f8ff;
+  background: rgba(3, 12, 20, 0.72);
+  font-size: clamp(0.86rem, 1.7vw, 1.03rem);
+  line-height: 1.9;
+  white-space: pre-wrap;
+}
+
+.formula strong {
+  color: var(--cyan);
+}
+
+/* Tables */
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  background: rgba(9, 24, 39, 0.76);
+}
+
+th,
+td {
+  padding: 15px 17px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.027);
+  font-size: 0.79rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+td {
+  color: var(--muted);
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Evidence registry */
+
+.status-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.status-column {
+  min-height: 100%;
+}
+
+.status-column ul {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+/* Audit */
+
+.audit-card {
+  padding: clamp(25px, 5vw, 48px);
+  border: 1px solid rgba(255, 112, 130, 0.28);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(255, 112, 130, 0.09),
+      transparent 35%
+    ),
+    rgba(20, 20, 32, 0.75);
+}
+
+.audit-card blockquote {
+  margin: 24px 0;
+  padding-left: 20px;
+  border-left: 3px solid var(--red);
+  color: var(--text);
+  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+  line-height: 1.55;
+}
+
+.audit-card p {
+  color: var(--muted);
+}
+
+/* Roadmap */
+
+.roadmap-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.roadmap-list {
+  counter-reset: steps;
+  display: grid;
+  gap: 13px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.roadmap-list li {
+  position: relative;
+  padding-left: 34px;
+  color: var(--muted);
+}
+
+.roadmap-list li::before {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  counter-increment: steps;
+  content: counter(steps);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--cyan);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+/* Footer */
+
+.site-footer {
+  padding: 54px 0 34px;
+  border-top: 1px solid var(--line);
+  background: rgba(2, 8, 14, 0.42);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 40px;
+}
+
+.footer-summary {
+  max-width: 760px;
+  color: var(--muted);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: start;
+  gap: 9px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 38px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--faint);
+  font-size: 0.82rem;
+}
+
+/* Responsive */
+
+@media (max-width: 1080px) {
+  .metrics-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .status-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .menu-button {
+    display: grid;
+    place-items: center;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    left: 18px;
+    right: 18px;
+    display: none;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(6, 16, 29, 0.98);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-links.is-open {
+    display: grid;
+  }
+
+  .nav-links a {
+    padding: 12px;
+  }
+
+  .hero-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .hero-panel {
+    max-width: 660px;
+  }
+
+  .roadmap-grid,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: min(calc(100% - 24px), var(--container));
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .nav-actions .button {
+    display: none;
+  }
+
+  .metrics-grid,
+  .grid-2,
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric {
+    min-height: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#main-content">
+  Skip to main content
+</a>
+
+<header class="site-header">
+  <div class="container nav-shell">
+    <a class="brand" href="#top" aria-label="VARZIN home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>VARZIN</span>
+    </a>
+
+    <nav
+      id="primary-navigation"
+      class="nav-links"
+      aria-label="Primary navigation"
+    >
+      <a href="#status">Status</a>
+      <a href="#mathematics">Mathematics</a>
+      <a href="#mirror">Mirror-13</a>
+      <a href="#luxvar">LUXVAR</a>
+      <a href="#audit">Audit</a>
+      <a href="#empirical">Human study</a>
+      <a href="#archive">Archive</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button
+        class="button"
+        id="downloadPage"
+        type="button"
+        title="Download this page as an HTML file"
+      >
+        Download HTML
+      </button>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Open navigation menu"
+      >
+        ☰
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">
+          Scientific reset · evidence-first edition
+        </div>
+
+        <h1>
+          Affine systems
+          <span>&amp; symbolic structures</span>
+        </h1>
+
+        <p class="hero-lead">
+          VARZIN is an independent, self-auditing research program
+          studying finite-state affine systems and LUXVAR, a
+          constructed symbolic lexicon. This edition separates
+          mathematical proofs, conditional computational results,
+          exploratory observations, planned empirical tests,
+          negative findings, and archived hypotheses.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#mathematics">
+            Explore the proved mathematics
+          </a>
+
+          <a class="button" href="#status">
+            View evidence registry
+          </a>
+
+          <a class="button" href="#audit">
+            Read audit outcome
+          </a>
+        </div>
+      </div>
+
+      <aside
+        class="hero-panel"
+        aria-label="Current scientific boundary"
+      >
+        <span class="status status-open">
+          Current boundary
+        </span>
+
+        <h2>What is—and is not—established</h2>
+
+        <ul>
+          <li>
+            The affine bijection criterion is mathematically
+            proved for every modulus
+            <span class="mono">N ≥ 2</span>.
+          </li>
+
+          <li>
+            Strong connectivity is proved for the specified
+            augmented IN/OUT/Rotate transition system.
+          </li>
+
+          <li>
+            The reported Mirror-13 value of 13.11 bits is
+            conditional on a project-defined encoding and
+            candidate space.
+          </li>
+
+          <li>
+            LUXVAR has designed structural regularities, but
+            independent semantic emergence has not been
+            established.
+          </li>
+
+          <li>
+            ETFM, frequency effects, consciousness-field
+            interpretations, and external memory are not
+            supported by current evidence.
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <div
+      class="metrics-grid"
+      aria-label="Key scientific status metrics"
+    >
+      <article class="metric">
+        <span class="status status-proved">Proved</span>
+        <div class="metric-value">48</div>
+        <div class="metric-label">Affine permutations</div>
+        <div class="metric-detail">
+          For N=12: 12 × φ(12)
+        </div>
+      </article>
+
+      <article class="metric">
+        <span class="status status-proved">Proved</span>
+        <div class="metric-value">312</div>
+        <div class="metric-label">Augmented states</div>
+        <div class="metric-detail">
+          (12+1) × 12 × 2
+        </div>
+      </article>
+
+      <article class="metric">
+        <span class="status status-conditional">
+          Conditional
+        </span>
+        <div class="metric-value">13.11</div>
+        <div class="metric-label">Reported MDL bits</div>
+        <div class="metric-detail">
+          Encoding-dependent result
+        </div>
+      </article>
+
+      <article class="metric">
+        <span class="status status-conditional">
+          Exploratory
+        </span>
+        <div class="metric-value">0.812</div>
+        <div class="metric-label">Raw inter-model ARI</div>
+        <div class="metric-detail">
+          No independent advantage established
+        </div>
+      </article>
+
+      <article class="metric">
+        <span class="status status-open">Under review</span>
+        <div class="metric-value">30</div>
+        <div class="metric-label">Public Core items</div>
+        <div class="metric-detail">
+          Semantic validity not established
+        </div>
+      </article>
+
+      <article class="metric">
+        <span class="status status-archived">Archived</span>
+        <div class="metric-value">ETFM</div>
+        <div class="metric-label">Visualization model</div>
+        <div class="metric-detail">
+          Independent contribution not established
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="status">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Evidence registry</div>
+
+      <h2>Claims separated by evidential status</h2>
+
+      <p>
+        “Proved,” “reported,” “open,” “negative,” and “archived”
+        are not interchangeable. This registry prevents
+        mathematical facts, synthetic simulations, empirical
+        hypotheses, and historical interpretations from being
+        presented at the same level.
+      </p>
+    </div>
+
+    <div class="status-grid">
+      <article class="card status-column">
+        <span class="status status-proved">Proved</span>
+        <h3>Mathematical results</h3>
+
+        <ul>
+          <li>Affine bijection criterion for all N ≥ 2.</li>
+          <li>|Aff(Z<sub>N</sub>)| = Nφ(N).</li>
+          <li>48 affine permutations for N=12.</li>
+          <li>
+            Strong connectivity of the specified augmented
+            transition system.
+          </li>
+        </ul>
+      </article>
+
+      <article class="card status-column">
+        <span class="status status-conditional">
+          Conditional
+        </span>
+
+        <h3>Computational reports</h3>
+
+        <ul>
+          <li>Mirror-13 MDL = 13.11 bits.</li>
+          <li>Reported rank 1/1,035.</li>
+          <li>
+            Reported spectral quantities for one transition
+            matrix.
+          </li>
+          <li>
+            Earlier family-classification and graph results.
+          </li>
+        </ul>
+      </article>
+
+      <article class="card status-column">
+        <span class="status status-open">Open</span>
+        <h3>Empirical questions</h3>
+
+        <ul>
+          <li>
+            Human perception of intended semantic axes.
+          </li>
+          <li>
+            Controlled performance against matched words.
+          </li>
+          <li>
+            LUXVAR grammar and compositional semantics.
+          </li>
+          <li>
+            Independent reproduction of retained computations.
+          </li>
+        </ul>
+      </article>
+
+      <article class="card status-column">
+        <span class="status status-negative">Negative</span>
+        <h3>Not established</h3>
+
+        <ul>
+          <li>Independent semantic emergence.</li>
+          <li>Natural six-axis clustering.</li>
+          <li>Frequency encoding in word form.</li>
+          <li>External memory.</li>
+          <li>A distinct audited computational core.</li>
+        </ul>
+      </article>
+
+      <article class="card status-column">
+        <span class="status status-archived">Archived</span>
+        <h3>Historical hypotheses</h3>
+
+        <ul>
+          <li>
+            ETFM as a physical or computational field.
+          </li>
+          <li>Consciousness-field interpretations.</li>
+          <li>Frequency-to-meaning causation.</li>
+          <li>Non-human or universal LUXVAR origin.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="mathematics">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Proved mathematical core</div>
+
+      <h2>Affine permutations over finite cyclic spaces</h2>
+
+      <p>
+        The elementary affine result is retained independently
+        of all linguistic, cognitive, frequency, field, and
+        external-memory interpretations.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <article class="formula-card">
+        <span class="status status-proved">Theorem</span>
+        <h3>Affine bijection criterion</h3>
+
+        <div class="formula"><strong>A_(a,b)(g)</strong> = (a·g + b) mod N
+
+A_(a,b) is bijective on Z_N
+
+<strong>if and only if</strong>
+
+gcd(a,N) = 1
+
+Therefore:
+
+Aff(Z_N) ≅ Z_N ⋊ (Z/NZ)×
+
+|Aff(Z_N)| = N·φ(N)</div>
+
+        <p class="note">
+          Status: complete elementary proof for every N ≥ 2.
+          A machine-checked Lean/Coq formalization remains future
+          work.
+        </p>
+      </article>
+
+      <article class="formula-card">
+        <span class="status status-proved">N = 12</span>
+        <h3>Complete valid multiplier family</h3>
+
+        <div class="formula">Units modulo 12:
+
+a ∈ {1, 5, 7, 11}
+
+Each valid a admits 12 translations b.
+
+4 × 12 = <strong>48 affine permutations</strong>
+
+a = 1 → shift family
+a = 5 → affine family
+a = 7 → affine family
+a = 11 → reflection family</div>
+
+        <p class="note">
+          The pure reflection is
+          <span class="mono">
+            A_(11,0)(g) = −g mod 12
+          </span>.
+        </p>
+      </article>
+    </div>
+
+    <div style="height: 18px"></div>
+
+    <article class="formula-card">
+      <span class="status status-proved">
+        Augmented system
+      </span>
+
+      <h3>Reflection–rotation–center transition system</h3>
+
+      <div class="formula">State = (gate, phase, polarity)
+
+gate ∈ {0,...,N−1} ∪ {center}
+phase ∈ Z_N
+polarity ∈ {+1,−1}
+
+IN:
+(g, φ, p) → (center, g, −p)
+
+OUT:
+(center, φ, p) → (−φ mod N, φ, p)
+
+ROTATE:
+(g, φ, p) → (g+1 mod N, φ, p)</div>
+
+      <p class="note">
+        For the specified move system, the directed transition
+        graph is strongly connected for every N ≥ 2. This is a
+        reachability theorem about an augmented transition
+        system—not an assertion that every transition is itself
+        an element of Aff(Z<sub>N</sub>). To avoid notational overload: the
+        affine permutation A<sub>(a,b)</sub>(g) = (a·g+b) mod N from Section
+        "Proved mathematical core" is a distinct object from the IN/OUT
+        memory-transition maps here — the latter act on the augmented
+        triple (gate, phase, polarity) and are not themselves claimed to
+        be elements of Aff(Z<sub>N</sub>).
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="section section-soft" id="mirror">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Mirror-13</div>
+
+      <h2>Algebraic fact versus conditional MDL result</h2>
+
+      <p>
+        The reflection map is mathematically straightforward.
+        The reported description length is a separate
+        computational result and depends on the selected encoding
+        and search space.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <article class="card">
+        <span class="status status-proved">
+          Algebraic fact
+        </span>
+
+        <h3>Why the reflection is valid</h3>
+
+        <div class="formula">A_(−1,0)(g) = −g mod 12
+
+gcd(−1,12) = 1
+
+Therefore A_(−1,0) is a bijection.</div>
+
+        <p>
+          “Mirror-13” refers to an architecture with 12 ring
+          positions plus one center position. The underlying
+          affine reflection acts modulo 12.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="status status-conditional">
+          Reported computation
+        </span>
+
+        <h3>Project-defined MDL comparison</h3>
+
+        <div class="formula">Reported description length: 13.11 bits
+Reported rank: 1 / 1,035
+Reported comparison mean: 67.19 bits</div>
+
+        <p>
+          These values are not absolute algebraic properties.
+          They depend on the candidate space, encoding language,
+          rule costs, equivalence criterion, and coding
+          convention.
+        </p>
+      </article>
+    </div>
+
+    <div style="height: 18px"></div>
+
+    <div class="note warning">
+      <strong>Required for stronger status:</strong>
+      publish the complete encoding specification, candidate
+      generator, equivalence definition, enumeration code, raw
+      outputs, and an independent reproduction. Until then,
+      “minimum” means minimum only within the specified
+      project-defined search procedure.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="luxvar">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Constructed symbolic lexicon</div>
+
+      <h2>LUXVAR under empirical review</h2>
+
+      <p>
+        LUXVAR contains designed roots, suffixes, phonotactic
+        conventions, morpheme families, and semantic labels.
+        Detectable design structure must not be confused with
+        independent semantic emergence.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card">
+        <span class="status status-proved">
+          Defined by design
+        </span>
+
+        <h3>Designed structure</h3>
+
+        <p>
+          Roots, suffixes, word templates, morpheme labels, and
+          semantic assignments were introduced by the project.
+          Their existence is true by construction.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="status status-conditional">Observed</span>
+
+        <h3>Surface-form structure</h3>
+
+        <p>
+          Character distributions, n-grams, repeated morphemes,
+          and templates can make the corpus distinguishable from
+          simple random strings. This does not by itself
+          establish meaning.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="status status-negative">
+          Not established
+        </span>
+
+        <h3>Independent semantics</h3>
+
+        <p>
+          The intended semantic axes have not been shown to be
+          recoverable beyond matched surface-form controls by
+          unfamiliar humans or generalizable computational
+          methods.
+        </p>
+      </article>
+    </div>
+
+    <div style="height: 32px"></div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Claim</th>
+            <th>Current status</th>
+            <th>Interpretation</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>LUXVAR contains designed regularities</td>
+            <td>
+              <span class="status status-proved">
+                Defined
+              </span>
+            </td>
+            <td>
+              True by construction, not an emergence result.
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Surface patterns are computationally detectable
+            </td>
+            <td>
+              <span class="status status-conditional">
+                Reported
+              </span>
+            </td>
+            <td>
+              Requires matched baselines and independent
+              reproduction.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Raw inter-model clustering agreement</td>
+            <td>
+              <span class="status status-conditional">
+                Exploratory
+              </span>
+            </td>
+            <td>
+              ARI=0.812 was reported, but independent explanatory
+              value beyond simple surface patterns was not
+              established.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Five semantic axes emerge naturally</td>
+            <td>
+              <span class="status status-negative">
+                Not supported
+              </span>
+            </td>
+            <td>
+              Natural clustering was reported as k=3 rather than
+              k=5/6.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Phonotactic distinctiveness is emergent from the combination process</td>
+            <td>
+              <span class="status status-negative">
+                Not supported
+              </span>
+            </td>
+            <td>
+              A pre-registered attribution test (LUXVAR-EMERGENCE-001-v2, N=200) found the measured
+              distinctiveness is attributable to the choice of the 18 base components, not to the
+              root+root+suffix combination process itself. The distance from natural languages is a
+              real, reproducible measurement — but not evidence of emergent structure.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Frequency is encoded in word form</td>
+            <td>
+              <span class="status status-negative">
+                Negative
+              </span>
+            </td>
+            <td>
+              Existing project tests did not recover frequency
+              labels.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Universal or non-human semantic origin</td>
+            <td>
+              <span class="status status-archived">
+                No evidence
+              </span>
+            </td>
+            <td>Not an active scientific claim.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="height: 28px"></div>
+
+    <article class="card">
+      <span class="status status-conditional">
+        AI grouping result
+      </span>
+
+      <h3>
+        What the reported ARI=0.812 does—and does not—mean
+      </h3>
+
+      <p>
+        Claude, GPT-4, and Gemini produced mutually similar
+        groupings of Core word forms in an exploratory exercise.
+        Their groupings appeared to follow visible morphemic and
+        orthographic similarities more closely than the designed
+        semantic axes.
+      </p>
+
+      <div style="height: 14px"></div>
+
+      <p class="note warning">
+        Adversarial and n-gram-oriented controls did not
+        establish explanatory value beyond surface-form
+        statistics. The result is therefore not evidence of
+        semantic emergence, cognitive understanding, universal
+        symbolism, or recovery of hidden intended meanings.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="section section-soft" id="audit">
+  <div class="container">
+    <div class="audit-card">
+      <span class="status status-negative">
+        Audit closure result
+      </span>
+
+      <div
+        class="section-heading"
+        style="margin: 18px 0 0"
+      >
+        <h2>
+          Independent adversarial audit of the computational core
+        </h2>
+      </div>
+
+      <blockquote>
+        The audited VARZIN structure-detection pipeline did not
+        establish a distinct, generalizable advantage beyond
+        specialized baselines.
+      </blockquote>
+
+      <p>
+        The one measurable internal advantage did not survive
+        testing on an independently coded generator and could
+        not be attributed to a specific feature.
+      </p>
+
+      <p>
+        Consequently, earlier scores from the audited pipeline
+        must not be used as evidence for semantic emergence, a
+        new general-purpose computational method, or a distinct
+        numeric VARZIN core.
+      </p>
+
+      <p>
+        This negative result does not invalidate the elementary
+        affine theorem. It also does not automatically validate
+        or invalidate results produced by separate pipelines;
+        those require their own independent reproduction.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="empirical">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Planned empirical program</div>
+
+      <h2>
+        Pilot and confirmatory studies must remain separate
+      </h2>
+
+      <p>
+        Earlier pages mixed a 30-item card-sorting pilot with an
+        80+80-item confirmatory classification design. They are
+        now separated by purpose, sample size, and evidential
+        role.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <article class="card">
+        <span class="status status-open">Pilot</span>
+        <h3>VPE-PILOT-001</h3>
+
+        <p>
+          <strong>Purpose:</strong>
+          evaluate instructions, category ambiguity, participant
+          behavior, and unexpected grouping strategies.
+        </p>
+
+        <ul>
+          <li>30 Core items</li>
+          <li>Suggested 5–10 unfamiliar participants</li>
+          <li>Exploratory card sorting</li>
+          <li>No confirmatory semantic claim</li>
+          <li>
+            Pilot data excluded from the main confirmatory
+            analysis
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <span class="status status-open">Main study</span>
+        <h3>VPE-001</h3>
+
+        <p>
+          <strong>Purpose:</strong>
+          test whether unfamiliar participants classify LUXVAR
+          items according to intended semantic axes above
+          predefined baselines and matched artificial controls.
+        </p>
+
+        <ul>
+          <li>80 LUXVAR items</li>
+          <li>80 matched control items</li>
+          <li>Target N=40; minimum N=30</li>
+          <li>All predefined success criteria required</li>
+          <li>
+            Status: pre-registration protocol in preparation
+          </li>
+        </ul>
+      </article>
+    </div>
+
+    <div style="height: 18px"></div>
+
+    <div class="note warning">
+      Neither study tests physical fields, consciousness
+      interaction, non-human origin, ETFM, external memory, or
+      frequency effects. “Pre-registered” should be used only
+      after a real timestamped registration is publicly
+      available.
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="archive">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Historical models</div>
+      <h2>ETFM-POST and archived hypotheses</h2>
+
+      <p>
+        Historical concepts are retained for transparency, but
+        are no longer presented as established mechanisms.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <article class="card">
+        <span class="status status-archived">
+          Visualization only
+        </span>
+
+        <h3>ETFM-POST</h3>
+
+        <p>
+          ETFM-POST was previously presented as a toroidal or
+          field-based representation of VARZIN states. Current
+          evidence does not show that it adds predictive
+          information, generates new invariants, improves
+          generalization, or represents a physical field.
+        </p>
+
+        <div style="height: 14px"></div>
+
+        <div class="formula">Reported internal increment:
+
+ΔH = 0.012
+
+Independent computational contribution:
+NOT ESTABLISHED</div>
+      </article>
+
+      <article class="card">
+        <span class="status status-archived">
+          Dormant hypotheses
+        </span>
+
+        <h3>No active mechanism claim</h3>
+
+        <ul>
+          <li>ETFM as a physical field</li>
+          <li>Consciousness-field interaction</li>
+          <li>Frequency-to-meaning causation</li>
+          <li>External memory</li>
+          <li>Non-human origin of LUXVAR</li>
+          <li>Universal semantic resonance</li>
+        </ul>
+
+        <p>
+          Any future revival requires a new, independently
+          designed and preregistered protocol with explicit
+          falsification criteria.
+        </p>
+      </article>
+    </div>
+
+    <div style="height: 18px"></div>
+
+    <div class="note negative-note">
+      <strong>External memory:</strong>
+      the reported sealed-target result was
+      <span class="mono">z = −1.042</span>.
+      External memory was not established. Adding new structural
+      conditions after this negative result must be treated as a
+      new hypothesis, not as confirmation of the previous
+      mechanism.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="negative-results">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Negative results</div>
+      <h2>What the project no longer claims</h2>
+
+      <p>
+        Negative findings are part of the scientific record.
+        They define the boundary of the project rather than being
+        hidden or reinterpreted after the fact.
+      </p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Historical claim</th>
+            <th>Current verdict</th>
+            <th>Scientific consequence</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Natural six-axis or Hexacore clustering</td>
+            <td>
+              <span class="status status-negative">
+                Rejected
+              </span>
+            </td>
+            <td>
+              Natural k was reported as 3, not 5 or 6.
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Semantic axes recoverable from word form
+            </td>
+            <td>
+              <span class="status status-negative">
+                Not established
+              </span>
+            </td>
+            <td>
+              No reliable advantage beyond suitable controls.
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Corpus-level structure beyond generator/component choice (emergence)
+            </td>
+            <td>
+              <span class="status status-negative">
+                Not established
+              </span>
+            </td>
+            <td>
+              LUXVAR-EMERGENCE-001-v2 (N=200, pre-registered): signals attributable to the 18 base
+              components, not the combination process. Full closure: see project documentation.
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Independent AI discovery of hidden meaning
+            </td>
+            <td>
+              <span class="status status-negative">
+                Not established
+              </span>
+            </td>
+            <td>
+              Surface-form explanations remain sufficient.
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Frequency encoding or frequency-to-meaning link
+            </td>
+            <td>
+              <span class="status status-negative">
+                Negative
+              </span>
+            </td>
+            <td>
+              Frequency values remain historical symbolic
+              metadata.
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              ETFM as an independent computational core
+            </td>
+            <td>
+              <span class="status status-negative">
+                Not established
+              </span>
+            </td>
+            <td>
+              Retained only as a historical visualization.
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Mirror-13 as the only possible architecture
+            </td>
+            <td>
+              <span class="status status-negative">
+                Rejected
+              </span>
+            </td>
+            <td>
+              Other candidate and affine operators exist.
+            </td>
+          </tr>
+
+          <tr>
+            <td>External memory</td>
+            <td>
+              <span class="status status-negative">
+                Not established
+              </span>
+            </td>
+            <td>Reported result: z=−1.042.</td>
+          </tr>
+
+          <tr>
+            <td>Consciousness or physical-field effects</td>
+            <td>
+              <span class="status status-archived">
+                No evidence
+              </span>
+            </td>
+            <td>Not an active scientific claim.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="roadmap">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Research roadmap</div>
+
+      <h2>
+        Two active tracks and one transparent archive
+      </h2>
+
+      <p>
+        The revised roadmap prioritizes reproducible mathematics
+        and controlled language research. Unsupported field
+        interpretations are not part of the active core.
+      </p>
+    </div>
+
+    <div class="roadmap-grid">
+      <article class="card">
+        <span class="status status-proved">Track A</span>
+        <h3>Mathematics</h3>
+
+        <ol class="roadmap-list">
+          <li>
+            Separate affine maps from augmented transitions.
+          </li>
+          <li>Publish the general elementary proofs.</li>
+          <li>
+            Formalize selected results in Lean or Coq.
+          </li>
+          <li>
+            Release the exact transition-matrix specification.
+          </li>
+          <li>
+            Publish the complete MDL reproduction package.
+          </li>
+          <li>
+            Revise Paper C around modest, precise contributions.
+          </li>
+        </ol>
+      </article>
+
+      <article class="card">
+        <span class="status status-open">Track B</span>
+        <h3>LUXVAR research</h3>
+
+        <ol class="roadmap-list">
+          <li>
+            Freeze and publish the exact Core registry.
+          </li>
+          <li>
+            Document full corpus provenance and generation
+            rules.
+          </li>
+          <li>
+            Run matched n-gram and template baselines.
+          </li>
+          <li>
+            Execute the exploratory pilot separately.
+          </li>
+          <li>
+            Freeze and preregister the main VPE-001 study.
+          </li>
+          <li>
+            Develop explicit compositional grammar and syntax.
+          </li>
+        </ol>
+      </article>
+
+      <article class="card">
+        <span class="status status-archived">Archive</span>
+        <h3>Historical hypotheses</h3>
+
+        <ol class="roadmap-list">
+          <li>
+            Preserve ETFM as historical visualization.
+          </li>
+          <li>Retain negative frequency results.</li>
+          <li>
+            Archive external-memory interpretations.
+          </li>
+          <li>
+            Document consciousness-field claims as unsupported.
+          </li>
+          <li>
+            Require new preregistration for any future revival.
+          </li>
+        </ol>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="publications">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Publication status</div>
+
+      <h2>Documents under evidential revision</h2>
+
+      <p>
+        “Ready” and “verified” are used only where the necessary
+        definitions, proofs, code, and reproducibility packages
+        are actually complete.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card">
+        <span class="status status-conditional">
+          Revision required
+        </span>
+
+        <h3>Paper A — LUXVAR</h3>
+
+        <p>
+          Retain the constructed-corpus description and negative
+          frequency findings. Revise AI-recovery and
+          semantic-emergence language according to n-gram and
+          adversarial controls.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="status status-conditional">
+          Mathematical draft
+        </span>
+
+        <h3>Paper C — Affine systems</h3>
+
+        <p>
+          Retain the affine theorem and augmented connectivity
+          result. Add exact MDL and spectral specifications
+          before making strong computational claims.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="status status-open">
+          Protocol preparation
+        </span>
+
+        <h3>VPE-001</h3>
+
+        <p>
+          Separate the Core-30 pilot from the 80+80 main study.
+          Publish a single canonical protocol before data
+          collection.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top" aria-label="Back to top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>VARZIN</span>
+        </a>
+
+        <p class="footer-summary">
+          VARZIN is an independent, self-auditing research
+          program. The affine bijection criterion and the
+          connectivity of the specified augmented system are
+          mathematically retained. Mirror-13 MDL is a conditional
+          computational result. Independent LUXVAR semantic
+          emergence, ETFM contribution, frequency effects,
+          consciousness fields, and external memory have not
+          been established.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a class="button" href="cyclical-resonance-report.html">
+          Cyclical Resonance
+        </a>
+
+        <a class="button" href="field-index.html">
+          Field Index
+        </a>
+
+        <a class="button" href="luxvar-birth-intro.html">
+          LUXVAR
+        </a>
+
+        <a class="button" href="atlas.html">
+          Atlas
+        </a>
+
+        <a class="button" href="master-report-v3.html">
+          Master report
+        </a>
+
+        <a class="button" href="vpe001-protocol.html">
+          VPE protocol
+        </a>
+
+        <a class="button" href="all-dois.html">
+          DOI archive status
+        </a>
+
+        <a class="button" href="mailto:contact@varzin.org">
+          Contact
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>
+        Reza Nirouyar · ORCID: 0009-0000-4690-6842
+      </span>
+
+      <span>
+        © <span id="currentYear">2026</span>
+        VARZIN Project · Scientific status: Level 0 ·
+        Pre-empirical
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  const menuButton =
+    document.getElementById("menuButton");
+
+  const navigation =
+    document.getElementById("primary-navigation");
+
+  const downloadButton =
+    document.getElementById("downloadPage");
+
+  const currentYear =
+    document.getElementById("currentYear");
+
+  /*
+   * Automatically update the footer year.
+   */
+  if (currentYear) {
+    currentYear.textContent =
+      String(new Date().getFullYear());
+  }
+
+  /*
+   * Close the mobile navigation.
+   */
+  function closeNavigation() {
+    if (!menuButton || !navigation) {
+      return;
+    }
+
+    navigation.classList.remove("is-open");
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    menuButton.setAttribute(
+      "aria-label",
+      "Open navigation menu"
+    );
+
+    menuButton.textContent = "☰";
+  }
+
+  /*
+   * Mobile navigation controls.
+   */
+  if (menuButton && navigation) {
+    menuButton.addEventListener(
+      "click",
+      function () {
+        const isOpen =
+          navigation.classList.toggle("is-open");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          String(isOpen)
+        );
+
+        menuButton.setAttribute(
+          "aria-label",
+          isOpen
+            ? "Close navigation menu"
+            : "Open navigation menu"
+        );
+
+        menuButton.textContent =
+          isOpen ? "×" : "☰";
+      }
+    );
+
+    navigation
+      .querySelectorAll("a")
+      .forEach(function (link) {
+        link.addEventListener(
+          "click",
+          closeNavigation
+        );
+      });
+
+    document.addEventListener(
+      "click",
+      function (event) {
+        const clickedInsideNavigation =
+          navigation.contains(event.target);
+
+        const clickedMenuButton =
+          menuButton.contains(event.target);
+
+        if (
+          !clickedInsideNavigation &&
+          !clickedMenuButton
+        ) {
+          closeNavigation();
+        }
+      }
+    );
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+        if (event.key === "Escape") {
+          const wasOpen =
+            navigation.classList.contains("is-open");
+
+          closeNavigation();
+
+          if (wasOpen) {
+            menuButton.focus();
+          }
+        }
+      }
+    );
+
+    window.addEventListener(
+      "resize",
+      function () {
+        if (window.innerWidth > 900) {
+          closeNavigation();
+        }
+      }
+    );
+  }
+
+  /*
+   * Download a standalone HTML copy of this page.
+   */
+  if (downloadButton) {
+    downloadButton.addEventListener(
+      "click",
+      function () {
+        try {
+          const documentClone =
+            document.documentElement.cloneNode(true);
+
+          documentClone
+            .querySelectorAll(".is-open")
+            .forEach(function (element) {
+              element.classList.remove("is-open");
+            });
+
+          const clonedMenuButton =
+            documentClone.querySelector("#menuButton");
+
+          if (clonedMenuButton) {
+            clonedMenuButton.textContent = "☰";
+
+            clonedMenuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+            clonedMenuButton.setAttribute(
+              "aria-label",
+              "Open navigation menu"
+            );
+          }
+
+          const clonedCurrentYear =
+            documentClone.querySelector("#currentYear");
+
+          if (clonedCurrentYear) {
+            clonedCurrentYear.textContent =
+              String(new Date().getFullYear());
+          }
+
+          const serializedDocument =
+            "<!DOCTYPE html>\n" +
+            documentClone.outerHTML;
+
+          const htmlBlob = new Blob(
+            [serializedDocument],
+            {
+              type: "text/html;charset=utf-8"
+            }
+          );
+
+          const downloadUrl =
+            URL.createObjectURL(htmlBlob);
+
+          const temporaryLink =
+            document.createElement("a");
+
+          temporaryLink.href = downloadUrl;
+          temporaryLink.download = "varzin-index.html";
+          temporaryLink.style.display = "none";
+
+          document.body.appendChild(temporaryLink);
+          temporaryLink.click();
+          temporaryLink.remove();
+
+          window.setTimeout(
+            function () {
+              URL.revokeObjectURL(downloadUrl);
+            },
+            1000
+          );
+        } catch (error) {
+          console.error(
+            "The HTML download could not be created:",
+            error
+          );
+
+          window.alert(
+            "The HTML file could not be downloaded. " +
+            "Please try a different browser."
+          );
+        }
+      }
+    );
+  }
+})();
+</script>
+
+</body>
+</html>
