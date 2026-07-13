@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06101d"/>
+      <stop offset="55%" stop-color="#0a1c30"/>
+      <stop offset="100%" stop-color="#050c16"/>
+    </linearGradient>
+    <linearGradient id="wordmark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#53d8fb"/>
+      <stop offset="60%" stop-color="#eaf9ff"/>
+      <stop offset="100%" stop-color="#a981ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="18%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#53d8fb" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#53d8fb" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="400" fill="url(#bg)"/>
+  <rect width="1280" height="400" fill="url(#glow)"/>
+
+  <!-- Mark: Aff(Z_12) — 12 nodes on a ring, chords showing the a=-1 mirror permutation -->
+  <g transform="translate(200,200)">
+    <circle r="118" fill="none" stroke="#53d8fb" stroke-opacity="0.35" stroke-width="1.5"/>
+
+    <!-- mirror chords: node i connects to node (12-i) mod 12, i.e. straight lines through near-vertical axis -->
+    <g stroke="#a981ff" stroke-opacity="0.55" stroke-width="1.2">
+      <line x1="0" y1="-95" x2="0" y2="95"/>
+      <line x1="-24.6" y1="-92" x2="24.6" y2="92"/>
+      <line x1="-47.5" y1="-82.3" x2="47.5" y2="82.3"/>
+      <line x1="-67.2" y1="-67.2" x2="67.2" y2="67.2"/>
+      <line x1="-82.3" y1="-47.5" x2="82.3" y2="47.5"/>
+      <line x1="-92" y1="-24.6" x2="92" y2="24.6"/>
+    </g>
+
+    <!-- 12 nodes -->
+    <g fill="#eaf9ff">
+      <circle cx="0" cy="-98" r="5"/>
+      <circle cx="49" cy="-84.9" r="4.2"/>
+      <circle cx="84.9" cy="-49" r="4.2"/>
+      <circle cx="98" cy="0" r="5"/>
+      <circle cx="84.9" cy="49" r="4.2"/>
+      <circle cx="49" cy="84.9" r="4.2"/>
+      <circle cx="0" cy="98" r="5"/>
+      <circle cx="-49" cy="84.9" r="4.2"/>
+      <circle cx="-84.9" cy="49" r="4.2"/>
+      <circle cx="-98" cy="0" r="5"/>
+      <circle cx="-84.9" cy="-49" r="4.2"/>
+      <circle cx="-49" cy="-84.9" r="4.2"/>
+    </g>
+
+    <!-- outer ring -->
+    <circle r="140" fill="none" stroke="#53d8fb" stroke-width="2"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="410" y="230" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="128" font-weight="850" letter-spacing="-4" fill="url(#wordmark)">VARZIN</text>
+
+  <!-- Tagline -->
+  <text x="414" y="278" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="34" font-weight="500" fill="#9fb3c8">Affine Systems &amp; Symbolic Structures</text>
+
+  <!-- Sub-line: honest status marker -->
+  <text x="414" y="316" font-family="'SFMono-Regular',Consolas,monospace" font-size="18" letter-spacing="2" fill="#61dfa5">A SELF-AUDITING RESEARCH PROGRAM</text>
+</svg>
