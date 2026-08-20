@@ -1061,11 +1061,11 @@ tr:last-child td {
     >
       <a href="#status">Status</a>
       <a href="#mathematics">Mathematics</a>
+      <a href="#api">API Access</a>
       <a href="#mirror">Mirror-13</a>
       <a href="#luxvar">LUXVAR</a>
       <a href="#audit">Audit</a>
       <a href="#empirical">Human study</a>
-      <a href="#archive">Archive</a>
       <a href="#roadmap">Roadmap</a>
     </nav>
 
@@ -1146,16 +1146,16 @@ tr:last-child td {
         </p>
 
         <div class="hero-actions">
-          <a class="button button-primary" href="#mathematics">
-            Explore the proved mathematics
+          <a class="button button-primary" href="#api">
+            Access the Engine API
+          </a>
+
+          <a class="button" href="#mathematics">
+            Explore the math
           </a>
 
           <a class="button" href="#status">
-            View evidence registry
-          </a>
-
-          <a class="button" href="#audit">
-            Read audit outcome
+            View registry
           </a>
         </div>
       </div>
@@ -1464,7 +1464,62 @@ ROTATE:
   </div>
 </section>
 
-<section class="section section-soft" id="mirror">
+<!-- ================= API ACCESS SECTION ================= -->
+<section class="section section-soft" id="api">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Developer Access</div>
+      <h2>VARZIN Cognitive Engine API</h2>
+      <p>
+        The computational core, affine transformations, and cognitive CAPTCHA generation are now accessible globally via our B2B API infrastructure hosted on RapidAPI.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <!-- Plans -->
+      <div class="grid-2">
+        <article class="card">
+          <span class="status status-open">Basic</span>
+          <h3>Free Tier</h3>
+          <p>Ideal for sandbox testing, academic evaluation, and small-scale integration.</p>
+          <ul style="margin-top: 16px; padding-left: 18px; font-size: 0.9rem;">
+            <li>Standard rate limits</li>
+            <li>Community support</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="status status-proved">PRO</span>
+          <h3>$19 / month</h3>
+          <p>Designed for commercial B2B deployment and production AI defense.</p>
+          <ul style="margin-top: 16px; padding-left: 18px; font-size: 0.9rem;">
+            <li>High-volume requests</li>
+            <li>Priority infrastructure</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Integration Code -->
+      <article class="formula-card">
+        <span class="status status-conditional">Quick Start (cURL)</span>
+        <h3>Generate Adversarial Objects</h3>
+        <div class="formula">curl --request POST \
+  --url https://varzin-engine-api.onrender.com/api/v1/generate \
+  --header 'X-RapidAPI-Key: YOUR_RAPIDAPI_KEY' \
+  --header 'X-RapidAPI-Host: varzin-cognitive-engine.p.rapidapi.com'</div>
+        
+        <div style="margin-top: 24px;">
+          <a class="button button-primary" href="https://rapidapi.com/varzin-labs-varzin-labs-default/api/varzin-cognitive-engine" target="_blank" rel="noopener">
+            Open in RapidAPI Hub
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ======================================================= -->
+
+<section class="section" id="mirror">
   <div class="container">
     <div class="section-heading">
       <div class="eyebrow">Mirror-13</div>
@@ -1533,7 +1588,7 @@ Reported comparison mean: 67.19 bits</div>
   </div>
 </section>
 
-<section class="section" id="luxvar">
+<section class="section section-soft" id="luxvar">
   <div class="container">
     <div class="section-heading">
       <div class="eyebrow">Constructed symbolic lexicon</div>
@@ -1726,7 +1781,7 @@ Reported comparison mean: 67.19 bits</div>
   </div>
 </section>
 
-<section class="section section-soft" id="audit">
+<section class="section" id="audit">
   <div class="container">
     <div class="audit-card">
       <span class="status status-negative">
@@ -1771,7 +1826,7 @@ Reported comparison mean: 67.19 bits</div>
   </div>
 </section>
 
-<section class="section" id="empirical">
+<section class="section section-soft" id="empirical">
   <div class="container">
     <div class="section-heading">
       <div class="eyebrow">Planned empirical program</div>
@@ -1846,7 +1901,7 @@ Reported comparison mean: 67.19 bits</div>
   </div>
 </section>
 
-<section class="section section-soft" id="archive">
+<section class="section" id="archive">
   <div class="container">
     <div class="section-heading">
       <div class="eyebrow">Historical models</div>
@@ -1918,7 +1973,7 @@ NOT ESTABLISHED</div>
   </div>
 </section>
 
-<section class="section" id="negative-results">
+<section class="section section-soft" id="negative-results">
   <div class="container">
     <div class="section-heading">
       <div class="eyebrow">Negative results</div>
@@ -2101,7 +2156,7 @@ NOT ESTABLISHED</div>
   </div>
 </section>
 
-<section class="section section-soft" id="roadmap">
+<section class="section" id="roadmap">
   <div class="container">
     <div class="section-heading">
       <div class="eyebrow">Research roadmap</div>
@@ -2193,7 +2248,7 @@ NOT ESTABLISHED</div>
   </div>
 </section>
 
-<section class="section" id="publications">
+<section class="section section-soft" id="publications">
   <div class="container">
     <div class="section-heading">
       <div class="eyebrow">Publication status</div>
