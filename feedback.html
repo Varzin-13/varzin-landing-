@@ -1,393 +1,84 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact · VARZIN Research Framework | KALTŪR Gateway</title>
-  <meta name="description" content="Contact the VARZIN research project. Send feedback, questions, or collaboration inquiries. VARZIN is a symbolic-experimental research framework at Level 0.">
-  <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842">
-  <meta name="keywords" content="VARZIN, contact, feedback, KALTŪR, LUXVAR, symbolic research, VPE-001">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://varzin.org/feedback.html" />
-  <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;600&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:#000; --cyan:#00ffee; --cyan2:#00ffff; --gold:#ffcc00;
-      --text:#cceeee; --muted:#a7e7e7; --panel:rgba(0,15,20,0.92);
-      --border:rgba(0,255,238,0.3); --font:'DM Sans','Vazirmatn',sans-serif;
-      --mono:'IBM Plex Mono',monospace;
-    }
-    *{box-sizing:border-box;}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);text-align:center;padding:40px 16px 80px;min-height:100vh;display:flex;flex-direction:column;align-items:center;position:relative;overflow-x:hidden;}
-    /* Scanline */
-    body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,80,80,0.06),rgba(0,80,80,0.06) 1px,transparent 2px,transparent 3px);opacity:0.35;}
-    #field-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:0.55;}
-    .container{max-width:760px;width:100%;margin:0 auto;position:relative;z-index:2;}
-
-    /* Nav */
-    .main-nav{width:100%;max-width:1100px;margin:0 auto 44px;padding:0 0 14px;border-bottom:1px solid var(--border);text-align:center;backdrop-filter:blur(4px);}
-    .nav-link{color:var(--text);text-decoration:none;font-weight:500;font-size:1em;margin:0 12px;transition:color .3s;}
-    .nav-link:hover{color:var(--cyan);text-shadow:0 0 8px var(--cyan);}
-    .nav-link.active{color:var(--cyan2);border-bottom:2px solid var(--cyan2);padding-bottom:3px;}
-
-    /* Research status bar */
-    .status-bar{
-      width:100%;max-width:700px;margin:0 auto 32px;padding:12px 18px;
-      border-radius:8px;background:rgba(0,25,35,0.88);
-      border:1px solid rgba(127,223,255,0.35);
-      font-size:0.82em;color:var(--muted);line-height:1.7;text-align:left;
-      backdrop-filter:blur(4px);
-    }
-    .status-bar .lbl{font-weight:700;color:#7fdfff;letter-spacing:.4px;}
-    .status-bar a{color:var(--cyan2);text-decoration:none;}
-    .status-bar a:hover{text-decoration:underline;}
-    .sb-badge{display:inline-block;padding:1px 7px;border-radius:8px;font-size:.8em;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.35);color:var(--gold);font-weight:700;margin-left:3px;}
-
-    /* Header */
-    h1{font-size:clamp(2em,4.5vw,3em);margin-bottom:12px;color:var(--cyan);text-shadow:0 0 20px var(--cyan),0 0 8px rgba(0,255,238,0.8);font-weight:700;letter-spacing:2px;}
-    .header-sub{color:var(--muted);font-size:0.95em;max-width:520px;margin:0 auto 32px;line-height:1.6;}
-    .symbolic-note{
-      max-width:520px;margin:0 auto 28px;padding:10px 16px;
-      border-radius:8px;background:rgba(0,20,30,0.7);
-      border-left:3px solid rgba(0,255,238,0.4);
-      font-size:0.82em;color:var(--muted);text-align:left;line-height:1.6;
-    }
-    .symbolic-note strong{color:var(--cyan2);}
-
-    /* Form */
-    .form-wrap{
-      background:var(--panel);border:1px solid var(--border);border-radius:14px;
-      padding:32px 28px;margin-bottom:32px;backdrop-filter:blur(5px);
-      box-shadow:0 0 30px rgba(0,255,238,0.08);text-align:left;
-    }
-    .form-wrap label{display:block;font-size:0.85em;color:var(--muted);margin-bottom:5px;letter-spacing:.4px;}
-    .form-wrap label span{color:var(--cyan);font-size:.8em;margin-left:4px;}
-    .form-group{margin-bottom:18px;}
-    input[type=text],input[type=email],textarea{
-      width:100%;padding:11px 14px;border-radius:8px;
-      border:1px solid rgba(0,255,238,0.25);
-      background:rgba(0,15,22,0.8);color:var(--text);
-      font-family:var(--font);font-size:0.95em;outline:none;
-      transition:border-color .3s,box-shadow .3s,background .3s;
-    }
-    input:focus,textarea:focus{
-      border-color:var(--cyan);
-      box-shadow:0 0 16px rgba(0,255,238,0.35);
-      background:rgba(0,255,238,0.06);
-    }
-    textarea{resize:vertical;min-height:140px;line-height:1.6;}
-    .submit-btn{
-      width:100%;padding:13px;margin-top:6px;
-      border-radius:8px;border:2px solid var(--cyan);
-      background:rgba(0,255,238,0.1);color:var(--cyan);
-      font-family:var(--font);font-size:1em;font-weight:700;
-      cursor:pointer;letter-spacing:.5px;
-      transition:all .3s;
-    }
-    .submit-btn:hover:not(:disabled){background:rgba(0,255,238,0.22);color:#fff;transform:translateY(-3px);box-shadow:0 0 28px var(--cyan);}
-    .submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
-
-    /* Status message */
-    #status-msg{display:none;margin-top:18px;padding:14px 18px;border-radius:8px;font-size:.9em;line-height:1.6;}
-    #status-msg.success{background:rgba(0,255,238,0.07);border:1px solid rgba(0,255,238,0.3);color:var(--text);}
-    #status-msg.success strong{color:var(--cyan);}
-    #status-msg .tx-id{font-family:var(--mono);font-size:.85em;color:var(--gold);margin-top:6px;display:block;}
-
-    /* Contact options */
-    .contact-alts{
-      background:var(--panel);border:1px solid var(--border);border-radius:10px;
-      padding:20px 22px;margin-bottom:32px;text-align:left;backdrop-filter:blur(4px);
-    }
-    .contact-alts h3{font-size:.95em;color:var(--cyan2);margin-bottom:14px;letter-spacing:.5px;}
-    .contact-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;font-size:.88em;color:var(--muted);}
-    .contact-row a{color:var(--cyan2);text-decoration:none;}
-    .contact-row a:hover{color:var(--cyan);text-decoration:underline;}
-    .contact-row .c-icon{width:28px;text-align:center;font-size:1.1em;}
-
-    /* Research links */
-    .research-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;}
-    .rlink{
-      padding:8px 16px;border-radius:8px;text-decoration:none;
-      font-size:.82em;font-weight:600;letter-spacing:.4px;
-      border:1px solid;transition:all .25s;
-    }
-    .rlink-vpe{border-color:rgba(127,223,255,.4);color:#7fdfff;background:rgba(127,223,255,.06);}
-    .rlink-vpe:hover{background:rgba(127,223,255,.14);box-shadow:0 0 14px rgba(127,223,255,.3);}
-    .rlink-portal{border-color:var(--border);color:var(--cyan);background:rgba(0,255,238,.06);}
-    .rlink-portal:hover{background:rgba(0,255,238,.14);box-shadow:0 0 14px rgba(0,255,238,.25);}
-    .rlink-report{border-color:rgba(68,255,136,.35);color:#44ff88;background:rgba(68,255,136,.06);}
-    .rlink-report:hover{background:rgba(68,255,136,.14);box-shadow:0 0 14px rgba(68,255,136,.25);}
-
-    /* Footer */
-    footer{margin-top:16px;padding:20px 0;border-top:1px solid rgba(0,255,238,.15);font-size:.82em;color:var(--muted);line-height:1.8;width:100%;max-width:700px;}
-    footer a{color:var(--cyan2);text-decoration:none;margin:0 8px;}
-    footer a:hover{color:var(--cyan);text-decoration:underline;}
-    .scientific-status{margin-top:12px;padding:10px 14px;border-radius:6px;background:rgba(0,20,30,.6);border:1px solid rgba(127,223,255,.2);font-size:.8em;color:var(--muted);line-height:1.6;text-align:left;}
-
-    @media(max-width:600px){.nav-link{margin:0 7px;font-size:.88em;}.form-wrap{padding:22px 16px;}.research-links{flex-direction:column;align-items:center;}}
-  </style>
-</head>
-<body>
-<canvas id="field-canvas"></canvas>
-
-<div class="container">
-
-  <!-- Nav -->
-  <nav class="main-nav">
-    <a class="nav-link" href="index.html">Portal</a>
-    <a class="nav-link" href="cyclical-resonance-report.html">Cyclical Resonance</a>
-    <a class="nav-link" href="field-index.html">Field Index</a>
-    <a class="nav-link" href="all-dois.html">All DOIs</a>
-    <a class="nav-link active" href="feedback.html" aria-current="page">Contact</a>
-  </nav>
-
-  <!-- Research Status Bar -->
-  <div class="status-bar">
-    <span class="lbl">Research Status:</span>
-    VARZIN is a symbolic-experimental framework at <strong>Level 0</strong> — no empirical validation achieved.
-    Core-30 Registry <span class="sb-badge">30/30 locked</span>
-    · 1.3B scan: k=3 natural morphology · Hexacore not confirmed
-    · VPE-001 pre-registered pilot study in preparation
-    <br>
-    <a href="vpe001-protocol.html">→ VPE-001 Protocol</a> &nbsp;·&nbsp;
-    <a href="research-portal.html">→ Research Report v6</a>
-  </div>
-
-  <!-- Header -->
-  <header>
-    <h1>Contact · VARZIN Research</h1>
-    <p class="header-sub">
-      Send feedback, research questions, collaboration inquiries, or VPE-001 rater participation interest to the VARZIN project.
-    </p>
-  </header>
-
-  <!-- Symbolic framing note — with scientific boundary -->
-  <div class="symbolic-note">
-    <strong>Symbolic framing:</strong> This form is styled within the KALTŪR (474Hz) symbolic framework of VARZIN.
-    The transmission metaphor is a design choice — messages are sent to a standard email inbox.
-    No field resonance, QMSG, or ELŪZ–MAHAR processing occurs.
-    <br>
-    <strong>For VPE-001 rater participation</strong> (blind semantic rating, ≥5 independent participants needed),
-    please indicate this in your message.
-  </div>
-
-  <!-- Research quick links -->
-  <div class="research-links">
-    <a class="rlink rlink-vpe" href="vpe001-protocol.html">🧪 VPE-001 Protocol</a>
-    <a class="rlink rlink-portal" href="index.html">⟠ Portal</a>
-    <a class="rlink rlink-report" href="research-portal.html">📊 Research Report v6</a>
-    <a class="rlink rlink-portal" href="field-index.html">⊕ Field Index v6</a>
-  </div>
-
-  <!-- Contact form -->
-  <div class="form-wrap">
-    <form id="contact-form" novalidate>
-      <div class="form-group">
-        <label for="name">Name or identifier <span>(required)</span></label>
-        <input type="text" id="name" name="name" placeholder="e.g. your name, institution, or VARZIN participant ID" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email address <span>(required — for reply)</span></label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required>
-      </div>
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" placeholder="e.g. VPE-001 participation / research question / feedback">
-      </div>
-      <div class="form-group">
-        <label for="message">Message <span>(required — max 5,000 characters)</span></label>
-        <textarea id="message" name="message" maxlength="5000" required placeholder="Your message here...&#10;&#10;For VPE-001 rater interest, please describe your background and availability."></textarea>
-        <div style="text-align:right;font-size:.75em;color:var(--muted);margin-top:4px;font-family:var(--mono);" id="char-count">0 / 5000</div>
-      </div>
-      <button type="submit" class="submit-btn" id="submit-btn">
-        Send Message ✦ KALTŪR 474Hz
-      </button>
-    </form>
-    <div id="status-msg"></div>
-  </div>
-
-  <!-- Alternative contact -->
-  <div class="contact-alts">
-    <h3>DIRECT CONTACT CHANNELS</h3>
-    <div class="contact-row">
-      <span class="c-icon">📧</span>
-      <span>Email: <a href="mailto:contact@varzin.org">contact@varzin.org</a></span>
-    </div>
-    <div class="contact-row">
-      <span class="c-icon">🔬</span>
-      <span>ORCID: <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener">0009-0000-4690-6842</a> — Reza Nirouyar</span>
-    </div>
-    <div class="contact-row">
-      <span class="c-icon">💻</span>
-      <span>GitHub: <a href="https://github.com/Varzin-13" target="_blank" rel="noopener">Varzin-13</a></span>
-    </div>
-    <div class="contact-row">
-      <span class="c-icon">📋</span>
-      <span>VPE-001 rater participation: indicate in message above or email directly</span>
-    </div>
-  </div>
-
-  <footer>
-    <div>
-      <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener">ORCID: 0009-0000-4690-6842</a>
-      <a href="https://github.com/Varzin-13" target="_blank" rel="noopener">GitHub: Varzin-13</a>
-      <a href="mailto:contact@varzin.org">contact@varzin.org</a>
-    </div>
-    <div class="scientific-status">
-      <strong>Scientific status:</strong> VARZIN is a symbolic-experimental research framework at Level 0.
-      Core-30 LUXVAR Registry 30/30 locked. 1.3B scan: k=3 natural morphology, Hexacore not confirmed.
-      VPE-001 pre-registered pilot study in preparation.
-      All claims subject to pre-registered falsification criteria.
-    </div>
-    <p style="margin-top:12px;font-size:.8em;">© 2025–2026 VARZIN Field Project · All Rights Reserved</p>
-  </footer>
-
-</div>
-
-<script>
-// ── Character counter ──
-const msgEl = document.getElementById('message');
-const countEl = document.getElementById('char-count');
-if (msgEl && countEl) {
-  msgEl.addEventListener('input', () => {
-    const n = msgEl.value.length;
-    countEl.textContent = n + ' / 5000';
-    countEl.style.color = n > 4500 ? '#ff8888' : 'var(--muted)';
-  });
-}
-
-// ── Form submission (simulation — no actual server) ──
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = document.getElementById('submit-btn');
-  const status = document.getElementById('status-msg');
-
-  const name = form.elements['name'].value.trim();
-  const email = form.elements['email'].value.trim();
-  const message = form.elements['message'].value.trim();
-
-  if (!name || !email || !message) {
-    status.className = '';
-    status.style.display = 'block';
-    status.style.background = 'rgba(255,80,80,.07)';
-    status.style.border = '1px solid rgba(255,80,80,.3)';
-    status.style.color = '#ff9988';
-    status.style.padding = '12px 16px';
-    status.style.borderRadius = '8px';
-    status.textContent = 'Please fill in all required fields.';
-    return;
-  }
-
-  const txID = 'VRZ-' + Date.now().toString(36).toUpperCase();
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  status.style.display = 'none';
-
-  // Simulate network delay
-  setTimeout(() => {
-    // In production: replace with actual fetch to your backend / Formspree / Netlify Forms
-    console.log('VARZIN Contact Form Submission');
-    console.log('From:', name, '|', email);
-    console.log('Subject:', form.elements['subject'].value);
-    console.log('Message length:', message.length, 'chars');
-    console.log('TX ID:', txID);
-
-    status.className = 'success';
-    status.style.display = 'block';
-    status.innerHTML = `
-      <strong>Message received.</strong> Thank you, ${name}.<br>
-      A reply will be sent to <strong>${email}</strong> as soon as possible.
-      <br>For VPE-001 participation, we will contact you with the blind rating form.
-      <span class="tx-id">Reference: ${txID}</span>
-      <span style="display:block;margin-top:6px;font-size:.8em;color:var(--muted);">
-        Note: This form submits to a simulation log in the browser console.
-        For guaranteed delivery, email directly: contact@varzin.org
-      </span>
-    `;
-    btn.textContent = 'Send Message ✦ KALTŪR 474Hz';
-    btn.disabled = false;
-    form.reset();
-    if (countEl) countEl.textContent = '0 / 5000';
-  }, 1800);
-});
-
-// ── Background particle canvas ──
-(function() {
-  const canvas = document.getElementById('field-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let particles = [], mouse = { x: null, y: null, radius: 110 };
-
-  const setSize = () => { canvas.width = innerWidth; canvas.height = innerHeight; };
-  setSize();
-  window.addEventListener('resize', () => { setSize(); init(); });
-  window.addEventListener('mousemove', e => { mouse.x = e.x; mouse.y = e.y; });
-
-  function Particle() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    const a = Math.random() * Math.PI * 2;
-    this.dx = Math.cos(a);
-    this.dy = Math.sin(a);
-    this.speed = Math.random() * 0.18 + 0.07;
-    this.r = this.origR = Math.random() * 1.5 + 0.5;
-    this.color = 'rgba(0,220,238,0.4)';
-  }
-  Particle.prototype.update = function() {
-    if (this.x > canvas.width - this.r || this.x < this.r) this.dx *= -1;
-    if (this.y > canvas.height - this.r || this.y < this.r) this.dy *= -1;
-    const dx = mouse.x - this.x, dy = mouse.y - this.y;
-    const d = Math.hypot(dx, dy);
-    if (d < mouse.radius + this.origR) {
-      const f = (mouse.radius + this.origR - d) / (mouse.radius + this.origR) * 0.18;
-      this.x -= dx * f; this.y -= dy * f;
-      this.r = this.origR * (1 + (1 - d / mouse.radius) * 0.7);
-    } else {
-      this.r += (this.origR - this.r) * 0.1;
-    }
-    this.x += this.dx * this.speed;
-    this.y += this.dy * this.speed;
-    ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-    ctx.fillStyle = this.color; ctx.shadowBlur = 4; ctx.shadowColor = this.color;
-    ctx.fill(); ctx.shadowBlur = 0;
-  };
-
-  function init() {
-    particles = [];
-    const n = Math.min(Math.floor((canvas.width * canvas.height) / 28000), 110);
-    for (let i = 0; i < n; i++) particles.push(new Particle());
-  }
-
-  function connect() {
-    const maxD = 140;
-    for (let a = 0; a < particles.length; a++) {
-      for (let b = a + 1; b < particles.length; b++) {
-        const d = Math.hypot(particles[a].x - particles[b].x, particles[a].y - particles[b].y);
-        if (d < maxD) {
-          ctx.strokeStyle = `rgba(0,230,255,${(1 - d / maxD) * 0.35})`;
-          ctx.lineWidth = 0.8;
-          ctx.beginPath();
-          ctx.moveTo(particles[a].x, particles[a].y);
-          ctx.lineTo(particles[b].x, particles[b].y);
-          ctx.stroke();
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARZIN — Contact</title>
+    <style>
+        :root {
+            --bg-color: #060913;
+            --card-bg: #0f172a;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.15);
+            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-mono: "Fira Code", "Courier New", Courier, monospace;
         }
-      }
-    }
-  }
 
-  function animate() {
-    requestAnimationFrame(animate);
-    ctx.fillStyle = 'rgba(0,0,0,0.18)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    connect();
-    particles.forEach(p => p.update());
-  }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 50% -20%, rgba(56, 189, 248, 0.12), transparent 50%),
+                              linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+        }
 
-  init(); animate();
-})();
-</script>
-</body>
-</html>
+        .nav-bar {
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            position: sticky; top: 0; z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem;
+        }
+
+        .brand { font-size: 1.5rem; font-weight: 800; letter-spacing: 0.15em; color: #fff; font-family: var(--font-mono); }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a { color: var(--text-dim); font-size: 0.9rem; text-transform: uppercase; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+        .btn-contact { background: var(--primary-glow); border: 1px solid var(--primary); padding: 0.4rem 1rem; border-radius: 6px; color: var(--text-main) !important; }
+
+        .container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-mono);
+            background: linear-gradient(135deg, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 3rem;
+        }
+
+        .form-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .symbolic-notice {
+            background: rgba(56, 189, 248, 0.05);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 6px;
+            padding: 1rem;
