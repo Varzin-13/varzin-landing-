@@ -1,54 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>LUXVAR — A Constructed Language</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="LUXVAR: a constructed symbolic language created by Reza Nirouyar, with independently verified phonotactic and morphemic structure.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://varzin.org/luxvar-birth-intro.html" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root { --luxvar-gold: #d8a800; --luxvar-cyan: #00d0e8; }
-    body { background-color: #04080c; min-height: 100vh; }
-    .glow { color: var(--luxvar-gold); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARZIN — LUXVAR Art</title>
+    <style>
+        :root {
+            --bg-color: #060913;
+            --card-bg: #0f172a;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --primary: #38bdf8;
+            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-mono: "Fira Code", "Courier New", Courier, monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 50% -20%, rgba(56, 189, 248, 0.12), transparent 50%),
+                              linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+        }
+
+        .nav-bar {
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            position: sticky; top: 0; z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem;
+        }
+        .brand { font-size: 1.5rem; font-weight: 800; letter-spacing: 0.15em; color: #fff; font-family: var(--font-mono); }
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links a { color: var(--text-dim); font-size: 0.9rem; text-transform: uppercase; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+        .btn-contact { background: rgba(56, 189, 248, 0.15); border: 1px solid var(--primary); padding: 0.4rem 1rem; border-radius: 6px; }
+
+        .container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-mono);
+            background: linear-gradient(135deg, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 3rem;
+        }
+
+        .art-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .art-box h2 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-family: var(--font-mono);
+        }
+
+        .art-box p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .lexicon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .lexicon-grid { grid-template-columns: 1fr; }
+        }
+
+        .lexicon-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 6px;
+            padding: 1.25rem;
+        }
+
+        .lexicon-word {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .lexicon-def {
+            font-size: 0.8rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .lexicon-meaning {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            background: #04070d;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
-<body class="bg-black font-mono flex items-center justify-center p-4 sm:p-8 min-h-screen">
+<body>
 
-  <div class="w-full max-w-2xl p-6 sm:p-10 rounded-xl border border-yellow-800/40 shadow-xl bg-black/70 text-center space-y-6 text-gray-100">
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">VARZIN</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="field-index.html">Field Index</a>
+                <a href="atlas.html">Atlas</a>
+                <a href="all-dois.html">DOI Registry</a>
+                <a href="vpe001-protocol.html">VPE Protocol</a>
+                <a href="luxvar-birth-intro.html" class="active">LUXVAR Art</a>
+                <a href="feedback.html" class="btn-contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-wide mb-4 border-b border-dashed border-yellow-800/30 pb-4 glow">
-      LUXVAR
-    </h1>
-    <p class="text-base sm:text-lg font-light mb-6 text-gray-300">
-      A constructed symbolic language
-    </p>
+    <div class="container">
+        <h1>LUXVAR: Constructed Language Art</h1>
+        <p class="subtitle">Exploring the boundaries of structured semantics, phonetic elegance, and symbolic representation.</p>
 
-    <div class="space-y-5 text-sm sm:text-base text-left">
-      <p>
-        LUXVAR is a constructed language (a "conlang," in the tradition of Esperanto, Klingon, or Tolkien's Elvish languages) created by Reza Nirouyar as part of the VARZIN project. It has 801 stable roots organized into five thematic axes — Light, Reflection, Silence, Gate, and Motion.
-      </p>
-      <p>
-        Independent computational testing found LUXVAR has a genuinely distinctive phonotactic structure (statistically distinguishable from six reference languages, including Esperanto and Toki Pona) and morpheme families that multiple AI systems could independently recover from raw word forms alone.
-      </p>
-      <p class="text-yellow-500/90 text-sm">
-        These structural findings are documented in the project's research record. What has <em>not</em> been established: that LUXVAR connects to any external field, that its words carry frequency-based meaning, or that its structure reflects anything beyond intentional linguistic design. LUXVAR is presented here as a work of constructed-language art, not as a scientific instrument.
-      </p>
-    </div>
+        <div class="art-box">
+            <h2>Artistic Boundary Notice</h2>
+            <p>What has not been established: that LUXVAR connects to any active biophysical, quantum, or planetary fields, or that its frequency notations carry causal physical meaning. LUXVAR is presented here strictly as a work of constructed-language art and a mathematical design stimulus, not as a physical scientific measuring instrument.</p>
+            <p><strong>Language Parameters:</strong> 801 total generated roots, structured across 5 symbolic axes (Light, Reflection, Silence, Gate, Motion).</p>
+        </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left p-4 rounded-lg border border-yellow-800/30 bg-black/50 text-white/80 text-sm mt-6">
-      <p><span class="glow font-bold">Roots:</span> 801</p>
-      <p><span class="glow font-bold">Axes:</span> 5 (Light, Reflection, Silence, Gate, Motion)</p>
-      <p><span class="glow font-bold">Creator:</span> Reza Nirouyar</p>
-      <p><span class="glow font-bold">Full record:</span> <a href="cyclical-resonance-report.html" class="underline">Cyclical Resonance report</a></p>
-    </div>
-
-  </div>
-
-  <div class="fixed bottom-4 w-full text-center text-xs text-gray-600 left-0">
-    <p>&copy; 2025&ndash;2026 VARZIN Project &middot; ORCID: 0009-0000-4690-6842</p>
-  </div>
-
-</body>
-</html>
+        <h2 style="font-family: var(--font-mono); color: #fff; margin-bottom: 1.5rem; border-left: 4px solid var(--primary); padding-left: 0.75rem;">Core-30 Lexicon Samples (Layer 1)</h2>
