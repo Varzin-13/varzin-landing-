@@ -82,3 +82,362 @@
 
         .nav-links {
             display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .btn-contact {
+            background: var(--primary-glow);
+            border: 1px solid var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            color: var(--text-main) !important;
+        }
+
+        .btn-contact:hover {
+            background: var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        /* Container & Layout */
+        .hero {
+            max-width: 1000px;
+            margin: 5rem auto 3rem auto;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 30%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .grid-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Bento Cards */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-2px);
+        }
+        .col-12 { grid-column: span 12; }
+        .col-8 { grid-column: span 8; }
+        .col-6 { grid-column: span 6; }
+        .col-4 { grid-column: span 4; }
+
+        @media (max-width: 768px) {
+            .col-8, .col-6, .col-4 {
+                grid-column: span 12;
+            }
+            .nav-links { display: none; }
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-proved { color: var(--proved); background: var(--proved-bg); border: 1px solid rgba(16, 185, 129, 0.2); }
+        .badge-rejected { color: var(--rejected); background: var(--rejected-bg); border: 1px solid rgba(244, 63, 94, 0.2); }
+        .badge-pending { color: var(--pending); background: var(--pending-bg); border: 1px solid rgba(245, 158, 11, 0.2); }
+
+        /* Trust Registries */
+        .trust-registries {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .trust-registries { grid-template-columns: 1fr; }
+        }
+
+        .registry-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(30, 41, 59, 0.6));
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .registry-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .registry-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .registry-doi {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            word-break: break-all;
+            color: #fff;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-mono);
+            border-left: 4px solid var(--primary);
+            padding-left: 0.75rem;
+        }
+
+        /* Footer styling */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            background: #04070d;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* API Section Styling */
+        .api-card {
+            background: linear-gradient(135deg, #090d16 0%, #111827 100%);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.05);
+        }
+        .api-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        @media (max-width: 768px) {
+            .api-grid { grid-template-columns: 1fr; }
+        }
+        .code-block {
+            background: #020617;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #38bdf8;
+            overflow-x: auto;
+            position: relative;
+        }
+        .price-tier {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">VARZIN</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="field-index.html">Field Index</a>
+                <a href="atlas.html">Atlas</a>
+                <a href="all-dois.html">DOI Registry</a>
+                <a href="vpe001-protocol.html">VPE Protocol</a>
+                <a href="luxvar-birth-intro.html">LUXVAR Art</a>
+                <a href="feedback.html" class="btn-contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <span class="badge badge-proved" style="margin-bottom: 1rem;">Level-1 Scientific Reset</span>
+        <h1>The VARZIN Project</h1>
+        <p>An independent, self-auditing research program studying finite-state affine systems and the LUXVAR constructed language. Separating mathematical proofs, computational validations, and historical speculation under Principle Zero.</p>
+    </header>
+
+    <div class="grid-container">
+        
+        <h2 class="section-title">Open Science & Trust Registries</h2>
+        <div class="trust-registries">
+            <div class="registry-card">
+                <div class="registry-icon">⚙️</div>
+                <h3>Computational Software</h3>
+                <p>Full Level-1 Reproducible Python Stack</p>
+                <div class="registry-doi">DOI: 10.5281/zenodo.22036769</div>
+                <a href="https://doi.org/10.5281/zenodo.22036769" target="_blank">Access Zenodo software →</a>
+            </div>
+            <div class="registry-card">
+                <div class="registry-icon">📄</div>
+                <h3>Scientific Monograph</h3>
+                <p>Standalone Track D Cognitive Audit Paper</p>
+                <div class="registry-doi">DOI: 10.5281/zenodo.22101179</div>
+                <a href="https://doi.org/10.5281/zenodo.22101179" target="_blank">Access Zenodo publication →</a>
+            </div>
+            <div class="registry-card">
+                <div class="registry-icon">🏛️</div>
+                <h3>OSF Registry</h3>
+                <p>Official Pre-Registration & Evidence Archive</p>
+                <div class="registry-doi">DOI: 10.17605/OSF.IO/YEGJ8</div>
+                <a href="https://doi.org/10.17605/OSF.IO/YEGJ8" target="_blank">Access OSF registry →</a>
+            </div>
+        </div>
+
+        
+        <h2 class="section-title">VARZIN Cognitive Engine B2B API</h2>
+        <div class="card col-12 api-card" style="margin-bottom: 3rem;">
+            <span class="badge badge-proved" style="float: right;">Active Production API</span>
+            <h3 style="color: #fff; margin-bottom: 0.5rem; font-family: var(--font-mono);">RapidAPI & Render Gateway</h3>
+            <p style="color: var(--text-dim); margin-bottom: 1.5rem;">
+                The core affine mathematical computations, failure-injection matrices, and Cognitive CAPTCHA object-generation suite are deployed globally. This high-availability B2B infrastructure provides state-of-the-art protection against advanced bot attacks by exploiting foundation model structural blindness.
+            </p>
+            
+            <div class="api-grid">
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-family: var(--font-mono);">Subscription & Integration Tiers</h4>
+                    <div class="price-tier">
+                        <span style="color: var(--primary); font-weight: 700; float: right;">FREE</span>
+                        <h5 style="color: #fff; margin-bottom: 0.25rem;">Basic Developer Tier</h5>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">Ideal for sandbox testing, academic verification of Track D metrics, and local integration.</p>
+                    </div>
+                    <div class="price-tier" style="border-color: rgba(56, 189, 248, 0.3);">
+                        <span style="color: var(--proved); font-weight: 700; float: right;">$19 / mo</span>
+                        <h5 style="color: #fff; margin-bottom: 0.25rem;">PRO Commercial Tier</h5>
+                        <p style="font-size: 0.85rem; color: var(--text-dim);">Designed for high-volume B2B application defense, custom seed injections, and priority low-latency servers.</p>
+                    </div>
+                    <a href="https://rapidapi.com" target="_blank" style="display: inline-block; margin-top: 0.5rem; font-weight: 700;" class="btn-contact">Open in RapidAPI Hub →</a>
+                </div>
+                
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-family: var(--font-mono);">Quick Start Integration (cURL)</h4>
+                    <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 0.5rem;">Generate dynamic Adversarial CAPTCHA Objects using your secure API key:</p>
+                    <div class="code-block">
+<pre>curl --request POST \
+  --url https://varzin-engine-api.onrender.com/api/v1/generate \
+  --header 'X-RapidAPI-Key: YOUR_RAPIDAPI_KEY' \
+  --header 'X-RapidAPI-Host: varzin-cognitive-engine.p.rapidapi.com'</pre>
+                    </div>
+                    <p style="color: var(--text-dim); font-size: 0.8rem; margin-top: 1rem;">
+                        ⚙️ <strong>Integration Note:</strong> Secure endpoints default to the 12-state configuration space <span style="font-family: var(--font-mono);">Aff(Z12)</span>. The response structure guarantees non-predictable orbit generation.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">The Demarcation Registry</h2>
+        <div class="bento-grid">
+            <div class="card col-8">
+                <span class="badge badge-proved" style="float: right;">Proved Core</span>
+                <h3 style="margin-bottom: 0.5rem; color: #fff;">Mathematical Foundations</h3>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">The absolute, mathematically proved core of the VARZIN program has been formalized over finite cyclic spaces.</p>
+                <ul style="padding-left: 1.5rem; color: var(--text-dim); font-size: 0.9rem;">
+                    <li><strong>Affine Permutations:</strong> For N=12, exactly |Aff(Z12)| = 48 valid memory operators.</li>
+                    <li><strong>Mirror-13 Transitions:</strong> Strongly connected transition system with 312 states and 600 directed edges.</li>
+                    <li><strong>Convergence:</strong> Lazy random walk resolves periodicity, locking a deterministic spectral gap of &gamma; &approx; 0.04133.</li>
+                </ul>
+            </div>
+            
+            <div class="card col-4" style="background: linear-gradient(135deg, rgba(244, 63, 94, 0.05), transparent);">
+                <span class="badge badge-rejected" style="float: right;">Rejected</span>
+                <h3 style="margin-bottom: 0.5rem; color: #fff;">Biological & Physical Resonance</h3>
+                <p style="color: var(--text-dim); margin-bottom: 1rem;">Biophysical and planetary field hypotheses failed under rigorous testing against stronger null models.</p>
+                <ul style="padding-left: 1.2rem; color: var(--text-dim); font-size: 0.85rem;">
+                    <li><strong>Genomics (Track A):</strong> Chromosome 11 scan yielded 0 windows after BH-FDR under Altschul-Erickson shuffling.</li>
+                    <li><strong>Seismicity (Track C):</strong> Clustering anomaly at Mt. Kailash dissolved (p_tectonic = 0.3956) under the Alpide Null.</li>
+                </ul>
+            </div>
+
+            <div class="card col-4">
+                <span class="badge badge-pending" style="float: right;">Pending</span>
+                <h3 style="margin-bottom: 0.5rem; color: #fff;">Cognitive Trials</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Preregistered study <strong>VPE-001A</strong> (target N=59) is planned to test whether human observers decode Core-30 axes or morpheme families above baseline.</p>
+            </div>
+            <div class="card col-8">
+                <span class="badge badge-rejected" style="float: right;">Falsified</span>
+                <h3 style="margin-bottom: 0.5rem; color: #fff;">Foundation Model Auditing (Track D)</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem;">Autoregressive LLMs (Llama 3 and Mistral) exhibit absolute structural blindness under strict semantic starvation. Clustered partitions returned ARI scores near zero (ARI_Llama = 0.0152, ARI_Mistral = -0.0337), verifying the <strong>"Morphological Hijacking"</strong> trap—they group tokens by surface spelling, not underlying geometry.</p>
+                <p><a href="atlas.html" style="font-size: 0.9rem; font-weight: 600;">Explore the full Evidence Atlas →</a></p>
+            </div>
+
+            <div class="card col-12" style="border: 1px solid rgba(244, 63, 94, 0.2); background: rgba(244,63,94,0.02);">
+                <h3 style="color: var(--rejected); margin-bottom: 0.5rem; font-family: var(--font-mono);">Independent Computational Audit Closure (July 2026)</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">An independent four-stage adversarial audit has verified that the previous numeric structure-detection pipeline ("benchmark_003") did not establish a distinct, generalizable advantage beyond specialized baseline features. Consequently, all previous emergence claims built on that specific pipeline are retracted. This website serves as the corrected, evidence-first public record of the project.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>VARZIN Research Program — Level-1 Reproducible Stack & Open Science Initiative</p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem;">Lead Researcher: Reza Nirouyar (RAHTALĒN-13) — ORCID: 0009-0000-4690-6842</p>
+            <p style="margin-top: 0.5rem; font-size: 0.7rem;">Website designed under structural bento-grid guidelines. No active field resonance or devices are represented.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
