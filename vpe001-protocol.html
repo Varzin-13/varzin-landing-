@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>VPE-001 Protocol – LUXVAR Semantic Classification Study | VARZIN</title>
+  <meta name="description" content="VPE-001 Pre-Registration Protocol v1.3: LUXVAR Semantic Classification Study. Pre-registered pilot study with explicit failure criteria. VARZIN symbolic-experimental research framework." />
+  <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://varzin.org/vpe001-protocol.html" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
+
+  <style>
+    :root {
+      --bg: #000000;
+      --cyan: #00ffee;
+      --gold: #FFD700;
+      --text: #cceeee;
+      --muted: #a7e7e7;
+      --panel: rgba(0, 15, 20, 0.85);
+      --border: rgba(0, 255, 238, 0.3);
+      --research: #7fdfff;
+      --font: 'DM Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.7;
+      padding: 40px 16px 80px;
+    }
+
+    #field-canvas {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1; opacity: 0.4;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    nav a {
+      color: var(--text); text-decoration: none;
+      margin: 0 14px; font-weight: 500; font-size: 1em;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--cyan); }
+    nav a.active { color: var(--cyan); border-bottom: 2px solid var(--cyan); padding-bottom: 3px; }
+
+    /* Status badge */
+    .status-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+    .status-osf {
+      background: rgba(0, 255, 238, 0.15);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+    }
+
+    h1 {
+      font-size: clamp(1.8em, 4vw, 2.8em);
+      color: var(--cyan);
+      text-shadow: 0 0 20px var(--cyan);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05em;
+      margin-bottom: 30px;
+    }
+
+    /* Download button */
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      background: rgba(0, 255, 238, 0.15);
+      border: 2px solid var(--cyan);
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05em;
+      transition: all 0.3s;
+      box-shadow: 0 0 20px rgba(0, 255, 238, 0.3);
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+    .btn-download:hover {
+      background: rgba(0, 255, 238, 0.25);
+      box-shadow: 0 0 35px rgba(0, 255, 238, 0.6);
+      transform: translateY(-2px);
+    }
+    .btn-osf {
+      background: rgba(127, 223, 255, 0.1);
+      border-color: var(--research);
+      color: var(--research);
+      box-shadow: 0 0 15px rgba(127, 223, 255, 0.2);
+    }
+    .btn-osf:hover {
+      background: rgba(127, 223, 255, 0.2);
+      box-shadow: 0 0 30px rgba(127, 223, 255, 0.5);
+    }
+
+    /* Info panel */
+    .info-panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin: 32px 0;
+      backdrop-filter: blur(8px);
+    }
+    .info-panel h2 {
+      color: var(--gold);
+      font-size: 1.2em;
+      margin: 0 0 16px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    /* Criteria grid */
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .criterion {
+      background: rgba(0, 20, 30, 0.7);
+      border: 1px solid rgba(0, 255, 238, 0.2);
+      border-radius: 10px;
+      padding: 14px 18px;
+    }
+    .criterion .label {
+      color: var(--gold);
+      font-size: 0.8em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .criterion .value {
+      color: var(--text);
+      font-size: 0.95em;
+    }
+
+    /* Two-column table */
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95em;
+    }
+    .spec-table tr {
+      border-bottom: 1px dotted rgba(0, 255, 238, 0.1);
+    }
+    .spec-table td {
+      padding: 7px 4px;
+      vertical-align: top;
+    }
+    .spec-table td:first-child {
+      color: var(--gold);
+      width: 42%;
+      font-weight: 500;
+    }
+
+    /* Scope box */
+    .scope-box {
+      background: rgba(0, 30, 40, 0.8);
+      border: 1px solid rgba(127, 223, 255, 0.35);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .scope-box strong { color: var(--research); }
+
+    /* Failure rule */
+    .failure-rule {
+      background: rgba(255, 60, 60, 0.08);
+      border: 1px solid rgba(255, 60, 60, 0.3);
+      border-radius: 10px;
+      padding: 14px 20px;
+      margin-top: 16px;
+      font-size: 0.92em;
+      color: #ffaaaa;
+    }
+
+    /* Roadmap */
+    .roadmap-step {
+      display: flex;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px dotted rgba(0, 255, 238, 0.1);
+      align-items: flex-start;
+    }
+    .roadmap-step:last-child { border-bottom: none; }
+    .step-num {
+      min-width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(0, 255, 238, 0.15);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      font-weight: 700; font-size: 0.85em;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-content { flex: 1; }
+    .step-title { color: var(--text); font-weight: 600; }
+    .step-desc { color: var(--muted); font-size: 0.88em; margin-top: 2px; }
+
+    footer {
+      margin-top: 70px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88em;
+      line-height: 2;
+    }
+    footer a { color: var(--cyan); text-decoration: none; margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .btn-download { display: flex; width: 100%; justify-content: center; margin-right: 0; }
+      .spec-table td:first-child { width: 50%; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="field-canvas"></canvas>
+
+  <div class="container">
+    <nav>
+      <a href="/index.html">Portal</a>
+      <a href="/field-index.html">Field Index</a>
+      <a href="/vpe001-protocol.html" class="active">VPE-001</a>
+    </nav>
+
+    <div style="text-align: center; margin-bottom: 32px;">
+      <div class="status-badge status-osf">🔬 OSF Submission Ready</div>
+      <h1>VPE-001 Pre-Registration Protocol</h1>
+      <p class="subtitle">LUXVAR Semantic Classification Study · v1.3 Final · June 2026</p>
+
+      <div style="margin-top: 20px;">
+        <a class="btn-download" href="VARZIN_VPE001_v1.3_Final_Protocol.pdf" download>
+          ⬇ Download Protocol PDF (v1.3)
+        </a>
+        <a class="btn-download btn-osf" href="https://osf.io" target="_blank" rel="noopener noreferrer">
+          🔗 OSF Pre-Registration
+        </a>
+      </div>
+    </div>
+
+    <!-- Scope -->
+    <div class="scope-box">
+      <strong>What this study evaluates:</strong>
+      Whether independent evaluators unfamiliar with LUXVAR can classify LUXVAR words into semantic axes above predefined baselines and above matched control-word performance.<br>
+      <strong>What this study does NOT test:</strong>
+      Physical-field claims, consciousness-field interaction, non-human origin, Torus-PSI, or frequency effects.
+    </div>
+
+    <!-- Study Design -->
+    <div class="info-panel">
+      <h2>Study Design</h2>
+      <table class="spec-table">
+        <tr><td>Target evaluators</td><td>N = 40 (minimum 30)</td></tr>
+        <tr><td>Eligibility</td><td>Adult; no prior LUXVAR exposure; independent of VARZIN development</td></tr>
+        <tr><td>LUXVAR stimuli</td><td>80 canonical words (Core + Numeric sets)</td></tr>
+        <tr><td>Control stimuli</td><td>80 length-matched artificial controls</td></tr>
+        <tr><td>Semantic axes</td><td>Light · Reflection · Silence · Gate · Motion</td></tr>
+        <tr><td>Majority-class baseline</td><td>27.5% (Reflection, 22/80 items)</td></tr>
+        <tr><td>Accuracy floor</td><td>≥ 30% (pre-registered)</td></tr>
+        <tr><td>Calibration phase</td><td>5 evaluators, 20 items, Fleiss' Kappa ≥ 0.15</td></tr>
+      </table>
+    </div>
+
+    <!-- Statistical Pipeline -->
+    <div class="info-panel">
+      <h2>Statistical Pipeline</h2>
+      <table class="spec-table">
+        <tr><td>Primary metric</td><td>Fleiss' Kappa (inter-rater agreement)</td></tr>
+        <tr><td>Primary test</td><td>Permutation test vs majority-class baseline</td></tr>
+        <tr><td>Secondary test</td><td>Chi-square</td></tr>
+        <tr><td>Correction</td><td>False Discovery Rate — Benjamini-Hochberg</td></tr>
+        <tr><td>Sensitivity analysis</td><td>Exclude participants flagging ≥ 10 familiar items</td></tr>
+        <tr><td>Alternative explanations</td><td>AE-1 Sound symbolism · AE-2 Phonaesthetic bias · AE-3 Orthographic bias</td></tr>
+        <tr><td>Subgroup analysis</td><td>Core Set (n=30) vs Numeric Set (n=50) — v1.4 Addendum</td></tr>
+      </table>
+    </div>
+
+    <!-- Success Criteria -->
+    <div class="info-panel">
+      <h2>Success Criteria — All 6 Must Be Satisfied Simultaneously</h2>
+      <div class="criteria-grid">
+        <div class="criterion">
+          <div class="label">C1</div>
+          <div class="value">LUXVAR accuracy &gt; majority-class baseline</div>
+        </div>
+        <div class="criterion">
+          <div class="label">C2</div>
+          <div class="value">LUXVAR accuracy &gt; control-word accuracy</div>
+        </div>
+        <div class="criterion">
+          <div class="label">C3</div>
+          <div class="value">FDR-corrected p &lt; 0.05</div>
+        </div>
+        <div class="criterion">
+          <div class="label">C4</div>
+          <div class="value">Fleiss' Kappa ≥ 0.20</div>
+        </div>
+        <div class="criterion">
+          <div class="label">C5</div>
+          <div class="value">Sensitivity analysis directionally consistent</div>
+        </div>
+        <div class="criterion">
+          <div class="label">C6</div>
+          <div class="value">LUXVAR accuracy ≥ 30%</div>
+        </div>
+      </div>
+
+      <div class="failure-rule">
+        <strong>Failure Rule:</strong> If any single criterion is not met, H1 is rejected.
+        No post-hoc reinterpretation is permitted.
+        Negative results will be recorded as Dissonance in the Evidence Registry.
+      </div>
+    </div>
+
+    <!-- Execution Roadmap -->
+    <div class="info-panel">
+      <h2>Execution Roadmap</h2>
+      <div class="roadmap-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">OSF Pre-Registration</div>
+          <div class="step-desc">Upload protocol PDF + materials package. Record timestamp. No data collection before timestamp.</div>
+        </div>
+      </div>
+      <div class="roadmap-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Calibration Phase</div>
+          <div class="step-desc">5 independent evaluators · 20 items · Fleiss' Kappa ≥ 0.15 · Axis concentration check</div>
+        </div>
+      </div>
+      <div class="roadmap-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Main Recruitment</div>
+          <div class="step-desc">Target N = 40 · Minimum N = 30 · Full blinded protocol</div>
+        </div>
+      </div>
+      <div class="roadmap-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Data Analysis</div>
+          <div class="step-desc">All 6 criteria · Sensitivity analysis · Alternative explanation tests · Report result regardless of direction</div>
+        </div>
+      </div>
+      <div class="roadmap-step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Replication</div>
+          <div class="step-desc">Level 1: independent evaluator group · Level 2: independent research team · Level 3: public reproduction</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transparency -->
+    <div class="info-panel">
+      <h2>Transparency Requirements</h2>
+      <p style="color: var(--muted); font-size: 0.95em; margin: 0;">
+        All materials publicly available before data collection:
+        raw data · analysis code · word lists · control lists ·
+        statistical outputs · calibration results · power analysis report.
+      </p>
+    </div>
+
+    <footer>
+      <a href="/index.html">← Portal</a>
+      <a href="VARZIN_VPE001_v1.3_Final_Protocol.pdf" download>Download PDF</a>
+      <a href="https://orcid.org/0009-0000-4690-6842" target="_blank" rel="noopener noreferrer">ORCID: 0009-0000-4690-6842</a>
+      <a href="mailto:contact@varzin.org">contact@varzin.org</a>
+      <br>
+      <span style="font-size: 0.85em; color: rgba(167,231,231,0.5);">
+        VARZIN Research Framework · Scientific claims at Level 0 · VPE-001 pre-registration in preparation
+      </span>
+    </footer>
+  </div>
+
+  <script>
+    // Minimal particle background
+    const canvas = document.getElementById('field-canvas');
+    const ctx = canvas.getContext('2d');
+    function resize() { canvas.width = innerWidth; canvas.height = innerHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const pts = [];
+    for (let i = 0; i < 80; i++) {
+      pts.push({
+        x: Math.random() * innerWidth, y: Math.random() * innerHeight,
+        dx: (Math.random() - 0.5) * 0.4, dy: (Math.random() - 0.5) * 0.4
+      });
+    }
+
+    function animate() {
+      ctx.fillStyle = 'rgba(0,0,0,0.25)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      for (const p of pts) {
+        p.x += p.dx; p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        ctx.fillStyle = 'rgba(0,255,238,0.4)';
+        ctx.fillRect(p.x, p.y, 2, 2);
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>
