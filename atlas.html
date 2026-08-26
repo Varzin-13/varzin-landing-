@@ -3,272 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VARZIN — Evidence Atlas</title>
+    <title>VARZIN — Atlas</title>
     <style>
-        :root {
-            --bg-color: #060913;
-            --card-bg: #0f172a;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --primary: #38bdf8;
-            --proved: #10b981;
-            --proved-bg: rgba(16, 185, 129, 0.1);
-            --rejected: #f43f5e;
-            --rejected-bg: rgba(244, 63, 94, 0.1);
-            --pending: #f59e0b;
-            --pending-bg: rgba(245, 158, 11, 0.1);
-            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --font-mono: "Fira Code", "Courier New", Courier, monospace;
-        }
+        
+:root {
+    --bg-color: #060913;
+    --card-bg: #0f172a;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+    --primary: #38bdf8;
+    --primary-glow: rgba(56, 189, 248, 0.15);
+    --proved: #10b981;
+    --proved-bg: rgba(16, 185, 129, 0.1);
+    --rejected: #f43f5e;
+    --rejected-bg: rgba(244, 63, 94, 0.1);
+    --pending: #f59e0b;
+    --pending-bg: rgba(245, 158, 11, 0.1);
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "Fira Code", "Courier New", Courier, monospace;
+}
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            background-image: radial-gradient(circle at 50% -20%, rgba(56, 189, 248, 0.12), transparent 50%),
-                              linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
-            background-size: 100% 100%, 40px 40px, 40px 40px;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        .nav-bar {
-            border-bottom: 1px solid var(--border-color);
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            position: sticky; top: 0; z-index: 100;
-        }
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image: radial-gradient(circle at 50% -20%, rgba(56, 189, 248, 0.12), transparent 50%),
+                      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+}
 
-        .nav-container {
-            max-width: 1200px; margin: 0 auto;
-            display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem;
-        }
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
 
-        .brand { font-size: 1.5rem; font-weight: 800; letter-spacing: 0.15em; color: #fff; font-family: var(--font-mono); }
-        .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-        .nav-links a { color: var(--text-dim); font-size: 0.9rem; text-transform: uppercase; }
-        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
-        .btn-contact { background: rgba(56, 189, 248, 0.15); border: 1px solid var(--primary); padding: 0.4rem 1rem; border-radius: 6px; }
+a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 8px var(--primary-glow);
+}
 
-        .container {
-            max-width: 1100px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
+.nav-bar {
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            font-family: var(--font-mono);
-            background: linear-gradient(135deg, #fff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
 
-        p.subtitle {
-            font-size: 1.1rem;
-            color: var(--text-dim);
-            margin-bottom: 3rem;
-        }
+.brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    font-family: var(--font-mono);
+}
 
-        /* Bento Cards for categories */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-        @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
-        }
+.nav-links {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
 
-        .panel {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.75rem;
-        }
+.nav-links a {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+}
 
-        .panel h3 {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-bottom: 1rem;
-            font-family: var(--font-mono);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .badge {
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-family: var(--font-mono);
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-main);
+    text-shadow: 0 0 5px var(--primary-glow);
+}
 
-        .badge-proved { background: var(--proved-bg); color: var(--proved); border: 1px solid rgba(16, 185, 129, 0.2); }
-        .badge-rejected { background: var(--rejected-bg); color: var(--rejected); border: 1px solid rgba(244, 63, 94, 0.2); }
-        .badge-pending { background: var(--pending-bg); color: var(--pending); border: 1px solid rgba(245, 158, 11, 0.2); }
+.btn-contact {
+    background: var(--primary-glow);
+    border: 1px solid var(--primary);
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    color: var(--text-main) !important;
+}
 
-        .evidence-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-        }
+.btn-contact:hover {
+    background: var(--primary);
+    color: #000 !important;
+    box-shadow: 0 0 15px var(--primary);
+}
 
-        .evidence-table th, .evidence-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
+.grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
 
-        .evidence-table th {
-            background: rgba(255, 255, 255, 0.02);
-            color: #fff;
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-        }
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
+    border-left: 4px solid var(--primary);
+    padding-left: 0.75rem;
+    letter-spacing: -0.02em;
+}
 
-        .evidence-table td {
-            font-size: 0.9rem;
-            color: var(--text-dim);
-        }
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
 
-        .evidence-table tr:last-child td {
-            border-bottom: none;
-        }
+.card:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    transform: translateY(-2px);
+}
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
 
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 0;
-            background: #04070d;
-            text-align: center;
-            color: var(--text-dim);
-            font-size: 0.85rem;
-        }
+.badge-proved { color: var(--proved); background: var(--proved-bg); border: 1px solid rgba(16, 185, 129, 0.2); }
+.badge-rejected { color: var(--rejected); background: var(--rejected-bg); border: 1px solid rgba(244, 63, 94, 0.2); }
+.badge-pending { color: var(--pending); background: var(--pending-bg); border: 1px solid rgba(245, 158, 11, 0.2); }
+
+footer {
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 0;
+    background: #04070d;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-top: 5rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
     </style>
 </head>
 <body>
+    <nav class="nav-bar"><div class="nav-container"><a href="index.html" class="brand">VARZIN</a><div class="nav-links"><a href="index.html" >Home</a><a href="field-index.html" >Field Index</a><a href="atlas.html" class="active">Atlas</a><a href="all-dois.html" >DOI Registry</a><a href="vpe001-protocol.html" >VPE Protocol</a><a href="luxvar-birth-intro.html" >LUXVAR Art</a><a href="cyclical-resonance-report.html" >Cyclical Resonance</a><a href="master-report-v3.html" >Master Report v3</a><a href="contact.html" class="btn-contact">Contact</a></div></div></nav>
+    
+    <div class="grid-container">
+        <h1 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 1.5rem; font-family: var(--font-mono); background: linear-gradient(135deg, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">VARZIN Atlas</h1>
+        <p style="color: var(--text-dim); font-size: 1.1rem; margin-bottom: 3rem; max-width: 800px;">A complete public index for the project’s active evidence base. Designed to show what remains scientifically usable after separating mathematical proof, computational results, open empirical questions, negative findings, and archived historical layers.</p>
 
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <a href="index.html" class="brand">VARZIN</a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="field-index.html">Field Index</a>
-                <a href="atlas.html" class="active">Atlas</a>
-                <a href="all-dois.html">DOI Registry</a>
-                <a href="vpe001-protocol.html">VPE Protocol</a>
-                <a href="luxvar-birth-intro.html">LUXVAR Art</a>
-                <a href="feedback.html" class="btn-contact">Contact</a>
+        <h2 class="section-title">Evidence Status Framework</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+            <div class="card">
+                <span class="badge badge-proved">Proved & Verified</span>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">
+                    • Affine bijection criterion over finite cyclic spaces.<br>
+                    • 48 affine operators for N = 12.<br>
+                    • Formal connectivity result for the augmented transition system.<br>
+                    • Deterministic reproducibility via SHA-256 hashing.
+                </p>
             </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <h1>VARZIN Atlas</h1>
-        <p class="subtitle">An evidence-first, audited index of the VARZIN program's active, verified components, open hypotheses, and archived speculation.</p>
-
-        <div class="grid">
-            <div class="panel">
-                <h3>Mathematical Core <span class="badge badge-proved">Proved</span></h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem;">Pure algebra and finite state transition networks that are formally proved and computationally validated.</p>
-                <ul style="color: var(--text-dim); font-size: 0.85rem; padding-left: 1.2rem;">
-                    <li>Affine Group Aff(Z12) (48 elements)</li>
-                    <li>Connected 312-state transition graph</li>
-                    <li>Lazy Random Walk Spectral Gap</li>
-                </ul>
+            <div class="card">
+                <span class="badge badge-pending">Reported Conditionally</span>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">
+                    • Mirror-13 MDL = 13.11 bits.<br>
+                    • Live USGS API Monte Carlo N=1000.<br>
+                    • Earlier family learnability results.<br>
+                    • Interpretation depends on exact encoding, dataset construction, and baseline choice.
+                </p>
             </div>
-            <div class="panel">
-                <h3>Empirical Tracks <span class="badge badge-rejected">Rejected</span></h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem;">Physical, geological, and biological hypotheses tested and falsified under robust, matched controls.</p>
-                <ul style="color: var(--text-dim); font-size: 0.85rem; padding-left: 1.2rem;">
-                    <li>Chromosome 11 sliding window scan</li>
-                    <li>Mt. Kailash seismic anomaly</li>
-                    <li>Torus spatial resonance at Giza</li>
-                </ul>
+            <div class="card">
+                <span class="badge badge-pending">Open Questions</span>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">
+                    • Human grouping in VPE-001A study.<br>
+                    • Possible compositional semantics beyond design.<br>
+                    • Stable model-level effects after matched controls.
+                </p>
             </div>
-            <div class="panel">
-                <h3>Cognitive Tracks <span class="badge badge-pending">Open</span></h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem;">Questions concerning structural representation of meaning currently under active academic inquiry.</p>
-                <ul style="color: var(--text-dim); font-size: 0.85rem; padding-left: 1.2rem;">
-                    <li>VPE-001A Human card-sorting</li>
-                    <li>Compositional language semantics</li>
-                    <li>Structural priming effects</li>
-                </ul>
+            <div class="card">
+                <span class="badge badge-rejected">Negative & Unverified</span>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">
+                    • Default Python hash() instability (reproducibility bug).<br>
+                    • EMAG2 magnetic variance (declared uncomputable due to grid limits).<br>
+                    • Natural six-axis emergence (elbow SSE analysis rejects hexacore).
+                </p>
             </div>
         </div>
 
-        <h2 style="font-family: var(--font-mono); color: #fff; margin-bottom: 1rem;">The Evidence Matrix</h2>
-        <table class="evidence-table">
-            <thead>
-                <tr>
-                    <th>Claim / Track</th>
-                    <th>Hypothesis</th>
-                    <th>Technical Null Model</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Affine Permutations</strong></td>
-                    <td>|Aff(Z12)| = 48 group operators</td>
-                    <td>Pure Algebraic Deduction</td>
-                    <td><span class="badge badge-proved">Verified</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Mirror-13 Graph</strong></td>
-                    <td>312 states, strongly connected</td>
-                    <td>BFS Connectivity Verification</td>
-                    <td><span class="badge badge-proved">Verified</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Spectral Torus</strong></td>
-                    <td>Torus surrogate manifold fit</td>
-                    <td>Collocation Discretization (RMS=0.129)</td>
-                    <td><span class="badge badge-proved">Verified</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Geophysics (Mt. Kailash)</strong></td>
-                    <td>Anomalous seismicity clusters</td>
-                    <td>Alpide Tectonic Null (p = 0.3956)</td>
-                    <td><span class="badge badge-rejected">Null Maintained</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Genomics (Chr 11)</strong></td>
-                    <td>DNA harmonic wave patterns</td>
-                    <td>Altschul-Erickson Dinucleotide Null</td>
-                    <td><span class="badge badge-rejected">Null Maintained</span></td>
-                </tr>
-                <tr>
-                    <td><strong>AI Reasoning (Track D)</strong></td>
-                    <td>LLMs understand hidden algebra</td>
-                    <td>Adjusted Rand Index (Llama: 0.0152, Mistral: -0.0337)</td>
-                    <td><span class="badge badge-rejected">Falsified</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Human Perception</strong></td>
-                    <td>Humans resolve structural axes</td>
-                    <td>VPE-001A Double-blind (N = 59)</td>
-                    <td><span class="badge badge-pending">Planned</span></td>
-                </tr>
-            </tbody>
-        </table>
+        <h2 class="section-title">Core Registry vs. Broad List</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem;">
+            <div class="card">
+                <h3>Core-30 Verified Subset</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">The active, verified public research subset used for ongoing evaluation on this site. Lexical items are balanced across five distinct design axes. Frequency metadata is preserved as historical design label only; computational testing did not support empirical recoverability of those frequencies.</p>
+            </div>
+            <div class="card">
+                <h3>Broader 801-Root Layer</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">Not all entries in the broader list carry equal evidential status. Entries outside Core-30 may be developmental, synthetic, archival, or pending separate review. They should not be interpreted as equally validated.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Atlas Tools and Demos</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div class="card">
+                <h4>Builder</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">A local exploratory tool for generating symbolic cards and inspecting design structure. Output is creative and archival, not empirical validation.</p>
+            </div>
+            <div class="card">
+                <h4>801 Root Explorer</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">An inspection layer for broader developmental or synthetic material. It does not imply equal validation of all roots.</p>
+            </div>
+            <div class="card">
+                <h4>Mirror-13 Simulator</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">A finite-state simulation linked to the project's conditional computational layer. Its presence does not validate cognition, semantics, or external memory.</p>
+            </div>
+        </div>
     </div>
 
+    
     <footer>
         <div class="footer-container">
-            <p>Lead Researcher: Reza Nirouyar — ORCID: 0009-0000-4690-6842</p>
+            <p>VARZIN Research Program — Level-1 Reproducible Stack & Open Science Initiative</p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem;">Lead Researcher: Reza Nirouyar (RAHTALĒN-13) — ORCID: 0009-0000-4690-6842</p>
+            <p style="margin-top: 0.5rem; font-size: 0.7rem; color: #555;">Website designed under structural bento-grid guidelines. No active field resonance or devices are represented.</p>
         </div>
     </footer>
-
+    
 </body>
 </html>
