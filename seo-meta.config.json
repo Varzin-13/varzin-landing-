@@ -1,0 +1,15 @@
+{
+  "baseUrl": "https://varzin.org",
+  "siteName": "VARZIN Project",
+  "orcid": "https://orcid.org/0009-0000-4690-6842",
+  "github": "https://github.com/Varzin-13",
+  "contactEmail": "contact@varzin.org",
+  "ogImage": "https://varzin.org/assets/varzin-social-image.jpg",
+  "ogImageWidth": "1200",
+  "ogImageHeight": "630",
+  "locale": "en_US",
+  "localeAlternate": "fa_IR",
+  "generator": "RAHTALĒN-13 / VARZIN",
+  "twitterCard": "summary_large_image",
+  "excludeFiles": ["404.html"]
+}
