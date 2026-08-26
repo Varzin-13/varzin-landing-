@@ -12,6 +12,9 @@ on:
       - "inject-seo-meta.js"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-meta:
     runs-on: ubuntu-latest
