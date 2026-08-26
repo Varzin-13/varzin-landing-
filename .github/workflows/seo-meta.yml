@@ -1,0 +1,33 @@
+name: Update SEO meta tags
+
+# Runs the injector automatically whenever HTML files change, and commits
+# the result back to the branch. Remove this file if you'd rather run the
+# script manually (node inject-seo-meta.js) before each deploy.
+
+on:
+  push:
+    paths:
+      - "**/*.html"
+      - "seo-meta.config.json"
+      - "inject-seo-meta.js"
+
+jobs:
+  update-meta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Inject SEO meta tags
+        run: node inject-seo-meta.js .
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "seo-meta-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "chore: update SEO meta tags [automated]"
+          git push
