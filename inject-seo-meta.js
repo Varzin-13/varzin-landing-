@@ -77,6 +77,7 @@ function buildMetaBlock(canonicalUrl, cfg) {
 <meta name="rating" content="General">
 
 <link rel="canonical" href="${canonicalUrl}" />
+<link rel="icon" href="${cfg.baseUrl}/assets/favicon.png" type="image/png" />
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${cfg.siteName}">

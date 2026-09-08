@@ -9,6 +9,7 @@
 <meta name="rating" content="General">
 
 <link rel="canonical" href="https://varzin.org/feedback.html" />
+<link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VARZIN Project">
@@ -48,7 +49,6 @@
   <meta name="keywords" content="VARZIN, contact, feedback, KALTŪR, LUXVAR, symbolic research, VPE-001">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://varzin.org/feedback.html" />
-  <link rel="icon" href="https://varzin.org/assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;600&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
@@ -192,7 +192,7 @@
     · VPE-001 pre-registered pilot study in preparation
     <br>
     <a href="vpe001-protocol.html">→ VPE-001 Protocol</a> &nbsp;·&nbsp;
-    <a href="research-portal.html">→ Research Report v6</a>
+    <a href="master-report-v3.html">→ Research Report v3</a>
   </div>
 
   <!-- Header -->
@@ -217,7 +217,7 @@
   <div class="research-links">
     <a class="rlink rlink-vpe" href="vpe001-protocol.html">🧪 VPE-001 Protocol</a>
     <a class="rlink rlink-portal" href="index.html">⟠ Portal</a>
-    <a class="rlink rlink-report" href="research-portal.html">📊 Research Report v6</a>
+    <a class="rlink rlink-report" href="master-report-v3.html">📊 Research Report v3</a>
     <a class="rlink rlink-portal" href="field-index.html">⊕ Field Index v6</a>
   </div>
 
@@ -298,15 +298,15 @@ if (msgEl && countEl) {
   });
 }
 
-// ── Form submission (simulation — no actual server) ──
+// ── Form submission (opens the visitor's email client — this site has no backend) ──
 document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const form = e.target;
-  const btn = document.getElementById('submit-btn');
   const status = document.getElementById('status-msg');
 
   const name = form.elements['name'].value.trim();
   const email = form.elements['email'].value.trim();
+  const subjectField = form.elements['subject'].value.trim();
   const message = form.elements['message'].value.trim();
 
   if (!name || !email || !message) {
@@ -321,37 +321,25 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     return;
   }
 
-  const txID = 'VRZ-' + Date.now().toString(36).toUpperCase();
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  status.style.display = 'none';
+  const subject = subjectField || `VARZIN contact form — ${name}`;
+  const body = `${message}\n\n—\nFrom: ${name}\nReply-to: ${email}`;
+  const mailtoUrl =
+    `mailto:contact@varzin.org?subject=${encodeURIComponent(subject)}` +
+    `&body=${encodeURIComponent(body)}`;
 
-  // Simulate network delay
-  setTimeout(() => {
-    // In production: replace with actual fetch to your backend / Formspree / Netlify Forms
-    console.log('VARZIN Contact Form Submission');
-    console.log('From:', name, '|', email);
-    console.log('Subject:', form.elements['subject'].value);
-    console.log('Message length:', message.length, 'chars');
-    console.log('TX ID:', txID);
+  window.location.href = mailtoUrl;
 
-    status.className = 'success';
-    status.style.display = 'block';
-    status.innerHTML = `
-      <strong>Message received.</strong> Thank you, ${name}.<br>
-      A reply will be sent to <strong>${email}</strong> as soon as possible.
-      <br>For VPE-001 participation, we will contact you with the blind rating form.
-      <span class="tx-id">Reference: ${txID}</span>
-      <span style="display:block;margin-top:6px;font-size:.8em;color:var(--muted);">
-        Note: This form submits to a simulation log in the browser console.
-        For guaranteed delivery, email directly: contact@varzin.org
-      </span>
-    `;
-    btn.textContent = 'Send Message ✦ KALTŪR 474Hz';
-    btn.disabled = false;
-    form.reset();
-    if (countEl) countEl.textContent = '0 / 5000';
-  }, 1800);
+  status.className = 'success';
+  status.style.display = 'block';
+  status.innerHTML = `
+    <strong>Your email app should now open</strong> with this message addressed to
+    <strong>contact@varzin.org</strong> — review it and hit send there to actually deliver it.
+    <span style="display:block;margin-top:6px;font-size:.8em;color:var(--muted);">
+      Nothing leaves your browser until you send that email. If nothing opened
+      (no mail client configured), copy your message and email it directly to
+      contact@varzin.org.
+    </span>
+  `;
 });
 
 // ── Background particle canvas ──
