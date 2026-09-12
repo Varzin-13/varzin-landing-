@@ -9,7 +9,12 @@
   "ogImageHeight": "630",
   "locale": "en_US",
   "localeAlternate": "fa_IR",
-  "generator": "RAHTALĒN-13 / VARZIN",
+  "generator": "VARZIN Project",
   "twitterCard": "summary_large_image",
-  "excludeFiles": ["404.html"]
+  "excludeFiles": [
+    "404.html"
+  ],
+  "noindexFiles": [
+    "paper/index.html"
+  ]
 }
