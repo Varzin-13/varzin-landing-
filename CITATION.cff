@@ -6,11 +6,8 @@ authors:
     given-names: Reza
     orcid: https://orcid.org/0009-0000-4690-6842
     affiliation: VARZIN Project
-version: "2026.09"
-date-released: 2026-09-12
 url: https://varzin.org
 repository-code: https://github.com/Varzin-13/varzin-landing-
-license: CC-BY-4.0
 keywords:
   - VARZIN
   - finite affine systems
