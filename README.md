@@ -1,179 +1,223 @@
-# 🔶 VARZIN: Open Code of Light
-### 🔶 وارزین: کد باز نور
+# VARZIN Project
 
-**Symbolic-Experimental Research Framework · v2.1**  
-**چارچوب پژوهشی نمادین–آزمایشی · نسخه ۲.۱**
+**Independent computational research and reproducibility framework**
 
-*QMSG Gate 474Hz — RAHTALĒN–13*
+VARZIN is an independent research project by **Reza Nirouyar** focused on:
 
----
+- finite affine systems and deterministic computational models,
+- reproducible computational experiments,
+- structured analysis of the LUXVAR constructed symbolic system,
+- falsification-oriented testing of semantic and structural claims,
+- publication provenance, corrections, negative results, and open research questions.
 
-> "This is not just a repository. This is a resonance field."  
-> «این فقط یک مخزن داده نیست. این یک میدان تشدید است.»
-
----
-
-## ✡ Project Summary / خلاصه‌ی پروژه
-
-VARZIN is an independent **symbolic-experimental research framework** investigating
-the semantic structure of the LUXVAR constructed language system.
-
-VARZIN یک **چارچوب پژوهشی نمادین–آزمایشی** مستقل است که ساختار معنایی سامانه‌ی
-زبان ساختگی LUXVAR را بررسی می‌کند.
-
-**Core components / اجزای اصلی:**
-
-| Component | Description |
-|-----------|-------------|
-| 🜂 LUXVAR | Constructed symbolic language — 5 semantic axes, Core-30 word registry |
-| ⟠ ETFM | Earth–Torus Field Model — geometric visualization model |
-| 🌀 Harmonic references | 474 Hz, 528 Hz, 777 Hz — symbolic frequency anchors |
-| 🔬 VPE-001 / VPE-001A | Pre-registered pilot + human rater study: LUXVAR Semantic Classification |
-| ⚙ Level-1 Computational Stack | Deterministic reproducible core (SHA-256, FEniCS, USGS/NCBI audits) — Aug 2026 |
-| 🧪 Track D | Cognitive audit of LLM axis-recovery — REJECTED "AI-recoverable" claim, Aug 2026 |
+Website: https://varzin.org
+ORCID: https://orcid.org/0009-0000-4690-6842
+Contact: contact@varzin.org
 
 ---
 
-## 🔬 Research Status / وضعیت پژوهش
+## Research status
 
-**Scientific claims level: 0 — no empirical validation achieved or claimed.**  
-**سطح ادعاهای علمی: صفر — هیچ اعتبارسنجی تجربی انجام یا ادعا نشده است.**
+VARZIN separates mathematical, computational, empirical, and historical claims.
 
-> **⚠ Status update (Aug 2026):** Following an independent adversarial audit (July 2026), 29 of the DOIs previously listed in this README (19 Zenodo, 10 OSF) were voluntarily withdrawn by the author. See **[varzin.org/all-dois.html](https://varzin.org/all-dois.html)** for the current, authoritative archive list before citing anything from this document. The project has since moved to a Level-1 reproducible computational stack; see below.
+### Established within the current project scope
 
-| Item | Status |
-|------|--------|
-| Core-30 LUXVAR Registry | ✅ Locked — 30 / 30 confirmed |
-| Registry manifest SHA-256 | `e87e920622671c6d…` (full hash in registry doc) |
-| GEN-001 — Phonotactic learnability | ✅ 98.9% CV accuracy · Δmajority=+32% |
-| GEN-003R+ — Cross-language distinctiveness | ✅ uniqueness=0.738 [0.703,0.781] · 6 languages |
-| SEM-001 — String semantic structure | ✅ Tested · No axis signal found |
-| SEM-002 — Graph semantic structure | ✅ Tested · 1/4 positive (criterion not met) |
-| VPE-001B — AI clustering benchmark | ✅ Claude/GPT/Gemini converge on ELUZ/SHA/NAR morpheme families (surface agreement only) |
-| Track D — Cognitive audit (Aug 2026) | ❌ REJECTED — Mistral 7B & Llama 3 8B tested directly against true axes, scored near-random (ARI=−0.034, 0.015). "AI-recoverable" claim does not hold. |
-| VPE-001 Pre-registration | ✅ Pre-registered · Protocol ready |
-| VPE-001A — Human rater study | ⏳ Pending · ≥5 blind raters · κ≥0.40 threshold — now the only open empirical test |
-| Empirical validation | ❌ None yet — VPE-001A is the next step |
-| Axis assignments | ❓ Hypotheses pending VPE-001A — AIs group by morpheme, not axis (confirmed negative for axis recovery, Track D) |
+- deterministic affine and finite-state computational components have reproducible implementations;
+- specified affine bijection and connectivity results are treated separately from empirical language claims;
+- LUXVAR contains designed morphemic and structural regularities;
+- several computational tests detect surface or morphemic structure;
+- Track D produced a negative result for recovery of the designed semantic axes by the tested language models.
 
-All claims are subject to pre-registered falsification criteria.  
-Failure criterion: Fleiss κ < 0.20 across independent evaluators = structure not reliably detectable.
+### Not established
 
-→ [VPE-001 Protocol](https://varzin.org/vpe001-protocol.html) &nbsp;|&nbsp;
-[Core-30 Registry](https://varzin.org) &nbsp;|&nbsp;
-[Field Index](https://varzin.org/field-index.html) &nbsp;|&nbsp;
-[DOI Archive Status](https://varzin.org/all-dois.html)
+The project does **not** currently treat the following as established scientific findings:
 
----
+- independent semantic emergence in LUXVAR;
+- universal or non-human semantic origin;
+- physical or consciousness-field effects;
+- quantum mechanisms associated with LUXVAR;
+- causal or biological effects of symbolic frequency references;
+- independent AI recovery of the intended semantic axes.
 
-## 👤 Researcher / پژوهشگر
+Historical materials may contain stronger formulations. They are retained for provenance but do not override the current research status.
 
-**Reza Nirouyar**  
-Independent Researcher — VARZIN Project  
-**رضا نیرویار** — پژوهشگر مستقل، پروژه‌ی وارزین
+The affine map on `Z_N` is bijective exactly when `gcd(a,N)=1`, so `|Aff(Z_N)| = Nφ(N)` and `|Aff(Z_12)| = 48`. This is **proved mathematics**. The 312-state / 600-edge Mirror-13 construction, connectivity checks, and M13-INV-001 counts are construction-specific computational/algebraic audit claims. A general analytic Mirror connectivity proof artifact has not been independently inspected.
 
-- 📧 contact@varzin.org  
-- 🌐 https://varzin.org  
-- 🪪 ORCID: [0009-0000-4690-6842](https://orcid.org/0009-0000-4690-6842)
+Mirror-13 spectral reports name three distinct quantities: approximately zero periodic standard-walk convergence gap, raw positive-branch separation `0.200`, and conditional lazy-walk convergence gap `0.04133`. The reported MDL `13.11` bits and rank `1/1,035` apply within the project-defined coding and candidate space; the full candidate table was not separately indexed. Entropy change `+127.6%` is a reported metric whose raw component entropies were not located in the audited set.
 
 ---
 
-## 📎 Citation / ارجاع
+## Current evidence categories
 
-> Nirouyar, R. (2026). *VARZIN Level-1 Computational Stack: Finite Affine Core, Genomic Scanner, and Torus Manifold Solver* (v2.0.0) [Computer software]. Zenodo.  
-> https://doi.org/10.5281/zenodo.22036769
+| Category | Current interpretation |
+|---|---|
+| Finite affine systems | Mathematical/computational results, subject to stated assumptions |
+| Reproducibility | Deterministic artifacts and computational audit materials |
+| LUXVAR morphology | Designed and computationally detectable surface structure |
+| LUXVAR semantic axes | Not independently recovered in the current direct model tests |
+| Track D | Negative result for the tested frozen, unremediated models on intended axis/orbit recovery |
+| Trained remediation | Later project-reported targeted representation/group-position recovery after explicit training or projection; not spontaneous recovery |
+| Composition | Negative result for systematic generalization to unseen pairs under the project-reported preregistered composition procedure; not a claim about all LLM algebra |
+| Human semantic evaluation | Open empirical question |
+| Frequency / resonance language | Historical or symbolic material; not established physical evidence |
+| Consciousness / field claims | Not established |
 
-Please cite this DOI if you use VARZIN materials in your research.  
-در صورت استفاده از مواد VARZIN در پژوهش خود، لطفاً این DOI را ارجاع دهید.
+Negative results are part of the project record and are not treated as failures to be hidden.
 
-> **Note:** the DOI previously listed here (10.5281/zenodo.17260325) was among the 29 records voluntarily withdrawn following the July 2026 audit. See [all-dois.html](https://varzin.org/all-dois.html) for the full withdrawal record.
+## Quantitative LUXVAR record and limits
 
----
+The following are **project-reported results**, not independent validation of LUXVAR semantics. The historical [LUXVAR preprint](VARZIN_preprint_v2.md) provides the methods and correction history; the [field index](https://varzin.org/field-index.html) separates conditional findings from mathematical results.
 
-## 🧠 Core Framework Parameters / پارامترهای اصلی چارچوب
+| Test or artifact | Reported result and scope |
+|---|---|
+| Morphology | Non-random morphology in the tested generated corpus: z = 4.36, p < 0.001; silhouette = 0.406 versus shuffled mean 0.174. Natural cluster count k = 3; the k = 6 Hexacore hypothesis was rejected under that analysis. |
+| Generator balance | At n = 2,000,000, H/H_max = 0.9995; V(root, field) < 0.02 and V(root, frequency) < 0.02. This is a **design property**, not evidence of semantic validity. |
+| GEN-001 | 98.9% five-fold cross-validation accuracy; delta-majority = +32.2% for the tested phonotactic classification. |
+| GEN-003R+ | Uniqueness = 0.738; 95% CI [0.703, 0.781], compared with six reference languages using curated lexical corpora. This does not establish general cross-language distinctiveness beyond those corpora. |
+| SEM-001 | No semantic-axis signal at string level in the tested analysis. |
+| SEM-002 | Result 1/4 against a criterion of at least 2/4; **criterion not met**. |
 
-- **Central concept:** ELŪZ–MAHAR — symbolic field anchor  
-- **Language system:** LUXVAR — Core-30 Registry (30/30 locked, 5 axes)  
-- **Geometric model:** ETFM — toroidal visualization *(symbolic model, not a physical field claim)*  
-- **Primary frequency reference:** KALTŪR — 474 Hz  
-- **ETFM equation:** *r(θ, φ) = R + r₀·cos θ* — [interactive model](https://varzin.org/field-index.html)
+The Core-30 public registry records 30/30 entries across five designed axes. The prior README recorded a frozen September 2025 manifest SHA-256 prefix, `e87e920622671c6d…`. That prefix is quoted **exactly as it appeared there**, not presented as a complete digest; a full manifest hash was not found in this repository. See the [Core-30 registry and boundary](https://varzin.org/field-index.html#core30). The wider 801-root layer is not 801 equally validated lexical items.
 
----
+## Distinct AI results and protocol status
 
-## 📚 Official Archives / آرشیوهای رسمی
+**VPE-001B+ — historical inter-model clustering.** The [LUXVAR preprint](VARZIN_preprint_v2.md) reports Claude/Gemini cluster ARI = 0.812, convergence on morpheme families, and mean ARI versus the designed axes = 0.150. The 0.812 figure measures **inter-model surface/morpheme agreement**, not semantic-axis or algebraic recovery. Its July 2026 correction says an earlier internal draft used 0.718 and that the author could not independently re-verify raw pairwise scoring at correction time. An earlier README also recorded 0.26 as a stale inter-AI figure. These are provenance cautions, not a new verification of 0.812.
 
-Complete and categorized DOI list: **https://varzin.org/all-dois.html**  
-لیست کامل و دسته‌بندی‌شده‌ی DOI: **https://varzin.org/all-dois.html**
+**Track D — frozen, unremediated models.** The [August 2026 preprint addendum](VARZIN_preprint_v2.md) reports Mistral 7B ARI = -0.0337 and Llama 3 8B ARI = 0.0152 against intended axis/orbit labels. This is a negative result for those tested models under that protocol. It does not establish that every AI system fails or settle the effect of later training.
 
-> **⚠ The Zenodo/OSF list formerly shown in this section (18 Zenodo + 8 OSF DOIs) was withdrawn following the July 2026 independent adversarial audit.** Withdrawn records remain visible on Zenodo/OSF as tombstone pages but should not be cited as active evidence. Do not use this README as an archive source — always check **[all-dois.html](https://varzin.org/all-dois.html)** for current status.
+**Later trained remediation and composition — project-reported distinct experiments.** Later project documentation reports strong targeted representation/group-position recovery after explicit training or projection. This is **not spontaneous AI recovery** and does not invalidate Track D. The same research description reports that strong representation recovery did not yield systematic generalization on unseen pairs under its preregistered tested composition procedure. That is a negative result for the tested experiment, **not** a general claim that LLMs cannot do algebra or a demonstration of full algebraic composition. The documented experimental record distinguishes the revised frozen GPT2/Pythia/Mistral/Qwen baseline (ARI −0.148/−0.140/−0.148/−0.148; PHR 1.000), trained GPT2/Mistral/Qwen recovery (1.000±0.000 / 0.957±0.090 / 0.880±0.115), Appendix F group-position classification, Appendix G held-out composition (seen 0.996; TRUE 0.106, SHUFFLED 0.281, WRONG_OP 0.175), and V2 Qwen Phase2 (0/58 pass). Appendix F is not composition; the Appendix G generated raw result and V2 per-seed output were not located in the audited package. These are project-reported results with the stated artifact limits.
 
-### 🔷 Currently active (publicly readable) records (as of Aug 2026)
-
-- **VARZIN Level-1 Computational Stack:** https://doi.org/10.5281/zenodo.22036769
-- **Morphemes vs. Manifolds (Track D cognitive audit):** https://doi.org/10.5281/zenodo.22101179
-- **OSF record:** https://doi.org/10.17605/OSF.IO/YEGJ8
-- **LUXVAR preprint v2.2 (corrected):** https://doi.org/10.5281/zenodo.22115483 — published Aug 2026 with an added addendum stating the "AI-recoverable" title claim is REJECTED (not merely preliminary), per the Track D audit above.
-
-### 🔷 Restricted access (not withdrawn, but not publicly viewable)
-
-- **LUXVAR preprint v2.1 (superseded):** https://doi.org/10.5281/zenodo.20691858 — set to restricted access by the author (Aug 2026); replaced by v2.2 above.
-
-### 🔷 Withdrawn (see all-dois.html for full list and tombstones)
-
-19 Zenodo DOIs and 10 OSF DOIs were withdrawn as of July 2026. This includes the Zenodo record previously used as this repository's primary citation DOI. Full list: **[varzin.org/all-dois.html](https://varzin.org/all-dois.html)**.
-
-> **Note on Figshare:** Figshare DOIs previously listed for VARZIN materials are
-> currently inaccessible through that platform. All materials are fully and permanently
-> available through the Zenodo archive above.
->
-> **توجه درباره Figshare:** DOIهای Figshare که پیش‌تر برای مواد VARZIN فهرست شده بودند
-> در حال حاضر از طریق آن پلتفرم در دسترس نیستند. تمام مواد به‌طور کامل و دائمی از
-> طریق آرشیو Zenodo فوق در دسترس هستند.
+**VPE-001A — no human outcome.** Later project documentation describes an N = 59 plan with three cohorts: Control, Affine Priming, and Morphological Priming. Recruitment has not commenced; **no human outcome is established**. The repository contains an older [Core-30 protocol design](VPE001A_protocol_design.md) specifying at least five blind raters and Fleiss kappa >= 0.40. That is **protocol history**, not the later three-cohort plan. The repository also contains other VPE-001 protocol material; the YEGJ8/2NKZA protocol identity relationship remains unresolved. IRB approval is declared in project documents; the approval certificate was not independently located in the audited artifact set.
 
 ---
 
-## 📊 Phase II Computational Results / نتایج محاسباتی فاز دوم
+## Current research records
 
-**Completed June 2026 / تکمیل‌شده در خرداد ۱۴۰۵**
+The publication and archive registry is maintained at:
 
-| Test | Result | Finding |
-|------|--------|---------|
-| GEN-001 | ✅ 98.9% CV accuracy | LUXVAR phonotactics are learnable |
-| GEN-003R+ | ✅ uniqueness=0.738 [0.703,0.781] | Distinctive fingerprint vs 6 languages |
-| SEM-001 | No signal | Semantic axes not in string structure |
-| SEM-002 | 1/4 positive | No stable graph-level semantic structure |
-| VPE-001B | ✅ inter-AI ARI=0.812* | 3 AIs converge on morpheme families (surface agreement) |
-| VPE-001A | ⏳ Pending | Human raters — the only test remaining |
+**https://varzin.org/all-dois.html**
 
-*\*Note: this document previously listed inter-AI ARI=0.26 in this row; the value used consistently across the rest of the project's public materials (site pages, preprint) is 0.812. Treat 0.26 as a stale/superseded figure.*
+Current project-listed records include:
 
-**Key finding / یافته اصلی:**
-Three independent AI systems (Claude, GPT-4, Gemini) without prior LUXVAR knowledge
-independently converged on the same morpheme families (ELUZ, SHA, NAR) —
-but NOT on the designed semantic axes (LIGHT/REFLECTION/SILENCE/GATE/MOTION).
+- **VARZIN Level-1 Computational Stack: Finite Affine Core, Genomic Scanner, and Torus Manifold Solver**
+  https://doi.org/10.5281/zenodo.22036769
 
-This suggested LUXVAR's recoverable structure is **morphemic**, not **axial**.
+- **Morphemes vs. Manifolds: Diagnosing Structural Blindness and Morphological Hijacking in Large Language Models via Finite Affine Orbits**
+  https://doi.org/10.5281/zenodo.22101179
 
-**Update (Aug 2026) — Track D cognitive audit:** the question of whether *any* model recovers the designed axes has since been tested directly, using different models (Mistral 7B, Llama 3 8B) scored against the true orbit labels rather than against each other. Result: near-random performance (ARI=−0.034 and 0.015 respectively, vs. random baseline −0.058), confirming "Morphological Hijacking" — models cluster by shared spelling, not by the underlying structure. See *"Morphemes vs. Manifolds"* (DOI: [10.5281/zenodo.22101179](https://doi.org/10.5281/zenodo.22101179)). This is a resolved negative result, not an open question. VPE-001A (human raters) remains the only open empirical test.
+- **LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families, v2.2**
+  https://doi.org/10.5281/zenodo.22115483
 
-**Computational boundary confirmed:**
-Phonotactic layer → detectable · Semantic layer → not detectable from strings/graphs ·
-H/H_max = 0.9995 (generator is maximally balanced) · V(root,field) < 0.02
+- **OSF record**
+  https://doi.org/10.17605/OSF.IO/YEGJ8
+
+The historical LUXVAR title retains the phrase “AI-Recoverable” for citation continuity. The current project interpretation does not treat independent AI recovery of the intended semantic axes as an established result.
+
+For the partially unresolved 20691858/22115483 version mapping and the 29 earlier records removed from public access by the author, use the registry above. Platform-specific archival status is not generalized here.
 
 ---
 
-## 🌀 Symbolic Vision / چشم‌انداز نمادین
+## Reproducibility
 
-*This section reflects the symbolic and speculative dimension of VARZIN — distinct from its empirical research program.*  
-*این بخش جنبه‌ی نمادین و اکتشافی VARZIN را منعکس می‌کند — مجزا از برنامه‌ی پژوهشی تجربی آن.*
+The repository contains a mixture of:
 
-VARZIN asks: are there invariants in semantic space that survive cross-modal translation?  
-The LUXVAR language is the instrument. VPE-001 is the test.
+- research documentation,
+- computational code,
+- deterministic artifacts,
+- web presentation material,
+- historical project records.
 
-وارزین می‌پرسد: آیا ثابت‌هایی در فضای معنایی وجود دارند که از ترجمه‌ی بین‌مدالیته زنده بیرون می‌آیند؟  
-زبان LUXVAR ابزار است. VPE-001 آزمون است.
+Reproducibility claims should be tied to the specific artifact or release being cited. Do not infer that every historical page or file represents the current scientific position of the project.
+
+When possible, verify:
+
+1. the exact release or DOI,
+2. the code/artifact version,
+3. the stated assumptions,
+4. whether the result is mathematical, computational, empirical, or exploratory,
+5. whether later corrections or negative results supersede an earlier interpretation.
 
 ---
 
-*© 2025–2026 VARZIN Field Project — ELŪZ–MAHAR Protocol · v2.2 (updated Aug 2026: withdrawal notice, Level-1 stack, Track D) · originally 2026-06-14*  
-*All symbolic claims are pending empirical validation. · تمام ادعاهای نمادین در انتظار اعتبارسنجی تجربی هستند.*
+## LUXVAR
+
+LUXVAR is treated here as a **constructed symbolic system** with deliberately designed structural regularities.
+
+Current evidence supports analysis of:
+
+- morphemic structure,
+- phonotactic regularities,
+- finite-state or affine representations used by the project,
+- computational distinguishability under specified procedures.
+
+Current evidence does not establish independent semantic recovery of the designed axes.
+
+---
+
+## Historical symbolic vocabulary / design lineage
+
+Earlier VARZIN materials used the bilingual identity “VARZIN: Open Code of Light / وارزین: کد باز نور” and terms such as:
+
+- ELŪZ–MAHAR,
+- KALTŪR,
+- ETFM (Earth–Torus Field Model, a geometric visualization model),
+- QMSG and RAHTALĒN–13,
+- 474 Hz / 528 Hz / 777 Hz references,
+- resonance-field and consciousness-field language.
+
+These materials are retained for design lineage and provenance, not as current scientific conclusions. They do not establish physical fields, consciousness effects, quantum mechanisms, biological frequency effects, or causal resonance. The historical ETFM parameterization was written as `r(θ, φ) = R + r₀·cos θ`; it is a symbolic/geometric model description, not a measured Earth-field equation.
+
+Historical pages may therefore be archived or marked `noindex` while remaining publicly accessible for auditability.
+
+---
+
+## Key project pages
+
+- Research portal: https://varzin.org
+- Research status / field index: https://varzin.org/field-index.html
+- Research atlas: https://varzin.org/atlas.html
+- Publications & archive registry: https://varzin.org/all-dois.html
+- VPE-001 protocol: https://varzin.org/vpe001-protocol.html
+- Contact: https://varzin.org/feedback.html
+
+---
+
+## Citation
+
+Do not cite the repository generically when a specific research record is available.
+
+Use the citation metadata in `CITATION.cff` and cite the specific DOI or release associated with the result being used.
+
+Current repository citation guidance:
+
+> Nirouyar, Reza. VARZIN Research Portal and Reproducibility Materials. VARZIN Project.
+
+For result-specific citation, consult:
+
+https://varzin.org/all-dois.html
+
+---
+
+## Researcher
+
+**Reza Nirouyar**
+Independent Researcher — VARZIN Project
+
+- ORCID: https://orcid.org/0009-0000-4690-6842
+- GitHub: https://github.com/Varzin-13
+- Website: https://varzin.org
+- Contact: contact@varzin.org
+
+---
+
+## Archive policy
+
+VARZIN uses an evidence-first archive policy:
+
+- corrected interpretations remain traceable;
+- negative results remain visible;
+- historical claims are not silently rewritten as current findings;
+- superseded material is labeled rather than erased where practical;
+- current scientific claims are separated from symbolic or exploratory material.
+
+This repository should be read as an evolving reproducibility and audit record, not as a claim that every historical document remains scientifically current.

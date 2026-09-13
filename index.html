@@ -5,7 +5,7 @@
 <!-- Auto-generated — do not hand-edit between these markers.
      Edit seo-meta.config.json and re-run inject-seo-meta.js instead. -->
 <meta name="robots" content="index, follow">
-<meta name="generator" content="RAHTALĒN-13 / VARZIN">
+<meta name="generator" content="VARZIN Project">
 <meta name="rating" content="General">
 
 <link rel="canonical" href="https://varzin.org/" />
@@ -36,7 +36,7 @@
   "contactPoint": {
     "@type": "ContactPoint",
     "email": "contact@varzin.org",
-    "contactType": "Customer Service"
+    "contactType": "Research contact"
   }
 }
 </script>
@@ -1219,8 +1219,7 @@ tr:last-child td {
           </li>
 
           <li>
-            Strong connectivity is proved for the specified
-            augmented IN/OUT/Rotate transition system.
+            Connectivity of the specified augmented IN/OUT/Rotate transition system is supported by construction-specific computational checks; a general analytic proof has not been independently inspected.
           </li>
 
           <li>
@@ -1254,7 +1253,7 @@ tr:last-child td {
       </article>
 
       <article class="metric">
-        <span class="status status-proved">Proved</span>
+        <span class="status status-conditional">Construction</span>
         <div class="metric-value">312</div>
         <div class="metric-label">Augmented states</div>
         <div class="metric-detail">
@@ -1274,9 +1273,7 @@ tr:last-child td {
       </article>
 
       <article class="metric">
-        <span class="status status-negative">
-          Rejected vs. axes
-        </span>
+        <span class="status status-conditional">Historical / qualified</span>
         <div class="metric-value">0.812*</div>
         <div class="metric-label">Raw inter-model ARI (surface agreement only)</div>
         <div class="metric-detail">
@@ -1331,8 +1328,7 @@ tr:last-child td {
           <li>|Aff(Z<sub>N</sub>)| = Nφ(N).</li>
           <li>48 affine permutations for N=12.</li>
           <li>
-            Strong connectivity of the specified augmented
-            transition system.
+            Affine-group proof does not itself prove general Mirror connectivity.
           </li>
           <li>Deterministic reproducibility via SHA-256 hashing.</li>
         </ul>
@@ -1346,12 +1342,11 @@ tr:last-child td {
         <h3>Computational reports</h3>
 
         <ul>
-          <li>Mirror-13 MDL = 13.11 bits.</li>
-          <li>Reported rank 1/1,035.</li>
-          <li>
-            Reported spectral quantities for one transition
-            matrix.
-          </li>
+          <li>Mirror-13 MDL = 13.11 bits under the project-defined coding scheme.</li>
+          <li>Reported rank 1/1,035 within the project-defined candidate space; the full candidate table is not separately indexed.</li>
+          <li>Separate conditional spectral reports: periodic standard-walk convergence gap ≈0; raw positive-branch separation 0.200; lazy-walk convergence gap ≈0.04133. These have different definitions.</li>
+          <li>Reported entropy change +127.6%; raw component entropies were not found in the audited set.</li>
+          <li>Mirror-13 connectivity and invariant counts are construction-specific computational/algebraic checks; general analytic proof status remains unresolved.</li>
           <li>
             Seismic clustering N=1000 Monte Carlo (Live USGS API).
           </li>
@@ -1841,11 +1836,7 @@ Reported comparison mean: 67.19 bits</div>
         under a strict Semantic Starvation protocol across 30 seeds
         each, using Hungarian-alignment ARI scoring. Both models
         scored at random-chance level (ARI=&minus;0.0337&plusmn;0.039
-        and 0.0152&plusmn;0.028), confirming "Morphological
-        Hijacking" as a systematic, model-independent barrier. The
-        0.812 figure above should now be read strictly as inter-model
-        agreement on spelling, with axis recovery a settled negative
-        result &mdash; not an open question.
+        and 0.0152&plusmn;0.028), supporting the paper’s "Morphological Hijacking" interpretation for these frozen, unremediated models. The historical 0.812 is qualified surface/morpheme agreement, not semantic-axis recovery. Separate revised frozen baselines remained negative, while later explicitly trained interventions recovered targeted labels or group position. Appendix F group-position classification is not composition; Appendix G reported a scoped failure of held-out composition. V2 Qwen Phase2 is another separate negative experiment. None establishes a universal model barrier.
       </p>
     </article>
   </div>
@@ -2416,8 +2407,7 @@ NOT ESTABLISHED</div>
         <p class="footer-summary">
           VARZIN is an independent, self-auditing research
           program. The affine bijection criterion and the
-          connectivity of the specified augmented system are
-          mathematically retained. Mirror-13 MDL is a conditional
+          specified augmented connectivity checks are retained as construction-specific computation. Mirror-13 MDL is a conditional
           computational result. Independent LUXVAR semantic
           emergence, ETFM contribution, frequency effects,
           consciousness fields, and external memory have not

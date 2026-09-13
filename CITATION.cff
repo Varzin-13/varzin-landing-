@@ -1,24 +1,18 @@
 cff-version: 1.2.0
-message: "If you use VARZIN Landing: Celestial Presence Architecture, please cite it using the metadata below."
-title: "VARZIN Landing: Celestial Presence Architecture"
+message: "If you use material from the VARZIN research portal, please cite the specific research record or release associated with the result you use."
+title: "VARZIN Research Portal and Reproducibility Materials"
 authors:
   - family-names: Nirouyar
     given-names: Reza
     orcid: https://orcid.org/0009-0000-4690-6842
-    affiliation: VARZIN Project, ELŪZ–MAHAR
-date-released: 2025-09-30 # Aligned with Open Code of Light v2.0 Injection
-version: "2.0.0" # Open Code of Light v2.0 (KALTŪR Injection)
-doi: 10.5281/zenodo.17260325 # Updated to Open Code of Light v2.0 DOI
-url: https://github.com/Varzin-13/varzin-landing # Trailing hyphen removed
+    affiliation: VARZIN Project
+url: https://varzin.org
+repository-code: https://github.com/Varzin-13/varzin-landing-
 keywords:
   - VARZIN
-  - RAHTALEN
-  - Luxvar
-  - Celesta Loop
-  - Quantum Symbolic Gate
-  - Mirror–13
-  - Frequency 474Hz
-  - Consciousness Field
-  - Field Resonance
-  - KALTŪR # Added to reflect v2.0 theme
-license: CC-BY-4.0
+  - finite affine systems
+  - LUXVAR
+  - reproducibility
+  - constructed symbolic systems
+  - computational research
+  - open science
