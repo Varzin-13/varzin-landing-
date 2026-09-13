@@ -209,6 +209,7 @@ footer a:hover{color:var(--cyan);}
 </nav>
 
 <div class="main">
+<div role="note" style="padding:20px 32px;border:3px solid #d8a800;background:#1c1805;color:#f5e6ae;"><strong>Historical/technical project report — current status.</strong> Numerical and interpretive claims below retain their original context. Current evidence status is governed by the evidence ledger and later audit records; historical wording is not automatically a current scientific conclusion. The Aff(Z_N) bijection theorem is proved mathematics; Mirror connectivity/invariant counts are construction-specific computational checks, not a general proved theorem. Physical and resonance interpretations are historical hypothesis/design language, not established effects.</div>
 
 <!-- HERO -->
 <div class="hero" id="hero">
@@ -239,8 +240,8 @@ Recall = Structure Match + Prior + Hypothesis Space + Observation
 <!-- KPI -->
 <div class="kpi-row" id="kpi">
   <div class="kpi"><div class="kv vc">48</div><div class="kl">Valid Operators</div><div class="kn">Aff(Z₁₂)=12·φ(12)</div></div>
-  <div class="kpi"><div class="kv vc">13.11</div><div class="kl">MDL bits</div><div class="kn">Mirror-13 · 5.1× compact</div></div>
-  <div class="kpi"><div class="kv vg">+127.6%</div><div class="kl">Entropy Gain</div><div class="kn">M13 over D₁₂</div></div>
+  <div class="kpi"><div class="kv vc">13.11</div><div class="kl">Conditional MDL bits</div><div class="kn">Project coding/search space</div></div>
+  <div class="kpi"><div class="kv vg">+127.6%</div><div class="kl">Reported entropy metric</div><div class="kn">Raw H_D12 / H_M13 not located</div></div>
   <div class="kpi"><div class="kv vr">0.812*</div><div class="kl">Inter-AI ARI (surface only)</div><div class="kn">*vs axes: REJECTED, see Clustering §</div></div>
   <div class="kpi"><div class="kv vo">z=4.36</div><div class="kl">Morph. Signal</div><div class="kn">p&lt;0.001 · pre-ontology</div></div>
   <div class="kpi"><div class="kv vr">z=−1.04</div><div class="kl">External Memory</div><div class="kn">NOT ESTABLISHED · Ph.19</div></div>
@@ -355,7 +356,10 @@ Mirror OUT: unique MDL=0 solution among bijections
       <div class="code">
 λ₁ = 1.000000  (unique · ergodic · INV-C)
 λ₂ ≈ 0.800000  (mult≈22 · D₁₂ struct · INV-B)
-Spectral gap  = 0.200  →  mixing ≈ 29 steps
+Raw positive-branch separation = 0.200 (historical calculation)
+Standard periodic-walk convergence gap ≈ 0
+Lazy-walk convergence gap ≈ 0.04133 (distinct operator)
+Historical mixing ≈ 29 steps requires its own operator definition
 Distinct eigenvalues:  54  (rounded)
 Non-zero:             268 / 312
 Real:                 200
@@ -488,7 +492,7 @@ Root→Frequency V: 0.003 (negligible)
         <tr><td>SHA family (all 3)</td><td class="t-r t-ok">✓</td><td>100% consensus (surface spelling)</td></tr>
         <tr><td>NAR family (all 3)</td><td class="t-r t-ok">✓</td><td>100% consensus (surface spelling)</td></tr>
       </table>
-      <div class="a-bad" style="margin-top:12px;"><strong>Resolved finding (Track D, Aug 2026):</strong> Models agree with each other (ARI=0.812) but this reflects shared surface morphology, not the designed algebraic axes (ARI=0.13). A dedicated adversarial audit under a strict Semantic Starvation protocol — reported in <em>"Morphemes vs. Manifolds"</em> (Zenodo 10.5281/zenodo.22101179) and the Level-1 monograph (Zenodo 10.5281/zenodo.22036769) — independently tested Mistral 7B and Llama 3 8B against the true orbit labels across 30 seeds each and found near-random recovery (Mistral ARI=−0.0337±0.039, Llama 3 ARI=0.0152±0.028). The models fall into "Morphological Hijacking": clustering by shared spelling roots (e.g. ELŪZ) rather than the underlying Aff(Z₁₂) orbit structure. <strong>The "AI-recoverable" claim is therefore REJECTED, not preliminary.</strong> The phonotactic/morphemic findings of the LUXVAR paper itself are unaffected — only the inter-model-agreement-as-structural-recovery interpretation is retracted. VPE-001A (human-rater protocol, N=59) remains the open test of whether primed human cognition can succeed where these models failed.</div>
+      <div class="a-bad" style="margin-top:12px;"><strong>Historical Track D finding (Aug 2026):</strong> Models agree with each other (ARI=0.812) but this reflects shared surface morphology, not the designed algebraic axes (ARI=0.13). A dedicated adversarial audit under a strict Semantic Starvation protocol — reported in <em>"Morphemes vs. Manifolds"</em> (Zenodo 10.5281/zenodo.22101179) and the Level-1 monograph (Zenodo 10.5281/zenodo.22036769) — tested Mistral 7B and Llama 3 8B against the true orbit labels across 30 seeds each in that dedicated audit and found near-random recovery (Mistral ARI=−0.0337±0.039, Llama 3 ARI=0.0152±0.028). The models fall into "Morphological Hijacking": clustering by shared spelling roots (e.g. ELŪZ) rather than the underlying Aff(Z₁₂) orbit structure. <strong>The reading of 0.812 as independent semantic-axis recovery is rejected for this historical comparison; this is not a universal model barrier.</strong> The phonotactic/morphemic findings of the LUXVAR paper itself are unaffected — only the inter-model-agreement-as-structural-recovery interpretation is retracted. The later N=59 three-cohort VPE plan has no human outcome. Revised frozen baselines, explicitly trained recovery, Appendix F group-position classification, Appendix G negative held-out composition, and V2 Qwen Phase2 are separate experiments; group-position recovery is not composition.</div>
     </div>
   </div>
 </div>
@@ -561,9 +565,9 @@ Root→Frequency V: 0.003 (negligible)
   </div>
   <div class="g4">
     <div class="card info"><div class="ct">Total States</div><div class="cv vc">312</div><div class="cb">288 ring + 24 center</div></div>
-    <div class="card ok"><div class="ct">MDL</div><div class="cv vg">13.11 bits</div><div class="cb">vs 67.19 random mean</div></div>
-    <div class="card ok"><div class="ct">ΔEntropy</div><div class="cv vg">+127.6%</div><div class="cb">over D₁₂</div></div>
-    <div class="card ok"><div class="ct">Simplicity Rank</div><div class="cv vg">#1/1035</div><div class="cb">among equiv. systems</div></div>
+      <div class="card ok"><div class="ct">Conditional MDL</div><div class="cv vg">13.11 bits</div><div class="cb">vs 67.19 random mean</div></div>
+      <div class="card ok"><div class="ct">Reported ΔEntropy</div><div class="cv vg">+127.6%</div><div class="cb">over D₁₂</div></div>
+    <div class="card ok"><div class="ct">Simplicity Rank</div><div class="cv vg">#1/1035</div><div class="cb">project-defined candidates; full table not indexed</div></div>
   </div>
   <div style="display:flex;gap:10px;margin:14px 0;flex-wrap:wrap;align-items:center;">
     <button class="sim-btn" id="sim-btn-run" onclick="simToggle()">▶ Run</button>
@@ -764,7 +768,7 @@ Humans → semantic axes (as designed)?
         ✓ Affine family Aff(Z_N) characterized<br>
         ✓ Mirror-13 MDL=13.11 · rank #1/1035<br>
         ✓ 5 invariants · 0 failures · no randomness<br>
-        ✓ Spectral: λ₁=1 · gap=0.2 · mix=29<br>
+        ✓ Spectral historical note: 0.200 raw positive branch; periodic standard gap ≈0; lazy convergence gap ≈0.04133<br>
         ✓ LUXVAR morphology z=4.36 · p&lt;0.001<br>
         ✓ Family learnability 74.2%<br>
         ✓ Protocol spine +0.186<br>
@@ -848,7 +852,7 @@ Humans → semantic axes (as designed)?
     <div><h2>Four Papers</h2></div>
   </div>
   <div class="g3">
-    <div class="card ok"><div class="ct">Paper A — LUXVAR Structure</div><div class="cv vg" style="font-size:14px;">v2.2 PUBLIC · CORRECTED</div><div class="cb">v2.1 (restricted): <a href="https://doi.org/10.5281/zenodo.20691858" style="color:var(--cyan);">10.5281/zenodo.20691858</a><br>v2.2 (current, public, Aug 2026): <a href="https://doi.org/10.5281/zenodo.22115483" style="color:var(--cyan);">10.5281/zenodo.22115483</a><br>Morphemic structure · Frequency absent · Phonotactic fingerprint<br><span style="color:var(--red);font-size:9px;">Note: v2.2 adds an Aug 2026 addendum stating the "AI-recoverable" claim in the title is REJECTED (ARI=0.812 reflects surface agreement only), not merely preliminary — per the independent Track D audit below. Phonotactic/morphemic findings unaffected; distinctiveness attributable to component choice, not emergence (LUXVAR-EMERGENCE-001-v2).</span></div></div>
+    <div class="card ok"><div class="ct">Paper A — LUXVAR Structure</div><div class="cv vg" style="font-size:14px;">LUXVAR RECORD · VERSION MAPPING HOLD</div><div class="cb">Project-associated v2.1 record: <a href="https://doi.org/10.5281/zenodo.20691858" style="color:var(--cyan);">10.5281/zenodo.20691858</a><br>22115483 (later project-listed record; exact deposit/version mapping unresolved): <a href="https://doi.org/10.5281/zenodo.22115483" style="color:var(--cyan);">10.5281/zenodo.22115483</a><br>Exact deposit/version mapping between these two DOI identities remains unresolved.<br>Morphemic structure · Frequency absent · Phonotactic fingerprint<br><span style="color:var(--red);font-size:9px;">Historical addendum note: an Aug 2026 correction states that the "AI-recoverable" claim in the title is REJECTED (ARI=0.812 reflects surface agreement only), not merely preliminary — per the dedicated Track D audit below. Phonotactic/morphemic findings unaffected; distinctiveness attributable to component choice, not emergence (LUXVAR-EMERGENCE-001-v2).</span></div></div>
     <div class="card info"><div class="ct">Paper C — Mirror-13 &amp; Aff(Z_N)</div><div class="cv vc" style="font-size:14px;">READY</div><div class="cb">"Mirror-13 and the Affine Memory Family over Cyclic Gate Spaces"<br>Conjecture 1 · 5 invariants · MDL=13.11 · SPEC-002<br>Target: arXiv cs.FL / Zenodo</div></div>
     <div class="card warn"><div class="ct">Paper B — VPE-001A</div><div class="cv vo" style="font-size:14px;">PENDING</div><div class="cb">≥5 blind raters · Fleiss κ≥0.40<br>Morpheme families vs semantic axes<br>Requires: independent raters</div></div>
     <div class="card fail"><div class="ct">Paper D — Track D Cognitive Audit</div><div class="cv vr" style="font-size:14px;">PUBLISHED · REJECTS A's ARI claim</div><div class="cb">"Morphemes vs. Manifolds: Diagnosing Structural Blindness and Morphological Hijacking in LLMs" (Aug 24, 2026)<br>DOI: <a href="https://doi.org/10.5281/zenodo.22101179" style="color:var(--cyan);">10.5281/zenodo.22101179</a><br>Mistral 7B ARI=−0.034 · Llama 3 8B ARI=0.015 vs true axes, 30 seeds each<br>Companion monograph: <a href="https://doi.org/10.5281/zenodo.22036769" style="color:var(--cyan);">10.5281/zenodo.22036769</a> (Level-1 Computational Stack, also covers Tracks A–C)</div></div>
@@ -863,12 +867,12 @@ Humans → semantic axes (as designed)?
 <footer>
   <div style="margin-bottom:10px;">
     <a href="atlas.html">VARZIN Atlas →</a> &nbsp;·&nbsp;
-    <a href="https://doi.org/10.5281/zenodo.22115483">Preprint DOI (v2.2)</a> &nbsp;·&nbsp;
+    <a href="https://doi.org/10.5281/zenodo.22115483">Project-listed DOI 22115483</a> &nbsp;·&nbsp;
     <a href="master-report-v3.html">Master Report v3</a> &nbsp;·&nbsp;
     <a href="master-report-v3.html#freq474">474Hz Experiment</a>
   </div>
   <div>Research Portal v7 · Phases I–XX · 2026-06-16 · ORCID: 0009-0000-4690-6842</div>
-  <div style="margin-top:6px;color:rgba(50,90,110,.4);">Proposed affine symbolic memory architecture · Level 0 Pre-empirical · VPE-001A pending<br>Aff(Z_N) bijection + single-orbit connectivity: formally proved for all N≥2 (Jul 2026) · Computational-core audit + LUXVAR-EMERGENCE-001-v2: no distinct generalizable contribution found</div>
+  <div style="margin-top:6px;color:rgba(50,90,110,.4);">Proposed affine symbolic memory architecture · Level 0 Pre-empirical · VPE-001A pending<br>Aff(Z_N) bijection proved; general Mirror connectivity proof artifact not independently inspected · Computational-core audit + LUXVAR-EMERGENCE-001-v2: no distinct generalizable contribution found</div>
 </footer>
 </div>
 <script>
