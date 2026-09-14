@@ -44,6 +44,7 @@ def file_card(m, label):
 for r in data['records']:
     rid=r['doi'].split('.')[-1]
     abstract=r.get('currentInterpretation') or r['overview']
+    meta_description=(r.get('scope') or r.get('evidenceStatus') or abstract).strip()
     kw=', '.join(r.get('keywords',[]))
     citation=''
     if r['resourceType']!='Software':
@@ -85,7 +86,7 @@ for r in data['records']:
     evidence=r.get('evidenceStatus') or r['scope']
     title_suffix=(" — "+esc(r['version'])) if r['doi'] in {'10.5281/zenodo.22258644','10.5281/zenodo.22262388','10.5281/zenodo.22287006'} else ''
     page=f'''<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{esc(r['searchTitle'])}</title><meta name="description" content="{esc(abstract)}">{citation}\n{dc}
+<title>{esc(r['searchTitle'])}</title><meta name="description" content="{esc(meta_description)}">{citation}\n{dc}
 <link rel="alternate" type="application/json" href="/research-outputs.json" title="VARZIN machine-readable research records">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="VARZIN LLM-readable research index">
 <script type="application/ld+json">{schema}</script><link rel="stylesheet" href="/assets/research.css"><script src="/assets/research.js" defer></script></head>
