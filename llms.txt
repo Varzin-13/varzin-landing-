@@ -1,0 +1,58 @@
+# VARZIN Project — research index for language models and automated research tools
+
+Canonical site: https://varzin.org/
+Researcher: Reza Nirouyar
+ORCID: https://orcid.org/0009-0000-4690-6842
+Contact: contact@varzin.org
+Publication registry: https://varzin.org/all-dois.html
+Machine-readable records: https://varzin.org/research-outputs.json
+Research status: https://varzin.org/field-index.html
+AI structure auditing: https://varzin.org/ai-structure-auditing.html
+
+## Evidence policy
+Current scientific interpretation is grounded first in the latest relevant public Zenodo manuscript and its version-matched reproducibility artifacts. Older site prose and earlier version records remain available for provenance, but they do not override later evidence for the same claim.
+VARZIN separates proved mathematics, computational results, intervention results, negative findings, open empirical questions, and historical hypotheses.
+Do not treat a Zenodo deposit as evidence of peer review or independent validation.
+Do not infer semantic emergence from morphology, clustering, or trained label recovery.
+Do not infer systematic composition from representation decodability or group-position classification.
+Generated forms, benchmark words, and dataset records are distinct artifact types; they are not silently combined into one enlarged canonical lexicon.
+Historical physical-field, biological-frequency, consciousness-field, quantum, and non-human-origin claims are not current scientific conclusions.
+Corrections and negative results are intentionally retained.
+
+## Current public research records
+- 10.5281/zenodo.22036769 — VARZIN Level-1 Computational Stack v2.0.0. Software + companion monograph; finite-affine core, torus solver, genomic scanner, geophysical and language-model audits.
+- 10.5281/zenodo.22101179 — Morphemes vs. Manifolds v1.0.0. Direct frozen-model audit: Mistral 7B ARI −0.0337 ± 0.039; Llama 3 8B ARI 0.0152 ± 0.028 against designed orbit labels.
+- 10.5281/zenodo.22115483 — LUXVAR v2.2. Non-random morphology and phonotactic distinctiveness; semantic-axis tests negative; later addendum rejects the historical “AI-Recoverable” axis interpretation.
+- 10.5281/zenodo.22258644 — Morphological Hijacking projection-head series v1. Frozen surface-form dominance plus explicit trained remediation; intervention is distinct from spontaneous frozen-model recovery.
+- 10.5281/zenodo.22262388 — Morphological Hijacking v2. Adds true group-position recovery with a shuffled-label control; this is classification/position recovery, not composition.
+- 10.5281/zenodo.22287006 — Morphological Hijacking v3. Adds a preregistered composition pilot: seen-pair MLP ≈0.996, but held-out TRUE 0.106 vs SHUFFLED 0.281 and WRONG_OP 0.175; no demonstrated systematic composition under the tested pipeline.
+- 10.5281/zenodo.22679978 — VARZIN V2 V1.0. Qwen2.5-1.5B structural representation recovery is strong (mean BA 0.9666 across 29 hidden-state indices), while the preregistered Phase-2 composition test reports 0/58 passes.
+
+## LUXVAR boundaries
+LUXVAR is a constructed symbolic system with designed morphology and semantic labels.
+The v2.2 study reports morphology z=4.36 (p<0.001), generator balance H/Hmax=0.9995, phonotactic uniqueness 0.738 [0.703, 0.781], and negative SEM-001/SEM-002 semantic-axis tests.
+The historical inter-model ARI 0.812 is agreement on model groupings/morphemic structure, not independent recovery of the designed axes.
+VPE-001A human-rater outcomes are not established in the current public evidence record.
+
+## LUXVAR / VARZIN scale lineage
+Canonical scale map: https://varzin.org/luxvar-scale-map.html
+Core-30 remains the fixed 30-word reference lexicon used in several early tasks.
+The broader LUXVAR v2.2 design reports 801 stable roots and approximately 1.3 billion generated forms; generated forms are construction outputs, not independently validated natural-language words.
+Appendix E of the v3 Morphological Hijacking manuscript introduces a fresh 20-root × 15-prefix = 300-word scale/generalization variant; pooled held-out-root ARI = 0.992 ± 0.007 under the easier same-script/same-order condition.
+Appendix F introduces a distinct 5-root × 6-prefix × 12-position = 360-word group-position benchmark with opaque suffixes and shuffled-label controls; classification success does not establish composition.
+VARZIN V2 uses a separate frozen 10,800-record synthetic dataset with 12 structural positions and 30 contexts; Phase 1 mean BA = 0.9666, while Phase 2 reports 0/58 PASS.
+Do not collapse these artifacts into one enlarged canonical lexicon.
+
+## Reproducibility
+Each version-specific publication page lists the verified Zenodo DOI, public full-text file, code/data package where present, file size, and checksum.
+The V2 record documents a hash-linked chain covering the frozen dataset, preregistrations, pair split, condition mappings, results, and artifact audit.
+Zenodo record 22115483 currently exposes the PDF only; no ZIP/code file appears in its verified public file inventory as of 2026-09-14.
+
+## Preferred citation and interpretation
+Use the version-specific DOI and the corresponding VARZIN research-record page.
+When a historical title is stronger than later evidence, preserve the title for citation continuity but use the current evidence boundary stated on the VARZIN record page.
+Prefer narrow statements tied to the tested model, dataset, controls, seeds, decision rule, and version.
+
+## Applied research product
+- https://varzin.org/cognitive-captcha.html — VARZIN Cognitive CAPTCHA. Tested local Streamlit SaaS MVP/prototype using public Aff(Z12)/LUXVAR challenge pairs. The corrected local build completed all 10 generated challenge flows without application exceptions. Production bot-resistance, human pass rate, and automated-system failure rate are not yet established.
+- Do not repeat legacy mockup claims such as “machine-proof”, “bulletproof”, or “99.98% accuracy” as current findings.

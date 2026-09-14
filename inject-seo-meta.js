@@ -136,7 +136,7 @@ function buildMetaBlock(canonicalUrl, robots, cfg, pageMeta, researchOutputs = [
     version: record.version,
     datePublished: record.publicationDate || "2026",
     author: { "@id": `${base}/#researcher` },
-    description: record.overview || record.scope
+    description: record.currentInterpretation || record.overview || record.scope
   })) : [];
   const outputList = publicationPage && publicationNodes.length ? {
     "@type": "ItemList",
@@ -201,6 +201,8 @@ ${cfg.gaMeasurementId ? `<meta name="varzin-ga4-id" content="${escapeAttr(cfg.ga
 <link rel="icon" href="${escapeAttr(cfg.baseUrl)}/assets/favicon-32.png" sizes="32x32" type="image/png" />
 <link rel="apple-touch-icon" href="${escapeAttr(cfg.baseUrl)}/assets/apple-touch-icon.png" sizes="180x180" />
 <link rel="manifest" href="${escapeAttr(cfg.baseUrl)}/manifest.webmanifest" />
+<link rel="alternate" type="application/json" href="${base}/research-outputs.json" title="VARZIN machine-readable research records" />
+<link rel="alternate" type="text/plain" href="${base}/llms.txt" title="VARZIN LLM-readable research index" />
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${escapeAttr(cfg.siteName)}">

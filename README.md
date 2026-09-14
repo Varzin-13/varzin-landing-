@@ -16,6 +16,22 @@ Contact: contact@varzin.org
 
 ---
 
+## Current source-of-truth policy
+
+For **current scientific interpretation**, this repository now prioritizes the latest relevant public Zenodo manuscript and its version-matched reproducibility artifacts. Older website prose, historical protocols, and earlier version deposits remain available for provenance, but they do not override later evidence for the same claim.
+
+Claim-specific current sources include:
+
+- Level-1 finite-affine/software stack: `10.5281/zenodo.22036769`
+- LUXVAR morphology, phonotactics, generator scale, and semantic-axis tests: `10.5281/zenodo.22115483`
+- dedicated frozen-model Track D audit: `10.5281/zenodo.22101179`
+- latest projection-head / scale / true-position / composition record: `10.5281/zenodo.22287006`
+- frozen-Qwen representation-recovery vs composition study: `10.5281/zenodo.22679978`
+
+Later records supersede earlier **interpretation within the same experimental line**; they do not erase the earlier DOI record. A trained recovery result is not relabeled as spontaneous frozen-model recovery, and group-position classification is not relabeled as composition.
+
+---
+
 ## Research status
 
 VARZIN separates mathematical, computational, empirical, and historical claims.
@@ -77,7 +93,7 @@ The following are **project-reported results**, not independent validation of LU
 | SEM-001 | No semantic-axis signal at string level in the tested analysis. |
 | SEM-002 | Result 1/4 against a criterion of at least 2/4; **criterion not met**. |
 
-The Core-30 public registry records 30/30 entries across five designed axes. The prior README recorded a frozen September 2025 manifest SHA-256 prefix, `e87e920622671c6d…`. That prefix is quoted **exactly as it appeared there**, not presented as a complete digest; a full manifest hash was not found in this repository. See the [Core-30 registry and boundary](https://varzin.org/field-index.html#core30). The wider 801-root layer is not 801 equally validated lexical items.
+The Core-30 public registry records 30/30 entries across five designed axes. The prior README recorded a frozen September 2025 manifest SHA-256 prefix, `e87e920622671c6d…`. That prefix is quoted **exactly as it appeared there**, not presented as a complete digest; a full manifest hash was not found in this repository. See the [Core-30 registry and boundary](https://varzin.org/field-index.html#core30). The v2.2 manuscript reports a broader layer of 801 stable designed roots. These are not presented as 801 independently validated natural-language lexical items. The same manuscript reports an approximately 1.3-billion-form generated combinatorial corpus; later work adds a separate 300-word scale/generalization benchmark, a separate 360-word true-group-position benchmark, and a 10,800-record VARZIN V2 frozen dataset. These are distinct artifacts, not one silently enlarged Core-30 lexicon.
 
 ## Distinct AI results and protocol status
 
@@ -85,11 +101,17 @@ The Core-30 public registry records 30/30 entries across five designed axes. The
 
 **Track D — frozen, unremediated models.** The [August 2026 preprint addendum](VARZIN_preprint_v2.md) reports Mistral 7B ARI = -0.0337 and Llama 3 8B ARI = 0.0152 against intended axis/orbit labels. This is a negative result for those tested models under that protocol. It does not establish that every AI system fails or settle the effect of later training.
 
-**Later trained remediation and composition — project-reported distinct experiments.** Later project documentation reports strong targeted representation/group-position recovery after explicit training or projection. This is **not spontaneous AI recovery** and does not invalidate Track D. The same research description reports that strong representation recovery did not yield systematic generalization on unseen pairs under its preregistered tested composition procedure. That is a negative result for the tested experiment, **not** a general claim that LLMs cannot do algebra or a demonstration of full algebraic composition. The documented experimental record distinguishes the revised frozen GPT2/Pythia/Mistral/Qwen baseline (ARI −0.148/−0.140/−0.148/−0.148; PHR 1.000), trained GPT2/Mistral/Qwen recovery (1.000±0.000 / 0.957±0.090 / 0.880±0.115), Appendix F group-position classification, Appendix G held-out composition (seen 0.996; TRUE 0.106, SHUFFLED 0.281, WRONG_OP 0.175), and V2 Qwen Phase2 (0/58 pass). Appendix F is not composition; the Appendix G generated raw result and V2 per-seed output were not located in the audited package. These are project-reported results with the stated artifact limits.
+**Later trained remediation and composition — latest versioned evidence.** The Morphological Hijacking v3 record preserves strong targeted representation/group-position recovery after explicit training or projection while keeping that result distinct from spontaneous frozen-model recovery. The documented line includes frozen GPT2/Pythia/Mistral/Qwen failure under the adversarial baseline, trained GPT2/Mistral/Qwen recovery (including 1.000±0.000 / 0.957±0.090 / 0.880±0.115 in the stated configurations), a 300-word Appendix E scale test (pooled held-out-root ARI 0.992±0.007 under the easier same-script/same-order condition), and a separate 360-word Appendix F true-group-position benchmark with shuffled-label controls. Appendix F is classification/recovery, not composition. Appendix G then reports seen-pair MLP ≈0.996 but held-out TRUE 0.106 versus SHUFFLED 0.281 and WRONG_OP 0.175. The verified public v3 ZIP contains 40 entries, including scripts 01–25, the arbitrary-scale generator, the expanded-lexicon test, the preserved rejected leaking design, the corrected true-position control, and the composition diagnostic chain. VARZIN V2 independently reports frozen-Qwen surface-span mean BA 0.9666 across 29 indices while the preregistered composition phase returns 0/58 PASS. The V2 Zenodo record exposes the final PDF and the large `All code Phase.zip` reproducibility package. These are scoped experimental results, not a universal claim about all LLM algebra.
 
 **VPE-001A — no human outcome.** Later project documentation describes an N = 59 plan with three cohorts: Control, Affine Priming, and Morphological Priming. Recruitment has not commenced; **no human outcome is established**. The repository contains an older [Core-30 protocol design](VPE001A_protocol_design.md) specifying at least five blind raters and Fleiss kappa >= 0.40. That is **protocol history**, not the later three-cohort plan. The repository also contains other VPE-001 protocol material; the YEGJ8/2NKZA protocol identity relationship remains unresolved. IRB approval is declared in project documents; the approval certificate was not independently located in the audited artifact set.
 
 ---
+
+## Applied research prototype
+
+**VARZIN Cognitive CAPTCHA** is a local Streamlit security prototype / SaaS MVP derived from the project's Aff(Z_12) and LUXVAR challenge construction. On 2026-09-14 the underlying generator produced 10 matched challenge trials, and a corrected local UI build completed the full 10-challenge flow without application exceptions. The public product page is https://varzin.org/cognitive-captcha.html.
+
+This is a functional prototype, not a validated production anti-bot system. Current evidence does not establish “machine-proof” behavior, 99.98% accuracy, production false-positive/false-negative rates, or general resistance to modern automated systems.
 
 ## Current research records
 

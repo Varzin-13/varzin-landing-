@@ -1084,3 +1084,406 @@ html{font-synthesis:none;text-rendering:optimizeLegibility}
     word-break: break-word;
   }
 }
+
+/* Research-record cards must shrink cleanly around long DOI/checksum/file identifiers. */
+.vr-document .vr-record > div { min-width: 0; }
+@media (max-width: 767px) {
+  .vr-document .vr-record :is(h3, p, a, code) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+@media (max-width: 767px) {
+  .vr-document .vr-editorial-section li,
+  .vr-document .vr-index {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+/* Historical/superseded record banner. */
+.vr-historical-banner{max-width:1180px;margin:18px auto;padding:14px 18px;border:1px solid var(--vr-border);border-radius:14px;background:color-mix(in srgb,var(--vr-bg) 88%,#7a5b19 12%);color:var(--vr-muted);font-size:14px;line-height:1.55}.vr-historical-banner strong{color:var(--vr-text)}.vr-historical-banner a{color:var(--vr-accent)}
+
+/* 2026 visual vitality pass — richer depth without obscuring evidence. */
+:root {
+  --vr-warm: #e7b86a;
+  --vr-cyan: #63d8d0;
+  --vr-violet: #9f8cff;
+  --vr-ink: #08100f;
+  --vr-glow: 0 24px 80px rgba(0, 0, 0, .34);
+}
+body.vr-home,
+body.vr-document {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(99,216,208,.10), transparent 30rem),
+    radial-gradient(circle at 88% 14%, rgba(231,184,106,.11), transparent 28rem),
+    radial-gradient(circle at 70% 72%, rgba(159,140,255,.055), transparent 34rem),
+    linear-gradient(180deg, #0c1211 0%, #101613 44%, #0a0f0e 100%);
+  background-attachment: fixed;
+}
+body.vr-home::before,
+body.vr-document::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .22;
+  background-image: radial-gradient(circle, rgba(255,255,255,.18) 0 1px, transparent 1.3px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, #000, transparent 72%);
+  z-index: -1;
+}
+.vr-header {
+  position: sticky;
+  top: 0;
+  min-height: 84px;
+  padding-inline: 18px;
+  width: min(1280px, calc(100% - 28px));
+  border: 1px solid rgba(255,255,255,.08);
+  border-top: 0;
+  border-radius: 0 0 18px 18px;
+  background: rgba(10,15,14,.78);
+  backdrop-filter: blur(18px) saturate(1.25);
+  box-shadow: 0 16px 48px rgba(0,0,0,.18);
+}
+.vr-mark {
+  position: relative;
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba(99,216,208,.13), rgba(231,184,106,.10));
+  box-shadow: 0 0 26px rgba(99,216,208,.12), inset 0 0 18px rgba(255,255,255,.035);
+}
+.vr-mark::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(231,184,106,.28);
+  border-radius: 5px;
+  transform: rotate(12deg);
+}
+.vr-page-hero,
+.vr-hero {
+  position: relative;
+  isolation: isolate;
+}
+.vr-page-hero::before,
+.vr-hero::before {
+  content: "";
+  position: absolute;
+  width: clamp(220px, 32vw, 440px);
+  aspect-ratio: 1;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 1px solid rgba(99,216,208,.22);
+  background:
+    radial-gradient(circle at center, rgba(99,216,208,.06) 0 18%, transparent 19%),
+    repeating-radial-gradient(circle at center, transparent 0 33px, rgba(231,184,106,.12) 34px, transparent 35px 58px);
+  box-shadow: 0 0 80px rgba(99,216,208,.06), inset 0 0 70px rgba(159,140,255,.04);
+  z-index: -1;
+  opacity: .7;
+}
+.vr-page-hero::after,
+.vr-hero::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  right: min(15vw, 180px);
+  top: 32%;
+  background: var(--vr-warm);
+  box-shadow: 0 0 24px rgba(231,184,106,.85), -70px 96px 0 -2px var(--vr-cyan), -70px 96px 20px -2px rgba(99,216,208,.55), 92px 74px 0 -3px var(--vr-violet);
+  z-index: -1;
+}
+.vr-page-hero h1 em,
+.vr-home h1 em {
+  color: transparent;
+  background: linear-gradient(105deg, var(--vr-cyan), #d6efaa 46%, var(--vr-warm));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.vr-card,
+.vr-fact,
+.vr-record,
+.vr-boundary-card,
+.vr-callout,
+.vr-status-band {
+  background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
+  box-shadow: var(--vr-glow);
+  border-color: rgba(255,255,255,.11);
+}
+.vr-card,
+.vr-fact,
+.vr-boundary-card,
+.vr-record {
+  position: relative;
+  overflow: hidden;
+}
+.vr-card::before,
+.vr-fact::before,
+.vr-boundary-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--vr-cyan), var(--vr-warm), transparent);
+  opacity: .55;
+}
+.vr-card,
+.vr-fact,
+.vr-button,
+.vr-record {
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
+}
+.vr-card:hover,
+.vr-fact:hover,
+.vr-record:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99,216,208,.28);
+  box-shadow: 0 28px 90px rgba(0,0,0,.42), 0 0 0 1px rgba(99,216,208,.06);
+}
+.vr-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.26);
+}
+.vr-primary {
+  background: linear-gradient(105deg, #b9e0a0, #8edfcf 54%, #e6bd78);
+  border-color: transparent;
+  color: #0b1512;
+  box-shadow: 0 10px 34px rgba(99,216,208,.15);
+}
+.vr-kicker,
+.vr-index {
+  background: linear-gradient(90deg, var(--vr-cyan), var(--vr-warm));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+.vr-editorial-section {
+  position: relative;
+}
+.vr-editorial-section::before {
+  content: "";
+  position: absolute;
+  left: -22px;
+  top: 10px;
+  width: 2px;
+  height: 56px;
+  background: linear-gradient(var(--vr-cyan), transparent);
+  opacity: .45;
+}
+.vr-status-band {
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+.vz-product-hero {
+  min-height: 520px;
+}
+.vz-captcha-demo {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+  border: 1px solid rgba(99,216,208,.24);
+  border-radius: 24px;
+  padding: clamp(26px, 5vw, 54px);
+  background: linear-gradient(145deg, rgba(7,18,21,.94), rgba(22,20,16,.92));
+  box-shadow: 0 36px 110px rgba(0,0,0,.48), inset 0 0 70px rgba(99,216,208,.035);
+}
+.vz-captcha-demo > *:not(.vz-captcha-orbit) {
+  position: relative;
+  z-index: 2;
+}
+.vz-captcha-demo h3 {
+  font-size: clamp(30px, 5vw, 58px) !important;
+  margin: 12px 0 30px !important;
+  color: #f2e7c9 !important;
+}
+.vz-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 720px;
+}
+.vz-options button {
+  min-height: 64px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.045);
+  color: var(--vr-text);
+  font: 600 16px/1.3 system-ui, sans-serif;
+  cursor: pointer;
+}
+.vz-options button:hover:not(:disabled),
+.vz-options button:focus-visible {
+  border-color: rgba(99,216,208,.55);
+  background: rgba(99,216,208,.08);
+  transform: translateY(-2px);
+}
+.vz-options button:disabled {
+  opacity: .62;
+  cursor: default;
+}
+.vz-demo-result {
+  min-height: 34px;
+  font-weight: 650;
+}
+.vz-demo-result.is-correct { color: #8fe0b2; }
+.vz-demo-result.is-wrong { color: #f0a28f; }
+.vz-captcha-orbit {
+  position: absolute;
+  right: -70px;
+  top: -84px;
+  width: 360px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(99,216,208,.16);
+  border-radius: 50%;
+  opacity: .7;
+  animation: vz-spin 30s linear infinite;
+}
+.vz-captcha-orbit::before,
+.vz-captcha-orbit::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(231,184,106,.17);
+}
+.vz-captcha-orbit::before { inset: 52px; }
+.vz-captcha-orbit::after { inset: 104px; border-color: rgba(159,140,255,.18); }
+.vz-captcha-orbit i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  margin: -3.5px;
+  border-radius: 50%;
+  background: var(--vr-cyan);
+  box-shadow: 0 0 16px rgba(99,216,208,.8);
+  transform: rotate(calc(var(--vz-i, 0) * 30deg)) translateY(-145px);
+}
+.vz-captcha-orbit i:nth-child(1){--vz-i:0}.vz-captcha-orbit i:nth-child(2){--vz-i:1}.vz-captcha-orbit i:nth-child(3){--vz-i:2}.vz-captcha-orbit i:nth-child(4){--vz-i:3}.vz-captcha-orbit i:nth-child(5){--vz-i:4}.vz-captcha-orbit i:nth-child(6){--vz-i:5}.vz-captcha-orbit i:nth-child(7){--vz-i:6}.vz-captcha-orbit i:nth-child(8){--vz-i:7}.vz-captcha-orbit i:nth-child(9){--vz-i:8}.vz-captcha-orbit i:nth-child(10){--vz-i:9}.vz-captcha-orbit i:nth-child(11){--vz-i:10}.vz-captcha-orbit i:nth-child(12){--vz-i:11}
+.vr-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+.vr-flow-grid article {
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 18px;
+  background: rgba(255,255,255,.025);
+}
+.vr-flow-grid article > span {
+  color: var(--vr-warm);
+  font: 700 12px monospace;
+}
+@keyframes vz-spin { to { transform: rotate(360deg); } }
+@keyframes vr-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.vr-reveal-ready { opacity: 0; transform: translateY(14px); }
+.vr-reveal-ready.vr-in-view { animation: vr-rise .65s cubic-bezier(.2,.75,.2,1) forwards; }
+@media (max-width: 767px) {
+  .vr-header { width: min(100% - 16px, 1280px); padding-inline: 12px; border-radius: 0 0 14px 14px; }
+  .vr-page-hero::before,
+  .vr-hero::before { width: 230px; right: -70px; opacity: .34; }
+  .vr-page-hero::after,
+  .vr-hero::after { display: none; }
+  .vz-options,
+  .vr-flow-grid { grid-template-columns: 1fr; }
+  .vz-captcha-demo { border-radius: 18px; }
+  .vz-captcha-orbit { width: 250px; right: -100px; top: -80px; opacity: .42; }
+  .vr-editorial-section::before { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+  .vr-reveal-ready { opacity: 1; transform: none; }
+  .vz-captcha-orbit { animation: none; }
+}
+/* Pointer-aware ambient light and progressive reveal. */
+body.vr-home::after,
+body.vr-document::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(420px circle at var(--vr-pointer-x, 50%) var(--vr-pointer-y, 18%), rgba(99,216,208,.075), transparent 70%);
+  transition: opacity .25s ease;
+}
+.vr-js .vr-reveal-ready {
+  opacity: 0;
+  transform: translateY(18px) scale(.994);
+}
+.vr-js .vr-reveal-ready.vr-in-view {
+  animation: vr-rise .72s cubic-bezier(.2,.76,.18,1) var(--vr-delay, 0ms) forwards;
+}
+.vr-home .vr-publication,
+.vr-document .vr-record {
+  border-radius: 18px;
+}
+.vr-home .vr-publication:hover {
+  border-color: rgba(231,184,106,.26);
+  box-shadow: 0 28px 80px rgba(0,0,0,.34), 0 0 50px rgba(231,184,106,.035);
+}
+.vr-strip {
+  border-radius: 16px;
+  background: linear-gradient(90deg, rgba(99,216,208,.055), rgba(231,184,106,.05));
+  box-shadow: inset 0 0 36px rgba(255,255,255,.012);
+}
+/* Mobile containment and non-color link affordances. */
+.vr-page-hero,
+.vr-hero {
+  overflow: clip;
+}
+.vr-document :is(p, li, .callout) > a:not(.vr-button):not(.vr-doi),
+.vr-home :is(p, li, .callout) > a:not(.vr-button):not(.vr-doi) {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .22em;
+  text-decoration-color: color-mix(in srgb, currentColor 70%, transparent);
+}
+@supports not (overflow: clip) {
+  .vr-page-hero,
+  .vr-hero { overflow: hidden; }
+}
+/* Keep decorative geometry inside the mobile viewport; decoration must never create layout overflow. */
+@media (max-width: 767px) {
+  .vr-page-hero::before,
+  .vr-hero::before {
+    width: 220px;
+    right: 0;
+  }
+  .vz-captcha-orbit {
+    width: 220px;
+    right: -8px;
+    top: -62px;
+  }
+  .vz-captcha-orbit i {
+    transform: rotate(calc(var(--vz-i, 0) * 30deg)) translateY(-88px);
+  }
+}
+
+/* Mobile containment for decorative geometry: preserve motion without page-level scroll. */
+@media (max-width: 767px) {
+  .vr-page-hero,
+  .vr-hero {
+    overflow: clip;
+  }
+  .vz-captcha-demo {
+    overflow: clip;
+    contain: paint;
+  }
+}
+
+/* Historical provenance links remain distinguishable from surrounding muted text. */
+.vr-historical-banner a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
