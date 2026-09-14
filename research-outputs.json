@@ -1,0 +1,84 @@
+{
+  "updated": "2026-09-14",
+  "author": "Reza Nirouyar",
+  "orcid": "0009-0000-4690-6842",
+  "records": [
+    {
+      "id": "zenodo-22101179",
+      "type": "CreativeWork",
+      "title": "Morphemes vs. Manifolds: Diagnosing Structural Blindness and Morphological Hijacking in Large Language Models via Finite Affine Orbits",
+      "citation": "NIROUYAR, R. (2026). Morphemes vs. Manifolds: Diagnosing Structural Blindness and Morphological Hijacking in Large Language Models via Finite Affine Orbits (Version v1.0.0). Zenodo.",
+      "version": "v1.0.0",
+      "doi": "10.5281/zenodo.22101179",
+      "url": "https://doi.org/10.5281/zenodo.22101179",
+      "repository": "Zenodo",
+      "scope": "Frozen-model audit and negative result record; interpret within the tested models and protocol."
+    },
+    {
+      "id": "zenodo-22679978",
+      "type": "CreativeWork",
+      "title": "VARZIN V2 — Recoverable but Not Composable: Representation Recovery and Systematic Composition in a Frozen Language Model",
+      "citation": "Nirouyar, R. (2026). VARZIN V2 — Recoverable but Not Composable: Representation Recovery and Systematic Composition in a Frozen Language Model (Version V1.0). Zenodo.",
+      "version": "V1.0",
+      "doi": "10.5281/zenodo.22679978",
+      "url": "https://doi.org/10.5281/zenodo.22679978",
+      "repository": "Zenodo",
+      "scope": "Separates representation recovery from systematic composition; recovery does not by itself establish compositional generalization."
+    },
+    {
+      "id": "zenodo-22115483",
+      "type": "CreativeWork",
+      "title": "LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families",
+      "citation": "Reza, N. (2026). LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families (Version v2.2). Zenodo.",
+      "version": "v2.2",
+      "doi": "10.5281/zenodo.22115483",
+      "url": "https://doi.org/10.5281/zenodo.22115483",
+      "repository": "Zenodo",
+      "scope": "Historical title wording retained for citation continuity; current VARZIN interpretation does not treat independent semantic-axis recovery as established."
+    },
+    {
+      "id": "zenodo-22036769",
+      "type": "SoftwareSourceCode",
+      "title": "VARZIN Level-1 Computational Stack: Finite Affine Core, Genomic Scanner, and Torus Manifold Solver",
+      "citation": "Nirouyar, R. (2026). VARZIN Level-1 Computational Stack: Finite Affine Core, Genomic Scanner, and Torus Manifold Solver (Version v2.0.0) [Computer software]. Zenodo.",
+      "version": "v2.0.0",
+      "doi": "10.5281/zenodo.22036769",
+      "url": "https://doi.org/10.5281/zenodo.22036769",
+      "repository": "Zenodo",
+      "scope": "Software release; reproducibility and mathematical/computational claims remain tied to the documented implementation and assumptions."
+    },
+    {
+      "id": "zenodo-22258644",
+      "type": "CreativeWork",
+      "title": "Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery",
+      "citation": "Nirouyar, R. (2026). Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery (Version v1). Zenodo.",
+      "version": "v1",
+      "doi": "10.5281/zenodo.22258644",
+      "url": "https://doi.org/10.5281/zenodo.22258644",
+      "repository": "Zenodo",
+      "scope": "Projection-head intervention record; explicit intervention is distinct from spontaneous recovery in an unmodified frozen model."
+    },
+    {
+      "id": "zenodo-22262388",
+      "type": "CreativeWork",
+      "title": "Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery",
+      "citation": "Nirouyar, R. (2026). Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery (Version v2). Zenodo.",
+      "version": "v2",
+      "doi": "10.5281/zenodo.22262388",
+      "url": "https://doi.org/10.5281/zenodo.22262388",
+      "repository": "Zenodo",
+      "scope": "Second public version of the projection-head research record; preserve version-specific DOI citation."
+    },
+    {
+      "id": "zenodo-22287006",
+      "type": "CreativeWork",
+      "title": "Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery",
+      "citation": "Nirouyar, R. (2026). Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery (Version v3). Zenodo.",
+      "version": "v3",
+      "doi": "10.5281/zenodo.22287006",
+      "url": "https://doi.org/10.5281/zenodo.22287006",
+      "repository": "Zenodo",
+      "scope": "Third public version of the projection-head research record; the versioned DOI is retained separately for provenance."
+    }
+  ]
+}

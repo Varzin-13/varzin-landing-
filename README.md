@@ -97,23 +97,35 @@ The publication and archive registry is maintained at:
 
 **https://varzin.org/all-dois.html**
 
-Current project-listed records include:
+Current project-listed public Zenodo records include:
 
-- **VARZIN Level-1 Computational Stack: Finite Affine Core, Genomic Scanner, and Torus Manifold Solver**
-  https://doi.org/10.5281/zenodo.22036769
-
-- **Morphemes vs. Manifolds: Diagnosing Structural Blindness and Morphological Hijacking in Large Language Models via Finite Affine Orbits**
+- **Morphemes vs. Manifolds: Diagnosing Structural Blindness and Morphological Hijacking in Large Language Models via Finite Affine Orbits** (v1.0.0)
   https://doi.org/10.5281/zenodo.22101179
 
-- **LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families, v2.2**
+- **VARZIN V2 — Recoverable but Not Composable: Representation Recovery and Systematic Composition in a Frozen Language Model** (V1.0)
+  https://doi.org/10.5281/zenodo.22679978
+
+- **LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families** (v2.2)
   https://doi.org/10.5281/zenodo.22115483
+
+- **VARZIN Level-1 Computational Stack: Finite Affine Core, Genomic Scanner, and Torus Manifold Solver** (v2.0.0)
+  https://doi.org/10.5281/zenodo.22036769
+
+- **Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery** (v1)
+  https://doi.org/10.5281/zenodo.22258644
+
+- **Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery** (v2)
+  https://doi.org/10.5281/zenodo.22262388
+
+- **Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery** (v3)
+  https://doi.org/10.5281/zenodo.22287006
 
 - **OSF record**
   https://doi.org/10.17605/OSF.IO/YEGJ8
 
-The historical LUXVAR title retains the phrase “AI-Recoverable” for citation continuity. The current project interpretation does not treat independent AI recovery of the intended semantic axes as an established result.
+The historical LUXVAR title retains the phrase “AI-Recoverable” for citation continuity. The current project interpretation does not treat independent AI recovery of the intended semantic axes as an established result. The three projection-head deposits are separate version-specific records; later intervention/training results are not treated as spontaneous frozen-model recovery.
 
-For the partially unresolved 20691858/22115483 version mapping and the 29 earlier records removed from public access by the author, use the registry above. Platform-specific archival status is not generalized here.
+DOI 10.5281/zenodo.22115483 is now listed as the public LUXVAR v2.2 record. The relationship to the older 20691858 identity remains a historical provenance question. For that mapping and the 29 earlier records removed from public access by the author, use the registry above. Platform-specific archival status is not generalized here.
 
 ---
 
