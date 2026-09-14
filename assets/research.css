@@ -1053,3 +1053,21 @@ html{font-synthesis:none;text-rendering:optimizeLegibility}
 .vr-consent button[data-consent=accept]{background:var(--vr-accent);color:#152014;border-color:var(--vr-accent)}
 .vr-consent a{color:var(--vr-accent)}
 @media(max-width:767px){.vr-profile-links{align-items:stretch}.vr-profile-links .vr-button{width:100%}.vr-consent{left:12px;right:12px;bottom:12px}}
+
+/* Keep wide archival research tables inside an explicit mobile scrollport. */
+@media (max-width: 767px) {
+  .vr-document .vr-table-scroll {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    contain: inline-size layout;
+  }
+  .vr-document .vr-table-scroll > table {
+    width: 640px !important;
+    min-width: 640px !important;
+    max-width: none !important;
+  }
+}

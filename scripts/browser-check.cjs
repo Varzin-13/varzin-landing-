@@ -116,6 +116,7 @@ const fs = require("node:fs");
         width: r.width,
         route: r.route,
         overflow: r.overflow,
+        offenders: r.offenders,
         errors: r.errors,
         violations: r.violations.map((v) => v.id),
       })),
