@@ -33,7 +33,13 @@
         "Semantic Starvation",
         "Finite Affine Group",
         "LUXVAR Core-30"
-      ]
+      ],
+      "searchTitle": "Morphemes vs. Manifolds | VARZIN Research Record",
+      "overview": "This preprint is the public record for the VARZIN study titled “Morphemes vs. Manifolds,” which audits whether structure recovered from finite-affine and constructed-language representations should be interpreted as semantic understanding. The current VARZIN reading treats detectable morphology, clustering, and geometric regularity as distinct from independent recovery of the intended semantic axes. The record is therefore presented as part of the project’s falsification-oriented evidence trail rather than as evidence of semantic emergence.",
+      "researchQuestion": "How much of the apparent structure recovered by language models reflects morphemic or representational regularity, and how much supports the stronger claim that intended semantic structure has been independently recovered?",
+      "contribution": "The record anchors the negative-result side of the VARZIN language-model program: structural regularity can be detectable while stronger semantic interpretations remain unsupported under the tested procedures.",
+      "versionNote": "Version v1.0.0 is retained as a fixed, citable public deposit. Later VARZIN pages may refine interpretation, but they do not silently rewrite this versioned record.",
+      "repositoryNote": "The Zenodo REST API description retrieved on 2026-09-14 appears internally inconsistent with this record’s deposited title and references DOI 10.5281/zenodo.22036769. VARZIN therefore does not use that description to characterize this record; the title, DOI, version, date, creator identity, and resource type were verified independently from the record metadata."
     },
     {
       "id": "zenodo-22679978",
@@ -69,7 +75,13 @@
         "reproducibility",
         "Qwen2.5-1.5B-Instruct",
         "VARZIN V2"
-      ]
+      ],
+      "searchTitle": "VARZIN V2: Recoverable, Not Composable | Research Record",
+      "overview": "This preprint reports the integrated Phase 0–2 VARZIN V2 experiment on a frozen Qwen2.5-1.5B-Instruct model. A controlled synthetic morphological-position dataset was constructed and audited for several leakage modes before representation recovery was evaluated across hidden-state indices. The central distinction is between a structural variable being strongly recoverable from internal representations and that variable being usable for systematic composition on unseen combinations. The public record preserves that distinction explicitly.",
+      "researchQuestion": "Does strong recovery of a structural variable from a frozen model imply that the model can use that representation as a substrate for systematic compositional generalization?",
+      "contribution": "The study separates representation recovery from composition and records that successful recovery alone is insufficient evidence for systematic generalization. This is a narrower and more defensible conclusion than treating probe success as proof of compositional competence.",
+      "versionNote": "Version V1.0 is the current public Zenodo record listed by VARZIN for the integrated Phase 0–2 report. Any later remediation or follow-up experiment should be cited separately from this fixed deposit.",
+      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint published on 2026-09-09 under CC BY 4.0."
     },
     {
       "id": "zenodo-22115483",
@@ -100,7 +112,13 @@
         "Phonology",
         "Natural Language Processing",
         "Artificial Intelligence"
-      ]
+      ],
+      "searchTitle": "LUXVAR v2.2: Morphology & AI Structure | VARZIN",
+      "overview": "LUXVAR is a constructed symbolic language developed inside the VARZIN research framework. The v2.2 record reports computational tests of morphology, phonotactics, clustering, and semantic-structure hypotheses. The deposited description reports non-random morphological structure, a distinctive phonotactic fingerprint, convergence of language models on morpheme-family organization, and no reliable recovery of the designed semantic axes from word forms alone. The current project interpretation therefore treats the strongest supported signal as morphemic rather than semantic-axis recovery.",
+      "researchQuestion": "Which parts of LUXVAR’s designed structure are recoverable computationally, and do those recoverable regularities extend from morphology and clustering to the intended semantic axes?",
+      "contribution": "The record provides a clear separation between designed structure, computationally detectable morpheme-family organization, and the stronger semantic claim that the intended axes are independently recoverable. The latter is not treated as established.",
+      "versionNote": "Version v2.2 is the current public LUXVAR record listed by VARZIN. The historical title wording is retained for citation continuity even where later interpretation is more conservative.",
+      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint published on 2026-08-26 under CC BY 4.0."
     },
     {
       "id": "zenodo-22036769",
@@ -131,7 +149,13 @@
         "Numerical Solver",
         "Cognitive Prior",
         "VARZIN Project"
-      ]
+      ],
+      "searchTitle": "VARZIN Level-1 Computational Stack v2.0.0",
+      "overview": "This Zenodo software release packages the Level-1 computational stack used across several VARZIN lines of work. The deposited overview identifies a finite-affine core, genomic scanning utilities, a torus-manifold numerical solver, and additional auditing code. Its role in the research record is primarily reproducibility: it provides concrete implementation artifacts that can be inspected independently of broader interpretive claims attached to the project.",
+      "researchQuestion": "Can the computational components underlying the Level-1 VARZIN architecture be preserved as inspectable, citable software artifacts whose behavior can be evaluated separately from speculative interpretation?",
+      "contribution": "The release makes the implementation layer explicit. Mathematical, numerical, genomic, and auditing components can be examined as software without treating the existence of code as validation of any physical, biological, cognitive, or semantic hypothesis.",
+      "versionNote": "Version v2.0.0 is the listed software release. Results should be attributed to the documented code, dependencies, inputs, and assumptions rather than generalized beyond the implementation.",
+      "repositoryNote": "Zenodo metadata identifies this item as open-access software published on 2026-08-21 under the MIT License."
     },
     {
       "id": "zenodo-22258644",
@@ -162,7 +186,13 @@
         "morphological structure",
         "representation geometry",
         "adversarial lexicon"
-      ]
+      ],
+      "searchTitle": "Morphological Hijacking Projection Head v1 | VARZIN",
+      "overview": "Version v1 introduces the “morphological hijacking” line of experiments on frozen autoregressive language models. The deposited description reports that surface-correlated structure can dominate clustering even when a stronger task-relevant algebraic structure is available, and documents a trainable projection-head intervention intended to recover that structure. The record also reports negative findings alongside the intervention results, making the distinction between frozen-model behavior and trained remediation central to its interpretation.",
+      "researchQuestion": "When surface morphology conflicts with a task-relevant algebraic structure, what do frozen model representations recover, and can an explicit trainable intervention change that geometry?",
+      "contribution": "The record frames morphological hijacking as a representational failure mode and tests an explicit projection-head remediation. Any post-training recovery belongs to the intervention result; it is not evidence that the unmodified frozen model spontaneously encoded the target structure in a directly usable form.",
+      "versionNote": "Version v1 is preserved as the first public version-specific record in this series. Later v2 and v3 deposits are separate citable records rather than silent replacements.",
+      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint published on 2026-09-02 under CC BY 4.0."
     },
     {
       "id": "zenodo-22262388",
@@ -197,7 +227,13 @@
         "algebraic structures",
         "supervised contrastive learning",
         "morphological hijacking"
-      ]
+      ],
+      "searchTitle": "Morphological Hijacking Projection Head v2 | VARZIN",
+      "overview": "Version v2 expands the morphological-hijacking study around an adversarial LUXVAR Core-30 lexicon in which salient surface form is deliberately placed in conflict with algebraic orbit structure. The deposited description reports near-total prefix recovery under unsupervised clustering while the target orbit structure is not recovered in the frozen baselines, then investigates anisotropy, token-length effects, and trained remediation. The record therefore combines a negative frozen-model result with a separate intervention result.",
+      "researchQuestion": "Does the v1 failure pattern persist under a more explicit adversarial lexicon and additional diagnostics, and which representational factors help explain the dominance of surface form?",
+      "contribution": "The v2 record strengthens the separation between surface-form clustering and algebraic target recovery, while adding diagnostics intended to explain the failure mode. The project does not treat trained recovery as equivalent to spontaneous structure recovery.",
+      "versionNote": "Version v2 is a distinct public deposit dated 2026-09-02. It should be cited separately from v1 and v3 whenever version-specific methods or results are discussed.",
+      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint under CC BY 4.0."
     },
     {
       "id": "zenodo-22287006",
@@ -231,7 +267,13 @@
         "algebraic structures",
         "supervised contrastive learning",
         "morphological hijacking"
-      ]
+      ],
+      "searchTitle": "Morphological Hijacking Projection Head v3 | VARZIN",
+      "overview": "Version v3 extends the projection-head study with a stronger emphasis on whether recovered category structure supports true algebraic composition rather than only classification or clustering. The deposited description explicitly distinguishes structure recovery from composition and adds a diagnostic pilot aimed at that harder question. This version therefore sits at the boundary between representation recovery and systematic generalization, a distinction that later VARZIN V2 work develops further.",
+      "researchQuestion": "After remediation improves recovery of the target categories or geometry, does that recovered structure support the algebraic composition required for systematic generalization?",
+      "contribution": "The v3 record makes composition a separate test rather than assuming it follows from category recovery. This preserves an important negative/limiting result: improved representation recovery is not, by itself, proof of compositional competence.",
+      "versionNote": "Version v3 is the third version-specific public deposit in the projection-head series and should be cited independently from v1 and v2.",
+      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint published on 2026-09-03 under CC BY 4.0."
     }
   ],
   "metadataNote": "Zenodo titles, versions, dates, creator strings, resource types, licenses where supplied, and DOI identities verified via the Zenodo REST API on 2026-09-14. Creator strings vary across deposits; VARZIN normalizes the researcher identity to Reza Nirouyar via ORCID."

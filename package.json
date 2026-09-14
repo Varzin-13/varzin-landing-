@@ -11,7 +11,8 @@
     "sitemap:generate": "node scripts/generate-sitemap.cjs",
     "indexnow:submit": "node scripts/submit-indexnow.cjs",
     "indexnow:dry-run": "node scripts/submit-indexnow.cjs --dry-run",
-    "publications:generate": "python3 scripts/generate-publication-pages.py"
+    "publications:generate": "python3 scripts/generate-publication-pages.py",
+    "site:generate": "npm run publications:generate && node inject-seo-meta.js . && npm run sitemap:generate"
   },
   "devDependencies": {
     "@playwright/test": "1.58.2",

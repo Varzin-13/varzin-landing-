@@ -50,9 +50,7 @@ jobs:
 
       - name: Verify SEO generators are idempotent
         run: |
-          npm run publications:generate
-          node inject-seo-meta.js .
-          npm run sitemap:generate
+          npm run site:generate
           git diff --exit-code
 
       - name: Static checks and production build

@@ -128,14 +128,15 @@ function buildMetaBlock(canonicalUrl, robots, cfg, pageMeta, researchOutputs = [
   const researcherPage = canonicalUrl === `${base}/researcher.html`;
   const publicationNodes = (publicationPage || researcherPage) ? researchOutputs.map((record) => ({
     "@type": record.type || "CreativeWork",
-    "@id": `${base}/#${record.id}`,
+    "@id": `${record.varzinRecordUrl || `${base}/#${record.id}`}#record`,
     name: record.title,
-    url: record.url,
+    url: record.varzinRecordUrl || record.url,
+    sameAs: [record.url, record.zenodoRecordUrl].filter(Boolean),
     identifier: record.doi,
     version: record.version,
-    datePublished: "2026",
+    datePublished: record.publicationDate || "2026",
     author: { "@id": `${base}/#researcher` },
-    description: record.scope
+    description: record.overview || record.scope
   })) : [];
   const outputList = publicationPage && publicationNodes.length ? {
     "@type": "ItemList",
