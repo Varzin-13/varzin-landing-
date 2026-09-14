@@ -20,6 +20,8 @@
 <link rel="icon" href="https://varzin.org/assets/favicon-32.png" sizes="32x32" type="image/png" />
 <link rel="apple-touch-icon" href="https://varzin.org/assets/apple-touch-icon.png" sizes="180x180" />
 <link rel="manifest" href="https://varzin.org/manifest.webmanifest" />
+<link rel="alternate" type="application/json" href="https://varzin.org/research-outputs.json" title="VARZIN machine-readable research records" />
+<link rel="alternate" type="text/plain" href="https://varzin.org/llms.txt" title="VARZIN LLM-readable research index" />
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VARZIN Project">
@@ -110,7 +112,7 @@
       "author": {
         "@id": "https://varzin.org/#researcher"
       },
-      "description": "This preprint is the public record for the VARZIN study titled “Morphemes vs. Manifolds,” which audits whether structure recovered from finite-affine and constructed-language representations should be interpreted as semantic understanding. The current VARZIN reading treats detectable morphology, clustering, and geometric regularity as distinct from independent recovery of the intended semantic axes. The record is therefore presented as part of the project’s falsification-oriented evidence trail rather than as evidence of semantic emergence."
+      "description": "Under the stated Semantic Starvation protocol, the tested Mistral 7B and Llama 3 8B systems did not recover the designed orbit structure. The result is model- and protocol-scoped; it does not justify a universal claim about all language models."
     },
     {
       "@type": "CreativeWork",
@@ -127,7 +129,7 @@
       "author": {
         "@id": "https://varzin.org/#researcher"
       },
-      "description": "This preprint reports the integrated Phase 0–2 VARZIN V2 experiment on a frozen Qwen2.5-1.5B-Instruct model. A controlled synthetic morphological-position dataset was constructed and audited for several leakage modes before representation recovery was evaluated across hidden-state indices. The central distinction is between a structural variable being strongly recoverable from internal representations and that variable being usable for systematic composition on unseen combinations. The public record preserves that distinction explicitly."
+      "description": "Frozen Qwen2.5-1.5B-Instruct strongly encodes the tested synthetic morphological-position variable in a linearly decodable form across held-out contexts, but the preregistered downstream composition test produced 0/58 passes. This is evidence for a separation in this experiment, not a universal theorem that decodability never implies composability."
     },
     {
       "@type": "CreativeWork",
@@ -144,7 +146,7 @@
       "author": {
         "@id": "https://varzin.org/#researcher"
       },
-      "description": "LUXVAR is a constructed symbolic language developed inside the VARZIN research framework. The v2.2 record reports computational tests of morphology, phonotactics, clustering, and semantic-structure hypotheses. The deposited description reports non-random morphological structure, a distinctive phonotactic fingerprint, convergence of language models on morpheme-family organization, and no reliable recovery of the designed semantic axes from word forms alone. The current project interpretation therefore treats the strongest supported signal as morphemic rather than semantic-axis recovery."
+      "description": "The strongest supported reading is morphemic and phonotactic structure, not independent recovery of the designed semantic axes. The August addendum explicitly rejects the “AI-recoverable” axis reading."
     },
     {
       "@type": "SoftwareSourceCode",
@@ -161,7 +163,7 @@
       "author": {
         "@id": "https://varzin.org/#researcher"
       },
-      "description": "This Zenodo software release packages the Level-1 computational stack used across several VARZIN lines of work. The deposited overview identifies a finite-affine core, genomic scanning utilities, a torus-manifold numerical solver, and additional auditing code. Its role in the research record is primarily reproducibility: it provides concrete implementation artifacts that can be inspected independently of broader interpretive claims attached to the project."
+      "description": "The durable contribution is the separation of a proved affine core from computational null-model tests. The reported tectonic and genomic controls do not support the earlier physical-field or biological-encoding interpretations."
     },
     {
       "@type": "CreativeWork",
@@ -178,7 +180,7 @@
       "author": {
         "@id": "https://varzin.org/#researcher"
       },
-      "description": "Version v1 introduces the “morphological hijacking” line of experiments on frozen autoregressive language models. The deposited description reports that surface-correlated structure can dominate clustering even when a stronger task-relevant algebraic structure is available, and documents a trainable projection-head intervention intended to recover that structure. The record also reports negative findings alongside the intervention results, making the distinction between frozen-model behavior and trained remediation central to its interpretation."
+      "description": "v1 establishes the experimental separation between frozen surface-form dominance and an explicit trained remediation. Any recovery after training is an intervention result, not spontaneous structure discovery by the frozen backbone."
     },
     {
       "@type": "CreativeWork",
@@ -195,7 +197,7 @@
       "author": {
         "@id": "https://varzin.org/#researcher"
       },
-      "description": "Version v2 expands the morphological-hijacking study around an adversarial LUXVAR Core-30 lexicon in which salient surface form is deliberately placed in conflict with algebraic orbit structure. The deposited description reports near-total prefix recovery under unsupervised clustering while the target orbit structure is not recovered in the frozen baselines, then investigates anisotropy, token-length effects, and trained remediation. The record therefore combines a negative frozen-model result with a separate intervention result."
+      "description": "v2 strengthens the intervention result and adds a direct group-position target with a shuffled-label control. The safe claim is targeted group-position classification recovery under this specific synthetic construction—not proof of a homomorphic group representation or systematic composition."
     },
     {
       "@type": "CreativeWork",
@@ -212,7 +214,7 @@
       "author": {
         "@id": "https://varzin.org/#researcher"
       },
-      "description": "Version v3 extends the projection-head study with a stronger emphasis on whether recovered category structure supports true algebraic composition rather than only classification or clustering. The deposited description explicitly distinguishes structure recovery from composition and adds a diagnostic pilot aimed at that harder question. This version therefore sits at the boundary between representation recovery and systematic generalization, a distinction that later VARZIN V2 work develops further."
+      "description": "v3 preserves the positive targeted recovery result while adding the harder composition question. The central v3 boundary is that classification/position recovery did not become systematic composition on unseen ordered pairs under the tested pipeline."
     }
   ]
 }
@@ -229,10 +231,10 @@
 <header class="vr-header">
   <a class="vr-brand" href="/"><span class="vr-mark" aria-hidden="true">V</span>VARZIN<span class="vr-brand-sub">Independent research</span></a>
   <nav class="vr-desktop" aria-label="Research navigation">
-    <a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/researcher.html" aria-current="page">Researcher</a><a href="/feedback.html">Contact</a>
+    <a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/cognitive-captcha.html">Products</a><a href="/researcher.html" aria-current="page">Researcher</a><a href="/feedback.html">Contact</a>
   </nav>
   <details class="vr-mobile"><summary>Menu <span aria-hidden="true">＋</span></summary><nav aria-label="Mobile research navigation">
-    <a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/researcher.html" aria-current="page">Researcher</a><a href="/feedback.html">Contact</a>
+    <a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/cognitive-captcha.html">Products</a><a href="/researcher.html" aria-current="page">Researcher</a><a href="/feedback.html">Contact</a>
   </nav></details>
 </header>
 <main id="vr-main" tabindex="-1">
@@ -257,6 +259,7 @@
         <article class="vr-card"><span class="vr-index">Reproducibility</span><h3>Auditable computational research</h3><p>Versioned code, explicit assumptions, negative-result retention, correction history, and reproducibility packaging are treated as part of the research output.</p></article>
         <article class="vr-card"><span class="vr-index">LUXVAR</span><h3>Constructed symbolic systems</h3><p>LUXVAR is studied as a designed symbolic language whose structural regularities must be distinguished from independently recoverable semantics.</p></article>
       </div>
+      <div class="vr-callout"><p><strong>Applied research:</strong> the VARZIN Cognitive CAPTCHA is maintained as a tested local security prototype/SaaS MVP. Its challenge generator and corrected local UI have been exercised end-to-end, while production bot-resistance remains unestablished. <a href="/cognitive-captcha.html">Open the product evidence record ↗</a></p></div>
     </section>
 
     <section class="vr-editorial-section">
@@ -269,7 +272,14 @@
     </section>
 
     <section class="vr-editorial-section">
-      <span class="vr-kicker">03 / public records</span>
+      <span class="vr-kicker">03 / current evidence</span>
+      <h2>The current research position follows the latest versioned artifacts.</h2>
+      <p>Current interpretation is grounded in the latest relevant public Zenodo manuscript and its version-matched reproducibility package. The key recent progression is: frozen-model semantic/orbit failure under the dedicated Track D protocol; explicit trained structural recovery in the Morphological Hijacking series; a stronger opaque true-group-position control; and then two separate negative composition results despite strong representation recovery.</p>
+      <div class="vr-fact-grid"><article class="vr-card"><span class="vr-index">v3</span><h3>Recovery is not composition</h3><p>Seen-pair MLP fit ≈0.996, but held-out TRUE=0.106 versus SHUFFLED=0.281 and WRONG_OP=0.175 in the public v3 composition pilot.</p></article><article class="vr-card"><span class="vr-index">V2</span><h3>Strong decodability, 0/58 passes</h3><p>Frozen Qwen2.5-1.5B surface-span mean BA=0.9666 across 29 indices; the preregistered composition phase reports 0/58 PASS.</p></article><article class="vr-card"><span class="vr-index">Scale</span><h3>Beyond Core-30</h3><p>The current stack distinguishes Core-30 from the 801-root design layer, a 300-word scale test, a 360-word group-position benchmark, and a 10,800-record frozen dataset.</p></article></div>
+    </section>
+
+    <section class="vr-editorial-section">
+      <span class="vr-kicker">04 / public records</span>
       <h2>Public research records.</h2>
       <p class="vr-muted">Seven current public Zenodo records are preserved here by version-specific DOI. Listing does not imply peer review or independent validation.</p>
       <div class="vr-record-list"><article class="vr-record"><span class="vr-index">01</span><div><h3>Morphemes vs. Manifolds: Diagnosing Structural Blindness and Morphological Hijacking in Large Language Models via Finite Affine Orbits</h3><p>NIROUYAR, R. (2026). Morphemes vs. Manifolds: Diagnosing Structural Blindness and Morphological Hijacking in Large Language Models via Finite Affine Orbits (Version v1.0.0). Zenodo.</p><p class="vr-small">Frozen-model audit and negative result record; interpret within the tested models and protocol.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22101179" target="_blank" rel="noopener">10.5281/zenodo.22101179 ↗</a> <a class="vr-doi" href="/publications/zenodo-22101179.html">VARZIN record →</a></div></article><article class="vr-record"><span class="vr-index">02</span><div><h3>VARZIN V2 — Recoverable but Not Composable: Representation Recovery and Systematic Composition in a Frozen Language Model</h3><p>Nirouyar, R. (2026). VARZIN V2 — Recoverable but Not Composable: Representation Recovery and Systematic Composition in a Frozen Language Model (Version V1.0). Zenodo.</p><p class="vr-small">Separates representation recovery from systematic composition; recovery does not by itself establish compositional generalization.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22679978" target="_blank" rel="noopener">10.5281/zenodo.22679978 ↗</a> <a class="vr-doi" href="/publications/zenodo-22679978.html">VARZIN record →</a></div></article><article class="vr-record"><span class="vr-index">03</span><div><h3>LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families</h3><p>Reza, N. (2026). LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families (Version v2.2). Zenodo.</p><p class="vr-small">Historical title wording retained for citation continuity; current VARZIN interpretation does not treat independent semantic-axis recovery as established.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22115483" target="_blank" rel="noopener">10.5281/zenodo.22115483 ↗</a> <a class="vr-doi" href="/publications/zenodo-22115483.html">VARZIN record →</a></div></article><article class="vr-record"><span class="vr-index">04</span><div><h3>VARZIN Level-1 Computational Stack: Finite Affine Core, Genomic Scanner, and Torus Manifold Solver</h3><p>Nirouyar, R. (2026). VARZIN Level-1 Computational Stack: Finite Affine Core, Genomic Scanner, and Torus Manifold Solver (Version v2.0.0) [Computer software]. Zenodo.</p><p class="vr-small">Software release; reproducibility and mathematical/computational claims remain tied to the documented implementation and assumptions.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22036769" target="_blank" rel="noopener">10.5281/zenodo.22036769 ↗</a> <a class="vr-doi" href="/publications/zenodo-22036769.html">VARZIN record →</a></div></article><article class="vr-record"><span class="vr-index">05</span><div><h3>Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery</h3><p>Nirouyar, R. (2026). Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery (Version v1). Zenodo.</p><p class="vr-small">Projection-head intervention record; explicit intervention is distinct from spontaneous recovery in an unmodified frozen model.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22258644" target="_blank" rel="noopener">10.5281/zenodo.22258644 ↗</a> <a class="vr-doi" href="/publications/zenodo-22258644.html">VARZIN record →</a></div></article><article class="vr-record"><span class="vr-index">06</span><div><h3>Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery</h3><p>Nirouyar, R. (2026). Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery (Version v2). Zenodo.</p><p class="vr-small">Second public version of the projection-head research record; preserve version-specific DOI citation.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22262388" target="_blank" rel="noopener">10.5281/zenodo.22262388 ↗</a> <a class="vr-doi" href="/publications/zenodo-22262388.html">VARZIN record →</a></div></article><article class="vr-record"><span class="vr-index">07</span><div><h3>Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery</h3><p>Nirouyar, R. (2026). Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery (Version v3). Zenodo.</p><p class="vr-small">Third public version of the projection-head research record; the versioned DOI is retained separately for provenance.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22287006" target="_blank" rel="noopener">10.5281/zenodo.22287006 ↗</a> <a class="vr-doi" href="/publications/zenodo-22287006.html">VARZIN record →</a></div></article></div>
@@ -292,7 +302,7 @@
 </main>
 <footer class="vr-footer">
   <div><a class="vr-brand" href="/">VARZIN</a><p>Independent research. Explicit boundaries.<br>A public record that includes what did not work.</p></div>
-  <div><a href="/all-dois.html">Publications &amp; DOI records</a><a href="/researcher.html">Researcher profile</a><a href="/CITATION.cff">Citation metadata</a><a href="/privacy.html">Privacy &amp; analytics</a><a href="/fa/" hreflang="fa" lang="fa">فارسی</a><a href="/paper/">Historical archive</a></div>
+  <div><a href="/all-dois.html">Publications &amp; DOI records</a><a href="/cognitive-captcha.html">Cognitive CAPTCHA</a><a href="/researcher.html">Researcher profile</a><a href="/CITATION.cff">Citation metadata</a><a href="/privacy.html">Privacy &amp; analytics</a><a href="/fa/" hreflang="fa" lang="fa">فارسی</a><a href="/paper/">Historical archive</a></div>
   <div><a rel="me" href="https://github.com/Varzin-13">GitHub ↗</a><a rel="me" href="https://orcid.org/0009-0000-4690-6842">ORCID ↗</a><a href="mailto:contact@varzin.org">contact@varzin.org</a></div>
   <p class="vr-colophon">VARZIN Project · Reza Nirouyar <span>Evidence-first research portal / 2026</span></p>
 </footer>

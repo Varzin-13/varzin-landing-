@@ -39,7 +39,67 @@
       "researchQuestion": "How much of the apparent structure recovered by language models reflects morphemic or representational regularity, and how much supports the stronger claim that intended semantic structure has been independently recovered?",
       "contribution": "The record anchors the negative-result side of the VARZIN language-model program: structural regularity can be detectable while stronger semantic interpretations remain unsupported under the tested procedures.",
       "versionNote": "Version v1.0.0 is retained as a fixed, citable public deposit. Later VARZIN pages may refine interpretation, but they do not silently rewrite this versioned record.",
-      "repositoryNote": "The Zenodo REST API description retrieved on 2026-09-14 appears internally inconsistent with this record’s deposited title and references DOI 10.5281/zenodo.22036769. VARZIN therefore does not use that description to characterize this record; the title, DOI, version, date, creator identity, and resource type were verified independently from the record metadata."
+      "repositoryNote": "The Zenodo REST API description retrieved on 2026-09-14 appears internally inconsistent with this record’s deposited title and references DOI 10.5281/zenodo.22036769. VARZIN therefore does not use that description to characterize this record; the title, DOI, version, date, creator identity, and resource type were verified independently from the record metadata.",
+      "peerReviewStatus": "Preprint / repository research record; not treated by VARZIN as peer-reviewed validation.",
+      "evidenceStatus": "Direct frozen-model negative result against designed LUXVAR orbit/axis labels.",
+      "currentInterpretation": "Under the stated Semantic Starvation protocol, the tested Mistral 7B and Llama 3 8B systems did not recover the designed orbit structure. The result is model- and protocol-scoped; it does not justify a universal claim about all language models.",
+      "methods": [
+        "LUXVAR Core-30 arranged into five designed affine-orbit target groups with adversarially shared surface morphology.",
+        "Semantic Starvation removes natural-language explanations before blind five-cluster recovery.",
+        "Hungarian alignment handles arbitrary cluster labels; Adjusted Rand Index provides chance-corrected partition recovery.",
+        "Thirty independent runs per model with seed/temperature variation; random-partition baseline reported alongside model results."
+      ],
+      "keyFindings": [
+        "Mistral 7B Instruct: mean ARI = −0.0337 ± 0.039; mapped accuracy = 33.3% ± 4.2%.",
+        "Llama 3 8B: mean ARI = 0.0152 ± 0.028; mapped accuracy = 50.0% ± 5.1%.",
+        "Random baseline: mean ARI = −0.0583 ± 0.045; the tested models remain near chance against the designed orbit labels.",
+        "Observed errors preferentially follow shared spelling/morpheme cues, motivating the “morphological hijacking” label for this tested setup."
+      ],
+      "negativeFindings": [
+        "The intended semantic/algebraic axes were not recovered by the tested frozen models under the reported protocol.",
+        "The earlier inter-model agreement figure from the LUXVAR line cannot be used as evidence of axis recovery.",
+        "The planned VPE-001A human comparison is future work in this record, not evidence about human cognition."
+      ],
+      "limitations": [
+        "Core-30 is a small, synthetic, researcher-designed lexicon.",
+        "Only the tested models, prompting protocol, clustering task, and evaluation procedure are directly supported.",
+        "Some wording in the deposited manuscript is broader than the evidence; the current VARZIN page deliberately narrows those claims to the tested setup."
+      ],
+      "reproducibility": [
+        "The public record includes the exact PDF, README, CITATION.cff, manuscript DOCX, participant-research checklist, license, and a package-recreation script.",
+        "The uploaded PDF supplied for this website audit is byte-identical to Zenodo varzin-track-d-scientific-paper-v3.pdf (verified by MD5)."
+      ],
+      "paperFile": {
+        "name": "varzin-track-d-scientific-paper-v3.pdf",
+        "kind": "paper",
+        "sizeBytes": 207132,
+        "checksum": "md5:1dd7d6f24fc32ecab86599c013191267",
+        "url": "https://zenodo.org/api/records/22101179/files/varzin-track-d-scientific-paper-v3.pdf/content"
+      },
+      "codeArtifacts": [
+        {
+          "name": "README.md",
+          "kind": "documentation",
+          "sizeBytes": 6274,
+          "checksum": "md5:e7f011af9217fd6bccb7420eb8eb6d84",
+          "url": "https://zenodo.org/api/records/22101179/files/README.md/content"
+        },
+        {
+          "name": "CITATION.cff",
+          "kind": "metadata",
+          "sizeBytes": 813,
+          "checksum": "md5:43ca0f4ab84f9e4bc3b7de52aa7a2e83",
+          "url": "https://zenodo.org/api/records/22101179/files/CITATION.cff/content"
+        },
+        {
+          "name": "recreate_varzin_package_v2 (1).py",
+          "kind": "code",
+          "sizeBytes": 328197,
+          "checksum": "md5:bd369c2b54e453fdba557a815e84b713",
+          "url": "https://zenodo.org/api/records/22101179/files/recreate_varzin_package_v2%20%281%29.py/content"
+        }
+      ],
+      "sourceVerification": "Zenodo REST file inventory and checksums re-verified 2026-09-14; uploaded paper copy exactly matches the public Zenodo PDF."
     },
     {
       "id": "zenodo-22679978",
@@ -81,7 +141,72 @@
       "researchQuestion": "Does strong recovery of a structural variable from a frozen model imply that the model can use that representation as a substrate for systematic compositional generalization?",
       "contribution": "The study separates representation recovery from composition and records that successful recovery alone is insufficient evidence for systematic generalization. This is a narrower and more defensible conclusion than treating probe success as proof of compositional competence.",
       "versionNote": "Version V1.0 is the current public Zenodo record listed by VARZIN for the integrated Phase 0–2 report. Any later remediation or follow-up experiment should be cited separately from this fixed deposit.",
-      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint published on 2026-09-09 under CC BY 4.0."
+      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint published on 2026-09-09 under CC BY 4.0.",
+      "peerReviewStatus": "Preprint / results-locked research report; not treated as peer-reviewed validation.",
+      "evidenceStatus": "Strong representation-recovery result paired with a clean preregistered negative composition result.",
+      "currentInterpretation": "Frozen Qwen2.5-1.5B-Instruct strongly encodes the tested synthetic morphological-position variable in a linearly decodable form across held-out contexts, but the preregistered downstream composition test produced 0/58 passes. This is evidence for a separation in this experiment, not a universal theorem that decodability never implies composability.",
+      "methods": [
+        "Phase 0: construct, leakage-audit, and cryptographically freeze a 10,800-record synthetic dataset with 12 positions and 30 contexts.",
+        "Phase 1: evaluate surface-span, whole-sentence, and last-token representations across all 29 hidden-state indices without holdout-driven best-layer selection.",
+        "Phase 2: test k = (i + j) mod 12 on 144 ordered pairs (120 train, 24 fixed holdout), 30 realizations per pair, and 10 preregistered seeds.",
+        "Compare TRUE against SHUFFLED, WRONG_OP, and RANDOM conditions; require both paired exact sign-flip p < 0.01 and ≥0.15 balanced-accuracy margin against every control."
+      ],
+      "keyFindings": [
+        "Phase 1 surface-span mean BA across 29 indices = 0.9666; median = 1.000; 25/29 indices reach BA = 1.000, while embedding index 0 is at chance (0.0833).",
+        "Phase 2 verdict: PASS 0/58, AMBIGUOUS 0/58, FAIL 58/58.",
+        "Closest positive TRUE-vs-control effect = +0.082 BA (MLP, layer 5 vs RANDOM), exact sign-flip p = 0.1719—well below the preregistered +0.15 / p<0.01 thresholds.",
+        "The failure is not explained by constant-output collapse: most evaluated rows use the full 12-class output space."
+      ],
+      "negativeFindings": [
+        "Strong linear decodability did not translate into detected systematic generalization of the TRUE composition rule on unseen ordered pairs.",
+        "The post-hoc Latin-square pattern is explicitly exploratory/hypothesis-generating, not confirmatory.",
+        "The study does not show that Qwen lacks all algebraic structure or that language models generally cannot compose."
+      ],
+      "limitations": [
+        "The result is tied to the frozen Qwen2.5-1.5B-Instruct protocol, synthetic structure, fixed composers, and stated decision rule.",
+        "Historical v1.4 identity remains unresolved; the frozen V2 artifact is an independently generated/audited artifact, not claimed byte-identical to that historical selection.",
+        "Generalization to other models, natural language, operations, and readout architectures remains open."
+      ],
+      "reproducibility": [
+        "Dataset, preregistrations, pair split, condition mappings, results, and audits are linked by documented SHA-256 hashes.",
+        "Frozen dataset SHA-256: a6aa66a92133fee22a98e6628ffd286f69bd2073bc45cb9cdfdab2a48e05ab5e.",
+        "The Zenodo record exposes the exact PDF plus “All code Phase.zip” (about 1.30 GB).",
+        "The uploaded PDF supplied for this website audit is byte-identical to the Zenodo PDF (verified by MD5)."
+      ],
+      "paperFile": {
+        "name": "VARZIN_V2_Integrated_Phase0_1_2_Final.pdf",
+        "kind": "paper",
+        "sizeBytes": 95380,
+        "checksum": "md5:01cb5d0c70b078384581fdecc090c223",
+        "url": "https://zenodo.org/api/records/22679978/files/VARZIN_V2_Integrated_Phase0_1_2_Final.pdf/content"
+      },
+      "codeArtifacts": [
+        {
+          "name": "All code Phase.zip",
+          "kind": "code-package",
+          "sizeBytes": 1295382860,
+          "checksum": "md5:359b0c6f89ed1eea3cfa5ac177f6e2d0",
+          "url": "https://zenodo.org/api/records/22679978/files/All%20code%20Phase.zip/content"
+        }
+      ],
+      "sourceVerification": "Zenodo REST file inventory and checksums re-verified 2026-09-14; uploaded paper copy exactly matches the public Zenodo PDF.",
+      "scaleLineage": [
+        {
+          "label": "VARZIN V2 frozen dataset",
+          "scale": "10,800 records",
+          "role": "A distinct synthetic morphological-position dataset with 12 structural positions, 30 contexts, 24 training contexts, 6 held-out contexts, and 30 instances per position/context configuration."
+        },
+        {
+          "label": "Representation evaluation",
+          "scale": "29 hidden-state indices",
+          "role": "Surface-span mean reached mean balanced accuracy 0.9666; 25/29 indices reached 1.000 under held-out-context evaluation."
+        },
+        {
+          "label": "Composition evaluation",
+          "scale": "144 ordered pairs / 58 layer-composer combinations",
+          "role": "120 training pairs and 24 fixed held-out pairs; final preregistered verdict 0/58 PASS, 58/58 FAIL."
+        }
+      ]
     },
     {
       "id": "zenodo-22115483",
@@ -118,7 +243,67 @@
       "researchQuestion": "Which parts of LUXVAR’s designed structure are recoverable computationally, and do those recoverable regularities extend from morphology and clustering to the intended semantic axes?",
       "contribution": "The record provides a clear separation between designed structure, computationally detectable morpheme-family organization, and the stronger semantic claim that the intended axes are independently recoverable. The latter is not treated as established.",
       "versionNote": "Version v2.2 is the current public LUXVAR record listed by VARZIN. The historical title wording is retained for citation continuity even where later interpretation is more conservative.",
-      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint published on 2026-08-26 under CC BY 4.0."
+      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint published on 2026-08-26 under CC BY 4.0.",
+      "peerReviewStatus": "Preprint; explicitly marked not peer-reviewed in the deposited manuscript.",
+      "evidenceStatus": "Mixed: reproducible morphology/phonotactics results plus negative semantic-axis tests; the historical “AI-recoverable” title claim is rejected by the paper’s later addendum.",
+      "currentInterpretation": "The strongest supported reading is morphemic and phonotactic structure, not independent recovery of the designed semantic axes. The August addendum explicitly rejects the “AI-recoverable” axis reading.",
+      "methods": [
+        "Morphological clustering over 801 roots with 36 phonotactic features and shuffle baselines.",
+        "GEN-001 random-forest phonotactic classification using 34 features and five-fold cross-validation.",
+        "GEN-003R+ cross-language benchmark against six curated lexical corpora with balanced n = 107 and bootstrap uncertainty.",
+        "SEM-001 string-level and SEM-002 graph-level semantic-axis tests.",
+        "VPE-001B+ independent AI clustering of Core-30, scored against both inter-model agreement and the designed axes."
+      ],
+      "keyFindings": [
+        "Non-random morphology: z = 4.36, p < 0.001; silhouette 0.406 versus shuffled mean 0.174.",
+        "Generator balance at n = 2,000,000: H/Hmax = 0.9995 and Cramér’s V < 0.02 for the stated first-order associations.",
+        "Phonotactic distinctiveness: GEN-001 CV accuracy 98.9%; uniqueness = 0.738, 95% CI [0.703, 0.781], versus six curated reference language lists.",
+        "Claude↔Gemini inter-model cluster ARI is reported as 0.812 in the corrected manuscript, but mean ARI versus the designed axes is 0.150; the later addendum rejects interpreting inter-model agreement as axis recovery."
+      ],
+      "negativeFindings": [
+        "Hexacore k = 6 was rejected; the reported natural elbow was k = 3.",
+        "SEM-001 found no semantic-axis string signal; SEM-002 reached only 1/4 positive tests against a ≥2/4 criterion.",
+        "Root→field and root→frequency first-order signals were not found under the stated thresholds.",
+        "The August 2026 addendum explicitly marks the “AI-Recoverable” claim as REJECTED after direct axis-label testing in the companion Track D audit."
+      ],
+      "limitations": [
+        "Reference-language comparisons use curated lexical lists rather than large natural-text corpora.",
+        "AI clustering is not a human perception study; VPE-001A remained unperformed in this manuscript.",
+        "Frequency values are symbolic design parameters, not experimentally validated physical or cognitive categories.",
+        "LUXVAR is a single-creator constructed system; semantic-axis inter-rater validity had not been established.",
+        "Taxonomy provenance: Core-30 is described with five designed axes, while the wider v2.2 layer is described with six semantic fields; the public site preserves this documentary distinction rather than assuming equivalence."
+      ],
+      "reproducibility": [
+        "The uploaded PDF supplied for this website audit is byte-identical to the Zenodo file VARZIN_LUXVAR_preprint_v2.2.pdf (verified by MD5).",
+        "The verified Zenodo record currently exposes the PDF only; no ZIP/code file is present in that record’s public file inventory as of 2026-09-14.",
+        "The PDF itself contains July and August post-publication addenda that narrow and then reject the earlier AI-axis interpretation."
+      ],
+      "paperFile": {
+        "name": "VARZIN_LUXVAR_preprint_v2.2.pdf",
+        "kind": "paper",
+        "sizeBytes": 89495,
+        "checksum": "md5:131b44e2c769ed483e0287978abf0447",
+        "url": "https://zenodo.org/api/records/22115483/files/VARZIN_LUXVAR_preprint_v2.2.pdf/content"
+      },
+      "codeArtifacts": [],
+      "sourceVerification": "Zenodo REST file inventory and checksum re-verified 2026-09-14; uploaded paper copy exactly matches the public Zenodo PDF. Repository description still carries an older 0.718 inter-model figure, while the PDF correction standardizes the documented project figure to 0.812 and later rejects it as evidence of axis recovery.",
+      "scaleLineage": [
+        {
+          "label": "Core-30",
+          "scale": "30 reference words",
+          "role": "Canonical public reference subset used in several early clustering/audit tasks; it remains a reference set rather than the whole LUXVAR system."
+        },
+        {
+          "label": "Broader LUXVAR design",
+          "scale": "801 stable roots",
+          "role": "The v2.2 manuscript reports 801 stable roots across six semantic fields and other generator dimensions. Core-30 separately uses five designed axes; the relationship is retained as a source-level distinction, not silently harmonized."
+        },
+        {
+          "label": "Generated corpus",
+          "scale": "≈1.3 billion generated forms",
+          "role": "Exhaustive combinations of the manuscript’s design dimensions. The rows are generated by construction, not observations collected from natural language use."
+        }
+      ]
     },
     {
       "id": "zenodo-22036769",
@@ -155,7 +340,84 @@
       "researchQuestion": "Can the computational components underlying the Level-1 VARZIN architecture be preserved as inspectable, citable software artifacts whose behavior can be evaluated separately from speculative interpretation?",
       "contribution": "The release makes the implementation layer explicit. Mathematical, numerical, genomic, and auditing components can be examined as software without treating the existence of code as validation of any physical, biological, cognitive, or semantic hypothesis.",
       "versionNote": "Version v2.0.0 is the listed software release. Results should be attributed to the documented code, dependencies, inputs, and assumptions rather than generalized beyond the implementation.",
-      "repositoryNote": "Zenodo metadata identifies this item as open-access software published on 2026-08-21 under the MIT License."
+      "repositoryNote": "Zenodo metadata identifies this item as open-access software published on 2026-08-21 under the MIT License.",
+      "peerReviewStatus": "Software release with an associated research monograph; not presented as peer-reviewed journal evidence.",
+      "evidenceStatus": "Mixed evidence record: proved finite-affine mathematics, construction-specific numerical results, and falsification-oriented computational audits.",
+      "currentInterpretation": "The durable contribution is the separation of a proved affine core from computational null-model tests. The reported tectonic and genomic controls do not support the earlier physical-field or biological-encoding interpretations.",
+      "methods": [
+        "Finite affine analysis over Aff(Z12), including the 48-operator space and the Mirror-13 transition construction.",
+        "Lazy-random-walk spectral analysis for the 312-state / 600-edge Mirror-13 construction.",
+        "Toroidal Laplace–Beltrami numerical benchmarking with FEM/Fourier methods and Gaussian regularization (σ = 2.0).",
+        "USGS earthquake-distance audit with a tectonically conditioned Alpide null model.",
+        "Deterministic SHA-256 genomic scanning with dinucleotide-preserving shuffles and Benjamini–Hochberg FDR control.",
+        "Blind LUXVAR Core-30 model clustering as a separate language-model audit."
+      ],
+      "keyFindings": [
+        "|Aff(Z12)| = 48 is the clean mathematical result; the Mirror-13 construction reports 312 states, 600 directed edges, and lazy-walk spectral gap ≈ 0.04133.",
+        "The node-location control reports nearly unchanged torus spectral response for named versus random locations, supporting a generic perturbation interpretation rather than location-specific resonance.",
+        "Under the Alpide-conditioned tectonic null, the apparent Kailash seismic effect dissolves (p = 0.3956); Giza is also non-anomalous (p = 0.9550).",
+        "The reported Chromosome 11 scan produced 0 significant windows after FDR correction under the stated dinucleotide-preserving null."
+      ],
+      "negativeFindings": [
+        "No independent physical-field resonance is supported by the reported tectonic control.",
+        "No anomalous linguistic/harmonic genomic signal was detected in the tested chromosome window under the stated FDR-controlled scan.",
+        "The direct frozen-model axis audit reported near-random recovery for the tested Mistral and Llama models; this does not establish a universal model limitation."
+      ],
+      "limitations": [
+        "The numerical, geophysical, genomic, and language-model tracks use different assumptions and should not be collapsed into a single validation claim.",
+        "The genomic result is scoped to the tested sequence/window and null model; it is not a universal statement about all biological sequence structure.",
+        "VPE-001A is a planned human-rater experiment in this record, not a completed human result."
+      ],
+      "reproducibility": [
+        "The Zenodo release exposes the monograph plus Python implementations, requirements, a seismic snapshot, and a cognitive test dataset.",
+        "The uploaded monograph supplied for this website audit is byte-identical to the Zenodo file varzin_academic_paper_en.pdf (verified by MD5).",
+        "The release uses deterministic SHA-256 seeding in the genomic workflow rather than Python’s randomized default hash()."
+      ],
+      "paperFile": {
+        "name": "varzin_academic_paper_en.pdf",
+        "kind": "paper",
+        "sizeBytes": 190290,
+        "checksum": "md5:449b2b2c7608855272c823c848523017",
+        "url": "https://zenodo.org/api/records/22036769/files/varzin_academic_paper_en.pdf/content"
+      },
+      "codeArtifacts": [
+        {
+          "name": "varzin_cognitive_prior_suite.py",
+          "kind": "code",
+          "sizeBytes": 10928,
+          "checksum": "md5:6abe15c0876edc2a58c33c16201ad9a8",
+          "url": "https://zenodo.org/api/records/22036769/files/varzin_cognitive_prior_suite.py/content"
+        },
+        {
+          "name": "varzin_ncbi_chr11_scanner.py",
+          "kind": "code",
+          "sizeBytes": 7289,
+          "checksum": "md5:b889f99c1e6fc4383f472a186964c348",
+          "url": "https://zenodo.org/api/records/22036769/files/varzin_ncbi_chr11_scanner.py/content"
+        },
+        {
+          "name": "varzin_torus_fenics.py",
+          "kind": "code",
+          "sizeBytes": 6439,
+          "checksum": "md5:6a235efba22bfc7313dbec5ff5b39a37",
+          "url": "https://zenodo.org/api/records/22036769/files/varzin_torus_fenics.py/content"
+        },
+        {
+          "name": "varzin_kailash_deep_audit.py",
+          "kind": "code",
+          "sizeBytes": 6333,
+          "checksum": "md5:b86494fa44e7670977b30a3025e1dd50",
+          "url": "https://zenodo.org/api/records/22036769/files/varzin_kailash_deep_audit.py/content"
+        },
+        {
+          "name": "kailash_seismic_snapshot.csv",
+          "kind": "data",
+          "sizeBytes": 11244,
+          "checksum": "md5:3b8e212cc5bb514cc69c3fae6622a647",
+          "url": "https://zenodo.org/api/records/22036769/files/kailash_seismic_snapshot.csv/content"
+        }
+      ],
+      "sourceVerification": "Zenodo REST file inventory and checksums re-verified 2026-09-14; uploaded paper copy exactly matches the public Zenodo PDF."
     },
     {
       "id": "zenodo-22258644",
@@ -192,7 +454,54 @@
       "researchQuestion": "When surface morphology conflicts with a task-relevant algebraic structure, what do frozen model representations recover, and can an explicit trainable intervention change that geometry?",
       "contribution": "The record frames morphological hijacking as a representational failure mode and tests an explicit projection-head remediation. Any post-training recovery belongs to the intervention result; it is not evidence that the unmodified frozen model spontaneously encoded the target structure in a directly usable form.",
       "versionNote": "Version v1 is preserved as the first public version-specific record in this series. Later v2 and v3 deposits are separate citable records rather than silent replacements.",
-      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint published on 2026-09-02 under CC BY 4.0."
+      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint published on 2026-09-02 under CC BY 4.0.",
+      "peerReviewStatus": "Preprint; Zenodo record explicitly states not yet peer-reviewed.",
+      "evidenceStatus": "Intervention study: frozen-model failure and trained remediation must remain separate claims.",
+      "methods": [
+        "Adversarial LUXVAR Core-30 with algebraic target labels placed in conflict with salient surface prefixes.",
+        "Frozen hidden-state extraction and k-means baseline scored by orbit ARI and Prefix Hijacking Ratio.",
+        "Frozen-backbone attention/projection head trained with supervised contrastive loss, hard negatives, symmetry regularization, rogue-dimension ablation, and Soft-PCA initialization.",
+        "Held-out, cross-script, word-order, and related stress tests; later versions add explicit group-position and composition controls."
+      ],
+      "reproducibility": [
+        "Zenodo v1 exposes a version-specific research PDF and a version-specific ZIP code/paper package.",
+        "Public package checksum: md5:b821b931091109e40c4a60617f9a2d79.",
+        "The page links the exact versioned DOI rather than silently treating later versions as replacements."
+      ],
+      "paperFile": {
+        "name": "LUXVAR_morphological_hijacking.pdf",
+        "kind": "paper",
+        "sizeBytes": 309540,
+        "checksum": "md5:22d5c543eabeed51a980da30772de0dc",
+        "url": "https://zenodo.org/api/records/22258644/files/LUXVAR_morphological_hijacking.pdf/content"
+      },
+      "codeArtifacts": [
+        {
+          "name": "luxvar_code_and_paper.zip",
+          "kind": "code-package",
+          "sizeBytes": 391883,
+          "checksum": "md5:b821b931091109e40c4a60617f9a2d79",
+          "url": "https://zenodo.org/api/records/22258644/files/luxvar_code_and_paper.zip/content"
+        }
+      ],
+      "sourceVerification": "Zenodo REST metadata, public file inventory, sizes, and checksums re-verified 2026-09-14 for v1.",
+      "currentInterpretation": "v1 establishes the experimental separation between frozen surface-form dominance and an explicit trained remediation. Any recovery after training is an intervention result, not spontaneous structure discovery by the frozen backbone.",
+      "keyFindings": [
+        "Across the reported frozen baselines, surface-prefix structure dominates the adversarial clustering task while target algebraic/orbit recovery collapses.",
+        "The trained projection-head recipe substantially improves target-structure recovery and is checked with both discrete clustering and continuous geometry metrics.",
+        "The record extends beyond the synthetic core with natural-language and expanded-lexicon follow-ups, but remains a preliminary scoped study."
+      ],
+      "negativeFindings": [
+        "The “globally architectural anisotropy” interpretation was weakened/rejected by larger-model replication.",
+        "A plausible best-raw-margin layer-selection heuristic did not improve training and is retained as a negative result."
+      ],
+      "limitations": [
+        "Synthetic adversarial design; no claim of general applicability to all transformer representations.",
+        "Training changes the task: successful remediation is not evidence that the frozen model independently recovered the intended structure."
+      ],
+      "series": "Morphological Hijacking projection-head series",
+      "isLatestInSeries": false,
+      "supersededForCurrentSeriesInterpretationBy": "10.5281/zenodo.22287006"
     },
     {
       "id": "zenodo-22262388",
@@ -233,7 +542,54 @@
       "researchQuestion": "Does the v1 failure pattern persist under a more explicit adversarial lexicon and additional diagnostics, and which representational factors help explain the dominance of surface form?",
       "contribution": "The v2 record strengthens the separation between surface-form clustering and algebraic target recovery, while adding diagnostics intended to explain the failure mode. The project does not treat trained recovery as equivalent to spontaneous structure recovery.",
       "versionNote": "Version v2 is a distinct public deposit dated 2026-09-02. It should be cited separately from v1 and v3 whenever version-specific methods or results are discussed.",
-      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint under CC BY 4.0."
+      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint under CC BY 4.0.",
+      "peerReviewStatus": "Preprint; Zenodo record explicitly states not yet peer-reviewed.",
+      "evidenceStatus": "Intervention study: frozen-model failure and trained remediation must remain separate claims.",
+      "methods": [
+        "Adversarial LUXVAR Core-30 with algebraic target labels placed in conflict with salient surface prefixes.",
+        "Frozen hidden-state extraction and k-means baseline scored by orbit ARI and Prefix Hijacking Ratio.",
+        "Frozen-backbone attention/projection head trained with supervised contrastive loss, hard negatives, symmetry regularization, rogue-dimension ablation, and Soft-PCA initialization.",
+        "Held-out, cross-script, word-order, and related stress tests; later versions add explicit group-position and composition controls."
+      ],
+      "reproducibility": [
+        "Zenodo v2 exposes a version-specific research PDF and a version-specific ZIP code/paper package.",
+        "Public package checksum: md5:d5b73639e3ca492ee6ddb60f717f5899.",
+        "The page links the exact versioned DOI rather than silently treating later versions as replacements."
+      ],
+      "paperFile": {
+        "name": "LUXVAR_morphological_hijacking-1.pdf",
+        "kind": "paper",
+        "sizeBytes": 317840,
+        "checksum": "md5:3fe859a675edd2cabadbf177ac032a68",
+        "url": "https://zenodo.org/api/records/22262388/files/LUXVAR_morphological_hijacking-1.pdf/content"
+      },
+      "codeArtifacts": [
+        {
+          "name": "luxvar_code_and_paper(1).zip",
+          "kind": "code-package",
+          "sizeBytes": 413834,
+          "checksum": "md5:d5b73639e3ca492ee6ddb60f717f5899",
+          "url": "https://zenodo.org/api/records/22262388/files/luxvar_code_and_paper%281%29.zip/content"
+        }
+      ],
+      "sourceVerification": "Zenodo REST metadata, public file inventory, sizes, and checksums re-verified 2026-09-14 for v2.",
+      "currentInterpretation": "v2 strengthens the intervention result and adds a direct group-position target with a shuffled-label control. The safe claim is targeted group-position classification recovery under this specific synthetic construction—not proof of a homomorphic group representation or systematic composition.",
+      "keyFindings": [
+        "Frozen baselines recover the adversarial prefix at ceiling while target orbit recovery is near failure in the reported Core-30 setup.",
+        "After model-specific retuning, Mistral-7B and Qwen2.5-7B report trained ARI ≈ 0.957 and 0.880 respectively in the stated stress-test configuration.",
+        "The dedicated opaque-position experiment reports true-label ARI roughly 0.79–1.00 versus shuffled-control ARI roughly 0.02–0.30 across GPT2-small, Mistral-7B, and Qwen2.5-7B."
+      ],
+      "negativeFindings": [
+        "The group-position success does not test group composition, closure, or homomorphism.",
+        "The same fixed hyperparameters do not transfer across architectures; key settings were retuned per model."
+      ],
+      "limitations": [
+        "The direct position test uses one synthetic construction and a limited set of architectures.",
+        "Shuffled controls are non-zero on the 7B models, reinforcing the need for matched-control interpretation rather than absolute ARI alone."
+      ],
+      "series": "Morphological Hijacking projection-head series",
+      "isLatestInSeries": false,
+      "supersededForCurrentSeriesInterpretationBy": "10.5281/zenodo.22287006"
     },
     {
       "id": "zenodo-22287006",
@@ -273,8 +629,113 @@
       "researchQuestion": "After remediation improves recovery of the target categories or geometry, does that recovered structure support the algebraic composition required for systematic generalization?",
       "contribution": "The v3 record makes composition a separate test rather than assuming it follows from category recovery. This preserves an important negative/limiting result: improved representation recovery is not, by itself, proof of compositional competence.",
       "versionNote": "Version v3 is the third version-specific public deposit in the projection-head series and should be cited independently from v1 and v2.",
-      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint published on 2026-09-03 under CC BY 4.0."
+      "repositoryNote": "Zenodo metadata identifies this item as an open-access preprint published on 2026-09-03 under CC BY 4.0.",
+      "peerReviewStatus": "Preprint; Zenodo record explicitly states not yet peer-reviewed.",
+      "evidenceStatus": "Intervention study: frozen-model failure and trained remediation must remain separate claims.",
+      "methods": [
+        "Adversarial LUXVAR Core-30 with algebraic target labels placed in conflict with salient surface prefixes.",
+        "Frozen hidden-state extraction and k-means baseline scored by orbit ARI and Prefix Hijacking Ratio.",
+        "Frozen-backbone attention/projection head trained with supervised contrastive loss, hard negatives, symmetry regularization, rogue-dimension ablation, and Soft-PCA initialization.",
+        "Held-out, cross-script, word-order, and related stress tests; later versions add explicit group-position and composition controls."
+      ],
+      "reproducibility": [
+        "Zenodo v3 exposes a version-specific research PDF and a version-specific ZIP code/paper package.",
+        "Public package checksum: md5:847d2d8c0a7c46f277458916eefe8180.",
+        "The page links the exact versioned DOI rather than silently treating later versions as replacements.",
+        "Verified ZIP inventory contains 40 entries, including the paper source/figures plus scripts 01–25 for the reported experimental chain.",
+        "Scale-specific code is present: 17_luxvar_language_generator.py builds arbitrary-scale LUXVAR variants; 18_full_experiment_expanded_luxvar.py runs the Appendix E 300-word test.",
+        "Algebraic-control code is present: 19_true_algebraic_axis_recovery_LEAKED_rejected.py preserves the rejected leaking design, 21_FINAL_true_axis_recovery_all_models_with_control.py produces the definitive Appendix F group-position result.",
+        "Composition diagnostic code is present: scripts 22–25 load the frozen marker artifact and culminate in 25_composition_pilot_v031_and_D4_D4L3B.py, the source for the seen-pair 0.996 / held-out 0.106 negative result."
+      ],
+      "paperFile": {
+        "name": "LUXVAR_morphological_hijacking.pdf",
+        "kind": "paper",
+        "sizeBytes": 340465,
+        "checksum": "md5:0bcd538f588986a7927c61a2028173a3",
+        "url": "https://zenodo.org/api/records/22287006/files/LUXVAR_morphological_hijacking.pdf/content"
+      },
+      "codeArtifacts": [
+        {
+          "name": "luxvar_code_and_paper.zip",
+          "kind": "code-package",
+          "sizeBytes": 454956,
+          "checksum": "md5:847d2d8c0a7c46f277458916eefe8180",
+          "url": "https://zenodo.org/api/records/22287006/files/luxvar_code_and_paper.zip/content"
+        }
+      ],
+      "sourceVerification": "Zenodo REST metadata, public file inventory, sizes, and checksums re-verified 2026-09-14 for v3.",
+      "currentInterpretation": "v3 preserves the positive targeted recovery result while adding the harder composition question. The central v3 boundary is that classification/position recovery did not become systematic composition on unseen ordered pairs under the tested pipeline.",
+      "keyFindings": [
+        "The version retains the trained-remediation results from the earlier series and the explicit true-position control from v2.",
+        "In the v3 composition pilot, a capacity-controlled MLP fits seen pairs almost perfectly (mean ≈ 0.996) but fails on 24 held-out ordered pairs.",
+        "Held-out TRUE accuracy is 0.106, below SHUFFLED 0.281 and WRONG_OP 0.175 in the public v3 manuscript, consistent with memorization/interpolation rather than demonstrated systematic composition."
+      ],
+      "negativeFindings": [
+        "The composition pilot remains negative after diagnostics for optimization, numerical rank/conditioning, operand-space alignment, and decoder capacity.",
+        "The result does not establish that composition information is universally absent; it is a scoped failure of the tested construction/readouts.",
+        "The raw-margin layer-selection heuristic and the broad script-invariant anisotropy hypothesis are also reported as failed or narrowed hypotheses."
+      ],
+      "limitations": [
+        "The composition conclusion is specific to the marker construction, extraction/preprocessing, tested alignment strategies, and tested decoders.",
+        "The uploaded 21-page manuscript supplied in this chat is not byte-identical to the v3 Zenodo PDF, so this webpage is grounded in the verified public v3 Zenodo manuscript/description rather than asserting byte identity for that copy."
+      ],
+      "scaleLineage": [
+        {
+          "label": "Core-30 baseline",
+          "scale": "30 words",
+          "role": "Adversarial reference lexicon for the frozen-model morphology/prefix-hijacking experiments."
+        },
+        {
+          "label": "10× generated variant",
+          "scale": "20 roots × 15 prefixes = 300 words",
+          "role": "Appendix E scale/generalization test. The pooled held-out-root result is ARI 0.992 ± 0.007, but under the easier same-script/same-order condition, not the hardest cross-script stress test."
+        },
+        {
+          "label": "Group-position benchmark",
+          "scale": "5 roots × 6 prefixes × 12 positions = 360 words",
+          "role": "Appendix F benchmark for targeted recovery of true Z12 group position with opaque suffixes and a shuffled-label control; classification success does not establish composition."
+        }
+      ],
+      "series": "Morphological Hijacking projection-head series",
+      "isLatestInSeries": true
     }
   ],
-  "metadataNote": "Zenodo titles, versions, dates, creator strings, resource types, licenses where supplied, and DOI identities verified via the Zenodo REST API on 2026-09-14. Creator strings vary across deposits; VARZIN normalizes the researcher identity to Reza Nirouyar via ORCID."
+  "metadataNote": "Zenodo titles, versions, dates, creator strings, resource types, licenses where supplied, and DOI identities verified via the Zenodo REST API on 2026-09-14. Creator strings vary across deposits; VARZIN normalizes the researcher identity to Reza Nirouyar via ORCID.",
+  "currentEvidencePolicy": {
+    "effectiveDate": "2026-09-14",
+    "rule": "For current scientific interpretation, VARZIN prioritizes the latest relevant public Zenodo manuscript and its version-matched reproducibility artifacts. Older site prose and earlier versions remain available for provenance but do not override later evidence.",
+    "claimSpecificSources": [
+      {
+        "claimArea": "Finite affine / Level-1 computational stack",
+        "primaryDoi": "10.5281/zenodo.22036769",
+        "reason": "Current public Level-1 software/monograph record."
+      },
+      {
+        "claimArea": "LUXVAR morphology, phonotactics, generator scale, and semantic-axis tests",
+        "primaryDoi": "10.5281/zenodo.22115483",
+        "reason": "Current public LUXVAR v2.2 manuscript, including correction/addendum boundaries."
+      },
+      {
+        "claimArea": "Frozen-model semantic/orbit recovery audit",
+        "primaryDoi": "10.5281/zenodo.22101179",
+        "reason": "Dedicated frozen-model Track D audit; interpreted together with later v3 intervention work."
+      },
+      {
+        "claimArea": "Projection-head remediation, scale test, true group-position recovery, and composition pilot",
+        "primaryDoi": "10.5281/zenodo.22287006",
+        "reason": "Latest v3 record in the versioned Morphological Hijacking series; v1/v2 retained for provenance."
+      },
+      {
+        "claimArea": "Representation recovery versus systematic composition in frozen Qwen",
+        "primaryDoi": "10.5281/zenodo.22679978",
+        "reason": "Latest integrated Phase 0–2 VARZIN V2 report and frozen reproducibility package."
+      }
+    ],
+    "supersessionRules": [
+      "Later version-specific deposits supersede earlier interpretation only for the same experimental line; earlier DOI pages remain citable historical records.",
+      "A trained/intervention result does not retroactively convert a frozen-model negative result into spontaneous recovery.",
+      "Group-position classification does not imply systematic composition; composition is evaluated separately.",
+      "Generated forms, benchmark examples, and dataset records are not silently relabeled as one enlarged canonical lexicon."
+    ]
+  }
 }

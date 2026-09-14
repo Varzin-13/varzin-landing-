@@ -20,6 +20,8 @@
 <link rel="icon" href="https://varzin.org/assets/favicon-32.png" sizes="32x32" type="image/png" />
 <link rel="apple-touch-icon" href="https://varzin.org/assets/apple-touch-icon.png" sizes="180x180" />
 <link rel="manifest" href="https://varzin.org/manifest.webmanifest" />
+<link rel="alternate" type="application/json" href="https://varzin.org/research-outputs.json" title="VARZIN machine-readable research records" />
+<link rel="alternate" type="text/plain" href="https://varzin.org/llms.txt" title="VARZIN LLM-readable research index" />
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VARZIN Project">
@@ -125,6 +127,7 @@
       <nav class="vr-desktop" aria-label="Research navigation">
         <a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a
         ><a href="/all-dois.html">Publications</a
+        ><a href="/cognitive-captcha.html">Products</a
         ><a href="/#reproducibility">Reproducibility</a
         ><a href="/feedback.html">Contact</a>
       </nav>
@@ -133,6 +136,7 @@
         <nav aria-label="Mobile research navigation">
           <a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a
           ><a href="/all-dois.html">Publications</a
+          ><a href="/cognitive-captcha.html">Products</a
           ><a href="/#reproducibility">Reproducibility</a
           ><a href="/feedback.html">Contact</a>
         </nav>
@@ -503,10 +507,13 @@
               Core-30 <span class="vr-small">/ public registry</span>
             </div>
             <p class="vr-small">
-              The broader 801-entry design layer is not 801 equally validated
-              roots. Surface structure does not establish independent semantics.
+              The broader v2.2 design reports 801 stable roots and an approximately
+              1.3-billion-form generated corpus. Later work adds distinct 300-word,
+              360-word, and 10,800-record benchmarks; these are not one silently
+              enlarged canonical lexicon. Surface structure does not establish independent semantics.
             </p>
-            <a href="/luxvar-birth-intro.html">Understand LUXVAR ↗</a>
+            <a href="/luxvar-birth-intro.html">Understand LUXVAR ↗</a> ·
+            <a href="/luxvar-scale-map.html">Scale & benchmark map ↗</a>
           </article>
           <article class="vr-card" id="empirical">
             <span class="vr-index">C / OPEN EMPIRICAL QUESTIONS</span>
@@ -528,20 +535,41 @@
           </article>
         </div>
       </section>
+      <section class="vr-section vr-product-feature" id="products">
+        <div class="vr-section-head">
+          <div><p class="vr-kicker">03 / Applied research</p><h2>From research artifact<br>to security prototype.</h2></div>
+          <a class="vr-text-link" href="/cognitive-captcha.html">Open product record ↗</a>
+        </div>
+        <div class="vr-two-col">
+          <article class="vr-card">
+            <span class="vr-index">VARZIN COGNITIVE CAPTCHA</span>
+            <h3>Affine-structure anti-automation demonstrator</h3>
+            <p>A tested local SaaS MVP that turns controlled Aff(ℤ₁₂) structure and LUXVAR challenge pairs into an interactive challenge/response prototype.</p>
+            <div class="vr-formula">10 / 10 <span class="vr-small">verified local challenge flow</span></div>
+            <p class="vr-small">The corrected local Streamlit build completed all ten generated challenges without application exceptions. Production bot-resistance remains an open validation question.</p>
+            <a href="/cognitive-captcha.html">See test evidence, limitations & public demo ↗</a>
+          </article>
+          <article class="vr-card">
+            <span class="vr-index">EVIDENCE BOUNDARY</span>
+            <h3>A product page without inflated security claims</h3>
+            <p>Earlier mockup-level production-security claims were not supported by the current evidence base and are not promoted on the research portal.</p>
+            <p class="vr-small">The current path is explicit: verified local prototype → independent human-versus-automation evaluation → larger unseen challenge family → production security engineering.</p>
+            <a href="/ai-structure-auditing.html">Read the model-evidence boundary ↗</a>
+          </article>
+        </div>
+      </section>
       <section class="vr-section" id="publications">
-        <div class="vr-section-head"><div><p class="vr-kicker">03 / Selected research records</p><h2>Read the work. Inspect the scope.</h2></div><a class="vr-text-link" href="/all-dois.html">All publications &amp; DOI records ↗</a></div>
+        <div class="vr-section-head"><div><p class="vr-kicker">04 / Selected research records</p><h2>Read the work. Inspect the scope.</h2></div><a class="vr-text-link" href="/all-dois.html">All publications &amp; DOI records ↗</a></div>
         <p class="vr-muted">Project-listed public deposits. Listing a record does not imply independent validation or peer review; version-specific DOIs are preserved for provenance.</p>
-        <div class="vr-publications"><article class="vr-publication"><span class="vr-index">01</span><div><span class="vr-kicker">Software · v2.0.0</span><h3><a href="/publications/zenodo-22036769.html">VARZIN Level-1 Computational Stack: Finite Affine Core, Genomic Scanner, and Torus Manifold Solver</a></h3><p>Software release; reproducibility and mathematical/computational claims remain tied to the documented implementation and assumptions.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22036769">DOI: 10.5281/zenodo.22036769 ↗</a></div></article><article class="vr-publication"><span class="vr-index">02</span><div><span class="vr-kicker">Research record · v1.0.0</span><h3><a href="/publications/zenodo-22101179.html">Morphemes vs. Manifolds: Diagnosing Structural Blindness and Morphological Hijacking in Large Language Models via Finite Affine Orbits</a></h3><p>Frozen-model audit and negative result record; interpret within the tested models and protocol.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22101179">DOI: 10.5281/zenodo.22101179 ↗</a></div></article><article class="vr-publication"><span class="vr-index">03</span><div><span class="vr-kicker">Research record · V1.0</span><h3><a href="/publications/zenodo-22679978.html">VARZIN V2 — Recoverable but Not Composable: Representation Recovery and Systematic Composition in a Frozen Language Model</a></h3><p>Separates representation recovery from systematic composition; recovery does not by itself establish compositional generalization.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22679978">DOI: 10.5281/zenodo.22679978 ↗</a></div></article><article class="vr-publication"><span class="vr-index">04</span><div><span class="vr-kicker">Research record · v3</span><h3><a href="/publications/zenodo-22287006.html">Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery</a></h3><p>Third public version of the projection-head research record; the versioned DOI is retained separately for provenance.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22287006">DOI: 10.5281/zenodo.22287006 ↗</a></div></article><article class="vr-publication"><span class="vr-index">05</span><div><span class="vr-kicker">Research record · v2.2</span><h3><a href="/publications/zenodo-22115483.html">LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families</a></h3><p>Historical title wording retained for citation continuity; current VARZIN interpretation does not treat independent semantic-axis recovery as established.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22115483">DOI: 10.5281/zenodo.22115483 ↗</a></div></article></div>
+        <div class="vr-publications"><article class="vr-publication"><span class="vr-index">01</span><div><span class="vr-kicker">Software · v2.0.0</span><h3><a href="/publications/zenodo-22036769.html">VARZIN Level-1 Computational Stack: Finite Affine Core, Genomic Scanner, and Torus Manifold Solver</a></h3><p>Open software + companion monograph: finite-affine core, torus solver, deterministic genomic scanner, tectonic null-model audit, and versioned reproducibility files.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22036769">DOI: 10.5281/zenodo.22036769 ↗</a> <a class="vr-doi" href="/multi-track-computational-audit.html">Companion monograph →</a></div></article><article class="vr-publication"><span class="vr-index">02</span><div><span class="vr-kicker">Research record · v1.0.0</span><h3><a href="/publications/zenodo-22101179.html">Morphemes vs. Manifolds: Diagnosing Structural Blindness and Morphological Hijacking in Large Language Models via Finite Affine Orbits</a></h3><p>Direct frozen-model audit: Mistral 7B ARI −0.0337 ± 0.039 and Llama 3 8B ARI 0.0152 ± 0.028 against the designed orbit labels; the axes were not recovered under the tested protocol.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22101179">DOI: 10.5281/zenodo.22101179 ↗</a></div></article><article class="vr-publication"><span class="vr-index">03</span><div><span class="vr-kicker">Research record · V1.0</span><h3><a href="/publications/zenodo-22679978.html">VARZIN V2 — Recoverable but Not Composable: Representation Recovery and Systematic Composition in a Frozen Language Model</a></h3><p>Frozen Qwen structural information is strongly linearly decodable (mean BA 0.9666), while the preregistered composition phase reports 0/58 passes; recovery did not establish systematic composition in this experiment.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22679978">DOI: 10.5281/zenodo.22679978 ↗</a></div></article><article class="vr-publication"><span class="vr-index">04</span><div><span class="vr-kicker">Research record · v3</span><h3><a href="/publications/zenodo-22287006.html">Morphological Hijacking in Frozen Language Models: A Contrastive, Symmetry-Regularized Projection Head for Algebraic Structure Recovery</a></h3><p>v3 adds the harder composition test: a seen-pair MLP fit ≈0.996, but held-out TRUE accuracy 0.106 falls below SHUFFLED 0.281 and WRONG_OP 0.175.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22287006">DOI: 10.5281/zenodo.22287006 ↗</a></div></article><article class="vr-publication"><span class="vr-index">05</span><div><span class="vr-kicker">Research record · v2.2</span><h3><a href="/publications/zenodo-22115483.html">LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families</a></h3><p>Morphology and phonotactics remain the supported signal; semantic-axis tests are negative, and the manuscript addendum explicitly rejects the historical “AI-Recoverable” axis interpretation.</p><a class="vr-doi" href="https://doi.org/10.5281/zenodo.22115483">DOI: 10.5281/zenodo.22115483 ↗</a></div></article></div>
         <p class="vr-small"><a href="/research-outputs.json">Machine-readable research output list ↗</a></p>
       </section>
       <section class="vr-section vr-split" id="reproducibility">
         <div>
-          <p class="vr-kicker">04 / Reproducibility</p>
+          <p class="vr-kicker">05 / Reproducibility</p>
           <h2>Follow the result<br />back to its source.</h2>
           <p>
-            Reproducibility belongs to a specific artifact and release. Check
-            the version, assumptions, inputs and corrections before reusing a
-            result.
+            Reproducibility belongs to a specific artifact and release. For current scientific interpretation, this portal now prioritizes the latest relevant Zenodo manuscript and its version-matched code/data package; older prose remains provenance rather than authority over later evidence.
           </p>
           <div class="vr-actions">
             <a class="vr-button" href="https://github.com/Varzin-13"
@@ -587,7 +615,7 @@
       <section class="vr-section" id="negative-results">
         <div class="vr-section-head">
           <div>
-            <p class="vr-kicker">05 / Negative results</p>
+            <p class="vr-kicker">06 / Negative results</p>
             <h2>What the tests did not establish.</h2>
           </div>
           <p>
@@ -606,7 +634,7 @@
               3 8B against intended axis/orbit labels. This finding applies to
               those unremediated models and that protocol.
             </p>
-            <a href="/README.md">Read Track D scope ↗</a>
+            <a href="/publications/zenodo-22101179.html">Open the frozen-audit record ↗</a>
           </article>
           <article class="vr-card">
             <span class="vr-badge vr-negative"
@@ -614,11 +642,9 @@
             >
             <h3>Unseen-pair generalization</h3>
             <p>
-              Project-reported trained representation recovery did not yield
-              systematic held-out composition in the tested procedure. This is
-              not a claim about all LLM algebra.
+              In v3, seen-pair MLP fit ≈0.996 but held-out TRUE accuracy is 0.106, below SHUFFLED 0.281 and WRONG_OP 0.175. VARZIN V2 separately reports 0/58 composition passes despite mean frozen-Qwen probe BA 0.9666.
             </p>
-            <a href="/README.md">Read composition &amp; artifact limits ↗</a>
+            <a href="/ai-structure-auditing.html">Read the current AI evidence map ↗</a>
           </article>
           <article class="vr-card">
             <span class="vr-badge vr-negative">Criterion not met</span>
@@ -634,7 +660,7 @@
       </section>
       <section class="vr-section vr-split" id="provenance">
         <div id="audit">
-          <p class="vr-kicker">06 / Provenance &amp; corrections</p>
+          <p class="vr-kicker">07 / Provenance &amp; corrections</p>
           <h2>A research record<br />that can be questioned.</h2>
           <p>
             Earlier interpretations remain traceable. Corrections change the

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use material from the VARZIN research portal, please cite the specific research record or release associated with the result you use."
+message: "If you use VARZIN material, cite the exact version-specific research record or release associated with the result. For current scientific interpretation, prefer the latest relevant Zenodo manuscript and its version-matched reproducibility artifacts while preserving earlier DOI records for provenance."
 title: "VARZIN Research Portal and Reproducibility Materials"
 authors:
   - family-names: Nirouyar
