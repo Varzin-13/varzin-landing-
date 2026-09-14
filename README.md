@@ -109,9 +109,9 @@ The Core-30 public registry records 30/30 entries across five designed axes. The
 
 ## Applied research prototype
 
-**VARZIN Cognitive CAPTCHA** is a local Streamlit security prototype / SaaS MVP derived from the project's Aff(Z_12) and LUXVAR challenge construction. On 2026-09-14 the underlying generator produced 10 matched challenge trials, and a corrected local UI build completed the full 10-challenge flow without application exceptions. The public product page is https://varzin.org/cognitive-captcha.html.
+**VARZIN Cognitive CAPTCHA** now has two distinct delivery surfaces. The corrected local Streamlit MVP v1.0.2 completed the full 10-challenge flow without application exceptions. Separately, the VARZIN Cognitive Engine API is distributed commercially through RapidAPI (`varzin-cognitive-engine.p.rapidapi.com`) with a FastAPI origin hosted on Render (`varzin-engine-api.onrender.com`). The current live API contract is `GET /api/v1/generate?modulus=12&samples=5`; older material showing this call as POST is superseded. The public product page is https://varzin.org/cognitive-captcha.html and the commercial listing is https://rapidapi.com/varzin-labs-varzin-labs-default/api/varzin-cognitive-engine.
 
-This is a functional prototype, not a validated production anti-bot system. Current evidence does not establish “machine-proof” behavior, 99.98% accuracy, production false-positive/false-negative rates, or general resistance to modern automated systems.
+The academic/reproducibility layer remains the open Zenodo Level-1 software record at https://doi.org/10.5281/zenodo.22036769. Hosted SaaS availability, open research code, and scientific evidence are separate layers. The product is functional, but current evidence does not establish “machine-proof” behavior, 99.98% accuracy, production false-positive/false-negative rates, or general resistance to modern automated systems.
 
 ## Current research records
 
