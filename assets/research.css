@@ -1066,8 +1066,13 @@ html{font-synthesis:none;text-rendering:optimizeLegibility}
     contain: inline-size layout;
   }
   .vr-document .vr-table-scroll > table {
-    width: 640px !important;
-    min-width: 640px !important;
-    max-width: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    table-layout: fixed;
+  }
+  .vr-document .vr-table-scroll > table :is(th, td) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 }
