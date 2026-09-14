@@ -22,7 +22,8 @@ const fs = require("node:fs");
     "/homepage-before-redesign.html",
     "/404.html",
   ];
-  const routes = process.env.ROUTES ? process.env.ROUTES.split(",") : defaultRoutes;
+  const publicationRoutes = JSON.parse(fs.readFileSync("research-outputs.json", "utf8")).records.map((r) => new URL(r.varzinRecordUrl).pathname);
+  const routes = process.env.ROUTES ? process.env.ROUTES.split(",") : [...defaultRoutes, ...publicationRoutes];
   await Promise.all([375, 768, 1024, 1440].map(async (width) => {
     const context = await browser.newContext({
       viewport: { width, height: 1000 },
@@ -38,9 +39,10 @@ const fs = require("node:fs");
       const errors = [];
       page.removeAllListeners("pageerror");
       page.on("pageerror", (e) => errors.push(e.message));
-      await page.goto("http://127.0.0.1:4173" + route, {
+      const response = await page.goto("http://127.0.0.1:4173" + route, {
         waitUntil: "domcontentloaded",
       });
+      if (!response || response.status() >= 400) throw Error(`HTTP ${response ? response.status() : "no-response"} for ${route}`);
       await page.waitForLoadState("load");
       await page.evaluate(async () => {
         if (document.fonts?.ready) await document.fonts.ready;

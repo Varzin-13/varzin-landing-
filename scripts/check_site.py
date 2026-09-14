@@ -71,7 +71,7 @@ noindex=set(config.get('noindexFiles', []))
 expected_indexable={canonical_for(p) for p in files if rel(p) not in exempt and rel(p) not in noindex}
 missing=expected_indexable-sitemap_urls; extra=sitemap_urls-expected_indexable
 if missing: errors.append('sitemap missing: '+', '.join(sorted(missing)))
-if extra: warnings.append('sitemap extra: '+', '.join(sorted(extra)))
+if extra: errors.append('sitemap extra: '+', '.join(sorted(extra)))
 if 'Sitemap:' not in (root/'robots.txt').read_text(): errors.append('robots.txt: missing Sitemap directive')
 
 
@@ -109,10 +109,20 @@ else:
         profile=(root/'researcher.html').read_text()
         if len(outputs) < 7: errors.append(f'research-outputs.json: expected at least 7 public records, found {len(outputs)}')
         for record in outputs:
-            doi=record.get('doi',''); url=record.get('url',''); title=record.get('title','')
+            doi=record.get('doi',''); url=record.get('url',''); title=record.get('title',''); record_url=record.get('varzinRecordUrl','')
             if not doi or not url or not title: errors.append('research-outputs.json: record missing doi/url/title')
+            for key in ['publicationDate','creatorAsDeposited','creatorNormalized','orcid','resourceType','metadataSource','metadataVerified']:
+                if not record.get(key): errors.append(f'research-outputs.json: {doi} missing {key}')
             if url and url not in registry: errors.append(f'all-dois.html: missing public record {url}')
             if url and url not in profile: errors.append(f'researcher.html: missing public record {url}')
+            if record_url:
+                rp=root/urlsplit(record_url).path.lstrip('/')
+                if not rp.exists(): errors.append(f'research-outputs.json: missing VARZIN record page {record_url}')
+                else:
+                    txt=rp.read_text()
+                    if doi not in txt or title not in txt: errors.append(f'{rp.relative_to(root)}: publication identity mismatch')
+                    if record.get('resourceType')=='Preprint' and 'citation_doi' not in txt: errors.append(f'{rp.relative_to(root)}: missing scholarly citation metadata')
+            else: errors.append(f'research-outputs.json: {doi} missing varzinRecordUrl')
     except Exception as exc: errors.append(f'research-outputs.json: invalid JSON: {exc}')
 
 index_keys=list(root.glob('indexnow-*.txt'))

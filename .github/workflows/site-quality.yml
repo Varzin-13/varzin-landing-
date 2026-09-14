@@ -12,6 +12,8 @@ on:
       - "inject-seo-meta.js"
       - "sitemap.xml"
       - "robots.txt"
+      - "research-outputs.json"
+      - "publications/**"
   push:
     branches: [main]
     paths:
@@ -24,6 +26,8 @@ on:
       - "inject-seo-meta.js"
       - "sitemap.xml"
       - "robots.txt"
+      - "research-outputs.json"
+      - "publications/**"
   workflow_dispatch:
 
 permissions:
@@ -46,6 +50,7 @@ jobs:
 
       - name: Verify SEO generators are idempotent
         run: |
+          npm run publications:generate
           node inject-seo-meta.js .
           npm run sitemap:generate
           git diff --exit-code
