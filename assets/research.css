@@ -575,7 +575,11 @@ p {
 }
 .vr-table-scroll {
   overflow-x: auto;
+  width: 100%;
   max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  contain: inline-size;
   margin: 20px 0;
 }
 .vr-table-scroll table {
