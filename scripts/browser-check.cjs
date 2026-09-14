@@ -41,6 +41,13 @@ const fs = require("node:fs");
       await page.goto("http://127.0.0.1:4173" + route, {
         waitUntil: "domcontentloaded",
       });
+      await page.waitForLoadState("load");
+      await page.evaluate(async () => {
+        if (document.fonts?.ready) await document.fonts.ready;
+        await new Promise((resolve) =>
+          requestAnimationFrame(() => requestAnimationFrame(resolve)),
+        );
+      });
       const overflow = await page.evaluate(
         () => document.documentElement.scrollWidth > innerWidth,
       );
