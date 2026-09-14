@@ -1,0 +1,49 @@
+name: Notify search engines
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.html"
+      - "assets/**"
+      - "sitemap.xml"
+      - "robots.txt"
+      - "manifest.webmanifest"
+      - "indexnow-*.txt"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Wait for GitHub Pages deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          KEY_FILE=$(find . -maxdepth 1 -type f -name 'indexnow-*.txt' -printf '%f\n' | head -n1)
+          KEY=$(tr -d '\r\n' < "$KEY_FILE")
+          LIVE=0
+          for i in {1..36}; do
+            if curl -fsS --max-time 15 "https://varzin.org/$KEY_FILE" | tr -d '\r\n' | grep -Fxq "$KEY"; then
+              LIVE=1
+              break
+            fi
+            sleep 10
+          done
+          if [ "$LIVE" -ne 1 ]; then
+            echo "::warning::New IndexNow key was not visible on production within six minutes; skipping notification."
+            echo "INDEXNOW_LIVE=0" >> "$GITHUB_ENV"
+          else
+            echo "INDEXNOW_LIVE=1" >> "$GITHUB_ENV"
+          fi
+      - name: Submit current sitemap URLs to IndexNow
+        if: env.INDEXNOW_LIVE == '1'
+        run: npm run indexnow:submit
