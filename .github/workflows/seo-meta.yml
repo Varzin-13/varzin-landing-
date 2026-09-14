@@ -10,6 +10,9 @@ on:
       - "**/*.html"
       - "seo-meta.config.json"
       - "inject-seo-meta.js"
+      - "research-outputs.json"
+      - "scripts/generate-publication-pages.py"
+      - "scripts/generate-sitemap.cjs"
   workflow_dispatch:
 
 permissions:
@@ -23,10 +26,10 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
-      - name: Inject SEO meta tags
-        run: node inject-seo-meta.js .
+      - name: Generate research pages and SEO metadata
+        run: npm run site:generate
 
       - name: Commit changes if any
         run: |
