@@ -14,13 +14,21 @@
   "excludeFiles": [
     "404.html",
     "googlea6193a9448130bb8.html",
-    "googleaf108ddb056bc0b3.html"
+    "googleaf108ddb056bc0b3.html",
+    "en/index.html",
+    "greek-papers-index.html"
   ],
   "noindexFiles": [
     "vpe001-protocol.html",
     "cyclical-resonance-report.html",
     "master-report-v3.html",
     "paper/index.html",
-    "homepage-before-redesign.html"
-  ]
+    "homepage-before-redesign.html",
+    "privacy.html"
+  ],
+  "researcherName": "Reza Nirouyar",
+  "siteDescription": "Independent computational research and reproducibility: finite affine systems, LUXVAR, model auditing, corrections, negative results, and open questions.",
+  "ogImageAlt": "VARZIN Project — finite systems, open questions, traceable evidence",
+  "gaMeasurementId": "",
+  "linkedin": "https://www.linkedin.com/in/reza-nirouyar-1394aa378"
 }

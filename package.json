@@ -6,7 +6,11 @@
   "scripts": {
     "build": "node scripts/build.cjs",
     "test": "python3 scripts/check_site.py",
-    "test:browser": "node scripts/browser-check.cjs"
+    "test:browser": "node scripts/browser-check.cjs",
+    "brand:generate": "node scripts/generate-brand-assets.cjs",
+    "sitemap:generate": "node scripts/generate-sitemap.cjs",
+    "indexnow:submit": "node scripts/submit-indexnow.cjs",
+    "indexnow:dry-run": "node scripts/submit-indexnow.cjs --dry-run"
   },
   "devDependencies": {
     "@playwright/test": "1.58.2",

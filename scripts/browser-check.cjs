@@ -11,12 +11,16 @@ const fs = require("node:fs");
     "/field-index.html",
     "/all-dois.html",
     "/feedback.html",
+    "/researcher.html",
+    "/privacy.html",
+    "/fa/",
     "/luxvar-birth-intro.html",
     "/vpe001-protocol.html",
     "/cyclical-resonance-report.html",
     "/master-report-v3.html",
     "/paper/",
     "/homepage-before-redesign.html",
+    "/404.html",
   ];
   const routes = process.env.ROUTES ? process.env.ROUTES.split(",") : defaultRoutes;
   await Promise.all([375, 768, 1024, 1440].map(async (width) => {
@@ -24,13 +28,18 @@ const fs = require("node:fs");
       viewport: { width, height: 1000 },
       reducedMotion: "reduce",
     });
+    await context.route("**/*", async (requestRoute) => {
+      const url = new URL(requestRoute.request().url());
+      if (["127.0.0.1", "localhost"].includes(url.hostname)) await requestRoute.continue();
+      else await requestRoute.abort();
+    });
     const page = await context.newPage();
     for (const route of routes) {
       const errors = [];
       page.removeAllListeners("pageerror");
       page.on("pageerror", (e) => errors.push(e.message));
       await page.goto("http://127.0.0.1:4173" + route, {
-        waitUntil: "networkidle",
+        waitUntil: "domcontentloaded",
       });
       const overflow = await page.evaluate(
         () => document.documentElement.scrollWidth > innerWidth,
@@ -88,6 +97,15 @@ const fs = require("node:fs");
   if (!(await page.locator(".vr-mobile nav").isVisible()))
     throw Error("No-JS menu failed");
   await page.close();
+  const redirectContext = await browser.newContext({ viewport: { width: 1024, height: 900 } });
+  const redirectPage = await redirectContext.newPage();
+  await redirectPage.goto("http://127.0.0.1:4173/en/", { waitUntil: "domcontentloaded" });
+  await redirectPage.waitForURL("http://127.0.0.1:4173/", { timeout: 5000 }).catch(() => {});
+  if (new URL(redirectPage.url()).pathname !== "/") throw Error("Legacy /en/ redirect failed");
+  await redirectPage.goto("http://127.0.0.1:4173/greek-papers-index.html", { waitUntil: "domcontentloaded" });
+  await redirectPage.waitForURL("http://127.0.0.1:4173/all-dois.html", { timeout: 5000 }).catch(() => {});
+  if (new URL(redirectPage.url()).pathname !== "/all-dois.html") throw Error("Legacy publication redirect failed");
+  await redirectContext.close();
   fs.writeFileSync(
     "test-results/browser.json",
     JSON.stringify(results, null, 2),

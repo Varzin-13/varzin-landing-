@@ -25,3 +25,9 @@ At 375/768/1024/1440px: no document overflow; grids collapse, long DOI strings w
 
 ## 21st grounding
 Catalog searches covered editorial publication cards, research navigation, mobile menus and timelines. Retrieved and inspected Editorial Hero (ID 19075, felipemenezes098/hero-05). Adopt its serif editorial hierarchy, measured copy and primary/secondary destinations; use an original static affine diagram instead of photography. Do not port its React, Motion, text-balancer or blur dependencies into the static site. Publication rows and native navigation are original local implementations. CLI review returned six informational hardcoded-color notices; these literals define or apply the documented master palette, so automatic replacement was not appropriate.
+
+## Brand identity assets
+- Primary mark: restrained V monogram in sage/paper on dark canvas; no legacy cyan-purple glow.
+- Favicon stack: SVG mark, 32px PNG fallback, 180px Apple touch icon, 192px and 512px install icons.
+- Social card: 1200×630 editorial composition using the homepage thesis and current research scope.
+- `manifest.webmanifest` supplies consistent browser/mobile identity; it does not imply an offline application or service worker.

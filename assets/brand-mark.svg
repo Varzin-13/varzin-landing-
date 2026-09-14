@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="VARZIN V mark">
+  <rect width="512" height="512" rx="96" fill="#111513"/>
+  <rect x="92" y="72" width="328" height="368" rx="8" fill="none" stroke="#b8d899" stroke-width="12"/>
+  <path d="M164 151h47l49 183 49-183h39l-72 232h-40z" fill="#eef1e9"/>
+  <circle cx="256" cy="408" r="8" fill="#b8d899"/>
+</svg>
