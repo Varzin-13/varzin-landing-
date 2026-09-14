@@ -115,6 +115,49 @@ const fs = require("node:fs");
   await redirectPage.waitForURL("http://127.0.0.1:4173/all-dois.html", { timeout: 5000 }).catch(() => {});
   if (new URL(redirectPage.url()).pathname !== "/all-dois.html") throw Error("Legacy publication redirect failed");
   await redirectContext.close();
+
+  // Consent gate: GA4 must make no Google Analytics request before opt-in.
+  const analyticsContext = await browser.newContext({ viewport: { width: 1024, height: 900 } });
+  const analyticsPage = await analyticsContext.newPage();
+  const analyticsRequests = [];
+  analyticsPage.on("request", (request) => {
+    const host = new URL(request.url()).hostname;
+    if (host.includes("googletagmanager.com") || host.includes("google-analytics.com")) analyticsRequests.push(request.url());
+  });
+  await analyticsContext.route("**/*", async (requestRoute) => {
+    const url = new URL(requestRoute.request().url());
+    if (["127.0.0.1", "localhost"].includes(url.hostname)) await requestRoute.continue();
+    else await requestRoute.abort();
+  });
+  await analyticsPage.goto("http://127.0.0.1:4173/", { waitUntil: "load" });
+  await analyticsPage.waitForTimeout(150);
+  if (analyticsRequests.length) throw Error("GA4 requested before consent");
+  if (!(await analyticsPage.locator(".vr-consent").isVisible())) throw Error("Analytics consent panel missing");
+  await analyticsPage.locator('[data-consent="accept"]').click();
+  await analyticsPage.waitForFunction(() => localStorage.getItem("varzin-analytics-consent") === "granted");
+  await analyticsPage.waitForTimeout(250);
+  if (!analyticsRequests.some((url) => url.includes("googletagmanager.com/gtag/js"))) throw Error("GA4 did not request after consent");
+  await analyticsContext.close();
+
+  const declineContext = await browser.newContext({ viewport: { width: 1024, height: 900 } });
+  const declinePage = await declineContext.newPage();
+  const declineRequests = [];
+  declinePage.on("request", (request) => {
+    const host = new URL(request.url()).hostname;
+    if (host.includes("googletagmanager.com") || host.includes("google-analytics.com")) declineRequests.push(request.url());
+  });
+  await declineContext.route("**/*", async (requestRoute) => {
+    const url = new URL(requestRoute.request().url());
+    if (["127.0.0.1", "localhost"].includes(url.hostname)) await requestRoute.continue();
+    else await requestRoute.abort();
+  });
+  await declinePage.goto("http://127.0.0.1:4173/", { waitUntil: "load" });
+  await declinePage.locator('[data-consent="decline"]').click();
+  await declinePage.waitForFunction(() => localStorage.getItem("varzin-analytics-consent") === "denied");
+  await declinePage.waitForTimeout(150);
+  if (declineRequests.length) throw Error("GA4 requested after decline");
+  await declineContext.close();
+
   fs.writeFileSync(
     "test-results/browser.json",
     JSON.stringify(results, null, 2),
