@@ -54,5 +54,5 @@ When a historical title is stronger than later evidence, preserve the title for 
 Prefer narrow statements tied to the tested model, dataset, controls, seeds, decision rule, and version.
 
 ## Applied research product
-- https://varzin.org/cognitive-captcha.html — VARZIN Cognitive CAPTCHA. Tested local Streamlit SaaS MVP/prototype using public Aff(Z12)/LUXVAR challenge pairs. The corrected local build completed all 10 generated challenge flows without application exceptions. Production bot-resistance, human pass rate, and automated-system failure rate are not yet established.
+- https://varzin.org/cognitive-captcha.html — VARZIN Cognitive CAPTCHA. Dual delivery: tested local Streamlit MVP v1.0.2 plus a commercial FastAPI generation service distributed via RapidAPI (varzin-cognitive-engine.p.rapidapi.com) with Render hosting. Current live contract: GET /api/v1/generate with modulus and samples query parameters. Academic/open software reference: DOI 10.5281/zenodo.22036769. Production bot-resistance, human pass rate, and automated-system failure rate are not yet established.
 - Do not repeat legacy mockup claims such as “machine-proof”, “bulletproof”, or “99.98% accuracy” as current findings.

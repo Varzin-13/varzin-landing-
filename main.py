@@ -5,7 +5,8 @@ import os
 import json
 import random
 import math
-from fastapi import FastAPI, Query
+import hmac
+from fastapi import FastAPI, Query, Header, HTTPException, Depends
 import uvicorn
 from pydantic import BaseModel
 from typing import Dict, List
@@ -14,7 +15,7 @@ from typing import Dict, List
 app = FastAPI(
     title="VARZIN Engine API",
     description="B2B Cognitive CAPTCHA & LLM Benchmarking API based on Aff(Z_N) geometry.",
-    version="1.0.0"
+    version="1.0.2"
 )
 
 # --- Response Models for Auto-Documentation ---
@@ -29,6 +30,34 @@ class CaptchaTriplet(BaseModel):
 class HealthStatus(BaseModel):
     status: str
     active_engine: str
+
+
+def require_rapidapi_proxy(
+    x_rapidapi_proxy_secret: str | None = Header(default=None, alias="X-RapidAPI-Proxy-Secret")
+):
+    """Restrict billable engine calls to RapidAPI's trusted proxy.
+
+    Local/test bypass is opt-in only. Production should set RAPIDAPI_PROXY_SECRET
+    to the value shown in RapidAPI Provider Dashboard > Security/Gateway.
+    """
+    if os.environ.get("VARZIN_ALLOW_DIRECT_API") == "1":
+        return True
+
+    expected = os.environ.get("RAPIDAPI_PROXY_SECRET")
+    if not expected:
+        raise HTTPException(
+            status_code=503,
+            detail="Commercial API origin protection is not configured."
+        )
+
+    if not x_rapidapi_proxy_secret or not hmac.compare_digest(
+        x_rapidapi_proxy_secret, expected
+    ):
+        raise HTTPException(
+            status_code=403,
+            detail="Direct origin access is disabled. Use the RapidAPI gateway."
+        )
+    return True
 
 # --- Core Mathematical Engine ---
 class VarzinPGE:
@@ -77,12 +106,13 @@ class VarzinPGE:
 @app.get("/", response_model=HealthStatus, tags=["System"])
 def read_root():
     """Check if the Varzin Cloud Engine is running."""
-    return {"status": "Online", "active_engine": "Varzin B2B SaaS Level-1"}
+    return {"status": "Online", "active_engine": "Varzin B2B SaaS Level-1 / v1.0.2"}
 
 @app.get("/api/v1/generate", response_model=List[CaptchaTriplet], tags=["Data Generation"])
 def generate_challenge(
-    modulus: int = Query(12, description="The mathematical base N for the Affine group."),
-    samples: int = Query(5, description="Number of cognitive test samples to generate.")
+    modulus: int = Query(12, ge=2, le=256, description="The mathematical base N for the Affine group."),
+    samples: int = Query(5, ge=1, le=100, description="Number of cognitive test samples to generate."),
+    _rapidapi_ok: bool = Depends(require_rapidapi_proxy),
 ):
     """
     Generate a batch of Cognitive CAPTCHAs or Benchmarking logic gates.
