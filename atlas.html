@@ -146,8 +146,8 @@
       nav{justify-content:flex-start}
     }
   </style>
-</head>
-<body>
+<link rel="stylesheet" href="/assets/research.css"><script src="/assets/research.js" defer></script></head>
+<body class="vr-document"><a class="vr-skip" href="#vr-main">Skip to content</a><header class="vr-header"><a class="vr-brand" href="/" aria-label="VARZIN research home"><span class="vr-mark" aria-hidden="true">V</span>VARZIN<span class="vr-brand-sub">Independent research</span></a><nav class="vr-desktop" aria-label="Research navigation"><a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/#reproducibility">Reproducibility</a><a href="/feedback.html">Contact</a></nav><details class="vr-mobile"><summary>Menu <span aria-hidden="true">＋</span></summary><nav aria-label="Mobile research navigation"><a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/#reproducibility">Reproducibility</a><a href="/feedback.html">Contact</a></nav></details></header>
   <header>
     <div class="wrap topbar">
       <div class="brand">VARZIN Atlas<small>Complete Research Index · Evidence-first edition</small></div>
@@ -180,7 +180,7 @@
     </div>
   </div>
 
-  <main class="wrap">
+  <main id="vr-main" tabindex="-1" class="wrap">
     <section id="overview" class="panel">
       <h2>Overview</h2>
       <p>VARZIN is presented here as a bounded research program with three active questions:</p>
@@ -275,7 +275,7 @@
       <p class="small"><strong>Update (Aug 2026):</strong> a dedicated adversarial audit — "Morphemes vs. Manifolds" (<a href="https://doi.org/10.5281/zenodo.22101179">10.5281/zenodo.22101179</a>) — directly tested whether models recover the true algebraic orbit labels, rather than agreeing with each other on surface groupings. Under a strict Semantic Starvation protocol across 30 seeds each, Mistral 7B (ARI=−0.034) and Llama 3 8B (ARI=0.015) scored at random-chance level against the designed axes, falling into what the paper calls "Morphological Hijacking." <strong>Those frozen models did not recover the intended axes under that protocol; this does not settle trained interventions or every model.</strong> The 0.812 inter-model figure reflects models agreeing with each other on spelling-based groupings, not axis recovery.</p>
       <p class="small"><strong>Separate later tests:</strong> revised GPT2/Pythia/Mistral/Qwen frozen baselines remained negative; explicit GPT2/Mistral/Qwen training recovered targeted labels/group position. Appendix F group-position classification is not composition. Appendix G reported a scoped negative held-out composition test. V2 Qwen Phase2 reported 0/58 passes in another distinct experiment.</p>
       <div class="table-wrap">
-        <table>
+        <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 1; scroll horizontally for more columns"><table>
           <thead>
             <tr>
               <th>Claim Layer</th>
@@ -310,7 +310,7 @@
               <td>Cognition, semantics, or external memory</td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
       </div>
     </section>
 
@@ -428,5 +428,5 @@
       Complete revised atlas draft prepared for review and replacement. This version prioritizes evidential clarity, boundary-setting, and consistency with an evidence-first research framing while functioning as a fuller index page for the broader atlas structure.
     </div>
   </footer>
-</body>
+<footer class="vr-footer"><div><a class="vr-brand" href="/">VARZIN</a><p>Independent research. Explicit boundaries.<br>A public record that includes what did not work.</p></div><div><a href="/all-dois.html">Publications &amp; DOI records</a><a href="/CITATION.cff">Citation metadata</a><a href="/paper/">Historical archive</a></div><div><a href="https://github.com/Varzin-13">GitHub ↗</a><a href="https://orcid.org/0009-0000-4690-6842">ORCID ↗</a><a href="mailto:contact@varzin.org">contact@varzin.org</a></div><p class="vr-colophon">VARZIN Project · Reza Nirouyar <span>Evidence-first research portal / 2026</span></p></footer></body>
 </html>

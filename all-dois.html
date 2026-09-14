@@ -48,7 +48,7 @@
   <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://varzin.org/all-dois.html" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;600&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg-end:#000; --primary-glow:#00ffee; --secondary-glow:#00ffff;
@@ -83,8 +83,8 @@
     .footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--panel-border);text-align:center;font-family:var(--mono);font-size:0.8em;color:#5a8090;}
     .footer a{color:#7fa0a8;}
   </style>
-</head>
-<body>
+<link rel="stylesheet" href="/assets/research.css"><script src="/assets/research.js" defer></script></head>
+<body class="vr-document"><a class="vr-skip" href="#vr-main">Skip to content</a><header class="vr-header"><a class="vr-brand" href="/" aria-label="VARZIN research home"><span class="vr-mark" aria-hidden="true">V</span>VARZIN<span class="vr-brand-sub">Independent research</span></a><nav class="vr-desktop" aria-label="Research navigation"><a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/#reproducibility">Reproducibility</a><a href="/feedback.html">Contact</a></nav><details class="vr-mobile"><summary>Menu <span aria-hidden="true">＋</span></summary><nav aria-label="Mobile research navigation"><a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/#reproducibility">Reproducibility</a><a href="/feedback.html">Contact</a></nav></details></header><main id="vr-main" tabindex="-1">
 <canvas id="field-canvas"></canvas>
 <div class="container">
 
@@ -166,7 +166,7 @@
       The “Withdrawal requested” row labels reproduce the historical project action register. Following the project’s adversarial audit, the author subsequently removed the 29 earlier records from public access. This table does not certify their present platform-specific archival status. <strong>HOLD:</strong> 2NKZA appears in this old register, while later project documentation identifies it as a VPE-001A registration. Its identity and current access status require primary platform reconciliation.
     </p>
 
-    <table class="withdrawn-table">
+    <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 1; scroll horizontally for more columns"><table class="withdrawn-table">
       <tr><th>Platform</th><th>Original DOI</th><th>Historical project action</th></tr>
       <tr><td>Zenodo</td><td>10.5281/zenodo.15833167</td><td>Withdrawal requested</td></tr>
       <tr><td>Zenodo</td><td>10.5281/zenodo.16416098</td><td>Withdrawal requested</td></tr>
@@ -197,7 +197,7 @@
       <tr><td>OSF</td><td>10.17605/OSF.IO/6JG37</td><td>Withdrawal requested</td></tr>
       <tr><td>OSF</td><td>10.17605/OSF.IO/2NKZA</td><td>Listed in earlier action register; HOLD: later VPE registration identity/status unresolved</td></tr>
       <tr><td>OSF</td><td>10.17605/OSF.IO/NQZRS</td><td>Withdrawal requested</td></tr>
-    </table>
+    </table></div>
   </details>
 
   <div class="status-panel" style="margin-top:24px;">
@@ -219,31 +219,6 @@
 
 </div>
 
-<script>
-const canvas=document.getElementById('field-canvas'),ctx=canvas.getContext('2d');
-function resize(){canvas.width=innerWidth;canvas.height=innerHeight;}
-resize();
-window.addEventListener('resize',resize);
-let pts=[];
-for(let i=0;i<70;i++)pts.push({
-  x:Math.random()*innerWidth,
-  y:Math.random()*innerHeight,
-  dx:(Math.random()-.5)*.3,
-  dy:(Math.random()-.5)*.3
-});
-(function loop(){
-  ctx.fillStyle='rgba(0,0,0,.15)';
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-  for(const p of pts){
-    p.x+=p.dx;
-    p.y+=p.dy;
-    if(p.x<0||p.x>canvas.width)p.dx*=-1;
-    if(p.y<0||p.y>canvas.height)p.dy*=-1;
-    ctx.fillStyle='rgba(0,200,220,.3)';
-    ctx.fillRect(p.x,p.y,1.5,1.5);
-  }
-  requestAnimationFrame(loop);
-})();
-</script>
-</body>
+
+</main><footer class="vr-footer"><div><a class="vr-brand" href="/">VARZIN</a><p>Independent research. Explicit boundaries.<br>A public record that includes what did not work.</p></div><div><a href="/all-dois.html">Publications &amp; DOI records</a><a href="/CITATION.cff">Citation metadata</a><a href="/paper/">Historical archive</a></div><div><a href="https://github.com/Varzin-13">GitHub ↗</a><a href="https://orcid.org/0009-0000-4690-6842">ORCID ↗</a><a href="mailto:contact@varzin.org">contact@varzin.org</a></div><p class="vr-colophon">VARZIN Project · Reza Nirouyar <span>Evidence-first research portal / 2026</span></p></footer></body>
 </html>

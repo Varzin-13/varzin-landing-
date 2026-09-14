@@ -47,9 +47,9 @@
   <title>VARZIN Field Index — Level-1 Reproducible Stack</title>
   <meta name="description" content="Evidence-first visual portal for VARZIN: affine systems, Mirror-13, SHA-256 deterministic core, LUXVAR Core-30, negative findings, and archive boundaries." />
   <meta name="author" content="Revised public draft for VARZIN" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     :root{
@@ -244,8 +244,8 @@
     .arc-node p{margin:0;color:var(--muted);font-size:.92rem}
     .arc-tag{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
   </style>
-</head>
-<body>
+<link rel="stylesheet" href="/assets/research.css"><script src="/assets/research.js" defer></script></head>
+<body class="vr-document"><a class="vr-skip" href="#vr-main">Skip to content</a><header class="vr-header"><a class="vr-brand" href="/" aria-label="VARZIN research home"><span class="vr-mark" aria-hidden="true">V</span>VARZIN<span class="vr-brand-sub">Independent research</span></a><nav class="vr-desktop" aria-label="Research navigation"><a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/#reproducibility">Reproducibility</a><a href="/feedback.html">Contact</a></nav><details class="vr-mobile"><summary>Menu <span aria-hidden="true">＋</span></summary><nav aria-label="Mobile research navigation"><a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/#reproducibility">Reproducibility</a><a href="/feedback.html">Contact</a></nav></details></header>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
       <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
@@ -332,7 +332,7 @@
     </div>
   </div>
 
-  <main class="wrap">
+  <main id="vr-main" tabindex="-1" class="wrap">
     <section id="arc" class="panel reveal">
       <h2>Project Arc</h2>
       <p>The timeline below reflects the project’s actual documented turns, not a marketing sequence. Each stage changed what could be publicly claimed.</p>
@@ -750,7 +750,7 @@
     <section class="panel reveal">
       <h2>Core-30 Summary Table</h2>
       <div class="table-wrap reveal">
-        <table>
+        <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 1; scroll horizontally for more columns"><table>
           <thead>
             <tr>
               <th>Layer</th>
@@ -785,7 +785,7 @@
               <td>Proof that Mirror-13 is the unique semantic key</td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
       </div>
     </section>
 
@@ -1012,17 +1012,9 @@
       ctx.fillText('a=' + fam.a, cx, cy);
     }
 
-    if(reduced){
-      draw(0);
-    } else {
-      (function loop(){
-        t += 1;
-        if(t % 260 === 0){ activeFamily = (activeFamily + 1) % families.length; }
-        draw(t * 0.0022);
-        requestAnimationFrame(loop);
-      })();
-    }
+    // Keep the atlas illustration static for comfortable reading.
+    draw(0);
   })();
   </script>
-</body>
+<footer class="vr-footer"><div><a class="vr-brand" href="/">VARZIN</a><p>Independent research. Explicit boundaries.<br>A public record that includes what did not work.</p></div><div><a href="/all-dois.html">Publications &amp; DOI records</a><a href="/CITATION.cff">Citation metadata</a><a href="/paper/">Historical archive</a></div><div><a href="https://github.com/Varzin-13">GitHub ↗</a><a href="https://orcid.org/0009-0000-4690-6842">ORCID ↗</a><a href="mailto:contact@varzin.org">contact@varzin.org</a></div><p class="vr-colophon">VARZIN Project · Reza Nirouyar <span>Evidence-first research portal / 2026</span></p></footer></body>
 </html>

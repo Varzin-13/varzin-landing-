@@ -4,7 +4,7 @@
 <!-- SEO-META:START -->
 <!-- Auto-generated — do not hand-edit between these markers.
      Edit seo-meta.config.json and re-run inject-seo-meta.js instead. -->
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, follow">
 <meta name="generator" content="VARZIN Project">
 <meta name="rating" content="General">
 
@@ -46,7 +46,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VARZIN — Master Report v3 · Phases I–XX · Affine Memory Family · 2026-06-16</title>
 <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --bg:#0d0f14; --paper:#f6f5f0; --dim:#e8e6df; --rule:#d0cdc4;
@@ -189,8 +189,8 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
   .vmap-cell{border-right:none!important;}
 }
 </style>
-</head>
-<body>
+<link rel="stylesheet" href="/assets/research.css"><script src="/assets/research.js" defer></script></head>
+<body class="vr-document"><a class="vr-skip" href="#vr-main">Skip to content</a><header class="vr-header"><a class="vr-brand" href="/" aria-label="VARZIN research home"><span class="vr-mark" aria-hidden="true">V</span>VARZIN<span class="vr-brand-sub">Independent research</span></a><nav class="vr-desktop" aria-label="Research navigation"><a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/#reproducibility">Reproducibility</a><a href="/feedback.html">Contact</a></nav><details class="vr-mobile"><summary>Menu <span aria-hidden="true">＋</span></summary><nav aria-label="Mobile research navigation"><a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/#reproducibility">Reproducibility</a><a href="/feedback.html">Contact</a></nav></details></header><main id="vr-main" tabindex="-1"><aside class="vr-archive-notice" aria-label="Historical record"><strong>Historical research record</strong><p>Preserved for provenance. Original claims and study plans may be superseded; they do not establish physical fields, independent semantics or human outcomes. Read the <a href="/README.md">current research position</a> and <a href="/all-dois.html">record identity and correction notes</a>.</p></aside>
 
 <!-- SIDEBAR -->
 <nav class="sidebar">
@@ -279,7 +279,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
   </div>
 
   <h3>Full Q-Table — All 13 Questions</h3>
-  <table class="dtable">
+  <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 1; scroll horizontally for more columns"><table class="dtable">
     <tr><th>Q</th><th>Question</th><th>Result</th><th>Value</th><th>Status</th></tr>
     <tr><td>Q1</td><td>Total rows</td><td>1,300,000,000</td><td class="td-r">—</td><td class="td-ok">✓ CONFIRMED</td></tr>
     <tr><td>Q2</td><td>Unique roots</td><td>801</td><td class="td-r">—</td><td class="td-ok">✓ CONFIRMED</td></tr>
@@ -294,7 +294,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
     <tr><td>Q10</td><td>Graph leakage acc</td><td>acc = 0.833</td><td class="td-r">z=6.504 · p≈0</td><td class="td-ok">✓ LEAKAGE</td></tr>
     <tr><td>Q12</td><td>Leakage Δ</td><td>Δ = +0.833</td><td class="td-r">confirmed</td><td class="td-ok">✓ CONFIRMED</td></tr>
     <tr><td>Q13</td><td>Computational verdict</td><td colspan="2">SEMANTIC AXES NOT COMPUTATIONALLY CONFIRMED</td><td class="td-fail">→ VPE-001 REQUIRED</td></tr>
-  </table>
+  </table></div>
 
   <h3>k-Elbow Analysis — Why k=3 and NOT k=6</h3>
   <div style="margin:12px 0 6px;font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:1px;">SSE DROP % PER k (801 UNIQUE ROOTS · N=1.3B)</div>
@@ -331,12 +331,12 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
     </div>
     <div>
       <h3>Three-Arm Summary</h3>
-      <table class="dtable">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 2; scroll horizontally for more columns"><table class="dtable">
         <tr><th>ARM</th><th>Design</th><th>Result</th></tr>
         <tr><td>ARM1</td><td>No injection baseline</td><td class="td-ok">All p&gt;0.05 ✓</td></tr>
         <tr><td>ARM2 (1.3B)</td><td>Full scan · blind search</td><td class="td-ok">rank-1 correct ✓</td></tr>
         <tr><td>ARM3</td><td>Shuffled control</td><td class="td-ok">No signal ✓</td></tr>
-      </table>
+      </table></div>
       <div class="ok-box"><strong>Publishable claim:</strong> Periodic injection structure in a synthetic LUXVAR corpus (N=1.3B) is statistically recoverable blind. True interval (100k) achieves rank-1 with chi2=90,981, enrichment=8.00×, p≈0. Multiples (200k, 500k) also detected. All 8 intervals Bonferroni-significant (α=0.00625).</div>
     </div>
   </div>
@@ -367,7 +367,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
   </div>
 
   <h3>All Seven Models — VBE-001</h3>
-  <table class="dtable">
+  <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 3; scroll horizontally for more columns"><table class="dtable">
     <tr><th>Model</th><th>Acc</th><th>κ</th><th>Assessment</th></tr>
     <tr><td>A — Random baseline</td><td class="td-r td-fail">0.000</td><td class="td-r">−0.250</td><td class="td-fail">Below chance</td></tr>
     <tr><td>B — Morphology-only</td><td class="td-r td-warn">0.700</td><td class="td-r">0.625</td><td>Same as ETFM — not distinguished</td></tr>
@@ -377,7 +377,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
     <tr><td>F — ETFM-POST</td><td class="td-r td-warn">0.700</td><td class="td-r">0.625</td><td class="td-warn">TIED with morphology-only</td></tr>
     <tr><td>G — Human (simulated)</td><td class="td-r td-warn">0.700</td><td class="td-r">0.625</td><td>—</td></tr>
     <tr><td>F_shuffled (falsifiability)</td><td class="td-r td-ok">0.100</td><td class="td-r">−0.125</td><td class="td-ok">✓ Falsifiability confirmed</td></tr>
-  </table>
+  </table></div>
   <div class="info-box">Permutation test: z=3.33, p=0.020 (significant vs random). But ETFM cannot currently be distinguished from morphology-only. This is the key limitation requiring VPE-001.</div>
 
   <h3>Key Interpretation</h3>
@@ -392,12 +392,12 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
 
   <div class="two">
     <div>
-      <table class="dtable">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 4; scroll horizontally for more columns"><table class="dtable">
         <tr><th>Test</th><th>Features</th><th>Acc</th><th>Interpretation</th></tr>
         <tr><td>Q9 — Graph clean</td><td>Topology ONLY (no axis labels)</td><td class="td-r td-fail">0.000</td><td>Blind — axes invisible</td></tr>
         <tr><td>Q10 — Graph leakage</td><td>Topology + axis-labelled features</td><td class="td-r td-ok">0.833</td><td>Circular — axis encoded</td></tr>
         <tr><td>Delta</td><td>—</td><td class="td-r td-warn">+0.833</td><td class="td-warn">Leakage confirmed</td></tr>
-      </table>
+      </table></div>
       <div class="bar-row">
         <span class="bar-lbl">Graph clean (no labels)</span>
         <div class="bar-track"><div class="bar-fill" style="width:0%;background:var(--red);"></div></div>
@@ -578,7 +578,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
   <div class="two">
     <div>
       <h3>What Is Confirmed</h3>
-      <table class="dtable">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 5; scroll horizontally for more columns"><table class="dtable">
         <tr><th>Claim</th><th>Status</th></tr>
         <tr><td>Generator injects 474Hz marker every 100k layers</td><td class="td-ok">✓ CONFIRMED</td></tr>
         <tr><td>Marker detectable blind (chi2=90,981, rank-1/8)</td><td class="td-ok">✓ CONFIRMED</td></tr>
@@ -586,7 +586,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
         <tr><td>474Hz affects human perception differently than 432Hz</td><td class="td-fail">✗ NOT TESTED</td></tr>
         <tr><td>474Hz produces measurable cognitive difference vs random</td><td class="td-fail">✗ NOT TESTED</td></tr>
         <tr><td>474Hz has any effect independent of design choice</td><td class="td-fail">✗ NOT TESTED</td></tr>
-      </table>
+      </table></div>
     </div>
     <div>
       <h3>The Golden Experiment</h3>
@@ -617,7 +617,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
 
   <div class="two">
     <div>
-      <table class="dtable">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 6; scroll horizontally for more columns"><table class="dtable">
         <tr><th>Parameter</th><th>Value</th></tr>
         <tr><td>Task</td><td>Classify 30 Core-30 words into 5 axes</td></tr>
         <tr><td>Raters</td><td>≥ 5 independent, blind to LUXVAR</td></tr>
@@ -625,7 +625,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
         <tr><td>Metric</td><td>Fleiss κ (multi-rater agreement)</td></tr>
         <tr><td>Seed</td><td>130,474,528 (fixed, pre-registered)</td></tr>
         <tr><td>Blocker</td><td>KB imbalance (Path B review pending)</td></tr>
-      </table>
+      </table></div>
       <div class="ok-box"><strong>Pre-registered thresholds:</strong><br>
         κ ≥ 0.50 → STRONG — axes inter-subjectively valid<br>
         κ ≥ 0.40 → PRIMARY — minimum for publication<br>
@@ -635,7 +635,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
     </div>
     <div>
       <h3>KB Imbalance — Blocker</h3>
-      <table class="dtable">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 7; scroll horizontally for more columns"><table class="dtable">
         <tr><th>Axis</th><th>KB Entries</th><th>Status</th></tr>
         <tr><td>Light</td><td class="td-r">1,443</td><td class="td-ok">✓ OK</td></tr>
         <tr><td>Motion</td><td class="td-r">1,356</td><td class="td-ok">✓ OK</td></tr>
@@ -643,7 +643,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
         <tr><td>Gate</td><td class="td-r">17</td><td class="td-fail">✗ CRITICAL</td></tr>
         <tr><td>Silence</td><td class="td-r">3</td><td class="td-fail">✗ CRITICAL</td></tr>
         <tr><td>Reflection</td><td class="td-r">2</td><td class="td-fail">✗ CRITICAL</td></tr>
-      </table>
+      </table></div>
       <div class="err-box"><strong>Path B review required:</strong> 90-entry batch (30 per axis) must be reviewed and accepted (≥70%) before VPE-001 can begin.</div>
     </div>
   </div>
@@ -654,7 +654,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
   <div class="sec-label">Roadmap</div>
   <h2>Complete Project Roadmap</h2>
 
-  <table class="dtable">
+  <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 8; scroll horizontally for more columns"><table class="dtable">
     <tr><th>Stage</th><th>Status</th><th>What It Proves</th></tr>
     <tr><td>Initial idea + framework</td><td class="td-ok">✓ DONE</td><td>Internal consistency</td></tr>
     <tr><td>LUXVAR corpus built (801 roots)</td><td class="td-ok">✓ DONE</td><td>Non-random morphological structure (z=4.36)</td></tr>
@@ -674,7 +674,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
     <tr><td>LUXVAR-EMERGENCE-001-v2</td><td class="td-fail">✗ CLOSED — NEGATIVE</td><td>N=200, pre-registered · signal attributable to component choice, not combination</td></tr>
     <tr><td>PATH B: VPE-001A (≥5 blind raters)</td><td class="td-fail">⏳ PENDING</td><td>Fleiss κ≥0.40 · morpheme vs axis · only remaining non-circular test</td></tr>
     <tr><td>PATH C: External memory real test</td><td class="td-fail">⏳ BLOCKED</td><td>z&gt;2.0 on ≥3 trials · affine-compatible receiver required</td></tr>
-  </table>
+  </table></div>
 
   <div style="margin-top:28px;background:var(--bg);border-radius:4px;padding:24px 28px;">
     <div style="font-family:var(--mono);font-size:9px;color:var(--cyan);margin-bottom:12px;letter-spacing:2px;">FINAL SCIENTIFIC BOUNDARY — MASTER REPORT v3 · 2026-06-12</div>
@@ -684,7 +684,7 @@ footer{background:var(--bg);color:#3a5060;text-align:center;padding:32px 20px;fo
       LUXVAR has statistically significant morphological structure (z=4.36). Natural k=3 (1.3B scan). Hexacore k=5/6 NOT confirmed. Root→Frequency V≈0.003 (negligible). Morphology acc=0.40 (p=0.633, ns). Graph clean acc=0.000. Graph leakage acc=0.833 (Δ=+0.833) — leakage confirmed. Hexacore remains an ontology under investigation. VPE-001 is the only remaining non-circular test.<br><br>
       <strong style="color:var(--gold);">Next required step: VPE-001 execution with ≥5 independent blind raters.</strong>
     </p>
-  
+
 
 <!-- ── AFFINE FAMILY (NEW) ── -->
 <div class="section" id="affine">
@@ -770,10 +770,10 @@ Injected prior:   acc = 1.000  <span style="color:#18b060;">← direct</span>
   <div class="two">
     <div>
       <div class="info-box"><strong>POT-004 — Testable Prediction:</strong> Wrong prior (acc=0.000) is far worse than no prior (acc=0.725). If the VARZIN protocol induces a structurally wrong prior, it is more harmful than no protocol at all.</div>
-      <div class="info-box" style="border-color:rgba(200,148,10,.3);background:rgba(200,148,10,.06);color:#c8940a;margin-top:12px;"><strong>Phase 19 (Sealed Target):</strong> MirrorAnchor z=−1.042 (below chance). Oracle=1.000 — pipeline verified. EXTERNAL_MEMORY_NOT_ESTABLISHED. Receiver must have affine-compatible prior (Phase 20 finding).</div>
+      <div class="info-box" style="border-color:rgba(200,148,10,.3);background:rgba(200,148,10,.06);color:#c8940a;margin-top:12px;"><strong id="phase19">Phase 19 (Sealed Target):</strong> MirrorAnchor z=−1.042 (below chance). Oracle=1.000 — pipeline verified. EXTERNAL_MEMORY_NOT_ESTABLISHED. Receiver must have affine-compatible prior (Phase 20 finding).</div>
     </div>
     <div>
-      <table class="dtable">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 9; scroll horizontally for more columns"><table class="dtable">
         <tr><th>Test</th><th>Verdict</th><th>Key Finding</th></tr>
         <tr><td>POT-001 Alignment</td><td class="td-ok">CONFIRMED</td><td>Recall ∝ prior · Δ=+0.275</td></tr>
         <tr><td>POT-002 Origin</td><td class="td-ok">INJECTED BEST</td><td>1.000 > 0.861 > 0.725 > 0.000</td></tr>
@@ -782,7 +782,7 @@ Injected prior:   acc = 1.000  <span style="color:#18b060;">← direct</span>
         <tr><td>POT-005 Emergence</td><td class="td-ok">EMERGES</td><td>100% episodes · query #1</td></tr>
         <tr><td>Phase 19 Sealed</td><td class="td-fail">NOT EST.</td><td>z=−1.042 · Oracle=1.000 ✓</td></tr>
         <tr><td>Phase 20 Structure</td><td class="td-ok">STRUCT. MATCH</td><td>AffWorld #1 · DOMAIN SPECIFIC</td></tr>
-      </table>
+      </table></div>
     </div>
   </div>
 </div>
@@ -900,5 +900,5 @@ function buildElbow(){
 }
 window.addEventListener('load',buildElbow);
 </script>
-</body>
+</main><footer class="vr-footer"><div><a class="vr-brand" href="/">VARZIN</a><p>Independent research. Explicit boundaries.<br>A public record that includes what did not work.</p></div><div><a href="/all-dois.html">Publications &amp; DOI records</a><a href="/CITATION.cff">Citation metadata</a><a href="/paper/">Historical archive</a></div><div><a href="https://github.com/Varzin-13">GitHub ↗</a><a href="https://orcid.org/0009-0000-4690-6842">ORCID ↗</a><a href="mailto:contact@varzin.org">contact@varzin.org</a></div><p class="vr-colophon">VARZIN Project · Reza Nirouyar <span>Evidence-first research portal / 2026</span></p></footer></body>
 </html>

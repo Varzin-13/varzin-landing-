@@ -4,7 +4,7 @@
 <!-- SEO-META:START -->
 <!-- Auto-generated — do not hand-edit between these markers.
      Edit seo-meta.config.json and re-run inject-seo-meta.js instead. -->
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, follow">
 <meta name="generator" content="VARZIN Project">
 <meta name="rating" content="General">
 
@@ -48,7 +48,7 @@
   <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="canonical" href="https://varzin.org/vpe001-protocol.html" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+
 
   <style>
     :root {
@@ -290,8 +290,8 @@
       .spec-table td:first-child { width: 50%; }
     }
   </style>
-</head>
-<body>
+<link rel="stylesheet" href="/assets/research.css"><script src="/assets/research.js" defer></script></head>
+<body class="vr-document"><a class="vr-skip" href="#vr-main">Skip to content</a><header class="vr-header"><a class="vr-brand" href="/" aria-label="VARZIN research home"><span class="vr-mark" aria-hidden="true">V</span>VARZIN<span class="vr-brand-sub">Independent research</span></a><nav class="vr-desktop" aria-label="Research navigation"><a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/#reproducibility">Reproducibility</a><a href="/feedback.html">Contact</a></nav><details class="vr-mobile"><summary>Menu <span aria-hidden="true">＋</span></summary><nav aria-label="Mobile research navigation"><a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/#reproducibility">Reproducibility</a><a href="/feedback.html">Contact</a></nav></details></header><main id="vr-main" tabindex="-1"><aside class="vr-archive-notice" aria-label="Historical record"><strong>Historical research record</strong><p>Preserved for provenance. Original claims and study plans may be superseded; they do not establish physical fields, independent semantics or human outcomes. Read the <a href="/README.md">current research position</a> and <a href="/all-dois.html">record identity and correction notes</a>.</p></aside>
   <canvas id="field-canvas"></canvas>
 
   <div class="container">
@@ -328,7 +328,7 @@
     <!-- Study Design -->
     <div class="info-panel">
       <h2>Study Design</h2>
-      <table class="spec-table">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 1; scroll horizontally for more columns"><table class="spec-table">
         <tr><td>Target evaluators</td><td>N = 40 (minimum 30)</td></tr>
         <tr><td>Eligibility</td><td>Adult; no prior LUXVAR exposure; independent of VARZIN development</td></tr>
         <tr><td>LUXVAR stimuli</td><td>80 canonical words (Core + Numeric sets)</td></tr>
@@ -337,13 +337,13 @@
         <tr><td>Majority-class baseline</td><td>27.5% (Reflection, 22/80 items)</td></tr>
         <tr><td>Accuracy floor</td><td>≥ 30% (pre-registered)</td></tr>
         <tr><td>Calibration phase</td><td>5 evaluators, 20 items, Fleiss' Kappa ≥ 0.15</td></tr>
-      </table>
+      </table></div>
     </div>
 
     <!-- Statistical Pipeline -->
     <div class="info-panel">
       <h2>Statistical Pipeline</h2>
-      <table class="spec-table">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 2; scroll horizontally for more columns"><table class="spec-table">
         <tr><td>Primary metric</td><td>Fleiss' Kappa (inter-rater agreement)</td></tr>
         <tr><td>Primary test</td><td>Permutation test vs majority-class baseline</td></tr>
         <tr><td>Secondary test</td><td>Chi-square</td></tr>
@@ -351,7 +351,7 @@
         <tr><td>Sensitivity analysis</td><td>Exclude participants flagging ≥ 10 familiar items</td></tr>
         <tr><td>Alternative explanations</td><td>AE-1 Sound symbolism · AE-2 Phonaesthetic bias · AE-3 Orthographic bias</td></tr>
         <tr><td>Subgroup analysis</td><td>Core Set (n=30) vs Numeric Set (n=50) — v1.4 Addendum</td></tr>
-      </table>
+      </table></div>
     </div>
 
     <!-- Success Criteria -->
@@ -453,35 +453,6 @@
     </footer>
   </div>
 
-  <script>
-    // Minimal particle background
-    const canvas = document.getElementById('field-canvas');
-    const ctx = canvas.getContext('2d');
-    function resize() { canvas.width = innerWidth; canvas.height = innerHeight; }
-    resize();
-    window.addEventListener('resize', resize);
 
-    const pts = [];
-    for (let i = 0; i < 80; i++) {
-      pts.push({
-        x: Math.random() * innerWidth, y: Math.random() * innerHeight,
-        dx: (Math.random() - 0.5) * 0.4, dy: (Math.random() - 0.5) * 0.4
-      });
-    }
-
-    function animate() {
-      ctx.fillStyle = 'rgba(0,0,0,0.25)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      for (const p of pts) {
-        p.x += p.dx; p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-        ctx.fillStyle = 'rgba(0,255,238,0.4)';
-        ctx.fillRect(p.x, p.y, 2, 2);
-      }
-      requestAnimationFrame(animate);
-    }
-    animate();
-  </script>
-</body>
+</main><footer class="vr-footer"><div><a class="vr-brand" href="/">VARZIN</a><p>Independent research. Explicit boundaries.<br>A public record that includes what did not work.</p></div><div><a href="/all-dois.html">Publications &amp; DOI records</a><a href="/CITATION.cff">Citation metadata</a><a href="/paper/">Historical archive</a></div><div><a href="https://github.com/Varzin-13">GitHub ↗</a><a href="https://orcid.org/0009-0000-4690-6842">ORCID ↗</a><a href="mailto:contact@varzin.org">contact@varzin.org</a></div><p class="vr-colophon">VARZIN Project · Reza Nirouyar <span>Evidence-first research portal / 2026</span></p></footer></body>
 </html>

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+.codex/
+review-shots/
+CODEX_VARZIN_REDESIGN.md

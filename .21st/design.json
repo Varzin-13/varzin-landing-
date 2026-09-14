@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "project": {
+    "name": "varzin-landing-",
+    "productType": "Independent research publication portal",
+    "stack": [
+      "static HTML",
+      "CSS",
+      "progressive JavaScript"
+    ]
+  },
+  "sources": {
+    "tokens": [
+      "assets/research.css"
+    ],
+    "components": [],
+    "assets": [
+      "assets"
+    ],
+    "instructions": [
+      "design-system/MASTER.md"
+    ]
+  },
+  "design": {
+    "colorMode": "dark",
+    "colors": {},
+    "typography": {},
+    "spacing": {},
+    "radius": {},
+    "shadows": {},
+    "motion": {},
+    "density": "unknown"
+  },
+  "components": {
+    "installed": [],
+    "preferredPrimitives": [],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [],
+    "avoid": []
+  },
+  "decisions": [
+    "Use sage and dark-neutral editorial styling with system fonts.",
+    "Retain static URLs and explicit evidence boundaries.",
+    "21st Editorial Hero 19075 reviewed for restrained typography and optional motion; original static implementation, no React dependency."
+  ],
+  "evidence": [],
+  "generatedAt": "2026-09-13T23:20:56.103Z"
+}

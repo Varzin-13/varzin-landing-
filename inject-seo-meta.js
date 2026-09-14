@@ -17,6 +17,10 @@ const END_MARK = "<!-- SEO-META:END -->";
 
 const IGNORE_DIRS = new Set([
   "node_modules",
+  ".codex",
+  ".agents",
+  ".21st",
+  "test-results",
   ".git",
   ".github",
   "dist",
