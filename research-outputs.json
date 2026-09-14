@@ -12,7 +12,28 @@
       "doi": "10.5281/zenodo.22101179",
       "url": "https://doi.org/10.5281/zenodo.22101179",
       "repository": "Zenodo",
-      "scope": "Frozen-model audit and negative result record; interpret within the tested models and protocol."
+      "scope": "Frozen-model audit and negative result record; interpret within the tested models and protocol.",
+      "publicationDate": "2026-08-25",
+      "creatorAsDeposited": "NIROUYAR, REZA",
+      "creatorNormalized": "Reza Nirouyar",
+      "orcid": "0009-0000-4690-6842",
+      "resourceType": "Preprint",
+      "license": null,
+      "accessRight": "open",
+      "zenodoRecordUrl": "https://zenodo.org/records/22101179",
+      "metadataSource": "Zenodo REST API",
+      "metadataVerified": "2026-09-14",
+      "varzinRecordUrl": "https://varzin.org/publications/zenodo-22101179.html",
+      "keywords": [
+        "Large Language Models",
+        "Artificial Intelligence",
+        "Structural Abstraction",
+        "Representational Geometry",
+        "Model Evaluation",
+        "Semantic Starvation",
+        "Finite Affine Group",
+        "LUXVAR Core-30"
+      ]
     },
     {
       "id": "zenodo-22679978",
@@ -23,7 +44,32 @@
       "doi": "10.5281/zenodo.22679978",
       "url": "https://doi.org/10.5281/zenodo.22679978",
       "repository": "Zenodo",
-      "scope": "Separates representation recovery from systematic composition; recovery does not by itself establish compositional generalization."
+      "scope": "Separates representation recovery from systematic composition; recovery does not by itself establish compositional generalization.",
+      "publicationDate": "2026-09-09",
+      "creatorAsDeposited": "Nirouyar, Reza",
+      "creatorNormalized": "Reza Nirouyar",
+      "orcid": "0009-0000-4690-6842",
+      "resourceType": "Preprint",
+      "license": "CC BY 4.0",
+      "accessRight": "open",
+      "zenodoRecordUrl": "https://zenodo.org/records/22679978",
+      "metadataSource": "Zenodo REST API",
+      "metadataVerified": "2026-09-14",
+      "varzinRecordUrl": "https://varzin.org/publications/zenodo-22679978.html",
+      "keywords": [
+        "frozen language models",
+        "representation recovery",
+        "compositional generalization",
+        "systematic generalization",
+        "mechanistic interpretability",
+        "probing",
+        "algebraic structure",
+        "synthetic language",
+        "morphology",
+        "reproducibility",
+        "Qwen2.5-1.5B-Instruct",
+        "VARZIN V2"
+      ]
     },
     {
       "id": "zenodo-22115483",
@@ -34,7 +80,27 @@
       "doi": "10.5281/zenodo.22115483",
       "url": "https://doi.org/10.5281/zenodo.22115483",
       "repository": "Zenodo",
-      "scope": "Historical title wording retained for citation continuity; current VARZIN interpretation does not treat independent semantic-axis recovery as established."
+      "scope": "Historical title wording retained for citation continuity; current VARZIN interpretation does not treat independent semantic-axis recovery as established.",
+      "publicationDate": "2026-08-26",
+      "creatorAsDeposited": "Reza, Nirouyar",
+      "creatorNormalized": "Reza Nirouyar",
+      "orcid": "0009-0000-4690-6842",
+      "resourceType": "Preprint",
+      "license": "CC BY 4.0",
+      "accessRight": "open",
+      "zenodoRecordUrl": "https://zenodo.org/records/22115483",
+      "metadataSource": "Zenodo REST API",
+      "metadataVerified": "2026-09-14",
+      "varzinRecordUrl": "https://varzin.org/publications/zenodo-22115483.html",
+      "keywords": [
+        "Computational Linguistics",
+        "Artificial Languages",
+        "Constructed Languages",
+        "Morphology",
+        "Phonology",
+        "Natural Language Processing",
+        "Artificial Intelligence"
+      ]
     },
     {
       "id": "zenodo-22036769",
@@ -45,7 +111,27 @@
       "doi": "10.5281/zenodo.22036769",
       "url": "https://doi.org/10.5281/zenodo.22036769",
       "repository": "Zenodo",
-      "scope": "Software release; reproducibility and mathematical/computational claims remain tied to the documented implementation and assumptions."
+      "scope": "Software release; reproducibility and mathematical/computational claims remain tied to the documented implementation and assumptions.",
+      "publicationDate": "2026-08-21",
+      "creatorAsDeposited": "Nirouyar, Reza",
+      "creatorNormalized": "Reza Nirouyar",
+      "orcid": "0009-0000-4690-6842",
+      "resourceType": "Software",
+      "license": "MIT",
+      "accessRight": "open",
+      "zenodoRecordUrl": "https://zenodo.org/records/22036769",
+      "metadataSource": "Zenodo REST API",
+      "metadataVerified": "2026-09-14",
+      "varzinRecordUrl": "https://varzin.org/publications/zenodo-22036769.html",
+      "keywords": [
+        "Finite Affine",
+        "Genomic Scanner",
+        "Torus Manifold",
+        "Computational Stack",
+        "Numerical Solver",
+        "Cognitive Prior",
+        "VARZIN Project"
+      ]
     },
     {
       "id": "zenodo-22258644",
@@ -56,7 +142,27 @@
       "doi": "10.5281/zenodo.22258644",
       "url": "https://doi.org/10.5281/zenodo.22258644",
       "repository": "Zenodo",
-      "scope": "Projection-head intervention record; explicit intervention is distinct from spontaneous recovery in an unmodified frozen model."
+      "scope": "Projection-head intervention record; explicit intervention is distinct from spontaneous recovery in an unmodified frozen model.",
+      "publicationDate": "2026-09-02",
+      "creatorAsDeposited": "Nirouyar, Reza",
+      "creatorNormalized": "Reza Nirouyar",
+      "orcid": "0009-0000-4690-6842",
+      "resourceType": "Preprint",
+      "license": "CC BY 4.0",
+      "accessRight": "open",
+      "zenodoRecordUrl": "https://zenodo.org/records/22258644",
+      "metadataSource": "Zenodo REST API",
+      "metadataVerified": "2026-09-14",
+      "varzinRecordUrl": "https://varzin.org/publications/zenodo-22258644.html",
+      "keywords": [
+        "mechanistic interpretability",
+        "language models",
+        "anisotropy",
+        "contrastive learning",
+        "morphological structure",
+        "representation geometry",
+        "adversarial lexicon"
+      ]
     },
     {
       "id": "zenodo-22262388",
@@ -67,7 +173,31 @@
       "doi": "10.5281/zenodo.22262388",
       "url": "https://doi.org/10.5281/zenodo.22262388",
       "repository": "Zenodo",
-      "scope": "Second public version of the projection-head research record; preserve version-specific DOI citation."
+      "scope": "Second public version of the projection-head research record; preserve version-specific DOI citation.",
+      "publicationDate": "2026-09-02",
+      "creatorAsDeposited": "Nirouyar, Reza",
+      "creatorNormalized": "Reza Nirouyar",
+      "orcid": "0009-0000-4690-6842",
+      "resourceType": "Preprint",
+      "license": "CC BY 4.0",
+      "accessRight": "open",
+      "zenodoRecordUrl": "https://zenodo.org/records/22262388",
+      "metadataSource": "Zenodo REST API",
+      "metadataVerified": "2026-09-14",
+      "varzinRecordUrl": "https://varzin.org/publications/zenodo-22262388.html",
+      "keywords": [
+        "mechanistic interpretability",
+        "language models",
+        "anisotropy",
+        "contrastive learning",
+        "morphological structure",
+        "representation geometry",
+        "adversarial lexicon",
+        "subword tokenization",
+        "algebraic structures",
+        "supervised contrastive learning",
+        "morphological hijacking"
+      ]
     },
     {
       "id": "zenodo-22287006",
@@ -78,7 +208,31 @@
       "doi": "10.5281/zenodo.22287006",
       "url": "https://doi.org/10.5281/zenodo.22287006",
       "repository": "Zenodo",
-      "scope": "Third public version of the projection-head research record; the versioned DOI is retained separately for provenance."
+      "scope": "Third public version of the projection-head research record; the versioned DOI is retained separately for provenance.",
+      "publicationDate": "2026-09-03",
+      "creatorAsDeposited": "Nirouyar, Reza",
+      "creatorNormalized": "Reza Nirouyar",
+      "orcid": "0009-0000-4690-6842",
+      "resourceType": "Preprint",
+      "license": "CC BY 4.0",
+      "accessRight": "open",
+      "zenodoRecordUrl": "https://zenodo.org/records/22287006",
+      "metadataSource": "Zenodo REST API",
+      "metadataVerified": "2026-09-14",
+      "varzinRecordUrl": "https://varzin.org/publications/zenodo-22287006.html",
+      "keywords": [
+        "language models",
+        "contrastive learning",
+        "morphological structure",
+        "representation geometry",
+        "adversarial lexicon",
+        "large language models",
+        "subword tokenization",
+        "algebraic structures",
+        "supervised contrastive learning",
+        "morphological hijacking"
+      ]
     }
-  ]
+  ],
+  "metadataNote": "Zenodo titles, versions, dates, creator strings, resource types, licenses where supplied, and DOI identities verified via the Zenodo REST API on 2026-09-14. Creator strings vary across deposits; VARZIN normalizes the researcher identity to Reza Nirouyar via ORCID."
 }

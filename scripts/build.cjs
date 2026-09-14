@@ -15,7 +15,7 @@ for (const entry of fs.readdirSync(".", { withFileTypes: true })) {
 }
 for (const file of ["CNAME", ".nojekyll"])
   fs.copyFileSync(file, path.join(out, file));
-for (const dir of ["assets", "paper", "fa", "en"])
+for (const dir of ["assets", "paper", "fa", "en", "publications"])
   fs.cpSync(dir, path.join(out, dir), { recursive: true });
 console.log(
   "Static production site assembled in dist/; root deployment remains supported.",

@@ -99,6 +99,8 @@ The publication and archive registry is maintained at:
 
 Current project-listed public Zenodo records include:
 
+The current public titles, version labels, publication dates and creator strings were cross-checked against the Zenodo REST API on 2026-09-14; creator name order/casing varies across deposits, while ORCID 0009-0000-4690-6842 provides the normalized researcher identity.
+
 - **Morphemes vs. Manifolds: Diagnosing Structural Blindness and Morphological Hijacking in Large Language Models via Finite Affine Orbits** (v1.0.0)
   https://doi.org/10.5281/zenodo.22101179
 
