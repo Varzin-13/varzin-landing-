@@ -1076,3 +1076,11 @@ html{font-synthesis:none;text-rendering:optimizeLegibility}
     word-break: break-word;
   }
 }
+
+/* Prevent long research identifiers from escaping narrow mobile layouts. */
+@media (max-width: 767px) {
+  .vr-document :is(strong, code) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
