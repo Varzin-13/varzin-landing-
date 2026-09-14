@@ -16,6 +16,7 @@ const path = require("path");
 
 const ROOT = path.resolve(process.argv[2] || ".");
 const CONFIG_PATH = path.join(__dirname, "seo-meta.config.json");
+const RESEARCH_OUTPUTS_PATH = path.join(__dirname, "research-outputs.json");
 const START_MARK = "<!-- SEO-META:START -->";
 const END_MARK = "<!-- SEO-META:END -->";
 
@@ -30,6 +31,13 @@ function loadConfig() {
     process.exit(1);
   }
   return JSON.parse(fs.readFileSync(CONFIG_PATH, "utf8"));
+}
+
+
+function loadResearchOutputs() {
+  if (!fs.existsSync(RESEARCH_OUTPUTS_PATH)) return [];
+  const parsed = JSON.parse(fs.readFileSync(RESEARCH_OUTPUTS_PATH, "utf8"));
+  return Array.isArray(parsed.records) ? parsed.records : [];
 }
 
 function relativePathFor(filePath) {
@@ -100,7 +108,7 @@ function normalizeManagedHead(html) {
   return cleaned.slice(0, at) + '\n<meta charset="UTF-8">' + cleaned.slice(at);
 }
 
-function buildMetaBlock(canonicalUrl, robots, cfg, pageMeta) {
+function buildMetaBlock(canonicalUrl, robots, cfg, pageMeta, researchOutputs = []) {
   const base = cfg.baseUrl.replace(/\/$/, "");
   const researcher = cfg.researcherName || "Reza Nirouyar";
   const imageAlt = cfg.ogImageAlt || "VARZIN Project — evidence-first computational research";
@@ -115,6 +123,32 @@ function buildMetaBlock(canonicalUrl, robots, cfg, pageMeta) {
     author: { "@id": `${base}/#researcher` }
   };
   if (isResearcherProfile) pageNode.mainEntity = { "@id": `${base}/#researcher` };
+
+  const publicationPage = canonicalUrl === `${base}/all-dois.html`;
+  const researcherPage = canonicalUrl === `${base}/researcher.html`;
+  const publicationNodes = (publicationPage || researcherPage) ? researchOutputs.map((record) => ({
+    "@type": record.type || "CreativeWork",
+    "@id": `${base}/#${record.id}`,
+    name: record.title,
+    url: record.url,
+    identifier: record.doi,
+    version: record.version,
+    datePublished: "2026",
+    author: { "@id": `${base}/#researcher` },
+    description: record.scope
+  })) : [];
+  const outputList = publicationPage && publicationNodes.length ? {
+    "@type": "ItemList",
+    "@id": `${base}/all-dois.html#public-research-outputs`,
+    name: "VARZIN public research outputs",
+    numberOfItems: publicationNodes.length,
+    itemListElement: publicationNodes.map((node, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: { "@id": node["@id"] }
+    }))
+  } : null;
+  if (outputList) pageNode.mainEntity = { "@id": outputList["@id"] };
 
   const structuredData = JSON.stringify({
     "@context": "https://schema.org",
@@ -145,7 +179,9 @@ function buildMetaBlock(canonicalUrl, robots, cfg, pageMeta) {
         email: `mailto:${cfg.contactEmail}`,
         sameAs: [cfg.orcid, cfg.github, cfg.linkedin].filter(Boolean)
       },
-      pageNode
+      pageNode,
+      ...(outputList ? [outputList] : []),
+      ...publicationNodes
     ]
   }, null, 2);
 
@@ -207,6 +243,7 @@ function upsertBlock(html, block) {
 
 function main() {
   const cfg = loadConfig();
+  const researchOutputs = loadResearchOutputs();
   const excludedPaths = new Set(cfg.excludeFiles || []);
   const files = findHtmlFiles(ROOT).filter((file) => !excludedPaths.has(relativePathFor(file)));
   if (files.length === 0) return console.log("No .html files found.");
@@ -218,7 +255,7 @@ function main() {
     const original = fs.readFileSync(file, "utf8");
     const pageMeta = extractPageMeta(original, cfg);
     const normalized = normalizeManagedHead(original);
-    const block = buildMetaBlock(canonicalUrl, robots, cfg, pageMeta);
+    const block = buildMetaBlock(canonicalUrl, robots, cfg, pageMeta, researchOutputs);
     const updated = upsertBlock(normalized, block);
     if (updated === null) continue;
     if (updated !== original) {

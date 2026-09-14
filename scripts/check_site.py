@@ -99,6 +99,22 @@ else:
             if src.startswith('/') and not (root/src.lstrip('/')).exists(): errors.append(f'manifest.webmanifest: missing icon {src}')
     except Exception as exc: errors.append(f'manifest.webmanifest: invalid JSON: {exc}')
 
+# Public research-output registry must remain synchronized across the machine-readable list and human-facing registry/profile.
+outputs_file=root/'research-outputs.json'
+if not outputs_file.exists(): errors.append('research-outputs.json: missing')
+else:
+    try:
+        outputs=json.loads(outputs_file.read_text()).get('records',[])
+        registry=(root/'all-dois.html').read_text()
+        profile=(root/'researcher.html').read_text()
+        if len(outputs) < 7: errors.append(f'research-outputs.json: expected at least 7 public records, found {len(outputs)}')
+        for record in outputs:
+            doi=record.get('doi',''); url=record.get('url',''); title=record.get('title','')
+            if not doi or not url or not title: errors.append('research-outputs.json: record missing doi/url/title')
+            if url and url not in registry: errors.append(f'all-dois.html: missing public record {url}')
+            if url and url not in profile: errors.append(f'researcher.html: missing public record {url}')
+    except Exception as exc: errors.append(f'research-outputs.json: invalid JSON: {exc}')
+
 index_keys=list(root.glob('indexnow-*.txt'))
 if len(index_keys)!=1: errors.append(f'IndexNow: expected one key file, found {len(index_keys)}')
 elif not re.fullmatch(r'[A-Fa-f0-9]{8,128}', index_keys[0].read_text().strip()): errors.append('IndexNow: invalid key file contents')
