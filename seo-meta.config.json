@@ -12,9 +12,15 @@
   "generator": "VARZIN Project",
   "twitterCard": "summary_large_image",
   "excludeFiles": [
-    "404.html"
+    "404.html",
+    "googlea6193a9448130bb8.html",
+    "googleaf108ddb056bc0b3.html"
   ],
   "noindexFiles": [
-    "paper/index.html"
+    "vpe001-protocol.html",
+    "cyclical-resonance-report.html",
+    "master-report-v3.html",
+    "paper/index.html",
+    "homepage-before-redesign.html"
   ]
 }

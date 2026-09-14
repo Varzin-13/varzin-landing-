@@ -4,7 +4,7 @@
 <!-- SEO-META:START -->
 <!-- Auto-generated — do not hand-edit between these markers.
      Edit seo-meta.config.json and re-run inject-seo-meta.js instead. -->
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, follow">
 <meta name="generator" content="VARZIN Project">
 <meta name="rating" content="General">
 
@@ -47,7 +47,7 @@
 <title>VARZIN · Affine Memory Architecture · Research Portal v7</title>
 <meta name="description" content="VARZIN: Affine Symbolic Memory Architecture. Mirror-13, Aff(Z_N), LUXVAR. Phases I–XX.">
 <meta name="author" content="Reza Nirouyar | ORCID: 0009-0000-4690-6842">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --bg:#04080c;--surf:#07101a;--surf2:#0a1620;
@@ -164,8 +164,8 @@ footer a:hover{color:var(--cyan);}
   .hero{padding:40px 20px 32px;}
 }
 </style>
-</head>
-<body>
+<link rel="stylesheet" href="/assets/research.css"><script src="/assets/research.js" defer></script></head>
+<body class="vr-document"><a class="vr-skip" href="#vr-main">Skip to content</a><header class="vr-header"><a class="vr-brand" href="/" aria-label="VARZIN research home"><span class="vr-mark" aria-hidden="true">V</span>VARZIN<span class="vr-brand-sub">Independent research</span></a><nav class="vr-desktop" aria-label="Research navigation"><a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/#reproducibility">Reproducibility</a><a href="/feedback.html">Contact</a></nav><details class="vr-mobile"><summary>Menu <span aria-hidden="true">＋</span></summary><nav aria-label="Mobile research navigation"><a href="/field-index.html">Research</a><a href="/atlas.html">Atlas</a><a href="/all-dois.html">Publications</a><a href="/#reproducibility">Reproducibility</a><a href="/feedback.html">Contact</a></nav></details></header><main id="vr-main" tabindex="-1"><aside class="vr-archive-notice" aria-label="Historical record"><strong>Historical research record</strong><p>Preserved for provenance. Original claims and study plans may be superseded; they do not establish physical fields, independent semantics or human outcomes. Read the <a href="/README.md">current research position</a> and <a href="/all-dois.html">record identity and correction notes</a>.</p></aside>
 <canvas id="bg"></canvas>
 
 <!-- SIDEBAR -->
@@ -282,14 +282,14 @@ Valid iff gcd(a,N)=1 → Aff(Z_N) = Z_N ⋊ Z_N×
       <div class="cbox"><div class="ctitle">Valid (a,b) Map — N=12 · 48/144 valid</div>
         <canvas id="affineMap" width="360" height="260"></canvas>
       </div>
-      <table class="dt">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 1; scroll horizontally for more columns"><table class="dt">
         <tr><th>Subfamily</th><th>a</th><th>Count</th><th>LUXVAR</th><th>MDL</th></tr>
         <tr><td>Mirror (M13 here)</td><td>11</td><td>12</td><td class="t-warn">#37–48</td><td class="t-ok">min</td></tr>
         <tr><td>Shift family</td><td>1</td><td>12</td><td class="t-ok">#1–12</td><td>~1</td></tr>
         <tr><td>Affine a=5</td><td>5</td><td>12</td><td>mid</td><td>mid</td></tr>
         <tr><td>Affine a=7</td><td>7</td><td>12</td><td>mid</td><td>mid</td></tr>
         <tr><td>Invalid (gcd>1)</td><td colspan="2">96 pairs</td><td class="t-bad">—</td><td class="t-bad">—</td></tr>
-      </table>
+      </table></div>
     </div>
   </div>
   <div class="g2">
@@ -389,7 +389,7 @@ INV-E → λ₁ unique + single communicating class
   </div>
   <div class="g2">
     <div>
-      <table class="dt">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 2; scroll horizontally for more columns"><table class="dt">
         <tr><th>MDL Component</th><th class="t-r">Bits</th></tr>
         <tr><td>Ring size N=12 (from 23 options)</td><td class="t-r">4.52</td></tr>
         <tr><td>Center position (k=N+1, 1-bit rule)</td><td class="t-r">1.00</td></tr>
@@ -398,7 +398,7 @@ INV-E → λ₁ unique + single communicating class
         <tr><td>OUT gate rule (mirror formula)</td><td class="t-r">3.58</td></tr>
         <tr><td>Transition rate (1/8 ≈ 0.13)</td><td class="t-r">3.00</td></tr>
         <tr><td><strong>Total MDL</strong></td><td class="t-r t-ok"><strong>13.11 bits</strong></td></tr>
-      </table>
+      </table></div>
       <div class="g2">
         <div class="card ok"><div class="ct">vs Random Equiv.</div><div class="cv vg">5.1×</div><div class="cb">67.19 bits mean vs 13.11</div></div>
         <div class="card ok"><div class="ct">Elegance Ratio</div><div class="cv vg">0.349</div><div class="cb">bits gained per bit described</div></div>
@@ -479,7 +479,7 @@ Root→Frequency V: 0.003 (negligible)
       <canvas id="ariChart" width="360" height="190"></canvas>
     </div>
     <div>
-      <table class="dt">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 3; scroll horizontally for more columns"><table class="dt">
         <tr><th>Comparison</th><th>ARI</th><th>Interpretation</th></tr>
         <tr><td>Claude ↔ GPT-4</td><td class="t-r t-ok">1.000</td><td>Perfect agreement</td></tr>
         <tr><td>Claude ↔ Gemini</td><td class="t-r t-warn">0.812</td><td>Strong inter-model agreement</td></tr>
@@ -491,7 +491,7 @@ Root→Frequency V: 0.003 (negligible)
         <tr><td>ELUZ family (all 3)</td><td class="t-r t-ok">✓</td><td>100% consensus (surface spelling)</td></tr>
         <tr><td>SHA family (all 3)</td><td class="t-r t-ok">✓</td><td>100% consensus (surface spelling)</td></tr>
         <tr><td>NAR family (all 3)</td><td class="t-r t-ok">✓</td><td>100% consensus (surface spelling)</td></tr>
-      </table>
+      </table></div>
       <div class="a-bad" style="margin-top:12px;"><strong>Historical Track D finding (Aug 2026):</strong> Models agree with each other (ARI=0.812) but this reflects shared surface morphology, not the designed algebraic axes (ARI=0.13). A dedicated adversarial audit under a strict Semantic Starvation protocol — reported in <em>"Morphemes vs. Manifolds"</em> (Zenodo 10.5281/zenodo.22101179) and the Level-1 monograph (Zenodo 10.5281/zenodo.22036769) — tested Mistral 7B and Llama 3 8B against the true orbit labels across 30 seeds each in that dedicated audit and found near-random recovery (Mistral ARI=−0.0337±0.039, Llama 3 ARI=0.0152±0.028). The models fall into "Morphological Hijacking": clustering by shared spelling roots (e.g. ELŪZ) rather than the underlying Aff(Z₁₂) orbit structure. <strong>The reading of 0.812 as independent semantic-axis recovery is rejected for this historical comparison; this is not a universal model barrier.</strong> The phonotactic/morphemic findings of the LUXVAR paper itself are unaffected — only the inter-model-agreement-as-structural-recovery interpretation is retracted. The later N=59 three-cohort VPE plan has no human outcome. Revised frozen baselines, explicitly trained recovery, Appendix F group-position classification, Appendix G negative held-out composition, and V2 Qwen Phase2 are separate experiments; group-position recovery is not composition.</div>
     </div>
   </div>
@@ -639,7 +639,7 @@ FSMWorld    → Aff rank #6  hit@3=0.238  <span class="fail">✗</span>
   </div>
   <div class="g2">
     <div>
-      <table class="dt">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 4; scroll horizontally for more columns"><table class="dt">
         <tr><th>Test</th><th>Verdict</th><th>Key Finding</th></tr>
         <tr><td>POT-001 Alignment</td><td class="t-ok">CONFIRMED</td><td>Recall ∝ prior (monotone, Δ=+0.275)</td></tr>
         <tr><td>POT-002 Origin</td><td class="t-ok">INJECTED BEST</td><td>1.000 &gt; 0.861 &gt; 0.725 &gt; 0.000</td></tr>
@@ -648,11 +648,11 @@ FSMWorld    → Aff rank #6  hit@3=0.238  <span class="fail">✗</span>
         <tr><td>POT-005 Emergence</td><td class="t-ok">EMERGES</td><td>Prior emerges via hypothesis testing</td></tr>
         <tr><td>SDT-001 Discovery</td><td class="t-warn">BIASED</td><td>Advantage was prior-driven</td></tr>
         <tr><td>SDT-002 Prior-Free</td><td class="t-bad">PRIOR REQ.</td><td>AffWorld ID acc=0.000 without prior</td></tr>
-      </table>
+      </table></div>
       <div class="a-ok"><strong>POT-005 (PRIOR_EMERGENCE_BY_HYPOTHESIS_TESTING):</strong> Agent C converges to affine hypothesis in 100% of episodes at query #1. Prior emerges from: observation + hypothesis space + compression scoring. The hypothesis space must contain "affine" as a candidate.</div>
     </div>
     <div class="cbox"><div class="ctitle">Phase 20 · Per-World AffAdaptive Performance</div>
-      <canvas id="phase20Chart" width="360" height="210"></canvas>
+      <span id="phase20"></span><canvas id="phase20Chart" width="360" height="210"></canvas>
     </div>
   </div>
 </div>
@@ -735,7 +735,7 @@ Humans → semantic axes (as designed)?
   </div>
   <div class="g2">
     <div>
-      <table class="dt">
+      <div class="table-wrap vr-table-scroll" tabindex="0" role="region" aria-label="Research table 5; scroll horizontally for more columns"><table class="dt">
         <tr><th>Removed Claim</th><th>Test</th><th>Result</th></tr>
         <tr><td>Frequency encoding in word form</td><td>5 tests n=704</td><td class="t-bad">Δ=−3.6% · absent</td></tr>
         <tr><td>Frequency affects dynamics</td><td>SIM-FREQ-001</td><td class="t-bad">ΔH=0.044 &lt;0.05</td></tr>
@@ -748,7 +748,7 @@ Humans → semantic axes (as designed)?
         <tr><td>External memory field</td><td>Phase 19</td><td class="t-bad">z=−1.042</td></tr>
         <tr><td>Full emergence</td><td>SIM-EMERGE-001</td><td class="t-warn">2/5 signals · partial</td></tr>
         <tr><td>Consciousness/field effects</td><td>—</td><td class="t-bad">No test, no evidence</td></tr>
-      </table>
+      </table></div>
     </div>
     <div class="cbox"><div class="ctitle">Confidence by Layer</div>
       <canvas id="confChart" width="360" height="300"></canvas>
@@ -882,7 +882,7 @@ let pts=[];
 function resizeBG(){bgC.width=innerWidth;bgC.height=innerHeight;}
 resizeBG();window.addEventListener('resize',resizeBG);
 for(let i=0;i<90;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,dx:(Math.random()-.5)*.28,dy:(Math.random()-.5)*.28});
-(function ab(){bgX.fillStyle='rgba(4,8,12,.16)';bgX.fillRect(0,0,bgC.width,bgC.height);for(const p of pts){p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>bgC.width)p.dx*=-1;if(p.y<0||p.y>bgC.height)p.dy*=-1;bgX.fillStyle='rgba(0,180,210,.3)';bgX.fillRect(p.x,p.y,1.5,1.5);}requestAnimationFrame(ab);})();
+
 
 /* ═══ SCROLLSPY ═══ */
 const navLinks=document.querySelectorAll('.nav-a');
@@ -1237,10 +1237,10 @@ let rafId;
 (function loop(){
   drawTorus();
   if(simRunning){}
-  requestAnimationFrame(loop);
+  // Static illustration; repaint on user input below.
 })();
 
-setInterval(()=>{if(!document.getElementById('core30Chart'))return;drawCore30();},50);
+document.addEventListener('input', () => { drawTorus(); drawCore30(); });
 </script>
-</body>
+</main><footer class="vr-footer"><div><a class="vr-brand" href="/">VARZIN</a><p>Independent research. Explicit boundaries.<br>A public record that includes what did not work.</p></div><div><a href="/all-dois.html">Publications &amp; DOI records</a><a href="/CITATION.cff">Citation metadata</a><a href="/paper/">Historical archive</a></div><div><a href="https://github.com/Varzin-13">GitHub ↗</a><a href="https://orcid.org/0009-0000-4690-6842">ORCID ↗</a><a href="mailto:contact@varzin.org">contact@varzin.org</a></div><p class="vr-colophon">VARZIN Project · Reza Nirouyar <span>Evidence-first research portal / 2026</span></p></footer></body>
 </html>

@@ -1,0 +1,18 @@
+{
+  "name": "varzin-research-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Validation tools for the static VARZIN research portal; no runtime dependencies",
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "test": "python3 scripts/check_site.py",
+    "test:browser": "node scripts/browser-check.cjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.58.2",
+    "@axe-core/playwright": "4.11.1"
+  },
+  "overrides": {
+    "playwright-core": "1.58.2"
+  }
+}
