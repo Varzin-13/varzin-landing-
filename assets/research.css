@@ -986,3 +986,51 @@ p {
 .vr-document #affineOrbit{right:0;width:min(38vw,420px);height:auto}
 .vr-document td a{text-decoration:underline}
 .vr-document main>.max-w-2xl,.vr-document main>.max-w-3xl,.vr-document main>.max-w-4xl{max-width:800px;margin:40px auto;padding:28px;width:calc(100% - 40px);background:var(--vr-surface);border:1px solid var(--vr-border);border-radius:5px}
+
+
+/* Editorial reference pages added during independent refinement review. */
+.vr-doc-shell{width:min(1080px,calc(100% - 48px));margin:0 auto;padding:64px 0 80px}
+.vr-page-hero{padding:28px 0 44px;border-bottom:1px solid var(--vr-border);margin-bottom:44px}
+.vr-page-hero .vr-kicker{margin-bottom:16px}
+.vr-page-hero h1{max-width:900px;margin:0 0 18px;font-weight:400!important;letter-spacing:-.04em!important}
+.vr-page-hero>p{max-width:72ch;color:var(--vr-muted);font-size:18px;margin:0}
+.vr-page-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.vr-page-meta span{font:11px/1.6 monospace;color:var(--vr-muted);border:1px solid var(--vr-border);padding:6px 9px;border-radius:3px}
+.vr-status-band{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:22px 0;border-bottom:1px solid var(--vr-border)}
+.vr-status-band strong{font:11px/1.7 monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--vr-accent)}
+.vr-status-band p{margin:0;color:var(--vr-muted);max-width:none}
+.vr-fact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:36px 0}
+.vr-fact{border:1px solid var(--vr-border);background:var(--vr-surface);padding:22px;border-radius:5px}
+.vr-fact .vr-index{margin-bottom:12px}.vr-fact h2,.vr-fact h3{font-size:20px!important;margin:0 0 10px!important;letter-spacing:-.02em!important}.vr-fact p{margin:0;color:var(--vr-muted);font-size:14px}
+.vr-editorial-section{padding:52px 0;border-bottom:1px solid var(--vr-border)}
+.vr-editorial-section h2{font-size:clamp(28px,3.2vw,42px)!important;font-weight:400!important;letter-spacing:-.035em!important;margin:0 0 20px!important}
+.vr-editorial-section>p{color:var(--vr-muted);max-width:76ch}
+.vr-two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
+.vr-boundary-card{padding:24px;border:1px solid var(--vr-border);background:var(--vr-surface);border-radius:5px}
+.vr-boundary-card h3{font-size:18px!important;margin:0 0 16px!important;letter-spacing:0!important}.vr-boundary-card ul{margin:0;padding-left:20px}.vr-boundary-card li{margin:10px 0;color:var(--vr-muted)}
+.vr-boundary-card.negative{border-top:2px solid #efb0aa}.vr-boundary-card.positive{border-top:2px solid var(--vr-accent)}
+.vr-record-list{border-top:1px solid var(--vr-border);margin-top:28px}.vr-record{display:grid;grid-template-columns:42px 1fr;gap:18px;padding:26px 0;border-bottom:1px solid var(--vr-border)}
+.vr-record .vr-index{padding-top:4px}.vr-record h3{font:22px/1.35 Georgia,serif!important;letter-spacing:0!important;margin:0 0 10px!important}.vr-record p{margin:8px 0;color:var(--vr-muted);font-size:14px}.vr-record a{color:var(--vr-accent)}
+.vr-callout{padding:22px 24px;border:1px solid #776c52;border-left:3px solid #e5c78d;background:#25231c;border-radius:4px;color:#e5dbc6;margin:28px 0}.vr-callout p{margin:0;color:inherit}
+.vr-contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}
+.vr-contact-card{background:var(--vr-surface);border:1px solid var(--vr-border);border-radius:5px;padding:28px}.vr-contact-card h2{font-size:24px!important;margin:0 0 20px!important;letter-spacing:-.02em!important}
+.vr-field{margin-bottom:18px}.vr-field label{display:block;font-size:13px;color:var(--vr-muted);margin-bottom:7px}.vr-field input,.vr-field textarea{width:100%;background:#101411;border:1px solid var(--vr-border);color:var(--vr-text);border-radius:4px;padding:12px 14px}.vr-field textarea{min-height:150px;resize:vertical}.vr-field small{color:var(--vr-muted)}
+.vr-submit{width:100%;min-height:48px;background:var(--vr-accent);color:#152014;border:1px solid var(--vr-accent);border-radius:4px;font-weight:700;cursor:pointer}.vr-submit:hover{background:#d2e4be;border-color:#d2e4be}
+.vr-contact-links{list-style:none;padding:0;margin:0}.vr-contact-links li{padding:14px 0;border-bottom:1px solid var(--vr-border);color:var(--vr-muted)}.vr-contact-links a{color:var(--vr-accent)}
+.vr-form-status{display:none;margin-top:16px;padding:14px;border:1px solid var(--vr-border);background:#151a17;border-radius:4px;color:var(--vr-muted)}
+.vr-document{--bg2:#141916;--panel2:#202722;--soft:#263029;--cyan:#b8d899;--cyan2:#b8d899;--green:#b8d899;--gold:#e5c78d;--red:#efb0aa;--purple:#c9b6d8;--shadow:none}
+.vr-document :is(.formula-graphic,.chart,.pill){background:var(--vr-surface)!important;border-color:var(--vr-border)!important;box-shadow:none!important}
+.vr-document table{background:#151a17!important}.vr-document th{background:#202722!important;color:var(--vr-text)!important}.vr-document td{border-color:var(--vr-border)!important}
+.vr-document .callout{background:#1b211d!important;border-color:var(--vr-accent)!important}.vr-document .arc-line{background:var(--vr-border)!important}
+@media(max-width:767px){.vr-doc-shell{width:calc(100% - 40px);padding:40px 0 56px}.vr-page-hero{padding-top:8px}.vr-status-band{grid-template-columns:1fr;gap:8px}.vr-fact-grid,.vr-two-col,.vr-contact-grid{grid-template-columns:1fr}.vr-record{grid-template-columns:28px 1fr}.vr-page-hero>p{font-size:16px}}
+
+.vr-document a.vr-primary,.vr-document a.vr-primary:visited{color:#152014!important;text-decoration:none}
+.vr-document a.vr-primary:hover{color:#152014!important}
+.vr-doc-shell details{border:1px solid var(--vr-border);background:var(--vr-surface);border-radius:5px;margin:24px 0;overflow:hidden}
+.vr-doc-shell details>summary{display:flex;align-items:center;min-height:52px;padding:14px 18px;color:var(--vr-accent);font-weight:700;cursor:pointer}
+.vr-doc-shell details>summary::before{content:'＋';font-family:monospace;margin-right:10px}
+.vr-doc-shell details[open]>summary::before{content:'−'}
+.vr-doc-shell details>p{padding:0 18px 18px;margin:0;color:var(--vr-muted)}
+.vr-doc-shell .withdrawn-table{width:calc(100% - 36px);margin:0 18px 20px;border-collapse:collapse;font-size:13px}
+.vr-doc-shell .withdrawn-table th,.vr-doc-shell .withdrawn-table td{padding:10px 12px;border-bottom:1px solid var(--vr-border)}
+.vr-doc-shell .withdrawn-table th{font:11px/1.5 monospace;text-transform:uppercase;letter-spacing:.06em;color:var(--vr-muted)!important}
