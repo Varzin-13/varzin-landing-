@@ -67,9 +67,12 @@ const fs = require("node:fs");
       const offenders = overflow
         ? await page.evaluate(() =>
             [...document.querySelectorAll("body *")]
-              .filter((e) => e.getBoundingClientRect().right > innerWidth + 1)
-              .slice(0, 8)
-              .map((e) => e.tagName + "." + e.className),
+              .filter((e) => {
+                const rect = e.getBoundingClientRect();
+                return rect.width > 0 && (rect.right > innerWidth || rect.left < 0);
+              })
+              .slice(0, 12)
+              .map((e) => ({element: e.tagName + "." + e.className, left: e.getBoundingClientRect().left, right: e.getBoundingClientRect().right, scrollWidth: e.scrollWidth, clientWidth: e.clientWidth})),
           )
         : [];
       const axe = await new AxeBuilder({ page })
@@ -91,7 +94,12 @@ const fs = require("node:fs");
         })),
       });
       fs.writeFileSync("test-results/browser-progress.json", JSON.stringify(results, null, 2));
-      if ([375, 1440].includes(width) && ["/vpe001a-status.html", "/research-position.html", "/luxvar-preprint.html", "/citation.html", "/field-index.html"].includes(route)) {
+      if (overflow) {
+        const geometry = await page.evaluate(() => ({viewport: innerWidth, document: document.documentElement.scrollWidth, body: document.body.scrollWidth, visibleOverflow: [...document.querySelectorAll('body *')].filter(e => e.getBoundingClientRect().width > 0 && e.scrollWidth > e.clientWidth && getComputedStyle(e).overflowX === 'visible').map(e => ({element: e.tagName + '.' + e.className, right: e.getBoundingClientRect().right, left: e.getBoundingClientRect().left, scrollWidth: e.scrollWidth, clientWidth: e.clientWidth, text: e.textContent.slice(0, 100)})).slice(0, 20)}));
+        fs.writeFileSync(`test-results/overflow-${route.replaceAll('/', '_')}-${width}.json`, JSON.stringify(geometry, null, 2));
+        await page.screenshot({path: `test-results/overflow-${route.replaceAll('/', '_')}-${width}.png`, fullPage: true});
+      }
+      if ([375, 1440].includes(width) && ["/vpe001a-status.html", "/vpe001a-core30-history.html", "/research-position.html", "/luxvar-preprint.html", "/citation.html", "/field-index.html"].includes(route)) {
         await page.screenshot({path: `test-results/${route.slice(1, -5)}-${width}.png`});
       }
       if (route === "/") {
