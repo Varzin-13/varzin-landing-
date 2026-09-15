@@ -25,6 +25,8 @@ The supplied expert audit was checked against repository revision `e9445db9be383
 
 ## Implementation and verification
 
+Browser review found two additional concrete layout problems. A long slash-separated axis label in a tight Markdown list overflowed the Core-30 page on mobile; prose now wraps long tokens without changing the source text. More seriously, the existing animation cascade left reveal sections transparent when reduced motion disabled animations. Revealed content now has an explicit visible state, and reduced-motion/print rules show all sections. The browser gate checks computed visibility so this cannot pass silently again.
+
 `npm run site:generate` regenerates publication pages, Markdown reading pages, shared navigation, metadata, and the sitemap. Markdown rendering uses pinned `marked` 18.0.13 at build time, escapes raw HTML, and does not add a public runtime dependency. Source changes trigger generation and quality workflows. Running generation twice must leave the tree unchanged.
 
 Local static validation checked 37 HTML files and 24 indexable URLs, internal links and fragments, document metadata, archive directives, shared desktop/mobile destinations, and CFF/plain-text byte equality. The production build passed the same checks. The browser gate includes the five new pages and the historical-2025 re-audit at 375, 768, 1024, and 1440 pixels, with overflow, JavaScript-error, keyboard/navigation, and axe checks. CI stores screenshots and the result matrix for review before merge; the associated workflow is the record of its outcome.

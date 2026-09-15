@@ -1421,6 +1421,8 @@ body.vr-document::after {
   transform: translateY(18px) scale(.994);
 }
 .vr-js .vr-reveal-ready.vr-in-view {
+  opacity: 1;
+  transform: none;
   animation: vr-rise .72s cubic-bezier(.2,.76,.18,1) var(--vr-delay, 0ms) forwards;
 }
 .vr-home .vr-publication,
@@ -1489,7 +1491,7 @@ body.vr-document::after {
 }
 
 /* Static document reading pages and the shared seven-destination navigation. */
-.vr-prose { max-width: 80ch; margin: 40px auto 0; }
+.vr-prose { max-width: 80ch; margin: 40px auto 0; overflow-wrap: anywhere; }
 .vr-prose h2 { padding-top: 32px; margin: 40px 0 20px; border-top: 1px solid var(--vr-border); font-size: clamp(26px, 3vw, 38px); font-weight: 400; line-height: 1.25; }
 .vr-prose h3 { margin-top: 30px; line-height: 1.35; }
 .vr-prose :is(p, li) { color: var(--vr-muted); }
@@ -1519,4 +1521,13 @@ body.vr-document::after {
 @media print {
   .vr-document-toc { display: none; }
   .vr-prose pre, .vr-citation-source { background: white; color: black; border-color: #555; }
+}
+/* Content must stay visible when entrance animations are disabled or printed. */
+@media (prefers-reduced-motion: reduce), print {
+  .vr-js .vr-reveal-ready,
+  .vr-js .vr-reveal-ready.vr-in-view {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }

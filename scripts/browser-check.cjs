@@ -64,6 +64,10 @@ const fs = require("node:fs");
       const overflow = await page.evaluate(
         () => document.documentElement.scrollWidth > innerWidth,
       );
+      const hiddenContent = await page.locator('.vr-reveal-ready').evaluateAll(elements =>
+        elements.filter(e => Number(getComputedStyle(e).opacity) < 0.99).map(e => e.tagName + '.' + e.className)
+      );
+      if (hiddenContent.length) errors.push(`Content hidden with reduced motion: ${hiddenContent.join(', ')}`);
       const offenders = overflow
         ? await page.evaluate(() =>
             [...document.querySelectorAll("body *")]
