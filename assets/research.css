@@ -1421,6 +1421,8 @@ body.vr-document::after {
   transform: translateY(18px) scale(.994);
 }
 .vr-js .vr-reveal-ready.vr-in-view {
+  opacity: 1;
+  transform: none;
   animation: vr-rise .72s cubic-bezier(.2,.76,.18,1) var(--vr-delay, 0ms) forwards;
 }
 .vr-home .vr-publication,
@@ -1486,4 +1488,46 @@ body.vr-document::after {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+}
+
+/* Static document reading pages and the shared seven-destination navigation. */
+.vr-prose { max-width: 80ch; margin: 40px auto 0; overflow-wrap: anywhere; }
+.vr-prose h2 { padding-top: 32px; margin: 40px 0 20px; border-top: 1px solid var(--vr-border); font-size: clamp(26px, 3vw, 38px); font-weight: 400; line-height: 1.25; }
+.vr-prose h3 { margin-top: 30px; line-height: 1.35; }
+.vr-prose :is(p, li) { color: var(--vr-muted); }
+.vr-prose strong { color: var(--vr-text); }
+.vr-prose blockquote { margin: 24px 0; padding: 12px 24px; border-inline-start: 3px solid var(--vr-accent); background: var(--vr-surface); }
+.vr-prose pre, .vr-citation-source { padding: 20px; border: 1px solid var(--vr-border); background: var(--vr-surface); white-space: pre-wrap; overflow-wrap: anywhere; font-size: 14px; line-height: 1.7; }
+.vr-prose code { overflow-wrap: anywhere; }
+.vr-prose .vr-table-scroll table { width: 100%; }
+.vr-prose :is(th, td) { padding: 12px 16px; text-align: start; vertical-align: top; border-bottom: 1px solid var(--vr-border); }
+.vr-document-toc { margin: 32px 0; padding: 24px; border: 1px solid var(--vr-border); border-radius: 8px; }
+.vr-document-toc h2 { font-size: 20px; margin: 0 0 16px; }
+.vr-document-toc ul { columns: 2; column-gap: 40px; padding-inline-start: 20px; }
+.vr-document-toc li { break-inside: avoid; padding: 5px 0; }
+.vr-document .vr-page-hero .vr-source-title { font-size: 15px; }
+.vr-header .vr-mobile a[aria-current] { color: var(--vr-accent); text-decoration: underline; }
+@media (max-width: 1023px) {
+  .vr-header .vr-desktop { display: none; }
+  .vr-header .vr-mobile { display: block; }
+  .vr-header .vr-mobile summary { cursor: pointer; list-style: none; min-height: 44px; display: flex; align-items: center; gap: 12px; padding: 8px; font: 14px/1.7 system-ui, sans-serif; }
+  .vr-header .vr-mobile summary::-webkit-details-marker { display: none; }
+  .vr-document .vr-header .vr-mobile nav, .vr-header .vr-mobile nav { position: absolute; top: 100%; inset-inline: 0; display: flex; flex-direction: column; padding: 16px 24px !important; border: 1px solid var(--vr-border) !important; background: var(--vr-surface); box-shadow: 0 16px 24px #0005; max-height: 75vh; overflow-y: auto; }
+  .vr-header .vr-mobile nav a { display: block; padding: 12px 0; font-size: 15px; }
+}
+@media (max-width: 767px) {
+  .vr-document-toc ul { columns: 1; }
+}
+@media print {
+  .vr-document-toc { display: none; }
+  .vr-prose pre, .vr-citation-source { background: white; color: black; border-color: #555; }
+}
+/* Content must stay visible when entrance animations are disabled or printed. */
+@media (prefers-reduced-motion: reduce), print {
+  .vr-js .vr-reveal-ready,
+  .vr-js .vr-reveal-ready.vr-in-view {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }

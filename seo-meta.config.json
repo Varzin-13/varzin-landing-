@@ -24,7 +24,9 @@
     "master-report-v3.html",
     "paper/index.html",
     "homepage-before-redesign.html",
-    "privacy.html"
+    "privacy.html",
+    "luxvar-preprint.html",
+    "vpe001a-core30-history.html"
   ],
   "researcherName": "Reza Nirouyar",
   "siteDescription": "Independent computational research and reproducibility: finite affine systems, LUXVAR, model auditing, corrections, negative results, and open questions.",

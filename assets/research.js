@@ -19,7 +19,7 @@
   });
   document.querySelectorAll("table").forEach((table, i) => {
     let wrapper = table.parentElement;
-    if (!wrapper.classList.contains("table-wrap")) {
+    if (!wrapper.classList.contains("table-wrap") && !wrapper.classList.contains("vr-table-scroll")) {
       wrapper = document.createElement("div");
       table.before(wrapper);
       wrapper.append(table);

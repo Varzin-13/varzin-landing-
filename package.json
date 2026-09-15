@@ -12,11 +12,14 @@
     "indexnow:submit": "node scripts/submit-indexnow.cjs",
     "indexnow:dry-run": "node scripts/submit-indexnow.cjs --dry-run",
     "publications:generate": "python3 scripts/generate-publication-pages.py",
-    "site:generate": "npm run publications:generate && node inject-seo-meta.js . && npm run sitemap:generate"
+    "site:generate": "npm run publications:generate && npm run documents:generate && npm run navigation:generate && node inject-seo-meta.js . && npm run sitemap:generate",
+    "documents:generate": "node scripts/generate-document-pages.mjs",
+    "navigation:generate": "node scripts/site-navigation.cjs"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
     "@playwright/test": "1.58.2",
-    "@axe-core/playwright": "4.11.1"
+    "marked": "18.0.13"
   },
   "overrides": {
     "playwright-core": "1.58.2"

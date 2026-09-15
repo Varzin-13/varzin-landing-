@@ -1,6 +1,10 @@
 # VPE-001A — Human Rater Study Protocol
-**Pre-registered design · Not yet executed**
+**Historical Core-30 design draft · Not executed · Registration unverified**
 **Date drafted:** June 2026
+
+> **Editorial status note — 15 September 2026.** This earlier card-sorting draft is protocol history. It is separate from both the v1.3 N=40 classification design and the later N=59 plan with Control, Affine Priming, and Morphological Priming cohorts. Recruitment for the later plan has not commenced according to the latest available project documentation; no human outcome is established. The YEGJ8/2NKZA registration identity remains unresolved. See the [current human-study status](https://varzin.org/vpe001a-status.html).
+>
+> The original draft used “pre-registered” and made informal power and cognitive-interpretation claims. Those claims are not verified here. Free sorting into participant-defined groups does not by itself define a common category coding for Fleiss κ: an explicit scoring rule and a justified power analysis are still required before execution. The interpretations below cannot establish a hidden cognitive layer or a general human advantage over AI. This annotation preserves the draft for review; the [original source](https://github.com/Varzin-13/varzin-landing-/blob/e9445db9be383b89d023052836b27cc211cbe92f/VPE001A_protocol_design.md) remains available.
 
 ---
 
@@ -61,7 +65,7 @@ ZARTH, ZUN-NAR, KHALTUR, KUZTUR, TARHAN-ELUZ, KHIRZAH
 | 0.61–0.80 | Substantial |
 | > 0.80 | Almost perfect |
 
-**Primary threshold:** κ ≥ 0.40 (pre-registered)
+**Original proposed threshold:** κ ≥ 0.40 (registration unverified)
 
 ### Secondary metrics
 
@@ -76,6 +80,8 @@ ZARTH, ZUN-NAR, KHALTUR, KUZTUR, TARHAN-ELUZ, KHIRZAH
 ---
 
 ## Power Analysis
+
+*Historical assertions below; no formal power calculation is supplied in this draft.*
 
 With n=5 raters and 30 items:
 - Fleiss κ ≥ 0.40 is detectable with reasonable confidence
@@ -96,6 +102,8 @@ With n=5 raters and 30 items:
 ---
 
 ## What This Test Settles
+
+*Original proposed interpretations, retained for provenance. These are not established conclusions or validated decision rules.*
 
 **If humans → morpheme families (like AIs):**
 > Morpheme-family organization is the primary cognitive unit of LUXVAR. Designed axes are a secondary abstraction.
@@ -120,5 +128,5 @@ With n=5 raters and 30 items:
 
 ---
 
-*Pre-registered protocol · VPE-001A · VARZIN Project*
+*Historical protocol draft · VPE-001A · Registration unverified · VARZIN Project*
 *Reza Nirouyar · ORCID: 0009-0000-4690-6842*
