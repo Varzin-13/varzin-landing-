@@ -8,10 +8,16 @@ on:
   push:
     paths:
       - "**/*.html"
+      - "README.md"
+      - "VARZIN_preprint_v2.md"
+      - "VPE001A_protocol_design.md"
+      - "CITATION.cff"
       - "seo-meta.config.json"
       - "inject-seo-meta.js"
       - "research-outputs.json"
-      - "scripts/generate-publication-pages.py"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
       - "scripts/generate-sitemap.cjs"
   workflow_dispatch:
 
@@ -27,6 +33,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+
+      - name: Install document generator
+        run: npm ci --ignore-scripts
 
       - name: Generate research pages and SEO metadata
         run: npm run site:generate

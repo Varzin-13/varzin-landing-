@@ -1,5 +1,9 @@
 # LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families
 
+> **Editorial status note — 15 September 2026.** This is an annotated historical local manuscript, not a verified copy of a specific Zenodo deposit. Its earlier v2.1 citation names DOI 20691858; the current public LUXVAR record is listed as v2.2 under DOI 22115483. Their file/version mapping remains unresolved. Read the [version-specific publication record](https://varzin.org/publications/zenodo-22115483.html) and [publication registry](https://varzin.org/all-dois.html) before citing a deposited version.
+>
+> Section 6 describes an earlier Core-30 sorting proposal with at least five raters. The August addendum refers to a separate later N=59 three-cohort plan; neither establishes a human outcome or a verified preregistration. The [human-study status page](https://varzin.org/vpe001a-status.html) distinguishes those designs from the historical v1.3 N=40 classification protocol. This annotation does not merge them or amend an OSF record. The [source before this annotation](https://github.com/Varzin-13/varzin-landing-/blob/e9445db9be383b89d023052836b27cc211cbe92f/VARZIN_preprint_v2.md) remains available.
+
 **Reza Nirouyar**  
 ORCID: 0009-0000-4690-6842  
 Independent Researcher · VARZIN Project  
@@ -218,7 +222,9 @@ The benchmark compares LUXVAR to constructed languages (Esperanto, Lojban, Toki 
 
 ## 6. Proposed Follow-Up: VPE-001A
 
-**Pre-registered hypothesis:** Naive human raters (≥5, no LUXVAR knowledge) can sort Core-30 words into consistent categories at above-chance agreement.
+> **Historical proposal.** This section is the Core-30 draft, not the later N=59 three-cohort plan. The original draft called the hypothesis “pre-registered”; a matching registration and timestamp have not been verified. The outcome interpretations below are hypotheses, not established cognitive conclusions.
+
+**Original draft hypothesis (registration unverified):** Naive human raters (≥5, no LUXVAR knowledge) can sort Core-30 words into consistent categories at above-chance agreement.
 
 **Primary threshold:** κ ≥ 0.40 (Fleiss κ, ≥5 raters, 30 words)
 
@@ -269,13 +275,14 @@ Both models scored statistically indistinguishable from random chance against th
 
 **This resolves the question left open in the July 2026 addendum:** the inter-model ARI = 0.812 reported in Section 4.5 of this paper reflects Claude, GPT-4, and Gemini agreeing *with each other* on surface-morphology groupings. It does not indicate, and should no longer be read as suggestively pointing toward, recovery of the designed semantic/algebraic structure. **The "AI-recoverable" claim in this paper's title is REJECTED, not merely unverified or preliminary.**
 
-This finding does not affect the paper's non-AI-dependent results (phonotactic uniqueness, generator balance, SEM-001/002 negative findings), which stand independently. It also does not resolve whether human raters can recover the designed axes — VPE-001A (N=59, preregistered) remains the open test of that separate question.
+This finding does not affect the paper's non-AI-dependent results (phonotactic uniqueness, generator balance, SEM-001/002 negative findings), which stand independently. It also does not resolve whether human raters can recover the designed axes — the later VPE-001A plan (N=59; registration status unverified) concerns that separate open question. **Editorial clarification, 15 September 2026:** this later plan is distinct from the Core-30 proposal in Section 6. Recruitment has not commenced according to the latest available project documentation, no human outcome is established, and the YEGJ8/2NKZA identity relationship remains unresolved.
 
 ---
 
-**This preprint:** https://doi.org/10.5281/zenodo.20691858
+**DOI named in the historical local citation (file/version mapping unresolved):** https://doi.org/10.5281/zenodo.20691858
 
-**Citation:**  
+**Historical citation string — retained for provenance, not a verified identity for this local file:**
+
 Nirouyar, R. (2026). *LUXVAR: A Constructed Language with Distinctive Morphemic Structure and AI-Recoverable Morpheme Families* (v2.1, with post-publication addendum). Zenodo. https://doi.org/10.5281/zenodo.20691858
 
 Code and data: varzin.org · GitHub: Varzin-13/varzin-landing-  

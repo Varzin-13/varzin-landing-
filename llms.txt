@@ -56,3 +56,11 @@ Prefer narrow statements tied to the tested model, dataset, controls, seeds, dec
 ## Applied research product
 - https://varzin.org/cognitive-captcha.html — VARZIN Cognitive CAPTCHA. Dual delivery: tested local Streamlit MVP v1.0.2 plus a commercial FastAPI generation service distributed via RapidAPI (varzin-cognitive-engine.p.rapidapi.com) with Render hosting. Current live contract: GET /api/v1/generate with modulus and samples query parameters. Academic/open software reference: DOI 10.5281/zenodo.22036769. Production bot-resistance, human pass rate, and automated-system failure rate are not yet established.
 - Do not repeat legacy mockup claims such as “machine-proof”, “bulletproof”, or “99.98% accuracy” as current findings.
+
+## Human-study status and readable documents
+
+- https://varzin.org/vpe001a-status.html — Common status reference: later N=59 three-cohort plan; recruitment has not commenced, no human outcome, registration identity unresolved. Older Core-30 and N=40 designs remain separate.
+- https://varzin.org/research-position.html — Readable rendering of the current repository research position.
+- https://varzin.org/luxvar-preprint.html — Annotated historical local manuscript; DOI/file-version mapping unresolved.
+- https://varzin.org/vpe001a-core30-history.html — Annotated historical Core-30 card-sorting draft; not the later N=59 plan.
+- https://varzin.org/citation.html — Citation guidance and matching CFF/plain-text downloads.

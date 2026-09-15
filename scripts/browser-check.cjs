@@ -21,6 +21,12 @@ const fs = require("node:fs");
     "/luxvar-scale-map.html",
     "/cognitive-captcha.html",
     "/vpe001-protocol.html",
+    "/vpe001a-status.html",
+    "/vpe001a-core30-history.html",
+    "/research-position.html",
+    "/luxvar-preprint.html",
+    "/citation.html",
+    "/historical-2025-audit.html",
     "/cyclical-resonance-report.html",
     "/master-report-v3.html",
     "/paper/",
@@ -85,12 +91,15 @@ const fs = require("node:fs");
         })),
       });
       fs.writeFileSync("test-results/browser-progress.json", JSON.stringify(results, null, 2));
+      if ([375, 1440].includes(width) && ["/vpe001a-status.html", "/research-position.html", "/luxvar-preprint.html", "/citation.html", "/field-index.html"].includes(route)) {
+        await page.screenshot({path: `test-results/${route.slice(1, -5)}-${width}.png`});
+      }
       if (route === "/") {
         await page.screenshot({
           path: `test-results/home-${width}.png`,
           fullPage: true,
         });
-        if (width === 375) {
+        if (width === 375 || width === 768) {
           await page.locator(".vr-mobile summary").click();
           if (!(await page.locator(".vr-mobile nav").isVisible()))
             throw Error("Mobile menu not visible");

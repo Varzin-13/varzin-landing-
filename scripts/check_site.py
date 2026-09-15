@@ -10,7 +10,7 @@ exempt = set(config.get('excludeFiles', [])) | {'404.html'}
 
 class Page(HTMLParser):
     def __init__(self, text):
-        super().__init__(); self.ids=[]; self.links=[]; self.assets=[]; self.images=[]; self.h1=0; self.titles=0; self.descriptions=0; self.canonicals=[]; self.lang=None; self.in_head=False; self.feed(text)
+        super().__init__(); self.ids=[]; self.links=[]; self.downloads=set(); self.assets=[]; self.images=[]; self.h1=0; self.titles=0; self.descriptions=0; self.canonicals=[]; self.robots=[]; self.lang=None; self.in_head=False; self.feed(text)
     def handle_starttag(self, tag, attrs):
         d=dict(attrs)
         if tag=='html': self.lang=d.get('lang')
@@ -19,8 +19,10 @@ class Page(HTMLParser):
         if tag=='h1': self.h1 += 1
         if tag=='title' and self.in_head: self.titles += 1
         if tag=='meta' and self.in_head and d.get('name','').lower()=='description': self.descriptions += 1
+        if tag=='meta' and self.in_head and d.get('name','').lower()=='robots': self.robots.append(d.get('content','').lower())
         if tag=='link' and self.in_head and d.get('rel','').lower()=='canonical' and d.get('href'): self.canonicals.append(d['href'])
         if tag=='a' and 'href' in d: self.links.append(d['href'])
+        if tag=='a' and 'href' in d and 'download' in d: self.downloads.add(d['href'])
         if tag in ['script','img','audio','source'] and d.get('src'): self.assets.append(d['src'])
         if tag=='img': self.images.append(d)
         if tag=='link' and d.get('rel','').lower() in ['stylesheet','icon','apple-touch-icon','manifest'] and d.get('href'): self.assets.append(d['href'])
@@ -55,6 +57,8 @@ for file,page in pages.items():
         if not target.exists(): errors.append(f'{r}: missing {url}')
         elif u.fragment and target in pages and unquote(u.fragment) not in pages[target].ids: errors.append(f'{r}: missing fragment {url}')
     if r in exempt: continue
+    expected_robots='noindex, follow' if r in config.get('noindexFiles',[]) else 'index, follow'
+    if page.robots != [expected_robots]: errors.append(f'{r}: expected one robots directive: {expected_robots}')
     if raw.lower().find('<meta charset') < 0 or raw.lower().find('<meta charset') > 1024: errors.append(f'{r}: charset missing or after first 1024 bytes')
     if not page.lang: errors.append(f'{r}: missing html lang')
     if page.h1 != 1: errors.append(f'{r}: expected exactly one h1, found {page.h1}')
@@ -73,6 +77,33 @@ missing=expected_indexable-sitemap_urls; extra=sitemap_urls-expected_indexable
 if missing: errors.append('sitemap missing: '+', '.join(sorted(missing)))
 if extra: errors.append('sitemap extra: '+', '.join(sorted(extra)))
 if 'Sitemap:' not in (root/'robots.txt').read_text(): errors.append('robots.txt: missing Sitemap directive')
+
+# Check the rendered site, including regenerated publication pages, so templates
+# cannot silently reintroduce divergent navigation or raw-document reading links.
+expected_navigation=['/field-index.html','/atlas.html','/all-dois.html','/cognitive-captcha.html','/#reproducibility','/researcher.html','/feedback.html']
+raw_sources={'README.md','VARZIN_preprint_v2.md','VPE001A_protocol_design.md'}
+for file,page in pages.items():
+    raw=file.read_text(); r=rel(file)
+    header=re.search(r'<header\b[^>]*class="vr-header"[^>]*>([\s\S]*?)</header>',raw)
+    if header:
+        menus=re.findall(r'<nav\b[^>]*>([\s\S]*?)</nav>',header.group(1))
+        if len(menus)!=2 or any(Page(menu).links!=expected_navigation for menu in menus):
+            errors.append(f'{r}: desktop/mobile primary navigation differs from the shared destinations')
+    if r not in noindex:
+        for url in page.links:
+            u=urlsplit(url)
+            if u.netloc and u.netloc!='varzin.org': continue
+            if u.path.lstrip('/') in raw_sources and url not in page.downloads:
+                errors.append(f'{r}: raw source used as a reading link instead of an HTML page: {url}')
+
+for archive in ['master-report-v3.html','vpe001-protocol.html','luxvar-preprint.html','vpe001a-core30-history.html']:
+    af=root/archive
+    if not af.exists() or 'Historical / superseded record' not in af.read_text():
+        errors.append(f'{archive}: missing visible historical notice')
+
+citation_text=root/'CITATION.cff.txt'
+if not citation_text.exists() or citation_text.read_bytes()!=(root/'CITATION.cff').read_bytes():
+    errors.append('CITATION.cff.txt: must be byte-identical to the CFF source')
 
 
 # Reciprocal language alternatives for the canonical English and Persian landing pages.

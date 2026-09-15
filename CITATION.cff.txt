@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use VARZIN material, cite the exact version-specific research record or release associated with the result. For current scientific interpretation, prefer the latest relevant Zenodo manuscript and its version-matched reproducibility artifacts while preserving earlier DOI records for provenance."
+title: "VARZIN Research Portal and Reproducibility Materials"
+authors:
+  - family-names: Nirouyar
+    given-names: Reza
+    orcid: https://orcid.org/0009-0000-4690-6842
+    affiliation: VARZIN Project
+url: https://varzin.org
+repository-code: https://github.com/Varzin-13/varzin-landing-
+keywords:
+  - VARZIN
+  - finite affine systems
+  - LUXVAR
+  - reproducibility
+  - constructed symbolic systems
+  - computational research
+  - open science
